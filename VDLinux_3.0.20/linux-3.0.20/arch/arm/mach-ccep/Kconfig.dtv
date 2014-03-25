@@ -1,0 +1,217 @@
+######################################################################
+#
+# 	Kconfig for Samsung VD SoC DTV platform
+# 	
+# 	created by tukho.kim@samsung.com
+#
+######################################################################
+#
+# May,31,2010:	created by tukho.kim
+# 
+
+# Choose DTV Platform 
+if SAMSUNG_VD_DTV_PLATFORM
+
+choice 
+	prompt "DTV Platform (machine)"
+	default MACH_GRIFFIN
+
+config MACH_GRIFFIN
+	bool "Griffin platform, 2010"
+	select ARCH_SDP1001
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV Evaluation board, GRIFFIN.
+
+config MACH_FPGA_GENOA
+	bool "GENOA FPGA platform, 2010"
+	select ARCH_SDP1001FPGA
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV Genoa FPGA board.
+
+config MACH_DALMA
+	bool "Dalma platform, 2010"
+	select ARCH_SDP1002
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV Evaluation board, DALMA.
+
+config MACH_FLAMENGO
+	bool "Flamengo platform, 2011"
+	select ARCH_SDP1106
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV Evaluation board, FLAMENGO.
+
+config MACH_FPGA_FLAMENGO
+	bool "Flamengo FPGA platform, 2011"
+	select ARCH_SDP1106FPGA
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV FPGA board, FLAMENGO.
+
+config MACH_SANTOS
+	bool "Santos platform, 2011"
+	select ARCH_SDP1103
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV Evaluation board, SANTOS
+
+config MACH_FPGA_SANTOS
+	bool "Santos FPGA platform, 2011"
+	select ARCH_SDP1103FPGA
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV FPGA board, SANTOS
+
+config MACH_ECHOE
+	bool "Echo-E platform, 2011"
+	select ARCH_SDP1114
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV Evaluation board, Echo-E
+
+config MACH_FOXAP
+	bool "Fox-AP platform, 2012"
+	select ARCH_SDP1202
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV Evaluation board, FOX-AP
+
+config MACH_FPGA_FOXAP
+	bool "Fox-AP FPGA platform, 2012"
+	select ARCH_SDP1202FPGA
+	select MACH_MEMORY_TYPE_SUPPORT
+	help
+	  This enables support for Samsung VD DTV FPGA board, FOX_AP
+
+endchoice #"DTV Platform (machine)"
+
+endif #SAMSUNG_VD_DTV_PLATFORM
+
+#
+# Define DTV SoC chip
+#
+
+# SDP1001 GenoaS, Cortex-A9, Neon, 32KB/32KB/256KB
+config ARCH_SDP1001
+	bool
+	select ARCH_CCEP_SOC_CA9
+
+config ARCH_SDP1002
+	bool
+	select ARCH_CCEP_SOC_CA8
+#	select CPU_V7
+#	select VFP
+#	select NEON
+
+config ARCH_SDP1103
+	bool
+	select ARCH_CCEP_SOC_CA9
+#	select CPU_V7
+#	select VFP
+#	select NEON
+#	select PL330
+
+config ARCH_SDP1106
+	bool
+	select ARCH_CCEP_SOC_CA9
+#	select CPU_V7
+#	select VFP
+#	select NEON
+	select ARM_GIC
+#	select PL330
+#	select ARM_ERRATA_743622
+#	select ARM_ERRATA_751472
+#	select ARM_ERRATA_754322
+#	select ARM_ERRATA_764369
+
+config ARCH_SDP1114
+	bool
+	select ARCH_CCEP_SOC_CA9
+#	select CPU_V7
+#	select VFP
+#	select NEON
+	select ARM_GIC
+#	select ARM_ERRATA_743622
+#	select ARM_ERRATA_751472
+#	select ARM_ERRATA_754322
+#	select ARM_ERRATA_764369
+
+config ARCH_SDP1103FPGA
+	bool
+	select ARCH_CCEP_SOC_CA9
+#	select CPU_V7
+#	select VFP
+#	select NEON
+#	select PL330
+
+config ARCH_SDP1106FPGA
+	bool
+	select ARCH_CCEP_SOC_CA9
+#	select CPU_V7
+#	select VFP
+#	select NEON
+#	select ARM_GIC if SMP
+#	select PL330
+
+config ARCH_SDP1202
+	bool
+	select ARCH_CCEP_SOC_CA15
+#	select CPU_V7
+#	select VFP
+#	select NEON
+#	select ARM_GIC
+#	select PL330
+	select SDP_TIMER_SCALING
+
+config ARCH_SDP1202FPGA
+	bool
+	select ARCH_CCEP_SOC_CA15
+	select ARCH_CCEP_FPGA
+#	select CPU_V7
+#	select ARM_GIC
+#	select PL330
+
+
+if MACH_GRIFFIN
+source "arch/arm/mach-ccep/platform/griffin/Kconfig"
+endif # MACH_GRIFFIN
+
+if MACH_FPGA_GENOA
+source "arch/arm/mach-ccep/platform/fpga_genoa/Kconfig"
+endif # MACH_GRIFFIN
+
+if MACH_DALMA
+source "arch/arm/mach-ccep/platform/dalma/Kconfig"
+endif # MACH_DALMA
+
+if MACH_FLAMENGO
+source "arch/arm/mach-ccep/platform/flamengo/Kconfig"
+endif # MACH_FLAMENGO
+
+if MACH_SANTOS
+source "arch/arm/mach-ccep/platform/santos/Kconfig"
+endif # MACH_SANTOS
+
+if MACH_ECHOE
+source "arch/arm/mach-ccep/platform/echoe/Kconfig"
+endif # MACH_ECHOE
+
+if MACH_FPGA_FLAMENGO
+source "arch/arm/mach-ccep/platform/fpga_flamengo/Kconfig"
+endif # MACH_FPGA_FLAMENGO
+
+if MACH_FPGA_SANTOS
+source "arch/arm/mach-ccep/platform/fpga_santos/Kconfig"
+endif # MACH_FPGA_SANTOS
+
+if MACH_FOXAP
+source "arch/arm/mach-ccep/platform/foxap/Kconfig"
+endif # MACH_FOXAP
+
+if MACH_FPGA_FOXAP
+source "arch/arm/mach-ccep/platform/fpga_foxap/Kconfig"
+endif # MACH_FPGA_FOXAP
+

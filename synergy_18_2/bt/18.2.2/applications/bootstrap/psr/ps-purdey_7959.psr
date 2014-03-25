@@ -1,0 +1,29 @@
+// PSKEY_ANA_FREQ
+// 26MHz MHz
+&01fe = 6590
+
+// PSKEY_HOST_INTERFACE (UART BCSP)
+&01f9 = 0001
+
+// PSKEY_UART_BITRATE (115200)
+&01ea = 0001 c200
+
+// PSKEY_DEEP_SLEEP_USE_EXTERNAL_CLOCK
+&03C3 = 0001
+
+//PSKEY_deep_sleep_state = 0
+&0229 = 0000
+
+// BDADDR 3030
+&0001 = 0000 3030 005b 0002
+
+// Panic on fault
+&21ce = 0000
+
+// MAP_SCO_PCM (False)
+&01ab = 0000
+
+// Watchdog
+&01f7 = 0000 0000
+
+

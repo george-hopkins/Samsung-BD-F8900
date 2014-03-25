@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="TYPE"/>
+    <resource name="CONST"/>
+    <resource name="IP_ETHER_SIGNALS" discriminant="CSR_IPETHER_Signal_Id"/>
+
+    <type name="CsrTypesXml"      resource="FILE" file="csr_types.xml"/>
+    <type name="CsrIpEtherResultXml"     resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrIpEtherPriority" resource="TYPE" size="8">
+        <value name="CSR_IP_ETHER_PRIORITY_BE_0"     value="0x01"/>
+        <value name="CSR_IP_ETHER_PRIORITY_BK_1"     value="0x02"/>
+        <value name="CSR_IP_ETHER_PRIORITY_BK_2"     value="0x04"/>
+        <value name="CSR_IP_ETHER_PRIORITY_BE_3"     value="0x08"/>
+        <value name="CSR_IP_ETHER_PRIORITY_VI_4"     value="0x10"/>
+        <value name="CSR_IP_ETHER_PRIORITY_VI_5"     value="0x20"/>
+        <value name="CSR_IP_ETHER_PRIORITY_VO_6"     value="0x40"/>
+        <value name="CSR_IP_ETHER_PRIORITY_VO_7"     value="0x80"/>
+        <value name="CSR_IP_ETHER_PRIORITY_ALL"      value="0xFF"/>
+    </type>
+
+    <type name="CsrIpEtherIfContext"           resource="TYPE" type="void*"/>
+    <type name="CsrIpEtherIpContext"           resource="TYPE" type="void*"/>
+
+    <!-- TODO: using attempted xml description following -->
+    <!--typedef void (*CsrIpEtherFrameRxFunction)(CsrUint8 *destinationMac, CsrUint8 *sourceMac, CsrInt16 rssi, CsrUint16 frameLength, CsrUint8 *frame, CsrIpEtherIpContext ipContext);-->
+    <!--typedef CsrIpEtherResult (*CsrIpEtherFrameTxFunction)(CsrUint8 *destinationMac, CsrUint8 *sourceMac, CsrUint16 frameLength, CsrUint8 *frame, CsrIpEtherIfContext ifContext);-->
+    <type name="CsrIpEtherFrameTxFunction"           resource="TYPE" size="32" const="1"/>
+    <type name="CsrIpEtherFrameRxFunction"           resource="TYPE" size="32" const="1"/>
+
+    <type name="CsrIpEtherEncapsulation" resource="TYPE" size="8">
+        <value name="CSR_IP_ETHER_ENCAPSULATION_ETHERNET"                 value="0x00"/>
+        <value name="CSR_IP_ETHER_ENCAPSULATION_LLC_SNAP"                 value="0x01"/>
+    </type>
+
+    <type name="CsrIpEtherResult" resource="TYPE" type="CsrResult" const="1">
+        <!-- CsrIp Result Codes -->
+        <value name="CSR_IP_ETHER_RESULT_NOT_SENT"              value="0x0001"/>
+        <value name="CSR_IP_ETHER_RESULT_INVALID_HANDLE"        value="0x0002"/>
+        <value name="CSR_IP_ETHER_RESULT_NO_MORE_INTERFACES"    value="0x0003"/>
+    </type>
+
+    <type name="CsrIpEtherIfType" resource="TYPE" size="8">
+        <value name="CSR_IP_ETHER_IF_TYPE_WIRED"                 value="0x00"/>
+        <value name="CSR_IP_ETHER_IF_TYPE_WIFI"                  value="0x01"/>
+    </type>
+
+    <type name="CsrIpEtherIfAddReq" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfAddReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="ifType">                           <type>CsrIpEtherIfType</type></field>
+        <field name="mac" array="6">                    <type>CsrUint8</type></field>
+        <field name="encapsulation">                    <type>CsrUint8</type></field>
+        <field name="maxTxUnit">                        <type>CsrUint16</type></field>
+        <field name="frameTxFunction">                  <type>CsrIpEtherFrameTxFunction</type></field>
+        <field name="ifContext">                        <type>CsrIpEtherIfContext</type></field> <!-- TODO: Should be CsrIpEtherIfContext-->
+    </type>
+
+    <type name="CsrIpEtherIfAddCfm" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfAddCfm">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="result">                           <type>CsrIpEtherResult</type></field>
+        <field name="encapsulation">                    <type>CsrIpEtherEncapsulation</type></field>
+        <field name="frameRxFunction">                  <type>CsrIpEtherFrameRxFunction</type></field>
+        <field name="ipContext">                        <type>CsrIpEtherIpContext</type></field> <!-- TODO: Should be CsrIpEtherIpContext-->
+    </type>
+
+    <type name="CsrIpEtherIfRemoveReq" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfRemoveReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfRemoveCfm" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfRemoveCfm">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="result">                           <type>CsrIpEtherResult</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfLinkUpReq" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfLinkUpReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfLinkUpCfm" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfLinkUpCfm">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="result">                           <type>CsrIpEtherResult</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfLinkDownReq" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfLinkDownReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfLinkDownCfm" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfLinkDownCfm">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="result">                           <type>CsrIpEtherResult</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfMulticastAddrAddInd" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfMulticastAddrAddInd">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="multicastMacAddr" array="6">       <type>CsrUint8</type>    <!-- Multicast MAC address to be joined --></field>
+    </type>
+
+    <type name="CsrIpEtherIfMulticastAddrAddRes" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfMulticastAddrAddRes">
+        <field name="result">                           <type>CsrIpEtherResult</type></field>
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfMulticastAddrRemoveInd" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfMulticastAddrRemoveInd">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="multicastMacAddr" array="6">       <type>CsrUint8</type>    <!-- Multicast MAC address to be removed --></field>
+    </type>
+
+    <type name="CsrIpEtherIfMulticastAddrRemoveRes" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfMulticastAddrRemoveRes">
+        <field name="result">                           <type>CsrIpEtherResult</type></field>
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfMulticastAddrFlushInd" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfMulticastAddrFlushInd">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfMulticastAddrFlushRes" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfMulticastAddrFlushRes">
+        <field name="result">                           <type>CsrIpEtherResult</type></field>
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfFlowControlPauseReq" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfFlowControlPauseReq">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="priority">                         <type>CsrIpEtherPriority</type></field>
+    </type>
+
+    <type name="CsrIpEtherIfFlowControlResumeReq" resource="IP_ETHER_SIGNALS" dvalue="CsrIpEtherIfFlowControlResumeReq">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="priority">                         <type>CsrIpEtherPriority</type></field>
+    </type>
+
+    <type name="CSR_IPETHER_Signal_Id" partial="true"  resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrIpEtherIfAddReq"                    value="0x0000"/>
+        <value name="CsrIpEtherIfRemoveReq"                 value="0x0001"/>
+        <value name="CsrIpEtherIfLinkUpReq"                 value="0x0002"/>
+        <value name="CsrIpEtherIfLinkDownReq"               value="0x0003"/>
+        <value name="CsrIpEtherIfMulticastAddrAddRes"       value="0x0004"/>
+        <value name="CsrIpEtherIfMulticastAddrRemoveRes"    value="0x0005"/>
+        <value name="CsrIpEtherIfMulticastAddrFlushRes"     value="0x0006"/>
+        <value name="CsrIpEtherIfFlowControlPauseReq"       value="0x0007"/>
+        <value name="CsrIpEtherIfFlowControlResumeReq"      value="0x0008"/>
+
+        <value name="CsrIpEtherIfAddCfm"                    value="0x8000"/>
+        <value name="CsrIpEtherIfRemoveCfm"                 value="0x8001"/>
+        <value name="CsrIpEtherIfLinkUpCfm"                 value="0x8002"/>
+        <value name="CsrIpEtherIfLinkDownCfm"               value="0x8003"/>
+        <value name="CsrIpEtherIfMulticastAddrAddInd"       value="0x8004"/>
+        <value name="CsrIpEtherIfMulticastAddrRemoveInd"    value="0x8005"/>
+        <value name="CsrIpEtherIfMulticastAddrFlushInd"     value="0x8006"/>
+    </type>
+
+</definitions>
+
+
+
+
+
+
+
+

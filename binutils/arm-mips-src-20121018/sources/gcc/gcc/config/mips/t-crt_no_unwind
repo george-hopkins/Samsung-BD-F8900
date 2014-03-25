@@ -1,0 +1,3 @@
+# The -funwind-tables is set by default for MIPS now
+# and it needs to switch off this option for crtstuf generation
+CRTSTUFF_T_CFLAGS += -fno-unwind-tables -fno-asynchronous-unwind-tables

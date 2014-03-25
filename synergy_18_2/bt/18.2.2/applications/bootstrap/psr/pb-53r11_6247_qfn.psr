@@ -1,0 +1,537 @@
+// =============================================================================
+// 
+// CSR tracking information, report this in case of problems:
+//   $Revision: #1 $
+//   Built Tue Sep  7 16:58:05 2010 GMT
+//   Checked-in $DateTime: 2011/09/26 14:14:31 $
+//   $File: //dkdepot/synergy/bt/release/18.2/applications/bootstrap/psr/pb-53r11_6247_qfn.psr $
+// 
+// Patch is for build 6247 jem_6hci_rom_gps_bt2.1_gps_0908131555_encr128
+// 
+// Issues patched: B-62180, B-62695, B-62894, B-63000, B-64106, B-65952,
+//                 B-67382, B-67742, B-68637, B-69652, B-71286, B-71817,
+//                 B-72686, B-72747, B-72836, B-73224, B-73296, B-73469,
+//                 B-76172, B-77977, B-79768
+// 
+// Documentation from pb-53-qfn.pb
+// -------------------------------
+// 
+// General purpose patch and PSKEY bundle for BC7830 A16 qfn Package.
+// 
+// Documentation from common_patches.pb
+// ------------------------------------
+// 
+// Patches that are believed to be appropriate for all 
+// current applications of this device.
+// 
+// Documentation from bt_pskeys.pb
+// -------------------------------
+// 
+// Non-default PSKEY settings aimed at improving Bluetooth performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches. 
+// 
+// Documentation from fm_pskeys.pb
+// -------------------------------
+// 
+// Non-default PSKEY settings aimed at improving FM performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches. 
+// 
+// Documentation from gps_pskeys.pb
+// --------------------------------
+// 
+// Non-default PSKEY settings aimed at improving GSM performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches.
+// 
+// Documentation from common_config.pb
+// -----------------------------------
+// 
+// Non-default PSKEY settings that do not address specific issues,
+// but are believed to be appropriate for all current applications
+// of this device so are included for convenience.
+// 
+// Assumptions made here include:
+//  - That an external 32kHz clock is supplied to the chip at all times.
+//    Operation of BlueCore7-FM without such a clock is not currently
+//    supported.
+// 
+// Documentation from patch_bt_reg.xap
+// -----------------------------------
+// 
+// Issues patched: B-62894
+// 
+// On BC7, immediately after a periodic BT radio trim, the Bluetooth regulator
+// soft start mechanism may be disabled, causing >100mV dip on the 1V8 supply
+// (due to increased inrush current) the next time BlueCore wakes from deep
+// sleep.
+// 
+// Documentation from patch_lc_request_ref_clk.xap
+// -----------------------------------------------
+// 
+// Issues patched: B-62180
+// 
+// BC7-FM performs periodic trims every minute. 
+// When the Bluetooth radio is not in use but the FM radio is in use, BC7-FM 
+// can operate without requesting the reference clock, and does not require 
+// the reference clock to perform the trims. However, a coding error causes 
+// it to raise clock request for the periodic trims.
+// 
+// Documentation from patch_hal_audio_codec.xap
+// --------------------------------------------
+// 
+// Issues patched: B-76172
+// 
+// High sleep current after turning FM RX off
+// 
+// Documentation from patch_slept_cycles.xap
+// -----------------------------------------
+// 
+// Issues patched: B-71286
+// 
+// Under some circumstances, BlueCore may mis-time deep sleep and 
+// miss sniff instants.
+// 
+// Documentation from patch_casual_scan.xap
+// ----------------------------------------
+// 
+// Enabling casual scan on BC7 may cause the chip to become unresponsive
+// on waking from deep sleep to perform the scan. Because of this,
+// casual scan has been disabled in this patch.
+// 
+// Documentation from patch_reg_voltage_c.c
+// ----------------------------------------
+// 
+// Issues patched: B-63000
+// 
+// If the Vss_aux_bt_lo ball is not soldered down correctly, the chip
+// will emit FAULT_ANA_REG_VOLTAGE (hardware error 0x66). This is a diagnostic
+// to enable customers to detect soldering problems.
+// 
+// Documentation from patch_lc_tx_event.xap
+// ----------------------------------------
+// 
+// Issues patched: B-68637
+// 
+// When transmitting 2DH packets, for packet lengths that produce a time-length
+// that is a multiple of 50 us (for example, 656 byte 2DH5 packets), the packets 
+// may fail the DEVM specification for the last symbol. This is a marginal 
+// failure and is unlikely to affect correct packet decoding.
+// 
+// Documentation from patch_radiotest_rxdata1.xap
+// ----------------------------------------------
+// 
+// Issues patched: B-73469
+// 
+// Radiotest RXDATA1 test is not returning an RSSI value  
+// 
+// Documentation from patch_pcm_config32_c.c
+// -----------------------------------------
+// 
+// Issues patched: B-62695
+// 
+// Allows the host to use the PCM_CONFIG32 BCCMD to dynamically change
+// some PCM settings, for example, PCM mute.
+// 
+// Documentation from patch_fm_search_cancel.c
+// -------------------------------------------
+// 
+// Issues patched: B-77977
+// 
+// On BlueCore7-FM, sending a FM API TUNER_MODE_SET command with mode=0 (cancel) 
+// with a search in progress could make the chip become unresponsive. 
+// 
+// Documentation from patch_sdio_ds.xap
+// ------------------------------------
+// 
+// Issues patched: B-65952
+// 
+// When using the SDIO or CSPI host transports BlueCore may go to sleep, even
+// when the host has told it not to.
+// 
+// Documentation from patch_fm_search_extra_check.xap
+// --------------------------------------------------
+// 
+// Issues patched: B-64106
+// 
+// Adds additional checking to improve FM search performance
+// The criteria previously used for the search were not always sufficient
+// to distinguish good stations when a low search level is used.
+// 
+// Documentation from patch_fm_search_rssi_fix.xap
+// -----------------------------------------------
+// 
+// Issues patched: B-71817
+// 
+// Adds further checking to improve FM search.
+// This uses additional information to further improve the performance
+// when seaching for FM stations. 
+// 
+// Documentation from patch_fm_skew.xap
+// ------------------------------------
+// 
+// Issues patched: B-67382
+// 
+// The FM RX sensitivity at 96 MHz is poor.
+// 
+// Documentation from patch_lc_pause_all_data.xap
+// ----------------------------------------------
+// 
+// Issues patched: B-67742
+// 
+// If BlueCore was performing a role switch as part of the connection creation
+// procedure it paused all ACL user data on all links until the role switch
+// completed. This could cause an interruption of 150 to 200 ms in the data
+// flow. For some use cases, such as A2DP streaming, this could cause user
+// observable effects (audio glitches in the A2DP case). Analysis of the
+// firmware and LM sequencing for this scenario has revealed that this pause is
+// not necessary and so it has been removed. There will still be some disruption
+// of user data flow simply as the result of now having two links to service, at
+// least one of which BlueCore is slave of. However, the duration should now be
+// much reduced - to roughly the poll interval (25 ms by default).
+// 
+// Documentation from patch_fm_tx_part0.xap
+// ----------------------------------------
+// 
+// Issues patched: B-69652, B-73296
+// 
+// This patches comes in three pieces part0,part1,part2
+// and addresses both an infinite loop and cases 
+// where we could not reach the fm-tx power output demanded
+// 
+// Documentation from patch_fm_tx_part1.xap
+// ----------------------------------------
+// 
+// Issues patched: B-69652, B-73296
+// 
+// This patches comes in three pieces part0,part1,part2
+// and addresses both an infinite loop and cases 
+// where we could not reach the fm-tx power output demanded
+// 
+// Documentation from patch_fm_tx_part2.xap
+// ----------------------------------------
+// 
+// Issues patched: B-69652, B-73296
+// 
+// This patches comes in three pieces part0,part1,part2
+// and addresses both an infinite loop and cases 
+// where we could not reach the fm-tx power output demanded
+// 
+// Documentation from patch_fmtx_cdac.xap
+// --------------------------------------
+// 
+// Issues patched: B-79768
+// 
+// If the FMTX amplitude demand level is set higher than that which can 
+// be achieved, then the CDAC value becomes bad during the initial tune 
+// process. This results in backing off the power. During subsequent 
+// periodic trims the CDAC is corrected and the power level restored. 
+// The user observes a low output power for a few seconds after tuning. 
+// This is likely to be observed on lab boards at high temperatures where 
+// the Q of the dummy load drops and the chip cannot deliver the 
+// requested output power.
+// 
+// Documentation from patch_corrupt_packet.xap
+// -------------------------------------------
+// 
+// Issues patched: B-72747
+// 
+// When enabling GPS the gps header can sometimes
+// get corrupted. This patch prevents this from happening 
+// 
+// Documentation from patch_clock_shutdown.xap
+// -------------------------------------------
+// 
+// Issues patched: B-72836
+// 
+// When running from A16 we turn off the 16MHz gps clock  
+// which we shouldn't 
+// 
+// Documentation from patch_stop_start.xap
+// ---------------------------------------
+// 
+// Issues patched: B-73224
+// 
+// If a gps_stop, gps_start are send in quick succession 
+// the start can get ignored
+// 
+// Documentation from patch_coaster_interrupts_a.xap
+// -------------------------------------------------
+// 
+// Issues patched: B-72686
+// 
+// If the coaster indication are enabled it could block 
+// the radio for too long  
+// 
+// Documentation from patch_coaster_interrupts_b.xap
+// -------------------------------------------------
+// 
+// Issues patched: B-72686
+// 
+// If the coaster indication are enabled it could block 
+// the radio for too long  
+// 
+// Version information for input files
+// -----------------------------------
+// 
+// Created by patchmaker.pl Revision: #41  Date: 2010/07/07 
+// 
+// Input file: pb-53-qfn.pb
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/pb-53-qfn.pb
+// File revision: 2
+// 
+// Input file: pb-53-common.pb
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/pb-53-common.pb
+// File revision: 11
+// 
+// Input file: common_patches.pb
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/common_patches.pb
+// File revision: 9
+// 
+// Input file: fmtx_patches.pb
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/fmtx_patches.pb
+// File revision: 2
+// 
+// Input file: bt_pskeys.pb
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/bt_pskeys.pb
+// File revision: 2
+// 
+// Input file: fm_pskeys.pb
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/fm_pskeys.pb
+// File revision: 2
+// 
+// Input file: gps_pskeys.pb
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/gps_pskeys.pb
+// File revision: 3
+// 
+// Input file: common_config.pb
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/common_config.pb
+// File revision: 1
+// 
+// Input file: patch_bt_reg.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_bt_reg.xap
+// File revision: 2
+// 
+// Input file: ../patch_utils.inc
+// Depot file: //depot/bc/gps-dev/dev/patches/patch_utils.inc
+// File revision: 2
+// 
+// Input file: patch_lc_request_ref_clk.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_lc_request_ref_clk.xap
+// File revision: 3
+// 
+// Input file: patch_hal_audio_codec.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_hal_audio_codec.xap
+// File revision: 6
+// 
+// Input file: patch_slept_cycles.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_slept_cycles.xap
+// File revision: 2
+// 
+// Input file: patch_casual_scan.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_casual_scan.xap
+// File revision: 2
+// 
+// Input file: patch_reg_voltage_c.c
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_reg_voltage_c.c
+// File revision: 2
+// 
+// Input file: patch_lc_tx_event.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_lc_tx_event.xap
+// File revision: 1
+// 
+// Input file: patch_radiotest_rxdata1.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_radiotest_rxdata1.xap
+// File revision: 1
+// 
+// Input file: patch_pcm_config32_c.c
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_pcm_config32_c.c
+// File revision: 1
+// 
+// Input file: patch_fm_search_cancel.c
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_fm_search_cancel.c
+// File revision: 2
+// 
+// Input file: patch_sdio_ds.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_sdio_ds.xap
+// File revision: 1
+// 
+// Input file: patch_fm_search_extra_check.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_fm_search_extra_check.xap
+// File revision: 9
+// 
+// Input file: patch_fm_search_rssi_fix.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_fm_search_rssi_fix.xap
+// File revision: 5
+// 
+// Input file: patch_fm_tuner_shared.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_fm_tuner_shared.xap
+// File revision: 2
+// 
+// Input file: patch_fm_skew.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_fm_skew.xap
+// File revision: 3
+// 
+// Input file: patch_lc_pause_all_data.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_lc_pause_all_data.xap
+// File revision: 3
+// 
+// Input file: patch_fm_tx_part0.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_fm_tx_part0.xap
+// File revision: 4
+// 
+// Input file: patch_fm_tx_part1.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_fm_tx_part1.xap
+// File revision: 4
+// 
+// Input file: patch_fm_tx_part2.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_fm_tx_part2.xap
+// File revision: 4
+// 
+// Input file: patch_fmtx_cdac.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_fmtx_cdac.xap
+// File revision: 6
+// 
+// Input file: patch_corrupt_packet.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_corrupt_packet.xap
+// File revision: 3
+// 
+// Input file: patch_clock_shutdown.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_clock_shutdown.xap
+// File revision: 3
+// 
+// Input file: patch_stop_start.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_stop_start.xap
+// File revision: 3
+// 
+// Input file: patch_coaster_interrupts_a.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_coaster_interrupts_a.xap
+// File revision: 4
+// 
+// Input file: patch_coaster_interrupts_b.xap
+// Depot file: //depot/bc/gps-dev/dev/patches/6247/patch_coaster_interrupts_b.xap
+// File revision: 3
+
+// explicit, PSKEY_DEEP_SLEEP_USE_EXTERNAL_CLOCK (0x03c3, 963), 1 words
+&03c3 = 0001
+
+// explicit, PSKEY_FM_CLOCKSKEW_FREQS (0x210d, 8461), 8 words
+&210d = 4da8 4e98 6ce8 6dd8 8c28 8d18 ab68 ac58
+
+// explicit, PSKEY_FM_CLOCKSKEW_ENABLE (0x210e, 8462), 1 words
+&210e = 0001
+
+// explicit, PSKEY_FM_BT_SKEW_FREQS (0x2127, 8487), 12 words
+&2127 = 4de4 4e5c 01a3 6d24 6d9c 01a3 8c64 8cdc 01a3 aba4 ac1c 01a3
+
+// patch_hardware_0, PSKEY_PATCH50 (0x212c, 8492), 9 words
+&212c = 0003 3e56 0318 ff2b ff0e 3e00 6e18 00e2 2bf5
+
+// patch_hardware_1, PSKEY_PATCH51 (0x212d, 8493), 13 words
+&212d = 0002 a484 f811 f915 1034 0040 0218 ff2b ff0e a500 8818 00e2 442f
+
+// patch_hardware_2, PSKEY_PATCH52 (0x212e, 8494), 33 words
+&212e = 0002 a4fd f800 0415 ff00 77c4 f800 0425 f000 3215 4000 e7c4 f000 3225 f000 3415 c000 18b4 f000 3425 f000 1215 e000 ffc4 f000 1225 0218 ff2b ff0e a500 0018 00e2 ed69
+
+// patch_hardware_3, PSKEY_PATCH53 (0x212f, 8495), 9 words
+&212f = 0003 0c8b 0318 ff2b ff0e 0d00 8e18 00e2 6ec3
+
+// patch_hardware_4, PSKEY_PATCH54 (0x2130, 8496), 14 words
+&2130 = 0002 6888 0017 0287 0228 0217 0227 0218 ff2b ff0e 6900 8d18 00e2 afc4
+
+// patch_hardware_5, PSKEY_PATCH55 (0x2131, 8497), 31 words
+&2131 = 0002 68a0 da00 9c15 ff34 da00 9c25 11f0 0217 0427 e111 0733 0223 0017 e085 0228 e015 0227 0218 ff2b ff0e 6900 b018 00e2 0218 ff2b ff0e 6900 ee18 00e2 8a63
+
+// patch_hardware_6, PSKEY_PATCH56 (0x2132, 8498), 43 words
+&2132 = 0002 68c1 0d00 9384 182c 0417 0227 f200 9a19 0100 ffc8 08a0 e1b9 f200 9a29 da00 9d15 0100 ff84 04f8 0134 da00 9d25 da00 9d15 da00 9c25 09e0 da00 9d99 06f4 da00 9d15 ff34 da00 9d25 0218 ff2b ff0e 6900 ee18 00e2 3d41
+
+// patch_hardware_7, PSKEY_PATCH57 (0x2133, 8499), 32 words
+&2133 = 0000 6c78 db00 5d99 0ef0 6e00 9e14 fb00 6925 0114 db00 5d25 0018 ff2b ff0e 6c00 7a18 00e2 6c00 7814 fb00 6925 0014 db00 5d25 0018 ff2b ff0e 6e00 a018 00e2 4825
+
+// patch_hardware_8, PSKEY_PATCH58 (0x2134, 8500), 32 words
+&2134 = 0000 6dc2 db00 5e99 0ef0 6f00 8714 fb00 6c25 0114 db00 5e25 0018 ff2b ff0e 6e00 c418 00e2 6e00 c214 fb00 6c25 0014 db00 5e25 0018 ff2b ff0e 6f00 8918 00e2 d1dc
+
+// patch_hardware_9, PSKEY_PATCH59 (0x2135, 8501), 9 words
+&2135 = 0001 e245 0118 ff2b ff0e e200 5118 00e2 0311
+
+// patch_hardware_10, PSKEY_PATCH60 (0x2136, 8502), 13 words
+&2136 = 0000 8f7c 0080 03f0 0284 042c fe34 ff40 03e0 0014 0010 f80f 8480
+
+// patch_hardware_11, PSKEY_PATCH61 (0x2137, 8503), 31 words
+&2137 = 0001 51f9 4c1b 0016 0300 fa84 12f4 0014 e411 4a30 0118 ff2b ff0e 7900 ff18 009e 0084 07f0 0118 ff2b ff0e 5200 0018 00e2 0118 ff2b ff0e 5200 1918 00e2 fd9b
+
+// patch_hardware_12, PSKEY_PATCH62 (0x2138, 8504), 26 words
+&2138 = 0001 5e86 0118 ff2b ff0e 7900 ff18 009e 0084 0af0 0214 0218 ff2b ff0e 7900 5a18 009e 0014 fe0f 0118 ff2b ff0e 5f00 8a18 00e2 791a
+
+// patch_hardware_13, PSKEY_PATCH63 (0x2139, 8505), 25 words
+&2139 = 0002 67d5 0313 0d00 9480 042c db00 5415 0927 0917 db00 5425 0218 ff2b ff0e 6d00 5318 009e 0218 ff2b ff0e 6800 d818 00e2 9546
+
+// patch_hardware_14, PSKEY_PATCH64 (0x213a, 8506), 4 words
+&213a = 0004 3663 00e2 e15e
+
+// patch_hardware_15, PSKEY_PATCH65 (0x213b, 8507), 64 words
+&213b = 0002 4f44 cd00 0918 0016 db00 5c25 f100 6911 0009 07a4 1fc0 1314 e055 0c90 0036 0026 0118 ff2b ff0e 1900 7218 009e 01c4 0bf4 db00 5c11 cd00 0921 0218 ff2b ff0e 4f00 e318 00e2 0100 9c10 cd00 0921 0118 ff2b ff0e 1900 7218 009e db00 5c11 cd00 0921 e111 07f0 f100 5215 ff00 3bc4 f100 5225 0218 ff2b ff0e 4f00 4818 00e2 134c
+
+// explicit, PSKEY_ENABLE_CLOCK_SWITCHING (0x21a0, 8608), 1 words
+&21a0 = 0001
+
+// explicit, PSKEY_RX_ADC_CONFIG (0x21ad, 8621), 5 words
+&21ad = 3150 0040 1725 0f15 0c1b
+
+// explicit, PSKEY_LO_CAL_CONFIG (0x21ae, 8622), 17 words
+&21ae = 0001 0001 0000 0007 0004 0002 0000 1b19 0000 01cc 0395 0395 0004 0064 00c8 0001 028a
+
+// patch_init_patch, PSKEY_PATCH100 (0x21f4, 8692), 7 words
+&21f4 = d900 6915 10b4 d900 6925 00e2 82fb
+
+// patch_radiotest_update_atten, PSKEY_PATCH113 (0x2201, 8705), 52 words
+&2201 = f90b 0f9b 30f4 0d1b 1012 0009 08a4 e015 0fc4 0027 1012 0009 06a4 e015 03c4 0127 1012 0fc0 0223 0f16 0e12 0427 0323 e415 0010 0218 ff2b ff0e ef00 9718 009e e111 02e8 0070 0b1b 1f16 e019 e139 e189 05f8 0b1b 1f22 0114 06e0 e311 0b1b 1f22 2016 0134 2026 f90f eaa7
+
+// patch_lc_tx_event_int, PSKEY_PATCH118 (0x2206, 8710), 6 words
+&2206 = 0014 0134 2084 fe2c 00e2 f803
+
+// patch_sched_get_or_peek_message, PSKEY_PATCH124 (0x220c, 8716), 41 words
+&220c = fc0b 0517 0284 24f0 069b 22f0 1000 5b15 0027 e119 0016 1cf4 e119 0212 19f4 e019 0016 0284 15f0 0316 5000 2f84 11f0 0514 e035 0127 0516 f200 f325 f200 1711 011b 0216 f800 ffc4 0800 00c0 e0b5 0226 fc0f 16bc
+
+// patch_set_fm_freq, PSKEY_PATCH132 (0x2214, 8724), 39 words
+&2214 = 0617 5200 5484 05f4 4f00 2e84 02f4 00e2 db00 5b25 d100 1015 8000 ed54 0627 0100 c014 0727 00e2 0a18 db00 5429 ff18 db00 5529 f100 5219 4cb8 fe00 7fc8 f100 5229 0218 ff2b ff0e db00 5b19 00e2 a0a0
+
+// patch_fm_reg_shared_patchpoint, PSKEY_PATCH135 (0x2217, 8727), 40 words
+&2217 = 1600 3288 00f2 fa0b 091b 0010 9600 1814 f821 f925 0010 9600 c914 0223 0327 1088 16f0 0014 0027 0127 0210 4f00 b314 f819 f92b f919 f82b f90e f89f 0080 03f0 0084 06f4 0018 002b 012b 020e 039f fa0f ba31
+
+// patch_fm_tuner_shared_patchpoint, PSKEY_PATCH137 (0x2219, 8729), 39 words
+&2219 = 5100 7d88 16f4 4f00 c288 02f4 00e2 e315 e211 0100 c018 ff2b ff0e d100 4719 ff23 8000 009e 0218 ff2b ff0e 4f00 c218 00e2 0100 c018 ff2b ff0e d100 4819 8000 009e 0218 ff2b ff0e 5100 7d18 00e2 c727
+
+// patch_hal_fm_rx_shared_patchpoint, PSKEY_PATCH140 (0x221c, 8732), 24 words
+&221c = 2100 ce88 00f2 1400 8814 db00 5625 01a0 db00 5a25 1100 9a14 db00 5725 1500 8214 db00 5825 1600 e014 db00 5925 00e2 51ee
+
+// patch_hal_fm_tx_ana_shared_patchpoint, PSKEY_PATCH146 (0x2222, 8738), 14 words
+&2222 = 6700 2288 00f2 fe0b 0218 ff2b ff0e 6e00 ab18 009e db00 5425 fe0f 4939
+
+// patch_hal_tx_trim_shared_patchpoint, PSKEY_PATCH167 (0x2237, 8759), 61 words
+&2237 = 4700 dc88 00f2 fe0b 0110 a900 b114 f821 f925 029b 31f0 2314 f000 0025 fa00 9815 fdc4 fa00 9825 fa00 9d15 fcc4 fa00 9d25 fa00 9b15 fcc4 fa00 9b25 fa00 9c15 fcc4 01b4 fa00 9c25 0214 2610 f819 f92b f919 f82b f90e f89f 0084 0ff4 d100 4699 0cf4 d100 4615 8000 0054 0010 0100 c030 f827 f923 f90e f89f fe0f 58a2
+
+// patch_hal_clocks_deep_sleep, PSKEY_PATCH169 (0x2239, 8761), 15 words
+&2239 = ce00 ea15 0984 00f2 f900 1f99 00f6 021b 0114 0426 9200 0c14 0027 fe0f 9957
+
+// patch_spare1, PSKEY_PATCH186 (0x224a, 8778), 44 words
+&224a = f80b 0110 6000 9114 ff23 fe27 0110 5f00 2c14 0023 0127 0110 a900 d414 0223 0327 0110 3300 4814 0423 0527 0214 0310 ff0e fe9f 0300 7084 042c 6614 040e 059f 0214 000e 019f 0214 020e 039f fa00 9c15 fec4 fa00 9c25 f80f 828d
+
+// patch_spare2, PSKEY_PATCH187 (0x224b, 8779), 64 words
+&224b = ff0e ff27 db00 5418 0016 0154 24fc 0026 f100 6315 0236 0686 31f8 f100 6515 0484 25f8 f100 6215 0386 21fc 0586 27f8 0186 02f8 0126 fc3c 0210 4f00 b314 0023 0127 0010 0223 0323 3f00 8014 020e 9500 5b18 009e fa0f f100 5a11 0100 fa80 04fc 0700 0680 0cfc 0116 0386 09f8 f100 5215 ff00 3bc4 f100 5225 ff1b 02e2 ff1b 04e2 1bba
+
+// patch_spare3, PSKEY_PATCH188 (0x224c, 8780), 37 words
+&224c = 0417 0284 00f2 d900 6915 0100 80b4 d900 6925 cd00 0011 0914 cd00 0011 02c0 08f0 0118 ff2b ff0e 7900 ad18 009e 08e0 0010 0118 ff2b ff0e 7900 ff18 009e 0218 ff2b ff0e 5200 9f18 00e2 c379
+
+// explicit, PSKEY_GPS_BT_DCRS_AGC (0x2356, 9046), 4 words
+&2356 = 0001 0011 0007 0001

@@ -1,0 +1,22 @@
+# Selet this for platforms/machines that implemented code making
+# the CMA test device usable.
+config CMA_DEVICE_POSSIBLE
+	bool
+
+config CMA_DEVICE
+	tristate "CMA device"
+	depends on CMA
+	help
+	  The CMA misc device allows allocating contiguous memory areas
+	  from user space.  This is for testing of the CMA framework.
+
+	  If unsure, say "n"
+
+config HDMA_DEVICE
+	tristate "HDMA device"
+	depends on HDMA
+	help
+	  The HDMA misc device allows allocate and free whole memory in
+	  HDMA regions.
+
+	  If unsure, say "n"

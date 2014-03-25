@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_HQ_SIGNALS" discriminant="CSR_HQ_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrHqRegisterReq" resource="CSR_HQ_SIGNALS" dvalue="CsrHqRegisterReq">
+        <field name="phandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="varId">
+            <!-- varId to request subscription for -->
+            <type>CsrHqVarIdType</type>
+        </field>
+    </type>
+
+    <type name="CsrHqRegisterCfm" resource="CSR_HQ_SIGNALS" dvalue="CsrHqRegisterCfm">
+        <field name="varId">
+            <!-- varId to request subscription for -->
+            <type>CsrHqVarIdType</type>
+        </field>
+        <field name="result">
+            <!-- result of register attempt -->
+            <type>CsrHqResult</type>
+        </field>
+    </type>
+
+    <type name="CsrHqDeregisterReq" resource="CSR_HQ_SIGNALS" dvalue="CsrHqDeregisterReq">
+        <field name="phandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="varId">
+            <!-- varId to terminate subscription for -->
+            <type>CsrHqVarIdType</type>
+        </field>
+    </type>
+
+    <type name="CsrHqDeregisterCfm" resource="CSR_HQ_SIGNALS" dvalue="CsrHqDeregisterCfm">
+        <field name="varId">
+            <!-- varId to terminate subscription for -->
+            <type>CsrHqVarIdType</type>
+        </field>
+        <field name="result">
+            <!-- result of deregister attempt -->
+            <type>CsrHqResult</type>
+        </field>
+    </type>
+
+    <type name="CsrHqMsgInd" resource="CSR_HQ_SIGNALS" dvalue="CsrHqMsgInd">
+        <field name="cmdType">
+            <!-- HQ command type -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="seqNo">
+            <!-- sequence number of the HQ message -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="varId">
+            <!-- VarId of the HQ message -->
+            <type>CsrHqVarIdType</type>
+        </field>
+        <field name="payloadLength">
+            <!-- The length of the payload of the HQ message -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="payload" blocklength="payloadLength">
+            <!-- Pointer to the payload of the HQ message -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CSR_HQ_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrHqRegisterReq"                      value="0x0000"/>
+        <value name="CsrHqDeregisterReq"                    value="0x0001"/>
+
+        <value name="CsrHqRegisterCfm"                      value="0x8000"/>
+        <value name="CsrHqDeregisterCfm"                    value="0x8001"/>
+        <value name="CsrHqMsgInd"                           value="0x8002"/>
+    </type>
+
+    <!-- Special type for backward compatibility -->
+    <type name="CsrHqPrimType" resource="TYPE" size="16"/>
+
+    <type name="CsrHqVarIdType" resource="TYPE" size="16">
+        <value name="CSR_HQVARID_DELAYED_PANIC"             value="0x0800"/>
+        <value name="CSR_HQVARID_FAULT"                     value="0x1000"/>
+    </type>
+
+    <type name="CsrHqResult" resource="TYPE" type="CsrResult" const="1">
+        <value name="CSR_HQ_RESULT_NO_SUCH_VARID"           value="0x0001"/>
+    </type>
+
+</definitions>

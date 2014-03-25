@@ -1,0 +1,204 @@
+#!/bin/sh
+
+
+MMS_BUILD_DIR=$(pwd)
+MMS_TARGET="GENOAP"
+MMS_TARGET_ADD1="GENOAS"
+MMS_TARGET_ADD2="FIRENZE"
+MMS_TOOLCHAIN="${CROSS_COMPILE}"
+MMS_GLIB_INC1="${OPENSOURCE_DIR}/Graphics/2DToolkit/Glib/2.22.5/Inc/glib-2.0"
+MMS_GLIB_INC2="${OPENSOURCE_DIR}/Graphics/2DToolkit/Glib/2.22.5/Lib/${MMS_TARGET}/rel/glib-2.0/include"
+MMS_CFLAGS_DEBUG="-DLIBMMS_DEBUG"
+MMS_CONF_OPTION="--host=arm"
+MMS_CFLAGS="-Wall -O3 -fPIC -msoft-float -D_FILE_OFFSET_BITS=64"
+
+
+echo -e "\n\n======= START of MMS LIB (libmms.a) =======\n\n\n"
+
+if [ ! -e "${MMS_BUILD_DIR}"  -o ! -e "${OPENSOURCE_DIR}" ]; then
+echo -e "\n+++++++ export Error!!! +++++++\n\n"
+echo -e "pwd command  Failed :  [${MMS_BUILD_DIR}]\n"
+echo -e "\tOR\n"
+echo -e "OPENSOURCE_DIR  Error (export) :  [${OPENSOURCE_DIR}]\n\n\n"
+exit 1
+fi
+
+MMS_TOOLCHAIN_CC=`which ${CROSS_COMPILE}gcc`
+if [ $? != 0 ]; then
+echo -e "\n+++++++ configure variable Error!!! +++++++\n\n"
+echo -e "CROSS_COMPILE Error (export, path) :  [${CROSS_COMPILE}gcc]\n\n\n"
+exit 1
+fi
+MMS_TOOLCHAIN_CXX=`which ${CROSS_COMPILE}g++`
+if [ $? != 0 ]; then
+echo -e "\n+++++++ configure variable Error!!! +++++++\n\n"
+echo -e "CROSS_COMPILE Error (export, path) :  [${CROSS_COMPILE}g++]\n\n\n"
+exit 1
+fi
+MMS_TOOLCHAIN_AR=`which ${CROSS_COMPILE}ar`
+if [ $? != 0 ]; then
+echo -e "\n+++++++ configure variable Error!!! +++++++\n\n"
+echo -e "CROSS_COMPILE Error (export, path) :  [${CROSS_COMPILE}ar]\n\n\n"
+exit 1
+fi
+if [ ! -x "${MMS_TOOLCHAIN_CC}"  -o ! -x "${MMS_TOOLCHAIN_CXX}"  -o ! -x "${MMS_TOOLCHAIN_AR}" ]; then
+echo -e "\n+++++++ configure variable Error!!! +++++++\n\n"
+echo -e "MMS_TOOLCHAIN Error (auth) :  [${MMS_TOOLCHAIN_CC}], g++, ar\n\n\n"
+exit 1
+fi
+
+if [ ! -e "${MMS_GLIB_INC1}"  -o ! -e "${MMS_GLIB_INC2}" ]; then
+echo -e "\n+++++++ configure variable Error!!! +++++++\n\n"
+echo -e "MMS_GLIB_INC1 Not Exist :  [${MMS_GLIB_INC1}]\n"
+echo -e "\tOR\n"
+echo -e "MMS_GLIB_INC2 Not Exist :  [${MMS_GLIB_INC2}]\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n+++++++ configure (rel) +++++++\n\n"
+echo "./configure --prefix=${MMS_BUILD_DIR} ${MMS_CONF_OPTION} CC=${MMS_TOOLCHAIN_CC} CXX=${MMS_TOOLCHAIN_CXX} GLIB_CFLAGS=\"-I${MMS_GLIB_INC1} -I${MMS_GLIB_INC2}\" CFLAGS=\"${MMS_CFLAGS}\""
+./configure --prefix=${MMS_BUILD_DIR} ${MMS_CONF_OPTION} CC=${MMS_TOOLCHAIN_CC} CXX=${MMS_TOOLCHAIN_CXX} GLIB_CFLAGS="-I${MMS_GLIB_INC1} -I${MMS_GLIB_INC2}" CFLAGS="${MMS_CFLAGS}"
+if [ $? != 0 ]; then
+echo -e "\n======> configure error (rel)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n+++++++ make clean (rel) +++++++\n\n"
+make clean
+if [ $? != 0 ]; then
+echo -e "\n======> make clean error (rel)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n+++++++ make all (rel) +++++++\n\n"
+make all
+if [ $? != 0 ]; then
+echo -e "\n======> make all error (rel)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n+++++++ make install (rel) +++++++\n\n"
+make install
+if [ $? != 0 ]; then
+echo -e "\n======> make install error (rel)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n+++++++ static(.a) -> shared(.so) (rel) +++++++\n\n"
+rm -rf ./mms_tmp
+mkdir ./mms_tmp
+cd ./mms_tmp
+${MMS_TOOLCHAIN_AR} -x ../lib/libmms.a
+if [ $? != 0 ]; then
+echo -e "\n\n======> ar -x error (rel)\n\n\n"
+exit 1
+fi
+${MMS_TOOLCHAIN_CC} *.o -o libmms.so ${MMS_CFLAGS} -shared
+if [ $? != 0 ]; then
+echo -e "\n======> create shared library error (rel)\n\n\n"
+exit 1
+fi
+cd ../
+cp -vf ./mms_tmp/libmms.so ./lib/
+rm -rf ./mms_tmp
+
+echo -e "\n\n+++++++ cp libmms.a & header (rel) +++++++\n\n"
+cp -vf ./lib/libmms.so ../Lib/${MMS_TARGET}/rel/
+if [ $? != 0 ]; then
+echo -e "\n======> copy shared library (rel)\n\n\n"
+exit 1
+fi
+cp -vf ./lib/libmms.so ../Lib/${MMS_TARGET_ADD1}/rel/
+if [ $? != 0 ]; then
+echo -e "\n======> copy shared library (rel)\n\n\n"
+exit 1
+fi
+cp -vf ./lib/libmms.so ../Lib/${MMS_TARGET_ADD2}/rel/
+if [ $? != 0 ]; then
+echo -e "\n======> copy shared library (rel)\n\n\n"
+exit 1
+fi
+
+echo ""
+cp -vf ./src/*.h ./include/libmms/
+cp -vf ./src/*.h ../Inc/
+if [ $? != 0 ]; then
+echo -e "\n======> copy Include Header (rel)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n\n\n\n+++++++ configure (debug) +++++++\n\n"
+echo "./configure --prefix=${MMS_BUILD_DIR} ${MMS_CONF_OPTION} CC=${MMS_TOOLCHAIN_CC} CXX=${MMS_TOOLCHAIN_CXX} GLIB_CFLAGS=\"-I${MMS_GLIB_INC1} -I${MMS_GLIB_INC2}\" CFLAGS=\"${MMS_CFLAGS} ${MMS_CFLAGS_DEBUG}\""
+./configure --prefix=${MMS_BUILD_DIR} ${MMS_CONF_OPTION} CC=${MMS_TOOLCHAIN_CC} CXX=${MMS_TOOLCHAIN_CXX} GLIB_CFLAGS="-I${MMS_GLIB_INC1} -I${MMS_GLIB_INC2}" CFLAGS="${MMS_CFLAGS} ${MMS_CFLAGS_DEBUG}"
+if [ $? != 0 ]; then
+echo -e "\n======> configure error (debug)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n+++++++ make clean (debug) +++++++\n\n"
+make clean
+if [ $? != 0 ]; then
+echo -e "\n======> make clean error (debug)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n+++++++ make all (debug) +++++++\n\n"
+make all
+if [ $? != 0 ]; then
+echo -e "\n======> make all error (debug)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n+++++++ make install (debug) +++++++\n\n"
+make install
+if [ $? != 0 ]; then
+echo -e "\n======> make install error (debug)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n+++++++ static(.a) -> shared(.so) (debug) +++++++\n\n"
+rm -rf ./mms_tmp
+mkdir ./mms_tmp
+cd ./mms_tmp
+${MMS_TOOLCHAIN_AR} -x ../lib/libmms.a
+if [ $? != 0 ]; then
+echo -e "\n\n======> ar -x error (debug)\n\n\n"
+exit 1
+fi
+${MMS_TOOLCHAIN_CC} *.o -o libmms.so ${MMS_CFLAGS} ${MMS_CFLAGS_DEBUG} -shared
+if [ $? != 0 ]; then
+echo -e "\n======> create shared library error (debug)\n\n\n"
+exit 1
+fi
+cd ../
+cp -vf ./mms_tmp/libmms.so ./lib/
+rm -rf ./mms_tmp
+
+echo -e "\n\n+++++++ cp libmms.a & header (debug) +++++++\n\n"
+cp -vf ./lib/libmms.so ../Lib/${MMS_TARGET}/debug/
+if [ $? != 0 ]; then
+echo -e "\n======> copy shared library (debug)\n\n\n"
+exit 1
+fi
+cp -vf ./lib/libmms.so ../Lib/${MMS_TARGET_ADD1}/debug/
+if [ $? != 0 ]; then
+echo -e "\n======> copy shared library (debug)\n\n\n"
+exit 1
+fi
+cp -vf ./lib/libmms.so ../Lib/${MMS_TARGET_ADD2}/debug/
+if [ $? != 0 ]; then
+echo -e "\n======> copy shared library (debug)\n\n\n"
+exit 1
+fi
+
+echo ""
+cp -vf ./src/*.h ./include/libmms/
+cp -vf ./src/*.h ../Inc/
+if [ $? != 0 ]; then
+echo -e "\n======> copy Include Header (debug)\n\n\n"
+exit 1
+fi
+
+echo -e "\n\n\n\n======= END of MMS LIB (libmms.a) =======\n\n\n\n"
+
+

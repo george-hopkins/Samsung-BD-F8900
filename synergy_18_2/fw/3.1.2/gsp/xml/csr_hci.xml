@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_HCI_SIGNALS" discriminant="CSR_HCI_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+    <type name="csr_mblk_xml" resource="FILE" file="csr_mblk.xml"/>
+
+    <type name="CsrHciRegisterEventHandlerReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciRegisterEventHandlerReq">
+        <field name="queueId">
+            <!-- queueId to which incoming HCI events should be sent -->
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrHciRegisterEventHandlerCfm" resource="CSR_HCI_SIGNALS" dvalue="CsrHciRegisterEventHandlerCfm"/>
+
+    <type name="CsrHciRegisterAclHandlerReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciRegisterAclHandlerReq">
+        <field name="queueId">
+            <!-- queueId to which incoming HCI ACL data on a given acl handle should be sent -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="aclHandle">
+            <!-- the acl handle a given queueId wants to receive data from.
+                 NB: a value of 0xFFFF means that the queueId will receive incoming acl data
+                 from all handles which hasn't explicit been registred for by other queueIds -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrHciRegisterAclHandlerCfm" resource="CSR_HCI_SIGNALS" dvalue="CsrHciRegisterAclHandlerCfm">
+        <field name="aclHandle">
+            <!-- queueId to which incoming HCI events should be sent -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrHciUnregisterAclHandlerReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciUnregisterAclHandlerReq">
+        <field name="queueId">
+            <!-- queueId that wish to usubscribe from incoming HCI ACL data for a given acl handle -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="aclHandle">
+            <!-- the acl handle a given queueId wants to unsubscribe from -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrHciUnregisterAclHandlerCfm" resource="CSR_HCI_SIGNALS" dvalue="CsrHciUnregisterAclHandlerCfm">
+        <field name="aclHandle">
+            <!-- The acl handle a given task unsubscribed from -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrHciRegisterScoHandlerReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciRegisterScoHandlerReq">
+        <field name="queueId">
+            <!-- queueId to which incoming HCI SCO data on a given sco handle should be sent -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="scoHandle">
+            <!-- the sco handle a given queueId wants to receive sco data from -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrHciRegisterScoHandlerCfm" resource="CSR_HCI_SIGNALS" dvalue="CsrHciRegisterScoHandlerCfm">
+        <field name="scoHandle">
+            <!-- the sco handle registered to -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrHciUnregisterScoHandlerReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciUnregisterScoHandlerReq">
+        <field name="queueId">
+            <!-- queueId that wish to usubscribe from incoming HCI SCO data for a given sco handle -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="scoHandle">
+            <!-- the sco handle a given queueId wants to unsubscripe from -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrHciUnregisterScoHandlerCfm" resource="CSR_HCI_SIGNALS" dvalue="CsrHciUnregisterScoHandlerCfm">
+        <field name="scoHandle">
+            <!-- the sco handle unsubscriped from -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrHciRegisterVendorSpecificEventHandlerReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciRegisterVendorSpecificEventHandlerReq">
+        <field name="queueId">
+            <!-- queueId to which incoming vendor specific HCI event data on a given channel should be sent -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="channel">
+            <!-- the channel a given queueId wants to receive data from. NB: Valid ranges are 15-63 -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrHciRegisterVendorSpecificEventHandlerCfm" resource="CSR_HCI_SIGNALS" dvalue="CsrHciRegisterVendorSpecificEventHandlerCfm">
+        <field name="channel">
+            <!-- the channel a given queueId registred to -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrHciUnregisterVendorSpecificEventHandlerReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciUnregisterVendorSpecificEventHandlerReq">
+        <field name="queueId">
+            <!-- queueId that wish to usubscribe from incoming vendor specific HCI event data for a given channel -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="channel">
+            <!-- the channel a given queueId wants to receive data from. NB: Valid ranges for technologies are 15-63 -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrHciUnregisterVendorSpecificEventHandlerCfm" resource="CSR_HCI_SIGNALS" dvalue="CsrHciUnregisterVendorSpecificEventHandlerCfm">
+        <field name="channel">
+            <!-- the channel a given queueId unsubscribed from -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrHciCommandReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciCommandReq">
+        <field name="payloadLength">
+            <!-- length of the payload -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="payload" blocklength="payloadLength">
+            <!-- Pointer to complete formatted HCI command -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrHciEventInd" resource="CSR_HCI_SIGNALS" dvalue="CsrHciEventInd">
+        <field name="payloadLength">
+            <!-- length of the payload -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="payload" blocklength="payloadLength">
+            <!-- Pointer to complete formatted HCI event -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrHciAclDataReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciAclDataReq">
+        <field name="handlePlusFlags">
+            <!-- handle is 12 lsb, flags 4 msb -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="data">
+            <!-- Pointer to MBLK data -->
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CsrHciAclDataInd" resource="CSR_HCI_SIGNALS" dvalue="CsrHciAclDataInd">
+        <field name="handlePlusFlags">
+            <!-- handle is 12 lsb, flags 4 msb -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="data">
+            <!-- Pointer to MBLK data -->
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CsrHciScoDataReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciScoDataReq">
+        <field name="handlePlusFlags">
+            <!-- handle is 12 lsb, flags 4 msb -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="data">
+            <!-- Pointer to MBLK data -->
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CsrHciScoDataInd" resource="CSR_HCI_SIGNALS" dvalue="CsrHciScoDataInd">
+        <field name="handlePlusFlags">
+            <!-- handle is 12 lsb, flags 4 msb -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="data">
+            <!-- Pointer to MBLK data -->
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CsrHciVendorSpecificCommandReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciVendorSpecificCommandReq">
+        <field name="channel">
+            <!-- the channel on which data should be sent -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="data">
+            <!-- Pointer to MBLK data -->
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CsrHciVendorSpecificEventInd" resource="CSR_HCI_SIGNALS" dvalue="CsrHciVendorSpecificEventInd">
+        <field name="channel">
+            <!-- the channel on which data were received -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="data">
+            <!-- Pointer to MBLK data -->
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CsrHciIncomingDataReq" resource="CSR_HCI_SIGNALS" dvalue="CsrHciIncomingDataReq">
+        <field name="channel">
+            <!-- channel -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="dataLen">
+            <!-- reported data length from lower layers -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="data">
+            <!-- Pointer to incoming data -->
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CSR_HCI_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrHciRegisterEventHandlerReq"                 value="0x0000"/>
+        <value name="CsrHciRegisterAclHandlerReq"                   value="0x0001"/>
+        <value name="CsrHciUnregisterAclHandlerReq"                 value="0x0002"/>
+        <value name="CsrHciRegisterScoHandlerReq"                   value="0x0003"/>
+        <value name="CsrHciUnregisterScoHandlerReq"                 value="0x0004"/>
+        <value name="CsrHciRegisterVendorSpecificEventHandlerReq"   value="0x0005"/>
+        <value name="CsrHciUnregisterVendorSpecificEventHandlerReq" value="0x0006"/>
+        <value name="CsrHciCommandReq"                              value="0x0007"/>
+        <value name="CsrHciAclDataReq"                              value="0x0008"/>
+        <value name="CsrHciScoDataReq"                              value="0x0009"/>
+        <value name="CsrHciVendorSpecificCommandReq"                value="0x000A"/>
+        <value name="CsrHciIncomingDataReq"                         value="0x000B"/>
+
+        <value name="CsrHciRegisterEventHandlerCfm"                 value="0x8000"/>
+        <value name="CsrHciRegisterAclHandlerCfm"                   value="0x8001"/>
+        <value name="CsrHciUnregisterAclHandlerCfm"                 value="0x8002"/>
+        <value name="CsrHciRegisterScoHandlerCfm"                   value="0x8003"/>
+        <value name="CsrHciUnregisterScoHandlerCfm"                 value="0x8004"/>
+        <value name="CsrHciRegisterVendorSpecificEventHandlerCfm"   value="0x8005"/>
+        <value name="CsrHciUnregisterVendorSpecificEventHandlerCfm" value="0x8006"/>
+        <value name="CsrHciEventInd"                                value="0x8007"/>
+        <value name="CsrHciAclDataInd"                              value="0x8008"/>
+        <value name="CsrHciScoDataInd"                              value="0x8009"/>
+        <value name="CsrHciVendorSpecificEventInd"                  value="0x800A"/>
+    </type>
+</definitions>

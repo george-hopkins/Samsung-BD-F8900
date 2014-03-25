@@ -1,0 +1,101 @@
+#-*-Makefile-*-
+###############################################################################
+# YJKIM edited...
+# samsung synergy system..
+###############################################################################
+export CONFIG :=  samsung
+#export TARGET := pclin-2.6-x86
+export TARGET := pclin-2.6-arm
+export TARGET_PLATFORM := $(word 1,$(subst -, ,$(TARGET)))
+ifneq ($(TARGET_PLATFORM),pclin)
+cwd := $(shell pwd)
+ABCWD := $(shell cygpath -m -a $(cwd))
+else
+ABCWD := $(shell pwd)
+endif
+
+
+export SS_CODEC_SUPPORT :=0
+export HID_DRIVER_SUPPORT :=0
+export FW_ROOT := $(ABCWD)/fw/3.1.2
+export BT_ROOT := $(ABCWD)/bt/18.2.2
+
+
+#samsung release folder
+RELEASE_BIN :=bin
+RELEASE_INC :=inc
+RELEASE_LIB :=lib
+
+list:
+	@echo CONFIG =  $(CONFIG)
+	@echo TARGET =  $(TARGET)
+	@echo FW_ROOT = $(FW_ROOT)
+	@echo BT_ROOT = $(BT_ROOT)
+	@echo RELEASE_BIN = $(RELEASE_BIN)
+	@echo RELEASE_INC = $(RELEASE_INC)
+	@echo RELEASE_LIB = $(RELEASE_LIB)
+
+release:
+	@if [ -d $(RELEASE_BIN) ]; then echo "removing bin samsung area"; rm -rf $(RELEASE_BIN); fi
+	@if [ -d $(RELEASE_INC) ]; then echo "removing inc samsung area"; rm -rf $(RELEASE_INC); fi
+	@if [ -d $(RELEASE_LIB) ]; then echo "removing lib samsung area"; rm -rf $(RELEASE_LIB); fi
+	@echo "Making release area ..."
+	@mkdir -p $(RELEASE_BIN)
+	@mkdir -p $(RELEASE_INC)
+	@mkdir -p $(RELEASE_LIB)
+	@echo "Copying header files ..."
+	cp $(FW_ROOT)/bsp/inc/*.h $(RELEASE_INC) 
+	cp $(FW_ROOT)/bsp/ports/$(TARGET_PLATFORM)/inc/*.h $(RELEASE_INC)
+	cp $(FW_ROOT)/bsp/ports/$(TARGET_PLATFORM)/inc/platform/*.h $(RELEASE_INC)
+ifeq ($(TARGET),gen3audio-nucleus-arm)
+	cp $(FW_ROOT)/bsp/ports/$(TARGET_PLATFORM)/src/sched/*.h $(RELEASE_INC)
+endif	
+	cp $(FW_ROOT)/gsp/inc/*.h $(RELEASE_INC)
+	cp $(FW_ROOT)/config/csr_usr_config.h $(RELEASE_INC)
+	cp $(BT_ROOT)/inc/*.h $(RELEASE_INC)
+	cp $(BT_ROOT)/config/*.h $(RELEASE_INC)
+	cp $(BT_ROOT)/applications/inc/*.h $(RELEASE_INC)
+	cp $(BT_ROOT)/applications/common/*.h  $(RELEASE_INC)
+	cp $(BT_ROOT)/applications/bootstrap/*.h $(RELEASE_INC)
+	cp $(BT_ROOT)/applications/ss_inc/*.h $(RELEASE_INC)
+	cp $(BT_ROOT)/profile_managers/inc/*.h $(RELEASE_INC)
+	@echo "Copying lib files ..."
+	cp $(BT_ROOT)/output/$(CONFIG)/$(TARGET)/lib/app/libcsr_bt_ss_client_app.a  $(RELEASE_LIB)/libcsr_bt_ss_client_app.a
+	mergelib $(RELEASE_LIB)/libcsr_bt_ss_client_app.a $(FW_ROOT)/bsp/ports/$(TARGET_PLATFORM)/output/$(CONFIG)/$(TARGET)/lib/libcsr_panic.a
+	mergelib $(RELEASE_LIB)/libcsr_bt_ss_client_app.a $(FW_ROOT)/bsp/ports/$(TARGET_PLATFORM)/output/$(CONFIG)/$(TARGET)/lib/libcsr_pmem.a
+	mergelib $(RELEASE_LIB)/libcsr_bt_ss_client_app.a $(FW_ROOT)/bsp/ports/$(TARGET_PLATFORM)/output/$(CONFIG)/$(TARGET)/lib/libcsr_util.a
+	mergelib $(RELEASE_LIB)/libcsr_bt_ss_client_app.a $(BT_ROOT)/output/$(CONFIG)/$(TARGET)/lib/libcsr_socket.a
+	@echo "Copying bin ..."
+	cp $(BT_ROOT)/applications/ss_app/csr_bt_app_hci  $(RELEASE_BIN)/csr_bt_app_hci
+	cp $(BT_ROOT)/applications/ss_demo_test/ss_demo_test_app  $(RELEASE_BIN)/ss_demo_test_app
+
+
+fw_lib:
+	$(MAKE) -C $(FW_ROOT) lib CONFIG=$(CONFIG) TARGET=$(TARGET)
+
+bt_lib:
+	$(MAKE) -C $(BT_ROOT) app_lib CONFIG=$(CONFIG) TARGET=$(TARGET) SS_CODEC_SUPPORT=$(SS_CODEC_SUPPORT) HID_DRIVER_SUPPORT=$(HID_DRIVER_SUPPORT)
+
+fw_bin:fw_lib
+	$(MAKE) -C $(FW_ROOT) bin  CONFIG=$(CONFIG) TARGET=$(TARGET) 
+
+bt_bin:bt_lib
+	$(MAKE) -C $(BT_ROOT) bin CONFIG=$(CONFIG) TARGET=$(TARGET) SS_CODEC_SUPPORT=$(SS_CODEC_SUPPORT) HID_DRIVER_SUPPORT=$(HID_DRIVER_SUPPORT)
+	
+fw_clean:
+	$(MAKE) -C $(FW_ROOT) veryclean clean
+
+bt_clean:
+	$(MAKE) -C $(BT_ROOT) veryclean	
+
+lib:fw_lib bt_lib
+
+bin:fw_bin bt_bin
+
+all:bin release
+
+clean: fw_clean bt_clean
+
+veryclean:
+	$(MAKE) -C $(FW_ROOT) $@ clean
+	$(MAKE) -C $(BT_ROOT) $@ FW_ROOT=$(FW_ROOT) 

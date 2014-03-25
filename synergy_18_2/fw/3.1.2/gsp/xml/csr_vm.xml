@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_VM_SIGNALS" discriminant="CSR_VM_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrVmRegisterReq" resource="CSR_VM_SIGNALS" dvalue="CsrVmRegisterReq">
+        <field name="phandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrVmRegisterCfm" resource="CSR_VM_SIGNALS" dvalue="CsrVmRegisterCfm">
+        <field name="result">
+            <!-- Status information about the registration -->
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrVmDataReq" resource="CSR_VM_SIGNALS" dvalue="CsrVmDataReq">
+        <field name="payloadLength">
+            <!-- The length of the outgoing VM message -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="payload" blocklength="payloadLength">
+            <!-- Pointer to the outgoing VM message -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrVmDataInd" resource="CSR_VM_SIGNALS" dvalue="CsrVmDataInd">
+        <field name="payloadLength">
+            <!-- The length of the incoming VM message -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="payload" blocklength="payloadLength">
+            <!-- Pointer to the incoming VM message -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+
+    <type name="CSR_VM_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrVmRegisterReq"          value="0x0000"/>
+        <value name="CsrVmDataReq"              value="0x0001"/>
+
+        <value name="CsrVmRegisterCfm"          value="0x8000"/>
+        <value name="CsrVmDataInd"              value="0x8001"/>
+    </type>
+</definitions>

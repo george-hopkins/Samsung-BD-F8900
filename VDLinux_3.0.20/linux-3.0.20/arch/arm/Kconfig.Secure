@@ -1,0 +1,55 @@
+#menu Samsung
+
+## SELP Menu Start: config file  for SELP Features #############################
+## MS.PARK 08.07
+menu "CI+ Option"
+
+config EXECUTE_AUTHULD
+       default n
+       bool "Execute authuld program on background"
+       help
+         decide whether executing authuld
+
+config RSA2048
+	bool "RSA2048 setting"
+	default y if MSTAR_EDISON || ARCH_SDP1202 || ARCH_SDP1207 # X12, FoxP, FoxB
+        depends on EXECUTE_AUTHULD=y
+
+config SHUTDOWN
+        bool "Send shutdown signal to micom"
+        default n
+        depends on EXECUTE_AUTHULD=y
+        help
+          decide whether send "shutdown" to micom or not
+
+config AUTHULD_PATH
+        string "Path to authuld file"
+        default "/bin/authuld"
+        depends on EXECUTE_AUTHULD=y
+        help
+          Allows to redirect authuld files into specified location.
+
+config TIMEOUT_ACK_AUTHULD
+        int "Timout of authuld ack(minute)"
+        default 3
+        depends on EXECUTE_AUTHULD=y
+        help
+          if kernel do not get ACK from authuld, System will be down.
+
+config MOUNT_SECURITY
+	bool "security on mount command"
+	default n
+	help
+	  In case of release kernel build mode, This option will disable BIND option and apply NOEXEC option to all devices on mount command 
+
+config USE_ARS
+	bool "Anit RemoteShell Dummy function"
+	default n
+
+config PNACL
+	bool "Modification for PNaCl"
+	default n
+	
+endmenu # end of "CI+ Option" menu
+
+#endmenu

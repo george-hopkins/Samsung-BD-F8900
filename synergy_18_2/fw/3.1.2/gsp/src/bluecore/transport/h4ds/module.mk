@@ -1,0 +1,20 @@
+SRC+= \
+	csr_h4ds_transport.c \
+	csr_h4ds_event.c \
+	csr_h4ds_timers.c \
+	csr_h4ds_low_level_transport.c \
+	csr_h4ds_tx_handle.c \
+	csr_h4ds_initialize.c \
+	csr_h4ds_pump_msg.c \
+	ds_engine/csr_h4ds_init.c \
+	ds_engine/csr_h4ds_le.c \
+	ds_engine/csr_h4ds_msgs.c \
+	ds_engine/csr_h4ds_scanner.c \
+	ds_engine/csr_h4ds_tx.c \
+	ds_engine/csr_h4ds_ds.c \
+	ds_engine/csr_h4ds_rx.c \
+	ds_engine/csr_h4ds_pump.c \
+	h4/csr_h4_events.c \
+	h4/csr_h4_int_handle.c \
+	h4/csr_h4_tx.c \
+	h4/csr_h4_rx.c

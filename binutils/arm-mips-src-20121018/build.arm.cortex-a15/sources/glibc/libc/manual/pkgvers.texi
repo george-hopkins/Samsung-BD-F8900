@@ -1,0 +1,2 @@
+@set PKGVERSION (VDLinux.GA1.2012-10-03) 
+@set REPORT_BUGS_TO <http://www.eglibc.org/issues/>

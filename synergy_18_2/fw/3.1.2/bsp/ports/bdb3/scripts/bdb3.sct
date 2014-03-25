@@ -1,0 +1,18 @@
+
+RAM_LOAD 0x50000000 0xFD00000
+{
+    CODE_EXEC +0
+    {
+        __main.o (+RO, +FIRST)
+        * (+RO)
+    }
+
+    DATA_EXEC +0
+    {
+        * (+RW,+ZI)
+    }
+
+    ARM_LIB_STACKHEAP +0 EMPTY 0x1000000
+    {
+    }
+}

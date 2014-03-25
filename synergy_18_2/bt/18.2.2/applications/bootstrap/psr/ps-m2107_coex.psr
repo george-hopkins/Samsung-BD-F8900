@@ -1,0 +1,21 @@
+#//coex keys
+#//  PSKEY_TXRX_PIO
+# This needs to be set for the TX and RX to work on BT if you want to watch these pins 
+&0209 = 0001
+#//  PSKEY_TXRX_PIO_TX 
+&217F = 0001
+#//  PSKEY_TXRX_PIO_RX 
+&217E = 0004
+
+#// lc_combo_dot11_bt_timer_based = TRUE
+&22e4 = 0001
+#// lc_combo_dot11_channel_pio_base = Unity-3e (20)
+&002a = 0014
+#// lc_combo_disable_pio_mask = 0040 0000 0000
+&0028 = 0040 0000 0000
+#// lc_combo_dot11_pull_disable_mask = 0040
+&005a = 0040
+#// lc_combo_dot11_periodic_pio_mask = 0001 0000 (BT_PERIODIC on BC7 PIO[0])
+&005c = 0001 0000
+#// lc_combo_dot11_packet_priority = 0001 0001 0001 0001 0001 0001 0001 0002 0000 0001 0001 0000 0001
+&22e8 = 0001 0001 0001 0001 0001 0001 0001 0002 0001 0001 0001 0000 0001

@@ -1,0 +1,47 @@
+# Makefile for busybox
+#
+# Copyright (C) 1999-2005 by Erik Andersen <andersen@codepoet.org>
+#
+# Licensed under GPLv2, see file LICENSE in this source tree.
+
+NEEDED-$(CONFIG_E2FSCK) = y
+NEEDED-$(CONFIG_FSCK) = y
+NEEDED-$(CONFIG_MKE2FS) = y
+NEEDED-$(CONFIG_TUNE2FS) = y
+
+
+#libs-y                  += partitions\
+#			   topology\
+#			   superblocks\
+
+lib-y:=
+
+#lib-$(CONFIG_E2FSCK)     += blkid\partitions\partitions.o
+#lib-$(CONFIG_E2FSCK)     += blkid\topology\
+#lib-$(CONFIG_E2FSCK)     += blkid\superblocks\
+
+INSERT
+
+#lib-$(NEEDED-y) += cache.o dev.o devname.o devno.o blkid_getsize.o \
+#                  probe.o read.o resolve.o save.o tag.o list.o
+
+lib-$(NEEDED-y) += cache.o dev.o devname.o devno.o blkid_getsize.o linux_version.o canonicalize.o crc32.o md5.o \
+                   probe.o read.o resolve.o save.o tag.o encode.o llseek.o evaluate.o verify.o config.o getsize.o version.o tst_types.o blkdev.o
+
+CFLAGS_dev.o     := -include $(srctree)/include/busybox.h
+CFLAGS_devname.o := -include $(srctree)/include/busybox.h
+CFLAGS_devno.o   := -include $(srctree)/include/busybox.h
+CFLAGS_blkid_getsize.o := -include $(srctree)/include/busybox.h
+CFLAGS_probe.o   := -include $(srctree)/include/busybox.h
+CFLAGS_save.o    := -include $(srctree)/include/busybox.h
+CFLAGS_tag.o     := -include $(srctree)/include/busybox.h
+CFLAGS_encode.o     := -include $(srctree)/include/busybox.h
+CFLAGS_llseek.o     := -include $(srctree)/include/busybox.h
+CFLAGS_tst_types.o     := -include $(srctree)/include/busybox.h
+CFLAGS_evaluate.o     := -include $(srctree)/include/busybox.h
+CFLAGS_verify.o     := -include $(srctree)/include/busybox.h
+CFLAGS_config.o     := -include $(srctree)/include/busybox.h
+CFLAGS_getsize.o     := -include $(srctree)/include/busybox.h
+CFLAGS_version.o     := -include $(srctree)/include/busybox.h
+CFLAGS_blkdev.o     := -include $(srctree)/include/busybox.h
+#CFLAGS_list.o    := -include $(srctree)/include/busybox.h

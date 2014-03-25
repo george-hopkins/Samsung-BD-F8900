@@ -1,0 +1,48 @@
+[310] Changelog
+    1. Added driver wide return codes checking
+    2. Fixed problem with NULL pointer dereference, while mounting corrupted
+    volume
+    3. Fixed crash, when special files are created. Added transaction borders
+    for mknod system call
+    4. Fixed problem with absence hardlink information in snapshot, because
+    snapshot API was used incorrectly
+    5. Now extended superblocks are flashed only if snapshots are on, during
+    update metadata
+    6. Fixed coding style
+
+[300] Changelog
+    1. Fixed problem with special files (fifo, pipes, oth)
+    2. B-tree check during mount implemented (option btreecheck)
+    3. Fixed error path in fill_super function
+    4. Initialized inode->i_mode
+    5. Added checkin device existance on mount
+    6. Fixed unable to parse option bug
+    7. Fixed snapshot head writing (popo fix)
+
+[291] Changelog
+    1. Fixed problem with 'pipe' files
+ 
+[290] Changelog
+    1. Fixed: error snapshot completency flag is written in sync mode now
+       When snapshot is cleared the pages were written to disk after the completency flag was written. So sometimes not all pages were written, but the snapshot assumed to be complete. The flag is written strictly after all pages are written now
+    2. Zero all extents in fork
+    3. Function emmcfs_get_backtrace was added
+    4. Volume version checking implemented
+    5. License changed to "Samsung, Proprietary"
+    6. Date resolution in nanoseconds reenabled
+    7. Fixed mount fail for corrupted volume
+    8. Fixed error with snapshot_info->page_index (different metadata blocks were written to one snapshot block)
+
+[280] Changelog
+    1. Fixed : error restore from snapshot, read-before-write. Restore in sync mode now
+       When mounting in non sync mode we get an old data during snapshot restore. Now we restore data in sync mode, so we know that data will be restored before normal operation begins.
+    2. Fixed: sparse files trying to allocate blocks outside of the volume
+	Sparse files allocation was done outside the volume, because we check only start position of allocated space. Now we check allocated space length too.
+    3. Fixed: creation time and modification time corrected
+	Creation time was not set  and modification time was not update during operations. Now we fix it.
+    4. Fixed: all prevent errors
+    5. Fixed: corrected memory free procedures sequence during mounting non eMMCFS volume
+	In case of mount fail some subsystem was not initialize, but clean was called for all of them. Now we correct it and clean only nessesary subsystems.
+    6. Fixed: removed logging from destroy_super()
+	Logging functions use buffer and error was - we write to this buffer after it was deleted in destroy_super() function
+

@@ -1,0 +1,16 @@
+# PSKEY_FRUITBAT_XTAL_FREQ
+&0073 = 6590
+
+#// PSKEY_LC_MAX_TX_POWER
+&0017 = 0008
+
+#// PSKEY_CONDITIONAL_SCAN_ENABLE
+&0036 = 0001
+
+#// fm_api_transport = 2 (BCCMD)
+&20dc = 0002
+
+#// deep_sleep_state = DEEP_SLEEP_NEVER
+&0229 = 0000
+
+

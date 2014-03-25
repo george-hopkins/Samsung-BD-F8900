@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="TYPE"/>
+    <resource name="CONST"/>
+    <resource name="IP_SOCKET_SIGNALS" discriminant="CSR_IPSOCKET_Signal_Id"/>
+
+    <type name="CsrTypesXml"      resource="FILE" file="csr_types.xml"/>
+    <type name="CsrResultXml"     resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrIpSocketProtocol" resource="TYPE" size="8">
+        <value name="CSR_IP_SOCKET_PROTOCOL_IP"    value="0"/>
+        <value name="CSR_IP_SOCKET_PROTOCOL_ICMP"  value="1"/>
+        <value name="CSR_IP_SOCKET_PROTOCOL_TCP"   value="6"/>
+        <value name="CSR_IP_SOCKET_PROTOCOL_UDP"   value="17"/>
+    </type>
+
+    <type name="CsrIpSocketResult" resource="TYPE" type="CsrResult" const="1">
+        <!--  IP socket specific error codes -->
+        <value name="CSR_IP_SOCKET_RESULT_NO_MORE_SOCKETS"        value="0x0001"/>
+        <value name="CSR_IP_SOCKET_RESULT_PORT_IN_USE"            value="0x0002"/>
+    </type>
+
+    <type name="CsrIpSocketOption" resource="TYPE" size="8">
+        <value name="CSR_IP_SOCKET_OPTION_NAGLE"      value="1"/>
+        <value name="CSR_IP_SOCKET_OPTION_KEEPALIVE"  value="2"/>
+        <value name="CSR_IP_SOCKET_OPTION_BROADCAST"  value="4"/>
+        <value name="CSR_IP_SOCKET_OPTION_DSCP"       value="8"/>
+        <value name="CSR_IP_SOCKET_OPTION_RXWIN"      value="16"/>
+        <value name="CSR_IP_SOCKET_OPTION_TXWIN"      value="32"/>
+    </type>
+
+    <!-- Mask of CsrIpSocketOption values -->
+    <!-- TODO: define as derived from CsrIpSocketOption -->
+    <type name="CsrIpSocketOptionMask" resource="TYPE" size="8"/>
+
+    <type name="CsrIpSocketPriority" resource="TYPE" size="8">
+        <value name="CSR_IP_SOCKET_PRIORITY_DEFAULT"  value="0"/>
+        <value name="CSR_IP_SOCKET_PRIORITY_BE_0"     value="0"/>
+        <value name="CSR_IP_SOCKET_PRIORITY_BK_1"     value="8"/>
+        <value name="CSR_IP_SOCKET_PRIORITY_BK_2"     value="16"/>
+        <value name="CSR_IP_SOCKET_PRIORITY_BE_3"     value="24"/>
+        <value name="CSR_IP_SOCKET_PRIORITY_VI_4"     value="32"/>
+        <value name="CSR_IP_SOCKET_PRIORITY_VI_5"     value="40"/>
+        <value name="CSR_IP_SOCKET_PRIORITY_VO_6"     value="48"/>
+        <value name="CSR_IP_SOCKET_PRIORITY_VO_7"     value="56"/>
+    </type>
+
+    <type name="CsrIpSocketDnsResolveNameReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketDnsResolveNameReq">
+        <field name="appHandle">                         <type>CsrSchedQid</type></field>
+        <field name="name">                              <type>CsrCharString*</type></field>
+    </type>
+
+    <type name="CsrIpSocketDnsResolveNameCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketDnsResolveNameCfm">
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+        <field name="name">                              <type>CsrCharString*</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+
+    </type>
+
+    <type name="CsrIpSocketUdpNewReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpNewReq">
+        <field name="appHandle">                         <type>CsrSchedQid</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpNewCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpNewCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpBindReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpBindReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+        <field name="port">                              <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpBindCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpBindCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+        <field name="port">                              <type>CsrUint16</type></field>
+
+    </type>
+
+    <type name="CsrIpSocketUdpDataReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpDataReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+        <field name="port">                              <type>CsrUint16</type></field>
+        <field name="dataLength">                        <type>CsrUint16</type></field>
+        <field name="data" blocklength="dataLength">     <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpDataInd" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpDataInd">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+        <field name="port">                              <type>CsrUint16</type></field>
+        <field name="dataLength">                        <type>CsrUint16</type></field>
+        <field name="data" blocklength="dataLength">     <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpCloseReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpCloseReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpDataCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpDataCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpMulticastSubscribeReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpMulticastSubscribeReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="interfaceIp" array="4">             <type>CsrUint8</type></field>
+        <field name="group" array="4">                   <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpMulticastSubscribeCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpMulticastSubscribeCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="interfaceIp" array="4">             <type>CsrUint8</type></field>
+        <field name="group" array="4">                   <type>CsrUint8</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpMulticastUnsubscribeReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpMulticastUnsubscribeReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="interfaceIp" array="4">             <type>CsrUint8</type></field>
+        <field name="group" array="4">                   <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpMulticastUnsubscribeCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpMulticastUnsubscribeCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="interfaceIp" array="4">             <type>CsrUint8</type></field>
+        <field name="group" array="4">                   <type>CsrUint8</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpMulticastInterfaceReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpMulticastInterfaceReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="interfaceIp" array="4">             <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketUdpMulticastInterfaceCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketUdpMulticastInterfaceCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpNewReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpNewReq">
+        <field name="appHandle">                         <type>CsrSchedQid</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpNewCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpNewCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpBindReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpBindReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+        <field name="port">                              <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpBindCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpBindCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+        <field name="port">                              <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpListenReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpListenReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpListenCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpListenCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpConnectReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpConnectReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+        <field name="port">                              <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpConnectCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpConnectCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpAcceptInd" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpAcceptInd">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+        <field name="port">                              <type>CsrUint16</type></field>
+        <field name="listenSocketHandle">                <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpDataReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpDataReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="dataLength">                        <type>CsrUint16</type></field>
+        <field name="data" blocklength="dataLength">     <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpDataInd" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpDataInd">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="dataLength">                        <type>CsrUint16</type></field>
+        <field name="data" blocklength="dataLength">     <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpDataRes" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpDataRes">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpDataCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpDataCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpCloseReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpCloseReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpCloseInd" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpCloseInd">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketTcpAbortReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketTcpAbortReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketRawNewReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketRawNewReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="protocolNumber">                   <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketRawNewCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketRawNewCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketRawBindReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketRawBindReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketRawBindCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketRawBindCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="result">                            <type>CsrIpSocketResult</type></field>
+    </type>
+
+    <type name="CsrIpSocketRawDataReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketRawDataReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+        <field name="dataLength">                        <type>CsrUint16</type></field>
+        <field name="data" blocklength="dataLength">     <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketRawDataInd" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketRawDataInd">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="ipAddress" array="4">               <type>CsrUint8</type></field>
+        <field name="dataLength">                        <type>CsrUint16</type></field>
+        <field name="data" blocklength="dataLength">     <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpSocketRawCloseReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketRawCloseReq">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketRawDataCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketRawDataCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrIpSocketOptionsReq" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketOptionsReq">
+        <field name="txWindow">                          <type>CsrUint32</type></field>
+        <field name="rxWindow">                          <type>CsrUint32</type></field>
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="nagle">                             <type>CsrBool</type></field>
+        <field name="keepAlive">                         <type>CsrBool</type></field>
+        <field name="broadcast">                         <type>CsrBool</type></field>
+        <field name="dscp">                              <type>CsrIpSocketPriority</type></field>
+        <field name="validOptions">                      <type>CsrIpSocketOptionMask</type></field>
+    </type>
+
+    <type name="CsrIpSocketOptionsCfm" resource="IP_SOCKET_SIGNALS" dvalue="CsrIpSocketOptionsCfm">
+        <field name="socketHandle">                      <type>CsrUint16</type></field>
+        <field name="txWindow">                          <type>CsrUint32</type></field>
+        <field name="rxWindow">                          <type>CsrUint32</type></field>
+        <field name="nagle">                             <type>CsrBool</type></field>
+        <field name="keepAlive">                         <type>CsrBool</type></field>
+        <field name="broadcast">                         <type>CsrBool</type></field>
+        <field name="dscp">                              <type>CsrIpSocketPriority</type></field>
+        <field name="validOptions">                      <type>CsrIpSocketOptionMask</type></field>
+    </type>
+
+    <type name="CSR_IPSOCKET_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrIpSocketDnsResolveNameReq"                  value="0x0000"/>
+        <value name="CsrIpSocketUdpNewReq"                          value="0x0001"/>
+        <value name="CsrIpSocketUdpBindReq"                         value="0x0002"/>
+        <value name="CsrIpSocketUdpDataReq"                         value="0x0003"/>
+        <value name="CsrIpSocketUdpCloseReq"                        value="0x0004"/>
+        <value name="CsrIpSocketUdpMulticastSubscribeReq"           value="0x0005"/>
+        <value name="CsrIpSocketUdpMulticastUnsubscribeReq"         value="0x0006"/>
+        <value name="CsrIpSocketUdpMulticastInterfaceReq"           value="0x0007"/>
+        <value name="CsrIpSocketTcpNewReq"                          value="0x0008"/>
+        <value name="CsrIpSocketTcpBindReq"                         value="0x0009"/>
+        <value name="CsrIpSocketTcpListenReq"                       value="0x000A"/>
+        <value name="CsrIpSocketTcpConnectReq"                      value="0x000B"/>
+        <value name="CsrIpSocketTcpDataReq"                         value="0x000C"/>
+        <value name="CsrIpSocketTcpDataRes"                         value="0x000D"/>
+        <value name="CsrIpSocketTcpCloseReq"                        value="0x000E"/>
+        <value name="CsrIpSocketTcpAbortReq"                        value="0x000F"/>
+        <value name="CsrIpSocketRawNewReq"                          value="0x0010"/>
+        <value name="CsrIpSocketRawBindReq"                         value="0x0011"/>
+        <value name="CsrIpSocketRawDataReq"                         value="0x0012"/>
+        <value name="CsrIpSocketRawCloseReq"                        value="0x0013"/>
+        <value name="CsrIpSocketOptionsReq"                         value="0x0014"/>
+
+        <value name="CsrIpSocketDnsResolveNameCfm"                  value="0x8000"/>
+        <value name="CsrIpSocketUdpNewCfm"                          value="0x8001"/>
+        <value name="CsrIpSocketUdpBindCfm"                         value="0x8002"/>
+        <value name="CsrIpSocketUdpDataInd"                         value="0x8003"/>
+        <value name="CsrIpSocketUdpDataCfm"                         value="0x8004"/>
+        <value name="CsrIpSocketUdpMulticastSubscribeCfm"           value="0x8005"/>
+        <value name="CsrIpSocketUdpMulticastUnsubscribeCfm"         value="0x8006"/>
+        <value name="CsrIpSocketUdpMulticastInterfaceCfm"           value="0x8007"/>
+        <value name="CsrIpSocketTcpNewCfm"                          value="0x8008"/>
+        <value name="CsrIpSocketTcpBindCfm"                         value="0x8009"/>
+        <value name="CsrIpSocketTcpListenCfm"                       value="0x800A"/>
+        <value name="CsrIpSocketTcpConnectCfm"                      value="0x800B"/>
+        <value name="CsrIpSocketTcpAcceptInd"                       value="0x800C"/>
+        <value name="CsrIpSocketTcpDataCfm"                         value="0x800D"/>
+        <value name="CsrIpSocketTcpDataInd"                         value="0x800E"/>
+        <value name="CsrIpSocketTcpCloseInd"                        value="0x800F"/>
+        <value name="CsrIpSocketRawNewCfm"                          value="0x8010"/>
+        <value name="CsrIpSocketRawBindCfm"                         value="0x8011"/>
+        <value name="CsrIpSocketRawDataInd"                         value="0x8012"/>
+        <value name="CsrIpSocketRawDataCfm"                         value="0x8013"/>
+        <value name="CsrIpSocketOptionsCfm"                         value="0x8014"/>
+    </type>
+
+</definitions>
+
+
+
+
+
+
+
+

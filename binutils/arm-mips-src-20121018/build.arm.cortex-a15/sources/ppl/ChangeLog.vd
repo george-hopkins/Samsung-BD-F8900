@@ -1,0 +1,5 @@
+2012-04-18  Pavel Fedin <p.fedin@samsung.com>
+	JIRA: GA-5
+
+	- Fixed Makefile.am to build with automake v1.11.3
+	- Regenerated configure/Makefile.in files

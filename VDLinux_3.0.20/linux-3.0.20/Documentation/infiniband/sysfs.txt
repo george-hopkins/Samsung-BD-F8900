@@ -1,0 +1,17 @@
+SYSFS FILES
+
+  For each InfiniBand device, the InfiniBand drivers create the
+  following files under /sys/class/infiniband/<device name>:
+
+    node_type      - Node type (CA, switch or router)
+    node_guid      - Node GUID
+    sys_image_guid - System image GUID
+
+  In addition, there is a "ports" subdirectory, with one subdirectory
+  for each port.  For example, if mthca0 is a 2-port HCA, there will
+  be two directories:
+
+    /sys/class/infiniband/mthca0/ports/1
+    /sys/class/infiniband/mthca0/ports/2
+
+  (

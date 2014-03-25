@@ -1,0 +1,15 @@
+1. glibc_src_vdprint_getenv_getaddrinfo_dns_dlsym_20130227.tar.gz의 압축을 풉니다.
+2. glibc_src_vdprint_getenv_getaddrinfo_dns_dlsym_20130227/scripts/로 들어갑니다.
+3. mkglibc.sh를 이용하여 glibc를 빌드할 수 있습니다.
+
+
+[glibc]
+1. FoxP
+./mkglibc.sh -c toolchain.cfg/arm-v7a15.config -d ../sources/glibc
+2. X12, FoxB
+./mkglibc.sh -c toolchain.cfg/arm-v7a8.config -d ../sources/glibc
+3. X13
+./mkglibc.sh -c toolchain.cfg/mips-34kf.config -d ../sources/glibc
+4. NT13
+./mkglibc.sh -c toolchain.cfg/mips-24kc.config -d ../sources/glibc
+

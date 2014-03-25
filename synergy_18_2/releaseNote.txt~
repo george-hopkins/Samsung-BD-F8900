@@ -1,0 +1,58 @@
+[synergy samsung hts 2.08]
+1. AV_CONNECT_CFM,AVRC_CONNECT_CFM 메세지에 resultCode와 Supplier 추가
+2. Makefile에서 SAMSUNG CODEC 관련 옵션 삽입 (SS_CODEC_SUPPORT)
+3. AVRC_CT_PASS_THROUGH_IND 추가
+
+[synergy samsung hts 2.09]
+1. HIDH_CONNECT_ACCECT_REQ 추가: Connect accept를 보내면 device쪽에서 연결을 할수 있음
+2. HIDH_CONNECT_CONTROL_REQ 추가: option(hard_reset,soft_reset, suspend, exit_suspend,vc_unplug)은 csr_bt_hidh_prim.h 참조
+3. HIDH_DATA_IND추가: hid data
+4. HIDH_STATUS_IND 추가: hid status추가
+5. HIDH_CONNECT_ACCET_CFM 추가: hid accept cfm
+6. GAP_SC_ENCRIPTION_REQ/GAP_SC_ENCRIPTION_CFM: encrytion 관련 cmd 추가
+
+[synergy samsung hts 2.10]
+1. HIDH_DATA_IND 추가
+
+[synergy samsung hts 2.11]
+1. csr_gap_sc_passkey_res_cmd,csr_gap_sc_justworks_res_cmd 커맨더 추가및 수정
+   parameter 설명 
+     accept==> paring accept 설정
+     authorised==> TRUE: authorized device 이후 서비스 연결시 authorize 요청을 하지 않음
+                   FLASE: non authorized device 이후 서비스 연결시 authorize 요청함
+
+[synergy samsung hts 2.12]
+1. HIDH_CONNECT_REQ,HIDH_CONNECT_ACCEPCT_REQ, status error가 날경우 HIDH_CONNECT_CFM에서  status error로 보냄
+error stuts는  csr_bt_ss_prim.h의 아래의 값 참조
+#define HIDH_STATE_IDLE (hidhStates_t) 0x00
+#define HIDH_STATE_CONNECTED (hidhStates_t) 0x02
+#define HIDH_STATE_AWAIT_CONNECT (hidhStates_t) 0x03
+#define HIDH_STATE_UNPLUG (hidhStates_t) 0x04
+#define HIDH_STATE_RECONNECTING (hidhStates_t) 0x05
+#define HIDH_STATE_AWAIT_USER_REG (hidhStates_t) 0x06
+#define HIDH_NOF_STATES (hidhStates_t) 0x07   
+2.AV_CONNECT_REQ ,AV_CONNECTING_CANCEL_REQ,status error가 날경우 에서 AV_CONNECT_CFM에서 status error로 보냄
+error stuts는  csr_bt_ss_prim.h의 아래의 값 참조
+#define SsAvStateAvDisconnected         (SsAvStatesAvType) 0x00
+#define SsAvStateAvConnecting           (SsAvStatesAvType) 0x01
+#define SsAvStateAvDisconnectiong       (SsAvStatesAvType) 0x02
+#define SsAvStateAvConnected            (SsAvStatesAvType) 0x03
+#define SsAvStateAvConnectedOpen        (SsAvStatesAvType) 0x04
+#define SsAvStateAvConnectedStreaming   (SsAvStatesAvType) 0x05
+3.AVRC_CONNECT_REQ, AVRC_CONNECTING_CANCEL_REQ시 status error가 날경우 에서 AVRC_CONNECT_CFM에서 status error로 보냄 
+error stuts는 csr_bt_ss_prim.h의 아래의 값 참조
+#define SSAvStateAvrcpIdle  (SSAvStatesAvrcpType) 0x00
+#define SSAvStateAvrcpConnecting     (SSAvStatesAvrcpType) 0x02
+#define SSAvStateAvrcpDsiconnecting     (SSAvStatesAvrcpType) 0x03
+#define SSAvStateAvrcpConnected     (SSAvStatesAvrcpType) 0x04
+
+[synergy samsung hts 2.13]
+1. GAP_SC_PASSKEY_IND에 parameter추가[cod]
+2. GAP_SC_SSP_JUSTWORS_IND에 parameter추가[cod]
+3. GAP_SC_DEREGISGER_SCDB_CFM에 paramerter 삭제[result],  parameter 추가 [resultCode, resultSupplier] 
+4. GAP_SC_BOND_IND에 paramerter 삭제[result],  parameter 추가 [resultCode, resultSupplier] 
+
+[synergy samsung hts 2.14]
+1.AV_DISCONNECT_IND에  parameter추가[localTerminated]
+2. AVRC_DISCONNECT_IND에 parameter추가[CsrUint16 reasonCode,CsrUint16 reasonSupplier,CsrBool localTerminated]
+

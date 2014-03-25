@@ -1,0 +1,23 @@
+\form#0:$0$
+\form#1:$0 = 1$
+\form#2:$0 \leq 1$
+\form#3:$\Rset^0$
+\form#4:$le = 0 \pmod{m}$
+\form#5:$0 = 1 \pmod{0}$
+\form#6:$0 = 1 \pmod{1}$
+\form#7:$[\mathrm{first}, \mathrm{last})$
+\form#8:$e < 0$
+\form#9:$e \leq 0$
+\form#10:$e = 0$
+\form#11:$e \geq 0$
+\form#12:$e > 0$
+\form#13:$w$
+\form#14:$2^w$
+\form#15:$\frac{\mathrm{lb}}{\mathrm{d}} \leq \mathrm{var}' \leq \frac{\mathrm{ub}}{\mathrm{d}}$
+\form#16:$\mathrm{var}' \relsym \frac{\mathrm{le}}{\mathrm{d}}$
+\form#17:$\mathord{\relsym}$
+\form#18:$\mathrm{lhs}' \relsym \mathrm{rhs}$
+\form#19:$d$
+\form#20:$\pm v \leq r$
+\form#21:$\pm v < r$
+\form#22:$r \in \Qset$

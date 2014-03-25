@@ -1,0 +1,119 @@
+.\" ** You probably do not want to edit this file directly **
+.\" It was generated using the DocBook XSL Stylesheets (version 1.69.1).
+.\" Instead of manually editing it, you probably should edit the DocBook XML
+.\" source for it and then use the DocBook XSL Stylesheets to regenerate it.
+.TH "GSETTINGS" "1" "08/28/2012" "User Commands" "User Commands"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+gsettings \- GSettings configuration tool
+.SH "SYNOPSIS"
+.HP 10
+\fBgsettings\fR get \fISCHEMA\fR\ [:\fIPATH\fR]  \fIKEY\fR
+.HP 10
+\fBgsettings\fR monitor \fISCHEMA\fR\ [:\fIPATH\fR]  [\fIKEY\fR]
+.HP 10
+\fBgsettings\fR writable \fISCHEMA\fR\ [:\fIPATH\fR]  \fIKEY\fR
+.HP 10
+\fBgsettings\fR range \fISCHEMA\fR\ [:\fIPATH\fR]  \fIKEY\fR
+.HP 10
+\fBgsettings\fR set \fISCHEMA\fR\ [:\fIPATH\fR]  \fIKEY\fR \fIVALUE\fR
+.HP 10
+\fBgsettings\fR reset \fISCHEMA\fR\ [:\fIPATH\fR]  \fIKEY\fR
+.HP 10
+\fBgsettings\fR reset\-recursively \fISCHEMA\fR\ [:\fIPATH\fR] 
+.HP 10
+\fBgsettings\fR list\-schemas
+.HP 10
+\fBgsettings\fR list\-relocatable\-schemas
+.HP 10
+\fBgsettings\fR list\-keys \fISCHEMA\fR\ [:\fIPATH\fR] 
+.HP 10
+\fBgsettings\fR list\-children \fISCHEMA\fR\ [:\fIPATH\fR] 
+.HP 10
+\fBgsettings\fR list\-recursively [\fISCHEMA\fR\ [:\fIPATH\fR]]
+.HP 10
+\fBgsettings\fR help [\fICOMMAND\fR]
+.SH "DESCRIPTION"
+.PP
+\fBgsettings\fR
+offers a simple commandline interface to
+\fBGSettings\fR. It lets you get, set or monitor an individual key for changes.
+.PP
+The
+\fISCHEMA\fR
+and
+\fIKEY\fR
+arguments are required for most commands to specify the schema id and the name of the key to operate on. The schema id may optionally have a :\fIPATH\fR
+suffix. Specifying the path is only needed if the schema does not have a fixed path.
+.PP
+When setting a key, you also need specify a
+\fIVALUE\fR
+The format for the value is that of a serialized
+\fBGVariant\fR, so e.g. a string must include explicit quotes: "'foo'". This format is also used when printing out values.
+.SS "Commands"
+.TP
+\fBget\fR
+Gets the value of
+\fIKEY\fR. The value is printed out as a serialised
+\fBGVariant\fR.
+.TP
+\fBmonitor\fR
+Monitors
+\fIKEY\fR
+for changes and prints the changed values. If no
+\fIKEY\fR
+is specified, all keys in the schema are monitored. Monitoring will continue until the process is terminated.
+.TP
+\fBwritable\fR
+Finds out whether
+\fIKEY\fR
+is writable.
+.TP
+\fBrange\fR
+Queries the range of valid values for
+\fIKEY\fR.
+.TP
+\fBset\fR
+Sets the value of
+\fIKEY\fR
+to
+\fIVALUE\fR. The value is specified as a serialised
+\fBGVariant\fR.
+.TP
+\fBreset\fR
+Resets
+\fIKEY\fR
+to its default value.
+.TP
+\fBreset\-recursively\fR
+Reset all keys under the given
+\fISCHEMA\fR.
+.TP
+\fBlist\-schemas\fR
+Lists the installed, non\-relocatable schemas. See
+\fBlist\-relocatable\-schemas\fR
+if you are interested in relocatable schemas.
+.TP
+\fBlist\-relocatable\-schemas\fR
+Lists the installed, relocatable schemas. See
+\fBlist\-schemas\fR
+if you are interested in non\-relocatable schemas.
+.TP
+\fBlist\-keys\fR
+Lists the keys in
+\fISCHEMA\fR.
+.TP
+\fBlist\-children\fR
+Lists the children of
+\fISCHEMA\fR.
+.TP
+\fBlist\-recursively\fR
+Lists keys and values, recursively. If no
+\fISCHEMA\fR
+is given, list keys in all schemas.
+.TP
+\fBhelp\fR
+Prints help and exits.

@@ -1,0 +1,13 @@
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/additional-headers'
+copy directory /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/sources/additional-headers to /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/additional-headers
+tirpc/
+tirpc/rpcsvc/
+tirpc/rpcsvc/nis.h
+tirpc/rpcsvc/nis_tags.h
+tirpc/rpcsvc/nislib.h
+Install additional headers to support RPC 
+`tirpc' -> `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc'
+`tirpc/rpcsvc' -> `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc/rpcsvc'
+`tirpc/rpcsvc/nis.h' -> `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc/rpcsvc/nis.h'
+`tirpc/rpcsvc/nis_tags.h' -> `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc/rpcsvc/nis_tags.h'
+`tirpc/rpcsvc/nislib.h' -> `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc/rpcsvc/nislib.h'

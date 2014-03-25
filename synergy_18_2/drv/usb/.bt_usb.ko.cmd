@@ -1,0 +1,1 @@
+cmd_/home/matthew2/work/samsung/synergy_18_2/drv/usb/bt_usb.ko := ccache /usr/bin/ld -r -m elf_i386 -T /usr/src/linux-headers-3.2.0-33-generic/scripts/module-common.lds --build-id  -o /home/matthew2/work/samsung/synergy_18_2/drv/usb/bt_usb.ko /home/matthew2/work/samsung/synergy_18_2/drv/usb/bt_usb.o /home/matthew2/work/samsung/synergy_18_2/drv/usb/bt_usb.mod.o

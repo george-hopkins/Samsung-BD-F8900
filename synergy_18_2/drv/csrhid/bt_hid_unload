@@ -1,0 +1,12 @@
+#!/bin/sh
+module="bt_usb"
+device="bt_usb"
+
+# invoke rmmod with all arguments we got
+rmmod $module $* || exit 1
+
+# Remove stale nodes
+
+rm /dev/${device}*
+
+

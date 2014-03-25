@@ -1,0 +1,2 @@
+/home/matthew2/work/samsung/synergy_18_2/drv/usb/bt_usb.ko
+/home/matthew2/work/samsung/synergy_18_2/drv/usb/bt_usb_main.o /home/matthew2/work/samsung/synergy_18_2/drv/usb/usb_com.o /home/matthew2/work/samsung/synergy_18_2/drv/usb/usb_intf.o /home/matthew2/work/samsung/synergy_18_2/drv/usb/usb_queue.o /home/matthew2/work/samsung/synergy_18_2/drv/usb/usb_dfu.o

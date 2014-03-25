@@ -1,0 +1,9 @@
+
+if MACH_FPGA_GENOA
+
+config FPGA_GENOA_BUSCLKSRC
+	int "FPGA Bus clock source(#3 clock) frequency (Hz)"
+	default "35900000"
+
+endif
+

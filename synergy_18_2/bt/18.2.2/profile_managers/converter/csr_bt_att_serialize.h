@@ -1,0 +1,350 @@
+#ifndef CSR_BT_ATT_SERIALIZE_H__
+#define CSR_BT_ATT_SERIALIZE_H__
+/*****************************************************************************
+
+            (c) Cambridge Silicon Radio Limited 2010
+            All rights reserved and confidential information of CSR
+
+            Refer to LICENSE.txt included with this source for details
+            on the license terms.
+
+*****************************************************************************/
+
+/* Note: this is an auto-generated file. */
+
+#include "csr_types.h"
+
+#include "csr_synergy.h"
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void CsrBtAttPfree(void *ptr);
+
+#ifndef EXCLUDE_ATT_REGISTER_REQ
+CsrSize ATT_REGISTER_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_REGISTER_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_REGISTER_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_REGISTER_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_REGISTER_REQ */
+
+#ifndef EXCLUDE_ATT_EXCHANGE_MTU_CFM
+CsrSize ATT_EXCHANGE_MTU_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_EXCHANGE_MTU_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_EXCHANGE_MTU_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_EXCHANGE_MTU_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_EXCHANGE_MTU_CFM */
+
+#ifndef EXCLUDE_ATT_READ_BY_GROUP_TYPE_REQ
+CsrSize ATT_READ_BY_GROUP_TYPE_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_READ_BY_GROUP_TYPE_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_BY_GROUP_TYPE_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_READ_BY_GROUP_TYPE_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_READ_BY_GROUP_TYPE_REQ */
+
+#ifndef EXCLUDE_ATT_HANDLE_VALUE_CFM
+CsrSize ATT_HANDLE_VALUE_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_HANDLE_VALUE_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_HANDLE_VALUE_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_HANDLE_VALUE_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_HANDLE_VALUE_CFM */
+
+#ifndef EXCLUDE_ATT_DISCONNECT_IND
+CsrSize ATT_DISCONNECT_IND_TSizeof(void *msg);
+CsrUint8 *ATT_DISCONNECT_IND_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_DISCONNECT_IND_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_DISCONNECT_IND_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_DISCONNECT_IND */
+
+#ifndef EXCLUDE_ATT_READ_BY_TYPE_CFM
+CsrSize ATT_READ_BY_TYPE_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_READ_BY_TYPE_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_BY_TYPE_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_READ_BY_TYPE_CFM_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_READ_BY_TYPE_CFM */
+
+#ifndef EXCLUDE_ATT_FIND_INFO_CFM
+CsrSize ATT_FIND_INFO_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_FIND_INFO_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_FIND_INFO_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_FIND_INFO_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_FIND_INFO_CFM */
+
+#ifndef EXCLUDE_ATT_UNREGISTER_REQ
+CsrSize ATT_UNREGISTER_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_UNREGISTER_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_UNREGISTER_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_UNREGISTER_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_UNREGISTER_REQ */
+
+#ifndef EXCLUDE_ATT_CONNECT_IND
+CsrSize ATT_CONNECT_IND_TSizeof(void *msg);
+CsrUint8 *ATT_CONNECT_IND_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_CONNECT_IND_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_CONNECT_IND_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_CONNECT_IND */
+
+#ifndef EXCLUDE_ATT_REGISTER_CFM
+CsrSize ATT_REGISTER_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_REGISTER_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_REGISTER_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_REGISTER_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_REGISTER_CFM */
+
+#ifndef EXCLUDE_ATT_FIND_INFO_REQ
+CsrSize ATT_FIND_INFO_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_FIND_INFO_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_FIND_INFO_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_FIND_INFO_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_FIND_INFO_REQ */
+
+#ifndef EXCLUDE_ATT_ACCESS_RSP
+CsrSize ATT_ACCESS_RSP_TSizeof(void *msg);
+CsrUint8 *ATT_ACCESS_RSP_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_ACCESS_RSP_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_ACCESS_RSP_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_ACCESS_RSP */
+
+#ifndef EXCLUDE_ATT_HANDLE_VALUE_REQ
+CsrSize ATT_HANDLE_VALUE_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_HANDLE_VALUE_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_HANDLE_VALUE_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_HANDLE_VALUE_REQ_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_HANDLE_VALUE_REQ */
+
+#ifndef EXCLUDE_ATT_DISCONNECT_REQ
+CsrSize ATT_DISCONNECT_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_DISCONNECT_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_DISCONNECT_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_DISCONNECT_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_DISCONNECT_REQ */
+
+#ifndef EXCLUDE_ATT_CONNECT_REQ
+CsrSize ATT_CONNECT_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_CONNECT_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_CONNECT_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_CONNECT_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_CONNECT_REQ */
+
+#ifndef EXCLUDE_ATT_WRITE_CFM
+CsrSize ATT_WRITE_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_WRITE_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_WRITE_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_WRITE_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_WRITE_CFM */
+
+#ifndef EXCLUDE_ATT_CONNECT_CFM
+CsrSize ATT_CONNECT_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_CONNECT_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_CONNECT_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_CONNECT_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_CONNECT_CFM */
+
+#ifndef EXCLUDE_ATT_PREPARE_WRITE_CFM
+CsrSize ATT_PREPARE_WRITE_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_PREPARE_WRITE_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_PREPARE_WRITE_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_PREPARE_WRITE_CFM_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_PREPARE_WRITE_CFM */
+
+#ifndef EXCLUDE_ATT_ACCESS_IND
+CsrSize ATT_ACCESS_IND_TSizeof(void *msg);
+CsrUint8 *ATT_ACCESS_IND_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_ACCESS_IND_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_ACCESS_IND_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_ACCESS_IND */
+
+#ifndef EXCLUDE_ATT_HANDLE_VALUE_IND
+CsrSize ATT_HANDLE_VALUE_IND_TSizeof(void *msg);
+CsrUint8 *ATT_HANDLE_VALUE_IND_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_HANDLE_VALUE_IND_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_HANDLE_VALUE_IND_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_HANDLE_VALUE_IND */
+
+#ifndef EXCLUDE_ATT_ADD_CFM
+CsrSize ATT_ADD_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_ADD_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_ADD_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_ADD_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_ADD_CFM */
+
+#ifndef EXCLUDE_ATT_DEBUG_IND
+CsrSize ATT_DEBUG_IND_TSizeof(void *msg);
+CsrUint8 *ATT_DEBUG_IND_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_DEBUG_IND_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_DEBUG_IND_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_DEBUG_IND */
+
+#ifndef EXCLUDE_ATT_REMOVE_REQ
+CsrSize ATT_REMOVE_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_REMOVE_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_REMOVE_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_REMOVE_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_REMOVE_REQ */
+
+#ifndef EXCLUDE_ATT_READ_BLOB_CFM
+CsrSize ATT_READ_BLOB_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_READ_BLOB_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_BLOB_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_READ_BLOB_CFM_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_READ_BLOB_CFM */
+
+#ifndef EXCLUDE_ATT_PREPARE_WRITE_REQ
+CsrSize ATT_PREPARE_WRITE_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_PREPARE_WRITE_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_PREPARE_WRITE_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_PREPARE_WRITE_REQ_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_PREPARE_WRITE_REQ */
+
+#ifndef EXCLUDE_ATT_WRITE_REQ
+CsrSize ATT_WRITE_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_WRITE_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_WRITE_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_WRITE_REQ_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_WRITE_REQ */
+
+#ifndef EXCLUDE_ATT_FIND_BY_TYPE_VALUE_CFM
+CsrSize ATT_FIND_BY_TYPE_VALUE_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_FIND_BY_TYPE_VALUE_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_FIND_BY_TYPE_VALUE_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_FIND_BY_TYPE_VALUE_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_FIND_BY_TYPE_VALUE_CFM */
+
+#ifndef EXCLUDE_ATT_EXECUTE_WRITE_CFM
+CsrSize ATT_EXECUTE_WRITE_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_EXECUTE_WRITE_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_EXECUTE_WRITE_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_EXECUTE_WRITE_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_EXECUTE_WRITE_CFM */
+
+#ifndef EXCLUDE_ATT_READ_CFM
+CsrSize ATT_READ_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_READ_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_READ_CFM_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_READ_CFM */
+
+#ifndef EXCLUDE_ATT_ADD_DB_CFM
+CsrSize ATT_ADD_DB_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_ADD_DB_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_ADD_DB_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_ADD_DB_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_ADD_DB_CFM */
+
+#ifndef EXCLUDE_ATT_REMOVE_CFM
+CsrSize ATT_REMOVE_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_REMOVE_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_REMOVE_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_REMOVE_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_REMOVE_CFM */
+
+#ifndef EXCLUDE_ATT_EXCHANGE_MTU_REQ
+CsrSize ATT_EXCHANGE_MTU_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_EXCHANGE_MTU_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_EXCHANGE_MTU_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_EXCHANGE_MTU_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_EXCHANGE_MTU_REQ */
+
+#ifndef EXCLUDE_ATT_READ_BLOB_REQ
+CsrSize ATT_READ_BLOB_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_READ_BLOB_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_BLOB_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_READ_BLOB_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_READ_BLOB_REQ */
+
+#ifndef EXCLUDE_ATT_EXCHANGE_MTU_RSP
+CsrSize ATT_EXCHANGE_MTU_RSP_TSizeof(void *msg);
+CsrUint8 *ATT_EXCHANGE_MTU_RSP_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_EXCHANGE_MTU_RSP_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_EXCHANGE_MTU_RSP_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_EXCHANGE_MTU_RSP */
+
+#ifndef EXCLUDE_ATT_DISCONNECT_CFM
+CsrSize ATT_DISCONNECT_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_DISCONNECT_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_DISCONNECT_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_DISCONNECT_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_DISCONNECT_CFM */
+
+#ifndef EXCLUDE_ATT_UNREGISTER_CFM
+CsrSize ATT_UNREGISTER_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_UNREGISTER_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_UNREGISTER_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_UNREGISTER_CFM_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_UNREGISTER_CFM */
+
+#ifndef EXCLUDE_ATT_READ_MULTI_CFM
+CsrSize ATT_READ_MULTI_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_READ_MULTI_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_MULTI_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_READ_MULTI_CFM_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_READ_MULTI_CFM */
+
+#ifndef EXCLUDE_ATT_FIND_BY_TYPE_VALUE_REQ
+CsrSize ATT_FIND_BY_TYPE_VALUE_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_FIND_BY_TYPE_VALUE_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_FIND_BY_TYPE_VALUE_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_FIND_BY_TYPE_VALUE_REQ_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_FIND_BY_TYPE_VALUE_REQ */
+
+#ifndef EXCLUDE_ATT_CONNECT_RSP
+CsrSize ATT_CONNECT_RSP_TSizeof(void *msg);
+CsrUint8 *ATT_CONNECT_RSP_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_CONNECT_RSP_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_CONNECT_RSP_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_CONNECT_RSP */
+
+#ifndef EXCLUDE_ATT_READ_BY_GROUP_TYPE_CFM
+CsrSize ATT_READ_BY_GROUP_TYPE_CFM_TSizeof(void *msg);
+CsrUint8 *ATT_READ_BY_GROUP_TYPE_CFM_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_BY_GROUP_TYPE_CFM_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_READ_BY_GROUP_TYPE_CFM_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_READ_BY_GROUP_TYPE_CFM */
+
+#ifndef EXCLUDE_ATT_EXCHANGE_MTU_IND
+CsrSize ATT_EXCHANGE_MTU_IND_TSizeof(void *msg);
+CsrUint8 *ATT_EXCHANGE_MTU_IND_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_EXCHANGE_MTU_IND_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_EXCHANGE_MTU_IND_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_EXCHANGE_MTU_IND */
+
+#ifndef EXCLUDE_ATT_READ_REQ
+CsrSize ATT_READ_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_READ_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_READ_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_READ_REQ */
+
+#ifndef EXCLUDE_ATT_HANDLE_VALUE_RSP
+CsrSize ATT_HANDLE_VALUE_RSP_TSizeof(void *msg);
+CsrUint8 *ATT_HANDLE_VALUE_RSP_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_HANDLE_VALUE_RSP_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_HANDLE_VALUE_RSP_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_HANDLE_VALUE_RSP */
+
+#ifndef EXCLUDE_ATT_READ_BY_TYPE_REQ
+CsrSize ATT_READ_BY_TYPE_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_READ_BY_TYPE_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_BY_TYPE_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_READ_BY_TYPE_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_READ_BY_TYPE_REQ */
+
+#ifndef EXCLUDE_ATT_EXECUTE_WRITE_REQ
+CsrSize ATT_EXECUTE_WRITE_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_EXECUTE_WRITE_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_EXECUTE_WRITE_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+#define ATT_EXECUTE_WRITE_REQ_TSerFree CsrBtAttPfree
+#endif /* EXCLUDE_ATT_EXECUTE_WRITE_REQ */
+
+#ifndef EXCLUDE_ATT_READ_MULTI_REQ
+CsrSize ATT_READ_MULTI_REQ_TSizeof(void *msg);
+CsrUint8 *ATT_READ_MULTI_REQ_TSer(CsrUint8 *buffer, CsrSize *length, void *msg);
+void *ATT_READ_MULTI_REQ_TDes(CsrUint8 *buffer, CsrSize length);
+void ATT_READ_MULTI_REQ_TSerFree(void *msg);
+#endif /* EXCLUDE_ATT_READ_MULTI_REQ */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

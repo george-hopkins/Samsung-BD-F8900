@@ -1,0 +1,38 @@
+#-*-Makefile-*-
+###############################################################################
+#
+#                (c) Cambridge Silicon Radio Limited 2009
+#
+#                All rights reserved and confidential information of CSR
+#
+# REVISION:      $Revision: #1 $
+###############################################################################
+
+#
+# This makefile is included only from makefile.common. It is used to
+# allow a fairly crude dependency mechanism for applications to depend
+# on the main Synergy Bluetooth libraries.
+#
+
+DEPLIB_PATH = $(TOP)/output/$(CONFIG)/$(TARGET)/lib
+
+DEPLIBS = $(call lib_name,$(DEPLIB_PATH)/csr_bt) \
+	$(call lib_name,$(DEPLIB_PATH)/csr_bt_lib) \
+	$(call lib_name,$(DEPLIB_PATH)/csr_bt_corestack_$(BUILD_TYPE)) \
+	$(call lib_name,$(DEPLIB_PATH)/csr_bt_msg_converter) \
+	$(call lib_name,$(DEPLIB_PATH)/app/csr_bt_app_common_$(BUILD_TYPE)) \
+	$(call lib_name,$(DEPLIB_PATH)/csr_bt_bootstrap)
+
+# Main Synergy libraries
+$(call lib_name,$(DEPLIB_PATH)/csr_bt) \
+$(call lib_name,$(DEPLIB_PATH)/csr_bt_lib) \
+$(call lib_name,$(DEPLIB_PATH)/csr_bt_corestack_$(BUILD_TYPE)) \
+$(call lib_name,$(DEPLIB_PATH)/csr_bt_msg_converter):
+	$(MAKE) -C $(TOP) lib
+
+# Common application library
+$(call lib_name,$(DEPLIB_PATH)/app/csr_bt_app_common_$(BUILD_TYPE)):
+	$(MAKE) -C $(TOP)/applications/common -f makefile lib
+
+$(call lib_name,$(DEPLIB_PATH)/csr_bt_bootstrap):
+	$(MAKE) -C $(TOP)/applications/bootstrap -f makefile lib

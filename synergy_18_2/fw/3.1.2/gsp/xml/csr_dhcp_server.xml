@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_DHCP_SERVER_SIGNALS" discriminant="CSR_DHCP_SERVER_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+    <type name="csr_time_xml" resource="FILE" file="csr_time.xml"/>
+
+    <type name="CsrDhcpServerCreateReq" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerCreateReq">
+        <field name="qid">
+            <!-- Control task ID -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="ipAddress" array="4">
+            <!-- Address to listen to - if part of network it won't be announced -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="network" array="4">
+            <!-- Network to announce, e.g. 192.168.0.0 -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="networkMask" array="4">
+            <!-- Subnet Mask e.g. 255.255.255.0 -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="gateway" array="4">
+            <type>CsrUint8</type>
+        </field>
+        <field name="dns1" array="4">
+            <type>CsrUint8</type>
+        </field>
+        <field name="dns2" array="4">
+            <type>CsrUint8</type>
+        </field>
+        <field name="leaseTime">
+            <!-- Lease lifetime in hours, 0 == infinite -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerCreateCfm" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerCreateCfm">
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerDestroyReq" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerDestroyReq">
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerDestroyCfm" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerDestroyCfm">
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerStartReq" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerStartReq">
+        <!-- Enable/disable handing out releases
+             The server starts disabled. -->
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerStartCfm" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerStartCfm">
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerStopReq" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerStopReq">
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerStopCfm" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerStopCfm">
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerLeasesGetReq" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerLeasesGetReq">
+        <!-- Reqeust a dump of the current leases -->
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerLeasesGetCfm" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerLeasesGetCfm">
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+        <field name="leasesCount">
+            <type>CsrUint16</type>
+        </field>
+        <field name="leases" blocklength="leasesCount">
+            <type>CsrDhcpServerLease</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerLeasesSetReq" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerLeasesSetReq">
+        <!-- Set the current lease database.
+             Should only be done when server is stopped to ensure integrity.-->
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+        <field name="leasesCount">
+            <type>CsrUint16</type>
+        </field>
+        <field name="leases" blocklength="leasesCount">
+            <type>CsrDhcpServerLease</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerLeasesSetCfm" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerLeasesSetCfm">
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrDhcpServerRogueIpAddressInd" resource="CSR_DHCP_SERVER_SIGNALS" dvalue="CsrDhcpServerRogueIpAddressInd">
+        <field name="serverHandle">
+            <type>CsrDhcpServerHandle</type>
+        </field>
+        <field name="ipAddress" array="4">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CSR_DHCP_SERVER_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrDhcpServerCreateReq"                value="0x0000"/>
+        <value name="CsrDhcpServerDestroyReq"               value="0x0001"/>
+        <value name="CsrDhcpServerStartReq"                 value="0x0002"/>
+        <value name="CsrDhcpServerStopReq"                  value="0x0003"/>
+        <value name="CsrDhcpServerLeasesGetReq"             value="0x0004"/>
+        <value name="CsrDhcpServerLeasesSetReq"             value="0x0005"/>
+
+        <value name="CsrDhcpServerCreateCfm"                value="0x8000"/>
+        <value name="CsrDhcpServerDestroyCfm"               value="0x8001"/>
+        <value name="CsrDhcpServerStartCfm"                 value="0x8002"/>
+        <value name="CsrDhcpServerStopCfm"                  value="0x8003"/>
+        <value name="CsrDhcpServerLeasesGetCfm"             value="0x8004"/>
+        <value name="CsrDhcpServerLeasesSetCfm"             value="0x8005"/>
+        <value name="CsrDhcpServerRogueIpAddressInd"        value="0x8006"/>
+    </type>
+
+    <type name="CsrDhcpServerHandle" resource="TYPE" type="void*"/>
+
+    <type name="CsrDhcpServerLease" resource="TYPE">
+        <field name="ip" array="4">
+            <type>CsrUint8</type>
+        </field>
+        <field name="mac" array="6">
+            <type>CsrUint8</type>
+        </field>
+        <field name="expiryTime" >
+            <!-- If sec == 0xFFFFFFFF and msec == 0xFFFF the lease is infinite -->
+            <type>CsrTimeUtc</type>
+        </field>       
+    </type>
+
+</definitions>

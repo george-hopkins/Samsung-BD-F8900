@@ -1,0 +1,647 @@
+// =============================================================================
+// 
+// CSR tracking information, report this in case of problems:
+//   $Revision: #1 $
+//   Built Wed Nov 17 13:37:03 2010 GMT
+//   Checked-in $DateTime: 2011/11/01 19:02:39 $
+//   $File: //dkdepot/synergy/bt/release/18.2/applications/bootstrap/psr/pb-51r31_5985_bga.psr $
+// 
+// Patch is for build 5985 jem_6hci_rom_bt2.1_24_0904171732_encr128
+// 
+// Issues patched: B-54080, B-61735, B-62180, B-62695, B-62894, B-62946,
+//                 B-63000, B-63935, B-63980, B-64106, B-64399, B-64401,
+//                 B-64626, B-64749, B-65288, B-66534, B-66685, B-66691,
+//                 B-67382, B-67742, B-68637, B-71286, B-71662, B-71817,
+//                 B-73469, B-76172, B-77468, B-77977, B-81790, B-83837,
+//                 B-85968, B-91421
+// 
+// Documentation from pb-51-bga.pb
+// -------------------------------
+// 
+// General purpose patch and PSKEY bundle for BC7820 A12 BGA Package.
+// 
+// Documentation from bt_power_table.pb
+// ------------------------------------
+// 
+// Issues patched: B-64399
+// 
+// Non-default PSKEY settings aimed at improving Bluetooth performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches. 
+// 
+// Documentation from bt_pskeys.pb
+// -------------------------------
+// 
+// Issues patched: B-62946, B-66534, B-66691, B-71662, B-81790
+// 
+// Non-default PSKEY settings aimed at improving Bluetooth performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches. 
+// 
+// Documentation from fm_pskeys.pb
+// -------------------------------
+// 
+// Issues patched: B-61735, B-64401
+// 
+// Non-default PSKEY settings aimed at improving FM performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches. 
+// 
+// Alter FM(RX) WBRSSI Threshold to improve cross temperature behaviour.
+// 
+// Reduce slow clock retune threshold to improve FM Tx frequency stability.
+// 
+// Documentation from xap_config.pb
+// --------------------------------
+// 
+// Issues patched: B-54080
+// 
+// On BlueCore7, the processor configuration can be optimised for slightly
+// reduced runtime and hence small power consumption reductions.
+// 
+// Documentation from common_config.pb
+// -----------------------------------
+// 
+// Non-default PSKEY settings that do not address specific issues,
+// but are believed to be appropriate for all current applications
+// of this device so are included for convenience.
+// 
+// Assumptions made here include:
+//  - That an external 32kHz clock is supplied to the chip at all times.
+//    Operation of BlueCore7-FM without such a clock is not currently
+//    supported.
+// 
+// Documentation from patch_lc_request_ref_clk.xap
+// -----------------------------------------------
+// 
+// Issues patched: B-62180
+// 
+// BC7-FM performs periodic trims every minute. 
+// When the Bluetooth radio is not in use but the FM radio is in use, BC7-FM 
+// can operate without requesting the reference clock, and does not require 
+// the reference clock to perform the trims. However, a coding error causes 
+// it to raise clock request for the periodic trims.
+// 
+// Documentation from patch_invalid_temp.xap
+// -----------------------------------------
+// 
+// Issues patched: B-63935
+// 
+// Some BC7-FM parts have slightly lower ADC readings for the voltages used to
+// measure the chip's temperature. These readings fail a firmware range check
+// which is too strict. This means the firmware cannot measure the temperature,
+// causing temperature compensation on the radios to fail.
+// 
+// Documentation from patch_save_pa_lvl.xap
+// ----------------------------------------
+// 
+// Issues patched: B-63980
+// 
+// Some BC7 parts have been observed to drop to a low transmit power
+// immediately after a periodic radio trim.
+// 
+// Documentation from patch_bt_reg.xap
+// -----------------------------------
+// 
+// Issues patched: B-62894
+// 
+// On BC7, immediately after a periodic BT radio trim, the Bluetooth regulator
+// soft start mechanism may be disabled, causing >100mV dip on the 1V8 supply
+// (due to increased inrush current) the next time BlueCore wakes from deep
+// sleep.
+// 
+// Documentation from patch_rt_deep_sleep.xap
+// ------------------------------------------
+// 
+// Issues patched: B-64626
+// 
+// On BC7 parts with an FM receiver, issuing the Radiotest Deep_Sleep command
+// causes BlueCore to panic with panic code 0x52 (PANIC_FM_ADC). This was
+// caused by an attempt to turn off the FM receiver when it was not in use.
+// 
+// Hosts using the Radiotest Deep_Sleep command should ensure the FM TX and
+// RX are off before invoking it, by disabling them via the FM API if necessary.
+// 
+// Documentation from patch_pcm_config32_c.c
+// -----------------------------------------
+// 
+// Issues patched: B-62695
+// 
+// Allows the host to use the PCM_CONFIG32 BCCMD to dynamically change
+// some PCM settings, for example, PCM mute.
+// 
+// Documentation from patch_reg_voltage_c.c
+// ----------------------------------------
+// 
+// Issues patched: B-63000
+// 
+// If the Vss_aux_bt_lo ball is not soldered down correctly, the chip
+// will emit FAULT_ANA_REG_VOLTAGE (hardware error 0x66). This is a diagnostic
+// to enable customers to detect soldering problems.
+// 
+// Documentation from patch_kcodec_rate_c.c
+// ----------------------------------------
+// 
+// Issues patched: B-83837
+// 
+// Change the stereo codec ADC/DAC rate on the fly during
+// FM receive based on RSSI measurements. This is to improve
+// the signal to noise ratio of the received audio.
+// This patch can safely be used if a digital output is being
+// for FM receive, although it will have no effect.
+// 
+// Documentation from patch_fm_tx_mux_sel.xap
+// ------------------------------------------
+// 
+// Issues patched: B-65288
+// 
+// On BC7-FM A12, the FM transmit RF output could occasionally be disturbed by
+// switching an internal monitor function used periodically to check correct
+// operation. This function has now been permanently enabled while FM transmit
+// is active.
+// 
+// Documentation from patch_hal_fm_tx_align_trim_part1.xap
+// -------------------------------------------------------
+// 
+// Issues patched: B-64749
+// 
+// In some conditions the FM transmit antenna tuning could select non-optimal
+// parameters leading to a loss of output power.
+// 
+// Documentation from patch_hal_fm_tx_align_trim_part2.c
+// -----------------------------------------------------
+// 
+// Issues patched: B-64749
+// 
+// In some conditions the FM transmit antenna tuning could select non-optimal
+// parameters leading to a loss of output power.
+// 
+// Documentation from patch_hal_fm_tx_check_amp_init.xap
+// -----------------------------------------------------
+// 
+// Issues patched: B-66685
+// 
+// A12 FM TX shows power drop outs at high temperature
+// 
+// Documentation from patch_hal_fm_tx_check_amp.xap
+// ------------------------------------------------
+// 
+// Issues patched: B-66685
+// 
+// A12 FM TX shows power drop outs at high temperature
+// 
+// Documentation from patch_fm_search_extra_check.xap
+// --------------------------------------------------
+// 
+// Issues patched: B-64106
+// 
+// Adds additional checking to improve FM search performance
+// The criteria previously used for the search were not always sufficient
+// to distinguish good stations when a low search level is used.
+// 
+// Documentation from patch_fm_skew.xap
+// ------------------------------------
+// 
+// Issues patched: B-67382
+// 
+// The FM RX sensitivity at 96 MHz is poor.
+// 
+// Documentation from patch_lc_pause_all_data.xap
+// ----------------------------------------------
+// 
+// Issues patched: B-67742
+// 
+// If BlueCore was performing a role switch as part of the connection creation
+// procedure it paused all ACL user data on all links until the role switch
+// completed. This could cause an interruption of 150 to 200 ms in the data
+// flow. For some use cases, such as A2DP streaming, this could cause user
+// observable effects (audio glitches in the A2DP case). Analysis of the
+// firmware and LM sequencing for this scenario has revealed that this pause is
+// not necessary and so it has been removed. There will still be some disruption
+// of user data flow simply as the result of now having two links to service, at
+// least one of which BlueCore is slave of. However, the duration should now be
+// much reduced - to roughly the poll interval (25 ms by default).
+// 
+// Documentation from patch_lc_tx_event.xap
+// ----------------------------------------
+// 
+// Issues patched: B-68637
+// 
+// When transmitting 2DH packets, for packet lengths that produce a time-length
+// that is a multiple of 50 us (for example, 656 byte 2DH5 packets), the packets 
+// may fail the DEVM specification for the last symbol. This is a marginal 
+// failure and is unlikely to affect correct packet decoding.
+// 
+// Documentation from patch_radiotest_rxdata1.xap
+// ----------------------------------------------
+// 
+// Issues patched: B-73469
+// 
+// Radiotest RXDATA1 test is not returning an RSSI value  
+// 
+// Documentation from patch_fm_search_rssi_fix.xap
+// -----------------------------------------------
+// 
+// Issues patched: B-71817
+// 
+// Adds further checking to improve FM search.
+// This uses additional information to further improve the performance
+// when seaching for FM stations. 
+// 
+// Documentation from patch_slept_cycles.xap
+// -----------------------------------------
+// 
+// Issues patched: B-71286
+// 
+// Under some circumstances, BlueCore may mis-time deep sleep and 
+// miss sniff instants.
+// 
+// Documentation from patch_hal_audio_codec.xap
+// --------------------------------------------
+// 
+// Issues patched: B-76172
+// 
+// High sleep current after turning FM RX off
+// 
+// Documentation from patch_fm_search_cancel.c
+// -------------------------------------------
+// 
+// Issues patched: B-77977
+// 
+// On BlueCore7-FM, sending a FM API TUNER_MODE_SET command with mode=0 (cancel) 
+// with a search in progress could make the chip become unresponsive. 
+// 
+// Documentation from patch_reset_sco_scat.xap
+// -------------------------------------------
+// 
+// Issues patched: B-77468
+// 
+// Prevent BlueCore getting stuck in the scatternet pathology work around mode,
+// which prevents the resultant loss of data streaming bandwidth.
+// 
+// Documentation from patch_fm_read_rssi.c
+// ---------------------------------------
+// 
+// Issues patched: B-85968
+// 
+// Read PSKEY_FM_HARMONIC_RSSI_THRESHOLD (0x252A) to check if the
+// RSSI for the harmonic frequency is greater than the expected value
+// in the PS key before reporting to the host.
+// 
+// Documentation from patch_fm_search_harmonic_rssi_check.xap
+// ----------------------------------------------------------
+// 
+// Issues patched: B-64106
+// 
+// Adds yet more checking to improve FM search performance
+// For clock harmonics an extra check on RSSI is performed
+// 
+// Documentation from patch_wlst.c
+// -------------------------------
+// 
+// Issues patched: B-91421
+// 
+// If BlueCore receives an HCI_Write_Link_Supervision_Timeout during an
+// ongoing operation, and that operation causes WLST to fail, then the
+// device can lose an HCI flow control token (usually leaving 0 free).
+// 
+// The firmware has been amended to ensure the WLST failure response
+// causes release of its token.
+// 
+// Documentation from patch_casual_scan.xap
+// ----------------------------------------
+// 
+// Enabling casual scan on BC7 may cause the chip to become unresponsive
+// on waking from deep sleep to perform the scan. Because of this,
+// casual scan has been disabled in this patch.
+// 
+// Version information for input files
+// -----------------------------------
+// 
+// Created by patchmaker.pl Revision: #41  Date: 2010/07/07 
+// 
+// Input file: pb-51-bga.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/pb-51-bga.pb
+// File revision: 3
+// 
+// Input file: bt_power_table.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/bt_power_table.pb
+// File revision: 1
+// 
+// Input file: pb-51-common.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/pb-51-common.pb
+// File revision: 30
+// 
+// Input file: 5985-common-base.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/5985-common-base.pb
+// File revision: 3
+// 
+// Input file: bt_pskeys.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/bt_pskeys.pb
+// File revision: 11
+// 
+// Input file: fm_pskeys.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/fm_pskeys.pb
+// File revision: 5
+// 
+// Input file: xap_config.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/xap_config.pb
+// File revision: 1
+// 
+// Input file: patch_hal_fm_tx_align_trim.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_hal_fm_tx_align_trim.pb
+// File revision: 1
+// 
+// Input file: patch_hal_fm_tx_check_amp.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_hal_fm_tx_check_amp.pb
+// File revision: 1
+// 
+// Input file: common_config.pb
+// Depot file: //depot/bc/unified-24/dev/patches/5985/common_config.pb
+// File revision: 1
+// 
+// Input file: patch_lc_request_ref_clk.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_lc_request_ref_clk.xap
+// File revision: 2
+// 
+// Input file: ../patch_utils.inc
+// Depot file: //depot/bc/unified-24/dev/patches/patch_utils.inc
+// File revision: 3
+// 
+// Input file: patch_invalid_temp.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_invalid_temp.xap
+// File revision: 2
+// 
+// Input file: patch_save_pa_lvl.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_save_pa_lvl.xap
+// File revision: 2
+// 
+// Input file: patch_bt_reg.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_bt_reg.xap
+// File revision: 1
+// 
+// Input file: patch_rt_deep_sleep.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_rt_deep_sleep.xap
+// File revision: 1
+// 
+// Input file: patch_pcm_config32_c.c
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_pcm_config32_c.c
+// File revision: 1
+// 
+// Input file: patch_reg_voltage_c.c
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_reg_voltage_c.c
+// File revision: 1
+// 
+// Input file: patch_kcodec_rate_c.c
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_kcodec_rate_c.c
+// File revision: 7
+// 
+// Input file: patch_fm_tx_mux_sel.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_fm_tx_mux_sel.xap
+// File revision: 2
+// 
+// Input file: patch_hal_fm_tx_align_trim_part1.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_hal_fm_tx_align_trim_part1.xap
+// File revision: 3
+// 
+// Input file: patch_hal_fm_tx_align_trim_part2.c
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_hal_fm_tx_align_trim_part2.c
+// File revision: 4
+// 
+// Input file: patch_hal_fm_tx_check_amp_init.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_hal_fm_tx_check_amp_init.xap
+// File revision: 2
+// 
+// Input file: patch_hal_fm_tx_check_amp.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_hal_fm_tx_check_amp.xap
+// File revision: 4
+// 
+// Input file: patch_fm_search_extra_check.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_fm_search_extra_check.xap
+// File revision: 9
+// 
+// Input file: patch_fm_skew.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_fm_skew.xap
+// File revision: 1
+// 
+// Input file: patch_lc_pause_all_data.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_lc_pause_all_data.xap
+// File revision: 3
+// 
+// Input file: patch_lc_tx_event.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_lc_tx_event.xap
+// File revision: 1
+// 
+// Input file: patch_radiotest_rxdata1.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_radiotest_rxdata1.xap
+// File revision: 1
+// 
+// Input file: patch_fm_search_rssi_fix.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_fm_search_rssi_fix.xap
+// File revision: 3
+// 
+// Input file: patch_slept_cycles.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_slept_cycles.xap
+// File revision: 1
+// 
+// Input file: patch_hal_audio_codec.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_hal_audio_codec.xap
+// File revision: 5
+// 
+// Input file: patch_fm_search_cancel.c
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_fm_search_cancel.c
+// File revision: 4
+// 
+// Input file: patch_reset_sco_scat.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_reset_sco_scat.xap
+// File revision: 4
+// 
+// Input file: patch_fm_read_rssi.c
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_fm_read_rssi.c
+// File revision: 2
+// 
+// Input file: patch_fm_search_harmonic_rssi_check.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_fm_search_harmonic_rssi_check.xap
+// File revision: 8
+// 
+// Input file: patch_wlst.c
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_wlst.c
+// File revision: 1
+// 
+// Input file: patch_casual_scan.xap
+// Depot file: //depot/bc/unified-24/dev/patches/5985/patch_casual_scan.xap
+// File revision: 3
+
+// explicit, PSKEY_LC_MAX_TX_POWER (0x0017, 23), 1 words
+&0017 = 0008
+
+// explicit, PSKEY_PROG_BRANCH_MODE (0x03a1, 929), 1 words
+&03a1 = 0003
+
+// explicit, PSKEY_DEEP_SLEEP_USE_EXTERNAL_CLOCK (0x03c3, 963), 1 words
+&03c3 = 0001
+
+// explicit, PSKEY_FM_AGC_THRESH_RSSI (0x20ee, 8430), 1 words
+&20ee = 7852
+
+// explicit, PSKEY_FM_CLOCKSKEW_FREQS (0x210d, 8461), 8 words
+&210d = 4da8 4e98 6ce8 6dd8 8c28 8d18 ab68 ac58
+
+// explicit, PSKEY_FM_BT_SKEW_FREQS (0x2127, 8487), 12 words
+&2127 = 4de4 4e5c 01a3 6d24 6d9c 01a3 8c64 8cdc 01a3 aba4 ac1c 01a3
+
+// patch_hardware_0, PSKEY_PATCH50 (0x212c, 8492), 31 words
+&212c = 0001 1152 4c1b 0016 0300 1284 12f4 0014 e411 4a30 0118 ff2b ff0e 5400 5818 009e 0084 07f0 0118 ff2b ff0e 1100 5918 00e2 0118 ff2b ff0e 1100 7218 00e2 c131
+
+// patch_hardware_1, PSKEY_PATCH51 (0x212d, 8493), 26 words
+&212d = 0001 1da4 0118 ff2b ff0e 5400 5818 009e 0084 0af0 0214 0218 ff2b ff0e 4200 8218 009e 0014 fe0f 0118 ff2b ff0e 1e00 a818 00e2 b6eb
+
+// patch_hardware_2, PSKEY_PATCH52 (0x212e, 8494), 14 words
+&212e = 0002 33c0 0784 09f0 f200 a615 fe00 0fc4 0200 c0b4 f200 a625 fe0f d39e
+
+// patch_hardware_3, PSKEY_PATCH53 (0x212f, 8495), 50 words
+&212f = 0002 2fd8 0100 c018 ff2b ff0e d200 2e19 8000 009e 0100 c018 ff2b ff0e d200 2f19 8000 009e 0100 c018 ff2b ff0e d200 3019 8000 009e 0100 c018 ff2b ff0e d200 3119 8000 009e 0100 c018 ff2b ff0e d200 3219 8000 009e 0018 ff2b ff0e ef00 dd18 009e f80f da7e
+
+// patch_hardware_4, PSKEY_PATCH54 (0x2130, 8496), 9 words
+&2130 = 0002 3033 0218 ff2b ff0e 3000 7318 00e2 4317
+
+// patch_hardware_5, PSKEY_PATCH55 (0x2131, 8497), 10 words
+&2131 = 0002 3228 2014 0218 ff2b ff0e 3200 5118 00e2 410f
+
+// patch_hardware_6, PSKEY_PATCH56 (0x2132, 8498), 33 words
+&2132 = 0001 7c17 7c00 3c14 fb00 6625 fb00 6715 0f34 fb00 6725 0118 ff2b ff0e 7c00 2518 00e2 7c00 1714 fb00 6625 fb00 6715 0f54 fb00 6725 0118 ff2b ff0e 7c00 4418 00e2 857d
+
+// patch_hardware_7, PSKEY_PATCH57 (0x2133, 8499), 47 words
+&2133 = 0002 17b8 0018 ff2b ff0e d100 5218 009e 0018 ff2b ff0e d200 8118 009e dc00 df15 18f4 f825 dc00 de15 ff27 ce00 1e15 f925 0010 e019 ff3b 0016 f985 05f4 0230 f881 08f4 f8e0 0116 ce00 1885 03fc 0114 0427 0218 ff2b ff0e 1800 bb18 00e2 8099
+
+// patch_hardware_8, PSKEY_PATCH58 (0x2134, 8500), 27 words
+&2134 = 0002 1a82 0914 2000 00c0 08f0 0118 ff2b ff0e 5400 0618 009e 08e0 0010 0118 ff2b ff0e 5400 5818 009e 0218 ff2b ff0e 1b00 8718 00e2 180a
+
+// patch_hardware_9, PSKEY_PATCH59 (0x2135, 8501), 4 words
+&2135 = 0003 c9a7 00e2 4d10
+
+// patch_hardware_11, PSKEY_PATCH61 (0x2137, 8503), 9 words
+&2137 = 0002 c46c 0218 ff2b ff0e c500 8418 00e2 08e5
+
+// patch_hardware_12, PSKEY_PATCH62 (0x2138, 8504), 64 words
+&2138 = 0002 182c ce00 1d18 0016 dc00 dd25 f100 6911 0009 07a4 1fc0 1314 e055 0c90 0036 0026 0018 ff2b ff0e d800 6d18 009e 01c4 0bf4 dc00 dd11 ce00 1d21 0218 ff2b ff0e 1800 cb18 00e2 0100 9c10 ce00 1d21 0018 ff2b ff0e d800 6d18 009e dc00 dd11 ce00 1d21 e111 07f0 f100 5215 ff00 3bc4 f100 5225 0218 ff2b ff0e 1800 3018 00e2 9b5b
+
+// patch_hardware_13, PSKEY_PATCH63 (0x2139, 8505), 13 words
+&2139 = 0000 87d9 0080 03f0 0284 042c fe34 ff40 03e0 0014 0010 f80f 8b20
+
+// patch_hardware_14, PSKEY_PATCH64 (0x213a, 8506), 9 words
+&213a = 0001 b50e 0118 ff2b ff0e b500 1a18 00e2 9347
+
+// patch_hardware_15, PSKEY_PATCH65 (0x213b, 8507), 63 words
+&213b = 0001 75ef cf00 7915 f925 0c1b 699a 2ef4 07c4 0027 1712 0009 0da4 0017 e085 26f0 f911 0009 03a4 0fc0 fb14 e035 0284 1e2c 0280 182c 0980 16f4 0ec0 0c80 13f4 f911 09a4 01c0 0023 2912 0ca4 01c0 0017 e085 09f0 cf00 7c15 03c4 0384 08f4 cf00 7b99 05f4 1d16 0100 ffc4 1d26 f911 0009 03a4 0118 ff2b ff0e 7600 f318 00e2 a14d
+
+// explicit, PSKEY_EXTERNAL_SLOW_CLOCK_RETUNE_THRESHOLD (0x218f, 8591), 2 words
+&218f = 0000 000f
+
+// explicit, PSKEY_ENABLE_CLOCK_SWITCHING (0x21a0, 8608), 1 words
+&21a0 = 0001
+
+// explicit, PSKEY_EDR_PAYLOAD_TX_IQ_LEVEL (0x21a2, 8610), 1 words
+&21a2 = 0a28
+
+// explicit, PSKEY_EDR_HEADER_TX_IQ_LEVEL (0x21a3, 8611), 1 words
+&21a3 = 0e79
+
+// explicit, PSKEY_RX_ADC_CONFIG (0x21ad, 8621), 5 words
+&21ad = 3150 0040 1725 0f15 0c1b
+
+// explicit, PSKEY_LO_CAL_CONFIG (0x21ae, 8622), 17 words
+&21ae = 0001 0001 0000 0007 0004 0002 0000 1b19 0000 01cc 0395 0395 0004 0064 00c8 0001 028a
+
+// patch_init_patch, PSKEY_PATCH100 (0x21f4, 8692), 26 words
+&21f4 = fe0b 2200 4c14 0100 bc10 0018 ff2b ff0e 9000 6018 009e 8000 0054 dc00 d025 0100 c014 dc00 cf25 da00 ee15 10b4 da00 ee25 fe0f c7e0
+
+// patch_radiotest_update_atten, PSKEY_PATCH113 (0x2201, 8705), 52 words
+&2201 = f90b 0f9b 30f4 0d1b 1012 0009 08a4 e015 0fc4 0027 1012 0009 06a4 e015 03c4 0127 1012 0fc0 0223 0f16 0e12 0427 0323 e415 0010 0218 ff2b ff0e 7800 fb18 009e e111 02e8 0070 0b1b 1f16 e019 e139 e189 05f8 0b1b 1f22 0114 06e0 e311 0b1b 1f22 2016 0134 2026 f90f fca1
+
+// patch_lc_tx_event_int, PSKEY_PATCH118 (0x2206, 8710), 6 words
+&2206 = 0014 0134 2084 fe2c 00e2 f6fd
+
+// patch_sched_put_allocated_message, PSKEY_PATCH123 (0x220b, 8715), 40 words
+&220b = fc0b 041b 0517 0613 0684 21f0 0380 1ff0 0116 0384 1cf0 021a 0016 0e84 18f0 0316 0c00 3784 14f0 049a 12f4 0210 c600 1814 0023 0127 db00 d115 8000 00b4 db00 d125 0013 0117 ff23 fe27 ff0e fe9f fc0f 4fd6
+
+// patch_sched_get_or_peek_message, PSKEY_PATCH124 (0x220c, 8716), 41 words
+&220c = fc0b 0517 0284 24f0 069b 22f0 1100 2515 0027 e119 0016 1cf4 e119 0212 19f4 e019 0016 0284 15f0 0316 5000 2f84 11f0 0514 e035 0127 0516 f200 f325 f200 1711 011b 0216 f800 ffc4 0800 00c0 e0b5 0226 fc0f 4ab6
+
+// patch_set_fm_freq, PSKEY_PATCH131 (0x2213, 8723), 39 words
+&2213 = 0617 1b00 4384 05f4 1800 1684 02f4 00e2 dc00 dc25 d200 fb15 8000 ed54 0627 0100 c014 0727 00e2 0018 dc00 d129 ff38 dc00 d229 f100 5219 4cb8 fe00 7fc8 f100 5229 0218 ff2b ff0e dc00 dc19 00e2 5479
+
+// patch_fm_radio_shared_patchpoint, PSKEY_PATCH133 (0x2215, 8725), 10 words
+&2215 = cf00 3688 00f2 0017 9900 8984 00f2 0114 f80f f4bc
+
+// patch_fm_reg_shared_patchpoint, PSKEY_PATCH134 (0x2216, 8726), 45 words
+&2216 = d500 3188 00f2 fa0b 091b 0010 8e00 6f14 f821 f925 0010 8e00 2014 0223 0327 1088 1bf0 0014 0027 0127 0210 1800 9b14 f819 f92b f919 f82b f90e f89f 0080 03f0 0084 06f4 0018 002b 012b 020e 039f f100 5215 bbc4 f100 5225 fa0f 652c
+
+// patch_fm_idle_periodic_update, PSKEY_PATCH135 (0x2217, 8727), 60 words
+&2217 = fb0b 0310 4700 ff14 0023 0127 0018 f200 fc11 0009 0aa4 01c0 2ef4 dc00 bb99 0bf0 ce00 1815 0100 ac84 06f8 0218 0614 0227 0114 0ee0 dc00 bb15 0184 0cf0 ce00 1815 0100 ac84 072c 0718 0314 0227 0014 dc00 bb25 0088 10f4 f200 0e29 0217 f200 0c25 f200 0f29 f200 0d25 0013 0117 ff23 fe27 ff0e fe9f fb0f 634b
+
+// patch_fm_tuner_shared_patchpoint, PSKEY_PATCH136 (0x2218, 8728), 63 words
+&2218 = 1800 aa88 00f2 ff2b dc00 d118 0016 0a84 23f8 0134 0026 f100 6315 0236 0786 2df8 f100 6515 0484 21f8 f100 6215 0386 1dfc 0586 23f8 0186 02f8 0126 fc3c 0210 1800 9b14 0023 0127 0010 0223 0323 0816 020e 091a 009e fa0f f100 5a11 0682 03fc 0a82 0cfc 0116 0386 09f8 f100 5215 ff00 3bc4 f100 5225 ff1b 02e2 ff1b 04e2 c3a9
+
+// patch_hal_fm_rx_shared_patchpoint, PSKEY_PATCH139 (0x221b, 8731), 40 words
+&221b = e000 e288 00f2 1400 8814 dc00 d325 01a0 dc00 d825 1100 9a14 dc00 d425 1500 8214 dc00 d525 1600 e014 dc00 d625 0100 fa14 dc00 d725 0700 0614 dc00 db25 3f00 8014 dc00 d925 8e00 b214 dc00 da25 00e2 2a03
+
+// patch_hal_fm_rx_do_tune_shared_patchpoint, PSKEY_PATCH141 (0x221d, 8733), 22 words
+&221d = db00 2a88 00f2 fe0b dc00 de99 0ef0 0210 1400 6514 ff23 fe27 2500 2a14 dc00 df10 ff0e fe9f dc00 de25 fe0f 116d
+
+// patch_hal_fm_tx_ana_shared_patchpoint, PSKEY_PATCH145 (0x2221, 8737), 11 words
+&2221 = 2e00 ef88 00f2 f200 a615 fe00 0fc4 f200 a625 00e2 ba98
+
+// patch_hal_fm_tx_calc_shared_patchpoint, PSKEY_PATCH146 (0x2222, 8738), 63 words
+&2222 = 3200 0588 00f2 fc0b 0118 012b 0717 3200 a384 0ef0 0114 2410 010e 0100 8400 239e 0027 0110 010e 1f00 2418 009e 0be0 0014 0027 1200 5515 f200 b911 0100 a0b0 f200 b921 0200 9010 ff30 fff0 0510 010e 1f00 0818 009e 0d00 9484 032c 0214 07e0 0400 7184 03f8 0414 02e0 0014 0427 009b 06f4 0114 019c 0100 dc00 d09d fc0f cf85
+
+// patch_hal_radio_trim_shared_patchpoint, PSKEY_PATCH162 (0x2232, 8754), 16 words
+&2232 = fc00 8788 00f6 1488 06f0 f000 0015 dc00 ba25 00e2 dc00 ba15 f000 0025 00e2 69d5
+
+// patch_hal_tx_trim_shared_patchpoint, PSKEY_PATCH166 (0x2236, 8758), 61 words
+&2236 = 0600 b888 00f2 fe0b 0110 8400 2414 f821 f925 029b 31f0 2314 f000 0025 fa00 9815 fdc4 fa00 9825 fa00 9d15 fcc4 fa00 9d25 fa00 9b15 fcc4 fa00 9b25 fa00 9c15 fcc4 01b4 fa00 9c25 0214 2610 f819 f92b f919 f82b f90e f89f 0084 0ff4 d200 2d99 0cf4 d200 2d15 8000 0054 0010 0100 c030 f827 f923 f90e f89f fe0f 9e9b
+
+// patch_spare1, PSKEY_PATCH181 (0x2245, 8773), 44 words
+&2245 = f80b 0110 1f00 9614 ff23 fe27 0110 1e00 4214 0023 0127 0110 8400 3f14 0223 0327 0010 f200 4914 0423 0527 0214 0310 ff0e fe9f 0300 7084 042c 6614 040e 059f 0214 000e 019f 0214 020e 039f fa00 9c15 fec4 fa00 9c25 f80f e382
+
+// patch_spare2, PSKEY_PATCH182 (0x2246, 8774), 49 words
+&2246 = fa0b 0110 8400 2414 ff23 fe27 0110 1f00 2414 0023 0127 0010 9500 0614 0223 0327 f200 be15 1000 00b4 f200 be25 2000 0014 f200 5625 0114 0f10 ff0e fe9f 0084 04f0 5a14 020e 039f 0114 0110 000e 019f dc00 bc25 f200 a115 0100 00b4 f200 a125 fa0f 87a2
+
+// patch_spare3, PSKEY_PATCH183 (0x2247, 8775), 58 words
+&2247 = f80b ff14 0027 0110 1f00 0814 0223 0327 0210 3700 8614 0423 0527 f200 9c11 0009 0ba4 07c0 dc00 be21 0214 dc00 bd25 0127 0117 040e 059f f200 a525 0100 c814 ff34 fff0 dc00 bc15 0510 020e 039f 0087 05f8 0027 0117 dc00 bd25 0117 0134 0127 0100 0d84 e72c dc00 bd15 040e 059f f200 a525 f80f 7a0a
+
+// patch_spare4, PSKEY_PATCH184 (0x2248, 8776), 64 words
+&2248 = f90b 0110 1f00 0814 0123 0227 0210 2a00 ed14 ff23 fe27 0210 3700 1614 0323 0427 f200 a815 f200 a711 ff0e fe9f 0027 0184 112c dc00 bc15 0510 010e 029f 0600 ed84 09f8 0017 ff34 0027 030e 049f 0017 0284 f1f8 dc00 bd15 0c84 032c f634 02e0 0214 dc00 c825 dc00 bd15 0a34 dc00 c925 0100 0e84 052c 0100 0e14 dc00 c925 f90f 56a2
+
+// patch_spare5, PSKEY_PATCH185 (0x2249, 8777), 59 words
+&2249 = f90b 0110 1e00 4214 0123 0227 0110 8400 3f14 0323 0427 ff14 dc00 c725 0014 0027 001b dc00 ca29 0014 dc00 bf26 f200 9c19 c800 ffc8 0017 0ba0 e1b9 f200 9c29 0100 c814 ff34 fff0 d200 3315 8000 0054 0010 0100 c030 f827 f923 f90e f89f 0017 0134 0027 0784 de2c 0114 010e 029f 0114 030e 049f f90f 5a3c
+
+// patch_spare6, PSKEY_PATCH186 (0x224a, 8778), 64 words
+&224a = fd0b 0210 3700 8614 ff23 fe27 dc00 be15 0027 ff34 0684 09f8 001b dc00 bf38 019a 13f0 ff9a 11f4 0fe0 0017 0784 06f0 dc00 c599 0af4 0614 07e0 009b 06f0 dc00 c199 03f4 0114 0027 f200 a115 ff00 ffc4 f200 a125 f200 be15 f000 ffc4 f200 be25 dc00 bd15 ff0e fe9f f200 a525 f200 9c19 c800 ffc8 0017 0ba0 e1b9 f200 9c29 fd0f fda0
+
+// patch_spare7, PSKEY_PATCH187 (0x224b, 8779), 62 words
+&224b = f90b 0110 1f00 0814 0123 0227 0210 3700 8614 0323 0427 dc00 c815 0027 dc00 c985 02f4 2bf8 0017 030e 049f f200 a525 0100 c814 ff34 fff0 dc00 bc15 0110 010e 029f 0590 e111 dc00 c785 0af8 dc00 c725 0017 dc00 bd25 dc00 ca15 dc00 be25 0d00 9480 06f8 dc00 ca19 0114 dc00 bf26 0017 0134 0027 dc00 c985 d72c f90f 3cdf
+
+// patch_188, PSKEY_PATCH188 (0x224c, 8780), 17 words
+&224c = fd0b 0027 0118 ff2b ff0e 1e00 4218 009e 0017 0118 ff2b ff0e 8400 3f18 009e fd0f fab7
+
+// explicit, PSKEY_RSSI_PREFERRED_VALUES (0x22ec, 8940), 5 words
+&22ec = 0000 0003 0003 03d0 0000
+
+// explicit, PSKEY_FMTX_DEMAND_COMPENSATION (0x230d, 8973), 2 words
+&230d = 0000 000d
+
+// explicit, PSKEY_BT_POWER_TABLE_V0 (0x241a, 9242), 40 words
+&241a = 1615 0050 1d38 0050 ec00 1818 0040 2138 0040 f000 1618 0030 2138 0030 f400 1918 0020 2238 0020 f800 0f18 0000 243a 0010 fc00 115a 0000 1f7c 0000 0000 1aaa 0000 2abc 0000 0400 3fcf 0000 3dff 0000 0800
+
+// explicit, PSKEY_9514 (0x252a, 9514), 8 words
+&252a = 4e20 00b0 6d60 00b0 8ca0 00b0 abe0 00b0

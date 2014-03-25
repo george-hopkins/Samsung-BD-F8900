@@ -1,0 +1,150 @@
+2012-10-04  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-70
+
+	Backport from CodeSourcery:
+	2010-02-04  Daniel Jacobowitz  <dan@codesourcery.com>
+
+	libstdc++-v3/
+	* libsupc++/eh_personality.cc (PERSONALITY_FUNCTION): For
+	ARM EABI, skip handlers for _US_VIRTUAL_UNWIND_FRAME
+	| _US_FORCE_UNWIND.
+
+2012-10-03  Alexey Merzlyakov  <alexey.merzlyakov@samsung.com>
+
+	JIRA: GA-70
+
+	gcc/
+	* defaults.h: WCHAR_TYPE is ignored the overriden by -fshort-wchar.
+
+2012-10-03  Alexey Merzlyakov  <alexey.merzlyakov@samsung.com>
+
+	JIRA: GA-70
+
+	gcc/
+	* config/mips/mips.h: Back to default wchar size.
+
+2012-10-03  Alexey Merzlyakov  <alexey.merzlyakov@samsung.com>
+	JIRA: GA-70
+
+	gcc/
+	* config/arm/arm.h: Back to default wchar size.
+
+2012-10-03  Ildar Kaybyshev  <i.kaybyshev@samsung.com>
+
+	JIRA: GA-70
+
+	gcc/
+	* config.gcc: Use new makefile to disable unwind table generation
+	for crtstuff on MIPS.
+	* config/mips/t-crt_no_unwind: New file, disables unwind table
+	generation for crtstuff on MIPS.
+
+
+2012-08-21 Alexey Merzlyakov <alexey.merzlyakov@samsung.com>
+
+	JIRA: GA-64
+	
+	Backport from mainline:
+	2012-05-31  Richard Guenther  <rguenther@suse.de>
+
+	PR middle-end/48493
+	* expr.c (expand_assignment): Do not use movmisalign on
+	non-memory.
+
+2012-08-21 Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: GA-63
+
+	Merge from Linaro GCC-4.6 (bzr revno: 106907)
+
+2012-06-18 Dinar Temirbulatov <d.temirbulat@samsung.com>
+
+	JIRA: GA-44
+
+	gcc/testsuite/
+	* c-c++-common/short-wchar.c: New file.
+
+2012-06-18 Slava Garbuzov <v.garbuzov@samsung.com>
+
+	JIRA: GA-44
+
+	gcc/
+	* config/mips/mips.h (CPP_SPEC): -fshort-wchar set as default.
+	* config/mips/mips.h (CC1_SPEC): Ditto.
+
+2012-05-21 Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: GA-34
+
+	Merge from Linaro GCC-4.6 (bzr revno: 106891)
+
+2012-05-15 Alexey Kravets  <a.kravets@samsung.com>
+
+	JIRA: VDTC-97
+
+	* gcc/gcc.c(validate_switches): Reset starred flag.
+	* gcc/testsuite/gcc.dg/pr51020.c: New test.
+
+
+2012-03-30 Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: GA-3
+
+	* gcc/config/arm/arm.opt(unaligned_access): Move comments.
+
+2012-03-29 Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: GA-3
+
+	* gcc/config/arm/arm.opt(unaligned_access): Disable by default.
+
+
+2012-03-26 Alexey Kravets  <a.kravets@samsung.com>
+
+	JIRA: VDTC-98
+
+	Merge from Linaro GCC-4.6 (bzr revno: 106881)
+
+2012-02-28 Alexey Merzlyakov <alexey.merzlyakov@samsung.com>
+
+	JIRA: VDTC-29
+	
+	Treat inline-params.c test at -O1 option on arm architecture as XFAIL
+
+2012-01-25 Alexey Kravets  <a.kravets@samsung.com>
+
+	JIRA: VDTC-72
+
+	Merge from Linaro GCC-4.6 (bzr revno: 106864)
+
+2012-01-24 Dinar Temirbulatov <d.temirbulat@samsung.com>
+	JIRA: VDTC-29
+
+	Backport from mainline:
+	2011-09-27  Marcus Shawcroft  <marcus.shawcroft@arm.com>
+
+        * libsupc++/tinfo.cc (type_info::operator==): Test __name instead
+        of name().
+
+2011-12-28 Slava Garbuzov <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	gcc/
+	* config/arm/arm.h (CPP_SPEC): -fshort-wchar set as default.
+	* config/arm/arm.h (CC1_SPEC): Ditto.
+
+2011-11-01  Alexey Kravets  <a.kravets@samsung.com>
+
+	JIRA: VDTC-32
+
+	gcc/
+	* common.opt (Wglobal-constructors): New option.
+	* cp/decl2.c (one_static_initialization_or_destruction): Generate
+	warnings for static initialization of objects.
+	* doc/cppopts.texi (-Wglobal-constructors): New operation description.
+
+	gcc/testsuite/
+	* g++.dg/diagnostic/global-constructors.C: New test.
+

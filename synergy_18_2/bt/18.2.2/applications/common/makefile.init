@@ -1,0 +1,45 @@
+#-*-Makefile-*-
+###############################################################################
+#
+#                (c) Cambridge Silicon Radio Limited 2009
+#
+#                All rights reserved and confidential information of CSR
+#
+# REVISION:      $Revision: #1 $
+###############################################################################
+
+#
+# This makefile is included only from makefile.common. It defines the
+# common targets like 'all' and 'clean'. These targets actually invoke
+# the original application makefile once again so we can build the
+# same app for different build types, i.e. hci and rfc
+#
+
+#
+# APP_TARGETS may be set by the application makefile in order to
+# specify multiple targets, e.g. for various codec flavours. If the
+# variable is not set we default to 'dobin' or 'doclean' which is the
+# default compile/clean target.
+# 
+# ACTION is used by multi-target makefiles to invoke the actual target
+# once an APP_TARGETS-element has been selected. For simple makefiles,
+# ACTION is usually not used. ACTION is only set from this file, and
+# will only ever be set to 'dobin' or 'doclean'.
+#
+
+.PHONY: bin
+all: bin
+
+.PHONY: all
+bin: APP_TARGETS ?= dobin
+bin:
+ifeq ($(HCI_IN_RELEASE),1)
+	$(MAKE) $(APP_TARGETS) ACTION=dobin BUILD_TYPE=hci SUB_TARGET_ARCH=$(SUB_TARGET_ARCH) LOG=$(LOG)
+endif
+
+.PHONY: clean
+clean: APP_TARGETS ?= doclean
+clean:
+ifeq ($(HCI_IN_RELEASE),1)
+	$(MAKE) $(APP_TARGETS) ACTION=doclean BUILD_TYPE=hci SUB_TARGET_ARCH=$(SUB_TARGET_ARCH)
+endif

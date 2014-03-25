@@ -1,0 +1,167 @@
+// =============================================================================
+// 
+// CSR tracking information, report this in case of problems:
+//   $Revision: #1 $
+//   Built Mon Jul 19 13:44:52 2010 GMT
+//   Checked-in $DateTime: 2011/06/24 07:14:07 $
+//   $File: //dkdepot/synergy/bt/release/18.2/applications/bootstrap/psr/pb-74r3_6311.psr $
+// 
+// Patch is for build 6311 sgl_4hci_rom_bt2.1_23h_0908261702_sdio_encr128
+// 
+// Issues patched: B-22913, B-62695, B-65952, B-67742, B-70379, B-73729,
+//                 B-81328
+// 
+// Documentation from pb-74.pb
+// ---------------------------
+// 
+// General purpose patch bundle for BC6-ROM A05 (build ID 6311) that
+// is suitable for all end users.
+// 
+// Documentation from bt_pskeys.pb
+// -------------------------------
+// 
+// Issues patched: B-70379
+// 
+// Change-default PSKEY value - aimed at improving chip performance 
+// and avoiding potential problems with SDIO/CSPI 
+// 
+// Documentation from dutm-double-accepted.pb
+// ------------------------------------------
+// 
+// Issues patched: B-22913
+// 
+// When a device is in Bluetooth Test Mode it doesn't use the normal
+// mechanisms of baseband flow control and acknowledgement. This can cause
+// a problem where the tester (master) sends LMP_test_control, to which the
+// device under test (slave) normally responds with LMP_accepted. If the
+// slave's message is lost there is no defined mechanism to send it again,
+// so the whole test system can lock up.
+// 
+// By setting PSKEY_LM_TEST_SEND_ACCEPTED_TWICE to TRUE then the
+// LMP_accepted messages are sent twice.
+// 
+// This is an ugly and imperfect fix, but it has improved interoperation
+// with some Bluetooth testers.
+// 
+// Documentation from patch_sdio_ds.xap
+// ------------------------------------
+// 
+// Issues patched: B-65952
+// 
+// When using the SDIO or CSPI host transports BlueCore may go to sleep, even
+// when the host has told it not to.
+// 
+// Documentation from patch_sequence_rxack_1pp.xap
+// -----------------------------------------------
+// 
+// Issues patched: B-73729
+// 
+// Prevent retransmission if a corresponding ack is received 
+// while waiting for host wakeup after the packet is scheduled.
+// New version using only one patch point.
+// 
+// Documentation from patch_hal_build_lo_lut_pp45.xap
+// --------------------------------------------------
+// 
+// Issues patched: B-81328
+// 
+// Use boot temperature to offset frequencies used to build CDAC LUT
+// 
+// Documentation from patch_lc_pause_all_data.xap
+// ----------------------------------------------
+// 
+// Issues patched: B-67742
+// 
+// If BlueCore was performing a role switch as part of the connection creation
+// procedure it paused all ACL user data on all links until the role switch
+// completed. This could cause an interruption of 150 to 200 ms in the data
+// flow. For some use cases, such as A2DP streaming, this could cause user
+// observable effects (audio glitches in the A2DP case). Analysis of the
+// firmware and LM sequencing for this scenario has revealed that this pause is
+// not necessary and so it has been removed. There will still be some disruption
+// of user data flow simply as the result of now having two links to service, at
+// least one of which BlueCore is slave of. However, the duration should now be
+// much reduced - to roughly the poll interval (25 ms by default).
+// 
+// Documentation from patch_set_pcm_config32.xap
+// ---------------------------------------------
+// 
+// Issues patched: B-62695
+// 
+// Allows PCM_CONFIG32 to be set with PCM active
+// 
+// If PCM is enabled then it is briefly disabled before updating the 
+// config values, then re-enabled afterwards. 
+// The active slot mask bits are preserved.
+// 
+// Version information for input files
+// -----------------------------------
+// 
+// Created by patchmaker.pl Revision: #41  Date: 2010/07/07 
+// 
+// Input file: pb-74.pb
+// Depot file: //depot/bc/unified-23h/dev/patches/6311/pb-74.pb
+// File revision: 7
+// 
+// Input file: bt_pskeys.pb
+// Depot file: //depot/bc/unified-23h/dev/patches/6311/bt_pskeys.pb
+// File revision: 1
+// 
+// Input file: dutm-double-accepted.pb
+// Depot file: //depot/bc/unified-23h/dev/patches/6311/dutm-double-accepted.pb
+// File revision: 1
+// 
+// Input file: patch_sdio_ds.xap
+// Depot file: //depot/bc/unified-23h/dev/patches/6311/patch_sdio_ds.xap
+// File revision: 2
+// 
+// Input file: patches.inc
+// Depot file: //depot/bc/unified-23h/dev/patches/6311/patches.inc
+// File revision: 2
+// 
+// Input file: patch_sequence_rxack_1pp.xap
+// Depot file: //depot/bc/unified-23h/dev/patches/6311/patch_sequence_rxack_1pp.xap
+// File revision: 2
+// 
+// Input file: ../patch_utils.inc
+// Depot file: //depot/bc/unified-23h/dev/patches/patch_utils.inc
+// File revision: 1
+// 
+// Input file: patch_hal_build_lo_lut_pp45.xap
+// Depot file: //depot/bc/unified-23h/dev/patches/6311/patch_hal_build_lo_lut_pp45.xap
+// File revision: 3
+// 
+// Input file: patch_lc_pause_all_data.xap
+// Depot file: //depot/bc/unified-23h/dev/patches/6311/patch_lc_pause_all_data.xap
+// File revision: 3
+// 
+// Input file: patch_set_pcm_config32.xap
+// Depot file: //depot/bc/unified-23h/dev/patches/6311/patch_set_pcm_config32.xap
+// File revision: 2
+
+// explicit, PSKEY_LM_TEST_SEND_ACCEPTED_TWICE (0x00f6, 246), 1 words
+&00f6 = 0001
+
+// explicit, PSKEY_GBL_CLK_RATE2 (0x038c, 908), 1 words
+&038c = 0001
+
+// patch_hardware_0, PSKEY_PATCH50 (0x212c, 8492), 22 words
+&212c = 0002 02ae fc00 1c15 01c4 0af0 fc00 3d15 07f0 0118 ff2b ff0e 0300 b518 00e2 0118 ff2b ff0e 0300 b218 00e2 42c5
+
+// patch_hardware_4, PSKEY_PATCH54 (0x2130, 8496), 52 words
+&2130 = 0001 bf5e e900 fb11 0130 e900 fb21 e500 1381 15fc e500 1315 0100 a330 e181 0ff8 e900 fb15 e500 1355 e135 e600 9034 0a27 0018 ff2b ff0e c000 9618 00e2 0114 e500 0a25 e415 0434 e500 0f25 e415 0634 e500 1025 e900 fb15 e500 1325 0018 ff2b ff0e bf00 7818 00e2 a202
+
+// patch_hardware_5, PSKEY_PATCH55 (0x2131, 8497), 19 words
+&2131 = 0001 bfb7 e900 fb15 e500 1355 0018 ff2b ff0e c200 9718 009e 0018 ff2b ff0e c000 bb18 00e2 aa6a
+
+// patch_hardware_13, PSKEY_PATCH63 (0x2139, 8505), 27 words
+&2139 = 0001 ec1c e000 bf99 0cf4 e000 bf15 0018 ff2b ff0e 3c00 b018 009e 0014 e000 bf25 e000 9215 0134 07c4 0018 ff2b ff0e ec00 1f18 00e2 d18f
+
+// patch_hardware_14, PSKEY_PATCH64 (0x213a, 8506), 4 words
+&213a = 0003 bc0d 00e2 5bf5
+
+// patch_hardware_15, PSKEY_PATCH65 (0x213b, 8507), 63 words
+&213b = 0001 730d 9311 20c0 0af0 0112 0216 0118 ff2b ff0e 1300 4b18 009e 30e0 0018 ff2b ff0e 3500 e518 009e 0014 0010 0118 ff2b ff0e 1300 5518 009e 0917 0534 e119 0112 f800 7fc0 5b15 0800 80c4 e0b5 5b25 0212 f800 ffc0 6015 0800 00c4 e0b5 6025 0114 0010 0118 ff2b ff0e 1300 5518 009e 0018 ff2b ff0e 3500 ee18 009e f30f 2a29
+
+// patch_hal_build_lo_lut, PSKEY_PATCH107 (0x21fb, 8699), 29 words
+&21fb = fe0b 0018 ff2b ff0e 4100 0918 009e 8000 0184 12f4 1754 4084 0520 c084 0424 c014 02e0 4014 e500 d225 e500 1315 3e54 e500 d255 e900 fb25 fe0f 91c9

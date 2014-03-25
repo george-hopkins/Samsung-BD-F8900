@@ -1,0 +1,4 @@
+Glibmm
+file: glibmm-2.22.2.tar.bz2
+ver: 2.22.2
+Link: http://ftp.acc.umu.se/pub/gnome/sources/glibmm/2.22/

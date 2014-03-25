@@ -1,0 +1,782 @@
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog'
+copy directory /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/sources/cloog to /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog
+LICENSE
+Makefile.am
+Makefile.in
+README
+aclocal.m4
+autoconf/
+autoconf/Doxyfile.in
+autoconf/config.guess
+autoconf/missing
+autoconf/Doxyfile
+autoconf/texinfo.tex
+autoconf/mkinstalldirs
+autoconf/ltmain.sh
+autoconf/c-ced.ssh
+autoconf/install-sh
+autoconf/config.sub
+autoconf/depcomp
+autogen.sh
+configure
+configure.in
+doc/
+doc/images/
+doc/images/basic.fig
+doc/images/tree.txt
+doc/images/basic.pdf
+doc/images/tree.fig
+doc/images/tree.pdf
+doc/images/tree.eps
+doc/images/basic.jpg
+doc/images/tree.jpg
+doc/images/basic.eps
+doc/images/basic.txt
+doc/TODO
+doc/cloog.texi
+doc/gitversion.texi
+doc/Makefile.in
+doc/cloog.info
+doc/Makefile.am
+doc/ROADMAP
+examples/
+examples/README
+examples/example/
+examples/example/Makefile
+examples/example/example.c
+genversion.sh.in
+include/
+include/cloog/
+include/cloog/version.h.in
+include/cloog/clast.h
+include/cloog/block.h
+include/cloog/version.h
+include/cloog/ppl_backend.h
+include/cloog/cloog.h.in
+include/cloog/polylib_backend.h
+include/cloog/domain.h
+include/cloog/program.h
+include/cloog/loop.h
+include/cloog/pprint.h
+include/cloog/cloog-config.h.in
+include/cloog/names.h
+include/cloog/options.h
+include/cloog/statement.h
+source/
+source/cloog.c
+source/options.c
+source/version.c
+source/ppl/
+source/ppl/checking.c
+source/ppl/matrix.c
+source/ppl/domain.c
+source/ppl/clast.c
+source/ppl/matrix.h
+source/block.c
+source/polylib/
+source/polylib/matrix.c
+source/polylib/domain.c
+source/polylib/clast.c
+source/polylib/matrix.h
+source/loop.c
+source/names.c
+source/program.c
+source/pprint.c
+source/statement.c
+test/
+test/donotsimp.c.polylib
+test/vivien2.c.polylib
+test/tiling3.cloog
+test/iftest.c.ppl
+test/nul_girbal.cloog
+test/basic-bounds-2.c.ppl
+test/tiling.c.polylib
+test/iftest.cloog
+test/thomasset.c.polylib
+test/mode.c.polylib
+test/lineality-2-1-2.c.ppl
+test/lineality-1-2.c.ppl
+test/basic-bounds-2.cloog
+test/equality.c.ppl
+test/nul_basic1.c.ppl
+test/basic-bounds-1.c.ppl
+test/multi-stride.c.polylib
+test/uday_scalars.c.ppl
+test/oc.out
+test/forwardsub-3-1-2.cloog
+test/basic-bounds-3.c.ppl
+test/1point-1.cloog
+test/gesced3.cloog
+test/ard.cloog
+test/orc.c.ppl
+test/orc.cloog
+test/1point-2.c.polylib
+test/daegon_lu_osp.cloog
+test/esced.c.ppl
+test/infinite3.c.polylib
+test/square+triangle-1-1-2-3.c.ppl
+test/rectangle.c.polylib
+test/gesced3.c.polylib
+test/esced.c.polylib
+test/emploi.c.polylib
+test/not_equal.cloog
+test/mode.cloog
+test/wavefront.c.polylib
+test/equality2.cloog
+test/multi-mm-1.c.ppl
+test/donotsimp.cloog
+test/nul_basic2.cloog
+test/1point-1.c.polylib
+test/lineality-1-2.cloog
+test/mode.c.ppl
+test/4-param.c.ppl
+test/manual_gauss.cloog
+test/nul_ispdc.cloog
+test/not_equal.c.polylib
+test/diagonal.cloog
+test/multi-stride2.c.polylib
+test/square+triangle-1-1-2-3.c.polylib
+test/basic-bounds-4.c.polylib
+test/square+triangle-1-1-2-3.cloog
+test/vivien2.cloog
+test/min-3-1.cloog
+test/tiling.c.ppl
+test/classen.c.ppl
+test/largeur.c.polylib
+test/yosrf.cloog
+test/emploi.c.ppl
+test/largeur.cloog
+test/vasilache.c.ppl
+test/emploi.cloog
+test/1point-2.c.ppl
+test/yosr.c.polylib
+test/basic-bounds-3.cloog
+test/lux.c.ppl
+test/levenshtein-1-2-3.c.polylib
+test/donotsimp.c.ppl
+test/dot.c.ppl
+test/infinite2.c.polylib
+test/swim.c.polylib
+test/1point-1.c.ppl
+test/iftest2.c.polylib
+test/lub.c.ppl
+test/infinite4.c.ppl
+test/forwardsub-1-1-2.cloog
+test/lineality-2-1-2.cloog
+test/quillere.cloog
+test/levenshtein-1-2-3f.cloog
+test/no_lindep.c.ppl
+test/min-3-1.c.polylib
+test/min-1-1.c.polylib
+test/levenshtein-1-2-3f.f.ppl
+test/gesced2.c.ppl
+test/lub.c.polylib
+test/lu.c.ppl
+test/rectangle.cloog
+test/gesced.cloog
+test/ex1.cloog
+test/ex1.c.polylib
+test/ex1.c.ppl
+test/test.cloog
+test/nul_basic2.c.polylib
+test/gauss.cloog
+test/dartef.f.polylib
+test/issues
+test/min-4-1.c.polylib
+test/ceilfloor.cloog
+test/Makefile.in
+test/thomasset.c.ppl
+test/durbin_e_s.c.polylib
+test/multi-stride.cloog
+test/basic-bounds-1.c.polylib
+test/nul_lcpc.c.ppl
+test/bigs/
+test/bigs/dyfesm.N.w2p20
+test/bigs/lucas_distrib_spec.N.w2p10
+test/bigs/qcd.N.w2p8
+test/bigs/applu12.loopgen
+test/bigs/apsi.N.w2p89
+test/bigs/applu.N.w2p12
+test/bigs/mg3d.N.w2p26
+test/bigs/quake.N.w2p26
+test/bigs/qcd.N.w2p47
+test/bigs/applu21.loopgen
+test/bigs/applu.N.w2p21
+test/bigs/lucas_distrib_spec.N.w2p1
+test/bigs/apsi.N.w2p82
+test/bigs/qcd.N.w2p49
+test/merge.cloog
+test/4-param.cloog
+test/iftest2.cloog
+test/swim.c.ppl
+test/min-4-1.cloog
+test/iftestf.cloog
+test/multi-stride.c.ppl
+test/forwardsub-2-1-2-3.c.ppl
+test/double.c.polylib
+test/vivien2.c.ppl
+test/dot2.c.ppl
+test/gauss.c.ppl
+test/dot2.cloog
+test/byu98-1-2-3.c.ppl
+test/basic-bounds-6.cloog
+test/4-param.c.polylib
+test/forwardsub-1-1-2.c.polylib
+test/basic-bounds-5.cloog
+test/classen.c.polylib
+test/cholesky2.c.ppl
+test/published/
+test/published/PACT2004/
+test/published/PACT2004/youcefn.cloog
+test/published/CC2006/
+test/published/CC2006/QR.cloog
+test/published/CC2006/swim.B.MAIN__.scop7.cloog
+test/published/CC2006/dreamupT3.cloog
+test/published/CC2006/classen2.cloog
+test/published/CC2003/
+test/published/CC2003/esced.cloog
+test/published/Web/
+test/published/Web/web7.cloog
+test/published/Web/web5.cloog
+test/published/Web/web3.cloog
+test/published/Web/web4.cloog
+test/published/Web/web6.cloog
+test/published/Web/web1.cloog
+test/published/Web/web2.cloog
+test/youcefn.cloog
+test/wavefront.cloog
+test/test.c.ppl
+test/equality.cloog
+test/darte.c.ppl
+test/infinite4.c.polylib
+test/infinite.c.ppl
+test/readme.cloog
+test/logopar.c.ppl
+test/merge.c.ppl
+test/min-4-1.c.ppl
+test/nul_basic2.c.ppl
+test/escedk.cloog
+test/gesced2.c.polylib
+test/byu98-1-2-3.c.polylib
+test/dartef.cloog
+test/lu.c.polylib
+test/infinite4.cloog
+test/cholesky.c.polylib
+test/durbin_e_s.c.ppl
+test/vivien.cloog
+test/min-2-1.cloog
+test/levenshtein-1-2-3.c.ppl
+test/cholesky.cloog
+test/infinite2.cloog
+test/vivien.c.ppl
+test/double.cloog
+test/iftest2.c.ppl
+test/infinite.c.polylib
+test/classen.cloog
+test/orc.c.polylib
+test/iftest.c.polylib
+test/forwardsub-3-1-2.c.ppl
+test/basic-bounds-5.c.polylib
+test/lineality-2-1-2.c.polylib
+test/logo.c.polylib
+test/escedk.c.polylib
+test/nul_basic1.c.polylib
+test/Makefile.am
+test/forwardsub-1-1-2.c.ppl
+test/lineality-1-2.c.polylib
+test/logopar.c.polylib
+test/yosr.c.ppl
+test/darte.c.polylib
+test/forwardsub-3-1-2.c.polylib
+test/faber.cloog
+test/guide.c.ppl
+test/infinite3.c.ppl
+test/basic-bounds-6.c.polylib
+test/test.c.polylib
+test/rectangle.c.ppl
+test/esced.cloog
+test/cholesky2.c.polylib
+test/byu98-1-2-3.cloog
+test/infinite3.cloog
+test/vasilache.cloog
+test/uday_scalars.cloog
+test/gesced.c.ppl
+test/nul_lcpc.c.polylib
+test/tiling2.cloog
+test/vivien.c.polylib
+test/min-3-1.c.ppl
+test/manual_scattering.cloog
+test/overlap.cloog
+test/infinite.cloog
+test/iftestf.f.polylib
+test/not_equal.c.ppl
+test/escedk.c.ppl
+test/multi-mm-1.cloog
+test/non_optimal/
+test/non_optimal/youcef.cloog
+test/non_optimal/youcef.c.ppl
+test/non_optimal/youcef.c.polylib
+test/non_optimal/usvd_e_t.c.polylib
+test/non_optimal/nul_complex1.c.ppl
+test/non_optimal/deuxpts.cloog
+test/non_optimal/dreamupT3.cloog
+test/non_optimal/dreamupT1.cloog
+test/non_optimal/nul_complex1.c.polylib
+test/non_optimal/nul_complex1.cloog
+test/non_optimal/dreamupT3.omega
+test/non_optimal/usvd_e_t.cloog
+test/non_optimal/usvd_e_t.c.ppl
+test/non_optimal/interpolation-duration.cloog
+test/non_optimal/dreamupT3-delta-gamma.cloog
+test/tiling.cloog
+test/ard.dat
+test/lu2.cloog
+test/gesced.c.polylib
+test/yosr_sync.cloog
+test/cholesau_original.cloog
+test/infinite.omega
+test/merge.c.polylib
+test/multi-stride2.cloog
+test/min-1-1.cloog
+test/yosr2.c.polylib
+test/double.c.ppl
+test/basic-bounds-2.c.polylib
+test/no_lindep.cloog
+test/ispdc.cloog
+test/cholesky2.cloog
+test/equality2.c.ppl
+test/nul_basic1.cloog
+test/levenshtein-1-2-3f.c.ppl
+test/gesced2.cloog
+test/tete.cloog
+test/darte.cloog
+test/yosr2.c.ppl
+test/yosrf.f.polylib
+test/nul_lcpc.cloog
+test/min-2-1.c.polylib
+test/basic-bounds-3.c.polylib
+test/urgent/
+test/urgent/matmul1.cloog
+test/urgent/matmul.B.main.scop1.cloog
+test/urgent/swim7.cloog
+test/urgent/matmul.cloog
+test/urgent/scop7.cloog
+test/urgent/swim.cloog
+test/basic-bounds-4.c.ppl
+test/elimination.cloog
+test/vasilache.c.polylib
+test/dartef.f.ppl
+test/levenshtein-1-2-3f.c.polylib
+test/faber.c.ppl
+test/cholesau_allocation.cloog
+test/min-1-1.c.ppl
+test/thomasset.cloog
+test/guide.cloog
+test/lux.cloog
+test/lu2.c.polylib
+test/multi-mm-1.c.polylib
+test/levenshtein-1-2-3f.f.polylib
+test/forwardsub-2-1-2-3.c.polylib
+test/logo.cloog
+test/logo.c.ppl
+test/no_lindep.c.polylib
+test/gauss.c.polylib
+test/challenges/
+test/challenges/test3.N.cloog
+test/challenges/apsi.N.w2p56
+test/challenges/motionek1945.cloog
+test/challenges/test2.N.cloog
+test/challenges/challenge1.cloog
+test/challenges/lucas.N.w2p11
+test/iftestf.f.ppl
+test/reports/
+test/reports/sylvain_girbal_01-11-2004.txt
+test/reports/kristof_beyls_16-05-2005.txt
+test/reports/sylvain_girbal_24-02-2004.txt
+test/reports/michael_classen_03-05-2005.eml
+test/reports/fabrice_baray_29-10-2004
+test/reports/nicolas_vasilache_03-05-2005.eml
+test/reports/sergej_schwenk_01-06-2004.txt
+test/reports/kim_daegon_27-04-2005.eml
+test/reports/michael_classen_27-10-2004.txt
+test/reports/nicolas_vasilache_09-05-2005.txt
+test/basic-bounds-1.cloog
+test/stage.cloog
+test/lux.c.polylib
+test/infinite2.c.ppl
+test/yosr.cloog
+test/1point-2.cloog
+test/dot.c.polylib
+test/rational.cloog
+test/yosrf.f.ppl
+test/gesced3.c.ppl
+test/manual_basic.cloog
+test/forwardsub-2-1-2-3.cloog
+test/basic-bounds-4.cloog
+test/lub.cloog
+test/dot2.c.polylib
+test/min-2-1.c.ppl
+test/uday_scalars.c.polylib
+test/yosr2.cloog
+test/levenshtein-1-2-3.cloog
+test/equality.c.polylib
+test/faber.c.polylib
+test/yosr.omega
+test/multi-stride2.c.ppl
+test/wavefront.c.ppl
+test/durbin_e_s.cloog
+test/cholesky.c.ppl
+test/reservoir/
+test/reservoir/lim-lam3.c.polylib
+test/reservoir/pingali6.c.ppl
+test/reservoir/jacobi3.cloog
+test/reservoir/fusion2.cloog
+test/reservoir/bastoul3.c.polylib
+test/reservoir/tang-xue1.c.polylib
+test/reservoir/lim-lam1.cloog
+test/reservoir/pingali3.c.ppl
+test/reservoir/lim-lam2.c.polylib
+test/reservoir/lim-lam2.cloog
+test/reservoir/mg-rprj3.cloog
+test/reservoir/liu-zhuge1.c.polylib
+test/reservoir/loechner3.c.ppl
+test/reservoir/mg-interp2.c.ppl
+test/reservoir/tang-xue1.c.ppl
+test/reservoir/stride2.c.polylib
+test/reservoir/lim-lam5.cloog
+test/reservoir/loechner4.c.ppl
+test/reservoir/pingali5.c.ppl
+test/reservoir/fusion1.c.polylib
+test/reservoir/pingali2.c.polylib
+test/reservoir/QR.cloog
+test/reservoir/lim-lam1.c.ppl
+test/reservoir/pingali1.c.polylib
+test/reservoir/pingali6.c.polylib
+test/reservoir/lim-lam4.cloog
+test/reservoir/mg-interp2.cloog
+test/reservoir/lim-lam6.c.ppl
+test/reservoir/mg-rprj3.c.polylib
+test/reservoir/fusion1.c.ppl
+test/reservoir/two.cloog
+test/reservoir/pingali1.c.ppl
+test/reservoir/lim-lam4.c.polylib
+test/reservoir/jacobi2.c.polylib
+test/reservoir/pingali5.cloog
+test/reservoir/lim-lam5.c.polylib
+test/reservoir/mg-psinv.c.polylib
+test/reservoir/makefile
+test/reservoir/loechner4.cloog
+test/reservoir/pingali3.cloog
+test/reservoir/tang-xue1.cloog
+test/reservoir/loechner5.c.ppl
+test/reservoir/cholesky2.c.ppl
+test/reservoir/fusion1.cloog
+test/reservoir/mg-interp.c.polylib
+test/reservoir/loechner5.cloog
+test/reservoir/stride.c.ppl
+test/reservoir/stride2.c.ppl
+test/reservoir/bastoul3.cloog
+test/reservoir/long.cloog
+test/reservoir/pingali4.c.polylib
+test/reservoir/bastoul3.c.ppl
+test/reservoir/fusion2.c.ppl
+test/reservoir/lim-lam4.c.ppl
+test/reservoir/loechner5.c.polylib
+test/reservoir/jacobi3.c.ppl
+test/reservoir/two.c.ppl
+test/reservoir/mg-interp.c.ppl
+test/reservoir/pingali3.c.polylib
+test/reservoir/lim-lam3.cloog
+test/reservoir/QR.c.polylib
+test/reservoir/fusion2.c.polylib
+test/reservoir/liu-zhuge1.c.ppl
+test/reservoir/lim-lam2.c.ppl
+test/reservoir/cholesky2.c.polylib
+test/reservoir/loechner4.c.polylib
+test/reservoir/pingali4.c.ppl
+test/reservoir/lim-lam6.c.polylib
+test/reservoir/loechner3.c.polylib
+test/reservoir/pingali5.c.polylib
+test/reservoir/mg-resid.cloog
+test/reservoir/mg-psinv.c.ppl
+test/reservoir/pingali1.cloog
+test/reservoir/mg-resid.c.ppl
+test/reservoir/cholesky2.cloog
+test/reservoir/mg-interp2.c.polylib
+test/reservoir/QR.c.ppl
+test/reservoir/lim-lam5.c.ppl
+test/reservoir/long.c.polylib
+test/reservoir/pingali6.cloog
+test/reservoir/stride2.cloog
+test/reservoir/mg-resid.c.polylib
+test/reservoir/jacobi3.c.polylib
+test/reservoir/mg-rprj3.c.ppl
+test/reservoir/stride.c.polylib
+test/reservoir/pingali2.cloog
+test/reservoir/lim-lam3.c.ppl
+test/reservoir/loechner3.cloog
+test/reservoir/mg-psinv.cloog
+test/reservoir/pingali4.cloog
+test/reservoir/pingali2.c.ppl
+test/reservoir/lim-lam1.c.polylib
+test/reservoir/mg-interp.cloog
+test/reservoir/jacobi2.cloog
+test/reservoir/lim-lam6.cloog
+test/reservoir/long.c.ppl
+test/reservoir/two.c.polylib
+test/reservoir/jacobi2.c.ppl
+test/reservoir/stride.cloog
+test/reservoir/liu-zhuge1.cloog
+test/guide.c.polylib
+test/largeur.c.ppl
+test/lu2.c.ppl
+test/basic-bounds-5.c.ppl
+test/lu.cloog
+test/equality2.c.polylib
+test/basic-bounds-6.c.ppl
+test/dot.cloog
+test/swim.cloog
+test/logopar.cloog
+Building : /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog'
+Configure cloog
+configure: WARNING: unrecognized options: --disable-nls
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for cd... no
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for ar... ar
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking for ANSI C header files... (cached) yes
+checking for strtol... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+polylibgmp
+Package gmp : /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1
+checking whether gmp works... (GMP path has been set by user)
+checking gmp.h usability... yes
+checking gmp.h presence... yes
+checking for gmp.h... yes
+checking for __gmpz_init in -lgmp... yes
+yes
+checking for location of PolyLib... installed in standard location
+checking for PolyhedronTSort in -lpolylibgmp... no
+Can't find PolyLib.
+checking for Parma Polyhedral Library (PPL)... installed in /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1
+checking ppl_c.h usability... yes
+checking ppl_c.h presence... yes
+checking for ppl_c.h... yes
+checking for version 0.10 (or later revision) of PPL... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating test/Makefile
+config.status: creating include/cloog/cloog.h
+config.status: creating autoconf/Doxyfile
+config.status: creating doc/Makefile
+config.status: creating genversion.sh
+config.status: creating include/cloog/cloog-config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing version.h commands
+config.status: executing doc/gitversion.texi commands
+configure: WARNING: unrecognized options: --disable-nls
+             /*-----------------------------------------------*
+              *           CLooG configuration is OK           *
+              *-----------------------------------------------*/
+It appears that your system is OK to start CLooG compilation. You need
+now to type "make". After compilation, you should check CLooG by typing
+"make check". If no problem occur, you can type "make uninstall" if
+you are upgrading an old version. Lastly type "make install" to install
+CLooG on your system (log as root if necessary).
+Make cloog
+Making all in .
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog'
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT block.lo -MD -MP -MF .deps/block.Tpo -c -o block.lo `test -f 'source/block.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/block.c
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT loop.lo -MD -MP -MF .deps/loop.Tpo -c -o loop.lo `test -f 'source/loop.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/loop.c
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT names.lo -MD -MP -MF .deps/names.Tpo -c -o names.lo `test -f 'source/names.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/names.c
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT options.lo -MD -MP -MF .deps/options.Tpo -c -o options.lo `test -f 'source/options.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/options.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT block.lo -MD -MP -MF .deps/block.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/block.c -o block.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT options.lo -MD -MP -MF .deps/options.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/options.c -o options.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT loop.lo -MD -MP -MF .deps/loop.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c -o loop.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT names.lo -MD -MP -MF .deps/names.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/names.c -o names.o
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c: In function 'cloog_loop_read':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c:315: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/names.c: In function 'cloog_names_read_strings':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/names.c:303: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c: In function 'cloog_loop_sort':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c:926: warning: 'now' may be used uninitialized in this function
+mv -f .deps/block.Tpo .deps/block.Plo
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT clast.lo -MD -MP -MF .deps/clast.Tpo -c -o clast.lo `test -f 'source/ppl/clast.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/ppl/clast.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT clast.lo -MD -MP -MF .deps/clast.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/clast.c -o clast.o
+mv -f .deps/options.Tpo .deps/options.Plo
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT domain.lo -MD -MP -MF .deps/domain.Tpo -c -o domain.lo `test -f 'source/ppl/domain.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/ppl/domain.c
+mv -f .deps/names.Tpo .deps/names.Plo
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT matrix.lo -MD -MP -MF .deps/matrix.Tpo -c -o matrix.lo `test -f 'source/ppl/matrix.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/ppl/matrix.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT domain.lo -MD -MP -MF .deps/domain.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/domain.c -o domain.o
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c: In function 'cloog_loop_generate_general':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c:1351: warning: 'now' may be used uninitialized in this function
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c:1351: warning: 'now2' may be used uninitialized in this function
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT matrix.lo -MD -MP -MF .deps/matrix.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/matrix.c -o matrix.o
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/domain.c: In function 'cloog_domain_simplify':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/domain.c:943: warning: passing argument 1 of 'cloog_translate_ppl_polyhedron' discards qualifiers from pointer target type
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/domain.c:659: note: expected 'ppl_Polyhedron_t' but argument is of type 'ppl_const_Polyhedron_t'
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/domain.c: In function 'cloog_domain_union_read':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/domain.c:1662: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/domain.c: In function 'cloog_domain_list_read':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/domain.c:1700: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/matrix.c: In function 'cloog_matrix_read':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/ppl/matrix.c:237: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c: In function 'cloog_loop_generate':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/loop.c:1533: warning: 'now' may be used uninitialized in this function
+mv -f .deps/loop.Tpo .deps/loop.Plo
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT pprint.lo -MD -MP -MF .deps/pprint.Tpo -c -o pprint.lo `test -f 'source/pprint.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/pprint.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT pprint.lo -MD -MP -MF .deps/pprint.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/pprint.c -o pprint.o
+mv -f .deps/matrix.Tpo .deps/matrix.Plo
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT program.lo -MD -MP -MF .deps/program.Tpo -c -o program.lo `test -f 'source/program.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/program.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT program.lo -MD -MP -MF .deps/program.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/program.c -o program.o
+mv -f .deps/pprint.Tpo .deps/pprint.Plo
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT statement.lo -MD -MP -MF .deps/statement.Tpo -c -o statement.lo `test -f 'source/statement.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/statement.c
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/program.c: In function 'cloog_program_read':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/program.c:462: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/program.c:475: warning: ignoring return value of 'fgets', declared with attribute warn_unused_result
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT statement.lo -MD -MP -MF .deps/statement.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/statement.c -o statement.o
+mv -f .deps/clast.Tpo .deps/clast.Plo
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT version.lo -MD -MP -MF .deps/version.Tpo -c -o version.lo `test -f 'source/version.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/version.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT version.lo -MD -MP -MF .deps/version.Tpo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/source/version.c -o version.o
+mv -f .deps/statement.Tpo .deps/statement.Plo
+gcc -DHAVE_CONFIG_H -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog -I./include/cloog -I./include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include  -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include -Wall -fomit-frame-pointer -g -O2 -MT cloog.o -MD -MP -MF .deps/cloog.Tpo -c -o cloog.o `test -f 'source/cloog.c' || echo '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/'`source/cloog.c
+mv -f .deps/version.Tpo .deps/version.Plo
+mv -f .deps/cloog.Tpo .deps/cloog.Po
+mv -f .deps/program.Tpo .deps/program.Plo
+mv -f .deps/domain.Tpo .deps/domain.Plo
+/bin/sh ./libtool --tag=CC   --mode=link gcc -Wall -fomit-frame-pointer -g -O2  -L/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib -L/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib -lstdc++ -lm -L/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib -o libcloog.la -rpath /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib block.lo loop.lo names.lo options.lo clast.lo domain.lo matrix.lo pprint.lo program.lo statement.lo version.lo  -lgmp -lppl_c -lppl -lgmpxx 
+libtool: link: ar cru .libs/libcloog.a  block.o loop.o names.o options.o clast.o domain.o matrix.o pprint.o program.o statement.o version.o
+libtool: link: ranlib .libs/libcloog.a
+libtool: link: ( cd ".libs" && rm -f "libcloog.la" && ln -s "../libcloog.la" "libcloog.la" )
+/bin/sh ./libtool --tag=CC   --mode=link gcc -Wall -fomit-frame-pointer -g -O2  -L/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib -L/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib -lstdc++ -lm -L/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib -o cloog cloog.o libcloog.la -lgmp -lppl_c -lppl -lgmpxx 
+libtool: link: gcc -Wall -fomit-frame-pointer -g -O2 -o cloog cloog.o  -L/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib ./.libs/libcloog.a -lstdc++ -lm /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libppl_c.a /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libppl.a /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libgmpxx.a /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libgmp.a
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog'
+Making all in doc
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/doc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/doc'
+Making all in test
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/test'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/test'
+Install cloog
+Making install in .
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog'
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog'
+test -z "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib" || /bin/mkdir -p "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib"
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libcloog.la '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib'
+libtool: install: /usr/bin/install -c .libs/libcloog.lai /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libcloog.la
+libtool: install: /usr/bin/install -c .libs/libcloog.a /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libcloog.a
+libtool: install: chmod 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libcloog.a
+libtool: install: ranlib /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libcloog.a
+libtool: finish: PATH="/home6/daewon2/bin:/usr/local/iconv/bin:/opt/mipsel-34kv3r1-20121018/bin:/opt/mipsel-24kv3r1-20121018/bin:/opt/arm-v7a8v3r1-20121018/bin:/opt/arm-v7a15v3r1-20121018/bin/:/opt/VDLinux-ARMv7-4.6-v3r0-20120319/bin:/opt/VDLinux-ARMv7-4.4-202-toolchain-v2r2-20110630/bin:/usr/local/java/jdk1.6.0_29/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/p4bin/bin:/home6/daewon2/busybox_test/Busybox/arm-v7a15v3r1-20121003/bin:/home6/daewon2/busybox_test/Busybox/arm-v7a8v3r1-20121003/bin:/home6/daewon2/busybox_test/Busybox/mipsel-24kv3r1-20121003/bin:/home6/daewon2/busybox_test/Busybox/mipsel-34kv3r1-20121003/bin:/home6/daewon2/20121114/arm-v7a15v3r1-20121114/bin:/home6/daewon2/20121114/mipsel-34kv3r1-20121114/bin:/sbin" ldconfig -n /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+test -z "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin" || /bin/mkdir -p "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin"
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c cloog '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin'
+libtool: install: /usr/bin/install -c cloog /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin/cloog
+test -z "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/cloog" || /bin/mkdir -p "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/cloog"
+ /usr/bin/install -c -m 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/block.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/clast.h include/cloog/cloog.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/domain.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/loop.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/names.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/options.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/polylib_backend.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/ppl_backend.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/pprint.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/program.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/statement.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/include/cloog/version.h include/cloog/cloog-config.h '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/cloog'
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog'
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog'
+Making install in doc
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/doc'
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/doc'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/share/info" || /bin/mkdir -p "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/share/info"
+ /usr/bin/install -c -m 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/cloog/doc/cloog.info '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/share/info'
+ install-info --info-dir='/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/share/info' '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/share/info/cloog.info'
+This is not dpkg install-info anymore, but GNU install-info
+See the man page for ginstall-info for command line arguments
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/doc'
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/doc'
+Making install in test
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/test'
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/test'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/test'
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/cloog/test'

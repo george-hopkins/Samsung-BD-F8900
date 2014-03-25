@@ -1,0 +1,27 @@
+menu "Android"
+
+config ANDROID
+	bool "Android Drivers"
+	default N
+	---help---
+	  Enable support for various drivers needed on the Android platform
+
+if ANDROID
+
+config ANDROID_LOW_MEMORY_KILLER
+	bool "Android Low Memory Killer"
+	default N
+	---help---
+	  Register processes to be killed when memory is low
+
+config SIGNAL_POLICY
+	bool "Enable signal policy feature"
+	default n
+	help
+	  If enabled then specified user-space programs (filtered by task name)
+	  are restricted by special rules for setting, unsetting and
+	  masking of specified signals. 
+
+endif # if ANDROID
+
+endmenu

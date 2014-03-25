@@ -1,0 +1,2 @@
+#define DTV_KERNEL_VERSION "0000"
+#define DTV_LAST_PATCH "0000"

@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_BCCMD_SIGNALS" discriminant="CSR_BCCMD_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="../../bsp/xml/csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="../../bsp/xml/csr_result.xml"/>
+
+    <type name="CsrBccmdReq" resource="CSR_BCCMD_SIGNALS" dvalue="CsrBccmdReq">
+        <field name="phandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="payloadLength">
+            <!-- The length of the BCCMD message -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="payload" blocklength="payloadLength">
+            <!-- Pointer to the BCCMD message -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrBccmdCfm" resource="CSR_BCCMD_SIGNALS" dvalue="CsrBccmdCfm">
+        <field name="cmdType">
+            <!-- BCCMD command type -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="seqNo">
+            <!-- Sequence number of the BCCMD message -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="varId">
+            <!-- VarId of the BCCMD message -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="status">
+            <!-- Status information about the BCCMD transaction -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="payloadLength">
+            <!-- The length of the payload of the BCCMD message -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="payload" blocklength="payloadLength">
+            <!-- Pointer to the payload of the BCCMD message -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrBccmdCfmExSend" resource="FUNC" signal="CsrBccmdCfm">
+        <field name="cmdType"/>
+        <field name="seqNo"/>
+        <field name="varId"/>
+        <field name="status"/>
+        <field name="payloadLength"/>
+        <field name="payload"/>
+    </type>
+
+    <type name="CsrBccmdFlushReq" resource="CSR_BCCMD_SIGNALS" dvalue="CsrBccmdFlushReq">
+        <field name="phandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrBccmdFlushCfm" resource="CSR_BCCMD_SIGNALS" dvalue="CsrBccmdFlushCfm">
+        <field name="result">
+            <type>CsrBccmdResult</type>
+        </field>
+    </type>
+
+    <type name="CSR_BCCMD_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrBccmdReq"                                   value="0x0000"/>
+        <value name="CsrBccmdFlushReq"                              value="0x0001"/>
+
+        <value name="CsrBccmdCfm"                                   value="0x8000"/>
+        <value name="CsrBccmdFlushCfm"                              value="0x8001"/>
+    </type>
+
+    <type name="CsrBccmdStoresType" resource="TYPE" size="16">
+        <value name="CSR_BCCMD_STORES_DEFAULT"                      value="0x0000"/>
+        <value name="CSR_BCCMD_STORES_PSRAM"                        value="0x0008"/>
+        <value name="CSR_BCCMD_STORES_PSI"                          value="0x0001"/>
+        <value name="CSR_BCCMD_STORES_PSF"                          value="0x0002"/>
+        <value name="CSR_BCCMD_STORES_PSROM"                        value="0x0004"/>
+        <value name="CSR_BCCMD_STORES_PSI_PSF"                      value="0x0003"/>
+        <value name="CSR_BCCMD_STORES_PSI_PSF_PSROM"                value="0x0007"/>
+        <value name="CSR_BCCMD_STORES_PSRAM_PSI"                    value="0x0009"/>
+        <value name="CSR_BCCMD_STORES_PSRAM_PSI_PSF"                value="0x000B"/>
+        <value name="CSR_BCCMD_STORES_PSRAM_PSI_PSF_PSROM"          value="0x000F"/>
+    </type>
+
+    <type name="CsrBccmdResult" resource="TYPE" type="CsrResult" const="1">
+        <value name="CSR_BCCMD_RESULT_NO_SUCH_VARID"                value="0x0001"/>
+        <value name="CSR_BCCMD_RESULT_TOO_BIG"                      value="0x0002"/>
+        <value name="CSR_BCCMD_RESULT_NO_VALUE"                     value="0x0003"/>
+        <value name="CSR_BCCMD_RESULT_BAD_REQ"                      value="0x0004"/>
+        <value name="CSR_BCCMD_RESULT_NO_ACCESS"                    value="0x0005"/>
+        <value name="CSR_BCCMD_RESULT_READ_ONLY"                    value="0x0006"/>
+        <value name="CSR_BCCMD_RESULT_WRITE_ONLY"                   value="0x0007"/>
+        <value name="CSR_BCCMD_RESULT_ERROR"                        value="0x0008"/>
+        <value name="CSR_BCCMD_RESULT_PERMISSION_DENIED"            value="0x0009"/>
+    </type>
+
+    <type name="CsrBccmdCmd" resource="CONST" size="16">
+        <value name="CSR_BCCMD_GET_REQ"                             value="0x0000"/>
+        <value name="CSR_BCCMD_SET_REQ"                             value="0x0002"/>
+    </type>
+
+</definitions>

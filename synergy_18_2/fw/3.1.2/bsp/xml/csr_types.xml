@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- ==========================================================================
+ |   CONFIDENTIAL
+ |   Copyright (C) Cambridge Silicon Radio Ltd 2011. All rights reserved.
+ ========================================================================== -->
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <resource name="TYPE"/>
+
+    <!-- Can we use size_t ? -->
+    <type name="CsrSize"     resource="TYPE" size="32"/>
+
+    <type name="CsrSchedQid" resource="TYPE" size="16"/>
+    <type name="CsrPrim"     resource="TYPE" size="16"/>
+
+    <type name="CsrUint8"  resource="TYPE" size="8"/>
+    <type name="CsrUint16" resource="TYPE" size="16"/>
+    <type name="CsrUint32" resource="TYPE" size="32"/>
+
+    <type name="CsrInt8"   resource="TYPE" size="8"  signed="true"/>
+    <type name="CsrInt16"  resource="TYPE" size="16" signed="true"/>
+    <type name="CsrInt32"  resource="TYPE" size="32" signed="true"/>
+
+    <type name="CsrCharString"   resource="TYPE" size="8"/>
+    <type name="CsrCharString*"  resource="TYPE" size="32" basictype="asciistring"/>
+    <type name="CsrUtf8String"   resource="TYPE" size="8"/>
+    <type name="CsrUtf8String*"  resource="TYPE" size="32" basictype="utf8string"/>
+    <type name="CsrUtf16String"  resource="TYPE" size="16"/>
+    <type name="CsrUtf16String*" resource="TYPE" size="32" basictype="utf16string"/>
+
+    <type name="CsrBool" resource="TYPE" size="8">
+        <value name="FALSE" value="0x00"/>
+        <value name="TRUE"  value="0x01"/>
+    </type>
+
+    <type name="void*" resource="TYPE" size="32"/>
+
+</definitions>

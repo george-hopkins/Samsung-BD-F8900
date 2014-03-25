@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/Gen3.0-TypeB/!svn/ver/4541/Integration/Kia/src/platform/tcc80xx/Kernel/plus
+END
+NU_Kernel_83X_V09.a
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/NU_Kernel_83X_V09.a
+END
+nucleus.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/nucleus.h
+END
+nucleus_specific.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/nucleus_specific.h
+END
+nucleus_TC.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/nucleus_TC.h
+END
+NU_Kernel_80X_V09.a
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/NU_Kernel_80X_V09.a
+END

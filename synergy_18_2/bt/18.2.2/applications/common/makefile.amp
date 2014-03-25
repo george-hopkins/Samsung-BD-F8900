@@ -1,0 +1,69 @@
+#-*-Makefile-*-
+###############################################################################
+#
+#                (c) Cambridge Silicon Radio Limited 2009
+#
+#                All rights reserved and confidential information of CSR
+#
+# REVISION:      $Revision: #2 $
+###############################################################################
+
+#
+# This makefile sets up libraries and flags for AMP and coex support.
+# Generic AMP has its own setting, as have every PAL we support. There
+# is also a separate setting for WiFi coex support. 
+#
+
+# Generic AMP support
+ifeq ($(CSR_AMP_ENABLE),1)
+CFLAGS += -DCSR_AMP_ENABLE
+endif
+
+# WiFi AMP PAL
+ifeq ($(CSR_BT_APP_AMP_WIFI),1)
+CFLAGS += -DCSR_BT_APP_AMP_WIFI
+INC += -I $(WIFI_ROOT)/inc \
+	-I $(WIFI_ROOT)/src/inc \
+	-I $(WIFI_ROOT)/src/router_remote/code \
+	-I $(WIFI_ROOT)/porting/extra/mib/inc \
+	-I $(WIFI_ROOT)/porting/ports/common/inc \
+	-I $(WIFI_ROOT)/example_apps/generic/inc
+LIBS += $(call use_lib,csr_wifi_wifi_util) \
+	$(call use_lib,csr_wifi) \
+	$(call use_lib,csr_wifi_lib) \
+	$(call use_lib,csr_wifi_porting) \
+	$(call use_lib,csr_wifi_porting_extra) \
+	$(call use_lib,csr_wifi_crypto) \
+	$(call use_lib,csr_wifi_sme) \
+	$(call use_lib,csr_wifi_sme_lib) \
+	$(call use_lib,csr_wifi_router_remote) \
+	$(call use_lib,csr_arg_search) \
+	$(call use_lib,csr_ip_ether_lib) \
+	$(call use_lib,csr_wifi_msg_converter)
+
+ifneq ($(filter 3 4, $(WIFI_MAJOR_VERSION)),)
+	LIBS += $(call use_lib,csr_wifi_router_remote_lib)
+	LIBS += $(call use_lib,csr_wifi_porting_fs)
+else
+	LIBS += $(call use_lib,csr_wifi_router_lib)
+endif
+
+
+LDPATH += $(call create_ldpath,$(WIFI_ROOT)/output/$(WIFI_CONFIG)/$(TARGET)/lib) \
+	$(call create_ldpath,$(WIFI_ROOT)/porting/output/$(WIFI_CONFIG)/$(TARGET)/lib) \
+	$(call create_ldpath,$(WIFI_ROOT)/output/$(WIFI_CONFIG)/$(TARGET)/lib/extra)
+endif
+
+# WiFi coex
+ifeq ($(CSR_BT_APP_WIFI_COEX),1)
+INC +=  -I $(WIFI_ROOT)/example_apps/generic/inc
+LIBS += $(call use_lib,csr_wifi_generic_app)
+LDPATH += $(call create_ldpath,$(WIFI_ROOT)/example_apps/output/$(WIFI_CONFIG)/$(TARGET)/lib)
+endif
+
+# UWB AMP PAL (only for internal CSR use!)
+ifeq ($(CSR_BT_APP_AMP_UWB),1)
+CFLAGS += -DCSR_BT_APP_AMP_UWB
+endif
+
+

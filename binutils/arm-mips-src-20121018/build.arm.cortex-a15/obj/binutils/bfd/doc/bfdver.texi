@@ -1,0 +1,4 @@
+@set VERSION 2.22.0
+@set VERSION_PACKAGE (VDLinux.GA1.2012-10-03) 
+@set UPDATED April 2013
+@set BUGURL @uref{http://linux.sec.samsung.net/VDLinux/}

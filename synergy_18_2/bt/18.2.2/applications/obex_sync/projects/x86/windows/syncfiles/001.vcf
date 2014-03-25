@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:2.1
+N:Server;Synergy BT;sync
+FN:Synergy BT sync Server
+ORG:Cambridge Silicon Radio
+TITLE:Tester
+TEL;WORK;VOICE:+45 72200380
+URL;WORK:http://www.csr.com
+REV:20020913T074407Z
+END:VCARD

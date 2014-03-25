@@ -1,0 +1,24 @@
+.\" ** You probably do not want to edit this file directly **
+.\" It was generated using the DocBook XSL Stylesheets (version 1.69.1).
+.\" Instead of manually editing it, you probably should edit the DocBook XML
+.\" source for it and then use the DocBook XSL Stylesheets to regenerate it.
+.TH "GIO\-QUERYMODULES" "1" "08/28/2012" "User Commands" "User Commands"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+gio\-querymodules \- GIO module cache creation
+.SH "SYNOPSIS"
+.HP 17
+\fBgio\-querymodules\fR {directory...}
+.SH "DESCRIPTION"
+.PP
+\fBgio\-querymodules\fR
+creates a
+\fIgiomodule.cache\fR
+file in the listed directories. This file lists the implemented extension points for each module that has been found. It is used by GIO at runtime to avoid opening all modules just to find out which extension points they are implementing.
+.PP
+GIO modules are usually installed in the
+\fIgio/modules\fR
+subdirectory of libdir.

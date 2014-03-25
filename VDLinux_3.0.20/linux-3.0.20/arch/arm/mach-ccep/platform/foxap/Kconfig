@@ -1,0 +1,22 @@
+######################################################################
+#
+# 	Kconfig for Aquila machine; Samsung VD SoC DTV platform
+# 	
+# 	created by tukho.kim@samsung.com
+#
+######################################################################
+#
+# May,31,2010:	created by tukho.kim
+# 
+
+if MACH_FOXAP
+
+config FOXAP_SMC_SPI
+	tristate "SDP SPI Master controller devices on external bus"
+	default n
+	depends on SDP_SPI
+	help
+	  SPI controller devices integrated within One-connection serdes FPGAs
+	  These devices are accessible by SDP SMC external bus.
+
+endif # MACH_FOXAP

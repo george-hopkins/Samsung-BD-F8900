@@ -1,0 +1,36 @@
+#!/bin/sh
+module="bt_usb"
+device="bt_usb"
+mode="666"
+group="root"
+
+if [ "$1" = "2.4" -o "$2" = "2.4" ]; then
+ext=.o
+else
+ext=.ko
+fi 
+
+if [ "$1" = "DEBUG" -o "$2" = "DEBUG" ]; then
+debug=_d
+else
+debug=
+fi 
+
+if [ "$debug" = "_d" ]; then
+shift
+fi
+
+module="$module""$debug"
+
+# invoke insmod with all arguments we got
+# and use a pathname, as newer modutils don't look in . by default
+/sbin/insmod ./$module$ext $* || exit 1
+
+major=`grep $device /proc/devices | cut -d' ' -f1`
+
+# Remove stale nodes and replace them, then give gid and perms
+
+rm -f /dev/${device}
+mknod /dev/${device} c $major 0
+chgrp $group /dev/${device} 
+chmod $mode  /dev/${device}

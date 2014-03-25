@@ -1,0 +1,93 @@
+menu "Samsung SP DEBUG patch"
+comment "VDLinux Debug patch"
+
+config VD_RELEASE
+    default n
+    bool "Turn on Release mode"
+    help
+     Set Debug/Release mode (n : Debug / y : Release)
+
+config UNHANDLED_IRQ_TRACE_DEBUGGING
+   bool "trace unhandled irq tracing"
+   depends on VD_RELEASE=n
+   default n
+
+config FIND_LONG_TIME_IRQ_HANDLER
+   bool "trace irq handler which takes long time(> 1s)"
+   depends on UNHANDLED_IRQ_TRACE_DEBUGGING=y
+   default n
+
+config CHECK_MOUNT_DEBUG
+   bool "mount debugging"
+   depends on VD_RELEASE=n
+   default n
+
+config FCOUNT_DEBUG
+   bool "print f_count when umount fail(task info also is printed when CONFIG_FD_PID is enable) "
+   depends on VD_RELEASE=n
+   default n
+
+config RUN_TIMER_DEBUG
+   bool "run timer debugging"
+   depends on VD_RELEASE=n
+
+config UART_BROADCAST
+   bool "tty broadcast"
+   depends on VD_RELEASE=n
+   default n
+
+config NT13_DEBUG
+   bool "NT13 debug"
+   depends on VD_RELEASE=n && NVT_NT72568=y
+   default y
+
+config X12_DEBUG
+   bool "X12 debug"
+   depends on VD_RELEASE=n && MSTAR_EDISON=y
+   default y
+
+config SCHED_HISTORY_ON_DDR
+    bool "Schedule history logger(pid,thread name, pc, sp ...) to ddr"
+    depends on VD_RELEASE=n && DTVLOGD_EMERGENCY_LOG=y
+    default y
+    help
+     It write down schedule history to ddr memory.
+	(This data is written to end of e-log buffer)
+
+config OPEN_FILE_CHECKER
+	bool "In case of too many open files, It prints open file information"
+    depends on VD_RELEASE=n
+	default y
+	help
+	 It prints open file information.
+	 also if the FD_PID is enabled, open thread information is supported.
+
+config IRQ_TIME
+   bool "IRQ_TIME"
+   default n
+   depends on VD_RELEASE=n
+   help
+     It prints the time of irqs
+
+config SUPPORT_REBOOT
+   bool "FORCE reboot when oops, coredump, hung task and watchdoc happens)"
+   default y
+   depends on VD_RELEASE=n
+   help
+     reboot target when problem happen
+
+config ENABLE_REBOOT
+	bool "enable REBOOT Setting"
+   default n
+   depends on SUPPORT_REBOOT=y
+
+config SUPPORT_MSG_WITH_REBOOT
+	bool "support print message when oops, coredump, hung task and watchdoc happens)"
+   default y
+   depends on SUPPORT_REBOOT=y
+
+config ENABLE_MSG_WITH_REBOOT
+	bool "enable oops, coredump message print Setting"
+   default n
+   depends on SUPPORT_REBOOT=y
+endmenu

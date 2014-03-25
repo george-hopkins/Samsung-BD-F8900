@@ -1,0 +1,63 @@
+# Config Novatek Platform
+
+menu "Novatek config"
+
+choice 
+	prompt "Novatek Chip Selection"
+	default NVT_NT72568
+
+config NVT_NT72568
+	bool "Novatek NT72568 board"
+	select DMA_NONCOHERENT
+	select ARCH_SPARSEMEM_ENABLE
+	select IRQ_GIC
+	select IRQ_CPU_NVT
+	select CEVT_R4K
+	select CSRC_R4K
+	select MIPS_CPU_SCACHE
+	select SYS_HAS_CPU_MIPS32_R2
+	select SYS_HAS_EARLY_PRINTK
+	select SYS_SUPPORTS_32BIT_KERNEL
+	select SYS_SUPPORTS_LITTLE_ENDIAN
+	select SYS_SUPPORTS_MULTITHREADING
+	select CPU_MIPSR2_IRQ_EI
+	help
+	  This enables support for the NovaTek nt72568 evaluation
+	  board.
+
+endchoice
+
+config PULLOUT_INITRAMFS
+	bool "Pull-out Initramfs source file from kernel image"
+	default n
+	help
+	  Enable this to pull-out initramfs_data.cpio.gz from vmlinux.
+
+config INITRAMFS_IMG_HDR_ADDR
+	hex "Location info of __initramfs_start and __initramfs_end"
+	depends on PULLOUT_INITRAMFS
+	default 0x88000000
+	help
+	  The first word contains __initramfs_start. And the second word contains __initramfs_end. 
+
+config SET_CLOCK_MANUALLY
+  bool "Set clock manually"
+  default y
+
+config CPU_CLOCK
+  int "CPU clock setting (Hz)"
+  depends on SET_CLOCK_MANUALLY
+  default 25000000
+
+config AHB_CLOCK
+  int "AHB clock setting (Hz)"
+  depends on SET_CLOCK_MANUALLY
+  default 12000000
+
+config IRQ_CPU_NVT
+	depends on NVT_CHIP
+	default y
+	bool
+
+endmenu
+

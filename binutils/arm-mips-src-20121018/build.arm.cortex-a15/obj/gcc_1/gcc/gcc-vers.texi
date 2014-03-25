@@ -1,0 +1,5 @@
+@set version-GCC 4.6.4
+@clear DEVELOPMENT
+@set srcdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/gcc_1/gcc
+@set VERSION_PACKAGE (Linaro GCC 4.6-2012.08-1~dev) 
+@set BUGURL @uref{http://gcc.gnu.org/bugs.html}

@@ -1,0 +1,30 @@
+/*****************************************************************************
+
+            (c) Cambridge Silicon Radio Limited 2010
+            All rights reserved and confidential information of CSR
+
+            Refer to LICENSE.txt included with this source for details
+            on the license terms.
+
+*****************************************************************************/
+
+/* Note: this is an auto-generated file. */
+
+#include "csr_types.h"
+
+const CsrCharString bootstrap_patch_string_pb_75_6455_csp_psr[] =
+    "&212c=0001 0e45 0014 f000 5325 0114 e700 8425 f100 1115 0118 ff2b ff0e 0e00 4a18 00e2 0151\n"
+    "&212d=0001 0ae3 e700 8415 0184 0bf0 ea00 9c15 f000 5325 0118 ff2b ff0e 0b00 e718 00e2 f000 5315 ea00 9c25 0118 ff2b ff0e 0b00 0d18 00e2 f8f3\n"
+    "&212e=0000 5fb0 0114 3625 f800 7c15 0027 0018 ff2b ff0e 6000 b318 00e2 fbfb\n"
+    "&212f=0000 b337 0518 f200 2229 0118 0014 ff27 ff0e b300 3a14 ff27 ffe3 6175\n"
+    "&2130=0000 bbd4 0a18 f200 2229 0018 ff2b ff0e bc00 d718 00e2 ad0d\n"
+    "&2131=0000 d65a 0514 f200 2225 0014 ff27 ff0e d600 5d14 ff27 ffe3 f974\n"
+    "&2175=0000 0000 0000 0000 0000\n"
+    "&218c=0072\n"
+    "&21ad=3150 0040 1725 0f15 0c1b\n"
+    "&21ae=0001 0001 0000 0007 0004 0002 0000 1b19 0000 01cc 0395 0395 0004 0064 00c8 0001 028a\n"
+    "&2202=1000 ff14 f100 1125 00e2 078e\n"
+    "&2212=b200 8088 02f0 00e2 b600 7688 09f0 f100 c415 ea00 9b25 0014 f100 c425 00e2 ea00 9b15 f100 c425 00e2 8176\n"
+    "&2218=df00 8115 0284 06f0 fd00 e115 02b4 fd00 e125 00e2 f066\n"
+    "&2219=df00 8115 0284 06f0 fd00 e115 fdc4 fd00 e125 00e2 f557\n"
+    "&241a=2b15 0050 2a58 0050 ec00 2c18 0040 2b58 0040 f000 2b18 0030 2a58 0030 f400 2c18 0020 2b58 0020 f800 2d18 0010 2b5a 0010 fc00 265a 0000 2b7c 0000 0000 2faa 0000 34cc 0000 0400 3fff 0000 3fff 0000 0800\n";

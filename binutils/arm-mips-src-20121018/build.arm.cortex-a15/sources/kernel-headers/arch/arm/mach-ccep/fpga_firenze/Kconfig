@@ -1,0 +1,8 @@
+
+if MACH_FPGA_FIRENZE
+
+config FPGA_FIRENZE_BUSCLKSRC
+	int "FPGA Bus clock source(#3 clock) frequency (Hz)"
+	default "6250000"
+
+endif

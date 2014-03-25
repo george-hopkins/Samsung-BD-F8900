@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_TM_BLUECORE_PRIVATE_SIGNALS" discriminant="CSR_TM_BLUECORE_PRIVATE_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+
+    <type name="CsrTmBluecorePrivateResetInd" resource="CSR_TM_BLUECORE_PRIVATE_SIGNALS" dvalue="CsrTmBluecorePrivateResetInd"/>
+    <type name="CsrTmBluecorePrivatePanicInd" resource="CSR_TM_BLUECORE_PRIVATE_SIGNALS" dvalue="CsrTmBluecorePrivatePanicInd"/>
+
+    <type name="CSR_TM_BLUECORE_PRIVATE_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrTmBluecorePrivateResetInd" value="0x8000"/>
+        <value name="CsrTmBluecorePrivatePanicInd" value="0x8001"/>
+    </type>
+
+</definitions>

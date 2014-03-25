@@ -1,0 +1,15 @@
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_0_head/csu/abi-note.o: \
+ ../ports/sysdeps/arm/eabi/abi-note.S ../include/libc-symbols.h \
+ /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_0_head/config.h \
+ ../sysdeps/wordsize-32/symbol-hacks.h ../csu/abi-note.S \
+ /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_0_head/csu/abi-tag.h
+
+../include/libc-symbols.h:
+
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_0_head/config.h:
+
+../sysdeps/wordsize-32/symbol-hacks.h:
+
+../csu/abi-note.S:
+
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_0_head/csu/abi-tag.h:

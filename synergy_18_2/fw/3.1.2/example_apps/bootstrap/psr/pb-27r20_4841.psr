@@ -1,0 +1,308 @@
+// =============================================================================
+// 
+// CSR tracking information, report this in case of problems:
+//   $Revision: #20 $
+//   Built Thu Sep 10 16:15:23 2009 GMT
+//   Checked-in $DateTime: 2009/09/10 17:18:00 $
+//   $File: //depot/bc/unified-23/dev/patches/4841/pb-27.psr $
+// 
+// Patch is for build 4841 sgl_4hci_rom_bt2.1_23_0710171402_sdio_encr128
+// 
+// Issues patched: B-22913, B-32173, B-34898, B-34960, B-39651, B-41910,
+//                 B-42862, B-47332, B-49311, B-49312, B-57804, B-67742,
+//                 B-8670
+// 
+// Documentation from pb-27.pb
+// ---------------------------
+// 
+// General purpose patch bundle for BC6-ROM A04 (build ID 4841) that
+// is suitable for all end users.
+// 
+// Documentation from edr-tx-temp-comp.pb
+// --------------------------------------
+// 
+// Issues patched: B-32173
+// 
+// This patch modifies the EDR transmit temperature compensation to improve
+// the differential error vector magnitude (DEVM) performance at temperatures
+// below -20C.
+// 
+// Documentation from dutm-double-accepted.pb
+// ------------------------------------------
+// 
+// Issues patched: B-22913
+// 
+// When a device is in Bluetooth Test Mode it doesn't use the normal
+// mechanisms of baseband flow control and acknowledgement. This can cause
+// a problem where the tester (master) sends LMP_test_control, to which the
+// device under test (slave) normally responds with LMP_accepted. If the
+// slave's message is lost there is no defined mechanism to send it again,
+// so the whole test system can lock up.
+// 
+// By setting PSKEY_LM_TEST_SEND_ACCEPTED_TWICE to TRUE then the
+// LMP_accepted messages are sent twice.
+// 
+// This is an ugly and imperfect fix, but it has improved interoperation
+// with some Bluetooth testers.
+// 
+// Documentation from patch_hwakeup_evt_timeout.xap
+// ------------------------------------------------
+// 
+// Issues patched: B-49311
+// 
+// State machine broken when using PSKEY_UART_HOST_WAKE.
+// This patch addresses the problem.
+// 
+// Documentation from patch_transmit_prepare.xap
+// ---------------------------------------------
+// 
+// Issues patched: B-49312
+// 
+// Erroneous timing of pause state when using PSKEY_UART_HOST_WAKE.
+// This patch addresses the problem.
+// 
+// Documentation from patch_hal_set_synth_info_rx.xap
+// --------------------------------------------------
+// 
+// Issues patched: B-34898
+// 
+// A problem has been identified with the BC6-ROM receive sensitivity.
+// This patch addresses the problem.
+// 
+// Note that performance might also be improved by setting PSKEY_RX_HIGHSIDE to
+// 1, but that's module design dependent. Consult CSR for advice.
+// 
+// Documentation from patch_hal_set_synth_info_tx.xap
+// --------------------------------------------------
+// 
+// Issues patched: B-34898
+// 
+// A problem has been identified with the BC6-ROM receive sensitivity.
+// This patch addresses the problem.
+// 
+// Documentation from tempcrop.xap
+// -------------------------------
+// 
+// Issues patched: B-34960
+// 
+// Prevent (occasional) panics when operated at low temperatures.
+// 
+// Documentation from filtbias.xap
+// -------------------------------
+// 
+// Issues patched: B-39651, B-42862
+// 
+// A problem has been identified in the firmware's temperature compensation
+// algorithm which led to degraded EDR receiver performance at low
+// temperatures. This patch resolves this issue.
+// 
+// Documentation from b_45283.xap
+// ------------------------------
+// 
+// Issues patched: B-41910
+// 
+// Support for new RADIOTEST_CFG_FREQ_MS bccmd for Faster HQ BER reporting
+// 
+// Documentation from patch_lm_slave_fsm.c
+// ---------------------------------------
+// 
+// Issues patched: B-47332
+// 
+// On BlueCore firmware which supports Secure Simple Pairing, a problem may
+// occur on connection creation if the remote side tries to authenticate a
+// BlueCore slave while the slave is in the middle of pairing. This happens if
+// the link key is deleted on the slave's host but not the master's, so that
+// the master attempts to authenticate while the slave is trying to establish a
+// new link key. A characteristic symptom is that BlueCore rejects the master's
+// LMP_au_rand twice, with LMP_not_accepted reason "Key Missing", and then with
+// "LMP PDU Not Allowed". Once the problem has occurred, the LM responds to
+// inbound LMP traffic with "LMP PDU Not Allowed", and the link is likely to
+// time out.
+// 
+// Documentation from patch_lmp_detach.c
+// -------------------------------------
+// 
+// Issues patched: B-8670
+// 
+// If BlueCore receives an LMP_detach PDU with a reason code of 0x8 (connection
+// timeout) during connection creation, it silently drops the link without
+// sending a connection complete event with a failure status to the host.
+// 
+// This was observed with another manufacturer's baseband, which sent such an
+// LMP_detach during the link key negotiation for authentication and encryption
+// on connection creation. CSR basebands do not send LMP_detach with this
+// reason code as the spec does not allow it as an argument to HCI Disconnect
+// (q.v. BT2.0+EDR, Part E, section 7.1.6).
+// 
+// The firmware has been amended to re-write invalid inbound LMP_detach reasons
+// to Remote User Terminated Connection (0x13) and send the connection complete
+// event.
+// 
+// Documentation from patch_hostio_sdio_start_timer.xap
+// ----------------------------------------------------
+// 
+// Issues patched: B-57804
+// 
+// When using the SDIO or CSPI host transports BlueCore may become unstable.
+// 
+// Documentation from patch_lc_pause_all_data.xap
+// ----------------------------------------------
+// 
+// Issues patched: B-67742
+// 
+// If BlueCore was performing a role switch as part of the connection creation
+// procedure it paused all ACL user data on all links until the role switch
+// completed. This could cause an interruption of 150 to 200 ms in the data
+// flow. For some use cases, such as A2DP streaming, this could cause user
+// observable effects (audio glitches in the A2DP case). Analysis of the
+// firmware and LM sequencing for this scenario has revealed that this pause is
+// not necessary and so it has been removed. There will still be some disruption
+// of user data flow simply as the result of now having two links to service, at
+// least one of which BlueCore is slave of. However, the duration should now be
+// much reduced - to roughly the poll interval (25 ms by default).
+// 
+// Version information for input files
+// -----------------------------------
+// 
+// Created by patchmaker.pl Revision: #39  Date: 2009/03/23 
+// 
+// Input file: pb-27.pb
+// Depot file: //depot/bc/unified-23/dev/patches/4841/pb-27.pb
+// File revision: 19
+// 
+// Input file: edr-tx-temp-comp.pb
+// Depot file: //depot/bc/unified-23/dev/patches/4841/edr-tx-temp-comp.pb
+// File revision: 1
+// 
+// Input file: dutm-double-accepted.pb
+// Depot file: //depot/bc/unified-23/dev/patches/4841/dutm-double-accepted.pb
+// File revision: 1
+// 
+// Input file: patch_hwakeup_evt_timeout.xap
+// Depot file: //depot/bc/unified-23/dev/patches/4841/patch_hwakeup_evt_timeout.xap
+// File revision: 1
+// 
+// Input file: patches.inc
+// Depot file: //depot/bc/unified-23/dev/patches/4841/patches.inc
+// File revision: 1
+// 
+// Input file: patch_transmit_prepare.xap
+// Depot file: //depot/bc/unified-23/dev/patches/4841/patch_transmit_prepare.xap
+// File revision: 1
+// 
+// Input file: patch_hal_set_synth_info_rx.xap
+// Depot file: //depot/bc/unified-23/dev/patches/4841/patch_hal_set_synth_info_rx.xap
+// File revision: 6
+// 
+// Input file: patch_hal_set_synth_info_tx.xap
+// Depot file: //depot/bc/unified-23/dev/patches/4841/patch_hal_set_synth_info_tx.xap
+// File revision: 4
+// 
+// Input file: tempcrop.xap
+// Depot file: //depot/bc/unified-23/dev/patches/4841/tempcrop.xap
+// File revision: 4
+// 
+// Input file: filtbias.xap
+// Depot file: //depot/bc/unified-23/dev/patches/4841/filtbias.xap
+// File revision: 46
+// 
+// Input file: b_45283.xap
+// Depot file: //depot/bc/unified-23/dev/patches/4841/b_45283.xap
+// File revision: 1
+// 
+// Input file: patch_lm_slave_fsm.c
+// Depot file: //depot/bc/unified-23/dev/patches/4841/patch_lm_slave_fsm.c
+// File revision: 1
+// 
+// Input file: patch_lmp_detach.c
+// Depot file: //depot/bc/unified-23/dev/patches/4841/patch_lmp_detach.c
+// File revision: 2
+// 
+// Input file: patch_hostio_sdio_start_timer.xap
+// Depot file: //depot/bc/unified-23/dev/patches/4841/patch_hostio_sdio_start_timer.xap
+// File revision: 4
+// 
+// Input file: patch_lc_pause_all_data.xap
+// Depot file: //depot/bc/unified-23/dev/patches/4841/patch_lc_pause_all_data.xap
+// File revision: 3
+
+// explicit, PSKEY_LM_TEST_SEND_ACCEPTED_TWICE (0x00f6, 246), 1 words
+&00f6 = 0001
+
+// explicit, PSKEY_PMALLOC_SIZES (0x0203, 515), 32 words
+&0203 = 0002 0036 0004 0082 0006 0043 0008 004b 000a 002c 0010 000f 0014 0029 0020 0026 0024 000d 0028 000a 0034 0003 0046 000c 0064 000a 0074 000a 0082 0004 0000 0000
+
+// explicit, PSKEY_MR_TX_IF_ATTEN_OFF_TEMP (0x0394, 916), 1 words
+&0394 = ffec
+
+// explicit, PSKEY_TEMPERATURE_VS_DELTA_TX_BB_MR_PAYLOAD (0x03aa, 938), 12 words
+&03aa = ffd8 0003 ffeb 0001 ffec 0005 fff6 0005 0014 0000 0028 fffe
+
+// explicit, PSKEY_TEMPERATURE_VS_DELTA_TX_BB_MR_HEADER (0x03ab, 939), 12 words
+&03ab = ffd8 0003 ffeb 0001 ffec 0005 fff6 0005 0014 0000 0028 fffe
+
+// explicit, PSKEY_RX_DYNAMIC_LVL_OFFSET (0x03d4, 980), 1 words
+&03d4 = 0007
+
+// patch_hardware_0, PSKEY_PATCH50 (0x212c, 8492), 20 words
+&212c = 0001 bb38 3d14 e335 03e8 0014 06e0 0100 1d84 03fc 0100 1c14 fa25 0018 ff2b ff0e bb00 3b18 00e2 fdb9
+
+// patch_hardware_2, PSKEY_PATCH52 (0x212e, 8494), 34 words
+&212e = 0001 a276 ff00 7e25 ff00 c815 8fc4 40b4 ff00 c825 8915 9000 ffc4 3000 00b4 8925 e400 6c15 9000 ffc4 3000 00b4 e400 6c25 e400 6d15 9000 ffc4 3000 00b4 e400 6d25 ffe3 fed6
+
+// patch_hardware_3, PSKEY_PATCH53 (0x212f, 8495), 46 words
+&212f = 0001 a32d ff00 7e25 0216 e400 6c18 ff00 c811 8fc0 1e84 15f4 3e84 13f4 40b0 ff00 c821 9000 ff14 8911 e1c1 3000 00b0 8921 0012 e1c1 3000 00b0 01c6 3000 00b4 0be0 7000 0014 ff00 c821 8911 e1b1 8921 0012 e1b1 01b6 0022 0126 ffe3 a6bb
+
+// patch_hardware_4, PSKEY_PATCH54 (0x2130, 8496), 15 words
+&2130 = 0001 f897 0014 001b 0226 001b 0712 0816 0018 ff2b ff0e f900 9a18 00e2 76a4
+
+// patch_hardware_5, PSKEY_PATCH55 (0x2131, 8497), 21 words
+&2131 = 0001 e897 e000 b515 0284 09f4 0384 07f4 0018 ff2b ff0e e900 9b18 00e2 0018 ff2b ff0e e900 d618 00e2 3bed
+
+// patch_hardware_7, PSKEY_PATCH57 (0x2133, 8499), 39 words
+&2133 = 0001 c904 0018 132b 130e 3d00 219e e900 3518 0026 e400 6d15 ff26 6014 0126 e415 130e dd00 c09e 019c e200 2819 ff00 7000 009e 8915 e400 6d25 ff00 c515 e500 e725 e415 130e c700 c518 009e d80f 1f0b
+
+// patch_hardware_8, PSKEY_PATCH58 (0x2134, 8500), 40 words
+&2134 = 0001 c9cb 2600 ce88 06f0 b511 0473 0200 f380 05e6 e30b df00 f315 8000 0184 17f4 e900 3518 0012 8000 0180 03f0 0026 0fe0 0056 1627 0192 e111 07a4 e800 8031 1523 019c e200 2619 ff00 7000 00e2 e30f bbff
+
+// patch_hardware_9, PSKEY_PATCH59 (0x2135, 8501), 24 words
+&2135 = 0001 c8bf fd84 0ef8 0387 06f8 0327 8915 1000 ffc4 0227 0018 ff2b ff0e c900 c718 00e2 0018 ff2b ff0e c900 e518 00e2 58ac
+
+// patch_hardware_10, PSKEY_PATCH60 (0x2136, 8502), 31 words
+&2136 = 0002 2552 f921 0084 13f4 e119 0316 0012 3280 05f4 1680 0df0 0400 e890 0027 0116 0212 0018 ff2b ff0e e400 8b18 009e f70f 0118 ff2b ff0e 2500 5618 00e2 ced3
+
+// patch_hardware_11, PSKEY_PATCH61 (0x2137, 8503), 29 words
+&2137 = 0001 e06e e100 a988 0df4 e800 9f19 071a 0416 0009 0400 e890 0023 0127 e800 9f19 021a 0013 0117 0a36 0942 0922 0a26 f955 f861 0080 f7ec fc0f 82c1
+
+// patch_hardware_12, PSKEY_PATCH62 (0x2138, 8504), 13 words
+&2138 = 0001 e303 0416 0009 0400 e890 0018 ff2b ff0e e300 1418 00e2 4929
+
+// patch_hardware_13, PSKEY_PATCH63 (0x2139, 8505), 43 words
+&2139 = 0001 cb38 f90b e000 8015 0009 0400 e890 0118 002b 1f18 012b 0018 ff2b ff0e 0700 f818 009e 17f0 0010 cb00 5514 0023 0127 0018 022b 0114 0327 1f18 042b e000 8015 0009 0400 e890 0018 ff2b ff0e 0700 0518 009e f90f 2ec6
+
+// patch_hardware_14, PSKEY_PATCH64 (0x213a, 8506), 4 words
+&213a = 0003 ba37 00e2 580d
+
+// explicit, PSKEY_TEMPERATURE_VS_DELTA_INTERNAL_PA_MR (0x21e1, 8673), 16 words
+&21e1 = ffd8 0002 ffeb 0001 ffec ffff fff6 0000 0032 0000 003c 0001 0050 0002 0064 0003
+
+// patch_fsm_32bit_run, PSKEY_PATCH133 (0x2215, 8725), 18 words
+&2215 = fe0b 0217 031b 2d00 ff84 0bf0 0016 0e84 08f0 0617 0100 0f84 04f0 0100 dc14 0627 fe0f c35e
+
+// patch_sched_put_allocated_message, PSKEY_PATCH134 (0x2216, 8726), 28 words
+&2216 = fe0b 021b 0317 0484 16f0 049b 14f0 0116 0184 11f0 021a 0016 0784 0df0 0212 e015 fec4 0800 0e84 07f0 e015 0100 ffc4 1300 00b4 0226 fe0f bae4
+
+// patch_spare1, PSKEY_PATCH151 (0x2227, 8743), 63 words
+&2227 = 299c 0013 279c 0427 0f00 3314 289c 0527 0314 249c 0627 2000 6914 219c 0587 0224 0527 0514 1b9c 0487 0224 0417 0677 0200 9084 0828 0517 0677 0287 0424 0227 0013 0323 0013 0a33 0183 de2c 0313 ff00 c521 f60f 0023 ff00 c521 0114 0ba0 fc0b 0325 0014 0f13 0127 0023 0b0e c700 5f18 009e 0137 0013 ff30 f7f0 0f97 fc0f c70e
+
+// patch_spare2, PSKEY_PATCH152 (0x2228, 8744), 62 words
+&2228 = 1613 1030 2080 362c 0010 1a23 e415 0234 1a0e c600 f518 009e 1513 e230 e900 3715 1e34 0027 e035 0118 012b 019c e200 2719 ff00 7000 009e f814 1583 022c 0814 169b 02e8 0074 e900 3635 7f84 0328 0100 8014 3f84 0220 4014 e900 3625 1693 e111 07a4 e800 8031 1523 e415 0234 1a0e c700 c518 009e 1517 e500 e725 e30f 6a40
+
+// patch_spare3, PSKEY_PATCH153 (0x2229, 8745), 29 words
+&2229 = f60b 0127 8000 ff14 0227 0014 0327 0727 5000 0714 ff00 7b25 ff00 cf15 c000 0fc4 e400 76b5 ff00 cf25 e900 3415 8925 e200 2519 ff00 7000 00e2 db92
+
+// patch_spare4, PSKEY_PATCH154 (0x222a, 8746), 58 words
+&222a = f10b 0100 6d10 0200 3514 2a9c e800 8021 0a23 e230 249c 0b27 0a13 219c 0a13 0b87 0620 0230 0a23 0200 5780 f72c e800 8051 e900 3721 e415 0010 0c23 220e c900 8618 009e fd14 f825 019c e200 2919 e500 db11 1000 00c0 ff00 7000 00f6 f10f e015 f60b 0218 0a2b 0818 0b2b e200 2719 ff00 7000 01e2 9c36
+
+// patch_spare5, PSKEY_PATCH155 (0x222b, 8747), 26 words
+&222b = e419 e415 0a34 fa25 0116 0012 04e8 f881 06fc 0ce0 f899 03ec 0c87 082c 0c27 8915 f000 00c4 0cb7 8925 f821 0238 fa89 edfc f10f 338f

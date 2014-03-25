@@ -1,0 +1,15 @@
+1. arm-mips-src-20121018.tar.bz2의 압축을 풉니다.
+2. /arm-mips-src-20121018/scripts/로 들어갑니다.
+3. ./mktools.sh을 이용하여 toolchain/binutil을 빌드할 수 있습니다.
+
+
+[toolchain]
+1. FoxP
+./mktools.sh -c toolchain.cfg/arm-v7a15.config
+2. X12, FoxB
+./mktools.sh -c toolchain.cfg/arm-v7a8.config
+3. X13
+./mktools.sh -c toolchain.cfg/mips-34kf.config
+4. NT13
+./mktools.sh -c toolchain.cfg/mips-24kc.config
+

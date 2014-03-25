@@ -1,0 +1,2189 @@
+Archive member included because of file (symbol)
+
+../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                              ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o (csr_av_active_cmd)
+../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                              ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o (csr_avrc_active_cmd)
+../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                              ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o (csr_gap_init_wd_count)
+../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                              ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o (csr_hidh_active_cmd)
+../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+                              ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o) (csr_ss_log_set_level)
+../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+                              ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o) (peer_client_com_init)
+../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+                              ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o) (usr2usr_socket_dump_data)
+/home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                              ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o (CsrMemCpy)
+/home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+                              ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o) (CsrPmemAlloc)
+../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+                              ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o) (CsrBtAppEventHandler)
+/home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+                              /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o) (CsrPanic)
+/opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+                              /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o) (__aeabi_idiv)
+/opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+                              /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o) (__aeabi_idiv0)
+/opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+                              /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o (__libc_csu_init)
+
+Allocating common symbols
+Common symbol       size              file
+
+myserviceName       0xff              ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+mysdpInfo           0x10              ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+a2dp_addr           0x8               ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+mydescriptor        0xff              ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+myinfodata          0x18              ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+rec_db              0x208             ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+tst_bdaddr          0x8               ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ .note.GNU-stack
+                0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+ .note.GNU-stack
+                0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .note.GNU-stack
+                0x00000000        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .note.GNU-stack
+                0x00000000        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .note.GNU-stack
+                0x00000000        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtend.o
+ .note.GNU-stack
+                0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+LOAD ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+LOAD ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a
+LOAD ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a
+LOAD /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a
+LOAD /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a
+LOAD /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libpthread.so
+START GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/lib/libpthread.so.0
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libpthread_nonshared.a
+END GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/librt.so
+LOAD ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a
+LOAD ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a
+LOAD /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a
+LOAD /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a
+LOAD /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libpthread.so
+START GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/lib/libpthread.so.0
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libpthread_nonshared.a
+END GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/librt.so
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/../../../../arm-v7a8v3r1-linux-gnueabi/lib/libgcc_s.so
+START GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/../../../../arm-v7a8v3r1-linux-gnueabi/lib/libgcc_s.so.1
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a
+END GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc.so
+START GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/lib/libc.so.6
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/lib/ld-linux.so.3
+END GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/../../../../arm-v7a8v3r1-linux-gnueabi/lib/libgcc_s.so
+START GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/../../../../arm-v7a8v3r1-linux-gnueabi/lib/libgcc_s.so.1
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a
+END GROUP
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtend.o
+LOAD /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+                0x00008000                PROVIDE (__executable_start, 0x8000)
+                0x00008134                . = (0x8000 + SIZEOF_HEADERS)
+
+.interp         0x00008134       0x13
+ *(.interp)
+ .interp        0x00008134       0x13 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.note.ABI-tag   0x00008148       0x20
+ .note.ABI-tag  0x00008148       0x20 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash           0x00008168      0x19c
+ *(.hash)
+ .hash          0x00008168      0x19c /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym         0x00008304      0x400
+ *(.dynsym)
+ .dynsym        0x00008304      0x400 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.dynstr         0x00008704      0x2ea
+ *(.dynstr)
+ .dynstr        0x00008704      0x2ea /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.gnu.version    0x000089ee       0x80
+ *(.gnu.version)
+ .gnu.version   0x000089ee       0x80 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.gnu.version_d  0x00008a70        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.gnu.version_r  0x00008a70       0x70
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x00008a70       0x70 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.rel.dyn        0x00008ae0       0x10
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x00008ae0        0x8 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ .rel.bss       0x00008ae8        0x8 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                0x00008af0                PROVIDE (__rel_iplt_start, .)
+ *(.rel.iplt)
+ .rel.iplt      0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                0x00008af0                PROVIDE (__rel_iplt_end, .)
+                0x00008af0                PROVIDE (__rela_iplt_start, .)
+                0x00008af0                PROVIDE (__rela_iplt_end, .)
+
+.rela.dyn       0x00008af0        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                0x00008af0                PROVIDE (__rel_iplt_start, .)
+                0x00008af0                PROVIDE (__rel_iplt_end, .)
+                0x00008af0                PROVIDE (__rela_iplt_start, .)
+ *(.rela.iplt)
+                0x00008af0                PROVIDE (__rela_iplt_end, .)
+
+.rel.plt        0x00008af0      0x1d8
+ *(.rel.plt)
+ .rel.plt       0x00008af0      0x1d8 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.rela.plt
+ *(.rela.plt)
+
+.init           0x00008cc8        0xc
+ *(.init)
+ .init          0x00008cc8        0x8 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+                0x00008cc8                _init
+ .init          0x00008cd0        0x4 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+
+.plt            0x00008cd4      0x2d8
+ *(.plt)
+ .plt           0x00008cd4      0x2d8 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                0x00008ce8                pthread_mutex_unlock@@GLIBC_2.4
+                0x00008cf4                strstr@@GLIBC_2.4
+                0x00008d00                raise@@GLIBC_2.4
+                0x00008d0c                sem_wait@@GLIBC_2.4
+                0x00008d18                strcasestr@@GLIBC_2.4
+                0x00008d24                strcmp@@GLIBC_2.4
+                0x00008d30                strtol@@GLIBC_2.4
+                0x00008d3c                sem_post@@GLIBC_2.4
+                0x00008d48                printf@@GLIBC_2.4
+                0x00008d54                fopen@@GLIBC_2.4
+                0x00008d60                read@@GLIBC_2.4
+                0x00008d6c                pthread_mutex_destroy@@GLIBC_2.4
+                0x00008d78                memmove@@GLIBC_2.4
+                0x00008d84                free@@GLIBC_2.4
+                0x00008d90                pthread_mutex_lock@@GLIBC_2.4
+                0x00008d9c                memcpy@@GLIBC_2.4
+                0x00008da8                pthread_mutex_init@@GLIBC_2.4
+                0x00008db4                memcmp@@GLIBC_2.4
+                0x00008dc0                pthread_cond_init@@GLIBC_2.4
+                0x00008dcc                pthread_cond_destroy@@GLIBC_2.4
+                0x00008dd8                strcasecmp@@GLIBC_2.4
+                0x00008de4                strcat@@GLIBC_2.4
+                0x00008df0                strcpy@@GLIBC_2.4
+                0x00008dfc                pthread_create@@GLIBC_2.4
+                0x00008e08                opendir@@GLIBC_2.4
+                0x00008e14                puts@@GLIBC_2.4
+                0x00008e20                malloc@@GLIBC_2.4
+                0x00008e2c                __libc_start_main@@GLIBC_2.4
+                0x00008e38                strerror@@GLIBC_2.4
+                0x00008e50                strlen@@GLIBC_2.4
+                0x00008e5c                strchr@@GLIBC_2.4
+                0x00008e68                __errno_location@@GLIBC_2.4
+                0x00008e74                __isoc99_sscanf@@GLIBC_2.7
+                0x00008e80                sem_init@@GLIBC_2.4
+                0x00008e8c                memset@@GLIBC_2.4
+                0x00008e98                putchar@@GLIBC_2.4
+                0x00008ea4                strncpy@@GLIBC_2.4
+                0x00008eb0                pthread_cancel@@GLIBC_2.4
+                0x00008ebc                fscanf@@GLIBC_2.4
+                0x00008ec8                write@@GLIBC_2.4
+                0x00008ed4                writev@@GLIBC_2.4
+                0x00008ee0                fclose@@GLIBC_2.4
+                0x00008eec                shutdown@@GLIBC_2.4
+                0x00008ef8                readdir@@GLIBC_2.4
+                0x00008f04                strrchr@@GLIBC_2.4
+                0x00008f10                vfprintf@@GLIBC_2.4
+                0x00008f1c                pthread_join@@GLIBC_2.4
+                0x00008f28                __isoc99_scanf@@GLIBC_2.7
+                0x00008f34                vsnprintf@@GLIBC_2.4
+                0x00008f40                pthread_cond_wait@@GLIBC_2.4
+                0x00008f4c                socket@@GLIBC_2.4
+                0x00008f58                strncat@@GLIBC_2.4
+                0x00008f64                strncmp@@GLIBC_2.4
+                0x00008f70                pthread_cond_signal@@GLIBC_2.4
+                0x00008f7c                abort@@GLIBC_2.4
+                0x00008f88                close@@GLIBC_2.4
+                0x00008f94                connect@@GLIBC_2.4
+                0x00008fa0                closedir@@GLIBC_2.4
+
+.iplt           0x00008fac        0x0
+ *(.iplt)
+ .iplt          0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+
+.text           0x00008fac     0x4fec
+ *(.text.unlikely .text.*_unlikely)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ .text.startup.main
+                0x00008fac       0x1c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00008fac                main
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x00008fc8       0x3c /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                0x00008fc8                _start
+ .text          0x00009004        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+ .text.call_gmon_start
+                0x00009004       0x24 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+ .text          0x00009028        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .text.__do_global_dtors_aux
+                0x00009028       0x1c /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .text.frame_dummy
+                0x00009044       0x30 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .text          0x00009074        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .text.csrBtSSAVPcmStreamDataInd
+                0x00009074        0x4 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009074                csrBtSSAVPcmStreamDataInd
+ .text.csrBtHidhStatusInd
+                0x00009078       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009078                csrBtHidhStatusInd
+ .text.csrBtHidhDataInd
+                0x0000908c       0x9c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x0000908c                csrBtHidhDataInd
+ .text.csrBtAVRCDisconnectCfm
+                0x00009128       0x28 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009128                csrBtAVRCDisconnectCfm
+ .text.csrBtAVRCCtPassThroughInd
+                0x00009150       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009150                csrBtAVRCCtPassThroughInd
+ .text.csrBtAVRCDisconnectInd
+                0x00009164       0x28 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009164                csrBtAVRCDisconnectInd
+ .text.csrBtAVRCConnectCfm
+                0x0000918c       0x24 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x0000918c                csrBtAVRCConnectCfm
+ .text.csrBtAVRCCtPassThroughCfm
+                0x000091b0       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000091b0                csrBtAVRCCtPassThroughCfm
+ .text.csrBtAVRCRemoteFeturesInd
+                0x000091c4       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000091c4                csrBtAVRCRemoteFeturesInd
+ .text.csrBtAVRCConnectInd
+                0x000091d8       0x28 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000091d8                csrBtAVRCConnectInd
+ .text.csrBtSSAVDisconnectCfm
+                0x00009200       0x4c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009200                csrBtSSAVDisconnectCfm
+ .text.csrBtAvOpenCfm
+                0x0000924c       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x0000924c                csrBtAvOpenCfm
+ .text.csrBtSSAVConfigCfm
+                0x00009260       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009260                csrBtSSAVConfigCfm
+ .text.csrBtAvOpenInd
+                0x00009274       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009274                csrBtAvOpenInd
+ .text.csrBtSSAVDisconnectInd
+                0x00009288       0x4c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009288                csrBtSSAVDisconnectInd
+ .text.csrBtSSAVConfigInd
+                0x000092d4       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000092d4                csrBtSSAVConfigInd
+ .text.csrBtScEncryptionCfmFunc
+                0x000092e8       0x28 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000092e8                csrBtScEncryptionCfmFunc
+ .text.csrBtGapScDeregisterScdbCfmFunc
+                0x00009310       0x28 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009310                csrBtGapScDeregisterScdbCfmFunc
+ .text.csrBtGapGetDbgLevelIndFunc
+                0x00009338       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009338                csrBtGapGetDbgLevelIndFunc
+ .text.csrBtGapSDSearchIndFunc
+                0x0000934c       0x6c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x0000934c                csrBtGapSDSearchIndFunc
+ .text.csrBtGapCmLocalNameCfmFunc
+                0x000093b8       0x14 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000093b8                csrBtGapCmLocalNameCfmFunc
+ .text.csrBtGapCmLocalBdaddrCfmFunc
+                0x000093cc       0x28 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000093cc                csrBtGapCmLocalBdaddrCfmFunc
+ .text.csrBtMgtServerProcessClose
+                0x000093f4        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000093f4                csrBtMgtServerProcessClose
+ .text.csrBtHidhDisconnectCfm
+                0x00009400       0x1c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009400                csrBtHidhDisconnectCfm
+ .text.csrBtHidhConnectAcceptInd
+                0x0000941c       0x1c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x0000941c                csrBtHidhConnectAcceptInd
+ .text.csrBtHidhDisconnectInd
+                0x00009438       0x1c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009438                csrBtHidhDisconnectInd
+ .text.csrBtHidhConnectInd
+                0x00009454       0x1c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009454                csrBtHidhConnectInd
+ .text.csrBtHidhDeActivateCfm
+                0x00009470        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009470                csrBtHidhDeActivateCfm
+ .text.csrBtHidhAtivateCfm
+                0x0000947c        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x0000947c                csrBtHidhAtivateCfm
+ .text.csrBtAVRCCloseInd
+                0x00009488        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009488                csrBtAVRCCloseInd
+ .text.csrBtAVRCDeActivateCfm
+                0x00009494        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009494                csrBtAVRCDeActivateCfm
+ .text.csrBtAVRCAtivateCfm
+                0x000094a0        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000094a0                csrBtAVRCAtivateCfm
+ .text.csrBtAvSuspendInd
+                0x000094ac        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000094ac                csrBtAvSuspendInd
+ .text.csrBtAvStartInd
+                0x000094b8        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000094b8                csrBtAvStartInd
+ .text.csrBtSSAVCloseCfm
+                0x000094c4        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000094c4                csrBtSSAVCloseCfm
+ .text.csrBtSSAVCloseInd
+                0x000094d0        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000094d0                csrBtSSAVCloseInd
+ .text.csrBtSSAVDeActivateCfm
+                0x000094dc        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000094dc                csrBtSSAVDeActivateCfm
+ .text.csrBtSSAVAtivateCfm
+                0x000094e8        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000094e8                csrBtSSAVAtivateCfm
+ .text.csrBtGapBtInitIndFunc
+                0x000094f4        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000094f4                csrBtGapBtInitIndFunc
+ .text.csrBtGapGetErrorIndFunc
+                0x00009500        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009500                csrBtGapGetErrorIndFunc
+ .text.csrBtGapChiWdCountFunc
+                0x0000950c        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x0000950c                csrBtGapChiWdCountFunc
+ .text.csrBtGapSDSearchCloseFunc
+                0x00009518        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009518                csrBtGapSDSearchCloseFunc
+ .text.csrBtSSAVConnectCfm
+                0x00009524       0x44 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009524                csrBtSSAVConnectCfm
+ .text.csrBtSSAVConnectInd
+                0x00009568       0x48 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009568                csrBtSSAVConnectInd
+ .text.csrBtGapScBondIndFunc
+                0x000095b0       0xfc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000095b0                csrBtGapScBondIndFunc
+ .text.csrBtGapScAuthorizeIndFunc
+                0x000096ac       0x64 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000096ac                csrBtGapScAuthorizeIndFunc
+ .text.csrBtGapScSspJustworksInd
+                0x00009710       0x40 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009710                csrBtGapScSspJustworksInd
+ .text.csrBtGapScPassKeyInd
+                0x00009750       0x6c ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009750                csrBtGapScPassKeyInd
+ .text.csrBtHidhConnectCfm
+                0x000097bc      0x138 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000097bc                csrBtHidhConnectCfm
+ .text.app_display_menu
+                0x000098f4      0x100 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000098f4                app_display_menu
+ .text.intput_key
+                0x000099f4       0x40 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x000099f4                intput_key
+ .text.app_menu
+                0x00009a34      0x364 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x00009a34                app_menu
+ .text          0x00009d98        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvSuspendIndHandler
+                0x00009d98       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvStartIndHandler
+                0x00009dd8       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvCloseCfmHandler
+                0x00009e18       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvCloseIndHandler
+                0x00009e5c       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvPcmStreamDataIndHandler
+                0x00009e9c       0x50 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvConnectIndHandler
+                0x00009eec       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvDeActivateCfmHandler
+                0x00009f30       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvActivateCfmHandler
+                0x00009f70       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                0x00009f70                csrBtAvActivateCfmHandler
+ .text.csrBtAvDisconnectCfmHandler
+                0x00009fb0       0x90 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvOpenCfmHandler
+                0x0000a040       0x60 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvConfigCfmHandler
+                0x0000a0a0       0x70 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvOpenIndHandler
+                0x0000a110       0x60 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvDisconnectIndHandler
+                0x0000a170       0x90 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvConnectCfmHandler
+                0x0000a200       0x90 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csrBtAvConfigIndHandler
+                0x0000a290       0x70 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .text.csr_av_active_cmd
+                0x0000a300       0x54 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                0x0000a300                csr_av_active_cmd
+ .text.csr_av_deactvie_cmd
+                0x0000a354       0x34 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                0x0000a354                csr_av_deactvie_cmd
+ .text.csr_av_connect_cmd
+                0x0000a388       0x80 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                0x0000a388                csr_av_connect_cmd
+ .text.csr_av_disconnect_cmd
+                0x0000a408       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                0x0000a408                csr_av_disconnect_cmd
+ .text.csr_av_conneting_cancel_cmd
+                0x0000a44c       0x80 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                0x0000a44c                csr_av_conneting_cancel_cmd
+ .text.CsrBtAvAppEventHandler
+                0x0000a4cc       0x60 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                0x0000a4cc                CsrBtAvAppEventHandler
+ .text          0x0000a52c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRCCloseIndHandler
+                0x0000a52c       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRCRemoteFeatureIndHandler
+                0x0000a56c       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRCConnectIndHandler
+                0x0000a5b0       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRCDeActivateCfmHandler
+                0x0000a5f4       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRCActivateCfmHandler
+                0x0000a634       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRCDisconectCfmHandler
+                0x0000a674       0x90 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRCPassThroughIndHandler
+                0x0000a704       0x78 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRCDisconectIndHandler
+                0x0000a77c       0x90 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRConectCfmHandler
+                0x0000a80c       0x90 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csrBtAVRCPassThroughCfmHandler
+                0x0000a89c       0x8c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .text.csr_avrc_active_cmd
+                0x0000a928       0x54 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                0x0000a928                csr_avrc_active_cmd
+ .text.csr_avrc_deactive_cmd
+                0x0000a97c       0x34 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                0x0000a97c                csr_avrc_deactive_cmd
+ .text.csr_avrc_ct_pass_through_cmd
+                0x0000a9b0       0x70 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                0x0000a9b0                csr_avrc_ct_pass_through_cmd
+ .text.csr_avrc_connect_cmd
+                0x0000aa20       0x80 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                0x0000aa20                csr_avrc_connect_cmd
+ .text.csr_avrc_disconnect_cmd
+                0x0000aaa0       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                0x0000aaa0                csr_avrc_disconnect_cmd
+ .text.csr_avrc_ct_set_volume_cmd
+                0x0000aae4       0x70 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                0x0000aae4                csr_avrc_ct_set_volume_cmd
+ .text.csr_avrc_connecting_cancel_cmd
+                0x0000ab54       0x80 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                0x0000ab54                csr_avrc_connecting_cancel_cmd
+ .text.CsrBtAVRCAppEventHandler
+                0x0000abd4       0x60 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                0x0000abd4                CsrBtAVRCAppEventHandler
+ .text          0x0000ac34        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapChiWdCountHandler
+                0x0000ac34       0xe8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapSDSearchIndHandler
+                0x0000ad1c       0xc4 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapScSspJustworksIndHandler
+                0x0000ade0       0xc0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapScPassKeyIndHandler
+                0x0000aea0       0xc0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapScBondIndHandler
+                0x0000af60      0x214 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.GetPIDbyName_implements
+                0x0000b174      0x174 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.GetPIDbyName_Wrapper
+                0x0000b2e8       0x6c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.strstr_Wrapper
+                0x0000b354       0x10 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapBtInitIndHandler
+                0x0000b364       0x54 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapSDSearchCloseHandler
+                0x0000b3b8       0x54 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapCmLocalBdaddrCfmHandler
+                0x0000b40c       0x5c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapScEncryptionCfmHandler
+                0x0000b468       0xa8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapScDeregisterScdbCfmHandler
+                0x0000b510       0xa8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapScAuthorizeIndHandler
+                0x0000b5b8       0xa8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapErrorHandler
+                0x0000b660       0x5c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapDbgLevelHandler
+                0x0000b6bc       0xa0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csrBtGapCmLocalNameCfmHandler
+                0x0000b75c       0x68 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.strcmp_Wrapper
+                0x0000b7c4       0x2c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .text.csr_gap_init_wd_count
+                0x0000b7f0       0x34 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000b7f0                csr_gap_init_wd_count
+ .text.csr_gap_get_wd_count
+                0x0000b824       0x30 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000b824                csr_gap_get_wd_count
+ .text.csr_client_mgt_open
+                0x0000b854       0x88 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000b854                csr_client_mgt_open
+ .text.csr_client_mgt_close
+                0x0000b8dc       0x38 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000b8dc                csr_client_mgt_close
+ .text.csr_client_mgt_connect
+                0x0000b914       0x24 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000b914                csr_client_mgt_connect
+ .text.csr_gap_set_scan_enable_cmd
+                0x0000b938       0x9c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000b938                csr_gap_set_scan_enable_cmd
+ .text.csr_gap_connectable_cmd
+                0x0000b9d4       0x80 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000b9d4                csr_gap_connectable_cmd
+ .text.csr_gap_local_bdaddr_cmd
+                0x0000ba54       0x34 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000ba54                csr_gap_local_bdaddr_cmd
+ .text.csr_gap_local_name_cmd
+                0x0000ba88       0x34 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000ba88                csr_gap_local_name_cmd
+ .text.csr_gap_sc_register_scdb_cmd
+                0x0000babc      0x1f0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000babc                csr_gap_sc_register_scdb_cmd
+ .text.csr_gap_gap_set_local_name_cmd
+                0x0000bcac       0x5c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000bcac                csr_gap_gap_set_local_name_cmd
+ .text.csr_gap_sc_deregister_scdb_cmd
+                0x0000bd08      0x110 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000bd08                csr_gap_sc_deregister_scdb_cmd
+ .text.csr_gap_sc_passkey_res_cmd
+                0x0000be18       0xd8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000be18                csr_gap_sc_passkey_res_cmd
+ .text.csr_gap_sc_justworks_res_cmd
+                0x0000bef0       0x8c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000bef0                csr_gap_sc_justworks_res_cmd
+ .text.csr_gap_sd_search_cmd
+                0x0000bf7c       0xa8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000bf7c                csr_gap_sd_search_cmd
+ .text.csr_gap_sd_search_cancel_cmd
+                0x0000c024       0x34 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000c024                csr_gap_sd_search_cancel_cmd
+ .text.csr_gap_get_local_device_info
+                0x0000c058       0x3c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000c058                csr_gap_get_local_device_info
+ .text.csr_gap_set_dbg_level
+                0x0000c094       0x64 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000c094                csr_gap_set_dbg_level
+ .text.csr_gap_ss_reset_cmd
+                0x0000c0f8       0x34 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000c0f8                csr_gap_ss_reset_cmd
+ .text.csr_gap_sc_authorize_rsp_cmd
+                0x0000c12c       0x78 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000c12c                csr_gap_sc_authorize_rsp_cmd
+ .text.csr_gap_write_page_timeout_cmd
+                0x0000c1a4       0x5c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000c1a4                csr_gap_write_page_timeout_cmd
+ .text.csr_gap_sc_encryption_req_cmd
+                0x0000c200       0x78 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000c200                csr_gap_sc_encryption_req_cmd
+ .text.csr_get_pid_by_name
+                0x0000c278       0x34 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000c278                csr_get_pid_by_name
+ .text.CsrBtGapAppEventHandler
+                0x0000c2ac       0x60 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                0x0000c2ac                CsrBtGapAppEventHandler
+ .text          0x0000c30c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csrBtHIDHConnectCfmHandler
+                0x0000c30c       0xec ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csrBtHIDHStatusIndHandler
+                0x0000c3f8       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csrBtHIDHDataIndHandler
+                0x0000c43c       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csrBtHIDHConnectIndHandler
+                0x0000c480       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csrBtHIDHDeActivateCfmHandler
+                0x0000c4c4       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csrBtHIDHActivateCfmHandler
+                0x0000c504       0x40 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csrBtHIDHDisconectCfmHandler
+                0x0000c544       0x90 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csrBtHIDHConnectAcceptIndHandler
+                0x0000c5d4       0x90 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csrBtHIDHDisconectIndHandler
+                0x0000c664       0x90 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .text.csr_hidh_active_cmd
+                0x0000c6f4       0x54 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                0x0000c6f4                csr_hidh_active_cmd
+ .text.csr_hidh_deactive_cmd
+                0x0000c748       0x34 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                0x0000c748                csr_hidh_deactive_cmd
+ .text.csr_hidh_connect_cmd
+                0x0000c77c      0x10c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                0x0000c77c                csr_hidh_connect_cmd
+ .text.csr_hidh_connect_accecpt_cmd
+                0x0000c888      0x108 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                0x0000c888                csr_hidh_connect_accecpt_cmd
+ .text.csr_hidh_disconnect_cmd
+                0x0000c990       0x44 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                0x0000c990                csr_hidh_disconnect_cmd
+ .text.csr_hidh_control_cmd
+                0x0000c9d4       0x60 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                0x0000c9d4                csr_hidh_control_cmd
+ .text.csr_hidh_data_cmd
+                0x0000ca34       0x8c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                0x0000ca34                csr_hidh_data_cmd
+ .text.CsrBtHIDHAppEventHandler
+                0x0000cac0       0x60 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                0x0000cac0                CsrBtHIDHAppEventHandler
+ .text          0x0000cb20        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .text.csr_ss_log_set_level
+                0x0000cb20       0x74 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+                0x0000cb20                csr_ss_log_set_level
+ .text.csr_ss_client_dbg_printf
+                0x0000cb94       0x4c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+                0x0000cb94                csr_ss_client_dbg_printf
+ .text          0x0000cbe0        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .text.external_cli_tx_thread
+                0x0000cbe0       0xec ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .text.set_external_tid
+                0x0000cccc       0x70 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+                0x0000cccc                set_external_tid
+ .text.external_cli_rx_thread
+                0x0000cd3c      0x1bc ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .text.peer_client_com_init
+                0x0000cef8      0x1c8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+                0x0000cef8                peer_client_com_init
+ .text.peer_client_com_deinit
+                0x0000d0c0      0x13c ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+                0x0000d0c0                peer_client_com_deinit
+ .text.csr_bt_client_app_set_error_state
+                0x0000d1fc       0x10 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+                0x0000d1fc                csr_bt_client_app_set_error_state
+ .text.csr_bt_client_app_put_message_to_tx_thread
+                0x0000d20c       0xac ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+                0x0000d20c                csr_bt_client_app_put_message_to_tx_thread
+ .text.peer_get_external_conect
+                0x0000d2b8       0x84 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+                0x0000d2b8                peer_get_external_conect
+ .text          0x0000d33c        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .text.usr2usr_socket_dump_data
+                0x0000d33c        0x4 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+                0x0000d33c                usr2usr_socket_dump_data
+ .text.send_DATA_ind
+                0x0000d340       0xcc ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+                0x0000d340                send_DATA_ind
+ .text.read_external_data
+                0x0000d40c       0x50 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+                0x0000d40c                read_external_data
+ .text          0x0000d45c        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .text.CsrBitCountSparse
+                0x0000d45c       0x2c /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d45c                CsrBitCountSparse
+ .text.CsrBitCountDense
+                0x0000d488       0x28 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d488                CsrBitCountDense
+ .text.CsrHexStrToUint8
+                0x0000d4b0      0x110 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d4b0                CsrHexStrToUint8
+ .text.CsrHexStrToUint16
+                0x0000d5c0      0x114 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d5c0                CsrHexStrToUint16
+ .text.CsrHexStrToUint32
+                0x0000d6d4      0x104 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d6d4                CsrHexStrToUint32
+ .text.CsrPow   0x0000d7d8       0x34 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d7d8                CsrPow
+ .text.CsrIntToBase10
+                0x0000d80c       0xf8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d80c                CsrIntToBase10
+ .text.CsrUInt16ToHex
+                0x0000d904       0x48 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d904                CsrUInt16ToHex
+ .text.CsrUInt32ToHex
+                0x0000d94c       0x44 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d94c                CsrUInt32ToHex
+ .text.CsrMemCpy
+                0x0000d990        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d990                CsrMemCpy
+ .text.CsrMemSet
+                0x0000d994        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d994                CsrMemSet
+ .text.CsrMemMove
+                0x0000d998        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d998                CsrMemMove
+ .text.CsrMemCmp
+                0x0000d99c        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d99c                CsrMemCmp
+ .text.CsrMemDup
+                0x0000d9a0       0x34 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9a0                CsrMemDup
+ .text.CsrStrCpy
+                0x0000d9d4        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9d4                CsrStrCpy
+ .text.CsrStrNCpy
+                0x0000d9d8        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9d8                CsrStrNCpy
+ .text.CsrStrCat
+                0x0000d9dc        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9dc                CsrStrCat
+ .text.CsrStrNCat
+                0x0000d9e0        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9e0                CsrStrNCat
+ .text.CsrStrStr
+                0x0000d9e4        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9e4                CsrStrStr
+ .text.CsrStrLen
+                0x0000d9e8        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9e8                CsrStrLen
+ .text.CsrStrCmp
+                0x0000d9ec        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9ec                CsrStrCmp
+ .text.CsrStrNCmp
+                0x0000d9f0        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9f0                CsrStrNCmp
+ .text.CsrStrChr
+                0x0000d9f4        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9f4                CsrStrChr
+ .text.CsrVsnprintf
+                0x0000d9f8        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9f8                CsrVsnprintf
+ .text.CsrStrNCpyZero
+                0x0000d9fc       0x28 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000d9fc                CsrStrNCpyZero
+ .text.CsrStrToInt
+                0x0000da24       0x64 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000da24                CsrStrToInt
+ .text.CsrStrDup
+                0x0000da88       0x38 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000da88                CsrStrDup
+ .text.CsrStrNICmp
+                0x0000dac0       0x98 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000dac0                CsrStrNICmp
+ .text.CsrGetBaseName
+                0x0000db58       0x8c /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000db58                CsrGetBaseName
+ .text.CsrIsSpace
+                0x0000dbe4       0x38 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                0x0000dbe4                CsrIsSpace
+ .text          0x0000dc1c        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .text.CsrPmemInit
+                0x0000dc1c        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+                0x0000dc1c                CsrPmemInit
+ .text.CsrPmemDeinit
+                0x0000dc20        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+                0x0000dc20                CsrPmemDeinit
+ .text.CsrPmemAlloc
+                0x0000dc24       0x30 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+                0x0000dc24                CsrPmemAlloc
+ .text.CsrPmemFree
+                0x0000dc54        0xc /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+                0x0000dc54                CsrPmemFree
+ .text          0x0000dc60        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+ .text.CsrBtAppEventHandler
+                0x0000dc60       0x50 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+                0x0000dc60                CsrBtAppEventHandler
+ .text          0x0000dcb0        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+ .text.CsrPanicInit
+                0x0000dcb0       0x10 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+                0x0000dcb0                CsrPanicInit
+ .text.CsrPanic
+                0x0000dcc0       0x20 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+                0x0000dcc0                CsrPanic
+ .text          0x0000dce0      0x240 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+                0x0000dce0                __divsi3
+                0x0000dce0                __aeabi_idiv
+                0x0000df00                __aeabi_idivmod
+ .text          0x0000df20       0x10 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+                0x0000df20                __aeabi_ldiv0
+                0x0000df20                __aeabi_idiv0
+ .text          0x0000df30        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+ .text.__libc_csu_init
+                0x0000df30       0x64 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+                0x0000df30                __libc_csu_init
+ .text.__libc_csu_fini
+                0x0000df94        0x4 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+                0x0000df94                __libc_csu_fini
+ .text          0x0000df98        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtend.o
+ .text          0x0000df98        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+ *(.v4_bx)
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.fini           0x0000df98        0x8
+ *(.fini)
+ .fini          0x0000df98        0x4 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+                0x0000df98                _fini
+ .fini          0x0000df9c        0x4 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+                0x0000dfa0                PROVIDE (__etext, .)
+                0x0000dfa0                PROVIDE (_etext, .)
+                0x0000dfa0                PROVIDE (etext, .)
+
+.rodata         0x0000dfa0     0x1f78
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.cst4   0x0000dfa0        0x4 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                0x0000dfa0                _IO_stdin_used
+ .rodata        0x0000dfa4       0x38 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .rodata.str1.4
+                0x0000dfdc      0xa79 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                0xa7c (size before relaxing)
+ *fill*         0x0000ea55        0x3 00
+ .rodata        0x0000ea58       0x3c ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .rodata.str1.4
+                0x0000ea94      0x315 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                                0x318 (size before relaxing)
+ *fill*         0x0000eda9        0x3 00
+ .rodata        0x0000edac       0x28 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .rodata.str1.4
+                0x0000edd4      0x27f ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                                0x290 (size before relaxing)
+ *fill*         0x0000f053        0x1 00
+ .rodata        0x0000f054       0x38 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .rodata.str1.4
+                0x0000f08c      0x976 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                                0x9bc (size before relaxing)
+ *fill*         0x0000fa02        0x2 00
+ .rodata        0x0000fa04       0x24 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .rodata.str1.4
+                0x0000fa28      0x203 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                                0x214 (size before relaxing)
+ *fill*         0x0000fc2b        0x1 00
+ .rodata.str1.4
+                0x0000fc2c      0x2d6 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+                                0x2d8 (size before relaxing)
+ *fill*         0x0000ff02        0x2 00
+ .rodata        0x0000ff04        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .rodata.str1.4
+                0x0000ff08       0x10 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+
+.rodata1
+ *(.rodata1)
+
+.ARM.extab      0x0000ff18      0x1a4
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ .ARM.extab     0x0000ff18        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ .ARM.extab.text.__do_global_dtors_aux
+                0x0000ff18        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .ARM.extab.text.frame_dummy
+                0x0000ff18        0xc /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .ARM.extab.text.csrBtSSAVPcmStreamDataInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtHidhStatusInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtHidhDataInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCDisconnectCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCCtPassThroughInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCDisconnectInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCConnectCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCCtPassThroughCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCRemoteFeturesInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCConnectInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVDisconnectCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAvOpenCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVConfigCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAvOpenInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVDisconnectInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVConfigInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtScEncryptionCfmFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapScDeregisterScdbCfmFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapGetDbgLevelIndFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapSDSearchIndFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapCmLocalNameCfmFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapCmLocalBdaddrCfmFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtMgtServerProcessClose
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtHidhDisconnectCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtHidhConnectAcceptInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtHidhDisconnectInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtHidhConnectInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtHidhDeActivateCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtHidhAtivateCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCCloseInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCDeActivateCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAVRCAtivateCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAvSuspendInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAvStartInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVCloseCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVCloseInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVDeActivateCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVAtivateCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapBtInitIndFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapGetErrorIndFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapChiWdCountFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapSDSearchCloseFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVConnectCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtSSAVConnectInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapScBondIndFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapScAuthorizeIndFunc
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapScSspJustworksInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtGapScPassKeyInd
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtHidhConnectCfm
+                0x0000ff24        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.app_display_menu
+                0x0000ff24        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.intput_key
+                0x0000ff30        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.app_menu
+                0x0000ff3c        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.startup.main
+                0x0000ff3c        0xc ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.extab.text.csrBtAvSuspendIndHandler
+                0x0000ff48        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvStartIndHandler
+                0x0000ff54        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvCloseCfmHandler
+                0x0000ff60        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvCloseIndHandler
+                0x0000ff6c        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvPcmStreamDataIndHandler
+                0x0000ff78        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvConnectIndHandler
+                0x0000ff84        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvDeActivateCfmHandler
+                0x0000ff90        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvActivateCfmHandler
+                0x0000ff9c        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvDisconnectCfmHandler
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvOpenCfmHandler
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvConfigCfmHandler
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvOpenIndHandler
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvDisconnectIndHandler
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvConnectCfmHandler
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAvConfigIndHandler
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csr_av_active_cmd
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csr_av_deactvie_cmd
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csr_av_connect_cmd
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csr_av_disconnect_cmd
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csr_av_conneting_cancel_cmd
+                0x0000ffa8        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.CsrBtAvAppEventHandler
+                0x0000ffa8        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.extab.text.csrBtAVRCCloseIndHandler
+                0x0000ffb4        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtAVRCRemoteFeatureIndHandler
+                0x0000ffc0        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtAVRCConnectIndHandler
+                0x0000ffcc        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtAVRCDeActivateCfmHandler
+                0x0000ffd8        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtAVRCActivateCfmHandler
+                0x0000ffe4        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtAVRCDisconectCfmHandler
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtAVRCPassThroughIndHandler
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtAVRCDisconectIndHandler
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtAVRConectCfmHandler
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtAVRCPassThroughCfmHandler
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csr_avrc_active_cmd
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csr_avrc_deactive_cmd
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csr_avrc_ct_pass_through_cmd
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csr_avrc_connect_cmd
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csr_avrc_disconnect_cmd
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csr_avrc_ct_set_volume_cmd
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csr_avrc_connecting_cancel_cmd
+                0x0000fff0        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.CsrBtAVRCAppEventHandler
+                0x0000fff0        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.extab.text.csrBtGapChiWdCountHandler
+                0x0000fffc        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapSDSearchIndHandler
+                0x0000fffc        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapScSspJustworksIndHandler
+                0x0000fffc        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapScPassKeyIndHandler
+                0x0000fffc        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapScBondIndHandler
+                0x0000fffc        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.GetPIDbyName_implements
+                0x0000fffc        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.GetPIDbyName_Wrapper
+                0x00010008        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.strstr_Wrapper
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapBtInitIndHandler
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapSDSearchCloseHandler
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapCmLocalBdaddrCfmHandler
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapScEncryptionCfmHandler
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapScDeregisterScdbCfmHandler
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapScAuthorizeIndHandler
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapErrorHandler
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapDbgLevelHandler
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtGapCmLocalNameCfmHandler
+                0x00010014        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.strcmp_Wrapper
+                0x00010014        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_init_wd_count
+                0x00010020        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_get_wd_count
+                0x0001002c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_client_mgt_open
+                0x0001002c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_client_mgt_close
+                0x0001002c        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_client_mgt_connect
+                0x00010038        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_set_scan_enable_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_connectable_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_local_bdaddr_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_local_name_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_sc_register_scdb_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_gap_set_local_name_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_sc_deregister_scdb_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_sc_passkey_res_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_sc_justworks_res_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_sd_search_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_sd_search_cancel_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_get_local_device_info
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_set_dbg_level
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_ss_reset_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_sc_authorize_rsp_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_write_page_timeout_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_gap_sc_encryption_req_cmd
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csr_get_pid_by_name
+                0x00010044        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.CsrBtGapAppEventHandler
+                0x00010044        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.extab.text.csrBtHIDHConnectCfmHandler
+                0x00010050        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csrBtHIDHStatusIndHandler
+                0x00010050        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csrBtHIDHDataIndHandler
+                0x0001005c        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csrBtHIDHConnectIndHandler
+                0x00010068        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csrBtHIDHDeActivateCfmHandler
+                0x00010074        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csrBtHIDHActivateCfmHandler
+                0x00010080        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csrBtHIDHDisconectCfmHandler
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csrBtHIDHConnectAcceptIndHandler
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csrBtHIDHDisconectIndHandler
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csr_hidh_active_cmd
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csr_hidh_deactive_cmd
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csr_hidh_connect_cmd
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csr_hidh_connect_accecpt_cmd
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csr_hidh_disconnect_cmd
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csr_hidh_control_cmd
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csr_hidh_data_cmd
+                0x0001008c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.CsrBtHIDHAppEventHandler
+                0x0001008c        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.extab.text.csr_ss_log_set_level
+                0x00010098        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .ARM.extab.text.csr_ss_client_dbg_printf
+                0x00010098        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .ARM.extab.text.external_cli_tx_thread
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.extab.text.set_external_tid
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.extab.text.external_cli_rx_thread
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.extab.text.peer_client_com_init
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.extab.text.peer_client_com_deinit
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.extab.text.csr_bt_client_app_set_error_state
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.extab.text.csr_bt_client_app_put_message_to_tx_thread
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.extab.text.peer_get_external_conect
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.extab.text.usr2usr_socket_dump_data
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .ARM.extab.text.send_DATA_ind
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .ARM.extab.text.read_external_data
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .ARM.extab.text.CsrBitCountSparse
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrBitCountDense
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrHexStrToUint8
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrHexStrToUint16
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrHexStrToUint32
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrPow
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrIntToBase10
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrUInt16ToHex
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrUInt32ToHex
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrMemCpy
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrMemSet
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrMemMove
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrMemCmp
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrMemDup
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrCpy
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrNCpy
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrCat
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrNCat
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrStr
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrLen
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrCmp
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrNCmp
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrChr
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrVsnprintf
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrNCpyZero
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrToInt
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrDup
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrStrNICmp
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrGetBaseName
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrIsSpace
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.extab.text.CsrPmemInit
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .ARM.extab.text.CsrPmemDeinit
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .ARM.extab.text.CsrPmemAlloc
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .ARM.extab.text.CsrPmemFree
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .ARM.extab.text.CsrBtAppEventHandler
+                0x000100a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+ .ARM.extab.text.CsrPanicInit
+                0x000100a4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+ .ARM.extab.text.CsrPanic
+                0x000100a4        0xc /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+ .ARM.extab.text.__libc_csu_init
+                0x000100b0        0xc /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+ .ARM.extab.text.__libc_csu_fini
+                0x000100bc        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+                0x000100bc                PROVIDE (__exidx_start, .)
+
+.ARM.exidx      0x000100bc      0x4b0
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+ .ARM.exidx     0x000100c4        0x8 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ .ARM.exidx.text.__do_global_dtors_aux
+                0x000100cc        0x8 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .ARM.exidx.text.frame_dummy
+                0x000100d4        0x8 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .ARM.exidx.text.csrBtSSAVPcmStreamDataInd
+                0x000100dc        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtHidhStatusInd
+                0x000100e4        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtHidhDataInd
+                0x000100e4        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtAVRCDisconnectCfm
+                0x000100ec        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtAVRCCtPassThroughInd
+                0x000100f4        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtAVRCDisconnectInd
+                0x000100fc        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtAVRCConnectCfm
+                0x00010104        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAVRCCtPassThroughCfm
+                0x00010104        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtAVRCRemoteFeturesInd
+                0x0001010c        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAVRCConnectInd
+                0x0001010c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtSSAVDisconnectCfm
+                0x00010114        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtAvOpenCfm
+                0x0001011c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtSSAVConfigCfm
+                0x00010124        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAvOpenInd
+                0x00010124        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtSSAVDisconnectInd
+                0x00010124        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtSSAVConfigInd
+                0x0001012c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtScEncryptionCfmFunc
+                0x00010134        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtGapScDeregisterScdbCfmFunc
+                0x0001013c        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtGapGetDbgLevelIndFunc
+                0x0001013c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtGapSDSearchIndFunc
+                0x00010144        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtGapCmLocalNameCfmFunc
+                0x0001014c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtGapCmLocalBdaddrCfmFunc
+                0x00010154        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtMgtServerProcessClose
+                0x0001015c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtHidhDisconnectCfm
+                0x00010164        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtHidhConnectAcceptInd
+                0x0001016c        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtHidhDisconnectInd
+                0x0001016c        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtHidhConnectInd
+                0x0001016c        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtHidhDeActivateCfm
+                0x0001016c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtHidhAtivateCfm
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAVRCCloseInd
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAVRCDeActivateCfm
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAVRCAtivateCfm
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAvSuspendInd
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAvStartInd
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtSSAVCloseCfm
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtSSAVCloseInd
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtSSAVDeActivateCfm
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtSSAVAtivateCfm
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtGapBtInitIndFunc
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtGapGetErrorIndFunc
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtGapChiWdCountFunc
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtGapSDSearchCloseFunc
+                0x00010174        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtSSAVConnectCfm
+                0x00010174        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtSSAVConnectInd
+                0x0001017c        0x0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtGapScBondIndFunc
+                0x0001017c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtGapScAuthorizeIndFunc
+                0x00010184        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtGapScSspJustworksInd
+                0x0001018c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtGapScPassKeyInd
+                0x00010194        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtHidhConnectCfm
+                0x0001019c        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.app_display_menu
+                0x000101a4        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.intput_key
+                0x000101ac        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.app_menu
+                0x000101b4        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.startup.main
+                0x000100bc        0x8 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.exidx.text.csrBtAvSuspendIndHandler
+                0x000101bc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvStartIndHandler
+                0x000101c4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvCloseCfmHandler
+                0x000101cc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvCloseIndHandler
+                0x000101d4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvPcmStreamDataIndHandler
+                0x000101dc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvConnectIndHandler
+                0x000101e4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvDeActivateCfmHandler
+                0x000101ec        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvActivateCfmHandler
+                0x000101f4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvDisconnectCfmHandler
+                0x000101fc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvOpenCfmHandler
+                0x00010204        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvConfigCfmHandler
+                0x0001020c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvOpenIndHandler
+                0x00010214        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvDisconnectIndHandler
+                0x0001021c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAvConnectCfmHandler
+                0x00010224        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAvConfigIndHandler
+                0x00010224        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csr_av_active_cmd
+                0x0001022c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csr_av_deactvie_cmd
+                0x00010234        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csr_av_connect_cmd
+                0x00010234        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csr_av_disconnect_cmd
+                0x0001023c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csr_av_conneting_cancel_cmd
+                0x00010244        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.CsrBtAvAppEventHandler
+                0x0001024c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.exidx.text.csrBtAVRCCloseIndHandler
+                0x00010254        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csrBtAVRCRemoteFeatureIndHandler
+                0x0001025c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csrBtAVRCConnectIndHandler
+                0x00010264        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csrBtAVRCDeActivateCfmHandler
+                0x0001026c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csrBtAVRCActivateCfmHandler
+                0x00010274        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csrBtAVRCDisconectCfmHandler
+                0x0001027c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csrBtAVRCPassThroughIndHandler
+                0x00010284        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csrBtAVRCDisconectIndHandler
+                0x0001028c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csrBtAVRConectCfmHandler
+                0x00010294        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtAVRCPassThroughCfmHandler
+                0x00010294        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csr_avrc_active_cmd
+                0x0001029c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csr_avrc_deactive_cmd
+                0x000102a4        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csr_avrc_ct_pass_through_cmd
+                0x000102a4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csr_avrc_connect_cmd
+                0x000102ac        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csr_avrc_disconnect_cmd
+                0x000102b4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csr_avrc_ct_set_volume_cmd
+                0x000102bc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csr_avrc_connecting_cancel_cmd
+                0x000102c4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.CsrBtAVRCAppEventHandler
+                0x000102cc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.exidx.text.csrBtGapChiWdCountHandler
+                0x000102d4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapSDSearchIndHandler
+                0x000102dc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapScSspJustworksIndHandler
+                0x000102e4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapScPassKeyIndHandler
+                0x000102ec        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtGapScBondIndHandler
+                0x000102ec        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.GetPIDbyName_implements
+                0x000102f4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.GetPIDbyName_Wrapper
+                0x000102fc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.strstr_Wrapper
+                0x00010304        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapBtInitIndHandler
+                0x0001030c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapSDSearchCloseHandler
+                0x00010314        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtGapCmLocalBdaddrCfmHandler
+                0x00010314        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapScEncryptionCfmHandler
+                0x0001031c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapScDeregisterScdbCfmHandler
+                0x00010324        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtGapScAuthorizeIndHandler
+                0x00010324        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapErrorHandler
+                0x0001032c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapDbgLevelHandler
+                0x00010334        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtGapCmLocalNameCfmHandler
+                0x0001033c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.strcmp_Wrapper
+                0x00010344        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_init_wd_count
+                0x0001034c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_get_wd_count
+                0x00010354        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_client_mgt_open
+                0x0001035c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_client_mgt_close
+                0x00010364        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_client_mgt_connect
+                0x0001036c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_set_scan_enable_cmd
+                0x00010374        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_connectable_cmd
+                0x0001037c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_local_bdaddr_cmd
+                0x00010384        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_local_name_cmd
+                0x0001038c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csr_gap_sc_register_scdb_cmd
+                0x0001038c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_gap_set_local_name_cmd
+                0x00010394        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_sc_deregister_scdb_cmd
+                0x0001039c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_sc_passkey_res_cmd
+                0x000103a4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_sc_justworks_res_cmd
+                0x000103ac        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_sd_search_cmd
+                0x000103b4        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csr_gap_sd_search_cancel_cmd
+                0x000103b4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_get_local_device_info
+                0x000103bc        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csr_gap_set_dbg_level
+                0x000103bc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_ss_reset_cmd
+                0x000103c4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_sc_authorize_rsp_cmd
+                0x000103cc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_write_page_timeout_cmd
+                0x000103d4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_gap_sc_encryption_req_cmd
+                0x000103dc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csr_get_pid_by_name
+                0x000103e4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.CsrBtGapAppEventHandler
+                0x000103ec        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.exidx.text.csrBtHIDHConnectCfmHandler
+                0x000103f4        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csrBtHIDHStatusIndHandler
+                0x000103fc        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csrBtHIDHDataIndHandler
+                0x00010404        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csrBtHIDHConnectIndHandler
+                0x0001040c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csrBtHIDHDeActivateCfmHandler
+                0x00010414        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csrBtHIDHActivateCfmHandler
+                0x0001041c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csrBtHIDHDisconectCfmHandler
+                0x00010424        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csrBtHIDHConnectAcceptIndHandler
+                0x0001042c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csrBtHIDHDisconectIndHandler
+                0x0001042c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csr_hidh_active_cmd
+                0x0001042c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csr_hidh_deactive_cmd
+                0x00010434        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csr_hidh_connect_cmd
+                0x00010434        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csr_hidh_connect_accecpt_cmd
+                0x0001043c        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.csr_hidh_disconnect_cmd
+                0x0001043c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csr_hidh_control_cmd
+                0x00010444        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csr_hidh_data_cmd
+                0x0001044c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.CsrBtHIDHAppEventHandler
+                0x00010454        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.exidx.text.csr_ss_log_set_level
+                0x0001045c        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .ARM.exidx.text.csr_ss_client_dbg_printf
+                0x00010464        0x8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .ARM.exidx.text.external_cli_tx_thread
+                0x0001046c        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.exidx.text.set_external_tid
+                0x00010474        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.exidx.text.external_cli_rx_thread
+                0x0001047c        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.exidx.text.peer_client_com_init
+                0x00010484        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.exidx.text.peer_client_com_deinit
+                0x0001048c        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.exidx.text.csr_bt_client_app_set_error_state
+                0x00010494        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.exidx.text.csr_bt_client_app_put_message_to_tx_thread
+                0x0001049c        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.exidx.text.peer_get_external_conect
+                0x000104a4        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.exidx.text.usr2usr_socket_dump_data
+                0x000104ac        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .ARM.exidx.text.send_DATA_ind
+                0x000104b4        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .ARM.exidx.text.read_external_data
+                0x000104bc        0x8 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .ARM.exidx.text.CsrBitCountSparse
+                0x000104c4        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrBitCountDense
+                0x000104cc        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrHexStrToUint8
+                0x000104cc        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrHexStrToUint16
+                0x000104d4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrHexStrToUint32
+                0x000104d4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrPow
+                0x000104d4        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrIntToBase10
+                0x000104dc        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrUInt16ToHex
+                0x000104e4        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrUInt32ToHex
+                0x000104ec        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrMemCpy
+                0x000104ec        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrMemSet
+                0x000104f4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrMemMove
+                0x000104f4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrMemCmp
+                0x000104f4        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrMemDup
+                0x000104f4        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrStrCpy
+                0x000104fc        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrStrNCpy
+                0x00010504        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrStrCat
+                0x00010504        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrStrNCat
+                0x00010504        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrStrStr
+                0x00010504        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrStrLen
+                0x00010504        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrStrCmp
+                0x00010504        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrStrNCmp
+                0x00010504        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrStrChr
+                0x00010504        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrVsnprintf
+                0x00010504        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrStrNCpyZero
+                0x00010504        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrStrToInt
+                0x0001050c        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrStrDup
+                0x00010514        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrStrNICmp
+                0x0001051c        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrGetBaseName
+                0x00010524        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrIsSpace
+                0x0001052c        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.exidx.text.CsrPmemInit
+                0x00010534        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrPmemDeinit
+                0x00010534        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrPmemAlloc
+                0x00010534        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .ARM.exidx.text.CsrPmemFree
+                0x0001053c        0x8 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .ARM.exidx.text.CsrBtAppEventHandler
+                0x00010544        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrPanicInit
+                0x00010544        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.CsrPanic
+                0x00010544       0x10 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+                                  0x8 (size before relaxing)
+ .ARM.exidx.text.__libc_csu_init
+                0x00010554        0x8 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+ .ARM.exidx.text.__libc_csu_fini
+                0x0001055c       0x10 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+                                  0x8 (size before relaxing)
+                0x0001056c                PROVIDE (__exidx_end, .)
+
+.eh_frame_hdr   0x0001056c        0x0
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+
+.eh_frame       0x0001056c        0x4
+ *(.eh_frame)
+ .eh_frame      0x0001056c        0x4 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtend.o
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+                0x00010570                . = (ALIGN (0x8000) - ((0x8000 - .) & 0x7fff))
+                0x00018570                . = DATA_SEGMENT_ALIGN (0x8000, 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges .exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x00018570        0x0
+                0x00018570                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x00018570                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x00018570        0x4
+                0x00018570                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x00018570        0x4 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+                0x00018574                PROVIDE (__init_array_end, .)
+
+.fini_array     0x00018574        0x4
+                0x00018574                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+ .fini_array    0x00018574        0x4 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+                0x00018578                PROVIDE (__fini_array_end, .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr            0x00018578        0x4
+ *(.jcr)
+ .jcr           0x00018578        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .jcr           0x00018578        0x4 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtend.o
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x0001857c      0x100
+ *(.dynamic)
+ .dynamic       0x0001857c      0x100 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                0x0001857c                _DYNAMIC
+                0x0001867c                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.got            0x0001867c       0xfc
+ *(.got.plt)
+ .got.plt       0x0001867c       0xf8 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                0x0001867c                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+ .igot.plt      0x00000000        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ *(.got)
+ .got           0x00018774        0x4 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ *(.igot)
+
+.data           0x00018778       0xcc
+                0x00018778                PROVIDE (__data_start, .)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00018778        0x4 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                0x00018778                data_start
+                0x00018778                __data_start
+ .data          0x0001877c        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+ .data          0x0001877c        0x4 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+                0x0001877c                __dso_handle
+ .data          0x00018780       0xc0 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .data          0x00018840        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .data          0x00018840        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .data          0x00018840        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .data          0x00018840        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .data          0x00018840        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .data          0x00018840        0x4 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .data          0x00018844        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .data          0x00018844        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .data          0x00018844        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .data          0x00018844        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+ .data          0x00018844        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+ .data          0x00018844        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+ .data          0x00018844        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+ .data          0x00018844        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+ .data          0x00018844        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtend.o
+ .data          0x00018844        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+
+.data1
+ *(.data1)
+                0x00018844                _edata = .
+                0x00018844                PROVIDE (edata, .)
+                0x00018844                __bss_start = .
+                0x00018844                __bss_start__ = .
+
+.bss            0x00018844      0xd88
+ *(.dynbss)
+ .dynbss        0x00018844        0x4 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                0x00018844                stdout@@GLIBC_2.4
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00018848        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ .bss           0x00018848        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+ .bss           0x00018848        0x1 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ *fill*         0x00018849        0x3 00
+ .bss           0x0001884c        0x4 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x0001884c                rec_idx
+ .bss           0x00018850       0x10 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .bss           0x00018860        0xc ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .bss           0x0001886c      0x2b8 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .bss           0x00018b24        0x4 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .bss           0x00018b28        0x4 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .bss           0x00018b2c      0x65c ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .bss           0x00019188        0x0 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .bss           0x00019188        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .bss           0x00019188        0x0 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .bss           0x00019188        0x0 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+ .bss           0x00019188        0x4 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+ .bss           0x0001918c        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+ .bss           0x0001918c        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+ .bss           0x0001918c        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+ .bss           0x0001918c        0x0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtend.o
+ .bss           0x0001918c        0x0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+ *(COMMON)
+ COMMON         0x0001918c      0x440 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+                0x0001918c                myserviceName
+                0x0001928c                mysdpInfo
+                0x0001929c                a2dp_addr
+                0x000192a4                mydescriptor
+                0x000193a4                myinfodata
+                0x000193bc                rec_db
+                0x000195c4                tst_bdaddr
+                0x000195cc                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x000195cc                _bss_end__ = .
+                0x000195cc                __bss_end__ = .
+                0x000195cc                . = ALIGN (0x4)
+                0x000195cc                . = ALIGN (0x4)
+                0x000195cc                __end__ = .
+                0x000195cc                _end = .
+                0x000195cc                PROVIDE (end, .)
+                0x000195cc                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x4e
+ *(.comment)
+ .comment       0x00000000       0x2a /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                                 0x2b (size before relaxing)
+ .comment       0x00000000       0x2b /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+ .comment       0x0000002a       0x24 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+                                 0x25 (size before relaxing)
+ .comment       0x00000000       0x25 ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .comment       0x00000000       0x25 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .comment       0x00000000       0x25 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .comment       0x00000000       0x25 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .comment       0x00000000       0x25 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .comment       0x00000000       0x25 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .comment       0x00000000       0x25 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .comment       0x00000000       0x25 ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .comment       0x00000000       0x25 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .comment       0x00000000       0x25 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .comment       0x00000000       0x25 ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+ .comment       0x00000000       0x25 /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+ .comment       0x00000000       0x2b /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+ .comment       0x00000000       0x25 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtend.o
+ .comment       0x00000000       0x2b /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+
+.ARM.attributes
+                0x00000000       0x39
+ .ARM.attributes
+                0x00000000       0x39 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ .ARM.attributes
+                0x00000039       0x3b /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crti.o
+ .ARM.attributes
+                0x00000074       0x3b /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtbegin.o
+ .ARM.attributes
+                0x000000af       0x3b ../../output/samsung/pclin-2.6-arm/obj/applications/ss_demo_test//ss_demo_test.o
+ .ARM.attributes
+                0x000000ea       0x3b ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVHandler.o)
+ .ARM.attributes
+                0x00000125       0x3b ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppAVRCHandler.o)
+ .ARM.attributes
+                0x00000160       0x3b ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppGapHandler.o)
+ .ARM.attributes
+                0x0000019b       0x3b ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHidhHandler.o)
+ .ARM.attributes
+                0x000001d6       0x3b ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(csr_samsung_log.o)
+ .ARM.attributes
+                0x00000211       0x3b ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(client.o)
+ .ARM.attributes
+                0x0000024c       0x3b ../../output/samsung/pclin-2.6-arm/lib/libcsr_socket.a(common.o)
+ .ARM.attributes
+                0x00000287       0x3b /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_util.a(csr_util.o)
+ .ARM.attributes
+                0x000002c2       0x3b /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_pmem.a(csr_pmem.o)
+ .ARM.attributes
+                0x000002fd       0x3b ../../output/samsung/pclin-2.6-arm/lib/app/libcsr_bt_ss_client_app.a(AppHandler.o)
+ .ARM.attributes
+                0x00000338       0x3b /home2/greatsj/SYNERGY/latest/0401/synergy_18_2/fw/3.1.2/bsp/ports/pclin/output/samsung/pclin-2.6-arm/lib/libcsr_panic.a(csr_panic.o)
+ .ARM.attributes
+                0x00000373       0x2b /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x0000039e       0x2b /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+ .ARM.attributes
+                0x000003c9       0x3b /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+ .ARM.attributes
+                0x00000404       0x3b /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/crtend.o
+ .ARM.attributes
+                0x0000043f       0x3b /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crtn.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x68
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x00000020       0x20 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+ .debug_aranges
+                0x00000040       0x28 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000      0x369
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000       0x8a /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ .debug_info    0x0000008a       0xe5 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+ .debug_info    0x0000016f       0xe5 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+ .debug_info    0x00000254      0x115 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+
+.debug_abbrev   0x00000000      0x140
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x42 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ .debug_abbrev  0x00000042       0x14 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x00000056       0x14 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+ .debug_abbrev  0x0000006a       0xd6 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+
+.debug_line     0x00000000      0x25e
+ *(.debug_line)
+ .debug_line    0x00000000       0x27 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+ .debug_line    0x00000027       0xc0 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+ .debug_line    0x000000e7       0x97 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_dvmd_lnx.o)
+ .debug_line    0x0000017e       0xe0 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+
+.debug_frame    0x00000000       0x64
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x20 /opt/arm-v7a8v3r1-20121018/bin/../lib/gcc/arm-v7a8v3r1-linux-gnueabi/4.6.4/libgcc.a(_divsi3.o)
+ .debug_frame   0x00000020       0x44 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+
+.debug_str      0x00000000      0x118
+ *(.debug_str)
+ .debug_str     0x00000000       0xae /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/crt1.o
+                                 0xee (size before relaxing)
+ .debug_str     0x000000ae       0x6a /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+                                 0xcb (size before relaxing)
+
+.debug_loc      0x00000000       0x99
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x99 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000       0x40
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x40 /opt/arm-v7a8v3r1-20121018/bin/../arm-v7a8v3r1-linux-gnueabi/sys-root/usr/lib/libc_nonshared.a(elf-init.oS)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(ss_demo_test_app elf32-littlearm)

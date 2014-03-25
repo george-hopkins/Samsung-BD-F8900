@@ -1,0 +1,102 @@
+menu "Samsung SP/BSP options"
+comment "VDLinux 3.x SP/BSP patch"
+
+config BLOCK_STOP_TTY
+       bool "block stop_tty (Ctrl + S)"
+       default y
+       help
+        Noise from UART can make stop signal. This option blocks stop_tty.
+
+config DIRTY_BACKGROUND_RATIO
+               int "Dirty background ratio"
+               default 10
+               help
+                       set dirty background ratio for waking up pdflush kernel thread.
+
+config DIRTY_EXPIRE_INTERVAL
+               int "Dirty expire interval"
+               default (3000)
+               help
+                       set interval value expiring dirty pages for page writeback operation.
+
+config BUSYLOOP_WHILE_OOPS
+               bool "busyloop while oops"
+               default y
+               help
+                In case of oops, This option is useful for attach JTAG device.
+
+config PROHIBIT_SIGNAL_HOOKING
+                bool "coredump when user try signal_hooking"
+                default n
+                help
+                 In case of user app trying signal hooking, This option can stop user app and create coredump.
+
+config PROHIBIT_USLEEP_0
+                bool "coredump when user try usleep(0)"
+                default n
+                help
+                 In case of user app using usleep(0), This option can stop user app and create coredump.
+
+config MODULE_VER_CHECK_SKIP
+       bool "Module version check skip"
+       default n
+       depends on MODVERSIONS=n
+       help
+         'PRINT_MODULE_ADDR' option change VERMAGIC_STRING value. (e.g. 1003_192 DEBUG)
+         so, If you are using different version name, insmod will be failed
+         even while 'MODVERSION' option is off.
+         This option skip the checking the VERMAGIC_STRING.
+
+config SQUASHFS_DEBUGGER
+       bool "squashfs debugger v2.0"
+       default y
+       help
+         Tool for debugging squashfs error.
+         It is useful even to debug Flash I/O and memory un-safe problem.
+
+config SQUASHFS_DEBUGGER_AUTO_DIAGNOSE
+       bool "squashfs debugger auto diagnose"
+       default y
+       depends on SQUASHFS_DEBUGGER
+       help
+         Diagnose the cause of squashfs error.
+
+config SQUASHFS_BLOCK_SIZE_1K_TO_4K
+		bool "squashfs block size 1K => 4K"
+		default y
+		help
+		  In most of case, To set block size as 4K enhance the performance.
+ 
+config MMC_BOOTING_SYNC
+		bool "Wait rootfs mount try till mmc scan is done"
+		default y
+		help
+		  If you use mmc device for rootfs, It could prevent mount fail issue.
+
+config HPI_FEATURE
+		bool "eMMC HPI Feature"
+		default n
+		help
+		  This config decides whether it uses HPI feature or not.
+
+config CA9_SYSTEM_HANG
+		bool "CA9 SYSTEM HANG"
+		default n
+		help
+		  This config decides whether it uses flush BTAC/BTB( Branch Target Buffer ) when context switch
+
+config MMC_QUEUE_BOUNCESZ 
+		int "MMC memory card bounce buffer size"
+		range 16 1024
+		default 64
+		help
+		  Provide a flexible method to adjust bounce buffer size
+
+config MMC_TIMEOUT
+		bool "MMC_TIMEOUT"
+		default n
+		help
+		  This config stops current mmc request.
+
+endmenu # end of "Samsung SP/BSP options" menu
+

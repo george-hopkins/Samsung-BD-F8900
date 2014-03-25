@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- ==========================================================================
+ |   CONFIDENTIAL
+ |   Copyright (C) Cambridge Silicon Radio Ltd 2009. All rights reserved.
+ ========================================================================== -->
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <resource name="TYPE"/>
+
+    <type name="CsrResult" resource="TYPE" size="16">
+        <value name="CSR_RESULT_SUCCESS"        value="0x0000"/>
+        <value name="CSR_RESULT_FAILURE"        value="0xFFFF"/>
+    </type>
+
+</definitions>

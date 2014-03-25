@@ -1,0 +1,21 @@
+menu "Orsay Platform Support"
+
+config ORSAY_VDBINDER_IPC
+	bool "VDBinder IPC Driver"
+	default y
+
+config ORSAY_ASHMEM
+	bool "VDBinder Ashmem Driver"
+	default y
+
+config ORSAY_DEBUG
+	bool "VDBinder DEBUG"
+	depends on ORSAY_VDBINDER_IPC
+	default y
+
+config ORSAY_CHECK_TODO_WORKENTRY
+        bool "Check work list entry in thread or proc todo list"
+        depends on ORSAY_VDBINDER_IPC
+        default n
+
+endmenu

@@ -1,0 +1,6 @@
+2012-05-29 Alexey Kravets  <a.kravets@samsung.com>
+
+        @VDTC-41
+
+	* Makefile.in (install-libs): Check for zlib shared library before
+	installing.

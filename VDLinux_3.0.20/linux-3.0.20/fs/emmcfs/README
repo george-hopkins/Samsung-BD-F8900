@@ -1,0 +1,106 @@
+============================================================
+eMMCFS -- Samsung eMMC chip oriented File System, Version 1.
+============================================================
+
+Contents:
+- Overview
+- eMMCFS design and specification
+- eMMCFS basic features
+- eMMCFS driver architecture
+- Implementation details
+- How to install
+- Usage
+- Mount options
+- Proc file system
+- Utilities
+- Examples
+- Important notes
+- Bugs, restrictions, caveats
+- Authors
+
+========
+OVERVIEW
+========
+
+<TODO: describe>
+
+===============================
+eMMCFS DESIGN AND SPECIFICATION
+===============================
+
+<TODO: describe>
+
+=====================
+eMMCFS BASIC FEATURES
+=====================
+
+<TODO: describe>
+
+===================
+eMMCFS DRIVER ARCHITECTURE
+===================
+
+<TODO: describe>
+
+======================
+IMPLEMENTATION DETAILS
+======================
+
+<TODO: describe>
+
+==============
+HOW TO INSTALL
+==============
+
+<TODO: describe>
+
+=====
+USAGE
+=====
+
+<TODO: describe>
+
+=============
+MOUNT OPTIONS
+=============
+
+<TODO: describe>
+
+===============
+PROC FILESYSTEM
+===============
+
+<TODO: describe>
+
+=========
+UTILITIES
+=========
+
+<TODO: describe>
+
+========
+EXAMPLES
+========
+
+<TODO: describe>
+
+===============
+IMPORTANT NOTES
+===============
+
+<TODO: describe>
+
+===========================
+BUGS, RESTRICTIONS, CAVEATS
+===========================
+
+<TODO: describe>
+
+=======
+AUTHORS
+=======
+
+
+Development team:
+
+

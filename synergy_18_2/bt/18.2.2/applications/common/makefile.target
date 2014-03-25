@@ -1,0 +1,75 @@
+#-*-Makefile-*-
+###############################################################################
+#
+#                (c) Cambridge Silicon Radio Limited 2009
+#
+#                All rights reserved and confidential information of CSR
+#
+# REVISION:      $Revision: #1 $
+###############################################################################
+ifeq ($(CSR_BT_APP_AMP_WIFI),1)
+ifneq ($(CSR_WIFI_SME_TRACE_LEVEL),)
+ifneq ($(CSR_WIFI_SME_TRACE_LEVEL),0)
+LIBS += $(call use_lib,csr_wifi_port_sme_trace)
+endif
+endif
+endif
+
+# Help the gcc linker
+ifneq ($(filter $(TARGET),pclin-2.4-x86 pclin-2.6-x86),)
+LIBS += $(LIBS)
+endif
+
+all: bin
+
+lib:
+
+bin: $(CLI_APP_NAME) $(SRV_APP_NAME) $(APP_NAME)
+
+# Client/server executables
+ifneq ($(CLI_APP_NAME),)
+ifneq ($(SRV_APP_NAME),)
+ifneq ($(filter $(TARGET),bdb2-nucleus-arm5tej),)
+$(CLI_AXF_NAME): $(CLI_OBJ) $(APP_COMMON_LIB_PATH)/$($(HOSTBUILD)_APP_COMMON_LIB)
+	$(call create_axf,$(CLI_AXF_NAME),$(CLI_OBJ),$(LDPATH),$(LIBS))
+$(SRV_AXF_NAME): $(SRV_OBJ) $(APP_COMMON_LIB_PATH)/$($(HOSTBUILD)_APP_COMMON_LIB)
+	$(call create_axf,$(SRV_AXF_NAME),$(SRV_OBJ),$(LDPATH),$(LIBS))
+
+$(CLI_APP_NAME): $(CLI_AXF_NAME)
+	echo Creating BIN
+	$(call create_bin,$(CLI_APP_NAME),$(CLI_AXF_NAME))
+$(SRV_APP_NAME): $(SRV_AXF_NAME)
+	$(call create_bin,$(SRV_APP_NAME),$(SRV_AXF_NAME))
+else
+$(CLI_APP_NAME): $(CLI_OBJ) $(APP_COMMON_LIB_PATH)/$($(HOSTBUILD)_APP_COMMON_LIB)
+	$(call create_bin,$(CLI_APP_NAME),$(CLI_OBJ),$(LDPATH),$(LIBS))
+
+$(SRV_APP_NAME): $(SRV_OBJ) $(APP_COMMON_LIB_PATH)/$($(HOSTBUILD)_APP_COMMON_LIB)
+	$(call create_bin,$(SRV_APP_NAME),$(SRV_OBJ),$(LDPATH),$(LIBS))
+endif
+endif
+endif
+
+# Unified executables
+ifneq ($(APP_NAME),)
+ifneq ($(filter $(TARGET),bdb2-nucleus-arm5tej),)
+$(AXF_NAME): $(OBJ) $(APP_COMMON_LIB_PATH)/$(HCI_APP_COMMON_LIB)
+	$(call create_axf,$(AXF_NAME),$(OBJ),$(LDPATH),$(LIBS))
+
+$(APP_NAME): $(AXF_NAME)
+	$(call create_bin,$(APP_NAME),$(AXF_NAME))
+else
+$(APP_NAME): $(OBJ) $(APP_COMMON_LIB_PATH)/$(HCI_APP_COMMON_LIB)
+	$(call create_bin,$(APP_NAME),$(OBJ),$(LDPATH),$(LIBS))
+endif
+endif
+
+clean:
+	$(RM) *~
+	$(RM) $(APP_NAME) $(AXF_NAME)
+	$(RM) $(CLI_APP_NAME) $(CLI_AXF_NAME)
+	$(RM) $(SRV_APP_NAME) $(SRV_AXF_NAME)
+	$(RM) $(call path_subst,$(OBJ))
+	$(RM) $(call path_subst,$(CLI_OBJ))
+	$(RM) $(call path_subst,$(SRV_OBJ))
+

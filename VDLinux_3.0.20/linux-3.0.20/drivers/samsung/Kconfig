@@ -1,0 +1,5 @@
+menu "Samsung drivers"
+
+source drivers/samsung/orsay/Kconfig
+
+endmenu

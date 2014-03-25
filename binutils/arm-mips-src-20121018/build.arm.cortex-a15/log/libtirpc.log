@@ -1,0 +1,597 @@
+Prepare tirpc library 
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc'
+copy directory /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/sources/libtirpc to /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc
+AUTHORS
+COPYING
+ChangeLog
+ChangeLog.vd
+INSTALL
+Makefile.am
+Makefile.in
+NEWS
+README
+THANKS
+TODO
+VERSION
+aclocal.m4
+autogen.sh
+bootstrap
+config.guess
+config.h.in
+config.sub
+configure
+configure.ac
+depcomp
+doc/
+doc/Makefile.in
+doc/etc_netconfig
+doc/Makefile.am
+install-sh
+libtirpc.pc.in
+ltmain.sh
+m4/
+m4/ltversion.m4
+m4/lt~obsolete.m4
+m4/ltoptions.m4
+m4/libtool.m4
+m4/ltsugar.m4
+man/
+man/publickey.3t
+man/bindresvport.3t
+man/netconfig.5
+man/rpc_svc_create.3t
+man/rpc.3t
+man/rpc_soc.3t
+man/rpc_xdr.3t
+man/Makefile.in
+man/rpc_svc_reg.3t
+man/getnetconfig.3t
+man/getnetpath.3t
+man/rpc_svc_calls.3t
+man/rpc_svc_err.3t
+man/Makefile.am
+man/rpc.5
+man/publickey.5
+man/rpcbind.3t
+man/getrpcport.3t
+man/rpc_clnt_calls.3t
+man/rpc_clnt_create.3t
+man/des_crypt.3t
+man/rpc_clnt_auth.3t
+man/rpc_secure.3t
+man/getrpcent.3t
+man/rtime.3t
+missing
+src/
+src/getnetpath.c
+src/des_crypt.c
+src/rpcb_clnt.c
+src/key_prot_xdr.c
+src/rtime.c
+src/svc.c
+src/getpublickey.c
+src/rpcb_prot.c
+src/svc_auth.c
+src/auth_time.c
+src/pmap_clnt.c
+src/svc_simple.c
+src/auth_none.c
+src/mt_misc.c
+src/pmap_prot2.c
+src/xdr_stdio.c
+src/xdr_float.c
+src/authgss_prot.c
+src/authunix_prot.c
+src/auth_des.c
+src/rpc_commondata.c
+src/svc_auth_none.c
+src/Makefile.in
+src/auth_gss.c
+src/pmap_getport.c
+src/clnt_bcast.c
+src/pmap_rmt.c
+src/clnt_raw.c
+src/rpc_dtablesize.c
+src/getpeereid.c
+src/xdr_rec.c
+src/rpc_callmsg.c
+src/config.h
+src/xdr.c
+src/epoll_sub.c
+src/rpc_generic.c
+src/svc_raw.c
+src/svc_run.c
+src/xdr_sizeof.c
+src/getnetconfig.c
+src/pmap_getmaps.c
+src/des_soft.c
+src/clnt_dg.c
+src/svc_auth_unix.c
+src/clnt_vc.c
+src/clnt_perror.c
+src/Makefile.am
+src/svc_vc.c
+src/rpcb_st_xdr.c
+src/clnt_simple.c
+src/clnt_generic.c
+src/xdr_mem.c
+src/getrpcport.c
+src/netnamer.c
+src/bindresvport.c
+src/rpc_com.h
+src/authdes_prot.c
+src/svc_auth_gss.c
+src/netname.c
+src/rpc_soc.c
+src/pmap_prot.c
+src/svc_generic.c
+src/xdr_reference.c
+src/crypt_client.c
+src/rpcdname.c
+src/getrpcent.c
+src/rpc_prot.c
+src/svc_dg.c
+src/key_call.c
+src/auth_unix.c
+src/svc_auth_des.c
+src/xdr_array.c
+tirpc/
+tirpc/libc_private.h
+tirpc/namespace.h
+tirpc/getpeereid.h
+tirpc/misc/
+tirpc/misc/socket.h
+tirpc/misc/event.h
+tirpc/misc/queue.h
+tirpc/rpc/
+tirpc/rpc/svc_auth.h
+tirpc/rpc/nettype.h
+tirpc/rpc/pmap_rmt.h
+tirpc/rpc/pmap_clnt.h
+tirpc/rpc/clnt_soc.h
+tirpc/rpc/types.h
+tirpc/rpc/auth_unix.h
+tirpc/rpc/clnt.h
+tirpc/rpc/des.h
+tirpc/rpc/rpc_msg.h
+tirpc/rpc/svc_soc.h
+tirpc/rpc/auth_des.h
+tirpc/rpc/svc.h
+tirpc/rpc/svc_dg.h
+tirpc/rpc/rpcb_clnt.h
+tirpc/rpc/rpcb_prot.x
+tirpc/rpc/des_crypt.h
+tirpc/rpc/xdr.h
+tirpc/rpc/rpc_com.h
+tirpc/rpc/clnt_stat.h
+tirpc/rpc/raw.h
+tirpc/rpc/rpcent.h
+tirpc/rpc/auth.h
+tirpc/rpc/rpc.h
+tirpc/rpc/auth_kerb.h
+tirpc/rpc/pmap_prot.h
+tirpc/rpc/auth_gss.h
+tirpc/rpc/rpcb_prot.h
+tirpc/fpmath.h
+tirpc/spinlock.h
+tirpc/netconfig.h
+tirpc/reentrant.h
+tirpc/nss_tls.h
+tirpc/rpcsvc/
+tirpc/rpcsvc/crypt.h
+tirpc/rpcsvc/crypt.x
+tirpc/un-namespace.h
+Configure libtirpc
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for arm-v7a15v3r1-linux-gnueabi-strip... arm-v7a15v3r1-linux-gnueabi-strip
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for style of include used by make... GNU
+checking for arm-v7a15v3r1-linux-gnueabi-gcc... arm-v7a15v3r1-linux-gnueabi-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-v7a15v3r1-linux-gnueabi-gcc accepts -g... yes
+checking for arm-v7a15v3r1-linux-gnueabi-gcc option to accept ISO C89... none needed
+checking dependency style of arm-v7a15v3r1-linux-gnueabi-gcc... gcc3
+checking for arm-v7a15v3r1-linux-gnueabi-gcc... (cached) arm-v7a15v3r1-linux-gnueabi-gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether arm-v7a15v3r1-linux-gnueabi-gcc accepts -g... (cached) yes
+checking for arm-v7a15v3r1-linux-gnueabi-gcc option to accept ISO C89... (cached) none needed
+checking dependency style of arm-v7a15v3r1-linux-gnueabi-gcc... (cached) gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... arm-v7a15v3r1-linux-gnueabi
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by arm-v7a15v3r1-linux-gnueabi-gcc... /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/bin/ld
+checking if the linker (/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin/arm-v7a15v3r1-linux-gnueabi-nm -B
+checking the name lister (/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin/arm-v7a15v3r1-linux-gnueabi-nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-pc-linux-gnu file names to arm-v7a15v3r1-linux-gnueabi format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/bin/ld option to reload object files... -r
+checking for arm-v7a15v3r1-linux-gnueabi-objdump... arm-v7a15v3r1-linux-gnueabi-objdump
+checking how to recognize dependent libraries... pass_all
+checking for arm-v7a15v3r1-linux-gnueabi-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for arm-v7a15v3r1-linux-gnueabi-ar... arm-v7a15v3r1-linux-gnueabi-ar
+checking for archiver @FILE support... @
+checking for arm-v7a15v3r1-linux-gnueabi-strip... (cached) arm-v7a15v3r1-linux-gnueabi-strip
+checking for arm-v7a15v3r1-linux-gnueabi-ranlib... arm-v7a15v3r1-linux-gnueabi-ranlib
+checking command to parse /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin/arm-v7a15v3r1-linux-gnueabi-nm -B output from arm-v7a15v3r1-linux-gnueabi-gcc object... ok
+checking for sysroot... no
+checking for arm-v7a15v3r1-linux-gnueabi-mt... no
+checking for mt... mt
+configure: WARNING: using cross tools not prefixed with host triplet
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... arm-v7a15v3r1-linux-gnueabi-gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if arm-v7a15v3r1-linux-gnueabi-gcc supports -fno-rtti -fno-exceptions... no
+checking for arm-v7a15v3r1-linux-gnueabi-gcc option to produce PIC... -fPIC -DPIC
+checking if arm-v7a15v3r1-linux-gnueabi-gcc PIC flag -fPIC -DPIC works... yes
+checking if arm-v7a15v3r1-linux-gnueabi-gcc static flag -static works... yes
+checking if arm-v7a15v3r1-linux-gnueabi-gcc supports -c -o file.o... yes
+checking if arm-v7a15v3r1-linux-gnueabi-gcc supports -c -o file.o... (cached) yes
+checking whether the arm-v7a15v3r1-linux-gnueabi-gcc linker (/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking for pthread_create in -lpthread... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating man/Makefile
+config.status: creating doc/Makefile
+config.status: creating libtirpc.pc
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+Build libtirpc
+make  all-recursive
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc'
+Making all in src
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-auth_none.lo -MD -MP -MF .deps/libtirpc_la-auth_none.Tpo -c -o libtirpc_la-auth_none.lo `test -f 'auth_none.c' || echo './'`auth_none.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-auth_none.lo -MD -MP -MF .deps/libtirpc_la-auth_none.Tpo -c auth_none.c  -fPIC -DPIC -o .libs/libtirpc_la-auth_none.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-auth_none.lo -MD -MP -MF .deps/libtirpc_la-auth_none.Tpo -c auth_none.c -o libtirpc_la-auth_none.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-auth_none.Tpo .deps/libtirpc_la-auth_none.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-auth_unix.lo -MD -MP -MF .deps/libtirpc_la-auth_unix.Tpo -c -o libtirpc_la-auth_unix.lo `test -f 'auth_unix.c' || echo './'`auth_unix.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-auth_unix.lo -MD -MP -MF .deps/libtirpc_la-auth_unix.Tpo -c auth_unix.c  -fPIC -DPIC -o .libs/libtirpc_la-auth_unix.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-auth_unix.lo -MD -MP -MF .deps/libtirpc_la-auth_unix.Tpo -c auth_unix.c -o libtirpc_la-auth_unix.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-auth_unix.Tpo .deps/libtirpc_la-auth_unix.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-authunix_prot.lo -MD -MP -MF .deps/libtirpc_la-authunix_prot.Tpo -c -o libtirpc_la-authunix_prot.lo `test -f 'authunix_prot.c' || echo './'`authunix_prot.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-authunix_prot.lo -MD -MP -MF .deps/libtirpc_la-authunix_prot.Tpo -c authunix_prot.c  -fPIC -DPIC -o .libs/libtirpc_la-authunix_prot.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-authunix_prot.lo -MD -MP -MF .deps/libtirpc_la-authunix_prot.Tpo -c authunix_prot.c -o libtirpc_la-authunix_prot.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-authunix_prot.Tpo .deps/libtirpc_la-authunix_prot.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-bindresvport.lo -MD -MP -MF .deps/libtirpc_la-bindresvport.Tpo -c -o libtirpc_la-bindresvport.lo `test -f 'bindresvport.c' || echo './'`bindresvport.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-bindresvport.lo -MD -MP -MF .deps/libtirpc_la-bindresvport.Tpo -c bindresvport.c  -fPIC -DPIC -o .libs/libtirpc_la-bindresvport.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-bindresvport.lo -MD -MP -MF .deps/libtirpc_la-bindresvport.Tpo -c bindresvport.c -o libtirpc_la-bindresvport.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-bindresvport.Tpo .deps/libtirpc_la-bindresvport.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-clnt_bcast.lo -MD -MP -MF .deps/libtirpc_la-clnt_bcast.Tpo -c -o libtirpc_la-clnt_bcast.lo `test -f 'clnt_bcast.c' || echo './'`clnt_bcast.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_bcast.lo -MD -MP -MF .deps/libtirpc_la-clnt_bcast.Tpo -c clnt_bcast.c  -fPIC -DPIC -o .libs/libtirpc_la-clnt_bcast.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_bcast.lo -MD -MP -MF .deps/libtirpc_la-clnt_bcast.Tpo -c clnt_bcast.c -o libtirpc_la-clnt_bcast.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-clnt_bcast.Tpo .deps/libtirpc_la-clnt_bcast.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-clnt_dg.lo -MD -MP -MF .deps/libtirpc_la-clnt_dg.Tpo -c -o libtirpc_la-clnt_dg.lo `test -f 'clnt_dg.c' || echo './'`clnt_dg.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_dg.lo -MD -MP -MF .deps/libtirpc_la-clnt_dg.Tpo -c clnt_dg.c  -fPIC -DPIC -o .libs/libtirpc_la-clnt_dg.o
+clnt_dg.c: In function 'clnt_dg_call':
+clnt_dg.c:312:12: warning: variable 'inlen' set but not used [-Wunused-but-set-variable]
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_dg.lo -MD -MP -MF .deps/libtirpc_la-clnt_dg.Tpo -c clnt_dg.c -o libtirpc_la-clnt_dg.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-clnt_dg.Tpo .deps/libtirpc_la-clnt_dg.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-clnt_generic.lo -MD -MP -MF .deps/libtirpc_la-clnt_generic.Tpo -c -o libtirpc_la-clnt_generic.lo `test -f 'clnt_generic.c' || echo './'`clnt_generic.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_generic.lo -MD -MP -MF .deps/libtirpc_la-clnt_generic.Tpo -c clnt_generic.c  -fPIC -DPIC -o .libs/libtirpc_la-clnt_generic.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_generic.lo -MD -MP -MF .deps/libtirpc_la-clnt_generic.Tpo -c clnt_generic.c -o libtirpc_la-clnt_generic.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-clnt_generic.Tpo .deps/libtirpc_la-clnt_generic.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-clnt_perror.lo -MD -MP -MF .deps/libtirpc_la-clnt_perror.Tpo -c -o libtirpc_la-clnt_perror.lo `test -f 'clnt_perror.c' || echo './'`clnt_perror.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_perror.lo -MD -MP -MF .deps/libtirpc_la-clnt_perror.Tpo -c clnt_perror.c  -fPIC -DPIC -o .libs/libtirpc_la-clnt_perror.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_perror.lo -MD -MP -MF .deps/libtirpc_la-clnt_perror.Tpo -c clnt_perror.c -o libtirpc_la-clnt_perror.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-clnt_perror.Tpo .deps/libtirpc_la-clnt_perror.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-clnt_raw.lo -MD -MP -MF .deps/libtirpc_la-clnt_raw.Tpo -c -o libtirpc_la-clnt_raw.lo `test -f 'clnt_raw.c' || echo './'`clnt_raw.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_raw.lo -MD -MP -MF .deps/libtirpc_la-clnt_raw.Tpo -c clnt_raw.c  -fPIC -DPIC -o .libs/libtirpc_la-clnt_raw.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_raw.lo -MD -MP -MF .deps/libtirpc_la-clnt_raw.Tpo -c clnt_raw.c -o libtirpc_la-clnt_raw.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-clnt_raw.Tpo .deps/libtirpc_la-clnt_raw.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-clnt_simple.lo -MD -MP -MF .deps/libtirpc_la-clnt_simple.Tpo -c -o libtirpc_la-clnt_simple.lo `test -f 'clnt_simple.c' || echo './'`clnt_simple.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_simple.lo -MD -MP -MF .deps/libtirpc_la-clnt_simple.Tpo -c clnt_simple.c  -fPIC -DPIC -o .libs/libtirpc_la-clnt_simple.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_simple.lo -MD -MP -MF .deps/libtirpc_la-clnt_simple.Tpo -c clnt_simple.c -o libtirpc_la-clnt_simple.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-clnt_simple.Tpo .deps/libtirpc_la-clnt_simple.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-clnt_vc.lo -MD -MP -MF .deps/libtirpc_la-clnt_vc.Tpo -c -o libtirpc_la-clnt_vc.lo `test -f 'clnt_vc.c' || echo './'`clnt_vc.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_vc.lo -MD -MP -MF .deps/libtirpc_la-clnt_vc.Tpo -c clnt_vc.c  -fPIC -DPIC -o .libs/libtirpc_la-clnt_vc.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-clnt_vc.lo -MD -MP -MF .deps/libtirpc_la-clnt_vc.Tpo -c clnt_vc.c -o libtirpc_la-clnt_vc.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-clnt_vc.Tpo .deps/libtirpc_la-clnt_vc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-rpc_dtablesize.lo -MD -MP -MF .deps/libtirpc_la-rpc_dtablesize.Tpo -c -o libtirpc_la-rpc_dtablesize.lo `test -f 'rpc_dtablesize.c' || echo './'`rpc_dtablesize.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_dtablesize.lo -MD -MP -MF .deps/libtirpc_la-rpc_dtablesize.Tpo -c rpc_dtablesize.c  -fPIC -DPIC -o .libs/libtirpc_la-rpc_dtablesize.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_dtablesize.lo -MD -MP -MF .deps/libtirpc_la-rpc_dtablesize.Tpo -c rpc_dtablesize.c -o libtirpc_la-rpc_dtablesize.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-rpc_dtablesize.Tpo .deps/libtirpc_la-rpc_dtablesize.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-getnetconfig.lo -MD -MP -MF .deps/libtirpc_la-getnetconfig.Tpo -c -o libtirpc_la-getnetconfig.lo `test -f 'getnetconfig.c' || echo './'`getnetconfig.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getnetconfig.lo -MD -MP -MF .deps/libtirpc_la-getnetconfig.Tpo -c getnetconfig.c  -fPIC -DPIC -o .libs/libtirpc_la-getnetconfig.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getnetconfig.lo -MD -MP -MF .deps/libtirpc_la-getnetconfig.Tpo -c getnetconfig.c -o libtirpc_la-getnetconfig.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-getnetconfig.Tpo .deps/libtirpc_la-getnetconfig.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-getnetpath.lo -MD -MP -MF .deps/libtirpc_la-getnetpath.Tpo -c -o libtirpc_la-getnetpath.lo `test -f 'getnetpath.c' || echo './'`getnetpath.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getnetpath.lo -MD -MP -MF .deps/libtirpc_la-getnetpath.Tpo -c getnetpath.c  -fPIC -DPIC -o .libs/libtirpc_la-getnetpath.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getnetpath.lo -MD -MP -MF .deps/libtirpc_la-getnetpath.Tpo -c getnetpath.c -o libtirpc_la-getnetpath.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-getnetpath.Tpo .deps/libtirpc_la-getnetpath.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-getrpcent.lo -MD -MP -MF .deps/libtirpc_la-getrpcent.Tpo -c -o libtirpc_la-getrpcent.lo `test -f 'getrpcent.c' || echo './'`getrpcent.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getrpcent.lo -MD -MP -MF .deps/libtirpc_la-getrpcent.Tpo -c getrpcent.c  -fPIC -DPIC -o .libs/libtirpc_la-getrpcent.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getrpcent.lo -MD -MP -MF .deps/libtirpc_la-getrpcent.Tpo -c getrpcent.c -o libtirpc_la-getrpcent.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-getrpcent.Tpo .deps/libtirpc_la-getrpcent.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-getrpcport.lo -MD -MP -MF .deps/libtirpc_la-getrpcport.Tpo -c -o libtirpc_la-getrpcport.lo `test -f 'getrpcport.c' || echo './'`getrpcport.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getrpcport.lo -MD -MP -MF .deps/libtirpc_la-getrpcport.Tpo -c getrpcport.c  -fPIC -DPIC -o .libs/libtirpc_la-getrpcport.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getrpcport.lo -MD -MP -MF .deps/libtirpc_la-getrpcport.Tpo -c getrpcport.c -o libtirpc_la-getrpcport.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-getrpcport.Tpo .deps/libtirpc_la-getrpcport.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-mt_misc.lo -MD -MP -MF .deps/libtirpc_la-mt_misc.Tpo -c -o libtirpc_la-mt_misc.lo `test -f 'mt_misc.c' || echo './'`mt_misc.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-mt_misc.lo -MD -MP -MF .deps/libtirpc_la-mt_misc.Tpo -c mt_misc.c  -fPIC -DPIC -o .libs/libtirpc_la-mt_misc.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-mt_misc.lo -MD -MP -MF .deps/libtirpc_la-mt_misc.Tpo -c mt_misc.c -o libtirpc_la-mt_misc.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-mt_misc.Tpo .deps/libtirpc_la-mt_misc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-pmap_clnt.lo -MD -MP -MF .deps/libtirpc_la-pmap_clnt.Tpo -c -o libtirpc_la-pmap_clnt.lo `test -f 'pmap_clnt.c' || echo './'`pmap_clnt.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_clnt.lo -MD -MP -MF .deps/libtirpc_la-pmap_clnt.Tpo -c pmap_clnt.c  -fPIC -DPIC -o .libs/libtirpc_la-pmap_clnt.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_clnt.lo -MD -MP -MF .deps/libtirpc_la-pmap_clnt.Tpo -c pmap_clnt.c -o libtirpc_la-pmap_clnt.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-pmap_clnt.Tpo .deps/libtirpc_la-pmap_clnt.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-pmap_getmaps.lo -MD -MP -MF .deps/libtirpc_la-pmap_getmaps.Tpo -c -o libtirpc_la-pmap_getmaps.lo `test -f 'pmap_getmaps.c' || echo './'`pmap_getmaps.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_getmaps.lo -MD -MP -MF .deps/libtirpc_la-pmap_getmaps.Tpo -c pmap_getmaps.c  -fPIC -DPIC -o .libs/libtirpc_la-pmap_getmaps.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_getmaps.lo -MD -MP -MF .deps/libtirpc_la-pmap_getmaps.Tpo -c pmap_getmaps.c -o libtirpc_la-pmap_getmaps.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-pmap_getmaps.Tpo .deps/libtirpc_la-pmap_getmaps.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-pmap_getport.lo -MD -MP -MF .deps/libtirpc_la-pmap_getport.Tpo -c -o libtirpc_la-pmap_getport.lo `test -f 'pmap_getport.c' || echo './'`pmap_getport.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_getport.lo -MD -MP -MF .deps/libtirpc_la-pmap_getport.Tpo -c pmap_getport.c  -fPIC -DPIC -o .libs/libtirpc_la-pmap_getport.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_getport.lo -MD -MP -MF .deps/libtirpc_la-pmap_getport.Tpo -c pmap_getport.c -o libtirpc_la-pmap_getport.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-pmap_getport.Tpo .deps/libtirpc_la-pmap_getport.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-pmap_prot.lo -MD -MP -MF .deps/libtirpc_la-pmap_prot.Tpo -c -o libtirpc_la-pmap_prot.lo `test -f 'pmap_prot.c' || echo './'`pmap_prot.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_prot.lo -MD -MP -MF .deps/libtirpc_la-pmap_prot.Tpo -c pmap_prot.c  -fPIC -DPIC -o .libs/libtirpc_la-pmap_prot.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_prot.lo -MD -MP -MF .deps/libtirpc_la-pmap_prot.Tpo -c pmap_prot.c -o libtirpc_la-pmap_prot.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-pmap_prot.Tpo .deps/libtirpc_la-pmap_prot.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-pmap_prot2.lo -MD -MP -MF .deps/libtirpc_la-pmap_prot2.Tpo -c -o libtirpc_la-pmap_prot2.lo `test -f 'pmap_prot2.c' || echo './'`pmap_prot2.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_prot2.lo -MD -MP -MF .deps/libtirpc_la-pmap_prot2.Tpo -c pmap_prot2.c  -fPIC -DPIC -o .libs/libtirpc_la-pmap_prot2.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_prot2.lo -MD -MP -MF .deps/libtirpc_la-pmap_prot2.Tpo -c pmap_prot2.c -o libtirpc_la-pmap_prot2.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-pmap_prot2.Tpo .deps/libtirpc_la-pmap_prot2.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-pmap_rmt.lo -MD -MP -MF .deps/libtirpc_la-pmap_rmt.Tpo -c -o libtirpc_la-pmap_rmt.lo `test -f 'pmap_rmt.c' || echo './'`pmap_rmt.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_rmt.lo -MD -MP -MF .deps/libtirpc_la-pmap_rmt.Tpo -c pmap_rmt.c  -fPIC -DPIC -o .libs/libtirpc_la-pmap_rmt.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-pmap_rmt.lo -MD -MP -MF .deps/libtirpc_la-pmap_rmt.Tpo -c pmap_rmt.c -o libtirpc_la-pmap_rmt.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-pmap_rmt.Tpo .deps/libtirpc_la-pmap_rmt.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-rpc_prot.lo -MD -MP -MF .deps/libtirpc_la-rpc_prot.Tpo -c -o libtirpc_la-rpc_prot.lo `test -f 'rpc_prot.c' || echo './'`rpc_prot.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_prot.lo -MD -MP -MF .deps/libtirpc_la-rpc_prot.Tpo -c rpc_prot.c  -fPIC -DPIC -o .libs/libtirpc_la-rpc_prot.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_prot.lo -MD -MP -MF .deps/libtirpc_la-rpc_prot.Tpo -c rpc_prot.c -o libtirpc_la-rpc_prot.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-rpc_prot.Tpo .deps/libtirpc_la-rpc_prot.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-rpc_commondata.lo -MD -MP -MF .deps/libtirpc_la-rpc_commondata.Tpo -c -o libtirpc_la-rpc_commondata.lo `test -f 'rpc_commondata.c' || echo './'`rpc_commondata.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_commondata.lo -MD -MP -MF .deps/libtirpc_la-rpc_commondata.Tpo -c rpc_commondata.c  -fPIC -DPIC -o .libs/libtirpc_la-rpc_commondata.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_commondata.lo -MD -MP -MF .deps/libtirpc_la-rpc_commondata.Tpo -c rpc_commondata.c -o libtirpc_la-rpc_commondata.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-rpc_commondata.Tpo .deps/libtirpc_la-rpc_commondata.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-rpc_callmsg.lo -MD -MP -MF .deps/libtirpc_la-rpc_callmsg.Tpo -c -o libtirpc_la-rpc_callmsg.lo `test -f 'rpc_callmsg.c' || echo './'`rpc_callmsg.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_callmsg.lo -MD -MP -MF .deps/libtirpc_la-rpc_callmsg.Tpo -c rpc_callmsg.c  -fPIC -DPIC -o .libs/libtirpc_la-rpc_callmsg.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_callmsg.lo -MD -MP -MF .deps/libtirpc_la-rpc_callmsg.Tpo -c rpc_callmsg.c -o libtirpc_la-rpc_callmsg.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-rpc_callmsg.Tpo .deps/libtirpc_la-rpc_callmsg.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-rpc_generic.lo -MD -MP -MF .deps/libtirpc_la-rpc_generic.Tpo -c -o libtirpc_la-rpc_generic.lo `test -f 'rpc_generic.c' || echo './'`rpc_generic.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_generic.lo -MD -MP -MF .deps/libtirpc_la-rpc_generic.Tpo -c rpc_generic.c  -fPIC -DPIC -o .libs/libtirpc_la-rpc_generic.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_generic.lo -MD -MP -MF .deps/libtirpc_la-rpc_generic.Tpo -c rpc_generic.c -o libtirpc_la-rpc_generic.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-rpc_generic.Tpo .deps/libtirpc_la-rpc_generic.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-rpc_soc.lo -MD -MP -MF .deps/libtirpc_la-rpc_soc.Tpo -c -o libtirpc_la-rpc_soc.lo `test -f 'rpc_soc.c' || echo './'`rpc_soc.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_soc.lo -MD -MP -MF .deps/libtirpc_la-rpc_soc.Tpo -c rpc_soc.c  -fPIC -DPIC -o .libs/libtirpc_la-rpc_soc.o
+rpc_soc.c: In function 'clntunix_create':
+rpc_soc.c:565:20: warning: variable 'nconf' set but not used [-Wunused-but-set-variable]
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpc_soc.lo -MD -MP -MF .deps/libtirpc_la-rpc_soc.Tpo -c rpc_soc.c -o libtirpc_la-rpc_soc.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-rpc_soc.Tpo .deps/libtirpc_la-rpc_soc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-rpcb_clnt.lo -MD -MP -MF .deps/libtirpc_la-rpcb_clnt.Tpo -c -o libtirpc_la-rpcb_clnt.lo `test -f 'rpcb_clnt.c' || echo './'`rpcb_clnt.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpcb_clnt.lo -MD -MP -MF .deps/libtirpc_la-rpcb_clnt.Tpo -c rpcb_clnt.c  -fPIC -DPIC -o .libs/libtirpc_la-rpcb_clnt.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpcb_clnt.lo -MD -MP -MF .deps/libtirpc_la-rpcb_clnt.Tpo -c rpcb_clnt.c -o libtirpc_la-rpcb_clnt.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-rpcb_clnt.Tpo .deps/libtirpc_la-rpcb_clnt.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-rpcb_prot.lo -MD -MP -MF .deps/libtirpc_la-rpcb_prot.Tpo -c -o libtirpc_la-rpcb_prot.lo `test -f 'rpcb_prot.c' || echo './'`rpcb_prot.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpcb_prot.lo -MD -MP -MF .deps/libtirpc_la-rpcb_prot.Tpo -c rpcb_prot.c  -fPIC -DPIC -o .libs/libtirpc_la-rpcb_prot.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpcb_prot.lo -MD -MP -MF .deps/libtirpc_la-rpcb_prot.Tpo -c rpcb_prot.c -o libtirpc_la-rpcb_prot.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-rpcb_prot.Tpo .deps/libtirpc_la-rpcb_prot.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-rpcb_st_xdr.lo -MD -MP -MF .deps/libtirpc_la-rpcb_st_xdr.Tpo -c -o libtirpc_la-rpcb_st_xdr.lo `test -f 'rpcb_st_xdr.c' || echo './'`rpcb_st_xdr.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpcb_st_xdr.lo -MD -MP -MF .deps/libtirpc_la-rpcb_st_xdr.Tpo -c rpcb_st_xdr.c  -fPIC -DPIC -o .libs/libtirpc_la-rpcb_st_xdr.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-rpcb_st_xdr.lo -MD -MP -MF .deps/libtirpc_la-rpcb_st_xdr.Tpo -c rpcb_st_xdr.c -o libtirpc_la-rpcb_st_xdr.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-rpcb_st_xdr.Tpo .deps/libtirpc_la-rpcb_st_xdr.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-svc.lo -MD -MP -MF .deps/libtirpc_la-svc.Tpo -c -o libtirpc_la-svc.lo `test -f 'svc.c' || echo './'`svc.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc.lo -MD -MP -MF .deps/libtirpc_la-svc.Tpo -c svc.c  -fPIC -DPIC -o .libs/libtirpc_la-svc.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc.lo -MD -MP -MF .deps/libtirpc_la-svc.Tpo -c svc.c -o libtirpc_la-svc.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-svc.Tpo .deps/libtirpc_la-svc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-svc_auth.lo -MD -MP -MF .deps/libtirpc_la-svc_auth.Tpo -c -o libtirpc_la-svc_auth.lo `test -f 'svc_auth.c' || echo './'`svc_auth.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_auth.lo -MD -MP -MF .deps/libtirpc_la-svc_auth.Tpo -c svc_auth.c  -fPIC -DPIC -o .libs/libtirpc_la-svc_auth.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_auth.lo -MD -MP -MF .deps/libtirpc_la-svc_auth.Tpo -c svc_auth.c -o libtirpc_la-svc_auth.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-svc_auth.Tpo .deps/libtirpc_la-svc_auth.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-svc_dg.lo -MD -MP -MF .deps/libtirpc_la-svc_dg.Tpo -c -o libtirpc_la-svc_dg.lo `test -f 'svc_dg.c' || echo './'`svc_dg.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_dg.lo -MD -MP -MF .deps/libtirpc_la-svc_dg.Tpo -c svc_dg.c  -fPIC -DPIC -o .libs/libtirpc_la-svc_dg.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_dg.lo -MD -MP -MF .deps/libtirpc_la-svc_dg.Tpo -c svc_dg.c -o libtirpc_la-svc_dg.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-svc_dg.Tpo .deps/libtirpc_la-svc_dg.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-svc_auth_unix.lo -MD -MP -MF .deps/libtirpc_la-svc_auth_unix.Tpo -c -o libtirpc_la-svc_auth_unix.lo `test -f 'svc_auth_unix.c' || echo './'`svc_auth_unix.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_auth_unix.lo -MD -MP -MF .deps/libtirpc_la-svc_auth_unix.Tpo -c svc_auth_unix.c  -fPIC -DPIC -o .libs/libtirpc_la-svc_auth_unix.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_auth_unix.lo -MD -MP -MF .deps/libtirpc_la-svc_auth_unix.Tpo -c svc_auth_unix.c -o libtirpc_la-svc_auth_unix.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-svc_auth_unix.Tpo .deps/libtirpc_la-svc_auth_unix.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-svc_generic.lo -MD -MP -MF .deps/libtirpc_la-svc_generic.Tpo -c -o libtirpc_la-svc_generic.lo `test -f 'svc_generic.c' || echo './'`svc_generic.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_generic.lo -MD -MP -MF .deps/libtirpc_la-svc_generic.Tpo -c svc_generic.c  -fPIC -DPIC -o .libs/libtirpc_la-svc_generic.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_generic.lo -MD -MP -MF .deps/libtirpc_la-svc_generic.Tpo -c svc_generic.c -o libtirpc_la-svc_generic.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-svc_generic.Tpo .deps/libtirpc_la-svc_generic.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-svc_raw.lo -MD -MP -MF .deps/libtirpc_la-svc_raw.Tpo -c -o libtirpc_la-svc_raw.lo `test -f 'svc_raw.c' || echo './'`svc_raw.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_raw.lo -MD -MP -MF .deps/libtirpc_la-svc_raw.Tpo -c svc_raw.c  -fPIC -DPIC -o .libs/libtirpc_la-svc_raw.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_raw.lo -MD -MP -MF .deps/libtirpc_la-svc_raw.Tpo -c svc_raw.c -o libtirpc_la-svc_raw.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-svc_raw.Tpo .deps/libtirpc_la-svc_raw.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-svc_run.lo -MD -MP -MF .deps/libtirpc_la-svc_run.Tpo -c -o libtirpc_la-svc_run.lo `test -f 'svc_run.c' || echo './'`svc_run.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_run.lo -MD -MP -MF .deps/libtirpc_la-svc_run.Tpo -c svc_run.c  -fPIC -DPIC -o .libs/libtirpc_la-svc_run.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_run.lo -MD -MP -MF .deps/libtirpc_la-svc_run.Tpo -c svc_run.c -o libtirpc_la-svc_run.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-svc_run.Tpo .deps/libtirpc_la-svc_run.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-svc_simple.lo -MD -MP -MF .deps/libtirpc_la-svc_simple.Tpo -c -o libtirpc_la-svc_simple.lo `test -f 'svc_simple.c' || echo './'`svc_simple.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_simple.lo -MD -MP -MF .deps/libtirpc_la-svc_simple.Tpo -c svc_simple.c  -fPIC -DPIC -o .libs/libtirpc_la-svc_simple.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_simple.lo -MD -MP -MF .deps/libtirpc_la-svc_simple.Tpo -c svc_simple.c -o libtirpc_la-svc_simple.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-svc_simple.Tpo .deps/libtirpc_la-svc_simple.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-svc_vc.lo -MD -MP -MF .deps/libtirpc_la-svc_vc.Tpo -c -o libtirpc_la-svc_vc.lo `test -f 'svc_vc.c' || echo './'`svc_vc.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_vc.lo -MD -MP -MF .deps/libtirpc_la-svc_vc.Tpo -c svc_vc.c  -fPIC -DPIC -o .libs/libtirpc_la-svc_vc.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-svc_vc.lo -MD -MP -MF .deps/libtirpc_la-svc_vc.Tpo -c svc_vc.c -o libtirpc_la-svc_vc.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-svc_vc.Tpo .deps/libtirpc_la-svc_vc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-getpeereid.lo -MD -MP -MF .deps/libtirpc_la-getpeereid.Tpo -c -o libtirpc_la-getpeereid.lo `test -f 'getpeereid.c' || echo './'`getpeereid.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getpeereid.lo -MD -MP -MF .deps/libtirpc_la-getpeereid.Tpo -c getpeereid.c  -fPIC -DPIC -o .libs/libtirpc_la-getpeereid.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-getpeereid.lo -MD -MP -MF .deps/libtirpc_la-getpeereid.Tpo -c getpeereid.c -o libtirpc_la-getpeereid.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-getpeereid.Tpo .deps/libtirpc_la-getpeereid.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-auth_time.lo -MD -MP -MF .deps/libtirpc_la-auth_time.Tpo -c -o libtirpc_la-auth_time.lo `test -f 'auth_time.c' || echo './'`auth_time.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-auth_time.lo -MD -MP -MF .deps/libtirpc_la-auth_time.Tpo -c auth_time.c  -fPIC -DPIC -o .libs/libtirpc_la-auth_time.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-auth_time.lo -MD -MP -MF .deps/libtirpc_la-auth_time.Tpo -c auth_time.c -o libtirpc_la-auth_time.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-auth_time.Tpo .deps/libtirpc_la-auth_time.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-xdr.lo -MD -MP -MF .deps/libtirpc_la-xdr.Tpo -c -o libtirpc_la-xdr.lo `test -f 'xdr.c' || echo './'`xdr.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr.lo -MD -MP -MF .deps/libtirpc_la-xdr.Tpo -c xdr.c  -fPIC -DPIC -o .libs/libtirpc_la-xdr.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr.lo -MD -MP -MF .deps/libtirpc_la-xdr.Tpo -c xdr.c -o libtirpc_la-xdr.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-xdr.Tpo .deps/libtirpc_la-xdr.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-xdr_rec.lo -MD -MP -MF .deps/libtirpc_la-xdr_rec.Tpo -c -o libtirpc_la-xdr_rec.lo `test -f 'xdr_rec.c' || echo './'`xdr_rec.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_rec.lo -MD -MP -MF .deps/libtirpc_la-xdr_rec.Tpo -c xdr_rec.c  -fPIC -DPIC -o .libs/libtirpc_la-xdr_rec.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_rec.lo -MD -MP -MF .deps/libtirpc_la-xdr_rec.Tpo -c xdr_rec.c -o libtirpc_la-xdr_rec.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-xdr_rec.Tpo .deps/libtirpc_la-xdr_rec.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-xdr_array.lo -MD -MP -MF .deps/libtirpc_la-xdr_array.Tpo -c -o libtirpc_la-xdr_array.lo `test -f 'xdr_array.c' || echo './'`xdr_array.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_array.lo -MD -MP -MF .deps/libtirpc_la-xdr_array.Tpo -c xdr_array.c  -fPIC -DPIC -o .libs/libtirpc_la-xdr_array.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_array.lo -MD -MP -MF .deps/libtirpc_la-xdr_array.Tpo -c xdr_array.c -o libtirpc_la-xdr_array.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-xdr_array.Tpo .deps/libtirpc_la-xdr_array.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-xdr_float.lo -MD -MP -MF .deps/libtirpc_la-xdr_float.Tpo -c -o libtirpc_la-xdr_float.lo `test -f 'xdr_float.c' || echo './'`xdr_float.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_float.lo -MD -MP -MF .deps/libtirpc_la-xdr_float.Tpo -c xdr_float.c  -fPIC -DPIC -o .libs/libtirpc_la-xdr_float.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_float.lo -MD -MP -MF .deps/libtirpc_la-xdr_float.Tpo -c xdr_float.c -o libtirpc_la-xdr_float.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-xdr_float.Tpo .deps/libtirpc_la-xdr_float.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-xdr_mem.lo -MD -MP -MF .deps/libtirpc_la-xdr_mem.Tpo -c -o libtirpc_la-xdr_mem.lo `test -f 'xdr_mem.c' || echo './'`xdr_mem.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_mem.lo -MD -MP -MF .deps/libtirpc_la-xdr_mem.Tpo -c xdr_mem.c  -fPIC -DPIC -o .libs/libtirpc_la-xdr_mem.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_mem.lo -MD -MP -MF .deps/libtirpc_la-xdr_mem.Tpo -c xdr_mem.c -o libtirpc_la-xdr_mem.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-xdr_mem.Tpo .deps/libtirpc_la-xdr_mem.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-xdr_reference.lo -MD -MP -MF .deps/libtirpc_la-xdr_reference.Tpo -c -o libtirpc_la-xdr_reference.lo `test -f 'xdr_reference.c' || echo './'`xdr_reference.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_reference.lo -MD -MP -MF .deps/libtirpc_la-xdr_reference.Tpo -c xdr_reference.c  -fPIC -DPIC -o .libs/libtirpc_la-xdr_reference.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_reference.lo -MD -MP -MF .deps/libtirpc_la-xdr_reference.Tpo -c xdr_reference.c -o libtirpc_la-xdr_reference.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-xdr_reference.Tpo .deps/libtirpc_la-xdr_reference.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION="\"0.2.2\"" -D_GNU_SOURCE -Wall -pipe    -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc  -g -O2 -MT libtirpc_la-xdr_stdio.lo -MD -MP -MF .deps/libtirpc_la-xdr_stdio.Tpo -c -o libtirpc_la-xdr_stdio.lo `test -f 'xdr_stdio.c' || echo './'`xdr_stdio.c
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_stdio.lo -MD -MP -MF .deps/libtirpc_la-xdr_stdio.Tpo -c xdr_stdio.c  -fPIC -DPIC -o .libs/libtirpc_la-xdr_stdio.o
+libtool: compile:  arm-v7a15v3r1-linux-gnueabi-gcc -DHAVE_CONFIG_H -I. -I.. -I../tirpc -DPORTMAP -DINET6 -DVERSION=\"0.2.2\" -D_GNU_SOURCE -Wall -pipe -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc -g -O2 -MT libtirpc_la-xdr_stdio.lo -MD -MP -MF .deps/libtirpc_la-xdr_stdio.Tpo -c xdr_stdio.c -o libtirpc_la-xdr_stdio.o >/dev/null 2>&1
+mv -f .deps/libtirpc_la-xdr_stdio.Tpo .deps/libtirpc_la-xdr_stdio.Plo
+/bin/sh ../libtool --tag=CC   --mode=link arm-v7a15v3r1-linux-gnueabi-gcc  -g -O2 -lpthread -version-info 1:10:0  -L/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib -o libtirpc.la -rpath /usr/lib libtirpc_la-auth_none.lo libtirpc_la-auth_unix.lo libtirpc_la-authunix_prot.lo libtirpc_la-bindresvport.lo libtirpc_la-clnt_bcast.lo libtirpc_la-clnt_dg.lo libtirpc_la-clnt_generic.lo libtirpc_la-clnt_perror.lo libtirpc_la-clnt_raw.lo libtirpc_la-clnt_simple.lo libtirpc_la-clnt_vc.lo libtirpc_la-rpc_dtablesize.lo libtirpc_la-getnetconfig.lo libtirpc_la-getnetpath.lo libtirpc_la-getrpcent.lo libtirpc_la-getrpcport.lo libtirpc_la-mt_misc.lo libtirpc_la-pmap_clnt.lo libtirpc_la-pmap_getmaps.lo libtirpc_la-pmap_getport.lo libtirpc_la-pmap_prot.lo libtirpc_la-pmap_prot2.lo libtirpc_la-pmap_rmt.lo libtirpc_la-rpc_prot.lo libtirpc_la-rpc_commondata.lo libtirpc_la-rpc_callmsg.lo libtirpc_la-rpc_generic.lo libtirpc_la-rpc_soc.lo libtirpc_la-rpcb_clnt.lo libtirpc_la-rpcb_prot.lo libtirpc_la-rpcb_st_xdr.lo libtirpc_la-svc.lo libtirpc_la-svc_auth.lo libtirpc_la-svc_dg.lo libtirpc_la-svc_auth_unix.lo libtirpc_la-svc_generic.lo libtirpc_la-svc_raw.lo libtirpc_la-svc_run.lo libtirpc_la-svc_simple.lo libtirpc_la-svc_vc.lo libtirpc_la-getpeereid.lo libtirpc_la-auth_time.lo libtirpc_la-xdr.lo libtirpc_la-xdr_rec.lo libtirpc_la-xdr_array.lo libtirpc_la-xdr_float.lo libtirpc_la-xdr_mem.lo libtirpc_la-xdr_reference.lo libtirpc_la-xdr_stdio.lo   -lpthread 
+libtool: link: arm-v7a15v3r1-linux-gnueabi-gcc -shared  -fPIC -DPIC  .libs/libtirpc_la-auth_none.o .libs/libtirpc_la-auth_unix.o .libs/libtirpc_la-authunix_prot.o .libs/libtirpc_la-bindresvport.o .libs/libtirpc_la-clnt_bcast.o .libs/libtirpc_la-clnt_dg.o .libs/libtirpc_la-clnt_generic.o .libs/libtirpc_la-clnt_perror.o .libs/libtirpc_la-clnt_raw.o .libs/libtirpc_la-clnt_simple.o .libs/libtirpc_la-clnt_vc.o .libs/libtirpc_la-rpc_dtablesize.o .libs/libtirpc_la-getnetconfig.o .libs/libtirpc_la-getnetpath.o .libs/libtirpc_la-getrpcent.o .libs/libtirpc_la-getrpcport.o .libs/libtirpc_la-mt_misc.o .libs/libtirpc_la-pmap_clnt.o .libs/libtirpc_la-pmap_getmaps.o .libs/libtirpc_la-pmap_getport.o .libs/libtirpc_la-pmap_prot.o .libs/libtirpc_la-pmap_prot2.o .libs/libtirpc_la-pmap_rmt.o .libs/libtirpc_la-rpc_prot.o .libs/libtirpc_la-rpc_commondata.o .libs/libtirpc_la-rpc_callmsg.o .libs/libtirpc_la-rpc_generic.o .libs/libtirpc_la-rpc_soc.o .libs/libtirpc_la-rpcb_clnt.o .libs/libtirpc_la-rpcb_prot.o .libs/libtirpc_la-rpcb_st_xdr.o .libs/libtirpc_la-svc.o .libs/libtirpc_la-svc_auth.o .libs/libtirpc_la-svc_dg.o .libs/libtirpc_la-svc_auth_unix.o .libs/libtirpc_la-svc_generic.o .libs/libtirpc_la-svc_raw.o .libs/libtirpc_la-svc_run.o .libs/libtirpc_la-svc_simple.o .libs/libtirpc_la-svc_vc.o .libs/libtirpc_la-getpeereid.o .libs/libtirpc_la-auth_time.o .libs/libtirpc_la-xdr.o .libs/libtirpc_la-xdr_rec.o .libs/libtirpc_la-xdr_array.o .libs/libtirpc_la-xdr_float.o .libs/libtirpc_la-xdr_mem.o .libs/libtirpc_la-xdr_reference.o .libs/libtirpc_la-xdr_stdio.o   -L/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib -lpthread  -O2   -Wl,-soname -Wl,libtirpc.so.1 -o .libs/libtirpc.so.1.0.10
+libtool: link: (cd ".libs" && rm -f "libtirpc.so.1" && ln -s "libtirpc.so.1.0.10" "libtirpc.so.1")
+libtool: link: (cd ".libs" && rm -f "libtirpc.so" && ln -s "libtirpc.so.1.0.10" "libtirpc.so")
+libtool: link: arm-v7a15v3r1-linux-gnueabi-ar cru .libs/libtirpc.a  libtirpc_la-auth_none.o libtirpc_la-auth_unix.o libtirpc_la-authunix_prot.o libtirpc_la-bindresvport.o libtirpc_la-clnt_bcast.o libtirpc_la-clnt_dg.o libtirpc_la-clnt_generic.o libtirpc_la-clnt_perror.o libtirpc_la-clnt_raw.o libtirpc_la-clnt_simple.o libtirpc_la-clnt_vc.o libtirpc_la-rpc_dtablesize.o libtirpc_la-getnetconfig.o libtirpc_la-getnetpath.o libtirpc_la-getrpcent.o libtirpc_la-getrpcport.o libtirpc_la-mt_misc.o libtirpc_la-pmap_clnt.o libtirpc_la-pmap_getmaps.o libtirpc_la-pmap_getport.o libtirpc_la-pmap_prot.o libtirpc_la-pmap_prot2.o libtirpc_la-pmap_rmt.o libtirpc_la-rpc_prot.o libtirpc_la-rpc_commondata.o libtirpc_la-rpc_callmsg.o libtirpc_la-rpc_generic.o libtirpc_la-rpc_soc.o libtirpc_la-rpcb_clnt.o libtirpc_la-rpcb_prot.o libtirpc_la-rpcb_st_xdr.o libtirpc_la-svc.o libtirpc_la-svc_auth.o libtirpc_la-svc_dg.o libtirpc_la-svc_auth_unix.o libtirpc_la-svc_generic.o libtirpc_la-svc_raw.o libtirpc_la-svc_run.o libtirpc_la-svc_simple.o libtirpc_la-svc_vc.o libtirpc_la-getpeereid.o libtirpc_la-auth_time.o libtirpc_la-xdr.o libtirpc_la-xdr_rec.o libtirpc_la-xdr_array.o libtirpc_la-xdr_float.o libtirpc_la-xdr_mem.o libtirpc_la-xdr_reference.o libtirpc_la-xdr_stdio.o
+libtool: link: arm-v7a15v3r1-linux-gnueabi-ranlib .libs/libtirpc.a
+libtool: link: ( cd ".libs" && rm -f "libtirpc.la" && ln -s "../libtirpc.la" "libtirpc.la" )
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/src'
+Making all in man
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/man'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/man'
+Making all in doc
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/doc'
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc'
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc'
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc'
+Install libtirpc
+Making install in src
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/src'
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/src'
+test -z "/usr/lib" || /bin/mkdir -p "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib"
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c   libtirpc.la '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib'
+libtool: install: /usr/bin/install -c .libs/libtirpc.so.1.0.10 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib/libtirpc.so.1.0.10
+libtool: install: (cd /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib && { ln -s -f libtirpc.so.1.0.10 libtirpc.so.1 || { rm -f libtirpc.so.1 && ln -s libtirpc.so.1.0.10 libtirpc.so.1; }; })
+libtool: install: (cd /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib && { ln -s -f libtirpc.so.1.0.10 libtirpc.so || { rm -f libtirpc.so && ln -s libtirpc.so.1.0.10 libtirpc.so; }; })
+libtool: install: /usr/bin/install -c .libs/libtirpc.lai /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib/libtirpc.la
+libtool: install: /usr/bin/install -c .libs/libtirpc.a /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib/libtirpc.a
+libtool: install: chmod 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib/libtirpc.a
+libtool: install: arm-v7a15v3r1-linux-gnueabi-ranlib /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib/libtirpc.a
+libtool: install: warning: remember to run `libtool --finish /usr/lib'
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/src'
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/src'
+Making install in man
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/man'
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/man'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/share/man/man3" || /bin/mkdir -p "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/share/man/man3"
+ /usr/bin/install -c -m 644 bindresvport.3t des_crypt.3t getnetconfig.3t getnetpath.3t getrpcent.3t getrpcport.3t rpc.3t rpc_clnt_auth.3t rpc_clnt_calls.3t rpc_clnt_create.3t rpc_secure.3t rpc_soc.3t rpc_svc_calls.3t rpc_svc_create.3t rpc_svc_err.3t rpc_svc_reg.3t rpc_xdr.3t rtime.3t '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/share/man/man3'
+test -z "/usr/share/man/man5" || /bin/mkdir -p "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/share/man/man5"
+ /usr/bin/install -c -m 644 netconfig.5 '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/share/man/man5'
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/man'
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/man'
+Making install in doc
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/doc'
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/doc'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/doc'
+/bin/sh /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/install-sh -d /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/etc
+cp -p ./etc_netconfig /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/etc/netconfig
+chmod 0644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/etc/netconfig
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc/doc'
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc'
+make[2]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc'
+make[2]: Nothing to be done for `install-exec-am'.
+test -z "/usr/include" || /bin/mkdir -p "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include"
+/bin/mkdir -p '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc'
+ /usr/bin/install -c -m 644  tirpc/netconfig.h '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc'
+/bin/mkdir -p '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc/rpcsvc'
+ /usr/bin/install -c -m 644  tirpc/rpcsvc/crypt.x tirpc/rpcsvc/crypt.h '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc/rpcsvc'
+/bin/mkdir -p '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc/rpc'
+ /usr/bin/install -c -m 644  tirpc/rpc/xdr.h tirpc/rpc/types.h tirpc/rpc/svc_soc.h tirpc/rpc/svc.h tirpc/rpc/svc_dg.h tirpc/rpc/svc_auth.h tirpc/rpc/rpc_msg.h tirpc/rpc/rpc.h tirpc/rpc/rpcent.h tirpc/rpc/rpc_com.h tirpc/rpc/rpcb_prot.x tirpc/rpc/rpcb_prot.h tirpc/rpc/rpcb_clnt.h tirpc/rpc/raw.h tirpc/rpc/pmap_rmt.h tirpc/rpc/pmap_prot.h tirpc/rpc/pmap_clnt.h tirpc/rpc/nettype.h tirpc/rpc/des.h tirpc/rpc/des_crypt.h tirpc/rpc/clnt_stat.h tirpc/rpc/clnt_soc.h tirpc/rpc/clnt.h tirpc/rpc/auth_unix.h tirpc/rpc/auth_kerb.h tirpc/rpc/auth.h tirpc/rpc/auth_gss.h tirpc/rpc/auth_des.h '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/include/tirpc/rpc'
+test -z "/usr/lib/pkgconfig" || /bin/mkdir -p "/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib/pkgconfig"
+ /usr/bin/install -c -m 644 libtirpc.pc '/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/arm-v7a15v3r1-linux-gnueabi/sys-root/usr/lib/pkgconfig'
+make[2]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc'
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libtirpc'

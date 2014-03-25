@@ -1,0 +1,77 @@
+// =============================================================================
+// 
+// CSR tracking information, report this in case of problems:
+//   $Revision: #3 $
+//   Built Mon Aug  3 12:01:28 2009 GMT
+//   Checked-in $DateTime: 2009/08/03 13:07:08 $
+//   $File: //depot/bc/jemima-GPS-A14/dev/patches/5892/pb-49.psr $
+// 
+// Patch is for build 5892 jem_6hci_rom_gps_bt2.1_gps_0903061041_encr128
+// 
+// Documentation from gps_pskeys.pb
+// --------------------------------
+// 
+//   The AGC config is used to change the gain that is used for gps receive. 
+//   If the gain is to high we get affected by B-63712 
+// 
+// Documentation from fm_pskeys.pb
+// -------------------------------
+// 
+//   Skew keys to remove the 80, 96, 88, 104 MHz tones  
+// 
+// Documentation from common_config.pb
+// -----------------------------------
+// 
+// Non-default PSKEY settings that do not address specific issues,
+// but are believed to be appropriate for all current applications
+// of this device so are included for convenience.
+// 
+// Assumptions made here include:
+//  - That an external 32kHz clock is supplied to the chip at all times.
+//    Operation of BlueCore7-FM without such a clock is not currently
+//    supported.
+// 
+// Version information for input files
+// -----------------------------------
+// 
+// Created by patchmaker.pl Revision: #39  Date: 2009/03/23 
+// 
+// Input file: pb-49.pb
+// Depot file: //depot/bc/jemima-GPS-A14/dev/patches/5892/pb-49.pb
+// File revision: 6
+// 
+// Input file: gps_pskeys.pb
+// Depot file: //depot/bc/jemima-GPS-A14/dev/patches/5892/gps_pskeys.pb
+// File revision: 5
+// 
+// Input file: fm_pskeys.pb
+// Depot file: //depot/bc/jemima-GPS-A14/dev/patches/5892/fm_pskeys.pb
+// File revision: 2
+// 
+// Input file: common_config.pb
+// Depot file: //depot/bc/jemima-GPS-A14/dev/patches/5892/common_config.pb
+// File revision: 2
+
+// explicit, PSKEY_DEEP_SLEEP_STATE (0x0229, 553), 1 words
+&0229 = 0001
+
+// explicit, PSKEY_DEEP_SLEEP_USE_EXTERNAL_CLOCK (0x03c3, 963), 1 words
+&03c3 = 0001
+
+// explicit, PSKEY_FM_CLOCKSKEW_FREQS (0x210d, 8461), 8 words
+&210d = 4da8 4e98 6ce8 6dd8 8c28 8d18 ab68 ac58
+
+// explicit, PSKEY_FM_CLOCKSKEW_ENABLE (0x210e, 8462), 1 words
+&210e = 0001
+
+// explicit, PSKEY_ANA_REG_SOFT_START (0x218b, 8587), 1 words
+&218b = 0000
+
+// explicit, PSKEY_ENABLE_CLOCK_SWITCHING (0x21a0, 8608), 1 words
+&21a0 = 0001
+
+// explicit, PSKEY_RX_AGC_CONFIG (0x21ab, 8619), 10 words
+&21ab = 0011 0000 0003 12b0 3c0a 0603 280a 1580 0ec0 0029
+
+// explicit, PSKEY_GPS_BT_DCRS_GPS_QUANT (0x2354, 9044), 3 words
+&2354 = 271c 1e80 0052

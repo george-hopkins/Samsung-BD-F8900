@@ -1,0 +1,38 @@
+###############################################################################
+#
+#                (c) Cambridge Silicon Radio Limited 2010
+#
+#                All rights reserved and confidential information of CSR
+#
+###############################################################################
+FW_ROOT := ../../../../../../../..
+OBJ_PATH = $(BSP_ROOT)/output/$(CONFIG)/$(TARGET)/obj/src/user/bluecore/transport/hci_socket
+include $(FW_ROOT)/local_rules.mk
+
+LIB_NAME := $(call lib_name,csr_hci_socket)
+
+LIB_PATH := $(BSP_LIB)
+
+INC += -I$(FW_ROOT)/gsp/src/bluecore/inc/tm
+
+SRC := csr_hci_socket_transport.c
+OBJ := $(addprefix $(OBJ_PATH)/,$(SRC:.c=.o))
+
+DEP := $(OBJ:.o=.d)
+include $(FW_ROOT)/m_targets.mk
+
+all: lib
+
+bin: 
+
+lib: $(LIB_PATH)/$(LIB_NAME)
+
+$(LIB_PATH)/$(LIB_NAME): $(OBJ)
+	$(MKDIR) $(@D)
+	$(call create_lib,$@,$(OBJ))
+
+clean:
+	$(RM) *~
+	$(RM) $(call path_subst,$(LIB_PATH)/$(LIB_NAME))
+	$(RM) $(call path_subst,$(OBJ))
+

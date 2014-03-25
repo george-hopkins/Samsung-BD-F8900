@@ -1,0 +1,12 @@
+#!/bin/sh
+module="csr_usb"
+device="csr_usb"
+
+# invoke rmmod with all arguments we got
+/sbin/rmmod $module $* || exit 1
+
+# Remove stale nodes
+
+rm -f /dev/${device}*
+
+

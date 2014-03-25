@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_TLS_SIGNALS" discriminant="CSR_TLS_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_time_xml" resource="FILE" file="csr_time.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrTlsSessionCreateReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsSessionCreateReq">
+        <field name="qid">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsSessionCreateCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsSessionCreateCfm">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsSessionDestroyReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsSessionDestroyReq">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsSessionDestroyCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsSessionDestroyCfm">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConfigCipherReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConfigCipherReq">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="cipherSuiteLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="cipherSuite" blocklength="cipherSuiteLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="keybitsMin">
+            <type>CsrUint16</type>
+        </field>
+        <field name="keybitsMax">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConfigCipherCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConfigCipherCfm">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConfigCertClientReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConfigCertClientReq">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="certificateType">
+            <type>CsrUint8</type>
+        </field>
+        <field name="certificateLength">
+            <type>CsrSize</type>
+        </field>
+        <field name="certificate" blocklength="certificateLength">
+            <type>CsrUint8</type>
+        </field>
+        <field name="passwordLength">
+            <type>CsrSize</type>
+        </field>
+        <field name="password" blocklength="passwordLength">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConfigCertClientCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConfigCertClientCfm">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConfigCertVerifyReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConfigCertVerifyReq">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="trustedCAcertificateLength">
+            <type>CsrSize</type>
+        </field>
+        <field name="trustedCAcertificate" blocklength="trustedCAcertificateLength">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConfigCertVerifyCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConfigCertVerifyCfm">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConfigCompressionReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConfigCompressionReq">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="compression">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConfigCompressionCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConfigCompressionCfm">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionCreateReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionCreateReq">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionCreateCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionCreateCfm">
+        <field name="session">
+            <type>CsrTlsSession</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDestroyReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDestroyReq">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDestroyCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDestroyCfm">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionBindReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionBindReq">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="ipAddress" array="4">
+            <type>CsrUint8</type>
+        </field>
+        <field name="port">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionBindCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionBindCfm">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionConnectReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionConnectReq">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="ipAddress" array="4">
+            <type>CsrUint8</type>
+        </field>
+        <field name="port">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionConnectCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionConnectCfm">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDisconnectReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDisconnectReq">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDisconnectCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDisconnectCfm">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDisconnectInd" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDisconnectInd">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDisconnectRes" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDisconnectRes">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionCertInd" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionCertInd">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="certLen">
+            <type>CsrSize</type>
+        </field>
+        <field name="cert" blocklength="certLen">
+            <type>CsrUint8</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionCertRes" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionCertRes">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="accepted">
+            <type>CsrBool</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionPasswdreqInd" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionPasswdreqInd">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionPasswdreqRes" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionPasswdreqRes">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="pwdLen">
+            <type>CsrSize</type>
+        </field>
+        <field name="pwd" blocklength="pwdLen">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDataReq" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDataReq">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="bufLen">
+            <type>CsrSize</type>
+        </field>
+        <field name="buf" blocklength="bufLen">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDataCfm" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDataCfm">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="result">
+            <type>CsrTlsResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDataInd" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDataInd">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+        <field name="bufLen">
+            <type>CsrSize</type>
+        </field>
+        <field name="buf" blocklength="bufLen">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrTlsConnectionDataRes" resource="CSR_TLS_SIGNALS" dvalue="CsrTlsConnectionDataRes">
+        <field name="conn">
+            <type>CsrTlsConnection</type>
+        </field>
+    </type>
+
+    <type name="CSR_TLS_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrTlsSessionCreateReq"                            value="0x0000"/>
+        <value name="CsrTlsSessionDestroyReq"                           value="0x0001"/>
+        <value name="CsrTlsConfigCipherReq"                             value="0x0002"/>
+        <value name="CsrTlsConfigCertClientReq"                         value="0x0003"/>
+        <value name="CsrTlsConfigCertVerifyReq"                         value="0x0004"/>
+        <value name="CsrTlsConfigCompressionReq"                        value="0x0005"/>
+        <value name="CsrTlsConnectionCreateReq"                         value="0x0006"/>
+        <value name="CsrTlsConnectionDestroyReq"                        value="0x0007"/>
+        <value name="CsrTlsConnectionBindReq"                           value="0x0008"/>
+        <value name="CsrTlsConnectionConnectReq"                        value="0x0009"/>
+        <value name="CsrTlsConnectionDisconnectReq"                     value="0x000A"/>
+        <value name="CsrTlsConnectionDisconnectRes"                     value="0x000B"/>
+        <value name="CsrTlsConnectionCertRes"                           value="0x000C"/>
+        <value name="CsrTlsConnectionPasswdreqRes"                      value="0x000D"/>
+        <value name="CsrTlsConnectionDataReq"                           value="0x000E"/>
+        <value name="CsrTlsConnectionDataRes"                           value="0x000F"/>
+
+        <value name="CsrTlsSessionCreateCfm"                            value="0x8000"/>
+        <value name="CsrTlsSessionDestroyCfm"                           value="0x8001"/>
+        <value name="CsrTlsConfigCipherCfm"                             value="0x8002"/>
+        <value name="CsrTlsConfigCertClientCfm"                         value="0x8003"/>
+        <value name="CsrTlsConfigCertVerifyCfm"                         value="0x8004"/>
+        <value name="CsrTlsConfigCompressionCfm"                        value="0x8005"/>
+        <value name="CsrTlsConnectionCreateCfm"                         value="0x8006"/>
+        <value name="CsrTlsConnectionDestroyCfm"                        value="0x8007"/>
+        <value name="CsrTlsConnectionBindCfm"                           value="0x8008"/>
+        <value name="CsrTlsConnectionConnectCfm"                        value="0x8009"/>
+        <value name="CsrTlsConnectionDisconnectCfm"                     value="0x800A"/>
+        <value name="CsrTlsConnectionDisconnectInd"                     value="0x800B"/>
+        <value name="CsrTlsConnectionCertInd"                           value="0x800C"/>
+        <value name="CsrTlsConnectionPasswdreqInd"                      value="0x800D"/>
+        <value name="CsrTlsConnectionDataCfm"                           value="0x800E"/>
+        <value name="CsrTlsConnectionDataInd"                           value="0x800F"/>
+    </type>
+
+    <type name="CsrTlsSession" resource="TYPE" type="void*"/>
+    <type name="CsrTlsConnection" resource="TYPE" type="void*"/>
+
+    <type name="CsrTlsCipher" resource="TYPE" size="16">
+        <value name="CSR_TLS_NULL_WITH_NULL_NULL"                       value="0x0000"/>
+
+        <value name="CSR_TLS_RSA_WITH_NULL_MD5"                         value="0x0001"/>
+        <value name="CSR_TLS_RSA_WITH_NULL_SHA"                         value="0x0002"/>
+        <value name="CSR_TLS_RSA_WITH_NULL_SHA256"                      value="0x003B"/>
+        <value name="CSR_TLS_RSA_WITH_RC4_128_MD5"                      value="0x0004"/>
+        <value name="CSR_TLS_RSA_WITH_RC4_128_SHA"                      value="0x0005"/>
+        <value name="CSR_TLS_RSA_WITH_3DES_EDE_CBC_SHA"                 value="0x000A"/>
+        <value name="CSR_TLS_RSA_WITH_AES_128_CBC_SHA"                  value="0x002F"/>
+        <value name="CSR_TLS_RSA_WITH_AES_128_CBC_SHA256"               value="0x003C"/>
+        <value name="CSR_TLS_RSA_WITH_AES_256_CBC_SHA"                  value="0x0035"/>
+        <value name="CSR_TLS_RSA_WITH_AES_256_CBC_SHA256"               value="0x003D"/>
+
+        <value name="CSR_TLS_DH_DSS_WITH_3DES_EDE_CBC_SHA"              value="0x000D"/>
+        <value name="CSR_TLS_DH_DSS_WITH_AES_128_CBC_SHA"               value="0x0030"/>
+        <value name="CSR_TLS_DH_DSS_WITH_AES_128_CBC_SHA256"            value="0x003E"/>
+        <value name="CSR_TLS_DH_DSS_WITH_AES_256_CBC_SHA"               value="0x0036"/>
+        <value name="CSR_TLS_DH_DSS_WITH_AES_256_CBC_SHA256"            value="0x0068"/>
+        <value name="CSR_TLS_DH_RSA_WITH_3DES_EDE_CBC_SHA"              value="0x0010"/>
+        <value name="CSR_TLS_DH_RSA_WITH_AES_128_CBC_SHA"               value="0x0031"/>
+        <value name="CSR_TLS_DH_RSA_WITH_AES_128_CBC_SHA256"            value="0x003F"/>
+        <value name="CSR_TLS_DH_RSA_WITH_AES_256_CBC_SHA"               value="0x0037"/>
+        <value name="CSR_TLS_DH_RSA_WITH_AES_256_CBC_SHA256"            value="0x0069"/>
+
+        <value name="CSR_TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA"             value="0x0013"/>
+        <value name="CSR_TLS_DHE_DSS_WITH_AES_128_CBC_SHA"              value="0x0032"/>
+        <value name="CSR_TLS_DHE_DSS_WITH_AES_128_CBC_SHA256"           value="0x0040"/>
+        <value name="CSR_TLS_DHE_DSS_WITH_AES_256_CBC_SHA"              value="0x0038"/>
+        <value name="CSR_TLS_DHE_DSS_WITH_AES_256_CBC_SHA256"           value="0x006A"/>
+        <value name="CSR_TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA"             value="0x0016"/>
+        <value name="CSR_TLS_DHE_RSA_WITH_AES_128_CBC_SHA"              value="0x0033"/>
+        <value name="CSR_TLS_DHE_RSA_WITH_AES_128_CBC_SHA256"           value="0x0067"/>
+        <value name="CSR_TLS_DHE_RSA_WITH_AES_256_CBC_SHA"              value="0x0039"/>
+        <value name="CSR_TLS_DHE_RSA_WITH_AES_256_CBC_SHA256"           value="0x006B"/>
+
+        <value name="CSR_TLS_DH_anon_WITH_3DES_EDE_CBC_SHA"             value="0x001B"/>
+        <value name="CSR_TLS_DH_anon_WITH_AES_128_CBC_SHA"              value="0x0034"/>
+        <value name="CSR_TLS_DH_anon_WITH_AES_128_CBC_SHA256"           value="0x006C"/>
+        <value name="CSR_TLS_DH_anon_WITH_AES_256_CBC_SHA"              value="0x003A"/>
+        <value name="CSR_TLS_DH_anon_WITH_AES_256_CBC_SHA256"           value="0x006D"/>
+        <value name="CSR_TLS_DH_anon_WITH_RC4_128_MD5"                  value="0x0018"/>
+
+        <value name="CSR_TLS_PSK_WITH_RC4_128_SHA"                      value="0x008A"/>
+        <value name="CSR_TLS_PSK_WITH_3DES_EDE_CBC_SHA"                 value="0x008B"/>
+        <value name="CSR_TLS_PSK_WITH_AES_128_CBC_SHA"                  value="0x008C"/>
+        <value name="CSR_TLS_PSK_WITH_AES_256_CBC_SHA"                  value="0x008D"/>
+        <value name="CSR_TLS_DHE_PSK_WITH_RC4_128_SHA"                  value="0x008E"/>
+        <value name="CSR_TLS_DHE_PSK_WITH_3DES_EDE_CBC_SHA"             value="0x008F"/>
+        <value name="CSR_TLS_DHE_PSK_WITH_AES_128_CBC_SHA"              value="0x0090"/>
+        <value name="CSR_TLS_DHE_PSK_WITH_AES_256_CBC_SHA"              value="0x0091"/>
+        <value name="CSR_TLS_RSA_PSK_WITH_RC4_128_SHA"                  value="0x0092"/>
+        <value name="CSR_TLS_RSA_PSK_WITH_3DES_EDE_CBC_SHA"             value="0x0093"/>
+        <value name="CSR_TLS_RSA_PSK_WITH_AES_128_CBC_SHA"              value="0x0094"/>
+        <value name="CSR_TLS_RSA_PSK_WITH_AES_256_CBC_SHA"              value="0x0095"/>
+    </type>
+
+    <type name="CsrTlsCertificate" resource="TYPE" size="16">
+        <value name="CSR_TLS_CERTIFICATE"                               value="0x0000"/>
+        <value name="CSR_TLS_PRIVATE_KEY"                               value="0x0001"/>
+        <value name="CSR_TLS_PSK"                                       value="0x0002"/>
+    </type>
+
+    <type name="CsrTlsResult" resource="TYPE" type="CsrResult" const="1">
+        <!-- TLS specific error codes. -->
+        <value name="CSR_TLS_RESULT_INVALID_HANDLE"                     value="0x0001"/>
+        <value name="CSR_TLS_RESULT_NO_MORE_SOCKETS"                    value="0x0002"/>
+        <value name="CSR_TLS_RESULT_PORT_IN_USE"                        value="0x0003"/>
+        <value name="CSR_TLS_CERT_NOT_YET_VALID"                        value="0x0009"/>
+        <value name="CSR_TLS_CERT_HAS_EXPIRED"                          value="0x0010"/>
+        <value name="CSR_TLS_CERT_SELFSIGNED"                           value="0x0018"/>
+        <value name="CSR_TLS_CERT_MISSING_ISSUER_CERT"                  value="0x0020"/>
+        <value name="CSR_TLS_CERT_UNABLE_TO_VERIFY_NO_SELFSIGNED_CERT"  value="0x0021"/>
+        <value name="CSR_TLS_CERT_CA_INVALID"                           value="0x0024"/>
+    </type>
+
+</definitions>

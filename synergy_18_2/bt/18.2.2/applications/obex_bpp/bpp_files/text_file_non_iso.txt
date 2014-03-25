@@ -1,0 +1,10 @@
+﻿This page is testing non-ISO-8859-1 characters!
+
+Below the horizontal line 96 non-ISO-8859-1 characters should be found.
+-----------------------------------
+
+ЀЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяѐёђѓєѕіїјљњћќѝўџ
+
+-----------------------------------
+Above the horizontal line 96 non-ISO-8859-1 characters should be found.
+

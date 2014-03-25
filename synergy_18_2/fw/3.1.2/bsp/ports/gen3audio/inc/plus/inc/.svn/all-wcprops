@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/Gen3.0-TypeB/!svn/ver/4541/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc
+END
+mb_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/mb_defs.h
+END
+mb_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/mb_extr.h
+END
+hi_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/hi_defs.h
+END
+dm_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/dm_defs.h
+END
+hi_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/hi_extr.h
+END
+dm_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/dm_extr.h
+END
+cs_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/cs_defs.h
+END
+in_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/in_defs.h
+END
+er_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/er_defs.h
+END
+cs_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/cs_extr.h
+END
+tc_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/tc_defs.h
+END
+io_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/io_defs.h
+END
+in_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/in_extr.h
+END
+er_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/er_extr.h
+END
+tc_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/tc_extr.h
+END
+io_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/io_extr.h
+END
+pi_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/pi_defs.h
+END
+pi_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/pi_extr.h
+END
+ev_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/ev_defs.h
+END
+ev_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/ev_extr.h
+END
+pm_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/pm_defs.h
+END
+pm_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/pm_extr.h
+END
+sm_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/sm_defs.h
+END
+sm_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/sm_extr.h
+END
+tm_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/tm_defs.h
+END
+tm_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/tm_extr.h
+END
+qu_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/qu_defs.h
+END
+qu_extr.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gen3.0-TypeB/!svn/ver/1065/Integration/Kia/src/platform/tcc80xx/Kernel/plus/inc/qu_extr.h
+END

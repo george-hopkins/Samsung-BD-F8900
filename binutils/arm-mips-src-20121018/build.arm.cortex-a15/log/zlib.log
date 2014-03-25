@@ -1,0 +1,316 @@
+Build ZLIB
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/zlib'
+copy directory /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/sources/zlib to /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/zlib
+CMakeLists.txt
+ChangeLog
+ChangeLog.vd
+FAQ
+INDEX
+Makefile
+Makefile.in
+README
+adler32.c
+amiga/
+amiga/Makefile.sas
+amiga/Makefile.pup
+compress.c
+configure
+contrib/
+contrib/minizip/
+contrib/minizip/ioapi.c
+contrib/minizip/make_vms.com
+contrib/minizip/miniunz.c
+contrib/minizip/unzip.h
+contrib/minizip/zip.c
+contrib/minizip/Makefile
+contrib/minizip/mztools.c
+contrib/minizip/MiniZip64_Changes.txt
+contrib/minizip/iowin32.h
+contrib/minizip/iowin32.c
+contrib/minizip/ioapi.h
+contrib/minizip/mztools.h
+contrib/minizip/minizip.c
+contrib/minizip/unzip.c
+contrib/minizip/crypt.h
+contrib/minizip/zip.h
+contrib/minizip/MiniZip64_info.txt
+contrib/dotzlib/
+contrib/dotzlib/DotZLib.build
+contrib/dotzlib/DotZLib.chm
+contrib/dotzlib/DotZLib/
+contrib/dotzlib/DotZLib/DotZLib.cs
+contrib/dotzlib/DotZLib/CodecBase.cs
+contrib/dotzlib/DotZLib/CircularBuffer.cs
+contrib/dotzlib/DotZLib/ChecksumImpl.cs
+contrib/dotzlib/DotZLib/AssemblyInfo.cs
+contrib/dotzlib/DotZLib/Deflater.cs
+contrib/dotzlib/DotZLib/Inflater.cs
+contrib/dotzlib/DotZLib/UnitTests.cs
+contrib/dotzlib/DotZLib/GZipStream.cs
+contrib/dotzlib/DotZLib/DotZLib.csproj
+contrib/dotzlib/LICENSE_1_0.txt
+contrib/dotzlib/readme.txt
+contrib/dotzlib/DotZLib.sln
+contrib/ada/
+contrib/ada/zlib-thin.adb
+contrib/ada/read.adb
+contrib/ada/buffer_demo.adb
+contrib/ada/zlib-streams.ads
+contrib/ada/readme.txt
+contrib/ada/test.adb
+contrib/ada/zlib.adb
+contrib/ada/zlib.gpr
+contrib/ada/mtest.adb
+contrib/ada/zlib-thin.ads
+contrib/ada/zlib-streams.adb
+contrib/ada/zlib.ads
+contrib/inflate86/
+contrib/inflate86/inffast.S
+contrib/inflate86/inffas86.c
+contrib/vstudio/
+contrib/vstudio/vc9/
+contrib/vstudio/vc9/zlibvc.sln
+contrib/vstudio/vc9/testzlibdll.vcproj
+contrib/vstudio/vc9/zlibvc.def
+contrib/vstudio/vc9/minizip.vcproj
+contrib/vstudio/vc9/zlibvc.vcproj
+contrib/vstudio/vc9/testzlib.vcproj
+contrib/vstudio/vc9/zlib.rc
+contrib/vstudio/vc9/zlibstat.vcproj
+contrib/vstudio/vc9/miniunz.vcproj
+contrib/vstudio/readme.txt
+contrib/vstudio/vc10/
+contrib/vstudio/vc10/testzlib.vcxproj.user
+contrib/vstudio/vc10/miniunz.vcxproj.filters
+contrib/vstudio/vc10/zlibstat.vcxproj.user
+contrib/vstudio/vc10/minizip.vcxproj
+contrib/vstudio/vc10/miniunz.vcxproj.user
+contrib/vstudio/vc10/zlibvc.sln
+contrib/vstudio/vc10/zlibvc.vcxproj.user
+contrib/vstudio/vc10/zlibvc.def
+contrib/vstudio/vc10/testzlib.vcxproj
+contrib/vstudio/vc10/zlibvc.vcxproj
+contrib/vstudio/vc10/zlibvc.vcxproj.filters
+contrib/vstudio/vc10/testzlibdll.vcxproj
+contrib/vstudio/vc10/testzlibdll.vcxproj.user
+contrib/vstudio/vc10/zlibstat.vcxproj
+contrib/vstudio/vc10/minizip.vcxproj.filters
+contrib/vstudio/vc10/testzlibdll.vcxproj.filters
+contrib/vstudio/vc10/zlib.rc
+contrib/vstudio/vc10/miniunz.vcxproj
+contrib/vstudio/vc10/testzlib.vcxproj.filters
+contrib/vstudio/vc10/minizip.vcxproj.user
+contrib/vstudio/vc10/zlibstat.vcxproj.filters
+contrib/delphi/
+contrib/delphi/ZLib.pas
+contrib/delphi/zlibd32.mak
+contrib/delphi/readme.txt
+contrib/delphi/ZLibConst.pas
+contrib/testzlib/
+contrib/testzlib/testzlib.txt
+contrib/testzlib/testzlib.c
+contrib/amd64/
+contrib/amd64/amd64-match.S
+contrib/untgz/
+contrib/untgz/Makefile
+contrib/untgz/Makefile.msc
+contrib/untgz/untgz.c
+contrib/blast/
+contrib/blast/README
+contrib/blast/test.pk
+contrib/blast/Makefile
+contrib/blast/test.txt
+contrib/blast/blast.c
+contrib/blast/blast.h
+contrib/iostream/
+contrib/iostream/test.cpp
+contrib/iostream/zfstream.cpp
+contrib/iostream/zfstream.h
+contrib/asm686/
+contrib/asm686/match.S
+contrib/asm686/README.686
+contrib/pascal/
+contrib/pascal/zlibd32.mak
+contrib/pascal/zlibpas.pas
+contrib/pascal/readme.txt
+contrib/pascal/example.pas
+contrib/README.contrib
+contrib/iostream3/
+contrib/iostream3/README
+contrib/iostream3/TODO
+contrib/iostream3/zfstream.cc
+contrib/iostream3/zfstream.h
+contrib/iostream3/test.cc
+contrib/masmx64/
+contrib/masmx64/inffasx64.asm
+contrib/masmx64/inffas8664.c
+contrib/masmx64/readme.txt
+contrib/masmx64/bld_ml64.bat
+contrib/masmx64/gvmat64.asm
+contrib/masmx86/
+contrib/masmx86/match686.asm
+contrib/masmx86/bld_ml32.bat
+contrib/masmx86/readme.txt
+contrib/masmx86/inffas32.asm
+contrib/gcc_gvmat64/
+contrib/gcc_gvmat64/gvmat64.S
+contrib/infback9/
+contrib/infback9/README
+contrib/infback9/inftree9.c
+contrib/infback9/infback9.c
+contrib/infback9/inftree9.h
+contrib/infback9/inflate9.h
+contrib/infback9/inffix9.h
+contrib/infback9/infback9.h
+contrib/iostream2/
+contrib/iostream2/zstream.h
+contrib/iostream2/zstream_test.cpp
+contrib/puff/
+contrib/puff/zeros.raw
+contrib/puff/README
+contrib/puff/Makefile
+contrib/puff/puff.c
+contrib/puff/puff.h
+crc32.c
+crc32.h
+deflate.c
+deflate.h
+doc/
+doc/algorithm.txt
+doc/rfc1951.txt
+doc/txtvsbin.txt
+doc/rfc1950.txt
+doc/rfc1952.txt
+example.c
+examples/
+examples/enough.c
+examples/README.examples
+examples/gzlog.c
+examples/zlib_how.html
+examples/zran.c
+examples/gzjoin.c
+examples/gzappend.c
+examples/zpipe.c
+examples/fitblk.c
+examples/gzlog.h
+examples/gun.c
+gzclose.c
+gzguts.h
+gzlib.c
+gzread.c
+gzwrite.c
+infback.c
+inffast.c
+inffast.h
+inffixed.h
+inflate.c
+inflate.h
+inftrees.c
+inftrees.h
+make_vms.com
+minigzip.c
+msdos/
+msdos/Makefile.bor
+msdos/Makefile.msc
+msdos/Makefile.dj2
+msdos/Makefile.emx
+msdos/Makefile.tc
+nintendods/
+nintendods/README
+nintendods/Makefile
+old/
+old/visual-basic.txt
+old/README
+old/Makefile.riscos
+old/as400/
+old/as400/zlib.inc
+old/as400/bndsrc
+old/as400/readme.txt
+old/as400/compile.clp
+old/os2/
+old/os2/zlib.def
+old/os2/Makefile.os2
+old/descrip.mms
+old/visualc6/
+old/visualc6/zlib.dsp
+old/visualc6/minigzip.dsp
+old/visualc6/zlib.dsw
+old/visualc6/example.dsp
+old/visualc6/README.txt
+qnx/
+qnx/package.qpg
+treebuild.xml
+trees.c
+trees.h
+uncompr.c
+watcom/
+watcom/watcom_f.mak
+watcom/watcom_l.mak
+win32/
+win32/README-WIN32.txt
+win32/zlib.def
+win32/Makefile.bor
+win32/VisualC.txt
+win32/Makefile.msc
+win32/zlib1.rc
+win32/Makefile.emx
+win32/Makefile.gcc
+win32/DLL_FAQ.txt
+zconf.h
+zconf.h.cmakein
+zconf.h.in
+zlib.3
+zlib.3.pdf
+zlib.h
+zlib.map
+zlib.pc.in
+zlib2ansi
+zutil.c
+zutil.h
+Configure ZLIB
+Checking for gcc...
+Building static library libz.a version 1.2.5 with gcc.
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+Checking for unistd.h... Yes.
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+Checking for vsnprintf() in stdio.h... Yes.
+Checking for return value of vsnprintf()... Yes.
+Checking for attribute(visibility) support... Yes.
+Make ZLIB
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o example.o example.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o adler32.o adler32.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o compress.o compress.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o crc32.o crc32.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o deflate.o deflate.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o gzclose.o gzclose.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o gzlib.o gzlib.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o gzread.o gzread.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o gzwrite.o gzwrite.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o infback.o infback.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o inffast.o inffast.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o inflate.o inflate.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o inftrees.o inftrees.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o trees.o trees.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o uncompr.o uncompr.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o zutil.o zutil.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1   -c -o minigzip.o minigzip.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -D_FILE_OFFSET_BITS=64 -c -o example64.o example.c
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -D_FILE_OFFSET_BITS=64 -c -o minigzip64.o minigzip.c
+ar rc libz.a adler32.o compress.o crc32.o deflate.o gzclose.o gzlib.o gzread.o gzwrite.o infback.o inffast.o inflate.o inftrees.o trees.o uncompr.o zutil.o 
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o example example.o -L. libz.a
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o minigzip minigzip.o -L. libz.a
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o example64 example64.o -L. libz.a
+gcc -O3 -D_LARGEFILE64_SOURCE=1 -o minigzip64 minigzip64.o -L. libz.a
+Install ZLIB
+cp libz.a /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib
+if test "" -a -f ; then \
+	  cp  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib; \
+	fi
+cd /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib; chmod u=rw,go=r libz.a
+cp zlib.3 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/share/man/man3
+chmod 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/share/man/man3/zlib.3
+cp zlib.pc /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/pkgconfig
+chmod 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/pkgconfig/zlib.pc
+cp zlib.h zconf.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include
+chmod 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/zlib.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/zconf.h

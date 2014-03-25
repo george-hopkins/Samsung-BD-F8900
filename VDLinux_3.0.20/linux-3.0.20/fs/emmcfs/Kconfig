@@ -1,0 +1,74 @@
+config EMMCFS_FS
+	tristate "Samsung eMMCFS file system support (EXPERIMENTAL)"
+	depends on BLOCK && EXPERIMENTAL
+	select NLS
+	select CRC32
+	default n
+	help
+	  If you say Y here, you will be able to mount format
+	  eMMCFS-formatted hard drive partitions with full read-write access.
+
+	  To compile this code as a module, choose M here: the module will be
+	  called emmcfs.
+
+	  If unsure, say N.
+
+config EMMCFS_DEBUG
+	bool "Debug eMMCFS"
+	depends on EMMCFS_FS
+	help
+	  If you say Y here, you can use the 'debug' mount option to enable
+	  debugging output from the driver.
+
+	  If unsure, say N.
+
+config EMMCFS_NOOPTIMIZE
+	bool "Disable build optimization for eMMCFS"
+	depends on EMMCFS_FS
+	help
+	  If you say Y here, eMMCFS will be built with -O0 opt. Useful for
+	  gdb debug;
+
+	  If unsure, say N.
+
+config EMMCFS_PROC_INFO
+	bool "Stats in /proc/fs/emmcfs"
+	depends on EMMCFS_FS && PROC_FS
+	help
+	  Create under /proc/fs/emmcfs a hierarchy of files, displaying
+	  various eMMCFS statistics and internal data.
+
+	  If unsure, say N.
+
+config EMMCFS_EXPERIMENTAL
+	bool "EMMCFS Experimental Features (EXPERIMENTAL)"
+	depends on EMMCFS && EXPERIMENTAL
+	help
+	  Enables eMMCFS features under testing. These features are
+	  experimental.
+
+	  If unsure, say N.
+
+config EMMCFS_OLDEST_LAYOUT_VERSION
+	int "The oldest supported version of on-disk layout"
+	default 331
+	range 331 9999
+	depends on EMMCFS_FS
+	help
+	  
+	  eMMCFS volume should be formated by mkfs.emmcfs utility not older
+	  than specified version.
+	  Older versions will be rejected by driver at mount time.
+
+	  Cann't be less then 331
+	  
+	  If unsure, leave default value
+
+config EMMCFS_CRC_CHECK
+	bool "EMMCFS Bnodes CRC check"
+	depends on EMMCFS_FS
+	help
+		Enables CRC check for eMMCFS bnodes
+		
+		If unsure, say N. 
+

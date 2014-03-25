@@ -1,0 +1,194 @@
+######################################################################
+#
+# 	Kconfig for machine about Costom Consumer Electronics 
+# 	
+# 	created by tukho.kim@samsung.com
+#
+######################################################################
+#
+# May,31,2010:	created by tukho.kim
+# 
+
+if ARCH_CCEP
+
+choice 
+	prompt "Consumer Electronics"
+	default SAMSUNG_VD_DTV_PLATFORM
+
+config  SAMSUNG_VD_DTV_PLATFORM
+	bool "Samsung VD DTV Platform"
+	help
+	  This enables support for Samsung co. VD SoC R&D Group DTV Platform
+
+config  SAMSUNG_VD_BD_PLATFORM
+	bool "Samsung VD Blue-ray Platform"
+	help
+	  This enables support for Samsung co. VD SoC R&D Group Blue-ray Platform
+endchoice # Consumer Electronics
+
+
+if SAMSUNG_VD_DTV_PLATFORM
+source "arch/arm/mach-ccep/Kconfig.dtv" 
+endif # SAMSUNG_VD_DTV_PLATFORM
+
+if SAMSUNG_VD_BD_PLATFORM
+source "arch/arm/mach-ccep/Kconfig.bd" 
+endif # SAMSUNG_VD_BD_PLATFORM
+
+
+#
+# Define Core
+#
+	
+config ARCH_CCEP_SOC_CA8
+	bool
+	select CPU_V7
+
+config ARCH_CCEP_SOC_CA9
+	bool
+	select CPU_V7
+
+config ARCH_CCEP_SOC_CA15
+	bool
+	select CPU_V7
+
+config ARCH_CCEP_FPGA
+	bool "CCEP FPGA board"
+	default n
+
+config ARCH_SDP1202_EVAL
+	bool "SDP1202 Eval board"
+	depends on ARCH_SDP1202
+
+config ARCH_SDP1207_EVAL
+	bool "SDP1207 Eval board"
+	depends on ARCH_SDP1207
+
+config ARCH_CCEP_SMP
+	bool "SDP SoC Support SMP"
+	depends on ARCH_CCEP_SOC_CA9 || ARCH_CCEP_SOC_CA15
+	depends on !ARCH_SDP1004 || !ARCH_SDP1004FPGA
+	default y
+	default n if ARCH_CCEP_FPGA
+	select SMP
+	select ARM_GIC
+
+config ARCH_CCEP_GIC
+	bool "SDP SoC Enable GIC"
+	depends on ARCH_CCEP_SOC_CA9 || ARCH_CCEP_SOC_CA15
+	depends on !ARCH_SDP1004 || !ARCH_SDP1004FPGA || !ARCH_CCEP_SMP
+	default y
+	select ARM_GIC
+
+config ARCH_CCEP_ENABLE_VFP
+	bool "SDP SoC Enable VFP"
+	depends on CPU_V7
+	default y
+	default n if ARCH_CCEP_FPGA && ARCH_CCEP_SOC_CA15
+	select VFP
+
+config ARCH_CCEP_DISABLE_VFP
+	depends on !ARCH_CCEP_ENABLE_VFP
+	def_bool y
+
+config ARCH_CCEP_ENABLE_NEON
+	bool "SDP SoC Enable NEON"
+	depends on CPU_V7 && ARCH_CCEP_ENABLE_VFP
+	default y
+	default n if ARCH_CCEP_FPGA
+	select NEON
+
+config ARCH_CCEP_DISABLE_NEON
+	depends on !ARCH_CCEP_ENABLE_NEON
+	def_bool y
+
+config ARCH_CCEP_SOC_PL310
+	bool "SDP SoC PL310 L2 Cache controller"
+	depends on ARCH_CCEP_SOC_CA9
+	default y
+	default n if ARCH_CCEP_FPGA
+	select CACHE_L2X0
+	select CACHE_PL310
+
+# Define Core End
+
+
+#
+# Discontigmem support 
+#
+config MACH_MEMORY_TYPE_SUPPORT
+	bool 
+
+if MACH_MEMORY_TYPE_SUPPORT
+
+choice
+	prompt "Choose System Memory Type"
+	default SDP_SPARSEMEM_SUPPORT
+
+config SDP_SPARSEMEM_SUPPORT
+	bool "Sparse memory support"
+	select ARCH_SPARSEMEM_ENABLE
+	help
+	  This enables support sparse memory.
+
+config SDP_DISCONTIGMEM_SUPPORT
+	bool "discontinous memory support"
+	select ARCH_DISCONTIGMEM_ENABLE
+	help
+	  This enables support discontinous memory for 2 channel system memory 
+
+config SDP_SINGLE_DDR_A
+	bool "only DDR A channel system memory"
+	help
+	  This enables support only to use A channel for system memory
+
+config SDP_SINGLE_DDR_B
+	bool "only DDR B channel system memory"
+	help
+	  This enables support only to use B channel for system memory
+
+config SDP_SINGLE_DDR_C
+	bool "only DDR C channel system memory"
+	help
+	  This enables support only to use C channel for system memory
+
+endchoice # "Choose System Memory Type"
+
+config USE_EXT_GIC
+	bool "Use external GIC and interrupt combiner"
+	depends on ARCH_SDP1202 || ARCH_SDP1202FPGA
+	help
+	  Use external GIC and interrupt combiner
+	  instead of internal GIC and interrupt combiner.
+
+config HAVE_ARM_GT
+	bool "Use ARM Generic Timer for A7/A15"
+	depends on ARCH_CCEP_SOC_CA15
+	default y if ARCH_CCEP_SOC_CA15
+	select TICK_ONESHOT
+	help
+	  Use ARM Generic Timer for A7/A15.	  
+
+menu "Select ARM Errata Patch"
+
+config SDP_ARM_A8_ERRATA_586324
+	bool "ARM A8 ERRATA 586324 - cache corruption"
+	depends on ARCH_CCEP_SOC_CA8
+	default y if ARCH_CCEP_SOC_CA8
+	help
+	  This fix ARM_ERRATA_586324. Cache maintenance operation done by MVA can result in a corruption of memory.
+
+config SDP_ARM_PL310_ERRATA_752271
+	bool "ARM_PL310_ERRATA_752271 - Double linefill feature can cause data corruption"
+	depends on ARCH_CCEP_SOC_CA9
+	default y if ARCH_CCEP_SOC_CA9 && !ARCH_SDP1207 && !ARCH_SDP1207FPGA
+	help
+	  This fix PL310_ERRATA_752271. Double linefill feature can cause data corruption.
+
+endmenu
+
+endif # MACH_MEMORY_TYPE_SUPPORT
+
+endif # ARCH_CCEP	
+
+

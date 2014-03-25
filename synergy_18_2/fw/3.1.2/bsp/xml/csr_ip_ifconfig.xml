@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="TYPE"/>
+    <resource name="CONST"/>
+    <resource name="IP_IFCONFIG_SIGNALS" discriminant="CSR_IFCONFIG_Signal_Id"/>
+
+    <type name="CsrTypesXml"      resource="FILE" file="csr_types.xml"/>
+    <type name="CsrResultXml"     resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrIpIfconfigConfigMethod" resource="TYPE" size="8">
+        <value name="CSR_IP_IFCONFIG_CONFIG_METHOD_STATIC"          value="0x00"/>
+        <value name="CSR_IP_IFCONFIG_CONFIG_METHOD_AUTOIP"          value="0x01"/>
+        <value name="CSR_IP_IFCONFIG_CONFIG_METHOD_DHCP"            value="0x02"/>
+    </type>
+
+    <type name="CsrIpIfconfigIfState" resource="TYPE" size="8">
+        <value name="CSR_IP_IFCONFIG_IF_STATE_UNAVAILABLE"          value="0x00"/>
+        <value name="CSR_IP_IFCONFIG_IF_STATE_MEDIA_DISCONNECTED"   value="0x01"/>
+        <value name="CSR_IP_IFCONFIG_IF_STATE_DOWN"                 value="0x02"/>
+        <value name="CSR_IP_IFCONFIG_IF_STATE_UP"                   value="0x03"/>
+    </type>
+
+    <type name="CsrIpIfconfigIfType" resource="TYPE" size="8">
+        <value name="CSR_IP_IFCONFIG_IF_TYPE_WIRED"                 value="0x00"/>
+        <value name="CSR_IP_IFCONFIG_IF_TYPE_WIFI"                  value="0x01"/>
+    </type>
+
+    <type name="CsrIpIfconfigResult" resource="TYPE" type="CsrResult" const="1">
+        <value name="CSR_IP_IFCONFIG_RESULT_INVALID_HANDLE"         value="0x0002"/>
+        <value name="CSR_IP_IFCONFIG_RESULT_NOT_SUPPORTED"          value="0x0003"/>
+        <value name="CSR_IP_IFCONFIG_RESULT_UNKNOWN_NETWORK"        value="0x0004"/>
+    </type>
+
+    <type name="CsrIpIfconfigIfDetails" resource="TYPE">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="ifType">                           <type>CsrIpIfconfigIfType</type></field>
+        <field name="ifState">                          <type>CsrIpIfconfigIfState</type></field>
+        <field name="mac" array="6">                    <type>CsrUint8</type></field>
+        <field name="ipAddress" array="4">              <type>CsrUint8</type></field>
+        <field name="gatewayIpAddress" array="4">       <type>CsrUint8</type></field>
+        <field name="networkMask" array="4">            <type>CsrUint8</type></field>
+        <field name="dnsPrimaryIpAddress" array="4">    <type>CsrUint8</type></field>
+        <field name="dnsSecondaryIpAddress" array="4">  <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigSubscribeReq" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigSubscribeReq">
+        <field name="appHandle">                           <type>CsrSchedQid</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigSubscribeCfm" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigSubscribeCfm">
+        <field name="ifDetailsCount">                           <type>CsrUint16</type>               <!-- Number of elements in ifDetails array --></field>
+        <field name="ifDetails" blocklength="ifDetailsCount">   <type>CsrIpIfconfigIfDetails</type>  <!-- One element for each ethernet interface --></field>
+    </type>
+
+    <type name="CsrIpIfconfigUnsubscribeReq" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigUnsubscribeReq">
+        <field name="appHandle">                           <type>CsrSchedQid</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigUnsubscribeCfm" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigUnsubscribeCfm">
+    </type>
+
+    <type name="CsrIpIfconfigUpReq" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigUpReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="configMethod">                     <type>CsrIpIfconfigConfigMethod</type></field>
+        <field name="ipAddress" array="4">              <type>CsrUint8</type></field>
+        <field name="gatewayIpAddress" array="4">       <type>CsrUint8</type></field>
+        <field name="networkMask" array="4">            <type>CsrUint8</type></field>
+        <field name="dnsPrimaryIpAddress" array="4">    <type>CsrUint8</type></field>
+        <field name="dnsSecondaryIpAddress" array="4">  <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigUpCfm" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigUpCfm">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="result">                           <type>CsrIpIfconfigResult</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigUpdateInd" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigUpdateInd">
+        <field name="ifDetails">                        <type>CsrIpIfconfigIfDetails</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigDownReq" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigDownReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigDownCfm" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigDownCfm">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="result">                           <type>CsrIpIfconfigResult</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigNatReq" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigNatReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="enable">                           <type>CsrBool</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigNatCfm" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigNatCfm">
+        <field name="ifHandle">                         <type>CsrUint32</type></field>
+        <field name="result">                           <type>CsrIpIfconfigResult</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigForwardReq" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigForwardReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="enable">                           <type>CsrBool</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigForwardCfm" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigForwardCfm">
+        <field name="result">                           <type>CsrIpIfconfigResult</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigArpEntryAddReq" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigArpEntryAddReq">
+        <field name="appHandle">                        <type>CsrSchedQid</type></field>
+        <field name="mac" array="6">                    <type>CsrUint8</type></field>
+        <field name="ipAddress" array="4">              <type>CsrUint8</type></field>
+    </type>
+
+    <type name="CsrIpIfconfigArpEntryAddCfm" resource="IP_IFCONFIG_SIGNALS" dvalue="CsrIpIfconfigArpEntryAddCfm">
+        <field name="result">                           <type>CsrIpIfconfigResult</type></field>
+    </type>
+
+    <type name="CSR_IFCONFIG_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrIpIfconfigSubscribeReq"               value="0x0000"/>
+        <value name="CsrIpIfconfigUnsubscribeReq"             value="0x0001"/>
+        <value name="CsrIpIfconfigUpReq"                      value="0x0002"/>
+        <value name="CsrIpIfconfigDownReq"                    value="0x0003"/>
+        <value name="CsrIpIfconfigNatReq"                     value="0x0004"/>
+        <value name="CsrIpIfconfigForwardReq"                 value="0x0005"/>
+        <value name="CsrIpIfconfigArpEntryAddReq"             value="0x0006"/>
+
+        <value name="CsrIpIfconfigSubscribeCfm"               value="0x8000"/>
+        <value name="CsrIpIfconfigUnsubscribeCfm"             value="0x8001"/>
+        <value name="CsrIpIfconfigUpdateInd"                  value="0x8002"/>
+        <value name="CsrIpIfconfigNatCfm"                     value="0x8003"/>
+        <value name="CsrIpIfconfigForwardCfm"                 value="0x8004"/>
+        <value name="CsrIpIfconfigUpCfm"                      value="0x8005"/>
+        <value name="CsrIpIfconfigDownCfm"                    value="0x8006"/>
+        <value name="CsrIpIfconfigArpEntryAddCfm"             value="0x8007"/>
+    </type>
+
+</definitions>
+
+
+
+
+
+
+
+

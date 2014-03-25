@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="asn1-perror"><link linkend="asn1-perror">asn1_perror</link>, function in <link linkend="libtasn1-libtasn1">libtasn1</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="asn1-strerror"><link linkend="asn1-strerror">asn1_strerror</link>, function in <link linkend="libtasn1-libtasn1">libtasn1</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

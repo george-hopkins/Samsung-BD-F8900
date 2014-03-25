@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB9-8B4A-11D0-8D11-00A0C91BC942}") = "hci_server_app.exe", "hci_server_app.exe", "{FF097E0D-9A30-4705-AC16-30831EDD9495}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF097E0D-9A30-4705-AC16-30831EDD9495}.Debug|Default.ActiveCfg = Debug
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

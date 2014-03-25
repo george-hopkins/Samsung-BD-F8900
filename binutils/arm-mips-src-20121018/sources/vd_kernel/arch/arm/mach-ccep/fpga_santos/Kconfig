@@ -1,0 +1,18 @@
+######################################################################
+#
+# 	Kconfig for Dalma machine; Samsung VD SoC DTV platform
+# 	
+# 	created by sh.chon@samsung.com
+#
+######################################################################
+#
+# Jun,21,2011:	created by sh.chon
+# 
+
+if MACH_FPGA_SANTOS
+
+config FPGA_BUSCLKSRC
+	int "FPGA Bus clock source(#3 clock) frequency (Hz)"
+	default "40625000"
+
+endif # MACH_FPGA_SANTOS

@@ -1,0 +1,8 @@
+<?xml version=1.0"?>
+<?DOCTYPE  vcard-listing SYSTEM "vcard-listing.dtd>
+
+<vcard-listing version="1.0">
+<card handle = "1.vcf" name ="Bluetooth;Sig"/>
+<card handle = "2.vcf" name ="Irda;Org"/>
+<card handle = "3.vcf" name ="ブルートゥース;シグ"/>
+</vcard-listing>

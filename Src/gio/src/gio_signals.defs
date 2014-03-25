@@ -1,0 +1,901 @@
+;; From GAsyncResult
+
+;; From GCancellable
+
+(define-signal cancelled
+  (of-object "GCancellable")
+  (return-type "void")
+  (when "last")
+)
+
+;; From GBufferedInputStream
+
+(define-property base-stream
+  (of-object "GBufferedInputStream")
+  (prop-type "GParamObject")
+  (docs "The underlying base stream on which the io ops will be done.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property close-base-stream
+  (of-object "GBufferedInputStream")
+  (prop-type "GParamBoolean")
+  (docs "If the base stream should be closed when the filter stream is closed.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property buffer-size
+  (of-object "GBufferedInputStream")
+  (prop-type "GParamUInt")
+  (docs "The size of the backend buffer")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+;; From GBufferedOutputStream
+
+(define-property base-stream
+  (of-object "GBufferedOutputStream")
+  (prop-type "GParamObject")
+  (docs "The underlying base stream on which the io ops will be done.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property close-base-stream
+  (of-object "GBufferedOutputStream")
+  (prop-type "GParamBoolean")
+  (docs "If the base stream should be closed when the filter stream is closed.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property buffer-size
+  (of-object "GBufferedOutputStream")
+  (prop-type "GParamUInt")
+  (docs "The size of the backend buffer")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property auto-grow
+  (of-object "GBufferedOutputStream")
+  (prop-type "GParamBoolean")
+  (docs "Whether the buffer should automatically grow")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+;; From GDataInputStream
+
+(define-property base-stream
+  (of-object "GDataInputStream")
+  (prop-type "GParamObject")
+  (docs "The underlying base stream on which the io ops will be done.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property close-base-stream
+  (of-object "GDataInputStream")
+  (prop-type "GParamBoolean")
+  (docs "If the base stream should be closed when the filter stream is closed.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property buffer-size
+  (of-object "GDataInputStream")
+  (prop-type "GParamUInt")
+  (docs "The size of the backend buffer")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property byte-order
+  (of-object "GDataInputStream")
+  (prop-type "GParamEnum")
+  (docs "The byte order")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property newline-type
+  (of-object "GDataInputStream")
+  (prop-type "GParamEnum")
+  (docs "The accepted types of line ending")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+;; From GDataOutputStream
+
+(define-property base-stream
+  (of-object "GDataOutputStream")
+  (prop-type "GParamObject")
+  (docs "The underlying base stream on which the io ops will be done.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property close-base-stream
+  (of-object "GDataOutputStream")
+  (prop-type "GParamBoolean")
+  (docs "If the base stream should be closed when the filter stream is closed.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property byte-order
+  (of-object "GDataOutputStream")
+  (prop-type "GParamEnum")
+  (docs "The byte order")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+;; From GDrive
+
+(define-signal changed
+  (of-object "GDrive")
+  (return-type "void")
+  (when "last")
+)
+
+(define-signal disconnected
+  (of-object "GDrive")
+  (return-type "void")
+  (when "last")
+)
+
+(define-signal eject-button
+  (of-object "GDrive")
+  (return-type "void")
+  (when "last")
+)
+
+(define-signal stop-button
+  (of-object "GDrive")
+  (return-type "void")
+  (when "last")
+)
+
+;; From GFile
+
+;; From GFileEnumerator
+
+(define-property container
+  (of-object "GFileEnumerator")
+  (prop-type "GParamObject")
+  (docs "The container that is being enumerated")
+  (readable #f)
+  (writable #t)
+  (construct-only #t)
+)
+
+;; From GFileInfo
+
+;; From GFileIcon
+
+(define-property file
+  (of-object "GFileIcon")
+  (prop-type "GParamObject")
+  (docs "The file containing the icon")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+;; From GFileMonitor
+
+(define-signal changed
+  (of-object "GFileMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GFile*" "p0")
+    '("GFile*" "p1")
+    '("GFileMonitorEvent" "p2")
+  )
+)
+
+(define-property rate-limit
+  (of-object "GFileMonitor")
+  (prop-type "GParamInt")
+  (docs "The limit of the monitor to watch for changes, in milliseconds")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property cancelled
+  (of-object "GFileMonitor")
+  (prop-type "GParamBoolean")
+  (docs "Whether the monitor has been cancelled")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+;; From GFilenameCompleter
+
+(define-signal got-completion-data
+  (of-object "GFilenameCompleter")
+  (return-type "void")
+  (when "last")
+)
+
+;; From GFileInputStream
+
+;; From GFileOutputStream
+
+;; From GFilterInputStream
+
+(define-property base-stream
+  (of-object "GFilterInputStream")
+  (prop-type "GParamObject")
+  (docs "The underlying base stream on which the io ops will be done.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property close-base-stream
+  (of-object "GFilterInputStream")
+  (prop-type "GParamBoolean")
+  (docs "If the base stream should be closed when the filter stream is closed.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+;; From GFilterOutputStream
+
+(define-property base-stream
+  (of-object "GFilterOutputStream")
+  (prop-type "GParamObject")
+  (docs "The underlying base stream on which the io ops will be done.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property close-base-stream
+  (of-object "GFilterOutputStream")
+  (prop-type "GParamBoolean")
+  (docs "If the base stream should be closed when the filter stream is closed.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+;; From GUnixInputStream
+
+(define-property fd
+  (of-object "GUnixInputStream")
+  (prop-type "GParamInt")
+  (docs "The file descriptor to read from")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property close-fd
+  (of-object "GUnixInputStream")
+  (prop-type "GParamBoolean")
+  (docs "Whether to close the file descriptor when the stream is closed")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+;; From GUnixOutputStream
+
+(define-property fd
+  (of-object "GUnixOutputStream")
+  (prop-type "GParamInt")
+  (docs "The file descriptor to write to")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property close-fd
+  (of-object "GUnixOutputStream")
+  (prop-type "GParamBoolean")
+  (docs "Whether to close the file descriptor when the stream is closed")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+;; From GInputStream
+
+;; From GLoadableIcon
+
+;; From GMemoryInputStream
+
+;; From GMemoryOutputStream
+
+;; From GMount
+
+(define-signal changed
+  (of-object "GMount")
+  (return-type "void")
+  (when "last")
+)
+
+(define-signal unmounted
+  (of-object "GMount")
+  (return-type "void")
+  (when "last")
+)
+
+(define-signal pre-unmount
+  (of-object "GMount")
+  (return-type "void")
+  (when "last")
+)
+
+;; From GMountOperation
+
+(define-signal ask-password
+  (of-object "GMountOperation")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("const-gchar*" "p0")
+    '("const-gchar*" "p1")
+    '("const-gchar*" "p2")
+    '("GAskPasswordFlags" "p3")
+  )
+)
+
+;; p1 is actually a gchar**, 
+;; but that is equivalent (by typedef) to gchar**,
+;; and the declaration in gmountoperation.h adds a const.
+;; murrayc
+(define-signal ask-question
+  (of-object "GMountOperation")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("const-gchar*" "p0")
+    '("const-gchar**" "p1")
+  )
+)
+
+(define-signal reply
+  (of-object "GMountOperation")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GMountOperationResult" "p0")
+  )
+)
+
+(define-signal aborted
+  (of-object "GMountOperation")
+  (return-type "void")
+  (when "last")
+)
+
+(define-property username
+  (of-object "GMountOperation")
+  (prop-type "GParamString")
+  (docs "The user name")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property password
+  (of-object "GMountOperation")
+  (prop-type "GParamString")
+  (docs "The password")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property anonymous
+  (of-object "GMountOperation")
+  (prop-type "GParamBoolean")
+  (docs "Whether to use an anonymous user")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property domain
+  (of-object "GMountOperation")
+  (prop-type "GParamString")
+  (docs "The domain of the mount operation")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property password-save
+  (of-object "GMountOperation")
+  (prop-type "GParamEnum")
+  (docs "How passwords should be saved")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property choice
+  (of-object "GMountOperation")
+  (prop-type "GParamInt")
+  (docs "The users choice")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+;; From GSeekable
+
+;; From GSimpleAsyncResult
+
+;; From GThemedIcon
+
+(define-property name
+  (of-object "GThemedIcon")
+  (prop-type "GParamString")
+  (docs "The name of the icon")
+  (readable #f)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property names
+  (of-object "GThemedIcon")
+  (prop-type "GParamBoxed")
+  (docs "An array containing the icon names")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property use-default-fallbacks
+  (of-object "GThemedIcon")
+  (prop-type "GParamBoolean")
+  (docs "Whether to use default fallbacks found by shortening the name at '-' characters. Ignores names after the first if multiple names are given.")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+;; From GVolume
+
+(define-signal changed
+  (of-object "GVolume")
+  (return-type "void")
+  (when "last")
+)
+
+(define-signal removed
+  (of-object "GVolume")
+  (return-type "void")
+  (when "last")
+)
+
+;; From GVolumeMonitor
+
+(define-signal volume-added
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GVolume*" "p0")
+  )
+)
+
+(define-signal volume-removed
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GVolume*" "p0")
+  )
+)
+
+(define-signal volume-changed
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GVolume*" "p0")
+  )
+)
+
+(define-signal mount-added
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GMount*" "p0")
+  )
+)
+
+(define-signal mount-removed
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GMount*" "p0")
+  )
+)
+
+(define-signal mount-pre-unmount
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GMount*" "p0")
+  )
+)
+
+(define-signal mount-changed
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GMount*" "p0")
+  )
+)
+
+(define-signal drive-connected
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GDrive*" "p0")
+  )
+)
+
+(define-signal drive-disconnected
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GDrive*" "p0")
+  )
+)
+
+(define-signal drive-changed
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GDrive*" "p0")
+  )
+)
+
+(define-signal drive-eject-button
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GDrive*" "p0")
+  )
+)
+
+(define-signal drive-stop-button
+  (of-object "GVolumeMonitor")
+  (return-type "void")
+  (when "last")
+  (parameters
+    '("GDrive*" "p0")
+  )
+)
+
+;; From GInetAddress
+
+(define-property family
+  (of-object "GInetAddress")
+  (prop-type "GParamEnum")
+  (docs "The address family (IPv4 or IPv6)")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property bytes
+  (of-object "GInetAddress")
+  (prop-type "GParamPointer")
+  (docs "The raw address data")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property is-any
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is the 'any' address for its family")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property is-loopback
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is the loopback address for its family")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property is-link-local
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is a link-local address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property is-site-local
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is a site-local address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property is-multicast
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is a multicast address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property is-mc-global
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is a global multicast address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property is-mc-link-local
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is a link-local multicast address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property is-mc-node-local
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is a node-local multicast address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property is-mc-org-local
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is an organization-local multicast address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property is-mc-site-local
+  (of-object "GInetAddress")
+  (prop-type "GParamBoolean")
+  (docs "Whether this is a site-local multicast address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+;; From GInetSocketAddress
+
+(define-property family
+  (of-object "GInetSocketAddress")
+  (prop-type "GParamEnum")
+  (docs "The family of the socket address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property address
+  (of-object "GInetSocketAddress")
+  (prop-type "GParamObject")
+  (docs "The address")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property port
+  (of-object "GInetSocketAddress")
+  (prop-type "GParamUInt")
+  (docs "The port")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+;; From GSocketAddress
+
+(define-property family
+  (of-object "GSocketAddress")
+  (prop-type "GParamEnum")
+  (docs "The family of the socket address")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+;; From GSocketAddressEnumerator
+
+;; From GSocketConnectable
+
+;; From GSrvTarget
+
+;; From GResolver
+
+;; From GNetworkAddress
+
+(define-property hostname
+  (of-object "GNetworkAddress")
+  (prop-type "GParamString")
+  (docs "Hostname to resolve")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property port
+  (of-object "GNetworkAddress")
+  (prop-type "GParamUInt")
+  (docs "Network port")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+;; From GNetworkService
+
+(define-property service
+  (of-object "GNetworkService")
+  (prop-type "GParamString")
+  (docs "Service name, eg 'ldap'")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property protocol
+  (of-object "GNetworkService")
+  (prop-type "GParamString")
+  (docs "Network protocol, eg 'tcp'")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property domain
+  (of-object "GNetworkService")
+  (prop-type "GParamString")
+  (docs "Network domain, eg, 'example.com'")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+;; From GSocket
+
+(define-property family
+  (of-object "GSocket")
+  (prop-type "GParamEnum")
+  (docs "The sockets address family")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property type
+  (of-object "GSocket")
+  (prop-type "GParamEnum")
+  (docs "The sockets type")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property protocol
+  (of-object "GSocket")
+  (prop-type "GParamEnum")
+  (docs "The id of the protocol to use, or -1 for unknown")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property fd
+  (of-object "GSocket")
+  (prop-type "GParamInt")
+  (docs "The sockets file descriptor")
+  (readable #t)
+  (writable #t)
+  (construct-only #t)
+)
+
+(define-property blocking
+  (of-object "GSocket")
+  (prop-type "GParamBoolean")
+  (docs "Whether or not I/O on this socket is blocking")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property listen-backlog
+  (of-object "GSocket")
+  (prop-type "GParamInt")
+  (docs "Outstanding connections in the listen queue")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property keepalive
+  (of-object "GSocket")
+  (prop-type "GParamBoolean")
+  (docs "Keep connection alive by sending periodic pings")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property local-address
+  (of-object "GSocket")
+  (prop-type "GParamObject")
+  (docs "The local address the socket is bound to")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property remote-address
+  (of-object "GSocket")
+  (prop-type "GParamObject")
+  (docs "The remote address the socket is connected to")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+

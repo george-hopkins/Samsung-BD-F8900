@@ -1,0 +1,752 @@
+2012-10-17  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-75
+
+	libc/
+	* abilist/libc.abilist: Add new functions, vd_vfprintf, vd_vprintf,
+	vd_fprintf, vd_printf, vd_puts.
+	* libio/iofwrite.c: Modify _IO_fwrite function to check environment
+	variable VD_PRINT_DISABLE.
+	* scripts/data/localplt-generic.data: Add vd_vfprintf to list of
+	safely useable inside eglibc functions.
+	* stdio-common/fprintf.c: Add vd_fprintf function.
+	* stdio-common/printf.c: Add vd_printf function.
+	* stdio-common/vfprintf.c: Rename regular vfprintf function to
+	vd_vfprintf and add new function named vfprintf which checks environment
+	for VD_PRINT_DISABLE variable.
+	* stdio-common/vprintf.c: Add vd_vprintf function.
+	ports/
+	* data/localplt-arm-linux-gnueabi.data: Add vd_vfprintf symbol to list
+	of allowed to be executed from within libc itself.
+
+2012-10-03  Ajeet Yadav  <ajeet.y@samsung.com>
+
+	JIRA: GA-70
+
+	If prelink fails during runtime the user is left with no logical
+	conclusion about the reason of fault, except "prelink checking:
+	failed" message with LD_DEBUG=all.
+
+	This patch allows dynamic linker to provide more detailed information
+	about the cause of prelink failure.
+
+	Dynamic linker checks following:
+	1. Executable not prelinked.
+	2. Shared library load at different base address.
+	3. Stored timestamp in shared library and program liblist different.
+	4. Stored checksum in shared library and program liblist different.
+	5. Stored and runtime shared library lookup sequence different.
+	6. Stored and runtime number of shared library different.
+
+	This patch also adds a new LD_DEBUG=vdprelink option, this will
+	cause the program to exit, if prelink checking fails.
+
+	If LD_DEBUG=vdprelink set, program exit for condition 2-6
+
+	libc/
+	* elf/rtld.c: See above.
+	* sysdeps/generic/ldsodefs.h: Add new flag, DL_DEBUG_VDPRELINK.
+
+2012-10-01  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+	ports/
+	* data/localplt-arm-linux-gnueabi.data: add ftw, nftw to list of
+	internally used functions to make localplt test pass.
+
+2012-09-26  Anton Leschenko  <a.leschenko@samsung.com>
+	JIRA: GA-19
+	libc/
+	* abilist/libc.abilist: Added new functions ftw_r, nftw_r, getopt_r.
+	* io/Makefile: Added new functions ftw_r, nftw_r.
+	* io/Versions: Ditto.
+	* io/ftw.h: Ditto.
+	* io/ftw_r.c: New file, ftw_r & nftw_r implementation.
+	* posix/Makefile: Added getopt_r function.
+	* posix/Versions: Ditto.
+	* posix/getopt.h: Ditto.
+	* posix/getopt_r.c: New file, getopt_r implementation.
+
+2012-08-24  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+	libc/
+	* stdlib/putenv_r.c: Redeclare function to prevent compiler warning.
+	Forward declare __setenv_r to prevent compiler warning.
+
+2012-08-24  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+	libc/
+	* stdlib/putenv_r.c: Redeclare function to prevent compiler warning.
+	Use setenv_r instead of __setenv_r - conversion is done automatically.
+	* stdlib/setenv_r.c: Redeclare functions to prevent compiler warning.
+	* stdlib/tst-putenv_r.c: Use (void *) cast when calling
+	pthread_create.
+
+2012-08-24  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+	libc/
+	* stdlib/getenv_r.c: Change function declaration to prevent compiler warning.
+	* stdlib/putenv_r.c: Removed unneeded header inclusion. Removed unused variable
+	declaration.
+	* stdlib/setenv_r.c: Removed unneded header inclusion.
+	* stdlib/tst-getenv_r.c: Change function declaration to prevent compiler warning.
+	Convert type of argument to void* when calling pthread_create.
+	* stdlib/tst-putenv_r.c: Ditto.
+	* stdlib/tst-unsetenv_r.c: Ditto.
+
+2012-08-23  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+	libc/
+	* abilist/libc.abilist: Add functions getenv_r, setenv_r, putenv_r, unsetenv_r.
+	* stdlib/Versions: Ditto.
+	* stdlib/Makefile: Ditto.
+	* stdlib/stdlib.h: Ditto.
+	* abilist/libpthread.abilist: Remove now unneeded getenv_r, setenv_r, putenv_r,
+	unsetenv_r declarations.
+	* nptl/Versions: Ditto.
+	* nptl/sysdeps/pthread/pthread.h: Ditto.
+	* nptl/sysdeps/pthread/pthread-functions.h: Ditto.
+	* nptl/env_r.h: Renamed to stdlib/env_r.h. Changed pthread rwlocks to libc rwlocks.
+	* nptl/getenv_r.c: Renamed to stdlib/getenv_r.c
+	* nptl/putenv.c: Renamed to stdlib/putenv_r.c
+	* nptl/setenv.c: Renamed to stdlib/setenv_r.c
+	* nptl/tst-getenv_r.c: Renamed to stdlib/tst-getenv_r.c
+	* nptl/tst-putenv.c: Renamed to stdlib/tst-putenv_r.c
+	* nptl/tst-unsetenv_r.c: Renamed to stdlib/tst-unsetenv_r.c
+
+2012-08-22  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+	libc/
+	* nptl/putenv_r.c: Changed to implementation as setenv_r wrap-around.
+	* nptl/sysdeps/pthread/pthread-functions.h: Declare putenv_r() param as
+	constant.
+	* nptl/sysdeps/pthread/pthread.h: Ditto.
+	* misc/dirname_r.c: Code style fixes.
+	* misc/tst-dirname_r.c: Ditto.
+	* nptl/env_r.h: Ditto.
+	* nptl/getenv_r.c: Ditto.
+	* nptl/setenv_r.c: Ditto.
+	* nptl/tst-getenv_r.c: Ditto.
+	* nptl/tst-putenv_r.c: Ditto.
+	* nptl/tst-unsetenv_r.c: Ditto.
+
+2012-08-20  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+	libc/
+	* nptl/putenv_r.c: Add WRLOCK when going unsetenv path.
+
+2012-08-20  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+	libc/
+	* misc/tst-dirname_r.c: Updated test case to test thread-safety.
+	* misc/Makefile: Updated makefile to link tst-dirname_r with
+	libpthread.
+
+2012-08-17  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+
+	libc/
+	* nptl/env_r.h: Add __pthread_rwlock_init_internal declaration to
+	prevent compiler warning.
+
+2012-08-16  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+
+	libc/
+	* nptl/putenv_r.c: Uncomment section where environment var is not
+	found.
+	* nptl/unsetenv_r.c: Compare errno to ENOENT, instead of return code.
+	* misc/dirname_r.c: Return immediately when copying "." into output
+	buffer.
+	ChangeLog.vd: Typo fix.
+
+2012-08-15  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+
+	libc/
+	* nptl/env_r.h: Add RDLOCK/WRLOCK/UNLOCK macros.
+	* nptl/putenv_r.c: Set next environ element to NULL when adding string
+	to environment. Use WRLOCK/UNLOCK macros.
+	* nptl/getenv_r.c: Use RDLOCK/WRLOCK/UNLOCK macros.
+	* nptl/setenv_r.c: Ditto.
+	* libc/abilist/libc.abilist: Remove basename_r declaration.
+	* libc/string/Versions: Ditto.
+	* libc/string/string.h: Ditto.
+	* libc/string/Makefile: Remove basename_r and tst-basename_r build
+	cmds.
+	* libc/string/basename_r.c Removed.
+	* libc/string/tst-basename_r.c: Removed.
+	* libc/misc/dirname_r.c: Remove modification of input string.
+
+2012-08-07  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+
+	libc/
+	* nptl/getenv_r.c: Include pthreadP.h.
+	* nptl/putenv_r.c: Ditto.
+	* nptl/setenv_r.c: Ditto.
+	* nptl/sysdeps/pthread/pthread.h: Add putenv_r & unsetenv_r
+	declaration.
+	* nptl/tst-putenv_r.c: Correct error message from "setenv_r" to
+	"putenv_r".
+	* nptl/tst-unsetenv.c: Correct description in header.
+	* misc/libgen.h: Add stddef header to include size_t definition,
+	define dirname_r.
+
+2012-08-02  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+
+	libc/
+	* misc/dirname_r.c: Code cleanup.
+	* nptl/env_r.h: Ditto.
+	* nptl/getenv_r.c: Ditto.
+	* nptl/putenv_r.c: Ditto.
+	* nptl/setenv_r.c: Ditto.
+	* string/basename_r.c: Ditto.
+
+2012-07-30  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-56
+
+	libc/
+	* string/string.h: Add dirname_r declaration.
+
+2012-07-30  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-19
+
+	libc/
+	* nptl/env_r.h: Remove env_mutex.
+
+2012-07-30  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-59
+
+	libc/
+	* nptl/env_r.h: Replace pthread_rwlock_init with internal libc
+	call.
+	* nptl/getenv_r.c: Replace pthread_once, pthread_rwlock_rdlock,
+	pthread_rwlock_wrlock, pthread_rwlock_unlock with internal libc calls.
+	* nptl/putenv_r.c: Ditto.
+	* nptl/setenv_r.c: Ditto.
+	* nptl/pthread_once.c: Add strong alias for internal function
+	__pthread_once_internal.
+	* nptl/pthread_rwlock_init.c: Add strong alias for internal function
+	__pthread_rwlock_init_internal.
+
+2012-07-27  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: GA-55
+
+	Backport from eglibc-2_15:
+
+	2011-12-07  Joseph Myers  <joseph@codesourcery.com>
+
+	* debug/tst-backtrace6.c: New test.
+	* debug/Makefile (LDFLAGS-tst-backtrace6): Define.
+	(tests-$(OPTION_EGLIBC_BACKTRACE)): Add new tst-backtrace6.
+	* sysdeps/sh/Makefile (CFLAGS-tst-backtrace6.c): Define.
+
+	2011-12-01  Joseph Myers  <joseph@codesourcery.com>
+		    Tom de Vries  <tom@codesourcery.com>
+
+	* debug/tst-backtrace3.c, debug/tst-backtrace4.c,
+	debug/tst-backtrace5.c: New tests.
+	* debug/Makefile (LDFLAGS-tst-backtrace3, LDFLAGS-tst-backtrace4)
+	(LDFLAGS-tst-backtrace5): Define.
+
+	2012-01-04  Tom de Vries  <tom@codesourcery.com>
+
+	* sysdeps/mips/Makefile: Compile initfini.c, pt-initfini.c with
+	-fno-unwind-tables.
+
+	2012-01-03  Tom de Vries  <tom@codesourcery.com>
+
+	* sysdeps/mips/backtrace.c: New file, including ia64 backtrace.c.
+	* sysdeps/mips/Makefile: Compile backtrace.c with -funwind-tables.
+
+2012-07-26  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-53
+	libc/
+	* malloc/malloc.c (malloc_par): Change mmap_fragm_chunks type to
+	INTERNAL_SIZE_T.
+	(munmap_chunk): Check mmap_wasted_mem and mmap_fragm_chunks.
+	(public_vd_mALLINFo): Print arena number info. Print malloc_trim stats
+	only for main arena.
+	(mTRIMESt): Use bitmaps instead of array.
+
+2012-07-26  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-52
+	libc/
+	* abilist/libc.abilist: Added basename_r declaration.
+	* string/Makefile: Ditto.
+	* string/Versions: Ditto.
+	* string/string.h: Ditto.
+	* string/basename.c: New file, implementation of basename_r().
+	* string/tst-basename_r.c: New file, test case for basename_r().
+
+2012-07-26  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-56
+	libc/
+	* abilist/libc.abilist: Added dirname_r declaration.
+	* misc/Makefile: Ditto.
+	* misc/Versions: Ditto.
+	* misc/dirname_r.c: New file, implementation of dirname_r().
+	* misc/tst-dirname_r.c: New file, test case for dirname_r().
+
+2012-07-25  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-51
+	libc/
+	* abilist/libpthread.abilist: Added unsetenv_r declaration.
+	* nptl/Makefile: Ditto.
+	* nptl/Versions: Ditto.
+	* nptl/pthreadP.h: Ditto.
+	* nptl/sysdeps/pthread/pthread-functions.h: Ditto.
+	* nptl/unsetenv_r.c: New file, implementation of unsetenv_r().
+	* nptl/tst-unsetenv_r.c: New file, test case for unsetenv_r().
+
+2012-07-25  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-50
+	libc/
+	* abilist/libpthread.abilist: Added putenv_r declaration.
+	* nptl/Makefile: Ditto.
+	* nptl/Versions: Ditto.
+	* nptl/pthreadP.h: Ditto.
+	* nptl/sysdeps/pthread/pthread-functions.h: Ditto.
+	* nptl/putenv_r.c: New file, implementation of putenv_r().
+	* nptl/tst-putenv_r.c: New file, test case for putenv_r().
+
+2012-07-23  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: GA-20
+	libc/
+	* abilist/libpthread.abilist: Added declarations of getenv_r/setenv_r.
+	* nptl/Makefile: Ditto.
+	* nptl/Versions: Ditto.
+	* nptl/pthreadP.h: Ditto.
+	* nptl/sysdeps/pthread/pthread-functions.h: Ditto.
+	* nptl/sysdeps/pthread/pthread.h: Ditto.
+	* nptl/env_r.h: New file, mutex declared & initialized.
+	* nptl/setenv_r.c: New file, implementation of setenv_r().
+	* nptl/getenv_r.c: New file, implementation of getenv_r().
+	* nptl/tst-getenv_r.c: New file, testcase for getenv_r/setenv_r.
+
+2012-07-23  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: GA-48
+
+	Update VD patch:
+
+	ports/
+	* sysdeps/mips/nptl/pthreaddef.h (THREAD_DEFAULT_PRIORITY):
+	set to 0.
+
+2012-07-23  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: GA-48
+
+	Update VD patch:
+
+	libc/
+	* malloc/malloc.c (public_mALLINFo): Remove commented
+	enhanced output for malloc.
+
+2012-07-12  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: GA-46
+	ports/
+	* sysdeps/mips/memcpy.S: Add prefetching instructions.
+
+2012-05-03 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: GA-15
+
+	libc/
+	* malloc/obstack.h: Explicitly cast sizeof to int, fixes compilation
+			    when using -Werror=sign-compare option
+
+2012-04-26 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: VDTC-93
+
+	libc/
+	* io/Makefile: do not attempt to run ftwtest if no_execute is set to 'yes'
+
+2012-04-26 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: GA-26
+
+	libc/
+	* configure.in: Explicitly set cross_compiling to yes if host != build. Fixes ftwtest.
+	* configure: Regenerated
+
+2012-04-26 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: GA-26
+
+	libc/
+	* io/ftwtest-sh: Output test progress, should help to locate problems
+
+2012-04-18 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: GA-6
+	
+	localedef/
+	* include/gnu/option-groups.h: Do not use regexp checking on Cygwin
+	* include/always.h: - Use own __rawmemchr() on Cygwin
+	                    - Fixed build on systems where locale_t is not present.
+
+2012-04-18 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: GA-15
+
+	libc/
+	* malloc/obstack.h: Fixed conditions in order to prevent address rollover
+
+2012-04-13 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: GA-15
+
+	libc/
+	* malloc/tst-obstack.c: Added tests against address rollover
+
+2012-04-12 Anton Leschenko <a.leschenko@samsung.com>
+	JIRA: GA-4
+	libc/
+	* nptl/Makefile: Added tst-mutex5-settime_rel test case build rules.
+	* nptl/tst-mutex5-settime_rel.c: Fixed to pass when clock is shifted.
+	* ChangeLog.vd: updated.
+
+2012-04-12 Anton Leschenko <a.leschenko@samsung.com>
+	JIRA: GA-14
+
+	libc/
+	* nptl/sysdeps/unix/sysv/linux/lowlevellock.c: Added generic
+	implementation of lll_timedlock_wait_relative function.
+	Added INTERNALL_SYSCALL_DECL to declare __err variable for
+	INTERNAL_SYSCALL.
+	* nptl/sysdeps/unix/sysv/linux/lowlevelrobustlock.c: Added
+	INTERNAL_SYSCALL_DECL to declare __err variable for INTERNAL_SYSCALL.
+	ports/
+	* sysdeps/unix/sysv/linux/mips/nptl/lowlevellock.h: Added declarations
+	of newly added functions.
+	* ChangeLog.vd: updated.
+
+2012-04-11 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: GA-10
+
+	libc/
+	* config.make.in: Added build OS name
+	* sunrpc/Makefile: Add libintl on Cygwin
+	* timezone/Makefile: Ditto
+	* sunrpc/rpc/types.h: Correctly handle Cygwin definitions
+
+2012-04-10 Anton Leschenko <a.leschenko@samsung.com>
+	JIRA: GA-7
+
+	libc/
+	* nptl/tst-vd_stack1.c - New file, test case setting minimal stack
+	size minus 1.
+	* nptl/tst-vd_stack2.c - New file, test case setting stack size to 8
+	megabytes.
+	* nptl/Makefile - added new tests build instructions.
+	* ChangeLog.vd - updated.
+
+2012-04-06 Anton Leschenko <a.leschenko@samsung.com>
+	JIRA: GA-6
+
+	libc/
+	* nptl/tst-cond11_rel.c: New file, test case for
+	pthread_cond_timedwait_relative
+	* nptl/tst-cond19_rel.c: Ditto.
+	* nptl/tst-cond20_rel.c: Ditto.
+	* nptl/tst-cond5_rel.c: Ditto.
+	* nptl/tst-cond6_rel.c: Ditto.
+	* nptl/tst-cond9_rel.c: Ditto.
+	* nptl/tst-eintr5_rel.c: Ditto.
+	* nptl/tst-kill2_rel.c: Ditto.
+	* nptl/tst-kill3_rel.c: Ditto.
+	* nptl/tst-mutex-robust_rel.c: Ditto.
+	* nptl/tst-join3-settime_rel.c: New file, test case for
+	pthread_timedjoin_relative_np.
+	* nptl/tst-join3_rel.c: Ditto.
+	* nptl/tst-rwlock9-settime_rel.c: New file, test case for
+	pthread_rwlock_timedwrlock_relative &
+	pthread_rwlock_timedrdlock_relative.
+	* nptl/tst-sem5-settime_rel.c: New file, test case for
+	sem_timedwait_relative.
+	* nptl/Makefile: added new test cases.
+
+2012-04-04 Anton Leschenko <a.leschenko@samsung.com>
+	JIRA: VDTC-53
+
+	libc/
+	* nptl/pthread_mutex_timedlock_relative.c: new file, implementation of
+	pthread_mutex_timedlock_relative.
+	* abilist/libpthread.abilist: Added new function.
+	* nptl/Makefile: Ditto.
+	* nptl/Versions: Ditto.
+	* nptl/sysdeps/pthread/pthread.h: Ditto.
+	* nptl/sysdeps/unix/sysv/linux/lowlevelrobustlock.c: Added helper
+	functions.
+	* nptl/tst-mutex-robust_rel.c: New testcase for _relative function.
+	* nptl/tst-mutex5-settime_rel.c: Ditto.
+	/
+	* Changelog.vd: updated.
+
+2012-04-11 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: GA-10
+
+	libc
+	* config.make.in: Added build OS name
+	* sunrpc/Makefile: Add libintl on Cygwin
+	* timezone/Makefile: Ditto
+	* sunrpc/rpc/types.h: Correcly handle Cygwin definitions
+
+2012-03-16 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: VDTC-93
+
+	libc
+	* scripts/cross-test-ssh.sh: Do not propagate LD_LIBRARY_PATH, may cause problems
+
+2012-03-15 Pavel Fedin <p.fedin@samsung.com>
+	JIRA: VDTC-93
+
+	libc
+	* Rules: Add no_execute variable. When set to "yes" tests will only be built but not executed
+	* */Makefile: Ditto
+
+2012-01-31 Anton Leschenko <a.leschenko@samsung.com>
+
+	JIRA: VDTC-53
+
+	libc/
+	* malloc/malloc.c: Add new field fr_count to store fragmentation.
+	* malloc/malloc.c (sYSMALLOc): store fragmentation in newly added
+	malloc_chunk field.
+	* malloc/malloc.c (munmap_chunk): Restore old accounting code. Use
+	newly added malloc_chunk field.
+
+2012-01-24 Anton Leschenko <a.leschenko@samsung.com>
+
+	Updated ChangeLog.vd
+
+2012-01-18 Anton Leschenko <a.leschenko@samsung.com>
+
+	JIRA: VDTC-53
+
+	libc/
+	* malloc/malloc.c (mTRIMESt): Add function.
+	* malloc/malloc.c (public_vd_mALLINFo): Add mTRIMESt call.
+	* malloc/malloc.h (trim_res): Add struct definition.
+
+2011-12-30 Anton Leschenko <a.leschenko@samsung.com>
+
+	JIRA: VDTC-64
+
+	2010-06-10  Andreas Schwab  <schwab@redhat.com>
+
+	* sysdeps/unix/sysv/linux/getpagesize.c: Don't assume AT_PAGESIZE
+	is always available.
+
+2011-12-29  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	libc/
+	* abilist/libpthread.abilist 
+	(pthread_rwlock_timedwrlock_relative): Add.
+	* nptl/Makefile (pthread_rwlock_timedwrlock_relative): Add
+	* nptl/pthread_rwlock_timedwrlock_relative.c: New file.
+
+2011-12-29  Alexey Kravets  <a.kravets@samsung.com>
+
+	JIRA: VDTC-53
+
+	Backport VD patch:
+
+	* nptl/Makefile (libpthread-routines): Add
+	pthread_rwlock_timedrdlock_relative.
+	* nptl/Versions (libpthread): Add pthread_rwlock_timedrdlock_relative.
+	* nptl/pthread_rwlock_timedrdlock_relative.c: New.
+
+2011-12-29  Alexey Kravets  <a.kravets@samsung.com>
+
+	JIRA: VDTC-53
+
+	Backport VD patch:
+
+	libc/
+	* nptl/Makeconfig (libpthread-routines): Add
+	pthread_timedjoin_relative.
+	* nptl/Versions (libpthread): Add pthread_timedjoin_relative_np.
+	* nptl/pthread_timedjoin_relative.c: New.
+	* nptl/sysdeps/pthread/pthread.h (pthread_timedjoin_np_relative):
+	Extern.
+
+2011-12-29  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	libc/
+	* abilist/libpthread.abilist (sem_timedwait_relative): Add.
+	* nptl/Makefile (sem_timedwait_relative): Add.
+	* nptl/sysdeps/unix/sysv/linux/sem_timedwait_relative.c: New file.
+	* nptl/Versions (sem_timedwait_relative): Add.
+
+2011-12-29  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	libc/
+	* abilist/libpthread.abilist
+	(pthread_cond_timedwait_relative): New.
+	* nptl/Makefile (pthread_cond_timedwait_relative): New.
+	* nptl/nptl-init.c
+	(.ptr___pthread_cond_timedwait_relative): New.
+	* nptl/pthread_cond_timedwait_relative.c: New file.
+	* nptl/pthreadP.h (__pthread_cond_timedwait_relative): Declared.
+	* nptl/sysdeps/pthread/pthread-functions.h
+	(pthread_function): Updated.
+	* nptl/sysdeps/pthread/pthread.h
+	(pthread_cond_timedwait_relative): Declared.
+	* nptl/Versions glibc/nptl/Versions
+	(pthread_cond_timedwait_relative): Added.
+
+2011-12-29  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	* sysdeps/arm/memcpy.S (memcpy): Increase preload size.
+
+2011-12-29  Alexey Kravets  <a.kravets@samsung.com>
+
+	JIRA: VDTC-53
+
+	Backport VD patch:
+
+	libc/
+	* abilist/libc.abilist (__libc_vd_mallinfo): New.
+	* malloc/Versions (libc): Add __libc_vd_mallinfo to interfaces.
+	* malloc/malloc.h (vd_mallinfo): Extern.
+	* malloc/malloc.c (public_vd_mALLINFo): New.
+	(__vd_mallinfo): Strong alias to __libc_vd_mallinfo.
+	(vd_mallinfo): Weak alias to __libc_vd_mallinfo.
+
+2011-12-29  Alexey Kravets  <a.kravets@samsung.com>
+
+	JIRA: VDTC-53
+
+	Backport VD patch:
+
+	libc/
+	* malloc/malloc.c (public_mALLINFo): Add commented
+	enhanced output for malloc.
+
+2011-12-29  Alexey Kravets  <a.kravets@samsung.com>
+
+	JIRA: VDTC-53
+
+	Backport VD patch:
+
+	2010-02-02  Lee,Hakbong <hakbong5.lee@samsung.com>
+
+	libc/
+	* Added VDLinux, based SELP.4.2.1.x Add patch No.36
+	* pthread_cancel() abort() syscall warning msg patch
+
+2011-12-29  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	Backport VD patch:
+
+	2010-02-01  Lee,Hakbong <hakbong5.lee@samsung.com>
+
+	libc/
+	* Key to change Thread Default Priority of system on SELP.
+	* It's only support ARM/MIPS/i386 Architecture.
+	-./nptl/sysdeps/<arch>/pthreaddef.h --> THREAD_DEFAULT_PRIORITY
+	* Default Stack Size is 2M per each thread for Embedded Linux of
+	Samsung products.
+
+	* ./nptl/pthread_setschedparam.c: priority change between threads.
+	Non-preemptive priority-based scheduling (Policy: SCHED_OTHER)
+
+
+2011-12-29  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	ports/
+	* sysdeps/unix/sysv/linux/arm/nptl/lowlevellock.c
+	(__lll_timedwait_tid_relative): New function.
+	* sysdeps/unix/sysv/linux/arm/nptl/lowlevellock.h
+	(lll_timedwait_tid_relative): New define.
+
+2011-12-29  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	ports/
+	* sysdeps/unix/sysv/linux/arm/nptl/lowlevellock.c
+	(__lll_timedlock_wait_relative): New function.
+	* sysdeps/unix/sysv/linux/arm/nptl/lowlevellock.h
+	(__lll_timedlock_relative): New define.
+	(lll_timedlock_relative): Ditto.
+	(__lll_robust_timedlock_relative): Ditto.
+	(lll_robust_timedlock_relative): Ditto.
+
+2011-12-29  Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	ports/
+	* sysdeps/arm/nptl/pthreaddef.h (THREAD_DEFAULT_PRIORITY): New.
+
+2011-11-30  Ildar Kaybyshev <i.kaybyshev@samsung.com>
+
+	JIRA: VDTC-41
+
+	Backport from mainline:
+
+	2011-09-21  Joseph Myers  <joseph@codesourcery.com>
+
+	localedef/
+	* configure.ac: Test for locale_t.
+	* Makefile.in (DEFINES): Add -DNOT_IN_libc.
+	(INCLUDES): Move -I$(srcdir)/include before -Iglibc/locale.
+	include/locale.h: New.
+	 * include/ctype.h (__isalnum_l, __isalpha_l, __isdigit_l)
+	(__tolower_l): Define.
+	* configure, config.h.in: Regenerate.
+
+2011-11-30  Ildar Kaybyshev <i.kaybyshev@samsung.com>
+
+	JIRA: VDTC-41
+
+	Backport from mainline:
+
+	2011-10-15  Andreas Schwab  <schwab@linux-m68k.org>
+
+	libc/
+	* configure.in: Also look in $cxxmachine/include for C++ system
+	headers.
+
+
+2011-12-15  Anton Leschenko  <a.leschenko@samsung.com>
+
+	JIRA: VDTC-30
+
+	libc/
+	* posix/Makefile (bug-regex32-ENV): New.

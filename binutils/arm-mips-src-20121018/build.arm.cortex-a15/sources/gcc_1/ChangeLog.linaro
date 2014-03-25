@@ -1,0 +1,3807 @@
+2012-08-13  Matthew Gretton-Dann  <matthew.gretton-dann@linaro.org>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2012-08-13  Matthew Gretton-Dann  <matthew.gretton-dann@linaro.org>
+
+	GCC Linaro 4.6-2012.08 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2012-08-10  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	Backport from mainline:
+
+	gcc/
+	2012-07-30  Ulrich Weigand  <ulrich.weigand@linaro.org>
+		    Richard Earnshaw  <rearnsha@arm.com>
+
+	* target.def (vector_alignment): New target hook.
+	* doc/tm.texi.in (TARGET_VECTOR_ALIGNMENT): Document new hook.
+	* doc/tm.texi: Regenerate.
+	* targhooks.c (default_vector_alignment): New function.
+	* targhooks.h (default_vector_alignment): Add prototype.
+	* stor-layout.c (layout_type): Use targetm.vector_alignment.
+	* config/arm/arm.c (arm_vector_alignment): New function.
+	(TARGET_VECTOR_ALIGNMENT): Define.
+
+	* tree-vect-data-refs.c (vect_update_misalignment_for_peel): Use
+	vector type alignment instead of size.
+	* tree-vect-loop-manip.c (vect_do_peeling_for_loop_bound): Use
+	element type size directly instead of computing it from alignment.
+	Fix variable naming and comment.
+
+	gcc/testsuite/
+	2012-07-30  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	* lib/target-supports.exp
+	(check_effective_target_vect_natural_alignment): New function.
+	* gcc.dg/align-2.c: Only run on targets with natural alignment
+	of vector types.
+	* gcc.dg/vect/slp-25.c: Adjust tests for targets without natural
+	alignment of vector types.
+
+	2011-12-21  Michael Zolotukhin  <michael.v.zolotukhin@intel.com>
+
+	* gcc.dg/vect/vect-peel-1.c: Adjust test diag-scans to fix fail on AVX.
+	* gcc.dg/vect/vect-peel-2.c: Ditto.
+
+	2011-06-21  Ira Rosen  <ira.rosen@linaro.org>
+
+	PR testsuite/49443
+	* gcc.dg/vect/vect-peel-3.c: Expect to fail on vect_no_align
+	targets.
+	* gcc.dg/vect/vect-peel-4.c: Likewise.
+
+	2011-06-14  Ira Rosen  <ira.rosen@linaro.org>
+
+	* gcc.dg/vect/vect-peel-3.c: Adjust misalignment values
+	for double-word vectors.
+	* gcc.dg/vect/vect-peel-4.c: Likewise.
+
+2012-08-01  Michael Hope  <michael.hope@linaro.org>
+
+	Merge from FSF GCC 4.6.3 (svn branches/gcc-4_6-branch 189991).
+
+2012-07-02  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2012-07-02  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	GCC Linaro 4.6-2012.07 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2012-07-01  Michael Hope  <michael.hope@linaro.org>
+
+	Merge from FSF GCC 4.6.3 (svn branches/gcc-4_6-branch 189058).
+
+2012-06-29  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	LP 1010826
+
+	Backport from mainline:
+
+	gcc/
+	PR tree-optimization/53729
+	PR tree-optimization/53636
+	* tree-vect-slp.c (vect_slp_analyze_bb_1): Delay call to
+	vect_verify_datarefs_alignment until after statements have
+	been marked as relevant/irrelevant.
+	* tree-vect-data-refs.c (vect_verify_datarefs_alignment):
+	Skip irrelevant statements.
+	(vect_enhance_data_refs_alignment): Use STMT_VINFO_RELEVANT_P
+	instead of STMT_VINFO_RELEVANT.
+	(vect_get_data_access_cost): Do not check for supportable
+	alignment before calling vect_get_load_cost/vect_get_store_cost.
+	* tree-vect-stmts.c (vect_get_store_cost): Do not abort when
+	handling unsupported alignment.
+	(vect_get_load_cost): Likewise.
+
+	gcc/
+	PR tree-optimization/53636
+	* tree-vect-data-refs.c (vect_compute_data_ref_alignment): Verify
+	stride when doing basic-block vectorization.
+
+	gcc/testsuite/
+	PR tree-optimization/53636
+	* gcc.target/arm/pr53636.c: New test.
+
+2012-06-28  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	* config/arm/arm.c (neon_dereference_pointer): Fixup typos.
+
+	gcc/testsuite/
+	* gcc.target/arm/lp101329.c: Remove unneeded comment.
+
+2012-06-21  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	LP 1013209
+	gcc/
+	* config/arm/arm.c (neon_dereference_pointer): Use fold_convert
+	to convert expression to the right type. This is a Linaro 4.6 only
+	patch as this was originally backported from FSF 4.7 and hence applies
+	only here.
+
+	gcc/testsuite/
+	* gcc.target/arm/lp101329.c: New test.
+
+2012-06-14  Michael Hope  <michael.hope@linaro.org>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2012-06-12  Michael Hope  <michael.hope@linaro.org>
+
+	GCC Linaro 4.6-2012.06 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2012-06-11  Michael Hope  <michael.hope@linaro.org>
+
+	Merge from FSF GCC 4.6.3 (svn branches/gcc-4_6-branch 188320).
+
+2012-05-22  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline:
+	gcc/
+	2012-03-15  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	* config.gcc (target_type_format_char): New. Document it. Set it for
+        arm*-*-* .
+
+2012-05-23  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	LP:990530
+	gcc/
+        2012-03-12  Richard Guenther  <rguenther@suse.de>
+	* config/arm/arm.c (neon_dereference_pointer): Do not call
+	covert during RTL expansion.
+
+2012-05-21  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r186859:
+
+	gcc/
+	2012-04-26  Michael Hope  <michael.hope@linaro.org>
+		    Richard Earnshaw  <rearnsha@arm.com>
+
+	* config/arm/linux-eabi.h (GLIBC_DYNAMIC_LINKER_SOFT_FLOAT): Define.
+	(GLIBC_DYNAMIC_LINKER_HARD_FLOAT): Define.
+	(GLIBC_DYNAMIC_LINKER_DEFAULT): Define.
+	(GLIBC_DYNAMIC_LINKER):	Redefine to use the hard float path.
+
+	Backport from mainline r187012:
+
+	gcc/
+	2012-05-01  Richard Earnshaw  <rearnsha@arm.com>
+
+	* arm/linux-eabi.h (GLIBC_DYNAMIC_LINKER_DEFAULT): Avoid ifdef
+	comparing enumeration values.  Update comments.
+
+2012-05-15  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2012-05-15  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2012.05 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2012-05-08  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6.3 (svn branches/gcc-4_6-branch 187273).
+
+2012-05-08  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	LP 959242
+
+	Backport from mainline:
+
+	2012-05-04  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	gcc/
+	PR tree-optimization/52633
+	* tree-vect-patterns.c (vect_vect_recog_func_ptrs): Swap order of
+	vect_recog_widen_shift_pattern and vect_recog_over_widening_pattern.
+	(vect_recog_over_widening_pattern): Remove handling of code that was
+	already detected as over-widening pattern.  Remove special handling
+	of "unsigned" cases.  Instead, support general case of conversion
+	of the shift result to another type.
+
+	gcc/testsuite/
+	PR tree-optimization/52633
+	* gcc.target/arm/pr52633.c: New test.
+
+	gcc/
+	* tree-vect-patterns.c (vect_single_imm_use): New function.
+	(vect_recog_widen_mult_pattern): Use it instead of open-coding loop.
+	(vect_recog_over_widening_pattern): Likewise.
+	(vect_recog_widen_shift_pattern): Likewise.
+
+	gcc/
+	* tree-vect-patterns.c (vect_same_loop_or_bb_p): New function.
+	(vect_handle_widen_op_by_const): Use it instead of open-coding test.
+	(vect_recog_widen_mult_pattern): Likewise.
+	(vect_operation_fits_smaller_type): Likewise.
+	(vect_recog_over_widening_pattern): Likewise.
+	(vect_recog_widen_shift_pattern): Add to vect_same_loop_or_bb_p test.
+
+2012-04-16  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	LP 972648
+
+	Backport from mainline:
+
+	2011-08-23  Richard Guenther  <rguenther@suse.de>
+
+	gcc/
+	* Makefile.in (tree-data-ref.o): Add tree-affine.h dependency.
+	* tree-affine.h (aff_comb_cannot_overlap_p): Declare.
+	* tree-affine.c (aff_comb_cannot_overlap_p): New function, moved
+	from ...
+	* tree-ssa-loop-im.c (cannot_overlap_p): ... here.
+	(mem_refs_may_alias_p): Adjust.
+	* tree-data-ref.h (dr_may_alias_p): Adjust.
+	* tree-data-ref.c: Include tree-affine.h.
+	(dr_analyze_indices): Do nothing for the non-loop case.
+	(dr_may_alias_p): Distinguish loop and non-loop case.  Disambiguate
+	more cases in the non-loop case.
+	* graphite-sese-to-poly.c (write_alias_graph_to_ascii_dimacs): Adjust
+	calls to dr_may_alias_p.
+	(write_alias_graph_to_ascii_ecc): Likewise.
+	(write_alias_graph_to_ascii_dot): Likewise.
+	(build_alias_set_optimal_p): Likewise.
+
+2012-04-13  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	LP 968766
+
+	Backport from mainline:
+
+	gcc/
+	PR tree-optimization/52870
+	* tree-vect-patterns.c (vect_recog_widen_mult_pattern): Verify that
+	presumed pattern statement is within the same loop or basic block.
+
+	gcc/testsuite/
+	PR tree-optimization/52870
+	* gcc.dg/vect/pr52870.c: New test.
+
+2012-04-10  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2012-04-10  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2012.04 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2012-04-02  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6.3 (svn branches/gcc-4_6-branch 186060).
+
+2012-03-26  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	LP 960283
+	LP 960274
+	LP 960817
+
+	Backport from mainline:
+
+	gcc/
+	PR tree-optimization/52686
+	* tree-vect-data-refs.c (vect_get_smallest_scalar_type): Handle
+	WIDEN_LSHIFT_EXPR.
+
+	gcc/testsuite/
+	PR tree-optimization/52686
+	* gcc.target/arm/pr52686.c: New test.
+
+2012-03-12  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2012-03-12  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2012.03 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2012-03-08  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline.
+        2012-02-28  Richard Earnshaw  <rearnsha@arm.com>
+
+	* arm.c (aapcs_vfp_is_call_or_return_candidate): Only use the machine
+	mode if there is no type information available.
+
+        2012-02-28  Ramana Radhakrishnan  <ramana.radhakrishnan@arm.com>
+
+	* gcc.target/arm/aapcs/vfp1.c (dg_do run): Run on all eabi variants.
+	* gcc.target/arm/aapcs/vfp2.c: Likewise.
+	* gcc.target/arm/aapcs/vfp3.c: Likewise.
+	* gcc.target/arm/aapcs/vfp4.c: Likewise.
+	* gcc.target/arm/aapcs/vfp5.c: Likewise.
+	* gcc.target/arm/aapcs/vfp6.c: Likewise.
+	* gcc.target/arm/aapcs/vfp7.c: Likewise.
+	* gcc.target/arm/aapcs/vfp8.c: Likewise.
+	* gcc.target/arm/aapcs/vfp9.c: Likewise.
+	* gcc.target/arm/aapcs/vfp10.c: Likewise.
+	* gcc.target/arm/aapcs/vfp11.c: Likewise.
+	* gcc.target/arm/aapcs/vfp12.c: Likewise.
+	* gcc.target/arm/aapcs/vfp13.c: Likewise.
+	* gcc.target/arm/aapcs/vfp14.c: Likewise.
+	* gcc.target/arm/aapcs/vfp15.c: Likewise.
+	* gcc.target/arm/aapcs/vfp16.c: Likewise.
+	* gcc.target/arm/aapcs/vfp17.c: Likewise.
+	* gcc.target/arm/neon-constants.h: New file.
+	* gcc.target/arm/aapcs/neon-constants.h: New file.
+	* gcc.target/arm/aapcs/neon-vect1.c: New test.
+	* gcc.target/arm/aapcs/neon-vect2.c: New test.
+	* gcc.target/arm/aapcs/neon-vect3.c: New test.
+	* gcc.target/arm/aapcs/neon-vect4.c: New test.
+	* gcc.target/arm/aapcs/neon-vect5.c: New test.
+	* gcc.target/arm/aapcs/neon-vect6.c: New test.
+	* gcc.target/arm/aapcs/neon-vect7.c: New test.
+	* gcc.target/arm/aapcs/neon-vect8.c: New test.
+
+2012-03-08  Michael Hope  <michael.hope@linaro.org>
+
+	Backport proposed patch:
+
+	gcc/
+	2012-01-31  Richard Henderson  <rth@redhat.com>
+
+	* longlong.h [arm] (umul_ppmm): Use umull.  Enable for thumb2.
+	[arm] (count_trailing_zeros): Use __builtin_ctz.
+
+2012-03-06  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	Backport from mainline:
+
+	gcc/
+	* config/arm/arm.c (arm_sat_operator_match): New function.
+	* config/arm/arm-protos.h (arm_sat_operator_match): Add prototype.
+	* config/arm/arm.md ("insn" attribute): Add "sat" value.
+	("SAT", "SATrev"): New code iterators.
+	("SATlo", "SAThi"): New code iterator attributes.
+	("*satsi_<SAT:code>"): New pattern.
+	("*satsi_<SAT:code>_shift"): Likewise.
+	* config/arm/predicates.md (sat_shift_operator): New.
+
+	gcc/testsuite/
+	* gcc.target/arm/sat-1.c: New test.
+
+2012-03-06  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	LP:942307
+    	gcc/
+    	PR target/50305
+    	* config/arm/arm.c (arm_legitimize_reload_address): Recognize
+    	output of a previous pass through legitimize_reload_address.
+    	Do not attempt to optimize addresses if the base register is
+    	equivalent to a constant.
+    	gcc/testsuite/
+    	PR target/50305
+    	* gcc.target/arm/pr50305.c: New test.
+
+2012-03-02  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6.3 Release (svn branches/gcc-4_6-branch 108680).
+
+2012-02-24  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline.
+	gcc/
+        2012-02-21  Matthew Gretton-Dann  <matthew.gretton-dann@arm.com>
+
+        Revert r183011
+        * config/arm/arm-cores.def (cortex-a15): Use generic Cortex tuning
+        parameters.
+        * config/arm/arm.c (arm_cortex_a15_tune): Remove.
+
+
+2012-02-24  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	LP:#922474
+	gcc/
+	* config/arm/sync.md (sync_lock_releasedi): Define.
+	(arm_sync_lock_releasedi): Likewise.
+	gcc/testsuite
+	Backport from mainline.
+        2012-01-30  Greta Yorsh  <Greta.Yorsh@arm.com>
+	* gcc.target/arm/di-longlong64-sync-withldrexd.c: Accept
+	new code generated for __sync_lock_release.
+
+2012-02-24  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+        2011-12-05  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	* config/arm/arm.c (vfp3_const_double_for_fract_bits): Define.
+	* config/arm/arm-protos.h (vfp3_const_double_for_fract_bits): Declare.
+	* config/arm/constraints.md ("Dt"): New constraint.
+	* config/arm/predicates.md (const_double_vcvt_power_of_two_reciprocal):
+	New.
+	* config/arm/vfp.md (*arm_combine_vcvt_f32_s32): New.
+	(*arm_combine_vcvt_f32_u32): New.
+
+	LP:#900426
+
+	2011-12-06  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+        * config/arm/vfp.md (*combine_vcvt_f64_<FCVTI32typename>): Fix
+       formatting character for vmov.f64 case.
+
+2012-02-24  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	* config/arm/arm.c (arm_print_operand): Remove wrongly merged code.
+	 (vfp3_const_double_for_fract_bits): Likewise.
+
+2012-02-20  Andrew Stubbs  <ams@codesourcery.com>
+
+	LP:#936863
+	gcc/
+	* config/arm/arm.c (arm_print_operand): Avoid null-pointer
+	dereference from MEM_SIZE.
+
+2012-02-08  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	gcc/
+	* config/arm/arm.c (arm_option_optimization_table): Enable
+	-fsched-pressure using -fsched-pressure-algorithm=model by
+	default when optimizing.
+
+2012-02-08  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* sched-deps.c (fixup_sched_groups): Rename to...
+	(chain_to_prev_insn): ...this.
+	(chain_to_prev_insn_p): New function.
+	(deps_analyze_insn): Use it instead of SCHED_GROUP_P.
+
+2012-02-08  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* sched-int.h (_haifa_insn_data): Move priority_status.
+	Add model_index.
+	(INSN_MODEL_INDEX): New macro.
+	* haifa-sched.c (insn_delay): New function.
+	(sched_regno_pressure_class): Update commentary.
+	(mark_regno_birth_or_death): Pass the liveness bitmap and
+	pressure array as arguments, instead of using curr_reg_live and
+	curr_reg_pressure.  Only update the pressure if the bit in the
+	liveness set has changed.
+	(initiate_reg_pressure_info): Always trust the live-in set for
+	SCHED_PRESSURE_MODEL.
+	(initiate_bb_reg_pressure_info): Update call to
+	mark_regno_birth_or_death.
+	(dep_list_size): Take the list as argument.
+	(calculate_reg_deaths): New function, extracted from...
+	(setup_insn_reg_pressure_info): ...here.
+	(MODEL_BAR): New macro.
+	(model_pressure_data, model_insn_info, model_pressure_limit)
+	(model_pressure_group): New structures.
+	(model_schedule, model_worklist, model_insns, model_num_insns)
+	(model_curr_point, model_before_pressure, model_next_priority):
+	New variables.
+	(MODEL_PRESSURE_DATA, MODEL_MAX_PRESSURE, MODEL_REF_PRESSURE)
+	(MODEL_INSN_INFO, MODEL_INSN): New macros.
+	(model_index, model_update_limit_points_in_group): New functions.
+	(model_update_limit_points, model_last_use_except): Likewise.
+	(model_start_update_pressure, model_update_pressure): Likewise.
+	(model_recompute, model_spill_cost, model_excess_group_cost): Likewise.
+	(model_excess_cost, model_dump_pressure_points): Likewise.
+	(model_set_excess_costs): Likewise.
+	(rank_for_schedule): Extend SCHED_PRIORITY_WEIGHTED ordering to
+	SCHED_PRIORITY_MODEL.  Use insn_delay.  Use the order in the model
+	schedule as an alternative tie-breaker.  Update the call to
+	dep_list_size.
+	(ready_sort): Call model_set_excess_costs.
+	(update_register_pressure): Update call to mark_regno_birth_or_death.
+	Rely on that function to check liveness rather than doing it here.
+	(model_classify_pressure, model_order_p, model_add_to_worklist_at)
+	(model_remove_from_worklist, model_add_to_worklist, model_promote_insn)
+	(model_add_to_schedule, model_analyze_insns, model_init_pressure_group)
+	(model_record_pressure, model_record_pressures): New functions.
+	(model_record_final_pressures, model_add_successors_to_worklist)
+	(model_promote_predecessors, model_choose_insn): Likewise.
+	(model_reset_queue_indices, model_dump_pressure_summary): Likewise.
+	(model_start_schedule, model_finalize_pressure_group): Likewise.
+	(model_end_schedule): Likewise.
+	(schedule_insn): Say when we're scheduling the next instruction
+	in the model schedule.
+	(schedule_insn): Handle SCHED_PRESSURE_MODEL.
+	(queue_to_ready): Do not add instructions that are
+	MAX_SCHED_READY_INSNS beyond the current point of the model schedule.
+	Always allow the next instruction in the model schedule to be added.
+	(debug_ready_list): Print the INSN_REG_PRESSURE_EXCESS_COST_CHANGE
+	and delay for SCHED_PRESSURE_MODEL too.
+	(prune_ready_list): Extend SCHED_PRIORITY_WEIGHTED handling to
+	SCHED_PRIORITY_MODEL, but also take the DFA into account.
+	(schedule_block): Call model_start_schedule and model_end_schedule.
+	Extend SCHED_PRIORITY_WEIGHTED stall handling to SCHED_PRIORITY_MODEL.
+	(sched_init): Extend INSN_REG_PRESSURE_EXCESS_COST_CHANGE handling
+	to SCHED_PRESSURE_MODEL, but don't allocate saved_reg_live or
+	region_ref_regs.
+	(sched_finish): Update accordingly.
+	(fix_tick_ready): Extend INSN_REG_PRESSURE_EXCESS_COST_CHANGE handling
+	to SCHED_PRESSURE_MODEL.
+	(add_jump_dependencies): Update call to dep_list_size.
+	(haifa_finish_h_i_d): Fix leak of max_reg_pressure.
+	(haifa_init_insn): Extend INSN_REG_PRESSURE_EXCESS_COST_CHANGE handling
+	to SCHED_PRESSURE_MODEL.
+	* sched-deps.c (init_insn_reg_pressure_info): Likewise, but don't
+	allocate INSN_MAX_REG_PRESSURE for SCHED_PRESSURE_MODEL.
+	(sched_analyze_insn): Extend INSN_REG_PRESSURE_EXCESS_COST_CHANGE
+	handling to SCHED_PRESSURE_MODEL.
+
+2012-02-08  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* common.opt (fsched-pressure-algorithm=): New option.
+	* flag-types.h (sched_pressure_algorithm): New enum.
+	* sched-int.h (sched_pressure_p): Replace with...
+	(sched_pressure): ...this new variable.
+	* haifa-sched.c (sched_pressure_p): Replace with...
+	(sched_pressure): ...this new variable.
+	(sched_regno_pressure_class, rank_for_schedule, ready_sort)
+	(update_reg_and_insn_max_reg_pressure, schedule_insn)
+	(debug_ready_list, schedule_block, sched_init, sched_finish)
+	(fix_tick_ready, haifa_init_insn): Update accordingly.
+	* sched-deps.c (init_insn_reg_pressure_info): Likewise.
+	* sched-rgn.c (schedule_region): Likewise.
+
+2012-02-08  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-04-01  Bernd Schmidt  <bernds@codesourcery.com>
+
+	* haifa-sched.c (prune_ready_list): New function, broken out of
+	schedule_block.
+	(schedule_block): Use it.
+
+2012-02-07  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2012-02-07  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2012.02 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2012-02-01  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6.2 (svn branches/gcc-4_6-branch 183786).
+
+2012-01-20  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline
+        2012-01-20  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	PR target/51819
+	* config/arm/arm.c (arm_print_operand): Correct output of alignment
+	hints for neon loads and stores.
+
+2012-01-16  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r181210:
+
+	gcc/
+	2011-11-07  Matthew Gretton-Dann  <matthew.gretton-dann@arm.com>
+
+	* config/arm/arm-cores.def: Add -mcpu=cortex-a7.
+	* config/arm/arm-tables.opt: Regenerate.
+	* config/arm/arm-tune.md: Likewise.
+	* config/arm/bpabi.h (BE8_LINK_SPEC): Add Cortex A-7.
+	* doc/invoke.texi: Document -mcpu=cortex-a7.
+
+2012-01-16  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r182561:
+
+	2011-12-20  Richard Henderson  <rth@redhat.com>
+
+	gcc/
+	* config/arm/arm.md (*arm_cmpdi_unsigned): Enable for thumb2.
+	* config/arm/arm.c (arm_select_cc_mode): Use it.
+
+2012-01-16  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r183011:
+
+	2012-01-09  Matthew Gretton-Dann  <matthew.gretton-dann@arm.com>
+
+	* config/arm/arm-cores.def (cortex-a15): Use cortex_a15_tune for
+	tuning parameters.
+	* config/arm/arm.c (arm_cortex_a15_tune): New static variable.
+
+2012-01-18  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r183126:
+
+	2012-01-12  Ira Rosen  <irar@il.ibm.com>
+
+	gcc/
+	PR tree-optimization/51799
+	* tree-vect-patterns.c (vect_recog_over_widening_pattern): Check
+	that the last operation is a type demotion.
+
+	gcc/testsuite/
+	* gcc.dg/vect/pr51799.c: New test.
+	* gcc.dg/vect/vect-widen-shift-u8.c: Expect two widening shift
+	patterns.
+
+2012-01-12  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	LP 879725
+	Backport from mainline:
+
+	2012-01-02  Revital Eres  <revital.eres@linaro.org>
+
+	gcc/
+	* ddg.c (def_has_ccmode_p): New function.
+	(add_cross_iteration_register_deps,
+	create_ddg_dep_from_intra_loop_link): Call it.
+
+	gcc/testsuite/
+	* gcc.dg/sms-11.c: New file.
+
+2012-01-11  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2012-01-11  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2012.01 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2012-01-06  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from mainline:
+
+	2012-01-06  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/testsuite/
+	* gcc.target/arm/headmerge-2.c: Adjust scan pattern.
+
+2012-01-05  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6.2 (svn branches/gcc-4_6-branch 182894).
+
+2012-01-05  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r182271:
+
+	2011-12-13  Revital Eres  <revital.eres@linaro.org>
+
+	gcc/
+	* modulo-sched.c (mark_loop_unsched): Free bbs.
+
+2011-12-30  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-10-12  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* expr.h (copy_blkmode_to_reg): Declare.
+	* expr.c (copy_blkmode_to_reg): New function.
+	(expand_assignment): Don't expand register RESULT_DECLs before
+	the lhs.  Use copy_blkmode_to_reg to copy BLKmode values into a
+	RESULT_DECL register.
+	(expand_expr_real_1): Handle BLKmode decls when looking for promotion.
+	* stmt.c (expand_return): Move BLKmode-to-register code into
+	copy_blkmode_to_reg.
+
+2011-12-20  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from mainline:
+
+	2011-11-29  Ira Rosen  <ira.rosen@linaro.org>
+
+	PR tree-optimization/51301
+	gcc/
+	* tree-vect-patterns.c (vect_recog_over_widening_pattern): Check that
+	the last statement doesn't convert to a bigger type than the original
+	type of the computation.
+
+	gcc/testsuite/
+	* gcc.dg/vect/pr51301.c: New test.
+
+2011-12-06  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-12-06  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.12 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-12-06  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Revert earlier commit for fixed to floating point conversions.
+	2011-12-05  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	* config/arm/arm.c (vfp3_const_double_for_fract_bits): Define.
+	* config/arm/arm-protos.h (vfp3_const_double_for_fract_bits): Declare.
+	* config/arm/constraints.md ("Dt"): New constraint.
+	* config/arm/predicates.md (const_double_vcvt_power_of_two_reciprocal):
+	New.
+	* config/arm/vfp.md (*arm_combine_vcvt_f32_s32): New.
+	(*arm_combine_vcvt_f32_u32): New.
+
+2011-12-01  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6.2 (svn branches/gcc-4_6-branch 181866).
+
+2011-12-05  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline -A15 tuning.
+	2011-11-30  Matthew Gretton-Dann  <matthew.gretton-dann@arm.com>
+
+	* config/arm/arm.c (arm_issue_rate): Cortex-A15 can triple issue.
+	* config/arm/arm.md (mul64): New attribute.
+	(generic_sched): Cortex-A15 is not scheduled generically.
+	(cortex-a15.md): Include.
+	* config/arm/cortex-a15.md: New machine description.
+	* config/arm/t-arm (MD_INCLUDES): Add cortex-a15.md.
+
+        2011-11-30  Matthew Gretton-Dann  <matthew.gretton-dann@arm.com>
+	* config/arm/t-arm (MD_INCLUDES): Ensure all md files are listed.
+
+2011-12-05  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	* config/arm/arm.c (vfp3_const_double_for_fract_bits): Define.
+	* config/arm/arm-protos.h (vfp3_const_double_for_fract_bits): Declare.
+	* config/arm/constraints.md ("Dt"): New constraint.
+	* config/arm/predicates.md (const_double_vcvt_power_of_two_reciprocal):
+	New.
+	* config/arm/vfp.md (*arm_combine_vcvt_f32_s32): New.
+	(*arm_combine_vcvt_f32_u32): New.
+
+2011-11-27  Ira Rosen  <ira.rosen@linaro.org>
+
+	Needs to be merged upstream:
+
+	gcc/
+	* tree-vect-patterns.c (widened_name_p): Rename to ...
+	(type_conversion_p): ... this.  Add new argument to determine
+	if it's a promotion or demotion operation.  Check for
+	CONVERT_EXPR_CODE_P instead of NOP_EXPR.
+	(vect_recog_dot_prod_pattern): Call type_conversion_p instead
+	widened_name_p.
+	(vect_recog_widen_mult_pattern, vect_recog_widen_sum_pattern,
+	vect_operation_fits_smaller_type, vect_recog_widen_shift_pattern):
+	Likewise.
+	(vect_recog_mixed_size_cond_pattern): Likewise and allow
+	non-constant then and else clauses.
+
+	gcc/testsuite/
+	* gcc.dg/vect/bb-slp-cond-3.c: New test.
+	* gcc.dg/vect/bb-slp-cond-4.c: New test.
+
+2011-11-28  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	Backport from mainline (svn r19983):
+
+	2011-10-14  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	gcc/testsuite/
+	* gcc.dg/di-longlong64-sync-1.c: New test.
+	* gcc.dg/di-sync-multithread.c: New test.
+	* gcc.target/arm/di-longlong64-sync-withhelpers.c: New test.
+	* gcc.target/arm/di-longlong64-sync-withldrexd.c: New test.
+	* lib/target-supports.exp: (arm_arch_*_ok): Series of effective-target
+	tests for v5, v6, v6k, and v7-a, and add-options helpers.
+	(check_effective_target_arm_arm_ok): New helper.
+	(check_effective_target_sync_longlong): New helper.
+
+2011-11-28  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	Backport from mainline (svn r19982):
+
+	2011-10-14  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	gcc/
+	* config/arm/linux-atomic-64bit.c: New (based on linux-atomic.c).
+	* config/arm/linux-atomic.c: Change comment to point to 64bit version.
+	(SYNC_LOCK_RELEASE): Instantiate 64bit version.
+	* config/arm/t-linux-eabi: Pull in linux-atomic-64bit.c.
+
+2011-11-28  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	Backport from mainline (svn r19981):
+
+	2011-10-14  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	gcc/
+	* config/arm/arm.c (arm_output_ldrex): Support ldrexd.
+	(arm_output_strex): Support strexd.
+	(arm_output_it): New helper to output it in Thumb2 mode only.
+	(arm_output_sync_loop): Support DI mode.  Change comment to
+	not support const_int.
+	(arm_expand_sync): Support DI mode.
+	* config/arm/arm.h (TARGET_HAVE_LDREXBHD): Split into LDREXBH
+	and LDREXD.
+	* config/arm/iterators.md (NARROW): move from sync.md.
+	(QHSD): New iterator for all current ARM integer modes.
+	(SIDI): New iterator for SI and DI modes only.
+	* config/arm/sync.md (sync_predtab): New mode_attr.
+	(sync_compare_and_swapsi): Fold into sync_compare_and_swap<mode>.
+	(sync_lock_test_and_setsi): Fold into sync_lock_test_and_setsi<mode>.
+	(sync_<sync_optab>si): Fold into sync_<sync_optab><mode>.
+	(sync_nandsi): Fold into sync_nand<mode>.
+	(sync_new_<sync_optab>si): Fold into sync_new_<sync_optab><mode>.
+	(sync_new_nandsi): Fold into sync_new_nand<mode>.
+	(sync_old_<sync_optab>si): Fold into sync_old_<sync_optab><mode>.
+	(sync_old_nandsi): Fold into sync_old_nand<mode>.
+	(sync_compare_and_swap<mode>): Support SI & DI.
+	(sync_lock_test_and_set<mode>): Likewise.
+	(sync_<sync_optab><mode>): Likewise.
+	(sync_nand<mode>): Likewise.
+	(sync_new_<sync_optab><mode>): Likewise.
+	(sync_new_nand<mode>): Likewise.
+	(sync_old_<sync_optab><mode>): Likewise.
+	(sync_old_nand<mode>): Likewise.
+	(arm_sync_compare_and_swapsi): Turn into iterator on SI & DI.
+	(arm_sync_lock_test_and_setsi): Likewise.
+	(arm_sync_new_<sync_optab>si): Likewise.
+	(arm_sync_new_nandsi): Likewise.
+	(arm_sync_old_<sync_optab>si): Likewise.
+	(arm_sync_old_nandsi): Likewise.
+	(arm_sync_compare_and_swap<mode> NARROW): use sync_predtab, fix indent.
+	(arm_sync_lock_test_and_setsi<mode> NARROW): Likewise.
+	(arm_sync_new_<sync_optab><mode> NARROW): Likewise.
+	(arm_sync_new_nand<mode> NARROW): Likewise.
+	(arm_sync_old_<sync_optab><mode> NARROW): Likewise.
+	(arm_sync_old_nand<mode> NARROW): Likewise.
+
+2011-11-28  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	Backport from mainline (svn r19980):
+
+	2011-10-14  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	PR target/48126
+
+	gcc/
+	* config/arm/arm.c (arm_output_sync_loop): Move label before barrier.
+
+2011-11-28  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	Backport from mainline (svn r19979):
+
+	2011-10-14  David Alan Gilbert  <david.gilbert@linaro.org>
+
+	gcc/
+	* config/arm/arm.h (TARGET_HAVE_DMB_MCR): MCR Not available in Thumb1.
+
+
+2011-11-27  Ira Rosen  <ira.rosen@linaro.org>
+
+	Needs to be merged upstream:
+
+	gcc/
+	* tree-vectorizer.h (vect_pattern_recog): Add new argument.
+	* tree-vect-loop.c (vect_analyze_loop_2): Update call to
+	vect_pattern_recog.
+	* tree-vect-patterns.c (widened_name_p): Pass basic block
+	info to vect_is_simple_use.
+	(vect_recog_dot_prod_pattern): Fail for basic blocks.
+	(vect_recog_widen_sum_pattern): Likewise.
+	(vect_handle_widen_op_by_const): Support basic blocks.
+	(vect_operation_fits_smaller_type,
+	vect_recog_over_widening_pattern): Likewise.
+	(vect_recog_mixed_size_cond_pattern): Support basic blocks.
+	Add printing.
+	(vect_mark_pattern_stmts): Update calls to new_stmt_vec_info.
+	(vect_pattern_recog_1): Check for reduction only in loops.
+	(vect_pattern_recog): Add new argument.  Support basic blocks.
+	* tree-vect-stmts.c (vectorizable_conversion): Pass basic block
+	info to vect_is_simple_use_1.
+	* tree-vect-slp.c (vect_get_and_check_slp_defs): Support basic
+	blocks.
+	(vect_slp_analyze_bb_1): Call vect_pattern_recog.
+
+	gcc/testsuite/
+	* gcc.dg/vect/bb-slp-pattern-1.c: New test.
+	* gcc.dg/vect/bb-slp-pattern-2.c: New test.
+
+2011-11-22  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from mainline:
+
+	2011-11-06  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vectorizer.h (vectorizable_condition): Add argument.
+	* tree-vect-loop.c (vectorizable_reduction): Fail for condition
+	in SLP.  Update calls to vectorizable_condition.
+	* tree-vect-stmts.c (vect_is_simple_cond): Add basic block info to
+	the arguments.  Pass it to vect_is_simple_use_1.
+	(vectorizable_condition): Add slp_node to the arguments.  Support
+	vectorization of basic blocks.  Fail for reduction in SLP.  Update
+	calls to vect_is_simple_cond and vect_is_simple_use.  Support SLP:
+	call vect_get_slp_defs to get vector operands.
+	(vect_analyze_stmt): Update calls to vectorizable_condition.
+	(vect_transform_stmt): Likewise.
+	* tree-vect-slp.c (vect_create_new_slp_node): Handle COND_EXPR.
+	(vect_get_and_check_slp_defs): Handle COND_EXPR.  Allow pattern
+	def stmts.
+	(vect_build_slp_tree): Handle COND_EXPR.
+	(vect_analyze_slp_instance): Push pattern statements to root node.
+	(vect_get_constant_vectors): Fix comments.  Handle COND_EXPR.
+
+	gcc/testsuite/
+	* gcc.dg/vect/bb-slp-cond-1.c: New test.
+	* gcc.dg/vect/slp-cond-1.c: New test.
+
+2011-11-22  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from mainline:
+
+	2011-10-06  Jakub Jelinek  <jakub@redhat.com>
+
+	gcc/
+	PR tree-optimization/50596
+	* tree-vectorizer.h (vect_is_simple_cond): New prototype.
+	(NUM_PATTERNS): Change to 6.
+	* tree-vect-patterns.c (vect_recog_mixed_size_cond_pattern): New
+	function.
+	(vect_vect_recog_func_ptrs): Add vect_recog_mixed_size_cond_pattern.
+	(vect_mark_pattern_stmts): Don't create stmt_vinfo for def_stmt
+	if it already has one, and don't set STMT_VINFO_VECTYPE in it
+	if it is already set.
+	* tree-vect-stmts.c (vect_mark_stmts_to_be_vectorized): Handle
+	COND_EXPR in pattern stmts.
+	(vect_is_simple_cond): No longer static.
+
+	gcc/testsuite:
+	PR tree-optimization/50596
+	* gcc.dg/vect/vect-cond-8.c: New test.
+
+	2011-10-07  Jakub Jelinek  <jakub@redhat.com>
+
+	gcc/
+	PR tree-optimization/50650
+	* tree-vect-patterns.c (vect_recog_mixed_size_cond_pattern): Don't
+	call vect_is_simple_cond here, instead fail if cond_expr isn't
+	COMPARISON_CLASS_P or if get_vectype_for_scalar_type returns NULL
+	for cond_expr's first operand.
+	* tree-vect-stmts.c (vect_is_simple_cond): Static again.
+	* tree-vectorizer.h (vect_is_simple_cond): Remove prototype.
+
+
+	gcc/
+	* tree-vect-patterns.c (vect_recog_mixed_size_cond_pattern): Reduce
+	it to integral types only.
+
+	gcc/testsuite/
+	* gcc.dg/vect/pr30858.c: Expect the error message twice for targets
+	with multiple vector sizes.
+	* gcc.dg/vect/vect-cond-8.c: Rename to...
+	* gcc.dg/vect/vect-cond-8a.c: ... this and change the type from float
+	to int.
+	* lib/target-supports.exp (check_effective_target_vect_condition):
+	Return true for NEON.
+
+2011-11-21  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r180131:
+
+	2011-10-18  Julian Brown  <julian@codesourcery.com>
+
+	gcc/
+	* config/arm/arm.c (arm_block_move_unaligned_straight)
+	(arm_adjust_block_mem, arm_block_move_unaligned_loop)
+	(arm_movmemqi_unaligned): New.
+	(arm_gen_movmemqi): Support unaligned block copies.
+
+	gcc/testsuite/
+	* lib/target-supports.exp (check_effective_target_arm_unaligned): New.
+	* gcc.target/arm/unaligned-memcpy-1.c: New.
+	* gcc.target/arm/unaligned-memcpy-2.c: New.
+	* gcc.target/arm/unaligned-memcpy-3.c: New.
+	* gcc.target/arm/unaligned-memcpy-4.c: New.
+
+	2011-09-15  James Greenhalgh  <james.greenhalgh@arm.com>
+
+	gcc/
+	* config/arm/arm.h (TARGET_CPU_CPP_BUILTINS): New builtin macro.
+
+2011-11-17  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from mainline:
+
+	2011-11-03  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vectorizer.h (slp_void_p): New.
+	(struct _slp_tree): Replace left and right with children.  Update
+	documentation.
+	(struct _slp_oprnd_info): New.
+	(vect_get_vec_defs): Declare.
+	(vect_get_slp_defs): Update arguments.
+	* tree-vect-loop.c (vect_create_epilog_for_reduction): Call
+	vect_get_vec_defs instead of vect_get_slp_defs.
+	(vectorizable_reduction): Likewise.
+	* tree-vect-stmts.c (vect_get_vec_defs): Remove static, add argument.
+	Update call to vect_get_slp_defs.
+	(vectorizable_conversion): Update call to vect_get_vec_defs.
+	(vectorizable_assignment, vectorizable_shift,
+	vectorizable_operation): Likewise.
+	(vectorizable_type_demotion): Call vect_get_vec_defs instead of
+	vect_get_slp_defs.
+	(vectorizable_type_promotion, vectorizable_store): Likewise.
+	(vect_analyze_stmt): Fix typo.
+	* tree-vect-slp.c (vect_free_slp_tree): Update SLP tree traversal.
+	(vect_print_slp_tree, vect_mark_slp_stmts,
+	vect_mark_slp_stmts_relevant, vect_slp_rearrange_stmts,
+	vect_detect_hybrid_slp_stmts, vect_slp_analyze_node_operations,
+	vect_schedule_slp_instance): Likewise.
+	(vect_create_new_slp_node): New.
+	(vect_create_oprnd_info, vect_free_oprnd_info): Likewise.
+	(vect_get_and_check_slp_defs): Pass information about defs using
+	oprnds_info, allow any number of operands.
+	(vect_build_slp_tree): Likewise.  Update calls to
+	vect_get_and_check_slp_defs.  Fix comments.
+	(vect_analyze_slp_instance): Move node creation to
+	vect_create_new_slp_node.
+	(vect_get_slp_defs): Allow any number of operands.
+
+	2011-11-11  Jakub Jelinek  <jakub@redhat.com>
+
+	gcc/
+	* tree-vect-slp.c (vect_free_slp_tree): Also free SLP_TREE_CHILDREN
+	vector.
+	(vect_create_new_slp_node): Don't allocate node before checking stmt
+	type.
+	(vect_free_oprnd_info): Remove FREE_DEF_STMTS argument, always
+	free def_stmts vectors and additionally free oprnd_info.
+	(vect_build_slp_tree): Adjust callers.  Call it even if
+	stop_recursion.  If vect_create_new_slp_node or
+	vect_build_slp_tree fails, properly handle freeing memory.
+	If it succeeded, clear def_stmts in oprnd_info.
+
+2011-11-02  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF mainline:
+
+	2011-11-01  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/bpabi.h (BE8_LINK_SPEC): Recognize generic-armv7 tuning.
+
+2011-11-08  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-11-08  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.11 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-11-04  Revital Eres  <revital.eres@linaro.org>
+
+	Backport from mainline -r180673:
+
+	gcc/
+	* modulo-sched.c (generate_prolog_epilog): Mark prolog
+	and epilog as BB_DISABLE_SCHEDULE.
+	(mark_loop_unsched): New function.
+	(sms_schedule): Call it.
+
+2011-10-26  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge FSF GCC 4.6.2 Release (svn branches/gcc-4_6-branch 180515).
+
+2011-10-27  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from mainline:
+
+	2011-10-18  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* doc/md.texi (vec_widen_ushiftl_hi, vec_widen_ushiftl_lo,
+	vec_widen_sshiftl_hi, vec_widen_sshiftl_lo): Document.
+	* tree-pretty-print.c (dump_generic_node): Handle WIDEN_LSHIFT_EXPR,
+	VEC_WIDEN_LSHIFT_HI_EXPR and VEC_WIDEN_LSHIFT_LO_EXPR.
+	(op_code_prio): Likewise.
+	(op_symbol_code): Handle WIDEN_LSHIFT_EXPR.
+	* optabs.c (optab_for_tree_code): Handle
+	VEC_WIDEN_LSHIFT_HI_EXPR and VEC_WIDEN_LSHIFT_LO_EXPR.
+	(init-optabs): Initialize optab codes for vec_widen_u/sshiftl_hi/lo.
+	* optabs.h (enum optab_index): Add OTI_vec_widen_u/sshiftl_hi/lo.
+	* genopinit.c (optabs): Initialize the new optabs.
+	* expr.c (expand_expr_real_2): Handle
+	VEC_WIDEN_LSHIFT_HI_EXPR and VEC_WIDEN_LSHIFT_LO_EXPR.
+	* gimple-pretty-print.c (dump_binary_rhs): Likewise.
+	* tree-vectorizer.h (NUM_PATTERNS): Increase to 8.
+	* tree.def (WIDEN_LSHIFT_EXPR, VEC_WIDEN_LSHIFT_HI_EXPR,
+	VEC_WIDEN_LSHIFT_LO_EXPR): New.
+	* cfgexpand.c (expand_debug_expr): Handle new tree codes.
+	* tree-vect-patterns.c (vect_vect_recog_func_ptrs): Add
+	vect_recog_widen_shift_pattern.
+	(vect_handle_widen_mult_by_const): Rename...
+	(vect_handle_widen_op_by_const): ...to this.  Handle shifts.
+	Add a new argument, update documentation.
+	(vect_recog_widen_mult_pattern): Assume that only second
+	operand can be constant.  Update call to
+	vect_handle_widen_op_by_const.
+	(vect_recog_over_widening_pattern): Fix typo.
+	(vect_recog_widen_shift_pattern): New.
+	* tree-vect-stmts.c (vectorizable_type_promotion): Handle
+	widening shifts.
+	(supportable_widening_operation): Likewise.
+	* tree-inline.c (estimate_operator_cost): Handle new tree codes.
+	* tree-vect-generic.c (expand_vector_operations_1): Likewise.
+	* tree-cfg.c (verify_gimple_assign_binary): Likewise.
+	* config/arm/neon.md (neon_vec_<US>shiftl_<mode>): New.
+	(vec_widen_<US>shiftl_lo_<mode>, neon_vec_<US>shiftl_hi_<mode>,
+	vec_widen_<US>shiftl_hi_<mode>, neon_vec_<US>shift_left_<mode>):
+	Likewise.
+	* config/arm/predicates.md (const_neon_scalar_shift_amount_operand):
+	New.
+	* config/arm/iterators.md (V_innermode): New.
+	* tree-vect-slp.c (vect_build_slp_tree): Require same shift operand
+	for widening shift.
+
+	gcc/testsuite
+	* testsuite/lib/target-supports.exp
+	(check_effective_target_vect_widen_shift): New.
+	* gcc.dg/vect/vect-widen-shift-s16.c: New.
+	* gcc.dg/vect/vect-widen-shift-s8.c: New.
+	* gcc.dg/vect/vect-widen-shift-u16.c: New.
+	* gcc.dg/vect/vect-widen-shift-u8.c: New.
+
+	2011-10-06  Jakub Jelinek  <jakub@redhat.com>
+
+	gcc/
+	* tree-vect-patterns.c (vect_pattern_recog_1): Use
+	vect_recog_func_ptr typedef for the first argument.
+	(vect_pattern_recog): Rename vect_recog_func_ptr variable
+	to vect_recog_func, use vect_recog_func_ptr typedef for it.
+
+	2011-10-16  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	PR tree-optimization/50727
+	* tree-vect-patterns.c (vect_operation_fits_smaller_type): Add
+	DEF_STMT to the list of statements to be replaced by the
+	pattern statements.
+
+	2011-10-09  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	PR tree-optimization/50635
+	* tree-vect-patterns.c (vect_handle_widen_mult_by_const): Add
+	DEF_STMT to the list of statements to be replaced by the
+	pattern statements.
+	(vect_handle_widen_mult_by_const): Don't check TYPE_OUT.
+
+2011-10-27  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from mainline:
+	2011-10-16  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vect-stmts.c (vectorizable_load): For SLP without permutation
+	treat the first load of the node as the first element in its
+	interleaving chain.
+	* tree-vect-slp.c (vect_get_and_check_slp_defs): Swap the operands if
+	necessary and possible.
+	(vect_build_slp_tree): Add new argument.  Allow load groups of any size
+	in basic blocks.  Keep all the loads for further permutation check.
+	Use the new argument to determine if there is a permutation.  Update
+	the recursive calls.
+	(vect_supported_load_permutation_p): Allow subchains of interleaving
+	chains in basic block vectorization.
+	(vect_analyze_slp_instance): Update the call to vect_build_slp_tree.
+	Check load permutation based on the new parameter.
+	(vect_schedule_slp_instance): Don't start from the first element in
+	interleaving chain unless the loads are permuted.
+
+	gcc/testsuite/
+	* gcc.dg/vect/bb-slp-29.c: New test.
+
+2011-10-21  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF mainline:
+
+	2011-10-21  Andrew Stubbs  <ams@codesourcery.com>
+
+	PR target/50809
+
+	gcc/
+	* config/arm/driver-arm.c (vendors): Make static.
+
+2011-10-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+
+	2011-10-18  Andrew Stubbs  <ams@codesourcery.com>
+
+	PR tree-optimization/50717
+
+	gcc/
+	* tree-ssa-math-opts.c (is_widening_mult_p): Remove the 'type'
+	parameter.  Calculate 'type' from stmt.
+	(convert_mult_to_widen): Update call the is_widening_mult_p.
+	(convert_plusminus_to_widen): Likewise.
+
+	gcc/testsuite/
+	* gcc.dg/pr50717-1.c: New file.
+	* gcc.target/arm/wmul-12.c: Correct types.
+	* gcc.target/arm/wmul-8.c: Correct types.
+
+2011-10-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+	
+	2011-10-18  Andrew Stubbs  <ams@codesourcery.com>
+
+	* config/arm/driver-arm.c (host_detect_local_cpu): Close the file
+	before exiting.
+
+	2011-10-18  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config.host (arm*-*-linux*): Add driver-arm.o and x-arm.
+	* config/arm/arm.opt: Add 'native' processor_type and
+	arm_arch enum values.
+	* config/arm/arm.h (host_detect_local_cpu): New prototype.
+	(EXTRA_SPEC_FUNCTIONS): New define.
+	(MCPU_MTUNE_NATIVE_SPECS): New define.
+	(DRIVER_SELF_SPECS): New define.
+	* config/arm/driver-arm.c: New file.
+	* config/arm/x-arm: New file.
+	* doc/invoke.texi (ARM Options): Document -mcpu=native,
+	-mtune=native and -march=native.
+
+2011-10-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+
+	2011-09-09  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/arm-cores.def (generic-armv7-a): New architecture.
+	* config/arm/arm-tables.opt: Regenerate.
+	* config/arm/arm-tune.md: Regenerate.
+	* config/arm/arm.c (arm_file_start): Output .arch directive when
+	user passes -mcpu=generic-*.
+	(arm_issue_rate): Add genericv7a support.
+	* config/arm/arm.h (EXTRA_SPECS): Add asm_cpu_spec.
+	(ASM_CPU_SPEC): New define.
+	* config/arm/elf.h (ASM_SPEC): Use %(asm_cpu_spec).
+	* config/arm/semi.h (ASM_SPEC): Likewise.
+	* doc/invoke.texi (ARM Options): Document -mcpu=generic-*
+	and -mtune=generic-*.
+
+2011-10-17  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-10-10  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* modulo-sched.c (ps_reg_move_info): Add num_consecutive_stages.
+	(SCHED_FIRST_REG_MOVE, SCHED_NREG_MOVES): Delete.
+	(node_sched_params): Remove first_reg_move and nreg_moves.
+	(ps_num_consecutive_stages, extend_node_sched_params): New functions.
+	(update_node_sched_params): Move up file.
+	(print_node_sched_params): Print the stage.  Don't dump info related
+	to first_reg_move and nreg_moves.
+	(set_columns_for_row): New function.
+	(set_columns_for_ps): Move up file and use set_columns_for_row.
+	(schedule_reg_move): New function.
+	(schedule_reg_moves): Call extend_node_sched_params and
+	schedule_reg_move.  Extend size of uses bitmap.  Initialize
+	num_consecutive_stages.  Return false if a move could not be
+	scheduled.
+	(apply_reg_moves): Don't emit moves here.
+	(permute_partial_schedule): Handle register moves.
+	(duplicate_insns_of_cycles): Remove for_prolog.  Emit moves according
+	to the same stage-count test as ddg nodes.
+	(generate_prolog_epilog): Update calls accordingly.
+	(sms_schedule): Allow move-scheduling to add a new first stage.
+
+2011-10-17  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-10-10  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* modulo-sched.c (ps_insn): Adjust comment.
+	(ps_reg_move_info): New structure.
+	(partial_schedule): Add reg_moves field.
+	(SCHED_PARAMS): Use node_sched_param_vec instead of node_sched_params.
+	(node_sched_params): Turn first_reg_move into an identifier.
+	(ps_reg_move): New function.
+	(ps_rtl_insn): Cope with register moves.
+	(ps_first_note): Adjust comment and assert that the instruction
+	isn't a register move.
+	(node_sched_params): Replace with...
+	(node_sched_param_vec): ...this vector.
+	(set_node_sched_params): Adjust accordingly.
+	(print_node_sched_params): Take a partial schedule instead of a ddg.
+	Use ps_rtl_insn and ps_reg_move.
+	(generate_reg_moves): Rename to...
+	(schedule_reg_moves): ...this.  Remove rescan parameter.  Record each
+	move in the partial schedule, but don't emit it here.  Don't perform
+	register substitutions here either.
+	(apply_reg_moves): New function.
+	(duplicate_insns_of_cycles): Use register indices directly,
+	rather than finding instructions using PREV_INSN.  Use ps_reg_move.
+	(sms_schedule): Call schedule_reg_moves before committing to
+	a partial schedule.   Try the next ii if the schedule fails.
+	Use apply_reg_moves instead of generate_reg_moves.  Adjust
+	call to print_node_sched_params.  Free node_sched_param_vec
+	instead of node_sched_params.
+	(create_partial_schedule): Initialize reg_moves.
+	(free_partial_schedule): Free reg_moves.
+
+2011-10-17  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-10-10  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* modulo-sched.c (ps_insn): Replace node field with an identifier.
+	(SCHED_ASAP): Replace with..
+	(NODE_ASAP): ...this macro.
+	(SCHED_PARAMS): New macro.
+	(SCHED_TIME, SCHED_FIRST_REG_MOVE, SCHED_NREG_MOVES, SCHED_ROW)
+	(SCHED_STAGE, SCHED_COLUMN): Redefine using SCHED_PARAMS.
+	(node_sched_params): Remove asap.
+	(ps_rtl_insn, ps_first_note): New functions.
+	(set_node_sched_params): Use XCNEWVEC.  Don't copy across the
+	asap values.
+	(print_node_sched_params): Use SCHED_PARAMS and NODE_ASAP.
+	(generate_reg_moves): Pass ids to the SCHED_* macros.
+	(update_node_sched_params): Take a ps insn identifier rather than
+	a node as parameter.  Use ps_rtl_insn.
+	(set_columns_for_ps): Update for above field and SCHED_* macro changes.
+	(permute_partial_schedule): Use ps_rtl_insn and ps_first_note.
+	(optimize_sc): Update for above field and SCHED_* macro changes.
+	Update calls to try_scheduling_node_in_cycle and
+	update_node_sched_params.
+	(duplicate_insns_of_cycles): Adjust for above field and SCHED_*
+	macro changes.  Use ps_rtl_insn and ps_first_note.
+	(sms_schedule): Pass ids to the SCHED_* macros.
+	(get_sched_window): Adjust for above field and SCHED_* macro changes.
+	Use NODE_ASAP instead of SCHED_ASAP.
+	(try_scheduling_node_in_cycle): Remove node parameter.  Update
+	call to ps_add_node_check_conflicts.  Pass ids to the SCHED_*
+	macros.
+	(sms_schedule_by_order): Update call to try_scheduling_node_in_cycle.
+	(ps_insert_empty_row): Adjust for above field changes.
+	(compute_split_row): Use ids rather than nodes.
+	(verify_partial_schedule): Adjust for above field changes.
+	(print_partial_schedule): Use ps_rtl_insn.
+	(create_ps_insn): Take an id rather than a node.
+	(ps_insn_find_column): Adjust for above field changes.
+	Use ps_rtl_insn.
+	(ps_insn_advance_column): Adjust for above field changes.
+	(add_node_to_ps): Remove node parameter.  Update call to
+	create_ps_insn.
+	(ps_has_conflicts): Use ps_rtl_insn.
+	(ps_add_node_check_conflicts): Replace node parameter than an id.
+
+2011-10-17  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-10-10  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* modulo-sched.c (undo_replace_buff_elem): Delete.
+	(generate_reg_moves): Don't build and return an undo list.
+	(free_undo_replace_buff): Delete.
+	(sms_schedule): Adjust call to generate_reg_moves.
+	Don't call free_undo_replace_buff.
+
+2011-10-17  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-08-08  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* modulo-sched.c (get_sched_window): Use a table for the debug output.
+	Print the current ii.
+	(sms_schedule_by_order): Reduce whitespace in dump line.
+
+2011-10-17  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-08-08  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* modulo-sched.c (get_sched_window): Use just one loop for predecessors
+	and one loop for successors.  Fix upper bound of memory range.
+
+2011-10-17  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r178852:
+
+	2011-09-14  Julian Brown  <julian@codesourcery.com>
+
+	gcc/
+	* config/arm/arm.c (arm_override_options): Add unaligned_access
+	support.
+	(arm_file_start): Emit attribute for unaligned access as appropriate.
+	* config/arm/arm.md (UNSPEC_UNALIGNED_LOAD)
+	(UNSPEC_UNALIGNED_STORE): Add constants for unspecs.
+	(insv, extzv): Add unaligned-access support.
+	(extv): Change to expander. Likewise.
+	(extzv_t1, extv_regsi): Add helpers.
+	(unaligned_loadsi, unaligned_loadhis, unaligned_loadhiu)
+	(unaligned_storesi, unaligned_storehi): New.
+	(*extv_reg): New (previous extv implementation).
+	* config/arm/arm.opt (munaligned_access): Add option.
+	* config/arm/constraints.md (Uw): New constraint.
+	* expmed.c (store_bit_field_1): Adjust bitfield numbering according
+	to size of access, not size of unit, when BITS_BIG_ENDIAN !=
+	BYTES_BIG_ENDIAN. Don't use bitfield accesses for
+	volatile accesses when -fstrict-volatile-bitfields is in effect.
+	(extract_bit_field_1): Likewise.
+
+	Backport from mainline r172697:
+
+	2011-04-19  Wei Guozhi  <carrot@google.com>
+
+	PR target/47855
+	gcc/
+	* config/arm/arm-protos.h (thumb1_legitimate_address_p): New prototype.
+	* config/arm/arm.c (thumb1_legitimate_address_p): Remove the static
+	linkage.
+	* config/arm/constraints.md (Uu): New constraint.
+	* config/arm/arm.md (*arm_movqi_insn): Compute attr "length".
+
+2011-10-16  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from mainline:
+
+	2011-09-27  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vect-stmts.c (vectorizable_type_demotion): Handle basic block
+	vectorization.
+	(vectorizable_type_promotion): Likewise.
+	(vect_analyze_stmt): Call vectorizable_type_demotion and
+	vectorizable_type_promotion for basic blocks.
+	(supportable_widening_operation): Don't assume loop vectorization.
+	* tree-vect-slp.c (vect_build_slp_tree): Allow multiple types for
+	basic blocks.  Update vectorization factor for basic block
+	vectorization.
+	(vect_analyze_slp_instance): Allow multiple types for basic block
+	vectorization.  Recheck unrolling factor after construction of SLP
+	instance.
+
+	gcc/testsuite/
+	* gcc.dg/vect/bb-slp-11.c: Expect to get vectorized with 64-bit
+	vectors.
+	* gcc.dg/vect/bb-slp-27.c: New.
+	* gcc.dg/vect/bb-slp-28.c: New.
+
+
+	2011-10-04  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/testsuite/
+	* lib/target-supports.exp (check_effective_target_vect_multiple_sizes):
+	Make et_vect_multiple_sizes_saved global.
+	(check_effective_target_vect64): Make et_vect64_saved global.
+
+2011-10-13  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from mainline:
+
+	2011-10-07  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/predicates.md (shift_amount_operand): Remove constant
+	range check.
+	(shift_operator): Check range of constants for all shift operators.
+
+	gcc/testsuite/
+	* gcc.dg/pr50193-1.c: New file.
+	* gcc.target/arm/shiftable.c: New file.
+
+2011-10-11  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-10-11  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.10 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-10-04  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6.1 (svn branches/gcc-4_6-branch 179483).
+
+2011-10-06  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/testsuite/
+	* gcc.dg/vect/bb-slp-26.c: Simplify to make the basic block
+	vectorizable.
+
+	Backport from mainline:
+
+	2011-09-25  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vect-slp.c (vect_slp_analyze_bb_1): Split out core part
+	of vect_analyze_bb here.
+	(vect_analyze_bb): Loop over vector sizes calling vect_analyze_bb_1.
+
+	gcc/testsuite/
+	* lib/target-supports.exp (check_effective_target_vect64): New.
+	* gcc.dg/vect/bb-slp-11.c: Expect the error message twice in case
+	of multiple vector sizes.
+	* gcc.dg/vect/bb-slp-26.c: New.
+
+2011-10-06  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from mainline:
+
+	2011-09-25  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-data-ref.c (dr_analyze_innermost): Add new argument.
+	Allow not simple iv if analyzing basic block.
+	(create_data_ref): Update call to dr_analyze_innermost.
+	(stmt_with_adjacent_zero_store_dr_p, ref_base_address): Likewise.
+	* tree-loop-distribution.c (generate_memset_zero): Likewise.
+	* tree-predcom.c (find_looparound_phi): Likewise.
+	* tree-data-ref.h (dr_analyze_innermost): Add new argument.
+
+	gcc/testsuite/
+	* gcc.dg/vect/bb-slp-24.c: New.
+
+
+	2011-09-15  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vect-data-refs.c (vect_analyze_data_ref_dependence): Allow
+	read-after-read dependencies in basic block SLP.
+
+	gcc/testsuite/
+	* gcc.dg/vect/bb-slp-25.c: New.
+
+
+	2011-04-21  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* tree-vect-data-refs.c (vect_drs_dependent_in_basic_block): Use
+	operand_equal_p to compare DR_BASE_ADDRESSes.
+	(vect_check_interleaving): Likewise.
+
+	gcc/testsuite/
+	* gcc.dg/vect/vect-119.c: New test.
+
+2011-10-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-09-22  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* config/arm/predicates.md (expandable_comparison_operator): New
+	predicate, extracted from...
+	(arm_comparison_operator): ...here.
+	* config/arm/arm.md (cbranchsi4, cbranchsf4, cbranchdf4, cbranchdi4)
+	(cstoresi4, cstoresf4, cstoredf4, cstoredi4, movsicc, movsfcc)
+	(movdfcc): Use expandable_comparison_operator.
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-09-22  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* gcc.target/arm/cmp-1.c: New test.
+	* gcc.target/arm/cmp-2.c: Likewise.
+
+2011-10-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-09-07  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	PR target/49030
+	* config/arm/arm-protos.h (maybe_get_arm_condition_code): Declare.
+	* config/arm/arm.c (maybe_get_arm_condition_code): New function,
+	reusing the old code from get_arm_condition_code.  Return ARM_NV
+	for invalid comparison codes.
+	(get_arm_condition_code): Redefine in terms of
+	maybe_get_arm_condition_code.
+	* config/arm/predicates.md (arm_comparison_operator): Use
+	maybe_get_arm_condition_code.
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-09-07  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	PR target/49030
+	* gcc.dg/torture/pr49030.c: New test.
+
+2011-10-03  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline:
+
+	2011-09-13  Sevak Sargsyan <sevak.sargsyan@ispras.ru>
+
+	gcc/
+	* config/arm/neon.md (neon_vabd<mode>_2, neon_vabd<mode>_3): New
+	define_insn patterns for combine.
+
+	gcc/testsuite/
+	* gcc.target/arm/neon-combine-sub-abs-into-vabd.c: New test.
+
+2011-10-01  Revital Eres  <revital.eres@linaro.org> 
+
+	gcc/
+	Backport from mainline -r179380 and -r179381
+
+	* ddg.c (autoinc_var_is_used_p): New function.
+	(create_ddg_dep_from_intra_loop_link,
+	add_cross_iteration_register_deps): Call it.
+	* ddg.h (autoinc_var_is_used_p): Declare.
+	* modulo-sched.c (sms_schedule): Handle instructions with REG_INC.
+	(generate_reg_moves): Call autoinc_var_is_used_p.  Skip
+	instructions that do not set a register and verify no regmoves
+	are created for !single_set instructions.
+
+	gcc/testsuite/
+
+	* gcc.dg/sms-10.c: New file
+
+2011-09-28  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-09-28  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* config/arm/neon.md (neon_move_lo_quad_<mode>): Delete.
+	(neon_move_hi_quad_<mode>): Likewise.
+	(move_hi_quad_<mode>, move_lo_quad_<mode>): Use subreg moves.
+
+2011-09-28  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-09-27  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* config/arm/neon.md (neon_vget_highv16qi, neon_vget_highv8hi)
+	(neon_vget_highv4si, neon_vget_highv4sf, neon_vget_highv2di)
+	(neon_vget_lowv16qi, neon_vget_lowv8hi, neon_vget_lowv4si)
+	(neon_vget_lowv4sf, neon_vget_lowv2di): Turn into define_expands
+	that produce subreg moves.  Define using VQX iterators.
+
+2011-09-28  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-09-14  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* simplify-rtx.c (simplify_subreg): Check that the inner mode is
+	a scalar integer before applying integer-only optimisations to
+	inner arithmetic.
+
+2011-09-25  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/testsuite/
+	* lib/target-supports.exp (check_effective_target_vect_multiple_sizes):
+	Replace check_effective_target_arm_neon with
+	check_effective_target_arm_neon_ok.
+
+	Backport from mainline:
+
+	2011-09-06  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* config/arm/arm.c (arm_preferred_simd_mode): Check
+	TARGET_NEON_VECTORIZE_DOUBLE instead of
+	TARGET_NEON_VECTORIZE_QUAD.
+	(arm_autovectorize_vector_sizes): Likewise.
+	* config/arm/arm.opt (mvectorize-with-neon-quad): Make inverse
+	mask of mvectorize-with-neon-double.  Add RejectNegative.
+	(mvectorize-with-neon-double): New.
+
+	gcc/testsuite/
+	* lib/target-supports.exp (check_effective_target_vect_multiple_sizes):
+	New procedure.
+	(add_options_for_quad_vectors): Replace with ...
+	(add_options_for_double_vectors): ... this.
+	* gfortran.dg/vect/pr19049.f90: Expect more printings on targets that
+	support multiple vector sizes since the vectorizer attempts to
+	vectorize with both vector sizes.
+	* gcc.dg/vect/no-vfa-vect-79.c,
+	gcc.dg/vect/no-vfa-vect-102a.c, gcc.dg/vect/vect-outer-1a.c,
+	gcc.dg/vect/vect-outer-1b.c, gcc.dg/vect/vect-outer-2b.c,
+	gcc.dg/vect/vect-outer-3a.c, gcc.dg/vect/no-vfa-vect-37.c,
+	gcc.dg/vect/vect-outer-3b.c, gcc.dg/vect/no-vfa-vect-101.c,
+	gcc.dg/vect/no-vfa-vect-102.c, gcc.dg/vect/vect-reduc-dot-s8b.c,
+	gcc.dg/vect/vect-outer-1.c, gcc.dg/vect/vect-104.c: Likewise.
+	* gcc.dg/vect/vect-42.c: Run with 64 bit vectors if applicable.
+	* gcc.dg/vect/vect-multitypes-6.c, gcc.dg/vect/vect-52.c,
+	gcc.dg/vect/vect-54.c, gcc.dg/vect/vect-46.c, gcc.dg/vect/vect-48.c,
+	gcc.dg/vect/vect-96.c, gcc.dg/vect/vect-multitypes-3.c,
+	gcc.dg/vect/vect-40.c: Likewise.
+	* gcc.dg/vect/vect-outer-5.c: Remove quad-vectors option as
+	redundant.
+	* gcc.dg/vect/vect-109.c, gcc.dg/vect/vect-peel-1.c,
+	gcc.dg/vect/vect-peel-2.c, gcc.dg/vect/slp-25.c,
+	gcc.dg/vect/vect-multitypes-1.c, gcc.dg/vect/slp-3.c,
+	gcc.dg/vect/no-vfa-pr29145.c, gcc.dg/vect/vect-multitypes-4.c:
+	Likewise.
+	* gcc.dg/vect/vect-peel-4.c: Make ia global.
+	
+2011-09-22  Revital Eres  <revital.eres@linaro.org>
+
+	Backport from trunk -r178804:
+	* modulo-sched.c (remove_node_from_ps): Return void
+	instead of bool.
+	(optimize_sc): Adjust call to remove_node_from_ps.
+	(sms_schedule): Add print info.
+
+2011-09-16  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-09-15  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	GCC Linaro 4.6-2011.09-1 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-09-15  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	Revert:
+
+	gcc/
+	PR target/49030
+	* config/arm/arm-protos.h (maybe_get_arm_condition_code): Declare.
+	* config/arm/arm.c (maybe_get_arm_condition_code): New function,
+	reusing the old code from get_arm_condition_code.  Return ARM_NV
+	for invalid comparison codes.
+	(get_arm_condition_code): Redefine in terms of
+	maybe_get_arm_condition_code.
+	* config/arm/predicates.md (arm_comparison_operator): Use
+	maybe_get_arm_condition_code.
+
+	gcc/testsuite/
+	PR target/49030
+	* gcc.dg/torture/pr49030.c: New test.
+
+2011-09-13  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-09-13  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.09 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-09-12  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from FSF mainline:
+        2011-04-06  Wei Guozhi  <carrot@google.com>
+
+        PR target/47855
+	gcc/
+        * config/arm/arm.md (arm_cmpsi_insn): Compute attr "length".
+        (arm_cond_branch): Likewise.
+        (arm_cond_branch_reversed): Likewise.
+        (arm_jump): Likewise.
+        (push_multi): Likewise.
+        * config/arm/constraints.md (Py): New constraint.
+
+	2011-04-08  Wei Guozhi  <carrot@google.com>
+
+	PR target/47855
+	* config/arm/arm-protos.h (arm_attr_length_push_multi): New prototype.
+	* config/arm/arm.c (arm_attr_length_push_multi): New function.
+	* config/arm/arm.md (*push_multi): Change the length computation to
+	call a C function.
+
+2011-09-12  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from FSF mainline:
+
+        2011-08-18  Jiangning Liu  <jiangning.liu@arm.com>
+
+	gcc/
+	* config/arm/arm.md (*ior_scc_scc): Enable for Thumb2 as well.
+	(*ior_scc_scc_cmp): Likewise
+	(*and_scc_scc): Likewise.
+	(*and_scc_scc_cmp): Likewise.
+	(*and_scc_scc_nodom): Likewise.
+	(*cmp_ite0, *cmp_ite1, *cmp_and, *cmp_ior): Handle Thumb2.
+
+	gcc/testsuite
+	* gcc.target/arm/thumb2-cond-cmp-1.c: New. Make sure conditional
+	compare can be generated.
+	* gcc.target/arm/thumb2-cond-cmp-2.c: Likewise.
+	* gcc.target/arm/thumb2-cond-cmp-3.c: Likewise.
+	* gcc.target/arm/thumb2-cond-cmp-4.c: Likewise.
+
+2011-09-12  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/testsuite/
+	* gcc.target/arm/pr50099.c: Fix testcase from previous commit.
+
+2011-09-12  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	LP:838994
+	gcc/
+	Backport from mainline.
+
+        2011-09-06  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+        PR target/50099
+	* config/arm/iterators.md (qhs_zextenddi_cstr): New.
+	(qhs_zextenddi_op): New.
+	* config/arm/arm.md ("zero_extend<mode>di2"): Use them.
+	* config/arm/predicates.md ("arm_extendqisi_mem_op"):
+	Distinguish between ARM and Thumb2 states.
+
+	gcc/testsuite/
+	* gcc.target/arm/pr50099.c: New test.
+
+2011-09-12  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF mainline:
+
+	2011-09-08  Andrew Stubbs  <ams@codesourcery.com>
+
+	PR tree-optimization/50318
+
+	gcc/
+	* tree-ssa-math-opts.c (convert_plusminus_to_widen): Correct
+	typo in use of mult_rhs1 and mult_rhs2.
+
+	gcc/testsuite/
+	* gcc.target/arm/pr50318-1.c: New file.
+
+2011-09-01  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/predicates.md (shift_amount_operand): Ensure shift
+	amount is positive.
+
+	gcc/testsuite/
+	* gcc.dg/pr50193-1.c: New file.
+
+2011-09-12  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	PR target/49030
+	* config/arm/arm-protos.h (maybe_get_arm_condition_code): Declare.
+	* config/arm/arm.c (maybe_get_arm_condition_code): New function,
+	reusing the old code from get_arm_condition_code.  Return ARM_NV
+	for invalid comparison codes.
+	(get_arm_condition_code): Redefine in terms of
+	maybe_get_arm_condition_code.
+	* config/arm/predicates.md (arm_comparison_operator): Use
+	maybe_get_arm_condition_code.
+
+	gcc/testsuite/
+	PR target/49030
+	* gcc.dg/torture/pr49030.c: New test.
+
+2011-09-12  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF mainline:
+
+	2011-08-30  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/arm.c (optimal_immediate_sequence_1): Make b1, b2,
+	b3 and b4 unsigned.
+
+	2011-08-30  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/arm.c (arm_gen_constant): Set can_negate correctly
+	when code is SET.
+
+	2011-08-26  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/arm.c (struct four_ints): New type.
+	(count_insns_for_constant): Delete function.
+	(find_best_start): Delete function.
+	(optimal_immediate_sequence): New function.
+	(optimal_immediate_sequence_1): New function.
+	(arm_gen_constant): Move constant splitting code to
+	optimal_immediate_sequence.
+	Rewrite constant negation/invertion code.
+
+	gcc/testsuite/
+	* gcc.target/arm/thumb2-replicated-constant1.c: New file.
+	* gcc.target/arm/thumb2-replicated-constant2.c: New file.
+	* gcc.target/arm/thumb2-replicated-constant3.c: New file.
+	* gcc.target/arm/thumb2-replicated-constant4.c: New file.
+
+	2011-08-26  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/arm-protos.h (const_ok_for_op): Add prototype.
+	* config/arm/arm.c (const_ok_for_op): Add support for addw/subw.
+	Remove prototype. Remove static function type.
+	* config/arm/arm.md (*arm_addsi3): Add addw/subw support.
+	Add arch attribute.
+	* config/arm/constraints.md (Pj, PJ): New constraints.
+
+	2011-04-20  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/arm.c (arm_gen_constant): Move mowv support ....
+	(const_ok_for_op): ... to here.
+
+	2011-04-20  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/arm.c (arm_gen_constant): Remove redundant can_invert.
+
+
+
+2011-09-08  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6.1 (svn branches/gcc-4_6-branch 178681).
+
+2011-09-07  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from mainline:
+
+	2011-08-04  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vectorizer.h (struct _stmt_vec_info): Add new field for
+	pattern def statement, and its access macro.
+	(NUM_PATTERNS): Set to 5.
+	* tree-vect-loop.c (vect_determine_vectorization_factor): Handle
+	pattern def statement.
+	(vect_transform_loop): Likewise.
+	* tree-vect-patterns.c (vect_vect_recog_func_ptrs): Add new
+	function vect_recog_over_widening_pattern ().
+	(vect_operation_fits_smaller_type): New function.
+	(vect_recog_over_widening_pattern, vect_mark_pattern_stmts):
+	Likewise.
+	(vect_pattern_recog_1): Move the code that marks pattern
+	statements to vect_mark_pattern_stmts (), and call it.  Update
+	documentation.
+	* tree-vect-stmts.c (vect_supportable_shift): New function.
+	(vect_analyze_stmt): Handle pattern def statement.
+	(new_stmt_vec_info): Initialize pattern def statement.
+
+	gcc/testsuite/
+	* gcc.dg/vect/vect-over-widen-1.c: New test.
+	* gcc.dg/vect/vect-over-widen-2.c: New test.
+	* gcc.dg/vect/vect-over-widen-3.c: New test.
+	* gcc.dg/vect/vect-over-widen-4.c: New test.
+
+
+	2011-08-09  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	PR tree-optimization/50014
+	* tree-vect-loop.c (vectorizable_reduction): Get def type before
+	calling vect_get_vec_def_for_stmt_copy ().
+
+	gcc/testsuite/
+	PR tree-optimization/50014
+	* gcc.dg/vect/pr50014.c: New test.
+
+
+	2011-08-11  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	PR tree-optimization/50039
+	* tree-vect-patterns.c (vect_operation_fits_smaller_type): Check
+	that DEF_STMT has a stmt_vec_info.
+
+	gcc/testsuite/
+	PR tree-optimization/50039
+	* gcc.dg/vect/vect.exp: Run no-tree-fre-* tests with -fno-tree-fre.
+	* gcc.dg/vect/no-tree-fre-pr50039.c: New test.
+
+
+	2011-09-04  Jakub Jelinek  <jakub@redhat.com>
+		    Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	PR tree-optimization/50208
+	* tree-vect-patterns.c (vect_handle_widen_mult_by_const): Add an
+	argument.  Check that def_stmt is inside the loop.
+	(vect_recog_widen_mult_pattern): Update calls to
+	vect_handle_widen_mult_by_cons.
+	(vect_operation_fits_smaller_type): Check that def_stmt is
+	inside the loop.
+
+	gcc/testsuite/
+	PR tree-optimization/50208
+	* gcc.dg/vect/no-fre-pre-pr50208.c: New test.
+	* gcc.dg/vect/vect.exp: Run no-fre-pre-*.c tests with
+	-fno-tree-fre -fno-tree-pre.
+
+2011-09-05  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline.
+	2011-08-26  Ramana Radhakrishnan  <ramana.radhakrishnan@arm.com>
+
+	* config/arm/cortex-a9.md ("cortex_a9_mult_long"): New.
+	("cortex_a9_multiply_long"): New and use above.  Handle all
+	long multiply cases.
+	("cortex_a9_multiply"): Handle smmul and smmulr.
+	("cortex_a9_mac"): Handle smmla.
+
+2011-09-05  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	2011-08-12  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	PR target/48328
+	* config/arm/arm.h (CASE_VECTOR_SHORTEN_MODE): Fix distance
+	for tbh instructions.
+
+2011-08-26  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-08-26  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* df-problems.c (df_note_bb_compute): Pass uses rather than defs
+	to df_set_dead_notes_for_mw.
+
+2011-08-25  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF mainline:
+
+	2011-08-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* tree-ssa-math-opts.c (is_widening_mult_rhs_p): Handle constants
+	beyond conversions.
+	(convert_mult_to_widen): Convert constant inputs to the right type.
+	(convert_plusminus_to_widen): Don't automatically reject inputs that
+	are not an SSA_NAME.
+	Convert constant inputs to the right type.
+
+	gcc/testsuite/
+	* gcc.target/arm/wmul-11.c: New file.
+	* gcc.target/arm/wmul-12.c: New file.
+	* gcc.target/arm/wmul-13.c: New file.
+
+	2011-08-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* tree-ssa-math-opts.c (convert_plusminus_to_widen): Convert add_rhs
+	to the correct type.
+
+	gcc/testsuite/
+	* gcc.target/arm/wmul-10.c: New file.
+
+	2011-08-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* tree-ssa-math-opts.c (convert_mult_to_widen): Better handle
+	unsigned inputs of different modes.
+	(convert_plusminus_to_widen): Likewise.
+
+	gcc/testsuite/
+	* gcc.target/arm/wmul-9.c: New file.
+	* gcc.target/arm/wmul-bitfield-2.c: New file.
+
+	2011-08-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* tree-ssa-math-opts.c (is_widening_mult_rhs_p): Add new argument
+	'type'.
+	Use 'type' from caller, not inferred from 'rhs'.
+	Don't reject non-conversion statements. Do return lhs in this case.
+	(is_widening_mult_p): Add new argument 'type'.
+	Use 'type' from caller, not inferred from 'stmt'.
+	Pass type to is_widening_mult_rhs_p.
+	(convert_mult_to_widen): Pass type to is_widening_mult_p.
+	(convert_plusminus_to_widen): Likewise.
+
+	gcc/testsuite/
+	* gcc.target/arm/wmul-8.c: New file.
+
+	2011-08-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* tree-ssa-math-opts.c (is_widening_mult_p): Remove FIXME.
+	Ensure the the larger type is the first operand.
+
+	gcc/testsuite/
+	* gcc.target/arm/wmul-7.c: New file.
+
+	2011-08-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* tree-ssa-math-opts.c (convert_mult_to_widen): Convert
+	unsupported unsigned multiplies to signed.
+	(convert_plusminus_to_widen): Likewise.
+
+	gcc/testsuite/
+	* gcc.target/arm/wmul-6.c: New file.
+
+	2011-08-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* tree-ssa-math-opts.c (convert_plusminus_to_widen): Permit a single
+	conversion statement separating multiply-and-accumulate.
+
+	gcc/testsuite/
+	* gcc.target/arm/wmul-5.c: New file.
+	* gcc.target/arm/no-wmla-1.c: New file.
+
+	2011-08-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/arm.md (maddhidi4): Remove '*' from name.
+	* expr.c (expand_expr_real_2): Use find_widening_optab_handler.
+	* optabs.c (find_widening_optab_handler_and_mode): New function.
+	(expand_widen_pattern_expr): Use find_widening_optab_handler.
+	(expand_binop_directly): Likewise.
+	(expand_binop): Likewise.
+	* optabs.h (find_widening_optab_handler): New macro define.
+	(find_widening_optab_handler_and_mode): New prototype.
+	* tree-cfg.c (verify_gimple_assign_binary): Adjust WIDEN_MULT_EXPR
+	type precision rules.
+	(verify_gimple_assign_ternary): Likewise for WIDEN_MULT_PLUS_EXPR.
+	* tree-ssa-math-opts.c (build_and_insert_cast): New function.
+	(is_widening_mult_rhs_p): Allow widening by more than one mode.
+	Explicitly disallow mis-matched input types.
+	(convert_mult_to_widen): Use find_widening_optab_handler, and cast
+	input types to fit the new handler.
+	(convert_plusminus_to_widen): Likewise.
+
+	gcc/testsuite/
+	* gcc.target/arm/wmul-bitfield-1.c: New file.
+
+	2011-08-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* expr.c (expand_expr_real_2): Use widening_optab_handler.
+	* genopinit.c (optabs): Use set_widening_optab_handler for $N.
+	(gen_insn): $N now means $a must be wider than $b, not consecutive.
+	* optabs.c (widened_mode): New function.
+	(expand_widen_pattern_expr): Use widening_optab_handler.
+	(expand_binop_directly): Likewise.
+	(expand_binop): Likewise.
+	* optabs.h (widening_optab_handlers): New struct.
+	(optab_d): New member, 'widening'.
+	(widening_optab_handler): New function.
+	(set_widening_optab_handler): New function.
+	* tree-ssa-math-opts.c (convert_mult_to_widen): Use
+	widening_optab_handler.
+	(convert_plusminus_to_widen): Likewise.
+
+2011-08-24  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	LP:823548
+	gcc/
+	* config/arm/arm.c (arm_init_neon_builtins): Use 
+	n_operands instead of n_generator_args.
+
+2011-08-24  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	LP:823548
+	Backport from mainline
+	2011-04-18  Jie Zhang  <jie@codesourcery.com>
+	Richard Earnshaw  <rearnsha@arm.com>
+
+	* arm.c (neon_builtin_type_bits): Remove.
+	(typedef enum neon_builtin_mode): New.
+	(T_MAX): Don't define.
+	(typedef enum neon_builtin_datum): Remove bits, codes[],
+	num_vars and base_fcode.  Add mode, code and fcode.
+	(VAR1, VAR2, VAR3, VAR4, VAR5, VAR6, VAR7, VAR8, VAR9
+	VAR10): Change accordingly.
+	(neon_builtin_data[]): Change accordingly
+	(arm_init_neon_builtins): Change accordingly.
+	(neon_builtin_compare): Remove.
+	(locate_neon_builtin_icode): Remove.
+	(arm_expand_neon_builtin): Change accordingly.
+
+	* arm.h (enum arm_builtins): Move to ...
+	* arm.c (enum arm_builtins): ... here; and rearrange builtin code.
+
+	* arm.c (arm_builtin_decl): Declare.
+	(TARGET_BUILTIN_DECL): Define.
+	(enum arm_builtins): Correct ARM_BUILTIN_MAX.
+	(arm_builtin_decls[]): New.
+	(arm_init_neon_builtins): Store builtin declarations in
+	arm_builtin_decls[].
+	(arm_init_tls_builtins): Likewise.
+	(arm_init_iwmmxt_builtins): Likewise.  Refactor initialization code.
+	(arm_builtin_decl): New.
+
+2011-08-18  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-08-18  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* config/arm/arm.c (arm_rtx_costs_1): Don't modify the costs of SET.
+	(arm_size_rtx_costs): Likewise.
+
+2011-08-18  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-08-12  Richard Sandiford  <rdsandiford@googlemail.com>
+
+	* config/arm/arm.c (get_label_padding): New function.
+	(create_fix_barrier, arm_reorg): Use it.
+
+2011-08-16  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-08-16  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.08 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-08-15  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* config/rs6000/rs6000.c (paired_expand_vector_init): Don't create
+	CONST_VECTORs with symbolic elements.
+	(rs6000_expand_vector_init): Likewise.
+
+2011-08-15  Michael Hope  <michael.hope@linaro.org>
+
+	Merge from FSF GCC 4.6.1 (svn branches/gcc-4_6-branch 177703).
+
+2011-08-15  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r177357
+
+	gcc/testsuite/
+	2011-08-04  Ian Bolton  <ian.bolton@arm.com>
+
+	* gcc.target/arm/vfp-1.c: no large negative offsets on Thumb2.
+
+2011-08-10  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+        2011-07-28  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	* config/arm/vfp.md ("*movdf_vfp"): Handle the VFP constraints
+	before the core constraints. Adjust attributes.
+	(*thumb2_movdf_vfp"): Likewise.
+
+2011-08-09  Revital Eres  <revital.eres@linaro.org>
+
+	gcc/
+	Backport from trunk -r176972:
+
+	* ddg.c (create_ddg_dep_from_intra_loop_link): Remove
+	the creation of anti-dep edge from a branch.
+	(add_cross_iteration_register_deps):
+	Create anti-dep edge from a branch.
+
+2011-08-09  Revital Eres  <revital.eres@linaro.org>
+
+	gcc/
+	Backport from trunk -r177235.
+	* modulo-sched.c (calculate_stage_count,
+	calculate_must_precede_follow, get_sched_window,
+	try_scheduling_node_in_cycle, remove_node_from_ps):
+	Add declaration.
+	(update_node_sched_params, set_must_precede_follow, optimize_sc):
+	New functions.
+	(reset_sched_times): Call update_node_sched_params.
+	(sms_schedule):	Call optimize_sc.
+	(get_sched_window): Change function arguments.
+	(sms_schedule_by_order): Update call to	get_sched_window.
+	Call set_must_precede_follow.
+	(calculate_stage_count): Add function argument.
+
+2011-07-31  Revital Eres  <revital.eres@linaro.org>
+
+	gcc/
+	Backport from trunk -r176970:
+
+	* modulo-sched.c: Change comment.
+	(reset_sched_times): Fix print message.
+	(print_partial_schedule): Add print info.
+
+
+2011-07-21  Richard Sandiford  <rdsandiford@googlemail.com>
+
+	gcc/
+	Backport from mainline:
+
+	2011-07-21  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* regcprop.c (maybe_mode_change): Check HARD_REGNO_MODE_OK.
+
+2011-07-21  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	PR middle-end/49736
+	* expr.c (all_zeros_p): Undo bogus part of last change.
+
+2011-07-21  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	Backport from mainline:
+	gcc/cp/
+	2011-07-13  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* typeck2.c (split_nonconstant_init_1): Pass the initializer directly,
+	rather than a pointer to it.  Return true if the whole of the value
+	was initialized by the generated statements.  Use
+	complete_ctor_at_level_p instead of count_type_elements.
+
+	gcc/
+	2011-07-13  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* tree.h (categorize_ctor_elements): Remove comment.  Fix long line.
+	(count_type_elements): Delete.
+	(complete_ctor_at_level_p): Declare.
+	* expr.c (flexible_array_member_p): New function, split out from...
+	(count_type_elements): ...here.  Make static.  Replace allow_flexarr
+	parameter with for_ctor_p.  When for_ctor_p is true, return the
+	number of elements that should appear in the top-level constructor,
+	otherwise return an estimate of the number of scalars.
+	(categorize_ctor_elements): Replace p_must_clear with p_complete.
+	(categorize_ctor_elements_1): Likewise.  Use complete_ctor_at_level_p.
+	(complete_ctor_at_level_p): New function, borrowing union logic
+	from old categorize_ctor_elements_1.
+	(mostly_zeros_p): Return true if the constructor is not complete.
+	(all_zeros_p): Update call to categorize_ctor_elements.
+	* gimplify.c (gimplify_init_constructor): Update call to
+	categorize_ctor_elements.  Don't call count_type_elements.
+	Unconditionally prevent clearing for variable-sized types,
+	otherwise rely on categorize_ctor_elements to detect
+	incomplete initializers.
+
+	gcc/testsuite/
+	2011-07-13  Chung-Lin Tang  <cltang@codesourcery.com>
+
+	* gcc.target/arm/pr48183.c: New test.
+
+2011-07-18  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-07-18  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.07-0 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-07-15  Michael Hope  <michael.hope@linaro.org>
+
+	Backport from mainline r174540
+	LP: #807573
+
+	gcc/
+	2011-06-01  Richard Sandiford  <rdsandiford@googlemail.com>
+
+	PR rtl-optimization/48830
+	PR rtl-optimization/48808
+	PR rtl-optimization/48792
+	* reload.c (push_reload): Check contains_reg_of_mode.
+	* reload1.c (strip_paradoxical_subreg): New function.
+	(gen_reload_chain_without_interm_reg_p): Use it to handle
+	paradoxical subregs.
+	(emit_output_reload_insns, gen_reload): Likewise.
+
+	gcc/testsuite/
+	2011-06-01  Eric Botcazou  <ebotcazou@adacore.com>
+		    Hans-Peter Nilsson  <hp@axis.com>
+
+	PR rtl-optimization/48830
+	* gcc.target/sparc/ultrasp12.c: New test.
+
+2011-07-15  Michael Hope  <michael.hope@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-06-29  Nathan Sidwell  <nathan@codesourcery.com>
+
+	* config/arm/unwind-arm.c (enum __cxa_type_match_result): New.
+	(cxa_type_match): Correct declaration.
+	(__gnu_unwind_pr_common): Reconstruct
+	additional indirection when __cxa_type_match returns
+	succeeded_with_ptr_to_base.
+
+	libstdc++-v3/
+	Backport from mainline:
+
+	2011-06-29  Nathan Sidwell  <nathan@codesourcery.com>
+
+	* libsupc++/eh_arm.c (__cxa_type_match): Construct address of
+	thrown object here.  Return succeded_with_ptr_to_base for all
+	pointer cases.
+
+2011-07-15  Michael Hope  <michael.hope@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-03-22  Eric Botcazou  <ebotcazou@adacore.com>
+
+	* combine.c (simplify_set): Try harder to find the best CC mode when
+	simplifying a nested COMPARE on the RHS.
+
+2011-07-15  Michael Hope  <michael.hope@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-04-05  Eric Botcazou  <ebotcazou@adacore.com>
+
+	* ifcvt.c (cond_exec_process_insns): Disallow converting a block
+	that contains the prologue.
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-04-01  Bernd Schmidt  <bernds@codesourcery.com>
+
+	* gcc.c-torture/compile/20110401-1.c: New test.
+
+2011-07-13  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	Backport from mainline:
+	gcc/
+	2011-07-07  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* reload1.c (choose_reload_regs): Use mode sizes to check whether
+	an old reload register completely defines the required value.
+
+	gcc/testsuite/
+	2011-07-07  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* gcc.target/arm/neon-modes-3.c: New test.
+
+2011-07-11  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	2011-06-22  Dmitry Plotnikov  <dplotnikov@ispras.ru>
+	Dmitry Melnik  <dm@ispras.ru>
+
+	* config/arm/arm.c (neon_immediate_valid_for_shift): New function.
+	(neon_output_shift_immediate): Ditto.
+	* config/arm/arm-protos.h (neon_immediate_valid_for_shift): New
+	prototype.
+	(neon_output_shift_immediate): Ditto.
+	* config/arm/neon.md (vashl<mode>3): Modified constraint.
+	(vashr<mode>3_imm): New insn pattern.
+	(vlshr<mode>3_imm): Ditto.
+	(vashr<mode>3): Modified constraint.
+	(vlshr<mode>3): Ditto.
+	* config/arm/predicates.md (imm_for_neon_lshift_operand): New
+	predicate.
+	(imm_for_neon_rshift_operand): Ditto.
+	(imm_lshift_or_reg_neon): Ditto.
+	(imm_rshift_or_reg_neon): Ditto.
+
+	* optabs.c (init_optabs): Init optab codes for vashl, vashr, vlshr.
+
+	gcc/testsuite
+	2011-06-22  Dmitry Plotnikov  <dplotnikov@ispras.ru>
+	Dmitry Melnik  <dm@ispras.ru>
+
+	* gcc.target/arm/neon-vshr-imm-1.c: New testcase.
+	* gcc.target/arm/neon-vshl-imm-1.c: New testcase.
+	* gcc.target/arm/neon-vlshr-imm-1.c: New testcase.
+
+2011-07-11  Revital Eres  <revital.eres@linaro.org>
+
+	Backport from mainline -r175091
+	gcc/
+	* modulo-sched.c (struct ps_insn): Remove row_rest_count
+	field.
+	(struct partial_schedule): Add rows_length field.
+	(verify_partial_schedule): Check rows_length.
+	(ps_insert_empty_row): Handle rows_length.
+	(create_partial_schedule): Likewise.
+	(free_partial_schedule): Likewise.
+	(reset_partial_schedule): Likewise.
+	(create_ps_insn): Remove rest_count argument.
+	(remove_node_from_ps): Update rows_length.
+	(add_node_to_ps): Update rows_length and call create_ps_insn without
+	passing row_rest_count.
+	(rotate_partial_schedule): Update rows_length.
+
+2011-07-11  Revital Eres  <revital.eres@linaro.org>
+
+	Backport from mainline -r175090.
+	gcc/
+	* ddg.c (add_intra_loop_mem_dep): New function.
+	(build_intra_loop_deps): Call it.
+	gcc/testsuite
+	* gcc.dg/sms-9.c: New file.
+
+2011-07-11  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from FSF:
+	2011-06-16  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vectorizer.h (vect_recog_func_ptr): Change the first
+	argument to be a VEC of statements.
+	* tree-vect-loop.c (vect_determine_vectorization_factor): Remove the
+	assert that pattern statements have to have their vector type set.
+	* tree-vect-patterns.c (vect_recog_widen_sum_pattern):
+	Change the first argument to be a VEC of statements.  Update
+	documentation.
+	(vect_recog_dot_prod_pattern, vect_recog_pow_pattern): Likewise.
+	(vect_handle_widen_mult_by_const): New function.
+	(vect_recog_widen_mult_pattern):  Change the first argument to be a
+	VEC of statements.  Update documentation.  Check that the constant is
+	INTEGER_CST.  Support multiplication by a constant that fits an
+	intermediate type - call vect_handle_widen_mult_by_const.
+	(vect_pattern_recog_1): Update vect_recog_func_ptr and its
+	call.  Handle additional pattern statements if necessary.
+
+	gcc/testsuite/
+	* gcc.dg/vect/vect-widen-mult-half-u8.c: New test.
+
+	and
+	2011-06-30  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vect-loop.c (vect_determine_vectorization_factor): Handle
+	both pattern and original statements if necessary.
+	(vect_transform_loop): Likewise.
+	* tree-vect-patterns.c (vect_pattern_recog): Update documentation.
+	* tree-vect-stmts.c (vect_mark_relevant): Add new argument.
+	Mark the pattern statement only if the original statement doesn't
+	have its own uses.
+	(process_use): Call vect_mark_relevant with additional parameter.
+	(vect_mark_stmts_to_be_vectorized): Likewise.
+	(vect_get_vec_def_for_operand): Use vectorized pattern statement.
+	(vect_analyze_stmt): Handle both pattern and original statements
+	if necessary.
+	(vect_transform_stmt): Don't store vectorized pattern statement
+	in the original statement.
+	(vect_is_simple_use_1): Use related pattern statement only if the
+	original statement is irrelevant.
+	* tree-vect-slp.c (vect_get_and_check_slp_defs): Likewise.
+
+	gcc/testsuite/
+	* gcc.dg/vect/slp-widen-mult-half.c: New test.
+	* gcc.dg/vect/vect-widen-mult-half.c: New test.
+
+2011-07-07  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* builtins.c (get_object_alignment): Fix comment.
+	* fold-const.c (get_pointer_modulus_and_residue): Remove
+	allow_func_align.  Use get_object_alignment.
+	(fold_binary_loc): Update caller.
+
+2011-07-07  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-06-29  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	PR tree-optimization/49545
+	* builtins.c (get_object_alignment_1): Update function comment.
+	Do not use DECL_ALIGN for functions, but test
+	TARGET_PTRMEMFUNC_VBIT_LOCATION instead.
+	* fold-const.c (get_pointer_modulus_and_residue): Don't check
+	for functions here.
+	* tree-ssa-ccp.c (get_value_from_alignment): Likewise.
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-06-29  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* gcc.dg/torture/pr49169.c: Restrict to ARM and MIPS targets.
+
+2011-07-07  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-07-27  Richard Guenther  <rguenther@suse.de>
+
+	PR tree-optimization/49169
+	* fold-const.c (get_pointer_modulus_and_residue): Don't rely on
+	the alignment of function decls.
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-07-27  Michael Hope  <michael.hope@linaro.org>
+		    Richard Sandiford  <richard.sandiford@linaro.org>
+
+	PR tree-optimization/49169
+	* gcc.dg/torture/pr49169.c: New test.
+
+2011-07-01  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6.1 (svn branches/gcc-4_6-branch 175677).
+
+2011-07-03  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from FSF:
+	2011-06-12  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vect-data-refs.c (vect_peeling_hash_get_most_frequent):
+	Take number of iterations to peel into account for equally frequent
+	misalignment values.
+
+2011-07-01  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline.
+	LP 744754
+        2011-04-17  Chung-Lin Tang  <cltang@codesourcery.com>
+
+	* config/arm/arm.c (neon_struct_mem_operand):
+	Support POST_INC/PRE_DEC memory operands.
+
+2011-06-28  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline.
+	LP 791327
+	gcc/
+        2011-06-09  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	PR target/49335
+	* config/arm/predicates.md (add_operator): New.
+	* config/arm/arm.md ("*arith_shiftsi"): Fix for SP reg usage
+	in Thumb2.
+
+2011-06-28  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline.
+	gcc/
+	2011-06-24  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	PR target/49385
+	* config/arm/thumb2.md (*thumb2_movhi_insn): Make sure atleast
+	one of the operands is a register.
+
+2011-06-28  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from FSF:
+
+	2011-06-07  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vectorizer.h (vect_recog_func_ptr): Make last argument to be
+	a pointer.
+	* tree-vect-patterns.c (vect_recog_widen_sum_pattern,
+	vect_recog_widen_mult_pattern, vect_recog_dot_prod_pattern,
+	vect_recog_pow_pattern): Likewise.
+	(vect_pattern_recog_1): Remove declaration.
+	(widened_name_p): Remove declaration.  Add new argument to specify
+	whether to check that both types are either signed or unsigned.
+	(vect_recog_widen_mult_pattern): Update documentation.  Handle
+	unsigned patterns and multiplication by constants.
+	(vect_pattern_recog_1): Update vect_recog_func references.  Use
+	statement information from the statement returned from pattern
+	detection functions.
+	(vect_pattern_recog): Update vect_recog_func reference.
+	* tree-vect-stmts.c (vectorizable_type_promotion): For widening
+	multiplication by a constant use the type of the other operand.
+
+	gcc/testsuite
+	* lib/target-supports.exp
+	(check_effective_target_vect_widen_mult_qi_to_hi):
+	Add NEON as supporting target.
+	(check_effective_target_vect_widen_mult_hi_to_si): Likewise.
+	(check_effective_target_vect_widen_mult_qi_to_hi_pattern): New.
+	(check_effective_target_vect_widen_mult_hi_to_si_pattern): New.
+	* gcc.dg/vect/vect-widen-mult-u8.c: Expect to be vectorized
+	using widening multiplication on targets that support it.
+	* gcc.dg/vect/vect-widen-mult-u16.c: Likewise.
+	* gcc.dg/vect/vect-widen-mult-const-s16.c: New test.
+	* gcc.dg/vect/vect-widen-mult-const-u16.c: New test.
+
+	and
+
+	2011-06-15  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-vect-loop-manip.c (remove_dead_stmts_from_loop): Remove.
+	(slpeel_tree_peel_loop_to_edge): Don't call
+	remove_dead_stmts_from_loop.
+	* tree-vect-loop.c (vect_determine_vectorization_factor): Don't
+	remove irrelevant pattern statements.  For irrelevant statements
+	check if it is the last statement of a detected pattern, use
+	corresponding pattern statement instead.
+	(destroy_loop_vec_info): No need to remove pattern statements,
+	only free stmt_vec_info.
+	(vect_transform_loop): For irrelevant statements check if it is
+	the last statement of a detected pattern, use corresponding
+	pattern statement instead.
+	* tree-vect-patterns.c (vect_pattern_recog_1): Don't insert
+	pattern statements.  Set basic block for the new statement.
+	(vect_pattern_recog): Update documentation.
+	* tree-vect-stmts.c (vect_mark_stmts_to_be_vectorized): Scan
+	operands of pattern statements.
+	(vectorizable_call): Fix printing.  In case of a pattern statement
+	use the lhs of the original statement when creating a dummy
+	statement to replace the original call.
+	(vect_analyze_stmt): For irrelevant statements check if it is
+	the last statement of a detected pattern, use corresponding
+	pattern statement instead.
+	* tree-vect-slp.c (vect_schedule_slp_instance): For pattern
+	statements use gsi of the original statement.
+
+	and
+	2011-06-21  Ira Rosen  <ira.rosen@linaro.org>
+
+	PR tree-optimization/49478
+	gcc/
+
+	* tree-vect-loop.c (vectorizable_reduction): Handle DOT_PROD_EXPR
+	with constant operand.
+
+2011-06-28  Michael Hope  <michael.hope@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	Chung-Lin Tang  <cltang@codesourcery.com>
+	Richard Earnshaw  <rearnsha@arm.com>
+
+	PR target/48250
+	* config/arm/arm.c (arm_legitimize_reload_address): Update cases
+	to use sign-magnitude offsets. Reject unsupported unaligned
+	cases. Add detailed description in comments.
+	* config/arm/arm.md (reload_outdf): Disable for ARM mode; change
+	condition from TARGET_32BIT to TARGET_ARM.
+
+	Chung-Lin Tang  <cltang@codesourcery.com>
+
+	* config/arm/arm.c (arm_legitimize_reload_address): For NEON
+	quad-word modes, reduce to 9-bit index range when above 1016
+	limit.
+
+2011-06-20  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	Backport from mainline.
+	2011-06-03  Julian Brown  <julian@codesourcery.com>
+
+	* config/arm/arm-cores.def (strongarm, strongarm110, strongarm1100)
+	(strongarm1110): Use strongarm tuning.
+	* config/arm/arm-protos.h (tune_params): Add max_insns_skipped
+	field.
+	* config/arm/arm.c (arm_strongarm_tune): New.
+	(arm_slowmul_tune, arm_fastmul_tune, arm_xscale_tune, arm_9e_tune)
+	(arm_v6t2_tune, arm_cortex_tune, arm_cortex_a5_tune)
+	(arm_cortex_a9_tune, arm_fa726te_tune): Add max_insns_skipped field
+	setting, using previous defaults or 1 for Cortex-A5.
+	(arm_option_override): Set max_insns_skipped from current tuning.
+
+2011-06-20  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	Backport from mainline.
+	2011-06-02  Julian Brown  <julian@codesourcery.com>
+
+	* config/arm/arm-cores.def (cortex-a5): Use cortex_a5 tuning.
+	* config/arm/arm.c (arm_cortex_a5_branch_cost): New.
+	(arm_cortex_a5_tune): New.
+
+	2011-06-02  Julian Brown  <julian@codesourcery.com>
+
+	* config/arm/arm-protos.h (tune_params): Add branch_cost hook.
+	* config/arm/arm.c (arm_default_branch_cost): New.
+	(arm_slowmul_tune, arm_fastmul_tune, arm_xscale_tune, arm_9e_tune)
+	(arm_v6t2_tune, arm_cortex_tune, arm_cortex_a9_tune)
+	(arm_fa726_tune): Set branch_cost field using
+	arm_default_branch_cost.
+	* config/arm/arm.h (BRANCH_COST): Use branch_cost hook from
+	current_tune structure.
+	* dojump.c (tm_p.h): Include file.
+
+        2011-06-02  Julian Brown  <julian@codesourcery.com>
+
+	* config/arm/arm-cores.def (arm1156t2-s, arm1156t2f-s): Use v6t2
+	tuning.
+	(cortex-a5, cortex-a8, cortex-a15, cortex-r4, cortex-r4f, cortex-m4)
+	(cortex-m3, cortex-m1, cortex-m0): Use cortex tuning.
+	* config/arm/arm-protos.h (tune_params): Add prefer_constant_pool
+	field.
+	* config/arm/arm.c (arm_slowmul_tune, arm_fastmul_tune)
+	(arm_xscale_tune, arm_9e_tune, arm_cortex_a9_tune)
+	(arm_fa726te_tune): Add prefer_constant_pool setting.
+	(arm_v6t2_tune, arm_cortex_tune): New.
+	* config/arm/arm.h (TARGET_USE_MOVT): Make dependent on
+	prefer_constant_pool setting.
+
+2011-06-20  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	Backport from mainline
+	2011-06-01  Paul Brook  <paul@cpodesourcery.com>
+	* config/arm/arm-cores.def: Add cortex-r5.  Add DIV flags to
+	Cortex-A15.
+	* config/arm/arm-tune.md: Regenerate.
+	* config/arm/arm.c (FL_DIV): Rename...
+	(FL_THUMB_DIV): ... to this.
+	(FL_ARM_DIV): Define.
+	(FL_FOR_ARCH7R, FL_FOR_ARCH7M): Use FL_THUMB_DIV.
+	(arm_arch_hwdiv): Remove.
+	(arm_arch_thumb_hwdiv, arm_arch_arm_hwdiv): New variables.
+	(arm_issue_rate): Add cortexr5.
+	* config/arm/arm.h (TARGET_CPU_CPP_BUILTINS): Set
+	__ARM_ARCH_EXT_IDIV__.
+	(TARGET_IDIV): Define.
+	(arm_arch_hwdiv): Remove.
+	(arm_arch_arm_hwdiv, arm_arch_thumb_hwdiv): New prototypes.
+	* config/arm/arm.md (tune_cortexr4): Add cortexr5.
+	(divsi3, udivsi3): New patterns.
+	* config/arm/thumb2.md (divsi3, udivsi3): Remove.
+	* doc/invoke.texi: Document ARM -mcpu=cortex-r5
+
+2011-06-14  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-06-14  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.06-0 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-06-13  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline:
+	gcc/
+	2011-06-13  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	PR target/48454
+	* config/arm/neon.md (vec_pack_trunc<mode>): Set the lengths
+	correctly for the case with Quad vectors.
+
+2011-06-10  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from mainline:
+	gcc/
+        2011-06-02  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+	* config/arm/neon.md (orndi3_neon): Actually split it.
+
+
+2011-06-10  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+        Backport from mainline.
+	gcc/
+        2011-05-26  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	* config/arm/neon.md ("orn<mode>3_neon"): Canonicalize not.
+	("orndi3_neon"): Likewise.
+	("bic<mode>3_neon"): Likewise.
+
+	gcc/testsuite
+	2011-05-26  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	* gcc.target/arm/neon-vorn-vbic.c: New test.
+
+2011-06-07  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+
+	2011-06-07  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* config/arm/arm.md (*maddhidi4tb, *maddhidi4tt): New define_insns.
+	(*maddhisi4tb, *maddhisi4tt): New define_insns.
+
+	gcc/testsuite/
+	* gcc.target/arm/smlatb-1.c: New file.
+	* gcc.target/arm/smlatt-1.c: New file.
+	* gcc.target/arm/smlaltb-1.c: New file.
+	* gcc.target/arm/smlaltt-1.c: New file.
+
+2011-06-07  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+
+	2011-06-07  Bernd Schmidt  <bernds@codesourcery.com>
+		    Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* simplify-rtx.c (simplify_unary_operation_1): Canonicalize widening
+	multiplies.
+	* doc/md.texi (Canonicalization of Instructions): Document widening
+	multiply canonicalization.
+
+	gcc/testsuite/
+	* gcc.target/arm/mla-2.c: New test.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* gimple.c (gimple_build_call_internal_1): Add missing call to
+	gimple_call_reset_alias_info.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* gcc.dg/vect/vect-strided-u16-i3.c: New test.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* lib/target-supports.exp (check_effective_target_vect_strided):
+	Replace with...
+	(check_effective_target_vect_strided2)
+	(check_effective_target_vect_strided3)
+	(check_effective_target_vect_strided4)
+	(check_effective_target_vect_strided8): ...these new functions.
+
+	* gcc.dg/vect/O3-pr39675-2.c: Update accordingly.
+	* gcc.dg/vect/costmodel/ppc/costmodel-slp-12.c: Likewise.
+	* gcc.dg/vect/fast-math-slp-27.c: Likewise.
+	* gcc.dg/vect/if-cvt-stores-vect-ifcvt-18.c: Likewise.
+	* gcc.dg/vect/pr37539.c: Likewise.
+	* gcc.dg/vect/slp-11a.c: Likewise.
+	* gcc.dg/vect/slp-11b.c: Likewise.
+	* gcc.dg/vect/slp-11c.c: Likewise.
+	* gcc.dg/vect/slp-12a.c: Likewise.
+	* gcc.dg/vect/slp-12b.c: Likewise.
+	* gcc.dg/vect/slp-18.c: Likewise.
+	* gcc.dg/vect/slp-19a.c: Likewise.
+	* gcc.dg/vect/slp-19b.c: Likewise.
+	* gcc.dg/vect/slp-21.c: Likewise.
+	* gcc.dg/vect/slp-23.c: Likewise.
+	* gcc.dg/vect/vect-cselim-1.c: Likewise.
+
+	* gcc.dg/vect/fast-math-vect-complex-3.c: Use vect_stridedN
+	instead of vect_interleave && vect_extract_even_odd.
+	* gcc.dg/vect/no-scevccp-outer-10a.c: Likewise.
+	* gcc.dg/vect/no-scevccp-outer-10b.c: Likewise.
+	* gcc.dg/vect/no-scevccp-outer-20.c: Likewise.
+	* gcc.dg/vect/vect-1.c: Likewise.
+	* gcc.dg/vect/vect-10.c: Likewise.
+	* gcc.dg/vect/vect-98.c: Likewise.
+	* gcc.dg/vect/vect-107.c: Likewise.
+	* gcc.dg/vect/vect-strided-a-mult.c: Likewise.
+	* gcc.dg/vect/vect-strided-a-u16-i2.c: Likewise.
+	* gcc.dg/vect/vect-strided-a-u16-i4.c: Likewise.
+	* gcc.dg/vect/vect-strided-a-u16-mult.c: Likewise.
+	* gcc.dg/vect/vect-strided-a-u32-mult.c: Likewise.
+	* gcc.dg/vect/vect-strided-a-u8-i2-gap.c: Likewise.
+	* gcc.dg/vect/vect-strided-a-u8-i8-gap2.c: Likewise.
+	* gcc.dg/vect/vect-strided-a-u8-i8-gap7.c: Likewise.
+	* gcc.dg/vect/vect-strided-float.c: Likewise.
+	* gcc.dg/vect/vect-strided-mult-char-ls.c: Likewise.
+	* gcc.dg/vect/vect-strided-mult.c: Likewise.
+	* gcc.dg/vect/vect-strided-same-dr.c: Likewise.
+	* gcc.dg/vect/vect-strided-u16-i2.c: Likewise.
+	* gcc.dg/vect/vect-strided-u16-i4.c: Likewise.
+	* gcc.dg/vect/vect-strided-u32-i4.c: Likewise.
+	* gcc.dg/vect/vect-strided-u32-i8.c: Likewise.
+	* gcc.dg/vect/vect-strided-u32-mult.c: Likewise.
+	* gcc.dg/vect/vect-strided-u8-i2-gap.c: Likewise.
+	* gcc.dg/vect/vect-strided-u8-i2.c: Likewise.
+	* gcc.dg/vect/vect-strided-u8-i8-gap2.c: Likewise.
+	* gcc.dg/vect/vect-strided-u8-i8-gap4.c: Likewise.
+	* gcc.dg/vect/vect-strided-u8-i8-gap7.c: Likewise.
+	* gcc.dg/vect/vect-strided-u8-i8.c: Likewise.
+	* gcc.dg/vect/vect-vfa-03.c: Likewise.
+
+	* gcc.dg/vect/no-scevccp-outer-18.c: Add vect_stridedN to the
+	target condition.
+	* gcc.dg/vect/pr30843.c: Likewise.
+	* gcc.dg/vect/pr33866.c: Likewise.
+	* gcc.dg/vect/slp-reduc-6.c: Likewise.
+	* gcc.dg/vect/vect-strided-store-a-u8-i2.c: Likewise.
+	* gcc.dg/vect/vect-strided-store-u16-i4.c: Likewise.
+	* gcc.dg/vect/vect-strided-store-u32-i2.c: Likewise.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* gcc.dg/vect/slp-11.c: Split into...
+	* gcc.dg/vect/slp-11a.c, gcc.dg/vect/slp-11b.c,
+	gcc.dg/vect/slp-11c.c: ...these tests.
+	* gcc.dg/vect/slp-12a.c: Split 4-stride loop into...
+	* gcc.dg/vect/slp-12c.c: ...this new test.
+	* gcc.dg/vect/slp-19.c: Split into...
+	* gcc.dg/vect/slp-19a.c, gcc.dg/vect/slp-19b.c,
+	gcc.dg/vect/slp-19c.c: ...these new tests.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* lib/target-supports.exp
+	(check_effective_target_vect_extract_even_odd_wide): Delete.
+	(check_effective_target_vect_strided_wide): Likewise.
+	* gcc.dg/vect/O3-pr39675-2.c: Use the non-wide versions instead.
+	* gcc.dg/vect/fast-math-pr35982.c: Likewise.
+	* gcc.dg/vect/fast-math-vect-complex-3.c: Likewise.
+	* gcc.dg/vect/pr37539.c: Likewise.
+	* gcc.dg/vect/slp-11.c: Likewise.
+	* gcc.dg/vect/slp-12a.c: Likewise.
+	* gcc.dg/vect/slp-12b.c: Likewise.
+	* gcc.dg/vect/slp-19.c: Likewise.
+	* gcc.dg/vect/slp-23.c: Likewise.
+	* gcc.dg/vect/vect-1.c: Likewise.
+	* gcc.dg/vect/vect-98.c: Likewise.
+	* gcc.dg/vect/vect-107.c: Likewise.
+	* gcc.dg/vect/vect-strided-float.c: Likewise.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-04-21  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* gcc.dg/vect/vect.exp: Run the main tests twice, one with -flto
+	and once without.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainlie:
+
+	2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* config/arm/neon.md (vec_load_lanes<mode><mode>): New expanders,
+	(vec_store_lanes<mode><mode>): Likewise.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* doc/md.texi (vec_load_lanes, vec_store_lanes): Document.
+	* optabs.h (COI_vec_load_lanes, COI_vec_store_lanes): New
+	convert_optab_index values.
+	(vec_load_lanes_optab, vec_store_lanes_optab): New convert optabs.
+	* genopinit.c (optabs): Initialize the new optabs.
+	* internal-fn.def (LOAD_LANES, STORE_LANES): New internal functions.
+	* internal-fn.c (get_multi_vector_move, expand_LOAD_LANES)
+	(expand_STORE_LANES): New functions.
+	* tree.h (build_array_type_nelts): Declare.
+	* tree.c (build_array_type_nelts): New function.
+	* tree-vectorizer.h (vect_model_store_cost): Add a bool argument.
+	(vect_model_load_cost): Likewise.
+	(vect_store_lanes_supported, vect_load_lanes_supported)
+	(vect_record_strided_load_vectors): Declare.
+	* tree-vect-data-refs.c (vect_lanes_optab_supported_p)
+	(vect_store_lanes_supported, vect_load_lanes_supported): New functions.
+	(vect_transform_strided_load): Split out statement recording into...
+	(vect_record_strided_load_vectors): ...this new function.
+	* tree-vect-stmts.c (create_vector_array, read_vector_array)
+	(write_vector_array, create_array_ref): New functions.
+	(vect_model_store_cost): Add store_lanes_p argument.
+	(vect_model_load_cost): Add load_lanes_p argument.
+	(vectorizable_store): Try to use store-lanes functions for
+	interleaved stores.
+	(vectorizable_load): Likewise load-lanes and loads.
+	* tree-vect-slp.c (vect_get_and_check_slp_defs): Update call
+	to vect_model_store_cost.
+	(vect_build_slp_tree): Likewise vect_model_load_cost.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-04-20  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* tree-vect-stmts.c (vectorizable_store): Only chain one related
+	statement per copy.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* tree-inline.c (estimate_num_insns): Likewise.
+
+	Backport from mainline:
+
+	2011-04-20  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* Makefile.in (INTERNAL_FN_DEF, INTERNAL_FN_H): Define.
+	(GIMPLE_H): Include $(INTERNAL_FN_H).
+	(OBJS-common): Add internal-fn.o.
+	(internal-fn.o): New rule.
+	* internal-fn.def: New file.
+	* internal-fn.h: Likewise.
+	* internal-fn.c: Likewise.
+	* gimple.h: Include internal-fn.h.
+	(GF_CALL_INTERNAL): New gf_mask.
+	(gimple_statement_call): Put fntype into a union with a new
+	internal_fn field.
+	(gimple_build_call_internal): Declare.
+	(gimple_build_call_internal_vec): Likewise.
+	(gimple_call_same_target_p): Likewise.
+	(gimple_call_internal_p): New function.
+	(gimple_call_internal_fn): Likewise.
+	(gimple_call_set_fn): Assert that the function is not internal.
+	(gimple_call_set_fndecl): Likewise.
+	(gimple_call_set_internal_fn): New function.
+	(gimple_call_addr_fndecl): Handle null functions.
+	(gimple_call_return_type): Likewise.
+	[---- Plus backport adjustments:
+	(GF_CALL_INTERNAL_FN_SHIFT): New macro.
+	(GF_CALL_INTERNAL_FN): New gf_mask.
+	----]
+	* gimple.c (gimple_build_call_internal_1): New function.
+	(gimple_build_call_internal): Likewise.
+	(gimple_build_call_internal_vec): Likewise.
+	(gimple_call_same_target_p): Likewise.
+	(gimple_call_flags): Handle calls to internal functions.
+	(gimple_call_fnspec): New function.
+	(gimple_call_arg_flags, gimple_call_return_flags): Use it.
+	(gimple_has_side_effects): Handle null functions.
+	(gimple_rhs_has_side_effects): Likewise.
+	(gimple_call_copy_skip_args): Handle calls to internal functions.
+	* cfgexpand.c (expand_call_stmt): Likewise.
+	* expr.c (expand_expr_real_1): Assert that the call isn't internal.
+	* gimple-low.c (gimple_check_call_args): Handle calls to internal
+	functions.
+	* gimple-pretty-print.c (dump_gimple_call): Likewise.
+	* ipa-prop.c (ipa_analyze_call_uses): Handle null functions.
+	* tree-cfg.c (verify_gimple_call): Handle calls to internal functions.
+	(do_warn_unused_result): Likewise.
+	[---- Plus backport adjustments:
+	(verify_stmt): Likewise.
+	----]
+	* tree-eh.c (same_handler_p): Use gimple_call_same_target_p.
+	* tree-ssa-ccp.c (ccp_fold_stmt): Handle calls to internal functions.
+	[---- Plus backport adjustments:
+	(fold_gimple_call): Likewise.
+	----]
+	* tree-ssa-dom.c (hashable_expr): Use the gimple statement to record
+	the target of a call.
+	(initialize_hash_element): Update accordingly.
+	(hashable_expr_equal_p): Use gimple_call_same_target_p.
+	(iterative_hash_hashable_expr): Handle calls to internal functions.
+	(print_expr_hash_elt): Likewise.
+	* tree-ssa-pre.c (can_value_number_call): Likewise.
+	(eliminate): Handle null functions.
+	* tree-ssa-sccvn.c (visit_use): Handle calls to internal functions.
+	* tree-ssa-structalias.c (find_func_aliases): Likewise.
+	* value-prof.c (gimple_ic_transform): Likewise.
+	(gimple_indirect_call_to_profile): Likewise.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-04-14  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* tree-vectorizer.h (vect_strided_store_supported): Add a
+	HOST_WIDE_INT argument.
+	(vect_strided_load_supported): Likewise.
+	(vect_permute_store_chain): Return void.
+	(vect_transform_strided_load): Likewise.
+	(vect_permute_load_chain): Delete.
+	* tree-vect-data-refs.c (vect_strided_store_supported): Take a
+	count argument.  Check that the count is a power of two.
+	(vect_strided_load_supported): Likewise.
+	(vect_permute_store_chain): Return void.  Update after above changes.
+	Assert that the access is supported.
+	(vect_permute_load_chain): Likewise.
+	(vect_transform_strided_load): Return void.
+	* tree-vect-stmts.c (vectorizable_store): Update calls after
+	above interface changes.
+	(vectorizable_load): Likewise.
+	(vect_analyze_stmt): Don't check for strided powers of two here.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-04-14  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* tree-vectorizer.h (vect_create_data_ref_ptr): Add an extra
+	type parameter.
+	* tree-vect-data-refs.c (vect_create_data_ref_ptr): Add an aggr_type
+	parameter.  Generalise code to handle arrays as well as vectors.
+	(vect_setup_realignment): Update accordingly.
+	* tree-vect-stmts.c (vectorizable_store): Likewise.
+	(vectorizable_load): Likewise.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-04-14  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* tree-vect-stmts.c (vectorizable_load): Allocate and free dr_chain
+	within the per-copy loop.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-04-14  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* tree-vect-stmts.c (vectorizable_load): Print the number of copies
+	in the dump file.
+
+2001-06-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-03-25  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* config/arm/arm.h (CANNOT_CHANGE_MODE_CLASS): Restrict FPA_REGS
+	case to VFPv1.
+
+2011-05-26  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6 (svn branches/gcc-4_6-branch 174261).
+
+2011-06-02  Chung-Lin Tang  <cltang@codesourcery.com>
+
+	Backport from mainline:
+
+	2011-03-21  Chung-Lin Tang  <cltang@codesourcery.com>
+
+	gcc/
+	* simplify-rtx.c (simplify_binary_operation_1): Handle
+	(xor (and A B) C) case when B and C are both constants.
+
+	gcc/testsuite/
+	* gcc.target/arm/xor-and.c: New.
+
+	2011-03-18  Chung-Lin Tang  <cltang@codesourcery.com>
+
+	gcc/
+	* combine.c (try_combine): Do simplification only call of
+	subst() on i2 even when i1 is present. Update comments.
+
+	gcc/testsuite/
+	* gcc.target/arm/unsigned-extend-1.c: New.
+
+2011-05-16  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-05-16  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.05-0 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-05-13  Revital Eres  <revital.eres@linaro.org>
+
+	gcc/
+	* ddg.c (free_ddg_all_sccs): Free sccs field in struct ddg_all_sccs.
+	* modulo-sched.c (sms_schedule): Avoid unfreed memory when SMS fails.
+
+2011-05-13  Revital Eres  <revital.eres@linaro.org>
+
+	gcc/
+	* loop-doloop.c (doloop_condition_get): Support new form of
+	doloop pattern and use prev_nondebug_insn instead of PREV_INSN.
+	* config/arm/thumb2.md (*thumb2_addsi3_compare0): Remove "*".
+	(doloop_end): New.
+	* config/arm/arm.md (*addsi3_compare0): Remove "*".
+	* params.def (sms-min-sc): New param flag.
+	* doc/invoke.texi (sms-min-sc): Document it.
+	* ddg.c (create_ddg_dep_from_intra_loop_link): If a true dep edge
+	enters the branch create an anti edge in the opposite direction
+	to prevent the creation of reg-moves.
+	* modulo-sched.c: Adjust comment to reflect the fact we are
+	scheduling closing branch.
+	(PS_STAGE_COUNT): Rename to CALC_STAGE_COUNT and redefine.
+	(stage_count): New field in struct partial_schedule.
+	(calculate_stage_count): New function.
+	(normalize_sched_times): Rename to reset_sched_times and handle
+	incrementing the sched time of the nodes by a constant value
+	passed as parameter.
+	(duplicate_insns_of_cycles): Skip closing branch.
+	(sms_schedule_by_order): Schedule closing branch.
+	(ps_insn_find_column): Handle closing branch.
+	(sms_schedule): Call reset_sched_times and adjust the code to
+	support scheduling of the closing branch. Use sms-min-sc.
+	Support new form of doloop pattern.
+	(ps_insert_empty_row): Update calls to normalize_sched_times
+	and rotate_partial_schedule functions.
+
+2011-05-12  Michael Hope  <michael.hope@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-05-05  Michael Hope  <michael.hope@linaro.org>
+
+	PR pch/45979
+	* config/host-linux.c (TRY_EMPTY_VM_SPACE): Define for
+	__ARM_EABI__ hosts.
+
+2011-05-06  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6 (svn branches/gcc-4_6-branch 173480).
+
+2011-05-06  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	From Sergey Grechanik  <mouseentity@ispras.ru>, approved for mainline
+
+	* config/arm/arm.c (coproc_secondary_reload_class): Return NO_REGS
+	for constant vectors.
+
+2011-04-26  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+
+	2011-04-05  Tom de Vries  <tom@codesourcery.com>
+
+	PR target/43920
+	gcc/
+	* config/arm/arm.h (BRANCH_COST): Set to 1 for Thumb-2 when optimizing
+	for size.
+
+2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/testsuite/
+	From  Richard Earnshaw  <rearnsha@arm.com>
+
+	PR target/46329
+	* gcc.target/arm/pr46329.c: New test.
+
+	gcc/
+	PR target/46329
+	* config/arm/arm.c (arm_legitimate_constant_p_1): Return false
+	for all Neon struct constants.
+
+2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* targhooks.h (default_legitimate_constant_p); Declare.
+	* targhooks.c (default_legitimate_constant_p): New function.
+
+	Backport from mainline:
+	2011-04-21  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* target.def (legitimate_constant_p): New hook.
+	* doc/tm.texi.in (LEGITIMATE_CONSTANT_P): Replace with...
+	(TARGET_LEGITIMATE_CONSTANT_P): ...this.
+	* doc/tm.texi: Regenerate.
+	* calls.c (precompute_register_parameters): Replace uses of
+	LEGITIMATE_CONSTANT_P with targetm.legitimate_constant_p.
+	(emit_library_call_value_1): Likewise.
+	* expr.c (move_block_to_reg, can_store_by_pieces, emit_move_insn)
+	(compress_float_constant, emit_push_insn, expand_expr_real_1): Likewise.
+	* recog.c (general_operand, immediate_operand): Likewise.
+	* reload.c (find_reloads_toplev, find_reloads_address_part): Likewise.
+	* reload1.c (init_eliminable_invariants): Likewise.
+
+	* config/arm/arm-protos.h (arm_cannot_force_const_mem): Delete.
+	* config/arm/arm.h (ARM_LEGITIMATE_CONSTANT_P): Likewise.
+	(THUMB_LEGITIMATE_CONSTANT_P, LEGITIMATE_CONSTANT_P): Likewise.
+	* config/arm/arm.c (TARGET_LEGITIMATE_CONSTANT_P): Define.
+	(arm_legitimate_constant_p_1, thumb_legitimate_constant_p)
+	(arm_legitimate_constant_p): New functions.
+	(arm_cannot_force_const_mem): Make static.
+
+2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* hooks.h (hook_bool_mode_uhwi_false): Declare.
+	* hooks.c (hook_bool_mode_uhwi_false): New function.
+	* target.def (array_mode_supported_p): New hook.
+	* doc/tm.texi.in (TARGET_ARRAY_MODE_SUPPORTED_P): Add @hook.
+	* doc/tm.texi: Regenerate.
+	* stor-layout.c (mode_for_array): New function.
+	(layout_type): Use it.
+	* config/arm/arm.c (arm_array_mode_supported_p): New function.
+	(TARGET_ARRAY_MODE_SUPPORTED_P): Define.
+
+2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-04-12  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* config/arm/arm.c (arm_print_operand): Use MEM_SIZE to get the
+	size of a '%A' memory reference.
+	(T_DREG, T_QREG): New neon_builtin_type_bits.
+	(arm_init_neon_builtins): Assert that the load and store operands
+	are neon_struct_operands.
+	(locate_neon_builtin_icode): Provide the neon_builtin_type_bits.
+	(NEON_ARG_MEMORY): New builtin_arg.
+	(neon_dereference_pointer): New function.
+	(arm_expand_neon_args): Add a neon_builtin_type_bits argument.
+	Handle NEON_ARG_MEMORY.
+	(arm_expand_neon_builtin): Update after above interface changes.
+	Use NEON_ARG_MEMORY for loads and stores.
+	* config/arm/predicates.md (neon_struct_operand): New predicate.
+	* config/arm/iterators.md (V_two_elem): Tweak formatting.
+	(V_three_elem): Use BLKmode for accesses that have no associated mode.
+	(V_four_elem): Tweak formatting.
+	* config/arm/neon.md (neon_vld1<mode>, neon_vld1_dup<mode>)
+	(neon_vst1_lane<mode>, neon_vst1<mode>, neon_vld2<mode>)
+	(neon_vld2_lane<mode>, neon_vld2_dup<mode>, neon_vst2<mode>)
+	(neon_vst2_lane<mode>, neon_vld3<mode>, neon_vld3_lane<mode>)
+	(neon_vld3_dup<mode>, neon_vst3<mode>, neon_vst3_lane<mode>)
+	(neon_vld4<mode>, neon_vld4_lane<mode>, neon_vld4_dup<mode>)
+	(neon_vst4<mode>): Replace pointer operand with a memory operand.
+	Use %A in the output template.
+	(neon_vld3qa<mode>, neon_vld3qb<mode>, neon_vst3qa<mode>)
+	(neon_vst3qb<mode>, neon_vld4qa<mode>, neon_vld4qb<mode>)
+	(neon_vst4qa<mode>, neon_vst4qb<mode>): Likewise, but halve
+	the width of the memory access.  Remove post-increment.
+	* config/arm/neon-testgen.ml: Allow addresses to have an alignment.
+
+	gcc/testsuite/
+	Backport from mainline:
+
+	2011-04-12  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	* gcc.target/arm/neon-vld3-1.c: New test.
+	* gcc.target/arm/neon-vst3-1.c: New test.
+	* gcc.target/arm/neon/v*.c: Regenerate.
+
+2011-05-03  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	Backport from mainline:
+
+	2011-03-30  Richard Sandiford  <richard.sandiford@linaro.org>
+		    Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	PR target/43590
+	* config/arm/neon.md (neon_vld3qa<mode>, neon_vld4qa<mode>): Remove
+	operand 1 and reshuffle the operands to match.
+	(neon_vld3<mode>, neon_vld4<mode>): Update accordingly.
+
+2011-05-04  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	Backport from mainline:
+
+	2011-03-29  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	PR debug/48190
+	* dwarf2out.c (dw_loc_list_node): Add resolved_addr and replaced.
+	(cached_dw_loc_list_def): New structure.
+	(cached_dw_loc_list): New typedef.
+	(cached_dw_loc_list_table): New variable.
+	(cached_dw_loc_list_table_hash): New function.
+	(cached_dw_loc_list_table_eq): Likewise.
+	(add_location_or_const_value_attribute): Take a bool cache_p.
+	Cache the list when the parameter is true.
+	(gen_formal_parameter_die): Update caller.
+	(gen_variable_die): Likewise.
+	(dwarf2out_finish): Likewise.
+	(dwarf2out_abstract_function): Nullify cached_dw_loc_list_table
+	while generating debug info for the decl.
+	(dwarf2out_function_decl): Clear cached_dw_loc_list_table.
+	(dwarf2out_init): Initialize cached_dw_loc_list_table.
+	(resolve_addr): Cache the result of resolving a chain of
+	location lists.
+
+2011-04-26  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+
+	2011-04-15  Maxim Kuvyrkov  <maxim@codesourcery.com>
+
+	gcc/
+	* combine.c (subst, combine_simlify_rtx): Add new argument, use it
+	to track processing of conditionals.  Update all callers.
+	(try_combine, simplify_if_then_else): Update.
+
+	2011-04-25  Maxim Kuvyrkov  <maxim@codesourcery.com>
+		    Eric Botcazou <ebotcazou@adacore.com>
+
+	gcc/
+	* combine.c (combine_simplify_rtx): Avoid mis-simplifying conditionals
+	for STORE_FLAG_VALUE==-1 case.
+
+2011-05-02  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from FSF:
+
+	2011-03-27  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* config/arm/arm.c (arm_autovectorize_vector_sizes): New function.
+	(TARGET_VECTORIZE_AUTOVECTORIZE_VECTOR_SIZES): Define.
+
+	gcc/testsuite/
+	* gcc.dg/vect/vect-outer-5.c: Reduce the distance between data
+	accesses to preserve the meaning of the test for doubleword vectors.
+	* gcc.dg/vect/no-vfa-pr29145.c: Likewise.
+	* gcc.dg/vect/slp-3.c: Reduce the loop bound for the same reason.
+
+2011-04-27  Ira Rosen  <ira.rosen@linaro.org>
+
+	Backport from FSF:
+
+	2011-04-03  Richard Guenther  <rguenther@suse.de>
+		    Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* tree-if-conv.c (memrefs_read_or_written_unconditionally): Strip all
+	non-variable offsets and compare the remaining bases of the two
+	accesses instead of looking for exact same data-ref.
+
+	gcc/testsuite/
+	* gcc.dg/vect/if-cvt-stores-vect-ifcvt-18.c: New test.
+	* gcc.dg/vect/vect.exp: Run if-cvt-stores-vect* tests with
+	-ftree-loop-if-convert-stores.
+
+2011-04-21  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+
+	2008-12-03  Daniel Jacobowitz  <dan@codesourcery.com>
+
+	gcc/testsuite/
+	* gcc.dg/vect/vect-shift-3.c, gcc.dg/vect/vect-shift-4.c: New.
+	* lib/target-supports.exp (check_effective_target_vect_shift_char): New
+	function.
+
+2011-04-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-04-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.04-0 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-04-13  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	Backport from FSF:
+
+	2011-04-12  Ramana Radhakrishnan  <ramana.radhakrishnan@linaro.org>
+
+	gcc/
+	* config/arm/arm.md (*arm_negdi2): Fix early clobber constraints.
+
+2011-03-27  Ira Rosen  <ira.rosen@linaro.org>
+
+	gcc/
+	* doc/invoke.texi (max-stores-to-sink): Document.
+	* params.h (MAX_STORES_TO_SINK): Define.
+	* opts.c (finish_options): Set MAX_STORES_TO_SINK to 0
+	if either vectorization or if-conversion is disabled.
+	* tree-data-ref.c (dr_equal_offsets_p1): Moved and renamed from
+	tree-vect-data-refs.c vect_equal_offsets.
+	(dr_equal_offsets_p): New function.
+	(find_data_references_in_bb): Remove static.
+	* tree-data-ref.h (find_data_references_in_bb): Declare.
+	(dr_equal_offsets_p): Likewise.
+	* tree-vect-data-refs.c (vect_equal_offsets): Move to tree-data-ref.c.
+	(vect_drs_dependent_in_basic_block): Update calls to
+	vect_equal_offsets.
+	(vect_check_interleaving): Likewise.
+	* tree-ssa-phiopt.c: Include cfgloop.h and tree-data-ref.h.
+	(cond_if_else_store_replacement): Rename to...
+	(cond_if_else_store_replacement_1): ... this.  Change arguments and
+	documentation.
+	(cond_if_else_store_replacement): New function.
+	* Makefile.in (tree-ssa-phiopt.o): Adjust dependencies.
+	* params.def (PARAM_MAX_STORES_TO_SINK): Define.
+
+	gcc/testsuite/
+	* gcc.dg/vect/vect-cselim-1.c: New test.
+	* gcc.dg/vect/vect-cselim-2.c: New test.
+
+2011-04-07  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6 (svn branches/gcc-4_6-branch 171921).
+
+2011-03-23  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+
+	2011-03-23  Julian Brown  <julian@codesourcery.com>
+
+	gcc/
+	* expr.c (expand_expr_real_1): Only use BLKmode for volatile
+	accesses which are not naturally aligned.
+
+2011-03-26  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6 (svn branches/gcc-4_6-branch 171336).
+
+2011-03-22  Andrew Stubbs  <ams@codesourcery.com>
+
+	Backport from FSF:
+
+	2011-03-21  Daniel Jacobowitz  <dan@codesourcery.com>
+
+	gcc/
+	* config/arm/unwind-arm.c (__gnu_unwind_pr_common): Correct test
+	for barrier handlers.
+
+2011-03-13  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6 (trunk svn 170846).
+
+2011-03-10  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6 (trunk svn 170669).
+
+2011-03-03  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* LINARO-VERSION: Bump version.
+
+2011-03-03  Andrew Stubbs  <ams@codesourcery.com>
+
+	GCC Linaro 4.6-2011.03-0 released.
+
+	gcc/
+	* LINARO-VERSION: Update.
+
+2011-02-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	* config/arm/predicates.md (neon_lane_number): Accept 0..15.
+
+	gcc/testsuite/
+	* gcc.target/arm/neon-vld-1.c: New test.
+
+2011-02-02  Richard Sandiford  <richard.sandiford@linaro.org>
+
+	gcc/
+	PR target/47551
+	* config/arm/arm.c (coproc_secondary_reload_class): Handle
+	structure modes.  Don't check neon_vector_mem_operand for
+	vector or structure modes.
+
+	gcc/testsuite/
+	PR target/47551
+	* gcc.target/arm/neon-modes-2.c: New test.
+
+2011-02-28  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6 (trunk svn 170492).
+
+2011-02-25  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merge from FSF GCC 4.6 (trunk svn 170356).
+
+2011-02-21  Andrew Stubbs  <ams@codesourcery.com>
+	    Julian Brown  <julian@codesourcery.com>
+	    Mark Shinwell  <shinwell@codesourcery.com>
+
+	Forward-ported from Linaro GCC 4.5 (bzr99324).
+
+	gcc/
+	* config/arm/arm.h (arm_class_likely_spilled_p): Check against
+	LO_REGS only for Thumb-1.
+	(MODE_BASE_REG_CLASS): Restrict base registers to those which can
+	be used in short instructions when optimising for size on Thumb-2.
+
+2011-02-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merged from Linaro GCC 4.5 (bzr99409).
+
+	2010-09-30  Jie Zhang  <jie@codesourcery.com>
+
+	gcc/testsuite/
+	* gcc.target/arm/neon-thumb2-move.c: Add
+	dg-require-effective-target arm_thumb2_ok.
+
+2011-02-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	Merged from Linaro GCC 4.5 (bzr99325).
+
+	2006-04-21  Kazu Hirata  <kazu@codesourcery.com>
+
+	gcc/testsuite/
+	* gcc.target/arm/vfp-ldmdbd.c, gcc.target/arm/vfp-ldmdbs.c,
+	gcc.target/arm/vfp-ldmiad.c, gcc.target/arm/vfp-ldmias.c,
+	gcc.target/arm/vfp-stmdbd.c, gcc.target/arm/vfp-stmdbs.c,
+	gcc.target/arm/vfp-stmiad.c, gcc.target/arm/vfp-stmias.c: New.
+
+2011-02-19  Andrew Stubbs  <ams@codesourcery.com>
+
+	gcc/
+	* configure: Regenerate.
+	* configure.ac (PKGVERSION): Set default to a custom
+	Linaro string.
+	* LINARO-VERSION: New file.
+
+Imported GCC from FSF trunk SVN revision 170067.

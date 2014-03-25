@@ -1,0 +1,45 @@
+ol {
+    list-style-type: none;
+}
+
+dt {
+    float: left;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+dt::after {
+    content: ':';
+}
+
+#failure-history {
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+
+#failure-history > li {
+    background-color: #f0f0f0;
+    padding: 10px 10px 10px 50px;
+    margin-bottom: 10px;
+}
+
+.test-list {
+    margin: 0 0 0 -40px;
+    padding: 0;
+}
+
+.info {
+    font-style: italic;
+}
+
+.existing-and-new-bugs {
+    margin-bottom: 0;
+}
+
+.existing-bugs-list {
+    font-size: smaller;
+}
+
+.new-bug-form {
+    display: none;
+}

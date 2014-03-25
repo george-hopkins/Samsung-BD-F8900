@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:1;Synergy BT;vCard
+FN:Synergy BT vCard 1
+ORG:Cambridge Silicon Radio
+TITLE:Obex Tester
+TEL;WORK;VOICE:+45 72200380
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20020918T111920Z
+END:VCARD

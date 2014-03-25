@@ -1,0 +1,45 @@
+Start building toolchain at 2013-04-04 16:10:44
+Start make zlib at 2013-04-04 16:10:44
+Stop  make zlib at 2013-04-04 16:10:45
+Start make binutils at 2013-04-04 16:10:45
+Stop  make binutils at 2013-04-04 16:11:23
+Start make gmp at 2013-04-04 16:11:23
+Stop  make gmp at 2013-04-04 16:11:45
+Start make mpfr at 2013-04-04 16:11:45
+Stop  make mpfr at 2013-04-04 16:12:01
+Start make mpc at 2013-04-04 16:12:01
+Stop  make mpc at 2013-04-04 16:12:06
+Start make ppl at 2013-04-04 16:12:06
+Stop  make ppl at 2013-04-04 16:13:56
+Start make cloog at 2013-04-04 16:13:56
+Stop  make cloog at 2013-04-04 16:14:01
+Start make libelf at 2013-04-04 16:14:01
+Stop  make libelf at 2013-04-04 16:14:03
+Start make kernel at 2013-04-04 16:14:03
+Stop  make kernel at 2013-04-04 16:14:34
+Start make gcc_1 at 2013-04-04 16:14:34
+Stop  make gcc_1 at 2013-04-04 16:17:25
+Start make prepare_glibc at 2013-04-04 16:17:25
+Stop  make prepare_glibc at 2013-04-04 16:17:37
+Start make eglibc_0_headers at 2013-04-04 16:17:37
+Stop  make eglibc_0_headers at 2013-04-04 16:18:03
+Start make gcc_2 at 2013-04-04 16:18:03
+Stop  make gcc_2 at 2013-04-04 16:19:59
+Start make glibc_0_final at 2013-04-04 16:19:59
+Stop  make glibc_0_final at 2013-04-04 16:23:41
+Start make EGLIBC_localedef at 2013-04-04 16:23:41
+Stop  make EGLIBC_localedef at 2013-04-04 16:25:00
+Start make gcc_final at 2013-04-04 16:25:00
+Stop  make gcc_final at 2013-04-04 16:27:38
+Start make expat at 2013-04-04 16:27:38
+Stop  make expat at 2013-04-04 16:27:42
+Start make gdb at 2013-04-04 16:27:42
+Stop  make gdb at 2013-04-04 16:28:35
+Start make gdb_gdbserver_0 at 2013-04-04 16:28:35
+Stop  make gdb_gdbserver_0 at 2013-04-04 16:28:40
+Start make additional headers to support RPC at 2013-04-04 16:28:40
+Stop  make additional headers to support RPC at 2013-04-04 16:28:40
+Start make libtirpc at 2013-04-04 16:28:40
+Stop  make libtirpc at 2013-04-04 16:28:53
+Start make Libs finalize at 2013-04-04 16:28:53
+Stop  make Libs finalize at 2013-04-04 16:28:53

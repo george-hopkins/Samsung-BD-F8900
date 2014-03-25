@@ -1,0 +1,156 @@
+BEGIN:VCARD
+VERSION:2.1
+N:1;Synergy BT;vCard
+FN:Synergy BT vCard 1
+ORG:Cambridge Silicon Radio
+TITLE:Obex Tester
+TEL;WORK;VOICE:+45 72200380
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20020918T111920Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Test;Person;vCard
+FN:Person Test
+ORG:Cambridge Silicon Radio
+TITLE:Obex Team Leader
+TEL;WORK;VOICE:+45 99 324 100
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20070924T114908Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Test;OBEX;vCard
+FN:OBEX Test 
+ORG:Cambridge Silicon Radio
+TITLE:Obex Test Engineer
+TEL;WORK;VOICE:+45 98 765 432
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20070924T114908Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Tester;OBEX;vCard
+FN:OBEX Tester 
+ORG:Cambridge Silicon Radio
+TITLE:Obex Test Engineer
+TEL;WORK;VOICE:+45 98 765 432
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20070924T114908Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:2;Synergy BT;vCard
+FN:Synergy BT vCard 2
+ORG:Cambridge Silicon Radio
+TITLE:Obex Tester
+TEL;WORK;VOICE:+45 72200380
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20020918T111920Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Test2;Person;vCard
+FN:Person Test2
+ORG:Cambridge Silicon Radio
+TITLE:Obex Team Leader
+TEL;WORK;VOICE:+45 99 324 100
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20070924T114908Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Test2;OBEX;vCard
+FN:OBEX Test2 
+ORG:Cambridge Silicon Radio
+TITLE:Obex Test Engineer
+TEL;WORK;VOICE:+45 98 765 432
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20070924T114908Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Tester2;OBEX;vCard
+FN:OBEX Tester2 
+ORG:Cambridge Silicon Radio
+TITLE:Obex Test Engineer
+TEL;WORK;VOICE:+45 98 765 432
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20070924T114908Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:3;Synergy BT;vCard
+FN:Synergy BT vCard 3
+ORG:Cambridge Silicon Radio
+TITLE:Obex Tester
+TEL;WORK;VOICE:+45 72200380
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20020918T111920Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Test3;Person;vCard
+FN:Person Test3
+ORG:Cambridge Silicon Radio
+TITLE:Obex Team Leader
+TEL;WORK;VOICE:+45 99 324 100
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20070924T114908Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Test3;OBEX;vCard
+FN:OBEX Test3 
+ORG:Cambridge Silicon Radio
+TITLE:Obex Test Engineer
+TEL;WORK;VOICE:+45 98 765 432
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20070924T114908Z
+END:VCARD
+BEGIN:VCARD
+VERSION:2.1
+N:Tester3;OBEX;vCard
+FN:OBEX Tester3 
+ORG:Cambridge Silicon Radio
+TITLE:Obex Test Engineer
+TEL;WORK;VOICE:+45 98 765 432
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;Novi Science Park=0D=0ANiels Jernes vej 10;Aalborg East;;9220;Denmark
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Novi Science Park=0D=0ANiels Jernes vej 10=0D=0AAalborg East 9220=0D=0ADenma=
+rk
+URL;WORK:http://www.csr.com
+REV:20070924T114908Z
+END:VCARD

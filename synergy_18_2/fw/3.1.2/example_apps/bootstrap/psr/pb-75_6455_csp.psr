@@ -1,0 +1,166 @@
+// =============================================================================
+// 
+// CSR tracking information, report this in case of problems:
+//   $Revision: #2 $
+//   Built Thu Apr 29 09:02:13 2010 GMT
+//   Checked-in $DateTime: 2010/04/29 10:05:41 $
+//   $File: //depot/bc/gemini-1r01mm/dev/patches/6455/pb-75-csp.psr $
+// 
+// Patch is for build 6455 gem_5hci_rom_bt3.0_gemini-1r01mm_0911121409_encr128
+// 
+// Issues patched: B-67368, B-67530, B-67679, B-68232, B-68412, B-68512,
+//                 B-69830, B-70149, B-71662
+// 
+// Documentation from pb-75-csp.pb
+// -------------------------------
+// 
+// General purpose patch and PSKEY bundle for BC8810 A02R01 CSP Packages.
+// 
+// Documentation from bt_pskeys.pb
+// -------------------------------
+// 
+// Issues patched: B-69830, B-70149, B-71662
+// 
+// Non-default PSKEY settings aimed at improving Bluetooth performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches. 
+// 
+// Documentation from patch_clear_bt_tx_max_att.xap
+// ------------------------------------------------
+// 
+// Issues patched: B-67368
+// 
+// The bluetooth radio on BC8810 is not being trimmed correctly
+// 
+// Documentation from patch_hw_timer_mask.c
+// ----------------------------------------
+// 
+// Issues patched: B-67530
+// 
+// On some BC7+ chips an incorrect hardware initialisation can cause completely
+// off-frequency transmissions that are actually outside the ISM Band. As a 
+// result the chip fails to establish any link. This incorrect initialisation
+// happens always. Bluetooth links may not establish, or may establish but will 
+// fail with changing DUT temperature without this patch.
+// 
+// Documentation from patch_radiotest_txstart.xap
+// ----------------------------------------------
+// 
+// Issues patched: B-68412
+// 
+// Output power level for radiotest txstart is low on some BC7+ chips.
+// 
+// Documentation from patch_deep_sleep.xap
+// ---------------------------------------
+// 
+// Issues patched: B-68512
+// 
+// Some BlueCore 7 devices will not deep sleep.
+// 
+// Documentation from bt_dcrs_agc_en_src.xap
+// -----------------------------------------
+// 
+// Issues patched: B-68232
+// 
+// The EDR BER noise floor is out of spec at RF input levels above about
+// -50 dBm. This is due to the AGC not being correctly configured.
+// 
+// Documentation from patch_usb_deep_sleep.c
+// -----------------------------------------
+// 
+// Issues patched: B-67679
+// 
+// Some USB hardware is not powered down while sleeping on BC7+ chips.
+// 
+// Version information for input files
+// -----------------------------------
+// 
+// Created by patchmaker.pl Revision: #40  Date: 2009/12/14 
+// 
+// Input file: pb-75-csp.pb
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/6455/pb-75-csp.pb
+// File revision: 1
+// 
+// Input file: pb-75-common.pb
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/6455/pb-75-common.pb
+// File revision: 2
+// 
+// Input file: bt_pskeys.pb
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/6455/bt_pskeys.pb
+// File revision: 3
+// 
+// Input file: patch_clear_bt_tx_max_att.xap
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/6455/patch_clear_bt_tx_max_att.xap
+// File revision: 1
+// 
+// Input file: ../patch_utils.inc
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/patch_utils.inc
+// File revision: 1
+// 
+// Input file: patch_hw_timer_mask.c
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/6455/patch_hw_timer_mask.c
+// File revision: 1
+// 
+// Input file: patch_radiotest_txstart.xap
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/6455/patch_radiotest_txstart.xap
+// File revision: 1
+// 
+// Input file: patch_deep_sleep.xap
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/6455/patch_deep_sleep.xap
+// File revision: 1
+// 
+// Input file: bt_dcrs_agc_en_src.xap
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/6455/bt_dcrs_agc_en_src.xap
+// File revision: 1
+// 
+// Input file: patch_usb_deep_sleep.c
+// Depot file: //depot/bc/gemini-1r01mm/dev/patches/6455/patch_usb_deep_sleep.c
+// File revision: 1
+
+// patch_hardware_0, PSKEY_PATCH50 (0x212c, 8492), 17 words
+&212c = 0001 0e45 0014 f000 5325 0114 e700 8425 f100 1115 0118 ff2b ff0e 0e00 4a18 00e2 0151
+
+// patch_hardware_1, PSKEY_PATCH51 (0x212d, 8493), 27 words
+&212d = 0001 0ae3 e700 8415 0184 0bf0 ea00 9c15 f000 5325 0118 ff2b ff0e 0b00 e718 00e2 f000 5315 ea00 9c25 0118 ff2b ff0e 0b00 0d18 00e2 f8f3
+
+// patch_hardware_2, PSKEY_PATCH52 (0x212e, 8494), 14 words
+&212e = 0000 5fb0 0114 3625 f800 7c15 0027 0018 ff2b ff0e 6000 b318 00e2 fbfb
+
+// patch_hardware_3, PSKEY_PATCH53 (0x212f, 8495), 14 words
+&212f = 0000 b337 0518 f200 2229 0118 0014 ff27 ff0e b300 3a14 ff27 ffe3 6175
+
+// patch_hardware_4, PSKEY_PATCH54 (0x2130, 8496), 12 words
+&2130 = 0000 bbd4 0a18 f200 2229 0018 ff2b ff0e bc00 d718 00e2 ad0d
+
+// patch_hardware_5, PSKEY_PATCH55 (0x2131, 8497), 13 words
+&2131 = 0000 d65a 0514 f200 2225 0014 ff27 ff0e d600 5d14 ff27 ffe3 f974
+
+// explicit, PSKEY_BT_TX_MIXER_CTRIM_OFFSET (0x2175, 8565), 5 words
+&2175 = 0000 0000 0000 0000 0000
+
+// explicit, PSKEY_BT_ANA_TX_MIXER_CONFIG (0x218c, 8588), 1 words
+&218c = 0072
+
+// explicit, PSKEY_RX_ADC_CONFIG (0x21ad, 8621), 5 words
+&21ad = 3150 0040 1725 0f15 0c1b
+
+// explicit, PSKEY_LO_CAL_CONFIG (0x21ae, 8622), 17 words
+&21ae = 0001 0001 0000 0007 0004 0002 0000 1b19 0000 01cc 0395 0395 0004 0064 00c8 0001 028a
+
+// patch_lc_init_radio, PSKEY_PATCH114 (0x2202, 8706), 6 words
+&2202 = 1000 ff14 f100 1125 00e2 078e
+
+// patch_hal_radio_trim_shared_patchpoint, PSKEY_PATCH130 (0x2212, 8722), 21 words
+&2212 = b200 8088 02f0 00e2 b600 7688 09f0 f100 c415 ea00 9b25 0014 f100 c425 00e2 ea00 9b15 f100 c425 00e2 8176
+
+// patch_hal_clocks_deep_sleep, PSKEY_PATCH136 (0x2218, 8728), 11 words
+&2218 = df00 8115 0284 06f0 fd00 e115 02b4 fd00 e125 00e2 f066
+
+// patch_hal_clocks_wake, PSKEY_PATCH137 (0x2219, 8729), 11 words
+&2219 = df00 8115 0284 06f0 fd00 e115 fdc4 fd00 e125 00e2 f557
+
+// explicit, PSKEY_BT_POWER_TABLE_V0 (0x241a, 9242), 40 words
+&241a = 2b15 0050 2a58 0050 ec00 2c18 0040 2b58 0040 f000 2b18 0030 2a58 0030 f400 2c18 0020 2b58 0020 f800 2d18 0010 2b5a 0010 fc00 265a 0000 2b7c 0000 0000 2faa 0000 34cc 0000 0400 3fff 0000 3fff 0000 0800

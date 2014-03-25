@@ -1,0 +1,7 @@
+
+**** Build of configuration Default for project bt ****
+
+make all 
+make: *** No rule to make target `all'.  Stop.
+
+**** Build Finished ****

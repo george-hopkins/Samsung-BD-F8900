@@ -1,0 +1,160 @@
+/* config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Define to omit deprecated API from the library. */
+#undef GIOMM_DISABLE_DEPRECATED
+
+/* Major version number of giomm. */
+#undef GIOMM_MAJOR_VERSION
+
+/* Micro version number of giomm. */
+#undef GIOMM_MICRO_VERSION
+
+/* Minor version number of giomm. */
+#undef GIOMM_MINOR_VERSION
+
+/* Define if giomm is built as a static library */
+#undef GIOMM_STATIC_LIB
+
+/* Define if extern "C" and extern "C++" function pointers are compatible. */
+#undef GLIBMM_CAN_ASSIGN_NON_EXTERN_C_FUNCTIONS_TO_EXTERN_C_CALLBACKS
+
+/* Define if non-instantiated templates may dynamic_cast<> to an undefined
+   type. */
+#undef GLIBMM_CAN_USE_DYNAMIC_CAST_IN_UNUSED_TEMPLATE_WITHOUT_DEFINITION
+
+/* Define if the compiler honors namespaces inside extern "C" blocks. */
+#undef GLIBMM_CAN_USE_NAMESPACES_INSIDE_EXTERNC
+
+/* Defined when the SUN Forte C++ compiler is being used. */
+#undef GLIBMM_COMPILER_SUN_FORTE
+
+/* Defined when the --enable-debug-refcounting configure argument was given */
+#undef GLIBMM_DEBUG_REFCOUNTING
+
+/* Defined when the --enable-api-default-signal-handlers configure argument
+   was given */
+#undef GLIBMM_DEFAULT_SIGNAL_HANDLERS_ENABLED
+
+/* Define to omit deprecated API from the library. */
+#undef GLIBMM_DISABLE_DEPRECATED
+
+/* Defined when the --enable-api-exceptions configure argument was given */
+#undef GLIBMM_EXCEPTIONS_ENABLED
+
+/* Defined if a static member variable may be initialized inline to
+   std::string::npos */
+#undef GLIBMM_HAVE_ALLOWS_STATIC_INLINE_NPOS
+
+/* Defined when time_t is not equivalent to gint32, meaning that it can be
+   used for a method overload */
+#undef GLIBMM_HAVE_C_STD_TIME_T_IS_NOT_INT32
+
+/* Define if the compiler disambiguates template specializations for const and
+   non-const types. */
+#undef GLIBMM_HAVE_DISAMBIGUOUS_CONST_TEMPLATE_SPECIALIZATIONS
+
+/* Defined when the libstdc++ declares the std-namespace */
+#undef GLIBMM_HAVE_NAMESPACE_STD
+
+/* Defined if std::iterator_traits<> is standard-conforming */
+#undef GLIBMM_HAVE_STD_ITERATOR_TRAITS
+
+/* Defined if std::reverse_iterator is in Sun libCstd style */
+#undef GLIBMM_HAVE_SUN_REVERSE_ITERATOR
+
+/* Defined if the STL containers have templated sequence ctors */
+#undef GLIBMM_HAVE_TEMPLATE_SEQUENCE_CTORS
+
+/* Define to 1 if wide stream is available. */
+#undef GLIBMM_HAVE_WIDE_STREAM
+
+/* Major version number of glibmm. */
+#undef GLIBMM_MAJOR_VERSION
+
+/* Define if C++ member functions may refer to member templates. */
+#undef GLIBMM_MEMBER_FUNCTIONS_MEMBER_TEMPLATES
+
+/* Micro version number of glibmm. */
+#undef GLIBMM_MICRO_VERSION
+
+/* Minor version number of glibmm. */
+#undef GLIBMM_MINOR_VERSION
+
+/* Defined when the --enable-api-properties configure argument was given */
+#undef GLIBMM_PROPERTIES_ENABLED
+
+/* Define if glibmm is built as a static library */
+#undef GLIBMM_STATIC_LIB
+
+/* Defined when the --enable-api-vfuncs configure argument was given */
+#undef GLIBMM_VFUNCS_ENABLED
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define to 1 if you have the `flockfile' function. */
+#undef HAVE_FLOCKFILE
+
+/* Define to 1 if you have the `funlockfile' function. */
+#undef HAVE_FUNLOCKFILE
+
+/* Define to 1 if you have the `getc_unlocked' function. */
+#undef HAVE_GETC_UNLOCKED
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the `mkfifo' function. */
+#undef HAVE_MKFIFO
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to the sub-directory in which libtool stores uninstalled libraries.
+   */
+#undef LT_OBJDIR
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* The size of `wchar_t', as computed by sizeof. */
+#undef SIZEOF_WCHAR_T
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS

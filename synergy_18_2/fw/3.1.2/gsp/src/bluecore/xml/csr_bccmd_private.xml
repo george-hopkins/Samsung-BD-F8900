@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_BCCMD_PRIVATE_SIGNALS" discriminant="CSR_BCCMD_PRIVATE_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_types_result" resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrBccmdPrivateBootstrapReq" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivateBootstrapReq">
+        <field name="phandle">
+            <!-- Event identifier -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="payloadLength">
+            <!-- The total length of the BCCMD messages -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="payload" blocklength="payloadLength">
+            <!-- Pointer to the BCCMD messages -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrBccmdPrivateResetInd" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivateResetInd"/>
+
+    <type name="CsrBccmdPrivateResetRes" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivateResetRes"/>
+
+    <type name="CsrBccmdPrivateBootstrapCfm" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivateBootstrapCfm">
+        <field name="status">
+            <!-- Status information about the BCCMD transaction -->
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrBccmdPrivateGetBuildIdReq" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivateGetBuildIdReq">
+        <field name="phandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrBccmdPrivateGetBuildIdCfm" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivateGetBuildIdCfm">
+        <field name="status">
+            <!-- Status information about the BCCMD transaction -->
+            <type>CsrResult</type>
+        </field>
+        <field name="buildId">
+            <!-- Identifies the BlueCore module's firmware version -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrBccmdPrivateQueryReq" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivateQueryReq"/>
+
+    <type name="CsrBccmdPrivatePanicInd" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivatePanicInd"/>
+
+    <type name="CsrBccmdPrivatePanicArgsReq" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivatePanicArgsReq">
+        <field name="phandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrBccmdPrivatePanicArgsCfm" resource="CSR_BCCMD_PRIVATE_SIGNALS" dvalue="CsrBccmdPrivatePanicArgsCfm">
+        <field name="panicStatus">
+            <!-- Status information about the BCCMD transaction -->
+            <type>CsrResult</type>
+        </field>
+        <field name="panicArg">
+            <type>CsrUint16</type>
+        </field>
+        <field name="faultStatus">
+            <type>CsrResult</type>
+        </field>
+        <field name="faultArg">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CSR_BCCMD_PRIVATE_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrBccmdPrivateBootstrapReq"                           value="0x0000"/>
+        <value name="CsrBccmdPrivateResetRes"                               value="0x0001"/>
+        <value name="CsrBccmdPrivateGetBuildIdReq"                          value="0x0002"/>
+        <value name="CsrBccmdPrivateQueryReq"                               value="0x0003"/>
+        <value name="CsrBccmdPrivatePanicArgsReq"                           value="0x0004"/>
+
+        <value name="CsrBccmdPrivateResetInd"                               value="0x8000"/>
+        <value name="CsrBccmdPrivateBootstrapCfm"                           value="0x8001"/>
+        <value name="CsrBccmdPrivateGetBuildIdCfm"                          value="0x8002"/>
+        <value name="CsrBccmdPrivatePanicInd"                               value="0x8003"/>
+        <value name="CsrBccmdPrivatePanicArgsCfm"                           value="0x8004"/>
+    </type>
+
+</definitions>

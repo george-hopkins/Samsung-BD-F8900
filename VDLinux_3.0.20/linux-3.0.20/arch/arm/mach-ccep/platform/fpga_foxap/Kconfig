@@ -1,0 +1,19 @@
+######################################################################
+#
+# 	Kconfig for Fox-MP machine; Samsung VD SoC DTV platform
+# 	
+# 	created by sh.chon@samsung.com
+#
+######################################################################
+#
+# May,31,2010:	created by tukho.kim
+# Nov,12,2011:  modified by sh.chon
+# 
+
+if MACH_FPGA_FOXAP
+
+config FPGA_BUSCLKSRC
+	int "FPGA Bus clock source(#3 clock) frequency (Hz)"
+	default "112500000"
+
+endif # MACH_FPGA_FOXAP

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_ENV_SIGNALS" discriminant="CSR_ENV_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+
+    <type name="CsrCleanupInd" resource="CSR_ENV_SIGNALS" dvalue="CsrCleanupInd">
+        <field name="phandle">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CSR_ENV_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrCleanupInd"         value="0x8000"/>
+    </type>
+            
+</definitions>

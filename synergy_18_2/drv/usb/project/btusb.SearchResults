@@ -1,0 +1,2 @@
+---- #if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 35) Matches (1 in 1 files) ----
+Bt_usb_main.c:#if LINUX_VERSION_CODE < KERNEL_VERSION(2, 6, 35)

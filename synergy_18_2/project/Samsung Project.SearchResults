@@ -1,0 +1,15 @@
+---- CsrBtScDbRemove Matches (14 in 8 files) ----
+Csr_bt_sc_bond_local.c (bt\18.2.2\profile_managers\sc\code):        CsrBtScDbRemove(&scData->deviceAddr);
+Csr_bt_sc_bond_unified.c (bt\18.2.2\profile_managers\sc\code):            CsrBtScDbRemove(&scData->deviceAddr);
+Csr_bt_sc_bond_unified.c (bt\18.2.2\profile_managers\sc\code):        CsrBtScDbRemove(&scData->deviceAddr);
+Csr_bt_sc_db-file.c (bt\18.2.2\porting\sc_db\file):void CsrBtScDbRemove(CsrBtDeviceAddr *addr)
+Csr_bt_sc_db-simple_mem.c (bt\18.2.2\porting\sc_db\simple_mem):void CsrBtScDbRemove(CsrBtDeviceAddr *theAddr)
+Csr_bt_sc_db-simple_mem.c (bt\18.2.2\porting\sc_db\simple_mem):	CSR_LOG_TEXT_DEBUG((CSR_SS_AP_LOG_ID,0, "[simple mem]CsrBtScDbRemove"));
+Csr_bt_sc_db-simple_mem.c (bt\18.2.2\porting\sc_db\simple_mem):	         CSR_LOG_TEXT_DEBUG((CSR_SS_AP_LOG_ID,0, "[simple mem]CsrBtScDbRemove [%d] \n",i));
+Csr_bt_sc_db-simple_mem.c (bt\18.2.2\porting\sc_db\simple_mem):    	    CSR_LOG_TEXT_DEBUG((CSR_SS_AP_LOG_ID,0, "[simple mem]CsrBtScDbRemove error"));
+Csr_bt_sc_db.h (bt\18.2.2\inc):void CsrBtScDbRemove(CsrBtDeviceAddr *theAddr);
+Csr_bt_sc_debond.c (bt\18.2.2\profile_managers\sc\code):            CsrBtScDbRemove(&record.deviceAddr);
+Csr_bt_sc_debond.c (bt\18.2.2\profile_managers\sc\code):            CsrBtScDbRemove(&scData->deviceAddr);
+Csr_bt_sc_debond.c (bt\18.2.2\profile_managers\sc\code):        CsrBtScDbRemove(&record.deviceAddr);
+Csr_bt_sc_rebond.c (bt\18.2.2\profile_managers\sc\code):    CsrBtScDbRemove(&scData->deviceAddr);
+Csr_bt_sc_utils.c (bt\18.2.2\profile_managers\sc\code):                CsrBtScDbRemove(&scData->deviceAddr);

@@ -1,0 +1,1671 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libtasn1-libtasn1">
+<refmeta>
+<refentrytitle role="top_of_page" id="libtasn1-libtasn1.top_of_page">libtasn1</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>
+  LIBTASN1 Library
+</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>libtasn1</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libtasn1-libtasn1.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>#define             <link linkend="ASN1-API:CAPS">ASN1_API</link>
+#define             <link linkend="ASN1-VERSION:CAPS">ASN1_VERSION</link>
+typedef             <link linkend="asn1-retCode">asn1_retCode</link>;
+#define             <link linkend="ASN1-SUCCESS:CAPS">ASN1_SUCCESS</link>
+#define             <link linkend="ASN1-FILE-NOT-FOUND:CAPS">ASN1_FILE_NOT_FOUND</link>
+#define             <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS">ASN1_ELEMENT_NOT_FOUND</link>
+#define             <link linkend="ASN1-IDENTIFIER-NOT-FOUND:CAPS">ASN1_IDENTIFIER_NOT_FOUND</link>
+#define             <link linkend="ASN1-DER-ERROR:CAPS">ASN1_DER_ERROR</link>
+#define             <link linkend="ASN1-VALUE-NOT-FOUND:CAPS">ASN1_VALUE_NOT_FOUND</link>
+#define             <link linkend="ASN1-GENERIC-ERROR:CAPS">ASN1_GENERIC_ERROR</link>
+#define             <link linkend="ASN1-VALUE-NOT-VALID:CAPS">ASN1_VALUE_NOT_VALID</link>
+#define             <link linkend="ASN1-TAG-ERROR:CAPS">ASN1_TAG_ERROR</link>
+#define             <link linkend="ASN1-TAG-IMPLICIT:CAPS">ASN1_TAG_IMPLICIT</link>
+#define             <link linkend="ASN1-ERROR-TYPE-ANY:CAPS">ASN1_ERROR_TYPE_ANY</link>
+#define             <link linkend="ASN1-SYNTAX-ERROR:CAPS">ASN1_SYNTAX_ERROR</link>
+#define             <link linkend="ASN1-MEM-ERROR:CAPS">ASN1_MEM_ERROR</link>
+#define             <link linkend="ASN1-MEM-ALLOC-ERROR:CAPS">ASN1_MEM_ALLOC_ERROR</link>
+#define             <link linkend="ASN1-DER-OVERFLOW:CAPS">ASN1_DER_OVERFLOW</link>
+#define             <link linkend="ASN1-NAME-TOO-LONG:CAPS">ASN1_NAME_TOO_LONG</link>
+#define             <link linkend="ASN1-ARRAY-ERROR:CAPS">ASN1_ARRAY_ERROR</link>
+#define             <link linkend="ASN1-ELEMENT-NOT-EMPTY:CAPS">ASN1_ELEMENT_NOT_EMPTY</link>
+#define             <link linkend="ASN1-PRINT-NAME:CAPS">ASN1_PRINT_NAME</link>
+#define             <link linkend="ASN1-PRINT-NAME-TYPE:CAPS">ASN1_PRINT_NAME_TYPE</link>
+#define             <link linkend="ASN1-PRINT-NAME-TYPE-VALUE:CAPS">ASN1_PRINT_NAME_TYPE_VALUE</link>
+#define             <link linkend="ASN1-PRINT-ALL:CAPS">ASN1_PRINT_ALL</link>
+#define             <link linkend="ASN1-CLASS-UNIVERSAL:CAPS">ASN1_CLASS_UNIVERSAL</link>
+#define             <link linkend="ASN1-CLASS-APPLICATION:CAPS">ASN1_CLASS_APPLICATION</link>
+#define             <link linkend="ASN1-CLASS-CONTEXT-SPECIFIC:CAPS">ASN1_CLASS_CONTEXT_SPECIFIC</link>
+#define             <link linkend="ASN1-CLASS-PRIVATE:CAPS">ASN1_CLASS_PRIVATE</link>
+#define             <link linkend="ASN1-CLASS-STRUCTURED:CAPS">ASN1_CLASS_STRUCTURED</link>
+#define             <link linkend="ASN1-TAG-BOOLEAN:CAPS">ASN1_TAG_BOOLEAN</link>
+#define             <link linkend="ASN1-TAG-INTEGER:CAPS">ASN1_TAG_INTEGER</link>
+#define             <link linkend="ASN1-TAG-SEQUENCE:CAPS">ASN1_TAG_SEQUENCE</link>
+#define             <link linkend="ASN1-TAG-SET:CAPS">ASN1_TAG_SET</link>
+#define             <link linkend="ASN1-TAG-OCTET-STRING:CAPS">ASN1_TAG_OCTET_STRING</link>
+#define             <link linkend="ASN1-TAG-BIT-STRING:CAPS">ASN1_TAG_BIT_STRING</link>
+#define             <link linkend="ASN1-TAG-UTCTime">ASN1_TAG_UTCTime</link>
+#define             <link linkend="ASN1-TAG-GENERALIZEDTime">ASN1_TAG_GENERALIZEDTime</link>
+#define             <link linkend="ASN1-TAG-OBJECT-ID:CAPS">ASN1_TAG_OBJECT_ID</link>
+#define             <link linkend="ASN1-TAG-ENUMERATED:CAPS">ASN1_TAG_ENUMERATED</link>
+#define             <link linkend="ASN1-TAG-NULL:CAPS">ASN1_TAG_NULL</link>
+#define             <link linkend="ASN1-TAG-GENERALSTRING:CAPS">ASN1_TAG_GENERALSTRING</link>
+typedef             <link linkend="node-asn">node_asn</link>;
+typedef             <link linkend="ASN1-TYPE:CAPS">ASN1_TYPE</link>;
+#define             <link linkend="ASN1-TYPE-EMPTY:CAPS">ASN1_TYPE_EMPTY</link>
+typedef             <link linkend="ASN1-ARRAY-TYPE:CAPS">ASN1_ARRAY_TYPE</link>;
+#define             <link linkend="ASN1-MAX-NAME-SIZE:CAPS">ASN1_MAX_NAME_SIZE</link>
+#define             <link linkend="ASN1-MAX-ERROR-DESCRIPTION-SIZE:CAPS">ASN1_MAX_ERROR_DESCRIPTION_SIZE</link>
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-parser2tree">asn1_parser2tree</link>                    (<parameter>const <link linkend="char"><type>char</type></link> *file_name</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *definitions</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-parser2array">asn1_parser2array</link>                   (<parameter>const <link linkend="char"><type>char</type></link> *inputFileName</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *outputFileName</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *vectorName</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-array2tree">asn1_array2tree</link>                     (<parameter>const <link linkend="ASN1-ARRAY-TYPE:CAPS"><type>ASN1_ARRAY_TYPE</type></link> *array</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *definitions</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="asn1-print-structure">asn1_print_structure</link>                (<parameter><link linkend="FILE:CAPS"><type>FILE</type></link> *out</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> structure</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> mode</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-create-element">asn1_create_element</link>                 (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> definitions</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *source_name</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *element</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-delete-structure">asn1_delete_structure</link>               (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *structure</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-delete-element">asn1_delete_element</link>                 (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> structure</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *element_name</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-write-value">asn1_write_value</link>                    (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> node_root</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter>const <link linkend="void"><type>void</type></link> *ivalue</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> len</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-read-value">asn1_read_value</link>                     (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> root</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *ivalue</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-number-of-elements">asn1_number_of_elements</link>             (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> element</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *num</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-der-coding">asn1_der_coding</link>                     (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> element</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *ider</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *ErrorDescription</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-der-decoding">asn1_der_decoding</link>                   (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *element</parameter>,
+                                                         <parameter>const <link linkend="void"><type>void</type></link> *ider</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> len</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-der-decoding-element">asn1_der_decoding_element</link>           (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *structure</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *elementName</parameter>,
+                                                         <parameter>const <link linkend="void"><type>void</type></link> *ider</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> len</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-der-decoding-startEnd">asn1_der_decoding_startEnd</link>          (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> element</parameter>,
+                                                         <parameter>const <link linkend="void"><type>void</type></link> *ider</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> len</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name_element</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *start</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *end</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-expand-any-defined-by">asn1_expand_any_defined_by</link>          (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> definitions</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *element</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-expand-octet-string">asn1_expand_octet_string</link>            (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> definitions</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *element</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *octetName</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *objectName</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-read-tag">asn1_read_tag</link>                       (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> root</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *tagValue</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *classValue</parameter>);
+const <link linkend="char"><returnvalue>char</returnvalue></link> *        <link linkend="asn1-find-structure-from-oid">asn1_find_structure_from_oid</link>        (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> definitions</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *oidValue</parameter>);
+const <link linkend="char"><returnvalue>char</returnvalue></link> *        <link linkend="asn1-check-version">asn1_check_version</link>                  (<parameter>const <link linkend="char"><type>char</type></link> *req_version</parameter>);
+const <link linkend="char"><returnvalue>char</returnvalue></link> *        <link linkend="asn1-strerror">asn1_strerror</link>                       (<parameter><link linkend="asn1-retCode"><type>asn1_retCode</type></link> error</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="asn1-perror">asn1_perror</link>                         (<parameter><link linkend="asn1-retCode"><type>asn1_retCode</type></link> error</parameter>);
+<link linkend="int"><returnvalue>int</returnvalue></link>                 <link linkend="asn1-get-tag-der">asn1_get_tag_der</link>                    (<parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> der_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *cls</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>,
+                                                         <parameter>unsigned <link linkend="long"><type>long</type></link> *tag</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="asn1-octet-der">asn1_octet_der</link>                      (<parameter>unsigned <link linkend="char"><type>char</type></link> *str</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> str_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *der_len</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-get-octet-der">asn1_get_octet_der</link>                  (<parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> der_len</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *ret_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *str</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> str_size</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *str_len</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="asn1-bit-der">asn1_bit_der</link>                        (<parameter>unsigned <link linkend="char"><type>char</type></link> *str</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> bit_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *der_len</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-get-bit-der">asn1_get_bit_der</link>                    (<parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> der_len</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *ret_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *str</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> str_size</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *bit_len</parameter>);
+signed <link linkend="long"><returnvalue>long</returnvalue></link>         <link linkend="asn1-get-length-der">asn1_get_length_der</link>                 (<parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> der_len</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>);
+signed <link linkend="long"><returnvalue>long</returnvalue></link>         <link linkend="asn1-get-length-ber">asn1_get_length_ber</link>                 (<parameter>unsigned <link linkend="char"><type>char</type></link> *ber</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> ber_len</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="asn1-length-der">asn1_length_der</link>                     (<parameter>unsigned long <link linkend="int"><type>int</type></link> len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *ans</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *ans_len</parameter>);
+<link linkend="ASN1-TYPE:CAPS"><returnvalue>ASN1_TYPE</returnvalue></link>           <link linkend="asn1-find-node">asn1_find_node</link>                      (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> pointer</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>);
+<link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        <link linkend="asn1-copy-node">asn1_copy_node</link>                      (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> dst</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *dst_name</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> src</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *src_name</parameter>);
+#define             <link linkend="LIBTASN1-VERSION:CAPS">LIBTASN1_VERSION</link>
+#define             <link linkend="MAX-NAME-SIZE:CAPS">MAX_NAME_SIZE</link>
+#define             <link linkend="MAX-ERROR-DESCRIPTION-SIZE:CAPS">MAX_ERROR_DESCRIPTION_SIZE</link>
+const <link linkend="char"><returnvalue>char</returnvalue></link> *        <link linkend="libtasn1-strerror">libtasn1_strerror</link>                   (<parameter><link linkend="asn1-retCode"><type>asn1_retCode</type></link> error</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="libtasn1-perror">libtasn1_perror</link>                     (<parameter><link linkend="asn1-retCode"><type>asn1_retCode</type></link> error</parameter>);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="libtasn1-libtasn1.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+<refsect1 id="libtasn1-libtasn1.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="ASN1-API:CAPS" role="macro">
+<title>ASN1_API</title>
+<indexterm zone="ASN1-API:CAPS"><primary>ASN1_API</primary></indexterm>
+<programlisting>#define             ASN1_API</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-VERSION:CAPS" role="macro">
+<title>ASN1_VERSION</title>
+<indexterm zone="ASN1-VERSION:CAPS"><primary>ASN1_VERSION</primary></indexterm>
+<programlisting>#define ASN1_VERSION "2.5"
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="asn1-retCode" role="typedef">
+<title>asn1_retCode</title>
+<indexterm zone="asn1-retCode"><primary>asn1_retCode</primary></indexterm>
+<programlisting>  typedef int asn1_retCode;&#160;/* type returned by libtasn1 functions */
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-SUCCESS:CAPS" role="macro">
+<title>ASN1_SUCCESS</title>
+<indexterm zone="ASN1-SUCCESS:CAPS"><primary>ASN1_SUCCESS</primary></indexterm>
+<programlisting>#define ASN1_SUCCESS			0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-FILE-NOT-FOUND:CAPS" role="macro">
+<title>ASN1_FILE_NOT_FOUND</title>
+<indexterm zone="ASN1-FILE-NOT-FOUND:CAPS"><primary>ASN1_FILE_NOT_FOUND</primary></indexterm>
+<programlisting>#define ASN1_FILE_NOT_FOUND		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-ELEMENT-NOT-FOUND:CAPS" role="macro">
+<title>ASN1_ELEMENT_NOT_FOUND</title>
+<indexterm zone="ASN1-ELEMENT-NOT-FOUND:CAPS"><primary>ASN1_ELEMENT_NOT_FOUND</primary></indexterm>
+<programlisting>#define ASN1_ELEMENT_NOT_FOUND		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-IDENTIFIER-NOT-FOUND:CAPS" role="macro">
+<title>ASN1_IDENTIFIER_NOT_FOUND</title>
+<indexterm zone="ASN1-IDENTIFIER-NOT-FOUND:CAPS"><primary>ASN1_IDENTIFIER_NOT_FOUND</primary></indexterm>
+<programlisting>#define ASN1_IDENTIFIER_NOT_FOUND&#160;3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-DER-ERROR:CAPS" role="macro">
+<title>ASN1_DER_ERROR</title>
+<indexterm zone="ASN1-DER-ERROR:CAPS"><primary>ASN1_DER_ERROR</primary></indexterm>
+<programlisting>#define ASN1_DER_ERROR			4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-VALUE-NOT-FOUND:CAPS" role="macro">
+<title>ASN1_VALUE_NOT_FOUND</title>
+<indexterm zone="ASN1-VALUE-NOT-FOUND:CAPS"><primary>ASN1_VALUE_NOT_FOUND</primary></indexterm>
+<programlisting>#define ASN1_VALUE_NOT_FOUND		5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-GENERIC-ERROR:CAPS" role="macro">
+<title>ASN1_GENERIC_ERROR</title>
+<indexterm zone="ASN1-GENERIC-ERROR:CAPS"><primary>ASN1_GENERIC_ERROR</primary></indexterm>
+<programlisting>#define ASN1_GENERIC_ERROR		6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-VALUE-NOT-VALID:CAPS" role="macro">
+<title>ASN1_VALUE_NOT_VALID</title>
+<indexterm zone="ASN1-VALUE-NOT-VALID:CAPS"><primary>ASN1_VALUE_NOT_VALID</primary></indexterm>
+<programlisting>#define ASN1_VALUE_NOT_VALID		7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-ERROR:CAPS" role="macro">
+<title>ASN1_TAG_ERROR</title>
+<indexterm zone="ASN1-TAG-ERROR:CAPS"><primary>ASN1_TAG_ERROR</primary></indexterm>
+<programlisting>#define ASN1_TAG_ERROR			8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-IMPLICIT:CAPS" role="macro">
+<title>ASN1_TAG_IMPLICIT</title>
+<indexterm zone="ASN1-TAG-IMPLICIT:CAPS"><primary>ASN1_TAG_IMPLICIT</primary></indexterm>
+<programlisting>#define ASN1_TAG_IMPLICIT		9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-ERROR-TYPE-ANY:CAPS" role="macro">
+<title>ASN1_ERROR_TYPE_ANY</title>
+<indexterm zone="ASN1-ERROR-TYPE-ANY:CAPS"><primary>ASN1_ERROR_TYPE_ANY</primary></indexterm>
+<programlisting>#define ASN1_ERROR_TYPE_ANY		10
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-SYNTAX-ERROR:CAPS" role="macro">
+<title>ASN1_SYNTAX_ERROR</title>
+<indexterm zone="ASN1-SYNTAX-ERROR:CAPS"><primary>ASN1_SYNTAX_ERROR</primary></indexterm>
+<programlisting>#define ASN1_SYNTAX_ERROR		11
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-MEM-ERROR:CAPS" role="macro">
+<title>ASN1_MEM_ERROR</title>
+<indexterm zone="ASN1-MEM-ERROR:CAPS"><primary>ASN1_MEM_ERROR</primary></indexterm>
+<programlisting>#define ASN1_MEM_ERROR			12
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-MEM-ALLOC-ERROR:CAPS" role="macro">
+<title>ASN1_MEM_ALLOC_ERROR</title>
+<indexterm zone="ASN1-MEM-ALLOC-ERROR:CAPS"><primary>ASN1_MEM_ALLOC_ERROR</primary></indexterm>
+<programlisting>#define ASN1_MEM_ALLOC_ERROR		13
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-DER-OVERFLOW:CAPS" role="macro">
+<title>ASN1_DER_OVERFLOW</title>
+<indexterm zone="ASN1-DER-OVERFLOW:CAPS"><primary>ASN1_DER_OVERFLOW</primary></indexterm>
+<programlisting>#define ASN1_DER_OVERFLOW		14
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-NAME-TOO-LONG:CAPS" role="macro">
+<title>ASN1_NAME_TOO_LONG</title>
+<indexterm zone="ASN1-NAME-TOO-LONG:CAPS"><primary>ASN1_NAME_TOO_LONG</primary></indexterm>
+<programlisting>#define ASN1_NAME_TOO_LONG		15
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-ARRAY-ERROR:CAPS" role="macro">
+<title>ASN1_ARRAY_ERROR</title>
+<indexterm zone="ASN1-ARRAY-ERROR:CAPS"><primary>ASN1_ARRAY_ERROR</primary></indexterm>
+<programlisting>#define ASN1_ARRAY_ERROR		16
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-ELEMENT-NOT-EMPTY:CAPS" role="macro">
+<title>ASN1_ELEMENT_NOT_EMPTY</title>
+<indexterm zone="ASN1-ELEMENT-NOT-EMPTY:CAPS"><primary>ASN1_ELEMENT_NOT_EMPTY</primary></indexterm>
+<programlisting>#define ASN1_ELEMENT_NOT_EMPTY		17
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-PRINT-NAME:CAPS" role="macro">
+<title>ASN1_PRINT_NAME</title>
+<indexterm zone="ASN1-PRINT-NAME:CAPS"><primary>ASN1_PRINT_NAME</primary></indexterm>
+<programlisting>#define ASN1_PRINT_NAME			1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-PRINT-NAME-TYPE:CAPS" role="macro">
+<title>ASN1_PRINT_NAME_TYPE</title>
+<indexterm zone="ASN1-PRINT-NAME-TYPE:CAPS"><primary>ASN1_PRINT_NAME_TYPE</primary></indexterm>
+<programlisting>#define ASN1_PRINT_NAME_TYPE		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-PRINT-NAME-TYPE-VALUE:CAPS" role="macro">
+<title>ASN1_PRINT_NAME_TYPE_VALUE</title>
+<indexterm zone="ASN1-PRINT-NAME-TYPE-VALUE:CAPS"><primary>ASN1_PRINT_NAME_TYPE_VALUE</primary></indexterm>
+<programlisting>#define ASN1_PRINT_NAME_TYPE_VALUE&#160;3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-PRINT-ALL:CAPS" role="macro">
+<title>ASN1_PRINT_ALL</title>
+<indexterm zone="ASN1-PRINT-ALL:CAPS"><primary>ASN1_PRINT_ALL</primary></indexterm>
+<programlisting>#define ASN1_PRINT_ALL			4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-CLASS-UNIVERSAL:CAPS" role="macro">
+<title>ASN1_CLASS_UNIVERSAL</title>
+<indexterm zone="ASN1-CLASS-UNIVERSAL:CAPS"><primary>ASN1_CLASS_UNIVERSAL</primary></indexterm>
+<programlisting>#define ASN1_CLASS_UNIVERSAL		0x00&#160;/* old: 1 */
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-CLASS-APPLICATION:CAPS" role="macro">
+<title>ASN1_CLASS_APPLICATION</title>
+<indexterm zone="ASN1-CLASS-APPLICATION:CAPS"><primary>ASN1_CLASS_APPLICATION</primary></indexterm>
+<programlisting>#define ASN1_CLASS_APPLICATION		0x40&#160;/* old: 2 */
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-CLASS-CONTEXT-SPECIFIC:CAPS" role="macro">
+<title>ASN1_CLASS_CONTEXT_SPECIFIC</title>
+<indexterm zone="ASN1-CLASS-CONTEXT-SPECIFIC:CAPS"><primary>ASN1_CLASS_CONTEXT_SPECIFIC</primary></indexterm>
+<programlisting>#define ASN1_CLASS_CONTEXT_SPECIFIC&#160;0x80&#160;/* old: 3 */
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-CLASS-PRIVATE:CAPS" role="macro">
+<title>ASN1_CLASS_PRIVATE</title>
+<indexterm zone="ASN1-CLASS-PRIVATE:CAPS"><primary>ASN1_CLASS_PRIVATE</primary></indexterm>
+<programlisting>#define ASN1_CLASS_PRIVATE		0xC0&#160;/* old: 4 */
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-CLASS-STRUCTURED:CAPS" role="macro">
+<title>ASN1_CLASS_STRUCTURED</title>
+<indexterm zone="ASN1-CLASS-STRUCTURED:CAPS"><primary>ASN1_CLASS_STRUCTURED</primary></indexterm>
+<programlisting>#define ASN1_CLASS_STRUCTURED		0x20
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-BOOLEAN:CAPS" role="macro">
+<title>ASN1_TAG_BOOLEAN</title>
+<indexterm zone="ASN1-TAG-BOOLEAN:CAPS"><primary>ASN1_TAG_BOOLEAN</primary></indexterm>
+<programlisting>#define ASN1_TAG_BOOLEAN		0x01
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-INTEGER:CAPS" role="macro">
+<title>ASN1_TAG_INTEGER</title>
+<indexterm zone="ASN1-TAG-INTEGER:CAPS"><primary>ASN1_TAG_INTEGER</primary></indexterm>
+<programlisting>#define ASN1_TAG_INTEGER		0x02
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-SEQUENCE:CAPS" role="macro">
+<title>ASN1_TAG_SEQUENCE</title>
+<indexterm zone="ASN1-TAG-SEQUENCE:CAPS"><primary>ASN1_TAG_SEQUENCE</primary></indexterm>
+<programlisting>#define ASN1_TAG_SEQUENCE		0x10
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-SET:CAPS" role="macro">
+<title>ASN1_TAG_SET</title>
+<indexterm zone="ASN1-TAG-SET:CAPS"><primary>ASN1_TAG_SET</primary></indexterm>
+<programlisting>#define ASN1_TAG_SET			0x11
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-OCTET-STRING:CAPS" role="macro">
+<title>ASN1_TAG_OCTET_STRING</title>
+<indexterm zone="ASN1-TAG-OCTET-STRING:CAPS"><primary>ASN1_TAG_OCTET_STRING</primary></indexterm>
+<programlisting>#define ASN1_TAG_OCTET_STRING		0x04
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-BIT-STRING:CAPS" role="macro">
+<title>ASN1_TAG_BIT_STRING</title>
+<indexterm zone="ASN1-TAG-BIT-STRING:CAPS"><primary>ASN1_TAG_BIT_STRING</primary></indexterm>
+<programlisting>#define ASN1_TAG_BIT_STRING		0x03
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-UTCTime" role="macro">
+<title>ASN1_TAG_UTCTime</title>
+<indexterm zone="ASN1-TAG-UTCTime"><primary>ASN1_TAG_UTCTime</primary></indexterm>
+<programlisting>#define ASN1_TAG_UTCTime		0x17
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-GENERALIZEDTime" role="macro">
+<title>ASN1_TAG_GENERALIZEDTime</title>
+<indexterm zone="ASN1-TAG-GENERALIZEDTime"><primary>ASN1_TAG_GENERALIZEDTime</primary></indexterm>
+<programlisting>#define ASN1_TAG_GENERALIZEDTime&#160;0x18
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-OBJECT-ID:CAPS" role="macro">
+<title>ASN1_TAG_OBJECT_ID</title>
+<indexterm zone="ASN1-TAG-OBJECT-ID:CAPS"><primary>ASN1_TAG_OBJECT_ID</primary></indexterm>
+<programlisting>#define ASN1_TAG_OBJECT_ID		0x06
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-ENUMERATED:CAPS" role="macro">
+<title>ASN1_TAG_ENUMERATED</title>
+<indexterm zone="ASN1-TAG-ENUMERATED:CAPS"><primary>ASN1_TAG_ENUMERATED</primary></indexterm>
+<programlisting>#define ASN1_TAG_ENUMERATED		0x0A
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-NULL:CAPS" role="macro">
+<title>ASN1_TAG_NULL</title>
+<indexterm zone="ASN1-TAG-NULL:CAPS"><primary>ASN1_TAG_NULL</primary></indexterm>
+<programlisting>#define ASN1_TAG_NULL			0x05
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TAG-GENERALSTRING:CAPS" role="macro">
+<title>ASN1_TAG_GENERALSTRING</title>
+<indexterm zone="ASN1-TAG-GENERALSTRING:CAPS"><primary>ASN1_TAG_GENERALSTRING</primary></indexterm>
+<programlisting>#define ASN1_TAG_GENERALSTRING		0x1B
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="node-asn" role="typedef">
+<title>node_asn</title>
+<indexterm zone="node-asn"><primary>node_asn</primary></indexterm>
+<programlisting>  typedef struct node_asn_struct node_asn;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TYPE:CAPS" role="typedef">
+<title>ASN1_TYPE</title>
+<indexterm zone="ASN1-TYPE:CAPS"><primary>ASN1_TYPE</primary></indexterm>
+<programlisting>  typedef node_asn *ASN1_TYPE;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-TYPE-EMPTY:CAPS" role="macro">
+<title>ASN1_TYPE_EMPTY</title>
+<indexterm zone="ASN1-TYPE-EMPTY:CAPS"><primary>ASN1_TYPE_EMPTY</primary></indexterm>
+<programlisting>#define ASN1_TYPE_EMPTY  NULL
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-ARRAY-TYPE:CAPS" role="typedef">
+<title>ASN1_ARRAY_TYPE</title>
+<indexterm zone="ASN1-ARRAY-TYPE:CAPS"><primary>ASN1_ARRAY_TYPE</primary></indexterm>
+<programlisting>  typedef struct static_struct_asn ASN1_ARRAY_TYPE;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-MAX-NAME-SIZE:CAPS" role="macro">
+<title>ASN1_MAX_NAME_SIZE</title>
+<indexterm zone="ASN1-MAX-NAME-SIZE:CAPS"><primary>ASN1_MAX_NAME_SIZE</primary></indexterm>
+<programlisting>#define ASN1_MAX_NAME_SIZE 128
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="ASN1-MAX-ERROR-DESCRIPTION-SIZE:CAPS" role="macro">
+<title>ASN1_MAX_ERROR_DESCRIPTION_SIZE</title>
+<indexterm zone="ASN1-MAX-ERROR-DESCRIPTION-SIZE:CAPS"><primary>ASN1_MAX_ERROR_DESCRIPTION_SIZE</primary></indexterm>
+<programlisting>#define ASN1_MAX_ERROR_DESCRIPTION_SIZE 128
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="asn1-parser2tree" role="function">
+<title>asn1_parser2tree ()</title>
+<indexterm zone="asn1-parser2tree"><primary>asn1_parser2tree</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_parser2tree                    (<parameter>const <link linkend="char"><type>char</type></link> *file_name</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *definitions</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);</programlisting>
+<para>
+Function used to start the parse algorithm.  Creates the structures
+needed to manage the definitions included in <parameter>file_name</parameter> file.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>file_name</parameter>&#160;:</term>
+<listitem><simpara>specify the path and the name of file that contains
+  ASN.1 declarations.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>definitions</parameter>&#160;:</term>
+<listitem><simpara>return the pointer to the structure created from
+  "file_name" ASN.1 declarations.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>errorDescription</parameter>&#160;:</term>
+<listitem><simpara>return the error description or an empty
+string if success.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+<link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: The file has a correct syntax and every identifier
+is known.
+
+<link linkend="ASN1-ELEMENT-NOT-EMPTY:CAPS"><literal>ASN1_ELEMENT_NOT_EMPTY</literal></link>: <parameter>definitions</parameter> not <link linkend="ASN1-TYPE-EMPTY:CAPS"><literal>ASN1_TYPE_EMPTY</literal></link>.
+
+<link linkend="ASN1-FILE-NOT-FOUND:CAPS"><literal>ASN1_FILE_NOT_FOUND</literal></link>: An error occured while opening <parameter>file_name</parameter>.
+
+<link linkend="ASN1-SYNTAX-ERROR:CAPS"><literal>ASN1_SYNTAX_ERROR</literal></link>: The syntax is not correct.
+
+<link linkend="ASN1-IDENTIFIER-NOT-FOUND:CAPS"><literal>ASN1_IDENTIFIER_NOT_FOUND</literal></link>: In the file there is an identifier that
+is not defined.
+
+<link linkend="ASN1-NAME-TOO-LONG:CAPS"><literal>ASN1_NAME_TOO_LONG</literal></link>: In the file there is an identifier whith more
+than <link linkend="ASN1-MAX-NAME-SIZE:CAPS"><literal>ASN1_MAX_NAME_SIZE</literal></link> characters.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-parser2array" role="function">
+<title>asn1_parser2array ()</title>
+<indexterm zone="asn1-parser2array"><primary>asn1_parser2array</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_parser2array                   (<parameter>const <link linkend="char"><type>char</type></link> *inputFileName</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *outputFileName</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *vectorName</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);</programlisting>
+<para>
+Function that generates a C structure from an ASN1 file.  Creates a
+file containing a C vector to use to manage the definitions
+included in <parameter>inputFileName</parameter> file. If <parameter>inputFileName</parameter> is
+"/aa/bb/xx.yy" and <parameter>outputFileName</parameter> is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, the file created is
+"/aa/bb/xx_asn1_tab.c".  If <parameter>vectorName</parameter> is <link linkend="NULL:CAPS"><literal>NULL</literal></link> the vector name
+will be "xx_asn1_tab".</para>
+<variablelist role="params">
+<varlistentry><term><parameter>inputFileName</parameter>&#160;:</term>
+<listitem><simpara>specify the path and the name of file that
+  contains ASN.1 declarations.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>outputFileName</parameter>&#160;:</term>
+<listitem><simpara>specify the path and the name of file that will
+  contain the C vector definition.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>vectorName</parameter>&#160;:</term>
+<listitem><simpara>specify the name of the C vector.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>errorDescription</parameter>&#160;:</term>
+<listitem><simpara>return the error description or an empty
+  string if success.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+<link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: The file has a correct syntax and every identifier
+  is known.
+
+<link linkend="ASN1-FILE-NOT-FOUND:CAPS"><literal>ASN1_FILE_NOT_FOUND</literal></link>: An error occured while opening <parameter>inputFileName</parameter>.
+
+<link linkend="ASN1-SYNTAX-ERROR:CAPS"><literal>ASN1_SYNTAX_ERROR</literal></link>: The syntax is not correct.
+
+<link linkend="ASN1-IDENTIFIER-NOT-FOUND:CAPS"><literal>ASN1_IDENTIFIER_NOT_FOUND</literal></link>: In the file there is an identifier that
+  is not defined.
+
+<link linkend="ASN1-NAME-TOO-LONG:CAPS"><literal>ASN1_NAME_TOO_LONG</literal></link>: In the file there is an identifier whith more
+  than <link linkend="ASN1-MAX-NAME-SIZE:CAPS"><literal>ASN1_MAX_NAME_SIZE</literal></link> characters.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-array2tree" role="function">
+<title>asn1_array2tree ()</title>
+<indexterm zone="asn1-array2tree"><primary>asn1_array2tree</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_array2tree                     (<parameter>const <link linkend="ASN1-ARRAY-TYPE:CAPS"><type>ASN1_ARRAY_TYPE</type></link> *array</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *definitions</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);</programlisting>
+<para>
+Creates the structures needed to manage the ASN.1 definitions.
+<parameter>array</parameter> is a vector created by <link linkend="asn1-parser2array"><function>asn1_parser2array()</function></link>.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>array</parameter>&#160;:</term>
+<listitem><simpara>specify the array that contains ASN.1 declarations
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>definitions</parameter>&#160;:</term>
+<listitem><simpara>return the pointer to the structure created by
+  *ARRAY ASN.1 declarations
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>errorDescription</parameter>&#160;:</term>
+<listitem><simpara>return the error description.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+<link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Structure created correctly.
+
+<link linkend="ASN1-ELEMENT-NOT-EMPTY:CAPS"><literal>ASN1_ELEMENT_NOT_EMPTY</literal></link>: *<parameter>definitions</parameter> not ASN1_TYPE_EMPTY.
+
+<link linkend="ASN1-IDENTIFIER-NOT-FOUND:CAPS"><literal>ASN1_IDENTIFIER_NOT_FOUND</literal></link>: In the file there is an identifier that
+  is not defined (see <parameter>errorDescription</parameter> for more information).
+
+<link linkend="ASN1-ARRAY-ERROR:CAPS"><literal>ASN1_ARRAY_ERROR</literal></link>: The array pointed by <parameter>array</parameter> is wrong.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-print-structure" role="function">
+<title>asn1_print_structure ()</title>
+<indexterm zone="asn1-print-structure"><primary>asn1_print_structure</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                asn1_print_structure                (<parameter><link linkend="FILE:CAPS"><type>FILE</type></link> *out</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> structure</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> mode</parameter>);</programlisting>
+<para>
+Prints on the <parameter>out</parameter> file descriptor the structure's tree starting
+from the <parameter>name</parameter> element inside the structure <parameter>structure</parameter>.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>out</parameter>&#160;:</term>
+<listitem><simpara>pointer to the output file (e.g. stdout).
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>structure</parameter>&#160;:</term>
+<listitem><simpara>pointer to the structure that you want to visit.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>an element of the structure
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mode</parameter>&#160;:</term>
+<listitem><simpara>specify how much of the structure to print, can be
+  <link linkend="ASN1-PRINT-NAME:CAPS"><literal>ASN1_PRINT_NAME</literal></link>, <link linkend="ASN1-PRINT-NAME-TYPE:CAPS"><literal>ASN1_PRINT_NAME_TYPE</literal></link>,
+  <link linkend="ASN1-PRINT-NAME-TYPE-VALUE:CAPS"><literal>ASN1_PRINT_NAME_TYPE_VALUE</literal></link>, or <link linkend="ASN1-PRINT-ALL:CAPS"><literal>ASN1_PRINT_ALL</literal></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-create-element" role="function">
+<title>asn1_create_element ()</title>
+<indexterm zone="asn1-create-element"><primary>asn1_create_element</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_create_element                 (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> definitions</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *source_name</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *element</parameter>);</programlisting>
+<para>
+Creates a structure of type <parameter>source_name</parameter>.  Example using
+ "pkix.asn":
+</para>
+<para>
+rc = asn1_create_element(cert_def, "PKIX1.Certificate", certptr);</para>
+<variablelist role="params">
+<varlistentry><term><parameter>definitions</parameter>&#160;:</term>
+<listitem><simpara>pointer to the structure returned by "parser_asn1" function
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>source_name</parameter>&#160;:</term>
+<listitem><simpara>the name of the type of the new structure (must be
+  inside p_structure).
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>element</parameter>&#160;:</term>
+<listitem><simpara>pointer to the structure created.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+<link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Creation OK.
+
+<link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: SOURCE_NAME isn't known
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-delete-structure" role="function">
+<title>asn1_delete_structure ()</title>
+<indexterm zone="asn1-delete-structure"><primary>asn1_delete_structure</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_delete_structure               (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *structure</parameter>);</programlisting>
+<para>
+Deletes the structure *<parameter>structure</parameter>.  At the end, *<parameter>structure</parameter> is set
+to ASN1_TYPE_EMPTY.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>structure</parameter>&#160;:</term>
+<listitem><simpara>pointer to the structure that you want to delete.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+<link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Everything OK.
+
+<link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: *<parameter>structure</parameter> was ASN1_TYPE_EMPTY.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-delete-element" role="function">
+<title>asn1_delete_element ()</title>
+<indexterm zone="asn1-delete-element"><primary>asn1_delete_element</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_delete_element                 (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> structure</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *element_name</parameter>);</programlisting>
+<para>
+Deletes the element named *<parameter>element_name</parameter> inside *<parameter>structure</parameter>.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>structure</parameter>&#160;:</term>
+<listitem><simpara>pointer to the structure that contains the element you
+  want to delete.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>element_name</parameter>&#160;:</term>
+<listitem><simpara>element's name you want to delete.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+<link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Everything OK.
+
+<link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: The name element was not found.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-write-value" role="function">
+<title>asn1_write_value ()</title>
+<indexterm zone="asn1-write-value"><primary>asn1_write_value</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_write_value                    (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> node_root</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter>const <link linkend="void"><type>void</type></link> *ivalue</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> len</parameter>);</programlisting>
+<para>
+Set the value of one element inside a structure.
+</para>
+<para>
+If an element is OPTIONAL and you want to delete it, you must use
+the value=NULL and len=0.  Using "pkix.asn":
+</para>
+<para>
+result=asn1_write_value(cert, "tbsCertificate.issuerUniqueID",
+NULL, 0);
+</para>
+<para>
+Description for each type:
+</para>
+<para>
+INTEGER: VALUE must contain a two's complement form integer.
+</para>
+<para>
+           value[0]=0xFF ,               len=1 -> integer=-1.
+           value[0]=0xFF value[1]=0xFF , len=2 -> integer=-1.
+           value[0]=0x01 ,               len=1 -> integer= 1.
+           value[0]=0x00 value[1]=0x01 , len=2 -> integer= 1.
+           value="123"                 , len=0 -> integer= 123.
+</para>
+<para>
+ENUMERATED: As INTEGER (but only with not negative numbers).
+</para>
+<para>
+BOOLEAN: VALUE must be the null terminated string "TRUE" or
+  "FALSE" and LEN != 0.
+</para>
+<para>
+           value="TRUE" , len=1 -> boolean=TRUE.
+           value="FALSE" , len=1 -> boolean=FALSE.
+</para>
+<para>
+OBJECT IDENTIFIER: VALUE must be a null terminated string with
+  each number separated by a dot (e.g. "1.2.3.543.1").  LEN != 0.
+</para>
+<para>
+           value="1 2 840 10040 4 3" , len=1 -> OID=dsa-with-sha.
+</para>
+<para>
+UTCTime: VALUE must be a null terminated string in one of these
+  formats: "YYMMDDhhmmssZ", "YYMMDDhhmmssZ",
+  "YYMMDDhhmmss+hh'mm'", "YYMMDDhhmmss-hh'mm'",
+  "YYMMDDhhmm+hh'mm'", or "YYMMDDhhmm-hh'mm'".  LEN != 0.
+</para>
+<para>
+           value="9801011200Z" , len=1 -> time=Jannuary 1st, 1998
+           at 12h 00m Greenwich Mean Time
+</para>
+<para>
+GeneralizedTime: VALUE must be in one of this format:
+  "YYYYMMDDhhmmss.sZ", "YYYYMMDDhhmmss.sZ",
+  "YYYYMMDDhhmmss.s+hh'mm'", "YYYYMMDDhhmmss.s-hh'mm'",
+  "YYYYMMDDhhmm+hh'mm'", or "YYYYMMDDhhmm-hh'mm'" where ss.s
+  indicates the seconds with any precision like "10.1" or "01.02".
+  LEN != 0
+</para>
+<para>
+           value="2001010112001.12-0700" , len=1 -> time=Jannuary
+           1st, 2001 at 12h 00m 01.12s Pacific Daylight Time
+</para>
+<para>
+OCTET STRING: VALUE contains the octet string and LEN is the
+  number of octets.
+</para>
+<para>
+           value="$\backslash$x01$\backslash$x02$\backslash$x03" ,
+           len=3 -> three bytes octet string
+</para>
+<para>
+GeneralString: VALUE contains the generalstring and LEN is the
+  number of octets.
+</para>
+<para>
+           value="$\backslash$x01$\backslash$x02$\backslash$x03" ,
+           len=3 -> three bytes generalstring
+</para>
+<para>
+BIT STRING: VALUE contains the bit string organized by bytes and
+  LEN is the number of bits.
+</para>
+<para>
+  value="$\backslash$xCF" , len=6 -> bit string="110011" (six
+  bits)
+</para>
+<para>
+CHOICE: if NAME indicates a choice type, VALUE must specify one of
+  the alternatives with a null terminated string. LEN != 0. Using
+  "pkix.asn"\:
+</para>
+<para>
+          result=asn1_write_value(cert,
+          "certificate1.tbsCertificate.subject", "rdnSequence",
+          1);
+</para>
+<para>
+ANY: VALUE indicates the der encoding of a structure.  LEN != 0.
+</para>
+<para>
+SEQUENCE OF: VALUE must be the null terminated string "NEW" and
+  LEN != 0. With this instruction another element is appended in
+  the sequence. The name of this element will be "?1" if it's the
+  first one, "?2" for the second and so on.
+</para>
+<para>
+  Using "pkix.asn"\:
+</para>
+<para>
+  result=asn1_write_value(cert,
+  "certificate1.tbsCertificate.subject.rdnSequence", "NEW", 1);
+</para>
+<para>
+SET OF: the same as SEQUENCE OF.  Using "pkix.asn":
+</para>
+<para>
+          result=asn1_write_value(cert,
+          "tbsCertificate.subject.rdnSequence.?LAST", "NEW", 1);</para>
+<variablelist role="params">
+<varlistentry><term><parameter>node_root</parameter>&#160;:</term>
+<listitem><simpara>pointer to a structure
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>the name of the element inside the structure that you want to set.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ivalue</parameter>&#160;:</term>
+<listitem><simpara>vector used to specify the value to set. If len is &gt;0,
+  VALUE must be a two's complement form integer.  if len=0 *VALUE
+  must be a null terminated string with an integer value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>number of bytes of *value to use to set the value:
+  value[0]..value[len-1] or 0 if value is a null terminated string
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+  <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Set value OK.
+
+  <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: NAME is not a valid element.
+
+  <link linkend="ASN1-VALUE-NOT-VALID:CAPS"><literal>ASN1_VALUE_NOT_VALID</literal></link>: VALUE has a wrong format.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-read-value" role="function">
+<title>asn1_read_value ()</title>
+<indexterm zone="asn1-read-value"><primary>asn1_read_value</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_read_value                     (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> root</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *ivalue</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>);</programlisting>
+<para>
+Returns the value of one element inside a structure.
+</para>
+<para>
+If an element is OPTIONAL and the function "read_value" returns
+<link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>, it means that this element wasn't present
+in the der encoding that created the structure.  The first element
+of a SEQUENCE_OF or SET_OF is named "?1". The second one "?2" and
+so on.
+</para>
+<para>
+INTEGER: VALUE will contain a two's complement form integer.
+</para>
+<para>
+           integer=-1  -> value[0]=0xFF , len=1.
+           integer=1   -> value[0]=0x01 , len=1.
+</para>
+<para>
+ENUMERATED: As INTEGER (but only with not negative numbers).
+</para>
+<para>
+BOOLEAN: VALUE will be the null terminated string "TRUE" or
+  "FALSE" and LEN=5 or LEN=6.
+</para>
+<para>
+OBJECT IDENTIFIER: VALUE will be a null terminated string with
+  each number separated by a dot (i.e. "1.2.3.543.1").
+</para>
+<para>
+                     LEN = strlen(VALUE)+1
+</para>
+<para>
+UTCTime: VALUE will be a null terminated string in one of these
+  formats: "YYMMDDhhmmss+hh'mm'" or "YYMMDDhhmmss-hh'mm'".
+  LEN=strlen(VALUE)+1.
+</para>
+<para>
+GeneralizedTime: VALUE will be a null terminated string in the
+  same format used to set the value.
+</para>
+<para>
+OCTET STRING: VALUE will contain the octet string and LEN will be
+  the number of octets.
+</para>
+<para>
+GeneralString: VALUE will contain the generalstring and LEN will
+  be the number of octets.
+</para>
+<para>
+BIT STRING: VALUE will contain the bit string organized by bytes
+  and LEN will be the number of bits.
+</para>
+<para>
+CHOICE: If NAME indicates a choice type, VALUE will specify the
+  alternative selected.
+</para>
+<para>
+ANY: If NAME indicates an any type, VALUE will indicate the DER
+  encoding of the structure actually used.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>root</parameter>&#160;:</term>
+<listitem><simpara>pointer to a structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>the name of the element inside a structure that you want to read.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ivalue</parameter>&#160;:</term>
+<listitem><simpara>vector that will contain the element's content, must be a
+  pointer to memory cells already allocated.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>number of bytes of *value: value[0]..value[len-1]. Initialy
+  holds the sizeof value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+  <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Set value OK.
+
+  <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: NAME is not a valid element.
+
+  <link linkend="ASN1-VALUE-NOT-FOUND:CAPS"><literal>ASN1_VALUE_NOT_FOUND</literal></link>: There isn't any value for the element selected.
+
+  <link linkend="ASN1-MEM-ERROR:CAPS"><literal>ASN1_MEM_ERROR</literal></link>: The value vector isn't big enough to store the result.
+  In this case LEN will contain the number of bytes needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-number-of-elements" role="function">
+<title>asn1_number_of_elements ()</title>
+<indexterm zone="asn1-number-of-elements"><primary>asn1_number_of_elements</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_number_of_elements             (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> element</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *num</parameter>);</programlisting>
+<para>
+Counts the number of elements of a sub-structure called NAME with
+names equal to "?1","?2", ...</para>
+<variablelist role="params">
+<varlistentry><term><parameter>element</parameter>&#160;:</term>
+<listitem><simpara>pointer to the root of an ASN1 structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>the name of a sub-structure of ROOT.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>num</parameter>&#160;:</term>
+<listitem><simpara>pointer to an integer where the result will be stored
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+ <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Creation OK.
+
+ <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: NAME isn't known.
+
+ <link linkend="ASN1-GENERIC-ERROR:CAPS"><literal>ASN1_GENERIC_ERROR</literal></link>: Pointer num equal to NULL.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-der-coding" role="function">
+<title>asn1_der_coding ()</title>
+<indexterm zone="asn1-der-coding"><primary>asn1_der_coding</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_der_coding                     (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> element</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="void"><type>void</type></link> *ider</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *ErrorDescription</parameter>);</programlisting>
+<para>
+Creates the DER encoding for the NAME structure (inside *POINTER
+structure).</para>
+<variablelist role="params">
+<varlistentry><term><parameter>element</parameter>&#160;:</term>
+<listitem><simpara>pointer to an ASN1 element
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>the name of the structure you want to encode (it must be
+  inside *POINTER).
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ider</parameter>&#160;:</term>
+<listitem><simpara>vector that will contain the DER encoding. DER must be a
+  pointer to memory cells already allocated.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>number of bytes of *<parameter>ider</parameter>: <parameter>ider</parameter>[0]..<parameter>ider</parameter>[len-1], Initialy
+  holds the sizeof of der vector.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ErrorDescription</parameter>&#160;:</term>
+<listitem><simpara>return the error description or an empty
+  string if success.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+  <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: DER encoding OK.
+
+  <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: NAME is not a valid element.
+
+  <link linkend="ASN1-VALUE-NOT-FOUND:CAPS"><literal>ASN1_VALUE_NOT_FOUND</literal></link>: There is an element without a value.
+
+  <link linkend="ASN1-MEM-ERROR:CAPS"><literal>ASN1_MEM_ERROR</literal></link>: <parameter>ider</parameter> vector isn't big enough. Also in this case
+    LEN will contain the length needed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-der-decoding" role="function">
+<title>asn1_der_decoding ()</title>
+<indexterm zone="asn1-der-decoding"><primary>asn1_der_decoding</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_der_decoding                   (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *element</parameter>,
+                                                         <parameter>const <link linkend="void"><type>void</type></link> *ider</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> len</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);</programlisting>
+<para>
+Fill the structure *ELEMENT with values of a DER encoding
+string. The structure must just be created with function
+'asn1_create_element'.  If an error occurs during the decoding
+procedure, the *ELEMENT is deleted and set equal to
+<link linkend="ASN1-TYPE-EMPTY:CAPS"><literal>ASN1_TYPE_EMPTY</literal></link>.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>element</parameter>&#160;:</term>
+<listitem><simpara>pointer to an ASN1 structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ider</parameter>&#160;:</term>
+<listitem><simpara>vector that contains the DER encoding.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>number of bytes of *<parameter>ider</parameter>: <parameter>ider</parameter>[0]..<parameter>ider</parameter>[len-1].
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>errorDescription</parameter>&#160;:</term>
+<listitem><simpara>null-terminated string contains details when an
+  error occurred.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+  <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: DER encoding OK.
+
+  <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: ELEMENT is ASN1_TYPE_EMPTY.
+
+  <link linkend="ASN1-TAG-ERROR:CAPS"><literal>ASN1_TAG_ERROR</literal></link>,ASN1_DER_ERROR: The der encoding doesn't match
+    the structure NAME. *ELEMENT deleted.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-der-decoding-element" role="function">
+<title>asn1_der_decoding_element ()</title>
+<indexterm zone="asn1-der-decoding-element"><primary>asn1_der_decoding_element</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_der_decoding_element           (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *structure</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *elementName</parameter>,
+                                                         <parameter>const <link linkend="void"><type>void</type></link> *ider</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> len</parameter>,
+                                                         <parameter><link linkend="char"><type>char</type></link> *errorDescription</parameter>);</programlisting>
+<para>
+Fill the element named ELEMENTNAME with values of a DER encoding
+string.  The structure must just be created with function
+'asn1_create_element'.  The DER vector must contain the encoding
+string of the whole STRUCTURE.  If an error occurs during the
+decoding procedure, the *STRUCTURE is deleted and set equal to
+<link linkend="ASN1-TYPE-EMPTY:CAPS"><literal>ASN1_TYPE_EMPTY</literal></link>.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>structure</parameter>&#160;:</term>
+<listitem><simpara>pointer to an ASN1 structure
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>elementName</parameter>&#160;:</term>
+<listitem><simpara>name of the element to fill
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ider</parameter>&#160;:</term>
+<listitem><simpara>vector that contains the DER encoding of the whole structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>number of bytes of *der: der[0]..der[len-1]
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>errorDescription</parameter>&#160;:</term>
+<listitem><simpara>null-terminated string contains details when an
+  error occurred.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+  <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: DER encoding OK.
+
+  <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: ELEMENT is ASN1_TYPE_EMPTY or
+    elementName == NULL.
+
+  <link linkend="ASN1-TAG-ERROR:CAPS"><literal>ASN1_TAG_ERROR</literal></link>,ASN1_DER_ERROR: The der encoding doesn't match
+  the structure STRUCTURE. *ELEMENT deleted.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-der-decoding-startEnd" role="function">
+<title>asn1_der_decoding_startEnd ()</title>
+<indexterm zone="asn1-der-decoding-startEnd"><primary>asn1_der_decoding_startEnd</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_der_decoding_startEnd          (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> element</parameter>,
+                                                         <parameter>const <link linkend="void"><type>void</type></link> *ider</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> len</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name_element</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *start</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *end</parameter>);</programlisting>
+<para>
+Find the start and end point of an element in a DER encoding
+string. I mean that if you have a der encoding and you have already
+used the function "asn1_der_decoding" to fill a structure, it may
+happen that you want to find the piece of string concerning an
+element of the structure.
+</para>
+<para>
+Example: the sequence "tbsCertificate" inside an X509 certificate.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>element</parameter>&#160;:</term>
+<listitem><simpara>pointer to an ASN1 element
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ider</parameter>&#160;:</term>
+<listitem><simpara>vector that contains the DER encoding.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>number of bytes of *<parameter>ider</parameter>: <parameter>ider</parameter>[0]..<parameter>ider</parameter>[len-1]
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name_element</parameter>&#160;:</term>
+<listitem><simpara>an element of NAME structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>start</parameter>&#160;:</term>
+<listitem><simpara>the position of the first byte of NAME_ELEMENT decoding
+  (<parameter>ider</parameter>[*start])
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>end</parameter>&#160;:</term>
+<listitem><simpara>the position of the last byte of NAME_ELEMENT decoding
+ (<parameter>ider</parameter>[*end])
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+  <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: DER encoding OK.
+
+  <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: ELEMENT is ASN1_TYPE EMPTY or
+  NAME_ELEMENT is not a valid element.
+
+  <link linkend="ASN1-TAG-ERROR:CAPS"><literal>ASN1_TAG_ERROR</literal></link>,ASN1_DER_ERROR: the der encoding doesn't match
+  the structure ELEMENT.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-expand-any-defined-by" role="function">
+<title>asn1_expand_any_defined_by ()</title>
+<indexterm zone="asn1-expand-any-defined-by"><primary>asn1_expand_any_defined_by</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_expand_any_defined_by          (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> definitions</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *element</parameter>);</programlisting>
+<para>
+Expands every "ANY DEFINED BY" element of a structure created from
+a DER decoding process (asn1_der_decoding function). The element
+ANY must be defined by an OBJECT IDENTIFIER. The type used to
+expand the element ANY is the first one following the definition of
+the actual value of the OBJECT IDENTIFIER.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>definitions</parameter>&#160;:</term>
+<listitem><simpara>ASN1 definitions
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>element</parameter>&#160;:</term>
+<listitem><simpara>pointer to an ASN1 structure
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+  <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Substitution OK.
+
+  <link linkend="ASN1-ERROR-TYPE-ANY:CAPS"><literal>ASN1_ERROR_TYPE_ANY</literal></link>: Some "ANY DEFINED BY" element couldn't be
+  expanded due to a problem in OBJECT_ID -> TYPE association.
+
+  other errors: Result of der decoding process.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-expand-octet-string" role="function">
+<title>asn1_expand_octet_string ()</title>
+<indexterm zone="asn1-expand-octet-string"><primary>asn1_expand_octet_string</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_expand_octet_string            (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> definitions</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> *element</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *octetName</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *objectName</parameter>);</programlisting>
+<para>
+Expands an "OCTET STRING" element of a structure created from a DER
+decoding process (asn1_der_decoding function). The type used for
+expansion is the first one following the definition of the actual
+value of the OBJECT IDENTIFIER indicated by OBJECTNAME.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>definitions</parameter>&#160;:</term>
+<listitem><simpara>ASN1 definitions
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>element</parameter>&#160;:</term>
+<listitem><simpara>pointer to an ASN1 structure
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>octetName</parameter>&#160;:</term>
+<listitem><simpara>name of the OCTECT STRING field to expand.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>objectName</parameter>&#160;:</term>
+<listitem><simpara>name of the OBJECT IDENTIFIER field to use to define
+   the type for expansion.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+  <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Substitution OK.
+
+  <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: <parameter>objectName</parameter> or <parameter>octetName</parameter> are not correct.
+
+  <link linkend="ASN1-VALUE-NOT-VALID:CAPS"><literal>ASN1_VALUE_NOT_VALID</literal></link>: Wasn't possible to find the type to use
+      for expansion.
+
+  other errors: result of der decoding process.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-read-tag" role="function">
+<title>asn1_read_tag ()</title>
+<indexterm zone="asn1-read-tag"><primary>asn1_read_tag</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_read_tag                       (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> root</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *tagValue</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *classValue</parameter>);</programlisting>
+<para>
+Returns the TAG and the CLASS of one element inside a structure.
+CLASS can have one of these constants: <link linkend="ASN1-CLASS-APPLICATION:CAPS"><literal>ASN1_CLASS_APPLICATION</literal></link>,
+<link linkend="ASN1-CLASS-UNIVERSAL:CAPS"><literal>ASN1_CLASS_UNIVERSAL</literal></link>, <link linkend="ASN1-CLASS-PRIVATE:CAPS"><literal>ASN1_CLASS_PRIVATE</literal></link> or
+<link linkend="ASN1-CLASS-CONTEXT-SPECIFIC:CAPS"><literal>ASN1_CLASS_CONTEXT_SPECIFIC</literal></link>.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>root</parameter>&#160;:</term>
+<listitem><simpara>pointer to a structure
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>the name of the element inside a structure.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tagValue</parameter>&#160;:</term>
+<listitem><simpara>variable that will contain the TAG value.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>classValue</parameter>&#160;:</term>
+<listitem><simpara>variable that will specify the TAG type.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+
+  <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link>: Set value OK.
+
+  <link linkend="ASN1-ELEMENT-NOT-FOUND:CAPS"><literal>ASN1_ELEMENT_NOT_FOUND</literal></link>: NAME is not a valid element.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-find-structure-from-oid" role="function">
+<title>asn1_find_structure_from_oid ()</title>
+<indexterm zone="asn1-find-structure-from-oid"><primary>asn1_find_structure_from_oid</primary></indexterm>
+<programlisting>const <link linkend="char"><returnvalue>char</returnvalue></link> *        asn1_find_structure_from_oid        (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> definitions</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *oidValue</parameter>);</programlisting>
+<para>
+Search the structure that is defined just after an OID definition.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>definitions</parameter>&#160;:</term>
+<listitem><simpara>ASN1 definitions
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>oidValue</parameter>&#160;:</term>
+<listitem><simpara>value of the OID to search (e.g. "1.2.3.4").
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> <link linkend="NULL:CAPS"><literal>NULL</literal></link> when <parameter>oidValue</parameter> not found, otherwise the pointer to a
+  constant string that contains the element name defined just after
+  the OID.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-check-version" role="function">
+<title>asn1_check_version ()</title>
+<indexterm zone="asn1-check-version"><primary>asn1_check_version</primary></indexterm>
+<programlisting>const <link linkend="char"><returnvalue>char</returnvalue></link> *        asn1_check_version                  (<parameter>const <link linkend="char"><type>char</type></link> *req_version</parameter>);</programlisting>
+<para>
+Check that the version of the library is at minimum the
+requested one and return the version string; return <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the
+condition is not satisfied.  If a <link linkend="NULL:CAPS"><literal>NULL</literal></link> is passed to this function,
+no check is done, but the version string is simply returned.
+</para>
+<para>
+See <link linkend="ASN1-VERSION:CAPS"><literal>ASN1_VERSION</literal></link> for a suitable <parameter>req_version</parameter> string.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>req_version</parameter>&#160;:</term>
+<listitem><simpara>Required version number, or NULL.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Version string of run-time library, or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if the
+  run-time library does not meet the required version number.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-strerror" role="function" condition="since:1.6">
+<title>asn1_strerror ()</title>
+<indexterm zone="asn1-strerror" role="1.6"><primary>asn1_strerror</primary></indexterm>
+<programlisting>const <link linkend="char"><returnvalue>char</returnvalue></link> *        asn1_strerror                       (<parameter><link linkend="asn1-retCode"><type>asn1_retCode</type></link> error</parameter>);</programlisting>
+<para>
+Returns a string with a description of an error.  This function is
+similar to strerror.  The only difference is that it accepts an
+error (number) returned by a libtasn1 function.
+</para>
+<para>
+This function replaces <link linkend="libtasn1-strerror"><function>libtasn1_strerror()</function></link> in older libtasn1.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>is an error returned by a libtasn1 function.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Pointer to static zero-terminated string describing error
+  code.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 1.6</para></refsect2>
+<refsect2 id="asn1-perror" role="function" condition="since:1.6">
+<title>asn1_perror ()</title>
+<indexterm zone="asn1-perror" role="1.6"><primary>asn1_perror</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                asn1_perror                         (<parameter><link linkend="asn1-retCode"><type>asn1_retCode</type></link> error</parameter>);</programlisting>
+<para>
+Prints a string to stderr with a description of an error.  This
+function is like <link linkend="perror"><function>perror()</function></link>.  The only difference is that it accepts
+an error returned by a libtasn1 function.
+</para>
+<para>
+This function replaces <link linkend="libtasn1-perror"><function>libtasn1_perror()</function></link> in older libtasn1.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>is an error returned by a libtasn1 function.
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 1.6</para></refsect2>
+<refsect2 id="asn1-get-tag-der" role="function">
+<title>asn1_get_tag_der ()</title>
+<indexterm zone="asn1-get-tag-der"><primary>asn1_get_tag_der</primary></indexterm>
+<programlisting><link linkend="int"><returnvalue>int</returnvalue></link>                 asn1_get_tag_der                    (<parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> der_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *cls</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>,
+                                                         <parameter>unsigned <link linkend="long"><type>long</type></link> *tag</parameter>);</programlisting>
+<para>
+Decode the class and TAG from DER code.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>der</parameter>&#160;:</term>
+<listitem><simpara>DER data to decode.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>der_len</parameter>&#160;:</term>
+<listitem><simpara>Length of DER data to decode.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>cls</parameter>&#160;:</term>
+<listitem><simpara>Output variable containing decoded class.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>Output variable containing the length of the DER TAG data.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>tag</parameter>&#160;:</term>
+<listitem><simpara>Output variable containing the decoded tag.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Returns <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link> on success, or an error.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-octet-der" role="function">
+<title>asn1_octet_der ()</title>
+<indexterm zone="asn1-octet-der"><primary>asn1_octet_der</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                asn1_octet_der                      (<parameter>unsigned <link linkend="char"><type>char</type></link> *str</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> str_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *der_len</parameter>);</programlisting>
+<para>
+Creates the DER coding for an OCTET type (length included).</para>
+<variablelist role="params">
+<varlistentry><term><parameter>str</parameter>&#160;:</term>
+<listitem><simpara>OCTET string.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>str_len</parameter>&#160;:</term>
+<listitem><simpara>STR length (str[0]..str[str_len-1]).
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>der</parameter>&#160;:</term>
+<listitem><simpara>string returned.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>der_len</parameter>&#160;:</term>
+<listitem><simpara>number of meaningful bytes of DER (der[0]..der[ans_len-1]).
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-get-octet-der" role="function">
+<title>asn1_get_octet_der ()</title>
+<indexterm zone="asn1-get-octet-der"><primary>asn1_get_octet_der</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_get_octet_der                  (<parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> der_len</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *ret_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *str</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> str_size</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *str_len</parameter>);</programlisting>
+<para>
+Extract an OCTET SEQUENCE from DER data.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>der</parameter>&#160;:</term>
+<listitem><simpara>DER data to decode containing the OCTET SEQUENCE.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>der_len</parameter>&#160;:</term>
+<listitem><simpara>Length of DER data to decode.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ret_len</parameter>&#160;:</term>
+<listitem><simpara>Output variable containing the length of the DER data.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>str</parameter>&#160;:</term>
+<listitem><simpara>Pre-allocated output buffer to put decoded OCTET SEQUENCE in.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>str_size</parameter>&#160;:</term>
+<listitem><simpara>Length of pre-allocated output buffer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>str_len</parameter>&#160;:</term>
+<listitem><simpara>Output variable containing the length of the OCTET SEQUENCE.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Returns <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link> on success, or an error.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-bit-der" role="function">
+<title>asn1_bit_der ()</title>
+<indexterm zone="asn1-bit-der"><primary>asn1_bit_der</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                asn1_bit_der                        (<parameter>unsigned <link linkend="char"><type>char</type></link> *str</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> bit_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *der_len</parameter>);</programlisting>
+<para>
+Creates the DER coding for a BIT STRING type (length and pad
+included).</para>
+<variablelist role="params">
+<varlistentry><term><parameter>str</parameter>&#160;:</term>
+<listitem><simpara>BIT string.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>bit_len</parameter>&#160;:</term>
+<listitem><simpara>number of meaningful bits in STR.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>der</parameter>&#160;:</term>
+<listitem><simpara>string returned.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>der_len</parameter>&#160;:</term>
+<listitem><simpara>number of meaningful bytes of DER
+  (der[0]..der[ans_len-1]).
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-get-bit-der" role="function">
+<title>asn1_get_bit_der ()</title>
+<indexterm zone="asn1-get-bit-der"><primary>asn1_get_bit_der</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_get_bit_der                    (<parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> der_len</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *ret_len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *str</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> str_size</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *bit_len</parameter>);</programlisting>
+<para>
+Extract a BIT SEQUENCE from DER data.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>der</parameter>&#160;:</term>
+<listitem><simpara>DER data to decode containing the BIT SEQUENCE.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>der_len</parameter>&#160;:</term>
+<listitem><simpara>Length of DER data to decode.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ret_len</parameter>&#160;:</term>
+<listitem><simpara>Output variable containing the length of the DER data.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>str</parameter>&#160;:</term>
+<listitem><simpara>Pre-allocated output buffer to put decoded BIT SEQUENCE in.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>str_size</parameter>&#160;:</term>
+<listitem><simpara>Length of pre-allocated output buffer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>bit_len</parameter>&#160;:</term>
+<listitem><simpara>Output variable containing the size of the BIT SEQUENCE.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Return <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link> on success, or an error.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-get-length-der" role="function">
+<title>asn1_get_length_der ()</title>
+<indexterm zone="asn1-get-length-der"><primary>asn1_get_length_der</primary></indexterm>
+<programlisting>signed <link linkend="long"><returnvalue>long</returnvalue></link>         asn1_get_length_der                 (<parameter>unsigned <link linkend="char"><type>char</type></link> *der</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> der_len</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>);</programlisting>
+<para>
+Extract a length field from DER data.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>der</parameter>&#160;:</term>
+<listitem><simpara>DER data to decode.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>der_len</parameter>&#160;:</term>
+<listitem><simpara>Length of DER data to decode.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>Output variable containing the length of the DER length field.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Return the decoded length value, or -1 on indefinite
+  length, or -2 when the value was too big.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-get-length-ber" role="function" condition="since:2.0">
+<title>asn1_get_length_ber ()</title>
+<indexterm zone="asn1-get-length-ber" role="2.0"><primary>asn1_get_length_ber</primary></indexterm>
+<programlisting>signed <link linkend="long"><returnvalue>long</returnvalue></link>         asn1_get_length_ber                 (<parameter>unsigned <link linkend="char"><type>char</type></link> *ber</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> ber_len</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *len</parameter>);</programlisting>
+<para>
+Extract a length field from BER data.  The difference to
+<link linkend="asn1-get-length-der"><function>asn1_get_length_der()</function></link> is that this function will return a length
+even if the value has indefinite encoding.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>ber</parameter>&#160;:</term>
+<listitem><simpara>BER data to decode.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ber_len</parameter>&#160;:</term>
+<listitem><simpara>Length of BER data to decode.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>Output variable containing the length of the BER length field.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Return the decoded length value, or negative value
+  when the value was too big.
+
+</simpara></listitem></varlistentry>
+</variablelist><para role="since">Since 2.0</para></refsect2>
+<refsect2 id="asn1-length-der" role="function">
+<title>asn1_length_der ()</title>
+<indexterm zone="asn1-length-der"><primary>asn1_length_der</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                asn1_length_der                     (<parameter>unsigned long <link linkend="int"><type>int</type></link> len</parameter>,
+                                                         <parameter>unsigned <link linkend="char"><type>char</type></link> *ans</parameter>,
+                                                         <parameter><link linkend="int"><type>int</type></link> *ans_len</parameter>);</programlisting>
+<para>
+Creates the DER coding for the LEN parameter (only the length).
+The <parameter>ans</parameter> buffer is pre-allocated and must have room for the output.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>len</parameter>&#160;:</term>
+<listitem><simpara>value to convert.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ans</parameter>&#160;:</term>
+<listitem><simpara>string returned.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>ans_len</parameter>&#160;:</term>
+<listitem><simpara>number of meaningful bytes of ANS (ans[0]..ans[ans_len-1]).
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-find-node" role="function">
+<title>asn1_find_node ()</title>
+<indexterm zone="asn1-find-node"><primary>asn1_find_node</primary></indexterm>
+<programlisting><link linkend="ASN1-TYPE:CAPS"><returnvalue>ASN1_TYPE</returnvalue></link>           asn1_find_node                      (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> pointer</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *name</parameter>);</programlisting>
+<para>
+Searches for an element called NAME starting from POINTER.  The
+name is composed by differents identifiers separated by dots.  When
+*POINTER has a name, the first identifier must be the name of
+*POINTER, otherwise it must be the name of one child of *POINTER.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>pointer</parameter>&#160;:</term>
+<listitem><simpara>NODE_ASN element pointer.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>null terminated string with the element's name to find.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> the searching result. NULL if not found.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="asn1-copy-node" role="function">
+<title>asn1_copy_node ()</title>
+<indexterm zone="asn1-copy-node"><primary>asn1_copy_node</primary></indexterm>
+<programlisting><link linkend="asn1-retCode"><returnvalue>asn1_retCode</returnvalue></link>        asn1_copy_node                      (<parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> dst</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *dst_name</parameter>,
+                                                         <parameter><link linkend="ASN1-TYPE:CAPS"><type>ASN1_TYPE</type></link> src</parameter>,
+                                                         <parameter>const <link linkend="char"><type>char</type></link> *src_name</parameter>);</programlisting>
+<para>
+Create a deep copy of a ASN1_TYPE variable.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>dst</parameter>&#160;:</term>
+<listitem><simpara>Destination ASN1_TYPE node.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>dst_name</parameter>&#160;:</term>
+<listitem><simpara>Field name in destination node.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>src</parameter>&#160;:</term>
+<listitem><simpara>Source ASN1_TYPE node.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>src_name</parameter>&#160;:</term>
+<listitem><simpara>Field name in source node.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Return <link linkend="ASN1-SUCCESS:CAPS"><literal>ASN1_SUCCESS</literal></link> on success.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="LIBTASN1-VERSION:CAPS" role="macro" condition="deprecated:">
+<title>LIBTASN1_VERSION</title>
+<indexterm zone="LIBTASN1-VERSION:CAPS" role="deprecated"><primary>LIBTASN1_VERSION</primary></indexterm>
+<programlisting>#define LIBTASN1_VERSION ASN1_VERSION
+</programlisting>
+<warning><para><literal>LIBTASN1_VERSION</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="MAX-NAME-SIZE:CAPS" role="macro" condition="deprecated:">
+<title>MAX_NAME_SIZE</title>
+<indexterm zone="MAX-NAME-SIZE:CAPS" role="deprecated"><primary>MAX_NAME_SIZE</primary></indexterm>
+<programlisting># define MAX_NAME_SIZE ASN1_MAX_NAME_SIZE
+</programlisting>
+<warning><para><literal>MAX_NAME_SIZE</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="MAX-ERROR-DESCRIPTION-SIZE:CAPS" role="macro" condition="deprecated:">
+<title>MAX_ERROR_DESCRIPTION_SIZE</title>
+<indexterm zone="MAX-ERROR-DESCRIPTION-SIZE:CAPS" role="deprecated"><primary>MAX_ERROR_DESCRIPTION_SIZE</primary></indexterm>
+<programlisting># define MAX_ERROR_DESCRIPTION_SIZE ASN1_MAX_ERROR_DESCRIPTION_SIZE
+</programlisting>
+<warning><para><literal>MAX_ERROR_DESCRIPTION_SIZE</literal> is deprecated and should not be used in newly-written code.</para></warning>
+<para>
+</para></refsect2>
+<refsect2 id="libtasn1-strerror" role="function" condition="deprecated:Use asn1_strerror() instead.">
+<title>libtasn1_strerror ()</title>
+<indexterm zone="libtasn1-strerror" role="deprecated"><primary>libtasn1_strerror</primary></indexterm>
+<programlisting>const <link linkend="char"><returnvalue>char</returnvalue></link> *        libtasn1_strerror                   (<parameter><link linkend="asn1-retCode"><type>asn1_retCode</type></link> error</parameter>);</programlisting>
+<warning><para><literal>libtasn1_strerror</literal> is deprecated and should not be used in newly-written code. Use <link linkend="asn1-strerror"><function>asn1_strerror()</function></link> instead.</para></warning>
+<para>
+Returns a string with a description of an error.  This function is
+similar to strerror.  The only difference is that it accepts an
+error (number) returned by a libtasn1 function.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>is an error returned by a libtasn1 function.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> Pointer to static zero-terminated string describing error
+  code.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="libtasn1-perror" role="function" condition="deprecated:Use asn1_perror() instead.">
+<title>libtasn1_perror ()</title>
+<indexterm zone="libtasn1-perror" role="deprecated"><primary>libtasn1_perror</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                libtasn1_perror                     (<parameter><link linkend="asn1-retCode"><type>asn1_retCode</type></link> error</parameter>);</programlisting>
+<warning><para><literal>libtasn1_perror</literal> is deprecated and should not be used in newly-written code. Use <link linkend="asn1-perror"><function>asn1_perror()</function></link> instead.</para></warning>
+<para>
+Prints a string to stderr with a description of an error.  This
+function is like <link linkend="perror"><function>perror()</function></link>. The only difference is that it accepts
+an error returned by a libtasn1 function.</para>
+<variablelist role="params">
+<varlistentry><term><parameter>error</parameter>&#160;:</term>
+<listitem><simpara>is an error returned by a libtasn1 function.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+</refentry>

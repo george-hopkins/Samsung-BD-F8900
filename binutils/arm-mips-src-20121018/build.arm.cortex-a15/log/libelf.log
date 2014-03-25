@@ -1,0 +1,504 @@
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf'
+copy directory /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/sources/libelf to /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf
+COPYING.LIB
+ChangeLog
+INSTALL
+MANIFEST
+Makefile.in
+README
+VERSION
+acconfig.h
+aclocal.m4
+config.guess
+config.h.in
+config.sub
+configure
+configure.in
+install-sh
+lib/
+lib/gelfphdr.c
+lib/errmsg.c
+lib/next.c
+lib/getarhdr.c
+lib/strptr.c
+lib/rawfile.c
+lib/verdef_32_tom.c
+lib/nlist.c
+lib/gelftrans.c
+lib/swap64.c
+lib/private.h
+lib/assert.c
+lib/config.h.w32
+lib/sys_elf.h.in
+lib/hash.c
+lib/verdef.h
+lib/cntl.c
+lib/newscn.c
+lib/gelf.h
+lib/32.xlatetof.c
+lib/getscn.c
+lib/Makefile.in
+lib/32.getphdr.c
+lib/gelfehdr.c
+lib/data.c
+lib/flag.c
+lib/ndxscn.c
+lib/verdef_64_tof.c
+lib/version.c
+lib/32.getshdr.c
+lib/64.xlatetof.c
+lib/nextscn.c
+lib/rawdata.c
+lib/verdef_32_tof.c
+lib/verdef_64_tom.c
+lib/gelfshdr.c
+lib/build.bat
+lib/checksum.c
+lib/getaroff.c
+lib/nlist.h
+lib/getident.c
+lib/kind.c
+lib/getarsym.c
+lib/memset.c
+lib/sys_elf.h.w32
+lib/32.newphdr.c
+lib/cook.c
+lib/libelf.h
+lib/byteswap.h
+lib/ext_types.h
+lib/Makefile.w32
+lib/32.fsize.c
+lib/input.c
+lib/verneed.h
+lib/begin.c
+lib/libelf.def
+lib/opt.delscn.c
+lib/update.c
+lib/getdata.c
+lib/elf_repl.h
+lib/rand.c
+lib/newdata.c
+lib/32.getehdr.c
+lib/errors.h
+lib/errno.c
+lib/end.c
+lib/x.movscn.c
+lib/getbase.c
+lib/32.newehdr.c
+lib/x.elfext.c
+lib/x.remscn.c
+lib/fill.c
+libelf.pc.in
+mkinstalldirs
+po/
+po/stamp-po
+po/gmo2msg.c
+po/Makefile.in
+po/de.po
+po/de.gmo
+po/libelf.pot
+po/de.msg
+stamp-h.in
+Building : /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libelf'
+Configure libelf
+creating cache ./config.cache
+checking whether make sets ${MAKE}... yes
+checking for gcc... gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking how to run the C preprocessor... gcc -E
+checking for a BSD compatible install... /usr/bin/install -c
+checking for ranlib... ranlib
+checking whether ln -s works... yes
+checking for ANSI C header files... yes
+checking for unistd.h... yes
+checking for stdint.h... yes
+checking for fcntl.h... yes
+checking for elf.h... yes
+checking for sys/elf.h... no
+checking for link.h... yes
+checking for sys/link.h... no
+checking if gcc can compile elf.h... yes
+checking for ar.h... yes
+checking for libelf.h... no
+checking for nlist.h... no
+checking for gelf.h... no
+checking whether to install <libelf.h>, <nlist.h> and <gelf.h>... yes
+checking for working const... yes
+checking for off_t... yes
+checking for size_t... yes
+checking size of short... 2
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of __int64... 0
+checking for struct Elf32_Dyn... yes
+checking for struct nlist in elf.h... no
+checking for struct Elf64_Ehdr... yes
+checking for Elf64_Addr... yes
+checking for struct Elf64_Rel... yes
+checking for Elf32_Verdef... yes
+checking for Elf64_Verdef... yes
+checking for SHT_SUNW_verdef... no
+checking for SHT_GNU_verdef... yes
+checking for 64-bit integer... long
+checking for 32-bit integer... int
+checking for 16-bit integer... short
+checking for unistd.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for ftruncate... yes
+checking for memcmp... yes
+checking for memcpy... yes
+checking for memmove... yes
+checking for memset... yes
+checking whether overlapping arrays are copied correctly... yes
+checking the coffee machine... empty - operator may not work as expected
+checking whether 64-bit ELF support is sufficient... yes
+checking whether to include 64-bit support... yes
+checking whether versioning support is sufficient... yes
+checking whether to include versioning support... yes
+checking whether NLS is requested... yes
+checking for dgettext... yes
+checking for msgfmt... no
+checking for catgets... yes
+checking for gencat... /usr/bin/gencat
+checking for gmsgfmt... msgfmt
+checking for xgettext... xgettext
+checking for catalogs to be installed... de 
+checking for gettext in -lintl... no
+checking host system type... x86_64-unknown-linux-gnu
+checking whether to build a shared library... no
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+creating lib/Makefile
+creating po/Makefile
+creating libelf.pc
+creating config.h
+creating lib/sys_elf.h
+Make libelf
+making all in lib
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libelf/lib'
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/begin.c && mv -f begin.o begin.os; \
+	else true; fi
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/cntl.c && mv -f cntl.o cntl.os; \
+	else true; fi
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/end.c && mv -f end.o end.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/begin.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/errmsg.c && mv -f errmsg.o errmsg.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/cntl.c
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/end.c
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/errmsg.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/errno.c && mv -f errno.o errno.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/errno.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/fill.c && mv -f fill.o fill.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/fill.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/flag.c && mv -f flag.o flag.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/flag.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getarhdr.c && mv -f getarhdr.o getarhdr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getarhdr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getarsym.c && mv -f getarsym.o getarsym.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getarsym.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getbase.c && mv -f getbase.o getbase.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getbase.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getdata.c && mv -f getdata.o getdata.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getdata.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getident.c && mv -f getident.o getident.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getident.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getscn.c && mv -f getscn.o getscn.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getscn.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/hash.c && mv -f hash.o hash.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/hash.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/kind.c && mv -f kind.o kind.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/kind.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/ndxscn.c && mv -f ndxscn.o ndxscn.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/ndxscn.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/newdata.c && mv -f newdata.o newdata.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/newdata.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/newscn.c && mv -f newscn.o newscn.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/newscn.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/next.c && mv -f next.o next.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/next.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/nextscn.c && mv -f nextscn.o nextscn.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/nextscn.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/rand.c && mv -f rand.o rand.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/rand.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/rawdata.c && mv -f rawdata.o rawdata.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/rawdata.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/rawfile.c && mv -f rawfile.o rawfile.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/rawfile.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/strptr.c && mv -f strptr.o strptr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/strptr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/update.c && mv -f update.o update.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/update.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/version.c && mv -f version.o version.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/version.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/checksum.c && mv -f checksum.o checksum.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/checksum.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getaroff.c && mv -f getaroff.o getaroff.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/getaroff.c
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/update.c: In function '_elf_output':
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/update.c:917: warning: ignoring return value of 'ftruncate', declared with attribute warn_unused_result
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.fsize.c && mv -f 32.fsize.o 32.fsize.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.fsize.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.getehdr.c && mv -f 32.getehdr.o 32.getehdr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.getehdr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.getphdr.c && mv -f 32.getphdr.o 32.getphdr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.getphdr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.getshdr.c && mv -f 32.getshdr.o 32.getshdr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.getshdr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.newehdr.c && mv -f 32.newehdr.o 32.newehdr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.newehdr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.newphdr.c && mv -f 32.newphdr.o 32.newphdr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.newphdr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.xlatetof.c && mv -f 32.xlatetof.o 32.xlatetof.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/32.xlatetof.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/cook.c && mv -f cook.o cook.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/cook.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/data.c && mv -f data.o data.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/data.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/input.c && mv -f input.o input.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/input.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/assert.c && mv -f assert.o assert.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/assert.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/nlist.c && mv -f nlist.o nlist.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/nlist.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/opt.delscn.c && mv -f opt.delscn.o opt.delscn.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/opt.delscn.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/x.remscn.c && mv -f x.remscn.o x.remscn.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/x.remscn.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/x.movscn.c && mv -f x.movscn.o x.movscn.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/x.movscn.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/x.elfext.c && mv -f x.elfext.o x.elfext.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/x.elfext.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/64.xlatetof.c && mv -f 64.xlatetof.o 64.xlatetof.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/64.xlatetof.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/gelfehdr.c && mv -f gelfehdr.o gelfehdr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/gelfehdr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/gelfphdr.c && mv -f gelfphdr.o gelfphdr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/gelfphdr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/gelfshdr.c && mv -f gelfshdr.o gelfshdr.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/gelfshdr.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/gelftrans.c && mv -f gelftrans.o gelftrans.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/gelftrans.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/swap64.c && mv -f swap64.o swap64.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/swap64.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/verdef_32_tof.c && mv -f verdef_32_tof.o verdef_32_tof.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/verdef_32_tof.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/verdef_32_tom.c && mv -f verdef_32_tom.o verdef_32_tom.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/verdef_32_tom.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/verdef_64_tof.c && mv -f verdef_64_tof.o verdef_64_tof.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/verdef_64_tof.c
+if test -n ""; then \
+	  gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/verdef_64_tom.c && mv -f verdef_64_tom.o verdef_64_tom.os; \
+	else true; fi
+gcc -c -DHAVE_CONFIG_H -I.. -I. -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib  -g -O2  /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/verdef_64_tom.c
+ar rcv libelf.a begin.o cntl.o end.o errmsg.o errno.o fill.o flag.o getarhdr.o getarsym.o getbase.o getdata.o getident.o getscn.o hash.o kind.o ndxscn.o newdata.o newscn.o next.o nextscn.o rand.o rawdata.o rawfile.o strptr.o update.o version.o checksum.o getaroff.o 32.fsize.o 32.getehdr.o 32.getphdr.o 32.getshdr.o 32.newehdr.o 32.newphdr.o 32.xlatetof.o cook.o data.o input.o assert.o nlist.o opt.delscn.o x.remscn.o x.movscn.o x.elfext.o 64.xlatetof.o gelfehdr.o gelfphdr.o gelfshdr.o gelftrans.o swap64.o verdef_32_tof.o verdef_32_tom.o verdef_64_tof.o verdef_64_tom.o 
+a - begin.o
+a - cntl.o
+a - end.o
+a - errmsg.o
+a - errno.o
+a - fill.o
+a - flag.o
+a - getarhdr.o
+a - getarsym.o
+a - getbase.o
+a - getdata.o
+a - getident.o
+a - getscn.o
+a - hash.o
+a - kind.o
+a - ndxscn.o
+a - newdata.o
+a - newscn.o
+a - next.o
+a - nextscn.o
+a - rand.o
+a - rawdata.o
+a - rawfile.o
+a - strptr.o
+a - update.o
+a - version.o
+a - checksum.o
+a - getaroff.o
+a - 32.fsize.o
+a - 32.getehdr.o
+a - 32.getphdr.o
+a - 32.getshdr.o
+a - 32.newehdr.o
+a - 32.newphdr.o
+a - 32.xlatetof.o
+a - cook.o
+a - data.o
+a - input.o
+a - assert.o
+a - nlist.o
+a - opt.delscn.o
+a - x.remscn.o
+a - x.movscn.o
+a - x.elfext.o
+a - 64.xlatetof.o
+a - gelfehdr.o
+a - gelfphdr.o
+a - gelfshdr.o
+a - gelftrans.o
+a - swap64.o
+a - verdef_32_tof.o
+a - verdef_32_tom.o
+a - verdef_64_tof.o
+a - verdef_64_tom.o
+ranlib libelf.a
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libelf/lib'
+making all in po
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libelf/po'
+/usr/bin/gencat de.cat /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/po/de.msg
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libelf/po'
+Install libelf
+making install in lib
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libelf/lib'
+dirs="/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/libelf"; for dir in $dirs; do \
+	    /bin/sh /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/mkinstalldirs $dir; \
+	done
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/libelf
+/usr/bin/install -c -m 644 libelf.a /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib
+cd /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib && ranlib libelf.a
+files="libelf.h nlist.h gelf.h sys_elf.h elf_repl.h"; for file in $files; do \
+	  if test -r $file; then \
+	    /usr/bin/install -c -m 644 $file /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/libelf; \
+	  else \
+	    /usr/bin/install -c -m 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/lib/$file /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/libelf; \
+	  fi; \
+	done
+files="libelf.h nlist.h gelf.h"; for file in $files; do \
+	  if test -f /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/$file; then true; else \
+	    echo "#include <libelf/$file>" > /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include/$file; \
+	  fi; \
+	done
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libelf/lib'
+making install in po
+make[1]: Entering directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libelf/po'
+catalogs="de.cat"; for cat in $catalogs; do \
+	  lang=`echo $cat | sed 's,.cat$,,'`; \
+	  dir=/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/locale/$lang/LC_MESSAGES; \
+	  /bin/sh /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/mkinstalldirs $dir; \
+	  if test -r $cat; then \
+	    /usr/bin/install -c -m 644 $cat $dir/libelf.cat; \
+	  else \
+	    /usr/bin/install -c -m 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/po/$cat $dir/libelf.cat; \
+	  fi; \
+	done
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/locale
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/locale/de
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/locale/de/LC_MESSAGES
+make[1]: Leaving directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/libelf/po'
+/bin/sh /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/libelf/mkinstalldirs /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/pkgconfig
+/usr/bin/install -c -m 644 libelf.pc /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/pkgconfig

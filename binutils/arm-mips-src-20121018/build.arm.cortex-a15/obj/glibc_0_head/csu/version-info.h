@@ -1,0 +1,6 @@
+"Compiled on a Linux 3.0.20 system on 2013-04-04.\n"
+"Available extensions:\n"
+"	crypt add-on version 2.1 by Michael Glad and others\n"
+"	Native POSIX Threads Library by Ulrich Drepper et al\n"
+"	Support for some architectures added on, not maintained in glibc core.\n"
+"	BIND-8.2.3-T5B\n"

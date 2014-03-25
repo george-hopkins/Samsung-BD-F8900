@@ -1,0 +1,21 @@
+2012-10-03 Alexey Merzlyakov <alexey.merzlyakov@samsung.com>
+
+	JIRA: GA-70
+
+	binutils/
+	* bfd/elf32-arm.c (elf_arm_tdata (output_bfd)->no_wchar_size_warning): Remove.
+
+2012-05-24 Slava Garbuzov  <v.garbuzov@samsung.com>
+
+	JIRA: GA-36
+
+	Merge from upstream binutils 2.22
+	(c8916c275f8681b25403b225d5b97eda6d20c542)
+
+2011-12-28 Slava Garbuzov <v.garbuzov@samsung.com>
+
+	JIRA: VDTC-53
+
+	binutils/
+	* bfd/elf32-arm.c (elf_arm_tdata (output_bfd)->no_wchar_size_warning): Set to 1.
+

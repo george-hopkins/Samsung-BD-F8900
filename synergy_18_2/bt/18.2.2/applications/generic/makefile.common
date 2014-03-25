@@ -1,0 +1,371 @@
+#-*-Makefile-*-
+###############################################################################
+#
+#                (c) Cambridge Silicon Radio Limited 2009
+#
+#                All rights reserved and confidential information of CSR
+#
+# REVISION:      $Revision: #3 $
+###############################################################################
+TOP := ../..
+
+# Defines used for demo app task inclusion 
+# Tasks ported into new application framework
+CSR_BT_APP_USE_AV ?= 1
+CSR_BT_APP_USE_AVRCP ?= 1
+CSR_BT_APP_USE_HF ?= 0
+#CSR_BT_APP_USE_HFG ?= 1
+#CSR_BT_APP_USE_HDP ?= 1
+#CSR_BT_APP_USE_FTC ?= 1
+#CSR_BT_APP_USE_FTS ?= 1
+CSR_BT_APP_USE_HFG ?= 0
+CSR_BT_APP_USE_HDP ?= 0
+CSR_BT_APP_USE_FTC ?= 0
+CSR_BT_APP_USE_FTS ?= 0
+CSR_BT_APP_USE_SPP ?= 1
+ifeq ($(CSR_BT_LE_ENABLE),1)
+CSR_BT_APP_USE_GATT_GENERIC_SERVER ?= 1
+CSR_BT_APP_USE_GATT_LE_BROWSER ?= 1
+CSR_BT_APP_USE_GATT_THERMC ?= 1
+CSR_BT_APP_USE_GATT_THERMS ?= 1
+CSR_BT_APP_USE_GATT_HIDC ?= 1
+CSR_BT_APP_USE_GATT_PROXC ?= 3
+CSR_BT_APP_USE_GATT_PROXS ?= 1
+CSR_BT_APP_USE_GATT ?= 1
+else
+CSR_BT_APP_USE_GATT_GENERIC_SERVER ?= 0
+CSR_BT_APP_USE_GATT_LE_BROWSER ?= 0
+CSR_BT_APP_USE_GATT_THERMC ?= 0
+CSR_BT_APP_USE_GATT_THERMS ?= 0
+CSR_BT_APP_USE_GATT_HIDC ?= 0
+CSR_BT_APP_USE_GATT_PROXS ?= 0
+CSR_BT_APP_USE_GATT_PROXC ?= 0
+CSR_BT_APP_USE_GATT ?= 0
+endif
+CSR_BT_APP_USE_PHDC_AG ?= 1
+CSR_BT_APP_USE_PHDC_MGR ?= 1
+CSR_BT_APP_USE_AMPWIFI ?= 0
+ifneq ($(filter $(TARGET_PLATFORM),bdb2 bdb3),)
+CSR_BT_APP_USE_TFTP ?= 1
+endif
+
+
+# Tasks not ported yet
+CSR_BT_APP_USE_AVRCP ?= 0
+CSR_BT_APP_USE_DUNC ?= 0
+CSR_BT_APP_USE_DG ?= 0
+CSR_BT_APP_USE_HCRPS ?= 0
+CSR_BT_APP_USE_HIDD ?= 0
+CSR_BT_APP_USE_HIDH ?= 0
+CSR_BT_APP_USE_BIPC ?= 0
+CSR_BT_APP_USE_BIPS ?= 0
+CSR_BT_APP_USE_BPPC ?= 0
+CSR_BT_APP_USE_BPPS ?= 0
+CSR_BT_APP_USE_MAPC ?= 0
+CSR_BT_APP_USE_MAPS ?= 0
+CSR_BT_APP_USE_PAC ?= 0
+CSR_BT_APP_USE_PAS ?= 0
+CSR_BT_APP_USE_OPC ?= 0
+CSR_BT_APP_USE_OPS ?= 0
+CSR_BT_APP_USE_SYNCC ?= 0
+CSR_BT_APP_USE_PAN ?= 0
+CSR_BT_APP_USE_SAPC ?= 0
+CSR_BT_APP_USE_SAPS ?= 0
+
+ifneq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_L2CA_MODULE),)
+$(info ###############################################################)
+$(info Excluding L2CAP based profiles)
+$(info ###############################################################)
+CSR_BT_APP_USE_AV := 0
+CSR_BT_APP_USE_AVRCP :=0
+CSR_BT_APP_USE_GATT := 0
+CSR_BT_APP_USE_HDP := 0
+CSR_BT_APP_USE_PHDC_AG := 0
+CSR_BT_APP_USE_PHDC_MGR := 0
+endif
+
+ifneq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_RFC_MODULE),)
+$(info ###############################################################)
+$(info Excluding RFCOMM based profiles)
+$(info ###############################################################)
+CSR_BT_APP_USE_SPP := 0
+CSR_BT_APP_USE_HF := 0
+CSR_BT_APP_USE_HFG := 0
+CSR_BT_APP_USE_FTC := 0
+CSR_BT_APP_USE_FTS := 0
+endif
+
+# Special AMP/WiFi/COEX enabler
+ifeq ($(CSR_AMP_ENABLE),1)
+ifeq ($(CSR_BT_APP_WIFI_COEX),1)
+CSR_BT_APP_USE_AMPWIFI := 1
+endif
+ifeq ($(CSR_BT_APP_AMP_WIFI),1)
+CSR_BT_APP_USE_AMPWIFI := 1
+endif
+endif
+
+CFLAGS += \
+	-DNUM_AV_INST=$(CSR_BT_APP_USE_AV) \
+	-DNUM_AVRCP_INST=$(CSR_BT_APP_USE_AVRCP) \
+	-DNUM_DUNC_INST=$(CSR_BT_APP_USE_DUNC) \
+	-DNUM_DG_INST=$(CSR_BT_APP_USE_DG) \
+	-DNUM_HF_INST=$(CSR_BT_APP_USE_HF) \
+	-DNUM_HFG_INST=$(CSR_BT_APP_USE_HFG) \
+	-DNUM_HCRPS_INST=$(CSR_BT_APP_USE_HCRPS) \
+	-DNUM_HDP_INST=$(CSR_BT_APP_USE_HDP) \
+	-DNUM_HIDD_INST=$(CSR_BT_APP_USE_HIDD) \
+	-DNUM_HIDH_INST=$(CSR_BT_APP_USE_HIDH) \
+	-DNUM_BIPC_INST=$(CSR_BT_APP_USE_BIPC) \
+	-DNUM_BIPS_INST=$(CSR_BT_APP_USE_BIPS) \
+	-DNUM_BPPC_INST=$(CSR_BT_APP_USE_BPPC) \
+	-DNUM_BPPS_INST=$(CSR_BT_APP_USE_BPPS) \
+	-DNUM_FTC_INST=$(CSR_BT_APP_USE_FTC) \
+	-DNUM_FTS_INST=$(CSR_BT_APP_USE_FTS) \
+	-DNUM_MAPC_INST=$(CSR_BT_APP_USE_MAPC) \
+	-DNUM_MAPS_INST=$(CSR_BT_APP_USE_MAPS) \
+	-DNUM_PAC_INST=$(CSR_BT_APP_USE_PAC) \
+	-DNUM_PAS_INST=$(CSR_BT_APP_USE_PAS) \
+	-DNUM_OPC_INST=$(CSR_BT_APP_USE_OPC) \
+	-DNUM_OPS_INST=$(CSR_BT_APP_USE_OPS) \
+	-DNUM_SYNCC_INST=$(CSR_BT_APP_USE_SYNCC) \
+	-DNUM_PAN_INST=$(CSR_BT_APP_USE_PAN) \
+	-DNUM_SAPC_INST=$(CSR_BT_APP_USE_SAPC) \
+	-DNUM_SAPS_INST=$(CSR_BT_APP_USE_SAPS) \
+	-DNUM_SPP_INST=$(CSR_BT_APP_USE_SPP) \
+	-DNUM_GATT_INST=$(CSR_BT_APP_USE_GATT) \
+        -DNUM_GATT_GENERIC_SERVER_INST=$(CSR_BT_APP_USE_GATT_GENERIC_SERVER) \
+	-DNUM_GATT_LE_BROWSER_INST=$(CSR_BT_APP_USE_GATT_LE_BROWSER) \
+	-DNUM_GATT_THERMC_INST=$(CSR_BT_APP_USE_GATT_THERMC) \
+	-DNUM_GATT_THERMS_INST=$(CSR_BT_APP_USE_GATT_THERMS) \
+	-DNUM_GATT_HIDC_INST=$(CSR_BT_APP_USE_GATT_HIDC) \
+	-DNUM_GATT_PROXC_INST=$(CSR_BT_APP_USE_GATT_PROXC) \
+	-DNUM_GATT_PROXS_INST=$(CSR_BT_APP_USE_GATT_PROXS) \
+	-DNUM_PHDC_AG_INST=$(CSR_BT_APP_USE_PHDC_AG) \
+	-DNUM_PHDC_MGR_INST=$(CSR_BT_APP_USE_PHDC_MGR) \
+	-DNUM_AMPWIFI_INST=$(CSR_BT_APP_USE_AMPWIFI)
+
+CFLAGS += -DCSR_BT_TOPDIR=\"$(TOP)\"
+
+LDPATH += $(call create_ldpath,$(TOP)/output/$(CONFIG)/$(TARGET)/lib/app) 
+
+APP_COMMON_OBJ_PATH := $(TOP)/output/$(CONFIG)/$(TARGET)/obj/applications
+APP_COMMON_LIB_PATH := $(TOP)/output/$(CONFIG)/$(TARGET)/lib/app
+
+APP_COMMON_LIB := $(call use_lib,csr_bt_gap_app) 
+
+ifneq ($(CSR_BT_APP_USE_GATT_HIDC),0)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_GATT_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_hidc_app)
+else
+CSR_BT_APP_USE_GATT_HIDC := 0
+endif
+endif
+
+ifeq ($(CSR_BT_APP_USE_SPP),1)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_SPP_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_spp_app)
+else
+CSR_BT_APP_USE_SPP := 0
+endif
+endif
+
+ifneq ($(CSR_BT_APP_USE_GATT),0)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_GATT_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_gatt_app)
+else
+CSR_BT_APP_USE_GATT := 0
+endif
+endif
+
+ifneq ($(CSR_BT_APP_USE_GATT_GENERIC_SERVER),0)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_GATT_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_generic_server_app)
+else
+CSR_BT_APP_USE_GATT_GENERIC_BROWSER := 0
+endif
+endif
+
+ifneq ($(CSR_BT_APP_USE_GATT_LE_BROWSER),0)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_GATT_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_le_browser_app)
+else
+CSR_BT_APP_USE_GATT_LE_BROWSER := 0
+endif
+endif
+ifneq ($(CSR_BT_APP_USE_GATT_THERMC),0)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_GATT_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_thermc_app)
+else
+CSR_BT_APP_USE_GATT_THERMC := 0
+endif
+endif
+ifneq ($(CSR_BT_APP_USE_GATT_THERMS),0)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_THERM_SRV_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_therms_app)
+else
+CSR_BT_APP_USE_GATT_THERMS := 0
+endif
+endif
+
+
+ifneq ($(CSR_BT_APP_USE_GATT_PROXC),0)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_GATT_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_proxc_app)
+else
+CSR_BT_APP_USE_GATT_PROXC := 0
+endif
+endif
+
+ifneq ($(CSR_BT_APP_USE_GATT_PROXS),0)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_PROX_SRV_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_prox_srv_app)
+else
+CSR_BT_APP_USE_GATT_PROXS := 0
+endif
+endif
+
+
+
+ifeq ($(CSR_BT_APP_USE_PHDC_AG),1)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_PHDC_AG_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_phdc_ag_app) 
+else
+CSR_BT_APP_USE_PHDC_AG := 0
+endif
+endif
+
+ifeq ($(CSR_BT_APP_USE_PHDC_MGR),1)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_PHDC_MGR_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_phdc_mgr_app) 
+else
+CSR_BT_APP_USE_PHDC_MGR := 0
+endif
+endif
+
+ifeq ($(CSR_BT_APP_USE_FTS),1)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_FTS_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_fts_app) 
+else
+CSR_BT_APP_USE_FTS := 0
+endif
+endif
+
+ifeq ($(CSR_BT_APP_USE_FTC),1)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_FTC_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_ftc_app) 
+else
+CSR_BT_APP_USE_FTC := 0
+endif
+endif
+
+ifeq ($(CSR_BT_APP_USE_AV),1)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_AV_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_av_app)
+else
+CSR_BT_APP_USE_AV := 0
+endif
+endif
+
+ifeq ($(CSR_BT_APP_USE_AVRCP),1)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_AVRCP_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_avrcp_app)
+else
+CSR_BT_APP_USE_AVRCP := 0
+endif
+endif
+
+ifeq ($(CSR_BT_APP_USE_HFG),1)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_HFG_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_hfg_app)
+else
+CSR_BT_APP_USE_HFG := 0
+endif
+endif
+
+ifeq ($(CSR_BT_APP_USE_HF),1)
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_HF_MODULE),)
+APP_COMMON_LIB += $(call use_lib,csr_bt_hf_app) 
+else
+CSR_BT_APP_USE_HF := 0
+endif
+endif
+
+ifeq ($(CSR_BT_APP_USE_AMPWIFI),1)
+APP_COMMON_LIB += $(call use_lib,csr_bt_ampwifi_app)
+endif
+
+build_app_libs:
+	$(MAKE) -C $(TOP)/applications/gap lib
+
+ifneq ($(CSR_BT_APP_USE_SPP),0)
+	$(MAKE) -C $(TOP)/applications/spp lib
+endif
+
+ifeq ($(CSR_BT_APP_USE_GATT),1)
+	$(MAKE) -C $(TOP)/applications/gatt lib
+endif
+ifneq ($(CSR_BT_APP_USE_GATT_GENERIC_SERVER),0)
+	$(MAKE) -C $(TOP)/applications/gatt/generic_server -f ./makefile lib
+endif
+ifneq ($(CSR_BT_APP_USE_GATT_LE_BROWSER),0)
+	$(MAKE) -C $(TOP)/applications/gatt/le_browser -f ./makefile.cli lib
+endif
+ifneq ($(CSR_BT_APP_USE_GATT_THERMC),0)
+	$(MAKE) -C $(TOP)/applications/gatt/thermometer -f ./makefile.cli lib
+endif
+ifneq ($(CSR_BT_APP_USE_GATT_THERMS),0)
+	$(MAKE) -C $(TOP)/applications/gatt/thermometer -f ./makefile.srv lib
+endif
+ifneq ($(CSR_BT_APP_USE_GATT_HIDC),0)
+	$(MAKE) -C $(TOP)/applications/gatt/hid -f ./makefile.cli lib
+endif
+
+ifneq ($(CSR_BT_APP_USE_GATT_PROXC),0)
+	$(MAKE) -C $(TOP)/applications/gatt/proximity -f ./makefile.cli lib
+endif
+ifneq ($(CSR_BT_APP_USE_GATT_PROXS),0)
+	$(MAKE) -C $(TOP)/applications/gatt/proximity -f ./makefile.srv lib
+endif
+
+ifeq ($(CSR_BT_APP_USE_PHDC_AG),1)
+	$(MAKE) -C $(TOP)/applications/phdc -f makefile.ag lib
+endif
+
+ifeq ($(CSR_BT_APP_USE_PHDC_MGR),1)
+	$(MAKE) -C $(TOP)/applications/phdc -f makefile.mgr lib
+endif
+
+ifeq ($(CSR_BT_APP_USE_FTS),1)
+	$(MAKE) -C $(TOP)/applications/ftp -f makefile.fts lib
+endif
+
+ifeq ($(CSR_BT_APP_USE_FTC),1)
+	$(MAKE) -C $(TOP)/applications/ftp -f makefile.ftc lib
+endif
+
+ifeq ($(CSR_BT_APP_USE_AV),1)
+	$(MAKE) -C $(TOP)/applications/av lib
+endif
+ifeq ($(CSR_BT_APP_USE_AVRCP),1)
+	$(MAKE) -C $(TOP)/applications/avrcp lib 
+endif
+
+ifeq ($(CSR_BT_APP_USE_HFG),1)
+	$(MAKE) -C $(TOP)/applications/hfp -f makefile.hfg lib
+endif
+
+ifeq ($(CSR_BT_APP_USE_HF),1)
+	$(MAKE) -C $(TOP)/applications/hfp -f makefile.hf lib
+endif
+
+ifeq ($(CSR_BT_APP_USE_AMPWIFI),1)
+	$(MAKE) -C $(TOP)/applications/ampwifi lib
+endif
+
+$(APP_COMMON_LIB_PATH):
+	$(MKDIR) $(call path_subst,$(APP_COMMON_LIB_PATH))
+
+debug:
+	$(ECHO) "CSR_BT_APP_USE_SPP: $(CSR_BT_APP_USE_SPP)"
+	

@@ -1,0 +1,160 @@
+menu Samsung
+
+## VDLP MIPS Menu Start: config file for VDLinux 3.x Features ##
+menu "Samsung VDLP Option"
+comment "VDLinux 3.x"
+
+config SHOW_FAULT_TRACE_INFO
+       bool "Show Trace Info on User Page Fault"
+       default y
+       help
+        Show trace information when occurred "Segmentation Fault" or "Bus Error"
+        Prints registers, call stack, maps, user stack, etc.
+
+config SHOW_EPC_RA_INFO
+	bool "show address range including epc, ra"
+	depends on SHOW_FAULT_TRACE_INFO
+	default y
+
+config SERIAL_INPUT_MANIPULATION
+    bool "Manipulate serial input in N_TTY"
+    help
+      Decide whether serial input by user is enabled or not.
+
+config SERIAL_INPUT_ENABLE_STRING
+    string "Serial input enable string"
+    default "debug"
+    depends on SERIAL_INPUT_MANIPULATION=y
+    help
+      Default string that enable serial input by user.
+
+config SERIAL_INPUT_DISABLE_STRING
+    string "Serial input disable string"
+    default "~~bye"
+    depends on SERIAL_INPUT_MANIPULATION=y
+    help
+      Default string that disable serial input by user.
+
+config SERIAL_INPUT_DEFAULT_SETUP_ENABLE
+    bool "Serial input enable setup at boot"
+    default y
+    depends on SERIAL_INPUT_MANIPULATION=y
+
+config SERIAL_INPUT_MANIPULATION_PORTNUM
+    int "Serial input port line number"
+    default 0
+    depends on SERIAL_INPUT_MANIPULATION=y
+
+config SERIAL_INPUT_ENABLE_ONLY_NUMBER
+    bool "Enable only 0~9, space, enter and backspace as serial input"
+    default n
+    depends on SERIAL_INPUT_MANIPULATION=y
+
+config SERIAL_INPUT_ENABLE_HELP_MSG
+    bool "Print help message for serial input"
+    default y
+    depends on SERIAL_INPUT_MANIPULATION=y
+
+config VDLP_VERSION_INFO
+       bool "display kernel, patch number info"
+       default y
+       help
+               print kernel, patch number info.
+config SEPARATE_PRINTK_FROM_USER
+	bool "It separate messgaes(printf, printk) between user and kernel."
+	default y 
+
+config RSS_INFO
+       bool "Support to print rss information of process memory"
+       default y
+       help
+         Enable to print information of rss
+
+config PSS_INFO
+       bool "Support to print pss information of process memory"
+       default y
+       depends on PROC_PAGE_MONITOR
+       help
+         Enable to print information of pss
+
+config CHECK_USERMODE_ADE_EMULATE
+       bool "called load store emulate insn in user mode, send SIGBUS"
+       default y
+       help
+        If check this option, send SIGBUS. If not, just print error and debug message.
+
+config PRINT_KILL_SIGNAL
+    bool "Print kill signal debug message"
+    default n
+    help
+      Print debug message when kill signal is raised.
+
+config SKIP_CHECKING_MEMORY_WHILE_FORK
+       bool "Workaround glibc system() fail problem"
+       default y
+       help
+        workaround glibc system faile problem.
+
+config INFINITE_OOPS_DISPLAY
+    bool "Infinite oops display"
+    default y
+    help
+      Reprint oops log inifinitely(every 3 minute).
+
+config LPJ_MANUAL_SETTING
+    bool "LPJ value manual setting"
+    default y
+    help
+      Manually set the loops_per_jiffy value, to skip calibrating delay loop
+      on boot to improve boot time.
+      Pls note that for each architecture this value is different, therefore
+      first run target without this patch to get value.
+      Once value is found from boot message log, enable this option and
+      assign value to "Manual LPJ value"
+
+config LPJ_VALUE
+    int "Manual LPJ Value"
+    default 0
+    depends on LPJ_MANUAL_SETTING=y
+    help
+      Find value for your architecture before setting this.
+
+config VFAT_FS_DUALNAMES
+    bool "VFAT dual names support"
+    depends on VFAT_FS
+    help
+      This option provides support for dual filenames on VFAT filesystems.
+      If this option is disabled then file creation will either put
+      a short (8.3) name or a long name on the file, but never both.
+      The field where a shortname would normally go is filled with
+      invalid characters such that it cannot be considered a valid
+      short filename.
+      That means that long filenames created with this option
+      disabled will not be accessible at all to operating systems
+      that do not understand the VFAT extensions.
+      Users considering enabling this option should consider the implications
+      of any patents that may exist on dual filenames in VFAT.
+
+      If unsure, say N
+
+config DEBUG_STACKOVERFLOW
+       bool "Check for stack overflows"
+       help
+        This option will cause messages to be printed if free stack space
+        drops below a certain limit.
+
+config PRINT_MODULE_ADDR
+       bool "Print Loaded Module Address"
+       default y
+       help
+        print Loaded module address
+
+config DUMP_RANGE_BASED_ON_REGISTER
+       bool "dump register value"
+       default y
+       help
+        dump a specific range of addr bases on register.
+        depends on CONFIG_SHOW_PC_LR_INFO
+
+endmenu # end of "Samsung VDLP Option" menu
+endmenu # end of "Samsung" menu

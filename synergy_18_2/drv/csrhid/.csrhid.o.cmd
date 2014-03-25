@@ -1,0 +1,1 @@
+cmd_/home/matthew2/work/samsung/synergy_18_2/drv/csrhid/csrhid.o := ccache /usr/bin/ld -m elf_i386   -r -o /home/matthew2/work/samsung/synergy_18_2/drv/csrhid/csrhid.o /home/matthew2/work/samsung/synergy_18_2/drv/csrhid/csrhid_loopback.o 

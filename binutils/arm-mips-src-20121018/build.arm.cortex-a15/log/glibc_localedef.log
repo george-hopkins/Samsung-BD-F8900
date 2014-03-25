@@ -1,0 +1,608 @@
+Build EGLIBC localedef 
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_localedef'
+Configure EGLIBC localedef 
+checking build system type... x86_64-unknown-linux-gnu
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether ln -s works... yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether byte ordering is bigendian... no
+checking byteswap.h usability... yes
+checking byteswap.h presence... yes
+checking for byteswap.h... yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking endian.h usability... yes
+checking endian.h presence... yes
+checking for endian.h... yes
+checking features.h usability... yes
+checking features.h presence... yes
+checking for features.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for inttypes.h... (cached) yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking mcheck.h usability... yes
+checking mcheck.h presence... yes
+checking for mcheck.h... yes
+checking nl_types.h usability... yes
+checking nl_types.h presence... yes
+checking for nl_types.h... yes
+checking stdbool.h usability... yes
+checking stdbool.h presence... yes
+checking for stdbool.h... yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for stdint.h... (cached) yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking sys/cdefs.h usability... yes
+checking sys/cdefs.h presence... yes
+checking for sys/cdefs.h... yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for sys/stat.h... (cached) yes
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
+checking for off64_t... yes
+checking for blksize_t... yes
+checking for int_fast32_t... yes
+checking for locale_t... yes
+checking for __compar_fn_t... yes
+checking for comparison_fn_t... yes
+checking whether readdir64 is declared... yes
+checking whether stat64 is declared... yes
+checking whether ftruncate64 is declared... yes
+checking whether lseek64 is declared... yes
+checking whether euidaccess is declared... yes
+checking whether open64 is declared... yes
+checking whether mmap64 is declared... yes
+checking whether vprintf is declared... yes
+checking whether obstack_printf is declared... yes
+checking whether getdelim is declared... yes
+checking whether asprintf is declared... yes
+checking whether vasprintf is declared... yes
+checking whether mempcpy is declared... yes
+checking whether strchrnul is declared... yes
+checking whether strndup is declared... yes
+checking whether stpcpy is declared... yes
+checking whether strsep is declared... yes
+checking whether program_invocation_name is declared... yes
+checking whether program_invocation_short_name is declared... yes
+checking for gettext in -lintl... no
+checking for nanosleep in -lposix4... no
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+Make EGLIBC localedef 
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o charmap.o glibc/locale/programs/charmap.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o charmap-dir.o glibc/locale/programs/charmap-dir.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-address.o glibc/locale/programs/ld-address.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-collate.o glibc/locale/programs/ld-collate.c
+glibc/locale/programs/charmap.c: In function 'charmap_read':
+glibc/locale/programs/charmap.c:202: warning: passing argument 1 of '__xpg_basename' discards qualifiers from pointer target type
+/usr/include/libgen.h:35: note: expected 'char *' but argument is of type 'const char *'
+glibc/locale/programs/ld-collate.c: In function 'collate_output':
+glibc/locale/programs/ld-collate.c:2345: warning: pointer targets in passing argument 2 of 'add_locale_uint32_array' differ in signedness
+glibc/locale/programs/locfile.h:128: note: expected 'const uint32_t *' but argument is of type 'int32_t *'
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-ctype.o glibc/locale/programs/ld-ctype.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-identification.o glibc/locale/programs/ld-identification.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-measurement.o glibc/locale/programs/ld-measurement.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-messages.o glibc/locale/programs/ld-messages.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-monetary.o glibc/locale/programs/ld-monetary.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-name.o glibc/locale/programs/ld-name.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-numeric.o glibc/locale/programs/ld-numeric.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-paper.o glibc/locale/programs/ld-paper.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-telephone.o glibc/locale/programs/ld-telephone.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o ld-time.o glibc/locale/programs/ld-time.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o linereader.o glibc/locale/programs/linereader.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o localedef.o glibc/locale/programs/localedef.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o locarchive.o glibc/locale/programs/locarchive.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o locfile.o glibc/locale/programs/locfile.c
+glibc/locale/programs/locarchive.c: In function 'add_locale_to_archive':
+glibc/locale/programs/locarchive.c:1089: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result
+glibc/locale/programs/locarchive.c:1122: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result
+glibc/locale/programs/locarchive.c: In function 'add_locales_to_archive':
+glibc/locale/programs/locarchive.c:1450: warning: passing argument 1 of '__xpg_basename' discards qualifiers from pointer target type
+/usr/include/libgen.h:35: note: expected 'char *' but argument is of type 'const char *'
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o repertoire.o glibc/locale/programs/repertoire.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o simple-hash.o glibc/locale/programs/simple-hash.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o xmalloc.o glibc/locale/programs/xmalloc.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o xstrdup.o glibc/locale/programs/xstrdup.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o argp-ba.o glibc/argp/argp-ba.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o argp-eexst.o glibc/argp/argp-eexst.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o argp-fmtstream.o glibc/argp/argp-fmtstream.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o argp-help.o glibc/argp/argp-help.c
+glibc/argp/argp-help.c: In function 'argp_failure':
+glibc/argp/argp-help.c:1862: warning: unused variable 'buf'
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o argp-parse.o glibc/argp/argp-parse.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o argp-pv.o glibc/argp/argp-pv.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o argp-xinl.o glibc/argp/argp-xinl.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o error.o glibc/misc/error.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o getopt.o glibc/posix/getopt.c
+glibc/posix/getopt.c:74:1: warning: "_" redefined
+In file included from /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/gettext.h:1,
+                 from glibc/posix/getopt.c:73:
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/libintl.h:6:1: warning: this is the location of the previous definition
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o getopt1.o glibc/posix/getopt1.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o md5.o glibc/crypt/md5.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o obstack.o glibc/malloc/obstack.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o asprintf.o /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/asprintf.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o getdelim.o /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/getdelim.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o localedef_extra.o /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/localedef_extra.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o obstack_printf.o /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/obstack_printf.c
+gcc -D_GNU_SOURCE -g -O2 -DNO_SYSCONF -DNO_UNCOMPRESS -DLOCALE_PATH='"/usr/lib/locale:/usr/share/i18n"' -DLOCALEDIR='"/usr/lib/locale"' -DLOCALE_ALIAS_PATH='"/usr/share/locale"' -DCHARMAP_PATH='"/usr/share/i18n/charmaps"' -DREPERTOIREMAP_PATH='"/usr/share/i18n/repertoiremaps"' -DLOCSRCDIR='"/usr/share/i18n/locales"' -DNOT_IN_libc -Iglibc/locale/programs -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include -Iglibc/locale -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef -I. -include /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/include/always.h -Wall -Wno-format -c -o vasprintf.o /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/glibc/localedef/vasprintf.c
+gcc -o localedef charmap.o charmap-dir.o ld-address.o ld-collate.o ld-ctype.o ld-identification.o ld-measurement.o ld-messages.o ld-monetary.o ld-name.o ld-numeric.o ld-paper.o ld-telephone.o ld-time.o linereader.o localedef.o locarchive.o locfile.o repertoire.o simple-hash.o xmalloc.o xstrdup.o argp-ba.o argp-eexst.o argp-fmtstream.o argp-help.o argp-parse.o argp-pv.o argp-xinl.o error.o getopt.o getopt1.o md5.o obstack.o asprintf.o getdelim.o localedef_extra.o obstack_printf.o vasprintf.o 
+Install EGLIBC 0 localedef 
+glibc/scripts/mkinstalldirs /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_localedef/little4/usr/lib/locale
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_localedef/little4
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_localedef/little4/usr
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_localedef/little4/usr/lib
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_localedef/little4/usr/lib/locale
+aa_DJ.UTF-8aa_DJ.ISO-8859-1aa_ERaa_ER.UTF-8.UTF-8......@saaho...... done
+aa_ET.UTF-8... done
+af_ZA.UTF-8... done
+ done
+af_ZA.ISO-8859-1...am_ET.UTF-8... done
+an_ES.UTF-8... done
+an_ES.ISO-8859-15... done
+ar_AE.UTF-8... done
+ar_AE.ISO-8859-6... done
+ar_BH.UTF-8... done
+ar_BH.ISO-8859-6... done
+ar_DZ.UTF-8... done
+ar_DZ.ISO-8859-6... done
+ar_EG.UTF-8... done
+ar_EG.ISO-8859-6... done
+ar_IN.UTF-8... done
+ar_IQ.UTF-8... done
+ar_IQ.ISO-8859-6... done
+ar_JO.UTF-8... done
+ar_JO.ISO-8859-6... done
+ar_KW.UTF-8... done
+ar_KW.ISO-8859-6... done
+ar_LB.UTF-8... done
+ar_LB.ISO-8859-6... done
+ar_LY.UTF-8... done
+ar_LY.ISO-8859-6... done
+ar_MA.UTF-8... done
+ar_MA.ISO-8859-6... done
+ar_OM.UTF-8... done
+ar_OM.ISO-8859-6... done
+ar_QA.UTF-8... done
+ar_QA.ISO-8859-6... done
+ar_SA.UTF-8... done
+ done
+ar_SD.UTF-8ar_SA.ISO-8859-6...... done
+ar_SD.ISO-8859-6... done
+ar_SY.UTF-8... done
+ar_SY.ISO-8859-6... done
+ar_TN.UTF-8... done
+ar_TN.ISO-8859-6... done
+ar_YE.UTF-8... done
+ar_YE.ISO-8859-6... done
+az_AZ.UTF-8... done
+as_IN.UTF-8... done
+ast_ES.UTF-8... done
+ast_ES.ISO-8859-15... done
+be_BY.UTF-8... done
+be_BY.CP1251... done
+be_BY.UTF-8@latin... done
+bem_ZM.UTF-8... done
+ber_DZ.UTF-8... done
+ber_MA.UTF-8... done
+bg_BG.UTF-8... done
+bg_BG.CP1251... done
+bn_BD.UTF-8... done
+bn_IN.UTF-8... done
+bo_CN.UTF-8... done
+bo_IN.UTF-8... done
+br_FR.UTF-8... done
+br_FR.ISO-8859-1... done
+br_FR.ISO-8859-15@euro... done
+bs_BA.UTF-8... done
+bs_BA.ISO-8859-2... done
+ done
+byn_ER.UTF-8...ca_AD.UTF-8... done
+ca_AD.ISO-8859-15... done
+ca_ES.UTF-8... done
+ca_ES.ISO-8859-1... done
+ca_ES.ISO-8859-15@euro... done
+ca_FR.UTF-8... done
+ca_FR.ISO-8859-15... done
+ca_IT.UTF-8... done
+ca_IT.ISO-8859-15... done
+crh_UA.UTF-8... done
+cs_CZ.UTF-8... done
+cs_CZ.ISO-8859-2... done
+csb_PL.UTF-8... done
+cv_RU.UTF-8... done
+cy_GB.UTF-8... done
+cy_GB.ISO-8859-14... done
+da_DK.UTF-8... done
+da_DK.ISO-8859-1... done
+de_AT.UTF-8... done
+de_AT.ISO-8859-1... done
+de_AT.ISO-8859-15@euro... done
+de_BE.UTF-8... done
+de_BE.ISO-8859-1... done
+de_BE.ISO-8859-15@euro... done
+de_CH.UTF-8... done
+de_CH.ISO-8859-1... done
+de_DE.UTF-8... done
+de_DE.ISO-8859-1... done
+de_DE.ISO-8859-15@euro... done
+de_LU.UTF-8... done
+de_LU.ISO-8859-1... done
+de_LU.ISO-8859-15@euro... done
+dv_MV.UTF-8... done
+dz_BT.UTF-8... done
+el_GR.UTF-8... done
+el_GR.ISO-8859-7... done
+el_CY.UTF-8... done
+el_CY.ISO-8859-7... done
+ done
+en_AG.UTF-8...en_AU.UTF-8... done
+en_AU.ISO-8859-1... done
+en_BW.UTF-8... done
+en_BW.ISO-8859-1... done
+en_CA.UTF-8... done
+en_CA.ISO-8859-1... done
+en_DK.UTF-8... done
+en_DK.ISO-8859-1... done
+en_GB.UTF-8... done
+en_GB.ISO-8859-1... done
+en_HK.UTF-8... done
+en_HK.ISO-8859-1... done
+en_IE.UTF-8... done
+en_IE.ISO-8859-1... done
+en_IE.ISO-8859-15@euro... done
+en_IN.UTF-8... done
+en_NG.UTF-8... done
+en_NZ.UTF-8... done
+en_NZ.ISO-8859-1... done
+en_PH.UTF-8... done
+en_PH.ISO-8859-1... done
+en_SG.UTF-8... done
+en_SG.ISO-8859-1... done
+en_US.UTF-8... done
+en_US.ISO-8859-1... done
+en_ZA.UTF-8... done
+en_ZA.ISO-8859-1... done
+en_ZM.UTF-8... done
+en_ZW.UTF-8... done
+en_ZW.ISO-8859-1... done
+es_AR.UTF-8... done
+es_AR.ISO-8859-1... done
+es_BO.UTF-8... done
+es_BO.ISO-8859-1... done
+es_CL.UTF-8... done
+es_CL.ISO-8859-1... done
+es_CO.UTF-8... done
+es_CO.ISO-8859-1... done
+es_CR.UTF-8... done
+es_CR.ISO-8859-1... done
+es_DO.UTF-8... done
+es_DO.ISO-8859-1... done
+es_EC.UTF-8... done
+es_EC.ISO-8859-1... done
+es_ES.UTF-8... done
+es_ES.ISO-8859-1... done
+es_ES.ISO-8859-15@euro... done
+es_GT.UTF-8... done
+es_GT.ISO-8859-1... done
+es_HN.UTF-8... done
+es_HN.ISO-8859-1... done
+es_MX.UTF-8... done
+es_MX.ISO-8859-1... done
+es_NI.UTF-8... done
+es_NI.ISO-8859-1... done
+es_PA.UTF-8... done
+es_PA.ISO-8859-1... done
+es_PE.UTF-8... done
+es_PE.ISO-8859-1... done
+es_PR.UTF-8... done
+es_PR.ISO-8859-1... done
+es_PY.UTF-8... done
+es_PY.ISO-8859-1... done
+es_SV.UTF-8... done
+es_SV.ISO-8859-1... done
+es_US.UTF-8... done
+es_US.ISO-8859-1... done
+es_UY.UTF-8... done
+es_UY.ISO-8859-1... done
+es_VE.UTF-8... done
+es_VE.ISO-8859-1... done
+et_EE.UTF-8... done
+et_EE.ISO-8859-1... done
+et_EE.ISO-8859-15... done
+eu_ES.UTF-8... done
+eu_ES.ISO-8859-1... done
+eu_ES.ISO-8859-15@euro... done
+fa_IR.UTF-8... done
+ff_SN.UTF-8... done
+fi_FI.UTF-8... done
+fi_FI.ISO-8859-1... done
+fi_FI.ISO-8859-15@euro... done
+fil_PH.UTF-8... done
+fo_FO.UTF-8... done
+fo_FO.ISO-8859-1... done
+fr_BE.UTF-8... done
+fr_BE.ISO-8859-1... done
+fr_BE.ISO-8859-15@euro... done
+fr_CA.UTF-8... done
+fr_CA.ISO-8859-1... done
+fr_CH.UTF-8... done
+fr_CH.ISO-8859-1... done
+fr_FR.UTF-8... done
+fr_FR.ISO-8859-1... done
+fr_FR.ISO-8859-15@euro... done
+fr_LU.UTF-8... done
+fr_LU.ISO-8859-1... done
+fr_LU.ISO-8859-15@euro... done
+fur_IT.UTF-8... done
+fy_NL.UTF-8... done
+fy_DE.UTF-8... done
+ga_IE.UTF-8... done
+ga_IE.ISO-8859-1... done
+ga_IE.ISO-8859-15@euro... done
+gd_GB.UTF-8... done
+gd_GB.ISO-8859-15... done
+gez_ER.UTF-8... done
+gez_ER.UTF-8@abegede... done
+gez_ET.UTF-8... done
+gez_ET.UTF-8@abegede... done
+gl_ES.UTF-8... done
+gl_ES.ISO-8859-1... done
+gl_ES.ISO-8859-15@euro... done
+gu_IN.UTF-8... done
+gv_GB.UTF-8... done
+gv_GB.ISO-8859-1... done
+ha_NG.UTF-8... done
+he_IL.UTF-8... done
+he_IL.ISO-8859-8... done
+hi_IN.UTF-8... done
+hne_IN.UTF-8... done
+hr_HR.UTF-8... done
+hr_HR.ISO-8859-2... done
+hsb_DE.ISO-8859-2 done
+...hsb_DE.UTF-8... done
+ done
+ht_HT.UTF-8...hu_HU.UTF-8... done
+hu_HU.ISO-8859-2... done
+hy_AM.UTF-8... done
+hy_AM.ARMSCII-8... done
+ done
+id_ID.UTF-8...id_ID.ISO-8859-1... done
+ig_NG.UTF-8... done
+ik_CA.UTF-8... done
+is_IS.UTF-8... done
+is_IS.ISO-8859-1... done
+it_CH.UTF-8... done
+it_CH.ISO-8859-1... done
+it_IT.UTF-8... done
+it_IT.ISO-8859-1... done
+it_IT.ISO-8859-15@euro... done
+iu_CA.UTF-8... done
+iw_IL.UTF-8... done
+iw_IL.ISO-8859-8... done
+ja_JP.EUC-JP... done
+ja_JP.UTF-8... done
+ka_GE.UTF-8... done
+ka_GE.GEORGIAN-PS... done
+kk_KZ.UTF-8... done
+kk_KZ.PT154... done
+kl_GL.UTF-8... done
+kl_GL.ISO-8859-1... done
+km_KH.UTF-8... done
+kn_IN.UTF-8... done
+ko_KR.EUC-KR... done
+ko_KR.UTF-8... done
+kok_IN.UTF-8... done
+ks_IN.UTF-8... done
+ks_IN.UTF-8@devanagari... done
+ku_TR.UTF-8... done
+ku_TR.ISO-8859-9... done
+kw_GB.UTF-8... done
+kw_GB.ISO-8859-1... done
+ky_KG.UTF-8... done
+lb_LU.UTF-8... done
+lg_UG.UTF-8... done
+lg_UG.ISO-8859-10... done
+li_BE.UTF-8... done
+li_NL.UTF-8... done
+lij_IT.UTF-8... done
+lo_LA.UTF-8... done
+lt_LT.UTF-8... done
+lt_LT.ISO-8859-13... done
+lv_LV.UTF-8... done
+lv_LV.ISO-8859-13... done
+mai_IN.UTF-8... done
+mg_MG.UTF-8... done
+mg_MG.ISO-8859-15... done
+mhr_RU.UTF-8... done
+mi_NZ.UTF-8... done
+mi_NZ.ISO-8859-13... done
+mk_MK.UTF-8... done
+mk_MK.ISO-8859-5... done
+ml_IN.UTF-8... done
+mn_MN.UTF-8... done
+mr_IN.UTF-8... done
+ms_MY.UTF-8... done
+ms_MY.ISO-8859-1... done
+mt_MT.UTF-8... done
+mt_MT.ISO-8859-3... done
+my_MM.UTF-8... done
+nan_TW.UTF-8@latin... done
+nb_NO.UTF-8... done
+nb_NO.ISO-8859-1... done
+nds_DE.UTF-8... done
+nds_NL.UTF-8... done
+ne_NP.UTF-8... done
+nl_AW.UTF-8... done
+nl_BE.UTF-8... done
+ done
+nl_BE.ISO-8859-1nl_BE.ISO-8859-15...@euro... done
+nl_NL.UTF-8... done
+ done
+nl_NL.ISO-8859-1...nl_NL.ISO-8859-15@euro... done
+nn_NO.UTF-8... done
+ done
+nn_NO.ISO-8859-1...nr_ZA.UTF-8... done
+nso_ZA.UTF-8... done
+oc_FR.UTF-8... done
+oc_FR.ISO-8859-1... done
+om_ET.UTF-8... done
+om_KE.UTF-8... done
+om_KE.ISO-8859-1... done
+or_IN.UTF-8... done
+os_RU.UTF-8... done
+pa_IN.UTF-8... done
+pa_PK.UTF-8... done
+pap_AN.UTF-8... done
+pl_PL.UTF-8... done
+pl_PL.ISO-8859-2... done
+ps_AF.UTF-8... done
+pt_BR.UTF-8... done
+pt_BR.ISO-8859-1... done
+pt_PT.UTF-8... done
+pt_PT.ISO-8859-1... done
+pt_PT.ISO-8859-15@euro... done
+ro_RO.UTF-8... done
+ro_RO.ISO-8859-2... done
+ru_RU.KOI8-R... done
+ru_RU.UTF-8... done
+ru_RU.ISO-8859-5... done
+ru_UA.UTF-8... done
+ru_UA.KOI8-U... done
+rw_RW.UTF-8... done
+sa_IN.UTF-8... done
+sc_IT.UTF-8... done
+sd_IN.UTF-8... done
+sd_IN.UTF-8@devanagari... done
+se_NO.UTF-8... done
+shs_CA.UTF-8... done
+si_LK.UTF-8... done
+sid_ET.UTF-8... done
+sk_SK.UTF-8... done
+sk_SK.ISO-8859-2... done
+sl_SI.UTF-8... done
+sl_SI.ISO-8859-2... done
+so_DJ.UTF-8... done
+so_DJ.ISO-8859-1... done
+so_ET.UTF-8... done
+so_KE.UTF-8... done
+so_KE.ISO-8859-1... done
+so_SO.UTF-8... done
+so_SO.ISO-8859-1... done
+sq_AL.UTF-8... done
+sq_AL.ISO-8859-1... done
+sq_MK.UTF-8... done
+sr_ME.UTF-8... done
+sr_RS.UTF-8... done
+sr_RS.UTF-8@latin... done
+ss_ZA.UTF-8... done
+st_ZA.UTF-8... done
+st_ZA.ISO-8859-1... done
+sv_FI.UTF-8... done
+sv_FI.ISO-8859-1... done
+sv_FI.ISO-8859-15@euro... done
+sv_SE.UTF-8... done
+sv_SE.ISO-8859-1... done
+sw_KE.UTF-8... done
+sw_TZ.UTF-8... done
+ta_IN.UTF-8... done
+te_IN.UTF-8... done
+tg_TJ.UTF-8... done
+tg_TJ.KOI8-T... done
+th_TH.UTF-8... done
+th_TH.TIS-620... done
+ti_ER.UTF-8... done
+ti_ET.UTF-8... done
+tig_ER.UTF-8... done
+tk_TM.UTF-8... done
+tl_PH.UTF-8... done
+tl_PH.ISO-8859-1... done
+tn_ZA.UTF-8... done
+tr_CY.UTF-8... done
+tr_CY.ISO-8859-9... done
+ done
+tr_TR.ISO-8859-9tr_TR.UTF-8...... done
+ts_ZA.UTF-8... done
+tt_RU.UTF-8... done
+tt_RU.UTF-8@iqtelif... done
+ug_CN.UTF-8... done
+uk_UA.UTF-8... done
+uk_UA.KOI8-U... done
+ur_PK.UTF-8... done
+uz_UZ.ISO-8859-1... done
+uz_UZ.UTF-8@cyrillic... done
+ve_ZA.UTF-8... done
+vi_VN.TCVN5712-1... done
+vi_VN.UTF-8... done
+wa_BE.ISO-8859-1... done
+wa_BE.ISO-8859-15@euro... done
+wa_BE.UTF-8... done
+wae_CH.UTF-8... done
+wo_SN.UTF-8... done
+xh_ZA.UTF-8... done
+xh_ZA.ISO-8859-1... done
+yi_US.UTF-8... done
+yi_US.CP1255... done
+yo_NG.UTF-8... done
+yue_HK.UTF-8... done
+zh_CN.GB18030... done
+zh_CN.GBK... done
+zh_CN.UTF-8... done
+zh_CN.GB2312... done
+zh_HK.UTF-8... done
+zh_HK.BIG5-HKSCS... done
+zh_SG.UTF-8... done
+zh_SG.GBK... done
+zh_SG.GB2312... done
+zh_TW.EUC-TW... done
+zh_TW.UTF-8... done
+zh_TW.BIG5... done
+zu_ZA.UTF-8... done
+zu_ZA.ISO-8859-1... done
+ done
+ done
+ done
+mkdir: created directory `little4/usr/lib/locale/test'
+character map `SHIFT_JIS' is not ASCII compatible, locale not ISO C compliant

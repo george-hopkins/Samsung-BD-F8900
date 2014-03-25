@@ -1,0 +1,18 @@
+#
+# Novatek SOC Common 
+#
+platform-$(CONFIG_NVT_CHIP) += nvt-boards/core/
+cflags-$(CONFIG_NVT_CHIP)	+= -I$(srctree)/arch/mips/nvt-boards/core/include
+load-$(CONFIG_NVT_CHIP) += 0xffffffff80000000
+ifdef CONFIG_PULLOUT_INITRAMFS
+all-$(CONFIG_NVT_CHIP)	:= vmlinux.bin initramfs.bin
+else
+all-$(CONFIG_NVT_CHIP)	:= vmlinux.bin
+endif
+
+#
+# Novatek NT72568 board
+#
+platform-$(CONFIG_NVT_NT72568)	+= nvt-boards/72568/
+cflags-$(CONFIG_NVT_NT72568)	+= -I$(srctree)/arch/mips/include/asm/mach-nt72568
+

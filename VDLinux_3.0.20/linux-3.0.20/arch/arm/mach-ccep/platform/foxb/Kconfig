@@ -1,0 +1,15 @@
+######################################################################
+#
+# 	Kconfig for FoxB machine; Samsung VD SoC BD platform
+# 	
+# 	created by tukho.kim@samsung.com
+#
+######################################################################
+#
+# May,31,2010:	created by tukho.kim
+# 
+
+if MACH_FOXB
+
+
+endif # MACH_FOXB

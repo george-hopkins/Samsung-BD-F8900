@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_APP_SIGNALS" discriminant="CSR_APP_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrAppRegisterReq" resource="CSR_APP_SIGNALS" dvalue="CsrAppRegisterReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="menuName">
+            <!-- Normally technology name -->
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="subMenuName">
+            <!-- Normally profile name -->
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrAppBacklogReqSend" resource="FUNC" signal="CsrAppBacklogReq">
+        <field name="menuName"/>
+        <field name="subMenuName"/>
+        <field name="causePopup"/>
+        <field name="fmt" option="varargs" reference="logText" bytelength="255"/>
+    </type>
+    
+    <type name="CsrAppRegisterCfm" resource="CSR_APP_SIGNALS" dvalue="CsrAppRegisterCfm">
+        <field name="controlId">
+            <!-- Identifier given to the registred menu item -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrAppTakeControlInd" resource="CSR_APP_SIGNALS" dvalue="CsrAppTakeControlInd">
+        <field name="controlId">
+            <!-- Identifier given to the registred menu item, the app can use this to find out which menu item the user selected -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrAppBacklogReq" resource="CSR_APP_SIGNALS" dvalue="CsrAppBacklogReq">
+        <field name="menuName">
+            <!-- Normally technology name -->
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="subMenuName">
+            <!-- Normally profile name -->
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="causePopup">
+            <type>CsrBool</type>
+        </field>
+        <field name="logText">
+            <!-- Actual string which should be stored in the backlog -->
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CSR_APP_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrAppRegisterReq"             value="0x0000"/>
+        <value name="CsrAppBacklogReq"              value="0x0001"/>
+
+        <value name="CsrAppRegisterCfm"             value="0x8000"/>
+        <value name="CsrAppTakeControlInd"          value="0x8001"/>
+    </type>
+</definitions>

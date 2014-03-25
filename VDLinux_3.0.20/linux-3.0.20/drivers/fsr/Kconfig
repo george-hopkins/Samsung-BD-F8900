@@ -1,0 +1,69 @@
+#
+# Unified Flash Device configuration
+#
+
+menu "LinuStoreIII(FSR) Flash Devices Support"
+
+config RFS_FSR
+	tristate "FSR BML block device support"
+	default m
+	help
+		Provides Flexible Sector Remapper(FSR) and associated BML block interface.
+
+config RFS_FSR_STL
+	tristate "FSR STL block device support"
+	depends on RFS_FSR
+	select RFS_MAPDESTROY
+	default m
+	help
+		Provides STL block interface for FSR.
+
+config RFS_STL_DELETE
+	bool "STL delete support"
+	depends on RFS_FSR_STL
+	default y
+	help
+		STL delete support
+
+config RFS_FSR_STL_BENCHMARK
+	tristate "FSR benchmark tool support"
+	depends on RFS_FSR
+	help
+		FSR benchmark tool.
+
+config FSR_DUAL_VOLUME
+	bool "Multi Volume support (Experimental)"
+	depends on RFS_FSR
+	default n
+	help
+		Support Dual Samsung flash memory devices.
+
+config FSR_FLASH_PHYS_ADDR
+	hex "1st Volume flash device Physical Location"
+	depends on RFS_FSR
+	default "0x00100000"
+	help
+		This is the physical address of the flash device the fsr will
+		be linked for and stored to.  This address is platform dependent.
+
+config FSR_FLASH_PHYS_ADDR2
+	hex "2nd Volume flash device Physical Location"
+	depends on FSR_DUAL_VOLUME
+	default "0x0A000000"
+	help
+		This is the physical address of the 2nd flash device(in Multi Volume
+		configuration) the fsr will be linked for and stored to. This
+		address is platform dependent.
+
+config LINUSTOREIII_DEBUG_VERBOSE
+	int "LinuStoreIII Debugging verbosity (0 = quiet, 3 = noisy)"
+	depends on RFS_FSR
+	default 0
+
+config LINUSTOREIII_DEBUG
+	bool
+	depends on RFS_FSR
+	default y
+
+endmenu
+

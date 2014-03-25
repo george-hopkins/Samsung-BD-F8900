@@ -1,0 +1,22 @@
+# Makefile for busybox
+#
+# Copyright (C) 1999-2005 by Erik Andersen <andersen@codepoet.org>
+#
+# Licensed under GPLv2, see file LICENSE in this source tree.
+
+NEEDED-$(CONFIG_E2FSCK) = y
+NEEDED-$(CONFIG_FSCK) = y
+NEEDED-$(CONFIG_MKE2FS) = y
+NEEDED-$(CONFIG_TUNE2FS) = y
+
+lib-y:=
+
+INSERT
+
+#lib-$(NEEDED-y) += cache.o dev.o devname.o devno.o blkid_getsize.o \
+#                  probe.o read.o resolve.o save.o tag.o list.o
+
+#lib-$(NEEDED-y) += dm.c evms.c ioctl.c lvm.c md.c sysfs.c topology.c 
+lib-$(CONFIG_E2FSCK) += dm.o evms.o ioctl.o lvm.o md.o sysfs.o topology.o 
+
+

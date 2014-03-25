@@ -1,0 +1,50 @@
+#-*-Makefile-*-
+##############################################################################
+#
+#               (c) Cambridge Silicon Radio Limited 2009
+#
+#                All rights reserved and confidential information of CSR
+#
+##############################################################################
+.PHONY: config 
+DEFAULT: help
+
+help:
+	@echo "config   Config a build"
+	@echo "list     List configurations"
+
+list:
+ifeq ($(CFG),)
+	@if [ -e config ]; \
+	then \
+	if [ `ls config | wc -l` == 0 ];\
+	then \
+	echo "No configurations present";\
+	else \
+	echo "Available configurations";\
+	echo "-----------------------";\
+	(cd config; find . -name "*.mk" | sed -e "s/\.\///g" | sed -e "s/\.mk//g"); \
+	fi \
+	else \
+	echo "No configurations present";\
+	fi
+else
+	@make -s -f config/$(CFG).mk list
+endif
+
+config:
+	@if [ ! -e config ]; \
+	then \
+	mkdir config; \
+	fi
+
+	@echo "Finding installed components. Please wait ..."
+	@find . -name "ver.mk" | sed -e "s/\/ver\.mk//g" > tech.txt
+	@perl config.pl
+	@rm -f tech.txt
+
+all: lib bin 
+
+bin lib clean veryclean:
+	make -f config/$(CFG).mk $@
+

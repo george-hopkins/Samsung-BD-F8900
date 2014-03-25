@@ -1,0 +1,225 @@
+// =============================================================================
+// 
+// CSR tracking information, report this in case of problems:
+//   $Revision: #2 $
+//   Built Thu Nov  3 06:10:50 2011 GMT
+//   Checked-in $DateTime: 2011/12/08 08:24:17 $
+//   $File: //depot/apbu/synergy/android/sfa2.6er4/main/external/synergy/modules/bt/applications/bootstrap/psr/pb-109r5_8241_csr8311_uart.psr $
+// 
+// Patch is for build 8241 gem_5hci_rom_bt4.0_gemA08_1106290711_dspm_encr128
+// 
+// Issues patched: B-111318, B-XXXXX
+// 
+// Documentation from pb-109-csr8311-uart.pb
+// -----------------------------------------
+// 
+// General purpose patch and PSKEY bundle for CSR8311 A08 CSP Packages.
+// 
+// Documentation from pb-109-common.pb
+// -----------------------------------
+// 
+// General patch bundle for Gemini-A08 (build ID 8241)
+// Patches and keys in here should be common to all
+// package variants.
+// 
+// Documentation from bt_pskeys.pb
+// -------------------------------
+// 
+// Issues patched: B-XXXXX
+// 
+// Non-default PSKEY settings aimed at improving Bluetooth performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches.
+// 
+// Documentation from rt_zero.xap
+// ------------------------------
+// 
+// Patch for B-106483
+// Issuing the TX DATA radiotest functions inadvertently caused
+// the BLE power table configuration to be used instead of BR/EDR
+// 
+// Documentation from race_condition_stop_adv.xap
+// ----------------------------------------------
+// 
+// Patch for B-105729
+// When BlueCore is performing Bluetooth low energy advertising whilst
+// performing some other activity simultaneously like being slave of a
+// BR/EDR link, it is possible that BlueCore might become unresponsive
+// when the host disables advertising or when connectable-directed
+// advertising times out in case BlueCore was performing
+// connectable-directed advertising.
+// 
+// Documentation from data_unpause.xap
+// -----------------------------------
+// 
+// Patch for B-108091 (and B-108660)
+// Where encryption was refreshed, a Bluecore LE slave could sometimes
+// transmit data too soon. This could lead to the master of the link
+// disconnecting with a mic error.
+// 
+// Documentation from rebuffer_commands.xap
+// ----------------------------------------
+// 
+// Patch for B-104898
+// When BlueCore receives an HCI command that it can't process immediately
+// because it is busy doing some other operation on the link the command
+// was destined for, BlueCore would try to buffer the command but due to a
+// fault in BlueCore firmware, BlueCore could try to process this buffered
+// command too soon i.e. before the ongoing operation has finished. In this
+// case BlueCore would try buffering the command again and could fail to do
+// so and reject the command with reason "command disallowed"
+// 
+// Documentation from patch_avoid_spurious_emissions.c
+// ---------------------------------------------------
+// 
+// Issues patched: B-111318
+// 
+// In certain BC7's a small peak in Tx output power might be seen at the
+// start of the Tx ramp profile. Although this peak is too small to cause
+// any spurious emissions it has led to one model of tester seeing the Tx
+// output peak as the start of the Tx packet, which resulted in the tester
+// being unable to measure the Tx packet correctly.
+// 
+// Version information for input files
+// -----------------------------------
+// 
+// Created by patchmaker.pl Revision: #43  Date: 2011/03/03 
+// 
+// Input file: pb-109-csr8311-uart.pb
+// Depot file: //depot/bc/gemini-a08/dev/patches/8241/pb-109-csr8311-uart.pb
+// File revision: 2
+// 
+// Input file: pb-109-csr8311-common.pb
+// Depot file: //depot/bc/gemini-a08/dev/patches/8241/pb-109-csr8311-common.pb
+// File revision: 1
+// 
+// Input file: pb-109-common.pb
+// Depot file: //depot/bc/gemini-a08/dev/patches/8241/pb-109-common.pb
+// File revision: 5
+// 
+// Input file: bt_pskeys.pb
+// Depot file: //depot/bc/gemini-a08/dev/patches/8241/bt_pskeys.pb
+// File revision: 1
+// 
+// Input file: rt_zero.xap
+// Depot file: //depot/bc/gemini-a08/dev/patches/8241/rt_zero.xap
+// File revision: 2
+// 
+// Input file: ../patch_utils.inc
+// Depot file: //depot/bc/gemini-a08/dev/patches/patch_utils.inc
+// File revision: 1
+// 
+// Input file: race_condition_stop_adv.xap
+// Depot file: //depot/bc/gemini-a08/dev/patches/8241/race_condition_stop_adv.xap
+// File revision: 2
+// 
+// Input file: data_unpause.xap
+// Depot file: //depot/bc/gemini-a08/dev/patches/8241/data_unpause.xap
+// File revision: 6
+// 
+// Input file: rebuffer_commands.xap
+// Depot file: //depot/bc/gemini-a08/dev/patches/8241/rebuffer_commands.xap
+// File revision: 2
+// 
+// Input file: patch_avoid_spurious_emissions.c
+// Depot file: //depot/bc/gemini-a08/dev/patches/8241/patch_avoid_spurious_emissions.c
+// File revision: 3
+
+// patch_hardware_0, PSKEY_PATCH50 (0x212c, 8492), 16 words
+&212c = 0000 c47d 5714 0018 ff2b ff0e d800 7918 009e 0018 ff2b ff0e c500 8018 00e2 7080
+
+// patch_hardware_1, PSKEY_PATCH51 (0x212d, 8493), 25 words
+&212d = 0002 5b79 0014 e700 9525 011b 0626 089a 0af4 0218 ff2b ff0e 5b00 4318 009e 0014 011b 0826 0218 ff2b ff0e 5c00 8218 00e2 a63a
+
+// patch_hardware_2, PSKEY_PATCH52 (0x212e, 8494), 38 words
+&212e = 0002 d0a7 0316 0318 ff2b ff0e 2300 0618 009e e199 14f4 e119 0812 8000 00c0 10f0 061b 0212 0100 ffc0 0780 0af0 0316 0010 0318 ff2b ff0e 3800 1318 009e f70f 0218 ff2b ff0e d100 ac18 00e2 cf53
+
+// patch_hardware_3, PSKEY_PATCH53 (0x212f, 8495), 26 words
+&212f = 0003 c916 0114 0027 0517 2b00 a484 06f0 2b00 a914 0527 0114 02e0 0014 0127 0014 0227 0323 e315 0318 ff2b ff0e c900 1d18 00e2 cb5f
+
+// patch_hardware_4, PSKEY_PATCH54 (0x2130, 8496), 24 words
+&2130 = 0002 ca7a 0018 ff2b ff0e 8400 cb18 009e ea00 5f11 0100 0080 0524 0100 00b0 ea00 5f21 0218 ff2b ff0e ca00 7d18 00e2 2513
+
+// patch_lc_init_radio, PSKEY_PATCH112 (0x2200, 8704), 7 words
+&2200 = f100 cf15 01b4 f100 cf25 00e2 9dd1
+
+// explicit, PSKEY_BT_POWER_TABLE_V0 (0x241a, 9242), 40 words
+&241a = 2217 0050 1e28 0040 ec00 2417 0040 2c28 0040 f000 2317 0030 2a28 0030 f400 2317 0020 2a28 0020 f800 2417 0010 2b28 0010 fc00 2717 0000 2c29 0000 0000 3718 0000 383a 0000 0400 3fcf 0000 3fcf 0000 0800
+
+
+// PSKEY_HOSTIO_MAP_SCO_PCM - TRUE
+&01ab = 0001
+
+// PSKEY_HOSTIO_MAP_CODEC - FALSE
+&01b0 = 0000
+
+// PSKEY_CODEC_PIO
+&01b9 = 000b
+
+// PSKEY_ANA_FREQ - 26000
+&01fe = 6590
+
+// PSKEY_ANA_FTRIM
+&01f6 = 0025
+
+// PSKEY_H_HC_FC_MAX_ACL_PKT_LEN
+&0011 = 0156
+
+// PSKEY_H_HC_FC_MAX_ACL_PKTS
+&0013 = 0009
+
+// PSKEY_PCM_MIN_CPU_CLOCK
+&024d = 0000
+
+// PSKEY_MAX_SCOS
+&000e = 0003
+
+// PSKEY_HOST_INTERFACE - BCSP
+&01f9 = 0001
+
+// PSKEY_VM_DISABLE - TRUE
+&025d = 0001
+
+// (generic patch 3) PSKEY_FM_API_OPTIONS
+&20dd = 0019
+
+// (generic patch 4) RX_ATTEN_CONFIG
+&038b = 0000 0001 0041 0042 0043 0044 0045 0046 0047 0057 0067 0077 00b7 00f7 00f7 00f7
+
+// (generic patch 5) Fruitbat deep sleep
+&03b6 = 0000
+
+// (generic patch 6) PSKEY_FM_API_TRANSPORT
+&20dc = 0002
+
+// (generic patch 7) PSKEY_FM_AUDIO_ROUTING
+&20d5 = 0010
+
+// PSKEY_PCM_CONFIG32
+// slave, Short Frame Sync, Falling edge, Master clk 512 kHz, Sync clk 8kHz, LSB First
+&01b3 = 0840 0006
+
+// PSKEY_PCM_FORMAT - 16 bit linear
+&01b6 = 0060
+
+// PSKEY_UART_HOST_WAKE
+&01c7 = 0001 0064 000f 0005
+
+
+// PSKEY_LOCAL_SUPPORTED_FEATURES
+&00ef = ffff fe8f ff9b 8759 
+
+// PSKEY_HCI_LMP_LOCAL_VERSION
+&010d = 0505
+
+// PSKEY_LMP_REMOTE_VERSION
+&010e = 05
+
+// PSKEY_USR1 synergy bt version 18.1.1
+&028b = 0031 0038 002e 0031 002e 0031
+
+// PSKEY_USR2 bootstrap version 0.2
+&028c = 0030 002e 0032

@@ -1,0 +1,18 @@
+######################################################################
+#
+# 	Kconfig for Firenze machine; Samsung VD SoC DTV platform
+# 	
+# 	created by tukho.kim@samsung.com
+#
+######################################################################
+#
+# May,31,2010:	created by tukho.kim
+# 
+
+if MACH_FPGA_VICTORIA
+
+config FPGA_BUSCLKSRC
+	int "FPGA Bus clock source(#3 clock) frequency (Hz)"
+	default "50000000"
+
+endif # MACH_FPGA_VICTORIA

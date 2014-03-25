@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_FP_SIGNALS" discriminant="CSR_FP_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+    <type name="csr_mblk_xml" resource="FILE" file="csr_mblk.xml"/>
+
+    <type name="CsrFpCreateReq" resource="CSR_FP_SIGNALS" dvalue="CsrFpCreateReq">
+        <field name="appHandle">
+            <!-- Application handle which all data associated with this pipe should be returned to -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="overheadHost">
+            <!-- Pipe overhead on the host -->
+            <type>CsrUint32</type>
+        </field>
+        <field name="capacityRxHost">
+            <!-- Capacity of receive buffer on the host -->
+            <type>CsrUint32</type>
+        </field>
+        <field name="requiredTxController">
+            <!-- Required capacity of tx buffer on controller -->
+            <type>CsrUint32</type>
+        </field>
+        <field name="desiredTxController">
+            <!-- Desired capacity of tx buffer on controller -->
+            <type>CsrUint32</type>
+        </field>
+        <field name="requiredRxController">
+            <!-- Required capacity of rx buffer on controller -->
+            <type>CsrUint32</type>
+        </field>
+        <field name="desiredRxController">
+            <!-- Desired capacity of rx buffer on controller -->
+            <type>CsrUint32</type>
+        </field>
+    </type>
+
+    <type name="CsrFpCreateCfm" resource="CSR_FP_SIGNALS" dvalue="CsrFpCreateCfm">
+        <field name="fpHandle">
+            <!-- fastpipe handle in the range 1..15; 0 is used for credit channel; values in the range 16..255 are reserved -->
+            <type>CsrFpHandleType</type>
+        </field>
+        <field name="result">
+            <!-- Indicates success or specific reason for failure -->
+            <type>CsrFpResult</type>
+        </field>
+        <field name="overheadController">
+            <!-- Pipe overhead on the controller -->
+            <type>CsrUint32</type>
+        </field>
+        <field name="capacityTxController">
+            <!-- Capacity of transmit buffer on controller -->
+            <type>CsrUint32</type>
+        </field>
+        <field name="capacityRxController">
+            <!-- Capacity of receive buffer on controller -->
+            <type>CsrUint32</type>
+        </field>
+    </type>
+
+    <type name="CsrFpWriteReq" resource="CSR_FP_SIGNALS" dvalue="CsrFpWriteReq">
+        <field name="fpHandle">
+            <!-- fastpipe handle in the range 1..15; 0 is used for credit channel; values in the range 16..255 are reserved -->
+            <type>CsrFpHandleType</type>
+        </field>
+        <field name="data">
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CsrFpWriteCfm" resource="CSR_FP_SIGNALS" dvalue="CsrFpWriteCfm">
+        <field name="fpHandle">
+            <!-- fastpipe handle in the range 1..15; 0 is used for credit channel; values in the range 16..255 are reserved -->
+            <type>CsrFpHandleType</type>
+        </field>
+        <field name="result">
+            <!-- Indicates success or specific reason for failure -->
+            <type>CsrFpResult</type>
+        </field>
+    </type>
+
+    <type name="CsrFpReadInd" resource="CSR_FP_SIGNALS" dvalue="CsrFpReadInd">
+        <field name="fpHandle">
+            <!-- fastpipe handle in the range 1..15; 0 is used for credit channel; values in the range 16..255 are reserved -->
+            <type>CsrFpHandleType</type>
+        </field>
+        <field name="data">
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CsrFpClearReq" resource="CSR_FP_SIGNALS" dvalue="CsrFpClearReq">
+        <field name="fpHandle">
+            <!-- fastpipe handle in the range 1..15; 0 is used for credit channel; values in the range 16..255 are reserved -->
+            <type>CsrFpHandleType</type>
+        </field>
+    </type>
+
+    <type name="CsrFpClearCfm" resource="CSR_FP_SIGNALS" dvalue="CsrFpClearCfm">
+        <field name="fpHandle">
+            <!-- fastpipe handle in the range 1..15; 0 is used for credit channel; values in the range 16..255 are reserved -->
+            <type>CsrFpHandleType</type>
+        </field>
+        <field name="result">
+            <!-- Indicates success or specific reason for failure -->
+            <type>CsrFpResult</type>
+        </field>
+    </type>
+
+    <type name="CsrFpDestroyReq" resource="CSR_FP_SIGNALS" dvalue="CsrFpDestroyReq">
+        <field name="fpHandle">
+            <!-- fastpipe handle in the range 1..15; 0 is used for credit channel; values in the range 16..255 are reserved -->
+            <type>CsrFpHandleType</type>
+        </field>
+    </type>
+
+    <type name="CsrFpDestroyCfm" resource="CSR_FP_SIGNALS" dvalue="CsrFpDestroyCfm">
+        <field name="fpHandle">
+            <!-- fastpipe handle in the range 1..15; 0 is used for credit channel; values in the range 16..255 are reserved -->
+            <type>CsrFpHandleType</type>
+        </field>
+        <field name="result">
+            <!-- Indicates success or specific reason for failure -->
+            <type>CsrFpResult</type>
+        </field>
+    </type>
+
+    <type name="CSR_FP_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrFpCreateReq"                                value="0x0000"/>
+        <value name="CsrFpWriteReq"                                 value="0x0001"/>
+        <value name="CsrFpClearReq"                                 value="0x0002"/>
+        <value name="CsrFpDestroyReq"                               value="0x0003"/>
+
+        <value name="CsrFpCreateCfm"                                value="0x8000"/>
+        <value name="CsrFpWriteCfm"                                 value="0x8001"/>
+        <value name="CsrFpReadInd"                                  value="0x8002"/>
+        <value name="CsrFpClearCfm"                                 value="0x8003"/>
+        <value name="CsrFpDestroyCfm"                               value="0x8004"/>
+    </type>
+
+    <!-- Special type for backward compatibility -->
+    <type name="CsrFpPrimType" resource="TYPE" size="16"/>
+
+    <type name="CsrFpResult" resource="TYPE" type="CsrResult" const="1">
+        <value name="CSR_FP_RESULT_CANNOT_BE_ENABLED"               value="0x0001"/>
+        <value name="CSR_FP_RESULT_ALREADY_ENABLED"                 value="0x0002"/>
+        <value name="CSR_FP_RESULT_NOT_ENABLED"                     value="0x0003"/>
+        <value name="CSR_FP_RESULT_CREDIT_PIPE_NOT_CREATED"         value="0x0004"/>
+        <value name="CSR_FP_RESULT_ID_IN_USE"                       value="0x0005"/>
+        <value name="CSR_FP_RESULT_TX_CAPACITY_REFUSED"             value="0x0006"/>
+        <value name="CSR_FP_RESULT_RX_CAPACITY_REFUSED"             value="0x0007"/>
+        <value name="CSR_FP_RESULT_TOO_MANY_PIPES_ACTIVE"           value="0x0008"/>
+        <value name="CSR_FP_RESULT_WOULD_EXCEED_CONTROLLER_LIMIT"   value="0x0009"/>
+        <value name="CSR_FP_RESULT_INVALID_PARAMETERS"              value="0x000A"/>
+        <value name="CSR_FP_RESULT_INVALID_PIPE_ID"                 value="0x000B"/>
+        <value name="CSR_FP_RESULT_IS_CREDIT_PIPE"                  value="0x000C"/>
+        <value name="CSR_FP_RESULT_NOT_SUPPORTED"                   value="0x000D"/>
+        <value name="CSR_FP_RESULT_NOT_IMPLEMENTED"                 value="0x000E"><!-- for things not implemented yet --></value>
+        <value name="CSR_FP_RESULT_ERROR"                           value="0x000F"/>
+        <value name="CSR_FP_RESULT_NOT_READY"                       value="0x0010"><!-- No FP have been created yet --></value>
+        <value name="CSR_FP_RESULT_PIPE_COULD_NOT_BE_CREATED"       value="0x0011"/>
+        <value name="CSR_FP_RESULT_PIPE_COULD_NOT_BE_DESTROYED"     value="0x0012"/>
+        <value name="CSR_FP_RESULT_NOF_RESULT"                      value="0x0013"><!-- must be equal to last entry + 1 --></value>
+    </type>
+
+    <type name="CsrFpHandleType" resource="TYPE" size="8">
+        <value name="CSR_FP_HANDLE_NONE"                            value="0xFF"/>
+    </type>
+
+    <type name="CsrFpFlag" resource="TYPE" size="8">
+        <value name="CSR_FP_READ_FLAG"                              value="0x01"/>
+        <value name="CSR_FP_WRITE_FLAG"                             value="0x02"/>
+    </type>
+
+    <type name="CsrFpHciAclHdr" resource="TYPE" size="8">
+        <value name="CSR_FP_HCI_ACL_HDR_SIZE"                       value="4"><!-- handle+flags=2, length=2 --></value>
+    </type>
+
+</definitions>

@@ -1,0 +1,621 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_UI_SIGNALS" discriminant="CSR_UI_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrUiUieCreateReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiUieCreateReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="elementType">
+            <type>CsrUieType</type>
+        </field>
+    </type>
+
+    <type name="CsrUiUieCreateCfm" resource="CSR_UI_SIGNALS" dvalue="CsrUiUieCreateCfm">
+        <field name="handle">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="elementType">
+            <type>CsrUieType</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuSetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuSetReq">
+        <field name="menu">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="heading">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK1">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK2">
+            <type>CsrUtf16String*</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuGetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuGetReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="menu">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuGetCfm" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuGetCfm">
+        <field name="handle">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="heading">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK1">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK2">
+            <type>CsrUtf16String*</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuAdditemReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuAdditemReq">
+        <field name="menu">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="position">
+            <type>CsrUint16</type>
+        </field>
+        <field name="key">
+            <type>CsrUint16</type>
+        </field>
+        <field name="icon">
+            <type>CsrUint16</type>
+        </field>
+        <field name="label">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="sublabel">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="actionSK1">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionSK2">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionBACK">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionDEL">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuRemoveitemReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuRemoveitemReq">
+        <field name="menu">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="key">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuRemoveallitemsReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuRemoveallitemsReq">
+        <field name="menu">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuSetitemReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuSetitemReq">
+        <field name="menu">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="key">
+            <type>CsrUint16</type>
+        </field>
+        <field name="icon">
+            <type>CsrUint16</type>
+        </field>
+        <field name="label">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="sublabel">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="actionSK1">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionSK2">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionBACK">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionDEL">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuGetitemReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuGetitemReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="menu">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="key">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuGetitemCfm" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuGetitemCfm">
+        <field name="handle">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="key">
+            <type>CsrUint16</type>
+        </field>
+        <field name="icon">
+            <type>CsrUint16</type>
+        </field>
+        <field name="label">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="sublabel">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="actionSK1">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionSK2">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionBACK">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionDEL">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuSetcursorReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuSetcursorReq">
+        <field name="menu">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="key">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuGetcursorReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuGetcursorReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="menu">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiMenuGetcursorCfm" resource="CSR_UI_SIGNALS" dvalue="CsrUiMenuGetcursorCfm">
+        <field name="handle">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="key">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrUiEventSetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiEventSetReq">
+        <field name="event">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="inputMode">
+            <type>CsrUint16</type>
+        </field>
+        <field name="listener">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrUiEventGetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiEventGetReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="event">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiEventGetCfm" resource="CSR_UI_SIGNALS" dvalue="CsrUiEventGetCfm">
+        <field name="handle">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="inputMode">
+            <type>CsrUint16</type>
+        </field>
+        <field name="listener">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrUiDialogSetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiDialogSetReq">
+        <field name="dialog">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="heading">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="message">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK1">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK2">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="actionSK1">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionSK2">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionBACK">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionDEL">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiDialogGetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiDialogGetReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="dialog">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiDialogGetCfm" resource="CSR_UI_SIGNALS" dvalue="CsrUiDialogGetCfm">
+        <field name="handle">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="heading">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="message">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK1">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK2">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="actionSK1">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionSK2">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionBACK">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionDEL">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiInputdialogSetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiInputdialogSetReq">
+        <field name="inputDialog">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="heading">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="message">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="icon">
+            <type>CsrUint16</type>
+        </field>
+        <field name="text">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="keyMap">
+            <type>CsrUint8</type>
+        </field>        
+        <field name="textSK1">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK2">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="actionSK1">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionSK2">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionBACK">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionDEL">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiInputdialogGetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiInputdialogGetReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="inputDialog">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiInputdialogGetCfm" resource="CSR_UI_SIGNALS" dvalue="CsrUiInputdialogGetCfm">
+        <field name="handle">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="text">
+            <type>CsrUtf16String*</type>
+        </field>
+    </type>
+
+    <type name="CsrUiIdlescreenSetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiIdlescreenSetReq">
+        <field name="idleScreen">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="heading">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="text">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="textSK1">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="textSK2">
+            <type>CsrUtf16String*</type>
+        </field>
+        <field name="actionSK1">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionSK2">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionBACK">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="actionDEL">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiIdlescreenGetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiIdlescreenGetReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="idleScreen">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiIdlescreenGetCfm" resource="CSR_UI_SIGNALS" dvalue="CsrUiIdlescreenGetCfm">
+        <field name="handle">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="text">
+            <type>CsrUtf16String*</type>
+        </field>
+    </type>
+
+    <type name="CsrUiUieShowReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiUieShowReq">
+        <field name="element">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="listener">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="inputMode">
+            <type>CsrUint16</type>
+        </field>
+        <field name="priority">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrUiUieHideReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiUieHideReq">
+        <field name="element">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiDisplaySetinputmodeReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiDisplaySetinputmodeReq">
+        <field name="element">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="inputMode">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrUiDisplayGethandleReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiDisplayGethandleReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrUiDisplayGethandleCfm" resource="CSR_UI_SIGNALS" dvalue="CsrUiDisplayGethandleCfm">
+        <field name="handle">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiStatusBatterySetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiStatusBatterySetReq">
+        <field name="percentage">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrUiStatusRadiometerSetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiStatusRadiometerSetReq">
+        <field name="percentage">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrUiStatusHeadsetSetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiStatusHeadsetSetReq">
+        <field name="headset1">
+            <type>CsrInt8</type>
+        </field>
+        <field name="headset2">
+            <type>CsrInt8</type>
+        </field>
+    </type>
+
+    <type name="CsrUiStatusBluetoothSetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiStatusBluetoothSetReq">
+        <field name="active">
+            <type>CsrBool</type>
+        </field>
+    </type>
+
+    <type name="CsrUiStatusWifiSetReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiStatusWifiSetReq">
+        <field name="active">
+            <type>CsrBool</type>
+        </field>
+    </type>
+
+    <type name="CsrUiUieDestroyReq" resource="CSR_UI_SIGNALS" dvalue="CsrUiUieDestroyReq">
+        <field name="element">
+            <type>CsrUieHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrUiKeydownInd" resource="CSR_UI_SIGNALS" dvalue="CsrUiKeydownInd">
+        <field name="displayElement">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="key">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrUiEventInd" resource="CSR_UI_SIGNALS" dvalue="CsrUiEventInd">
+        <field name="event">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="displayElement">
+            <type>CsrUieHandle</type>
+        </field>
+        <field name="key">
+            <type>CsrUint16</type>
+        </field>
+        <field name="inputMode">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CSR_UI_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrUiUieCreateReq"             value="0x0000"/>
+        <value name="CsrUiMenuSetReq"               value="0x0001"/>
+        <value name="CsrUiMenuGetReq"               value="0x0002"/>
+        <value name="CsrUiMenuAdditemReq"           value="0x0003"/>
+        <value name="CsrUiMenuRemoveitemReq"        value="0x0004"/>
+        <value name="CsrUiMenuRemoveallitemsReq"    value="0x0005"/>
+        <value name="CsrUiMenuSetitemReq"           value="0x0006"/>
+        <value name="CsrUiMenuGetitemReq"           value="0x0007"/>
+        <value name="CsrUiMenuSetcursorReq"         value="0x0008"/>
+        <value name="CsrUiMenuGetcursorReq"         value="0x0009"/>
+        <value name="CsrUiEventSetReq"              value="0x000A"/>
+        <value name="CsrUiEventGetReq"              value="0x000B"/>
+        <value name="CsrUiDialogSetReq"             value="0x000C"/>
+        <value name="CsrUiDialogGetReq"             value="0x000D"/>
+        <value name="CsrUiInputdialogSetReq"        value="0x000E"/>
+        <value name="CsrUiInputdialogGetReq"        value="0x000F"/>
+        <value name="CsrUiIdlescreenSetReq"         value="0x0010"/>
+        <value name="CsrUiIdlescreenGetReq"         value="0x0011"/>
+        <value name="CsrUiUieShowReq"               value="0x0012"/>
+        <value name="CsrUiUieHideReq"               value="0x0013"/>
+        <value name="CsrUiDisplaySetinputmodeReq"   value="0x0014"/>
+        <value name="CsrUiDisplayGethandleReq"      value="0x0015"/>
+        <value name="CsrUiStatusBatterySetReq"      value="0x0016"/>
+        <value name="CsrUiStatusRadiometerSetReq"   value="0x0017"/>
+        <value name="CsrUiStatusHeadsetSetReq"      value="0x0018"/>
+        <value name="CsrUiStatusBluetoothSetReq"    value="0x0019"/>
+        <value name="CsrUiStatusWifiSetReq"         value="0x001A"/>
+        <value name="CsrUiUieDestroyReq"            value="0x001B"/>
+
+        <value name="CsrUiUieCreateCfm"             value="0x8000"/>
+        <value name="CsrUiMenuGetCfm"               value="0x8001"/>
+        <value name="CsrUiMenuGetitemCfm"           value="0x8002"/>
+        <value name="CsrUiMenuGetcursorCfm"         value="0x8003"/>
+        <value name="CsrUiEventGetCfm"              value="0x8004"/>
+        <value name="CsrUiDialogGetCfm"             value="0x8005"/>
+        <value name="CsrUiInputdialogGetCfm"        value="0x8006"/>
+        <value name="CsrUiIdlescreenGetCfm"         value="0x8007"/>
+        <value name="CsrUiDisplayGethandleCfm"      value="0x8008"/>
+        <value name="CsrUiKeydownInd"               value="0x8009"/>
+        <value name="CsrUiEventInd"                 value="0x800A"/>
+    </type>
+
+    <type name="CsrUieHandle" resource="TYPE" size="16"/>
+
+    <type name="CsrUieType" resource="TYPE" size="16">
+        <!-- UIE types -->
+        <value name="CSR_UI_UIETYPE_EVENT"          value="0"/>
+        <value name="CSR_UI_UIETYPE_MENU"           value="1"/>
+        <value name="CSR_UI_UIETYPE_DIALOG"         value="2"/>
+        <value name="CSR_UI_UIETYPE_INPUTDIALOG"    value="3"/>
+        <value name="CSR_UI_UIETYPE_IDLESCREEN"     value="4"/>
+    </type>
+
+    <type name="CsrUieInput" resource="TYPE" size="16">
+        <!-- Input modes -->
+        <value name="CSR_UI_INPUTMODE_AUTO"         value="0"><!-- Key presses are filtered by UI, rest discarded --></value>
+        <value name="CSR_UI_INPUTMODE_AUTOPASS"     value="1"><!-- Key presses are filtered by UI, rest sent to application --></value>
+        <value name="CSR_UI_INPUTMODE_BLOCK"        value="2"><!-- All key presses are discarded --></value>
+        <value name="CSR_UI_INPUTMODE_PASS"         value="3"><!-- All key presses are sent to application --></value>
+    </type>
+
+    <type name="CsrUieAction" resource="TYPE" size="16">
+        <!-- Default action -->
+        <value name="CSR_UI_DEFAULTACTION"          value="0"/>
+    </type>
+
+    <type name="CsrUiePosition" resource="TYPE" size="16">
+        <!-- Menu Item Positions -->
+        <value name="CSR_UI_LAST"                   value="0"/>
+        <value name="CSR_UI_FIRST"                  value="1"/>
+    </type>
+
+    <type name="CsrUiePriority" resource="TYPE" size="16">
+        <!-- Priority Boundaries -->
+        <value name="CSR_UI_LOWESTPRIORITY"         value="0"/>
+        <value name="CSR_UI_HIGHESTPRIORITY"        value="255"/>
+    </type>
+
+    <type name="CsrUieHEadset" resource="TYPE" size="16">
+        <!-- Valid values for state of headset in CSR_UI_STATUS_HEADSET_SET_REQ -->
+        <value name="CSR_UI_STATUS_HEADSET_PRESERVE"                    value="-1"><!-- Retain the current state --></value>
+        <value name="CSR_UI_STATUS_HEADSET_NOT_PRESENT"                 value="0"><!-- Set to not present --></value>
+        <value name="CSR_UI_STATUS_HEADSET_PRESENT"                     value="1"><!-- Set to present (no indicator) --></value>
+        <value name="CSR_UI_STATUS_HEADSET_PRESENT_INDICATOR(value)"    value="(2 + value)"><!-- Set to present with indicator (range: 0-100) --></value>
+    </type>
+
+</definitions>

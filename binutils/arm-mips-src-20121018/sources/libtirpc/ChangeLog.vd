@@ -1,0 +1,6 @@
+2011-11-30 Ildar Kaybyshev <i.kaybyshev@samsung.com>
+
+	Remove GSS application interface using.
+	* src/Makfile.am  (lnslauth_des.c authdes_prot.c des_crypt.c): removed.
+	* src/Makefile.in: regenerated. 
+	* src/rpc_soc.c:  call to (authdes_seccreate) commented. 

@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_TM_BLUECORE_SIGNALS" discriminant="CSR_TM_BLUECORE_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrTmBluecoreActivateTransportReq" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreActivateTransportReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreActivateTransportReqSend" resource="FUNC" signal="CsrTmBluecoreActivateTransportReq">
+        <field name="phandle"/>
+    </type>
+
+    <type name="CsrTmBluecoreActivateTransportCfm" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreActivateTransportCfm">
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBluecoreDeactivateTransportReq" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreDeactivateTransportReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreDeactivateTransportReqSend" resource="FUNC" signal="CsrTmBluecoreDeactivateTransportReq">
+        <field name="phandle"/>
+    </type>
+
+    <type name="CsrTmBluecoreDeactivateTransportCfm" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreDeactivateTransportCfm">
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBluecoreCmStatusSubscribeReq" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmStatusSubscribeReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreCmStatusSubscribeReqSend" resource="FUNC" signal="CsrTmBluecoreCmStatusSubscribeReq">
+        <field name="phandle"/>
+    </type>
+
+    <type name="CsrTmBluecoreCmStatusSubscribeCfm" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmStatusSubscribeCfm">
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBluecoreCmStatusUnsubscribeReq" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmStatusUnsubscribeReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreCmStatusUnsubscribeReqSend" resource="FUNC" signal="CsrTmBluecoreCmStatusUnsubscribeReq">
+        <field name="phandle"/>
+    </type>
+
+    <type name="CsrTmBluecoreCmStatusUnsubscribeCfm" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmStatusUnsubscribeCfm">
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBluecoreCmPingIntervalSetReq" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmPingIntervalSetReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="interval">
+            <type>CsrTime</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreCmPingIntervalSetReqSend" resource="FUNC" signal="CsrTmBluecoreCmPingIntervalSetReq">
+        <field name="phandle"/>
+        <field name="interval"/>
+    </type>
+
+    <type name="CsrTmBluecoreCmPingIntervalSetCfm" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmPingIntervalSetCfm">
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBluecoreCmStatusResetInd" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmStatusResetInd"/>
+
+    <type name="CsrTmBluecoreCmStatusPanicInd" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmStatusPanicInd"/>
+
+    <type name="CsrTmBluecoreCmStatusRestartInd" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmStatusRestartInd"/>
+
+    <type name="CsrTmBluecoreCmStatusReplayErrorInd" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmStatusReplayErrorInd">
+        <field name="hciOpcode">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBluecoreCmStatusPanicArgsInd" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmStatusPanicArgsInd">
+        <field name="panicStatus">
+            <!-- Status about the Panic Arg BCCMD -->
+            <type>CsrResult</type>
+        </field>
+        <field name="panicArg">
+            <!-- Panic Arg retrieved -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="faultStatus">
+            <!-- Status about the Fault Arg BCCMD -->
+            <type>CsrResult</type>
+        </field>
+        <field name="faultArg">
+            <!-- Fault Arg retrieved -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBluecoreCmReplayRegisterReq" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmReplayRegisterReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreCmReplayRegisterReqSend" resource="FUNC" signal="CsrTmBluecoreCmReplayRegisterReq">
+        <field name="phandle"/>
+    </type>
+
+    <type name="CsrTmBluecoreCmReplayRegisterCfm" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmReplayRegisterCfm">
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBluecoreCmReplayStartInd" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmReplayStartInd"/>
+
+    <type name="CsrTmBluecoreCmReplayStartRes" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmReplayStartRes">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreCmReplayStartResSend" resource="FUNC" signal="CsrTmBluecoreCmReplayStartRes">
+        <field name="phandle"/>
+        <field name="result"/>
+    </type>
+
+    <type name="CsrTmBluecoreCmReplayErrorReq" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreCmReplayErrorReq">
+        <field name="hciOpcode">
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreCmReplayErrorReqSend" resource="FUNC" signal="CsrTmBluecoreCmReplayErrorReq">
+        <field name="hciOpcode"/>
+    </type>
+
+    <type name="CsrTmBluecoreRegisterReq" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreRegisterReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreRegisterReqSend" resource="FUNC" signal="CsrTmBluecoreRegisterReq">
+        <field name="phandle"/>
+    </type>
+
+    <type name="CsrTmBluecoreRegisterCfm" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreRegisterCfm">
+        <field name="active">
+            <type>CsrBool</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBluecoreUnregisterReq" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreUnregisterReq">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreUnregisterReqSend" resource="FUNC" signal="CsrTmBluecoreUnregisterReq">
+        <field name="phandle"/>
+    </type>
+
+    <type name="CsrTmBluecoreUnregisterCfm" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreUnregisterCfm"/>
+
+    <type name="CsrTmBluecoreActivateTransportRes" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreActivateTransportRes">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreActivateTransportResSend" resource="FUNC" signal="CsrTmBluecoreActivateTransportRes">
+        <field name="phandle"/>
+    </type>
+
+    <type name="CsrTmBluecoreDeactivateTransportInd" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreDeactivateTransportInd"/>
+
+    <type name="CsrTmBluecoreDeactivateTransportRes" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreDeactivateTransportRes">
+        <field name="phandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrTmBlueCoreDeactivateTransportResSend" resource="FUNC" signal="CsrTmBluecoreDeactivateTransportRes">
+        <field name="phandle"/>
+    </type>
+
+    <type name="CsrTmBluecoreDeactivateTransportInd" resource="CSR_TM_BLUECORE_SIGNALS" dvalue="CsrTmBluecoreDeactivateTransportInd">
+        <field name="active">
+            <type>CsrBool</type>
+        </field>
+    </type>
+
+    <type name="CSR_TM_BLUECORE_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrTmBluecoreActivateTransportReq"             value="0x0000"/>
+        <value name="CsrTmBluecoreDeactivateTransportReq"           value="0x0001"/>
+        <value name="CsrTmBluecoreCmStatusSubscribeReq"             value="0x0002"/>
+        <value name="CsrTmBluecoreCmStatusUnsubscribeReq"           value="0x0003"/>
+        <value name="CsrTmBluecoreCmPingIntervalSetReq"             value="0x0004"/>
+        <value name="CsrTmBluecoreCmReplayRegisterReq"              value="0x0005"/>
+        <value name="CsrTmBluecoreCmReplayStartRes"                 value="0x0006"/>
+        <value name="CsrTmBluecoreCmReplayErrorReq"                 value="0x0007"/>
+        <value name="CsrTmBluecoreRegisterReq"                      value="0x0008"/>
+        <value name="CsrTmBluecoreUnregisterReq"                    value="0x0009"/>
+        <value name="CsrTmBluecoreActivateTransportRes"             value="0x000A"/>
+        <value name="CsrTmBluecoreDeactivateTransportRes"           value="0x000B"/>
+
+        <value name="CsrTmBluecoreActivateTransportCfm"             value="0x8000"/>
+        <value name="CsrTmBluecoreDeactivateTransportCfm"           value="0x8001"/>
+        <value name="CsrTmBluecoreCmStatusSubscribeCfm"             value="0x8002"/>
+        <value name="CsrTmBluecoreCmStatusUnsubscribeCfm"           value="0x8003"/>
+        <value name="CsrTmBluecoreCmStatusResetInd"                 value="0x8004"/>
+        <value name="CsrTmBluecoreCmStatusPanicInd"                 value="0x8005"/>
+        <value name="CsrTmBluecoreCmStatusRestartInd"               value="0x8006"/>
+        <value name="CsrTmBluecoreCmStatusReplayErrorInd"           value="0x8007"/>
+        <value name="CsrTmBluecoreCmStatusPanicArgsInd"             value="0x8008"/>
+        <value name="CsrTmBluecoreCmPingIntervalSetCfm"             value="0x8009"/>
+        <value name="CsrTmBluecoreCmReplayRegisterCfm"              value="0x800A"/>
+        <value name="CsrTmBluecoreCmReplayStartInd"                 value="0x800B"/>
+        <value name="CsrTmBluecoreRegisterCfm"                      value="0x800C"/>
+        <value name="CsrTmBluecoreUnregisterReq"                    value="0x800D"/>
+        <value name="CsrTmBluecoreActivateTransportInd"             value="0x800E"/>
+        <value name="CsrTmBluecoreDeactivateTransportInd"           value="0x800F"/>
+    </type>
+
+    <type name="CsrTmBluecore" resource="CONST" size="32">
+        <!-- THIS IS FOR BACKWARDS COMPATIBILITY ONLY. USE THE CSR_TM_BLUECORE_PRIM_* DEFINES INSTEAD -->
+        <value name="CSR_TM_PRIM_DOWNSTREAM_LOWEST"                 value="0x0000"><!-- Use CSR_TM_BLUECORE_PRIM_DOWNSTREAM_LOWEST instead --></value>
+        <value name="CSR_TM_PRIM_DOWNSTREAM_HIGHEST"                value="&lt;INPUT SIGNAL COUNT&gt; + CSR_TM_PRIM_DOWNSTREAM_LOWEST"><!-- Use CSR_TM_BLUECORE_PRIM_DOWNSTREAM_HIGHEST instead --></value>
+        <value name="CSR_TM_PRIM_UPSTREAM_LOWEST"                   value="0x0000 + CSR_PRIM_UPSTREAM"><!-- Use CSR_TM_BLUECORE_PRIM_UPSTREAM_LOWEST instead --></value>
+        <value name="CSR_TM_PRIM_UPSTREAM_HIGHEST"                  value="&lt;OUTPUT SIGNAL COUNT&gt; + CSR_TM_PRIM_UPSTREAM_LOWEST"><!-- Use CSR_TM_BLUECORE_PRIM_UPSTREAM_HIGHEST instead --></value>
+        <value name="CSR_TM_PRIM_DOWNSTREAM_COUNT"                  value="&lt;INPUT SIGNAL COUNT&gt; + 1"><!-- Use CSR_TM_BLUECORE_PRIM_DOWNSTREAM_COUNT instead --></value>
+        <value name="CSR_TM_PRIM_UPSTREAM_COUNT"                    value="&lt;OUTPUT SIGNAL COUNT&gt; + 1"><!-- Use CSR_TM_BLUECORE_PRIM_UPSTREAM_COUNT instead --></value>
+    </type>
+</definitions>

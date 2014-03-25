@@ -1,0 +1,15 @@
+#-*-Makefile-*-
+###############################################################################
+#
+#                (c) Cambridge Silicon Radio Limited 2009
+#
+#                All rights reserved and confidential information of CSR
+#
+# REVISION:      $Revision: #1 $
+###############################################################################
+TOP := ../../../../..
+
+OBJ_PATH = $(TOP)/output/$(CONFIG)/$(TARGET)/obj/applications/tpt/app_files/server/arm/HCI
+
+include $(TOP)/local_rules.mk
+

@@ -1,0 +1,28 @@
+#
+# Makefile for the CSR HID Loopback driver
+#
+
+csrhid-objs	:= csrhid_loopback.o
+obj-m		+= csrhid.o
+PWD := $(shell pwd)
+
+
+TARGET ?= pclin-2.6-x86
+
+ifeq ($(TARGET),pclin-2.6-x86)
+KERNEL_HEADER_DIR ?= /usr/src/linux-headers-$(shell uname -r)
+CROSS_COMPILE ?= ccache /usr/bin/
+else
+ifeq ($(TARGET),pclin-2.6-arm)
+KERNEL_HEADER_DIR ?= /home2/yhmoon/FIRENZE_Prj2/SDAL/Firenze_2012_Prj/REL/SDAL/Firenze/BSP/source/kernel-src/linux-2.6.35.11_header
+CROSS_COMPILE ?= /opt/VDLinux-ARMv7-4.4-202-toolchain-v2r2-20110630/bin/arm-v7a8v2r2-linux-gnueabi-
+endif
+endif
+
+
+export  CROSS_COMPILE
+all:
+	$(MAKE) -C $(KERNEL_HEADER_DIR) M=$(PWD) modules
+
+clean:
+	$(MAKE) -C $(KERNEL_HEADER_DIR) M=$(PWD) clean

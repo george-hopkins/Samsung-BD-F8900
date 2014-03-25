@@ -1,0 +1,68 @@
+# =============================================================================
+# 
+# CSR tracking information, report this in case of problems:
+#   $Revision: #2 $
+#   Built Fri Oct 10 16:31:02 2008 GMT
+#   Checked-in $DateTime: 2008/10/10 17:32:41 $
+#   $File: #depot/bc/unified-23/dev/patches/4839/pb-28.psr $
+# 
+# Patch is for build 4839 odj_4hci_rom_vm_bt2.1_23_0710171402_encr128
+# 
+# Issues patched: B-50623
+# 
+# Documentation from pb-28.pb
+# ---------------------------
+# 
+# General purpose patch bundle for BC4-ROM A07 (build ID 4839) that
+# is suitable for all end users.
+# 
+# Documentation from usb_string_descriptor.xap
+# --------------------------------------------
+# 
+#   BugId:
+#       B-33799
+#   Problem:
+#       Error in string descriptor code. We fail to fill out the length of the response and 
+#       end up putting the wrong amount of data in the tohost buffer.
+# 
+#   Solution:
+#       The fix is a one liner and is localized in the new string descriptor code.
+# 
+# Documentation from patch_lm_fn_check_hci_encryption_mode.xap
+# ------------------------------------------------------------
+# 
+# Issues patched: B-50623
+# 
+# Improve handling of encryption on/off collision.
+# Send HCI_ERROR_COMMAND_DISALLOWED if we are Slave and Host just retried SCE
+# again (after receiving TRANSACTION_COLLISION) while Master's side encryption
+# is not yet complete. encryption_started flag would miss this (because it has
+# been reset on receiving lmp_not_accepted). So we check encryption state of
+# Master SM and send command disallowed.
+# 
+# Version information for input files
+# -----------------------------------
+# 
+# Created by patchmaker.pl Revision: #34  Date: 2008/05/06 
+# 
+# Input file: pb-28.pb
+# Depot file: #depot/bc/unified-23/dev/patches/4839/pb-28.pb
+# File revision: 1
+# 
+# Input file: usb_string_descriptor.xap
+# Depot file: #depot/bc/unified-23/dev/patches/4839/usb_string_descriptor.xap
+# File revision: 2
+# 
+# Input file: patches.inc
+# Depot file: #depot/bc/unified-23/dev/patches/4839/patches.inc
+# File revision: 1
+# 
+# Input file: patch_lm_fn_check_hci_encryption_mode.xap
+# Depot file: #depot/bc/unified-23/dev/patches/4839/patch_lm_fn_check_hci_encryption_mode.xap
+# File revision: 2
+
+# patch_hardware_0, PSKEY_PATCH50 (0x212c, 8492)
+&212c = 0002 0c51 081b 0026 0314 0427 e415 0118 ff2b ff0e 0c00 5418 00e2 b2ea
+
+# patch_hardware_1, PSKEY_PATCH51 (0x212d, 8493)
+&212d = 0003 1fe8 f919 049a 0df0 4a9a 0bf4 0c14 0a26 0100 d114 0218 ff2b ff0e 2000 fc18 00e2 f919 4216 fdc4 4226 3e16 2000 20b4 3e26 0218 ff2b ff0e 2000 f018 00e2 4211

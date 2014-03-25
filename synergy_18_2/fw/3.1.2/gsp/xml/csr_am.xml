@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_AM_SIGNALS" discriminant="CSR_AM_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrAmInitReq" resource="CSR_AM_SIGNALS" dvalue="CsrAmInitReq">
+        <field name="pHandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrAmInitCfm" resource="CSR_AM_SIGNALS" dvalue="CsrAmInitCfm">
+        <field name="result">
+            <!-- Status information about the AM operation -->
+            <type>CsrAmResult</type>
+        </field>
+        <field name="buildId">
+            <!-- Firmware build Id read from the chip -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathConnectReq" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathConnectReq">
+        <field name="pHandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="source">
+            <!-- Type of source endpoint: FM, codec, pcm,... -->
+            <type>CsrEndpointType</type>
+        </field>
+        <field name="sourceR">
+            <!-- Type of source endpoint for the right side of an stereo connection, if needed -->
+            <type>CsrEndpointType</type>
+        </field>
+        <field name="sinks">
+            <!-- Structure wth the sinks to add -->
+            <type>CsrAmSinksToAddType</type>
+        </field>
+        <field name="audioType">
+            <!-- Audio type: FM, WBS, CVSD, Auristream -->
+            <type>CsrAmAudioType</type>
+        </field>
+        <field name="stereo">
+            <!-- If TRUE: both right and left side of each endpoint need to be handled -->
+            <type>CsrBool</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathConnectReqSend" resource="FUNC" signal="CsrAmAudioPathConnectReq">
+        <field name="pHandle"/>
+        <field name="source"/>
+        <field name="sourceR"/>
+        <field name="sinkCount" reference="sinks.sinkCount"/>
+        <field name="sinkId" reference="sinks.newSinkId"/>
+        <field name="sinkConfigCount" reference="sinks.sinkConfigCount"/>
+        <field name="sinkConfig" reference="sinks.sinkConfig"/>
+        <field name="audioType"/>
+        <field name="stereo"/>
+    </type>
+
+
+    <type name="CsrAmAudioPathConnectCfm" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathConnectCfm">
+        <field name="result">
+            <!-- Status information about the AM operation -->
+            <type>CsrAmResult</type>
+        </field>
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathAddSinkReq" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathAddSinkReq">
+        <field name="pHandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="sinks">
+            <type>CsrAmSinksToAddType</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathAddSinkReqSend" resource="FUNC" signal="CsrAmAudioPathAddSinkReq">
+        <field name="pHandle"/>
+        <field name="amConnectionId"/>
+        <field name="sinkCount" reference="sinks.sinkCount"/>
+        <field name="sinkId" reference="sinks.newSinkId"/>
+        <field name="sinkConfigCount" reference="sinks.sinkConfigCount"/>
+        <field name="sinkConfig" reference="sinks.sinkConfig"/>
+    </type>
+
+    <type name="CsrAmAudioPathAddSinkCfm" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathAddSinkCfm">
+        <field name="result">
+            <!-- Status information about the AM operation -->
+            <type>CsrAmResult</type>
+        </field>
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathRemoveSinkReq" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathRemoveSinkReq">
+        <field name="pHandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="sinkId">
+            <!-- What sink to remove -->
+            <type>CsrAmEndPointDefType</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathRemoveSinkCfm" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathRemoveSinkCfm">
+        <field name="result">
+            <!-- Status information about the AM operation -->
+            <type>CsrAmResult</type>
+        </field>
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathConfigReq" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathConfigReq">
+        <field name="pHandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="epType">
+            <!-- Endpoint: source, sink or both -->
+            <type>CsrAmEndpointType</type>
+        </field>
+        <field name="sinkId">
+            <!-- What sink (or all sinks) in multi-sink case -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="configDataLen">
+            <!-- length in bytes allocated in 'configData' -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="configData" blocklength="configDataLen">
+            <!-- Type-Value configuration data pairs -->
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathConfigCfm" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathConfigCfm">
+        <field name="result">
+            <!-- Status information about the AM operation -->
+            <type>CsrAmResult</type>
+        </field>
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathReleaseReq" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathReleaseReq">
+        <field name="pHandle">
+            <!-- Handle to application -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathReleaseCfm" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathReleaseCfm">
+        <field name="result">
+            <!-- Status information about the AM operation -->
+            <type>CsrAmResult</type>
+        </field>
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrAmAudioPathReleaseInd" resource="CSR_AM_SIGNALS" dvalue="CsrAmAudioPathReleaseInd">
+        <field name="amConnectionId">
+            <!-- Connection identifier -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CSR_AM_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrAmInitReq"                          value="0x0000"/>
+        <value name="CsrAmAudioPathConnectReq"              value="0x0001"/>
+        <value name="CsrAmAudioPathAddSinkReq"              value="0x0002"/>
+        <value name="CsrAmAudioPathRemoveSinkReq"           value="0x0003"/>
+        <value name="CsrAmAudioPathConfigReq"               value="0x0004"/>
+        <value name="CsrAmAudioPathReleaseReq"              value="0x0005"/>
+
+        <value name="CsrAmInitCfm"                          value="0x8000"/>
+        <value name="CsrAmAudioPathConnectCfm"              value="0x8001"/>
+        <value name="CsrAmAudioPathAddSinkCfm"              value="0x8002"/>
+        <value name="CsrAmAudioPathRemoveSinkCfm"           value="0x8003"/>
+        <value name="CsrAmAudioPathConfigCfm"               value="0x8004"/>
+        <value name="CsrAmAudioPathReleaseCfm"              value="0x8005"/>
+        <value name="CsrAmAudioPathReleaseInd"              value="0x8006"/>
+    </type>
+
+    <type name="CsrAmEndpointType" resource="TYPE" size="16">
+        <!-- AM endpoint type -->
+        <value name="CSR_AM_EP_SOURCE_LEFT"                 value="0x0000"/>
+        <value name="CSR_AM_EP_SOURCE_RIGHT"                value="0x0001"/>
+        <value name="CSR_AM_EP_SOURCE_ALL"                  value="0x0002"/>
+        <value name="CSR_AM_EP_SINK_LEFT"                   value="0x0003"/>
+        <value name="CSR_AM_EP_SINK_RIGHT"                  value="0x0004"/>
+        <value name="CSR_AM_EP_SINK_BOTH_SIDES"             value="0x0005"/>
+        <value name="CSR_AM_EP_ALL_LEFT_SINKS"              value="0x0006"/>
+        <value name="CSR_AM_EP_ALL_RIGHT_SINKS"             value="0x0007"/>
+        <value name="CSR_AM_EP_ALL_SINKS_BOTH_SIDES"        value="0x0008"/>
+        <value name="CSR_AM_EP_ALL_LEFT"                    value="0x0009"/>
+        <value name="CSR_AM_EP_ALL_RIGHT"                   value="0x000A"/>
+        <value name="CSR_AM_EP_ALL_BOTH_SIDES"              value="0x000B"/>
+    </type>
+
+    <type name="CsrAmAudioType" resource="TYPE" size="16">
+        <!-- AM audio type definitions -->
+        <value name="CSR_AM_FM_AUDIO"                       value="0x0000"/>
+        <value name="CSR_AM_WBS_AUDIO"                      value="0x0001"/>
+        <value name="CSR_AM_CVSD_AUDIO"                     value="0x0002"/>
+        <value name="CSR_AM_AURISTREAM_AUDIO"               value="0x0003"/>
+    </type>
+
+    <type name="CsrAmEndpointDefType" resource="TYPE" size="16">
+        <!-- AM endpoint definitions -->
+        <value name="CSR_AM_ENDPOINT_PCM"                   value="0x0001"/>
+        <value name="CSR_AM_ENDPOINT_I2S"                   value="0x0002"/>
+        <value name="CSR_AM_ENDPOINT_CODEC"                 value="0x0003"/>
+        <value name="CSR_AM_ENDPOINT_FM"                    value="0x0004"/>
+        <value name="CSR_AM_ENDPOINT_ALL"                   value="0xFFFF"/>
+    </type>
+
+    <type name="CsrAmInstanceType" resource="TYPE" size="16">
+        <!-- AM endpoint instance definitions -->
+        <value name="CSR_AM_INSTANCE_0"                     value="0x0000"/>
+        <value name="CSR_AM_INSTANCE_1"                     value="0x0001"/>
+        <value name="CSR_AM_NUMBER_OF_INSTANCES"            value="0x0002"/>
+        <value name="CSR_AM_INSTANCE_AUTO"                  value="0xFFFF"/>
+    </type>
+
+    <type name="CsrAmChannelType" resource="TYPE" size="16">
+        <!-- AM endpoint slot/channel definitions -->
+        <value name="CSR_AM_CHANNEL_0"                      value="0x0000"/>
+        <value name="CSR_AM_CHANNEL_1"                      value="0x0001"/>
+        <value name="CSR_AM_NUMBER_OF_CHANNELS"             value="0x0002"/>
+        <value name="CSR_AM_CHANNEL_AUTO"                   value="0xFFFF"/>
+    </type>
+
+    <type name="CsrAmCodecType" resource="TYPE" size="8">
+        <!-- AM audio codec definitions -->
+        <value name="CSR_AM_WBS_CVSD_CODEC"                 value="0x01"/>
+        <value name="CSR_AM_WBS_MSBC_CODEC"                 value="0x02"/>
+    </type>
+
+    <type name="CsrAmDefaultType" resource="TYPE" size="16">
+        <!-- Default values in case of error -->
+        <value name="CSR_AM_NO_CONN_ID"                     value="0xFFFF"/>
+    </type>
+
+    <type name="CsrAmKeysType" resource="TYPE" size="16">
+        <!-- Audio stream configuration keys -->
+        <value name="CSR_AM_PCM_SYNC_RATE"                  value="0x0100"/>
+        <value name="CSR_AM_PCM_MASTER_CLOCK_RATE"          value="0x0101"/>
+        <value name="CSR_AM_PCM_MASTER_MODE"                value="0x0102"/>
+        <value name="CSR_AM_PCM_SLOT_COUNT"                 value="0x0103"/>
+        <value name="CSR_AM_I2S_SYNC_RATE"                  value="0x0200"/>
+        <value name="CSR_AM_I2S_MASTER_CLOCK_RATE"          value="0x0201"/>
+        <value name="CSR_AM_I2S_MASTER_MODE"                value="0x0202"/>
+        <value name="CSR_AM_CODEC_ADC_RATE"                 value="0x0300"/>
+        <value name="CSR_AM_CODEC_DAC_RATE"                 value="0x0301"/>
+        <value name="CSR_AM_CODEC_ADC_GAIN"                 value="0x0302"/>
+        <value name="CSR_AM_CODEC_DAC_GAIN"                 value="0x0303"/>
+        <value name="CSR_AM_FM_INPUT_RATE"                  value="0x0400"/>
+        <value name="CSR_AM_FM_OUTPUT_RATE"                 value="0x0401"/>
+        <value name="CSR_AM_FM_INPUT_GAIN"                  value="0x0402"/>
+        <value name="CSR_AM_FM_OUTPUT_GAIN"                 value="0x0403"/>
+    </type>
+
+    <type name="CsrAmResult" resource="TYPE" type="CsrResult" const="1">
+        <!-- AM result/error codes -->
+        <value name="CSR_AM_RESULT_UNSUPPORTED"             value="0x0001"/>
+        <value name="CSR_AM_RESULT_ERROR_SINK_BUSY"         value="0x0002"/>
+        <value name="CSR_AM_RESULT_ERROR_SRC_BUSY"          value="0x0003"/>
+        <value name="CSR_AM_RESULT_CONFIG_INVALID"          value="0x0004"/>
+        <value name="CSR_AM_RESULT_UNKNOWN_ID"              value="0x0005"/>
+        <value name="CSR_AM_RESULT_WRONG_SINK"              value="0x0006"/>
+        <value name="CSR_AM_RESULT_UNKNOWN_CONNECTION"      value="0x0007"/>
+        <value name="CSR_AM_RESULT_INVALID_PARAMETER"       value="0x0008"/>
+    </type>
+
+    <type name="CsrAmEndPointDefType" resource="TYPE">
+        <field name="endPoint"><type>CsrUint16</type></field>
+        <field name="instance"><type>CsrUint16</type></field>
+        <field name="channel"><type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrEndpointType" resource="TYPE">
+        <field name="endPoint"><type>CsrAmEndPointDefType</type></field>
+        <field name="configDataCount"><type>CsrUint8</type></field>
+        <field name="configData" blocklength="configDataCount"><type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrAmSinkConfigType" resource="TYPE">
+        <field name="sinkIndex"><type>CsrUint8</type></field>
+        <field name="key"><type>CsrUint32</type></field>
+        <field name="value"><type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrAmSinksToAddType" resource="TYPE">
+        <field name="sinkCount">
+            <!-- Number of sink entries in the 'sinkId' field below -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="newSinkId" blocklength="sinkCount">
+            <!-- List of sink endpoint: FM, codec, pcm,... -->
+            <type>CsrAmEndPointDefType</type>
+        </field>
+        <field name="sinkConfigCount">
+            <!-- Number of sink configuration elements -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="sinkConfig" blocklength="sinkConfigCount">
+            <!-- Sink configuration elements containing sink index, key and value -->
+            <type>CsrAmSinkConfigType</type>
+        </field>
+    </type>
+
+</definitions>

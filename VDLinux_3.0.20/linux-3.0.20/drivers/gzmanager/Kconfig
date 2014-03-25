@@ -1,0 +1,26 @@
+config GZMANAGER
+	bool "gunzipManager HW/SW decompressor"
+	default y
+	select ZLIB_INFLATE
+	help
+      The gunzipManager is a fast and efficient method to 
+      decompress the compressed block with gzip format
+      The gunzipManager will decompress the data on each core.
+
+config GZM_ZLIB
+	bool "gunzipManager ZLIB Support"
+	default y
+	depends on GZMANAGER
+	help
+      The gunzipManager module with zlib compress /decompress  
+      support. 
+
+config GZMANAGER_TEST
+	bool "gunzipManager Test Module"
+	default n
+	depends on GZMANAGER
+	help
+      The gunzipManager module is used to test the  
+      gunzipManager functionality for giving the data to the 
+      gunzipManager and decompress using direct and indirect 
+      calls.

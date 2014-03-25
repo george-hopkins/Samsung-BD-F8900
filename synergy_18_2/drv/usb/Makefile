@@ -1,0 +1,46 @@
+obj-m += bt_usb.o
+
+bt_usb-objs += \
+	bt_usb_main.o \
+	usb_com.o \
+	usb_intf.o \
+	usb_queue.o \
+	usb_dfu.o
+
+
+PWD := $(shell pwd)
+
+TARGET ?= pclin-2.6-x86
+
+ifeq ($(TARGET),pclin-2.6-x86)
+KERNEL_HEADER_DIR ?= /usr/src/linux-headers-$(shell uname -r)
+CROSS_COMPILE ?= ccache /usr/bin/
+else
+ifeq ($(TARGET),pclin-2.6-arm)
+#KERNEL_HEADER_DIR ?= /home2/yhmoon/FIRENZE_Prj/SDAL/Firenze_2012_Prj/REL/SDAL/Firenze/BSP/source/kernel-src/linux-2.6.35.11_header
+KERNEL_HEADER_DIR ?= /home2/yhmoon/FIRENZE_Prj2/SDAL/Firenze_2012_Prj/REL/SDAL/Firenze/BSP/source/kernel-src/linux-2.6.35.11_header
+CROSS_COMPILE ?= /opt/VDLinux-ARMv7-4.4-202-toolchain-v2r2-20110630/bin/arm-v7a8v2r2-linux-gnueabi-
+endif
+endif
+#CURFOLDER ?= /home/matthew2/work/samsung/drv/bt_usb_lasted_from_sunny_lock_up_fix_ori/
+#CURFOLDER := .
+#EXTRA_CFLAGS += -I $(CURFOLDER)/include -D__linux__
+EXTRA_CFLAGS += -D__linux__
+
+ifeq ($(DEBUG),1)
+EXTRA_CFLAGS += -DBT_USB_DEBUG
+endif
+
+
+
+#export ARCH CROSS_COMPILE
+export CROSS_COMPILE
+
+default:
+	$(MAKE) -C $(KERNEL_HEADER_DIR) M=$(PWD) modules
+
+
+clean:
+	$(MAKE) -C $(KERNEL_HEADER_DIR) M=$(PWD) clean
+	$(RM) Module.markers
+	$(RM) modules.order

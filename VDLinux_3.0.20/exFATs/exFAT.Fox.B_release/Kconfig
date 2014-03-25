@@ -1,0 +1,43 @@
+config EXFAT_FS
+	tristate "exfat support"
+	select NLS
+	default m
+	help
+	  If you want to use one of the FAT-based file systems (the MS-DOS and
+	  VFAT (Windows 95) file systems), then you must say Y or M here
+	  to include FAT support. You will then be able to mount partitions or
+	  diskettes with FAT-based file systems and transparently access the
+	  files on them, i.e. MSDOS files will look and behave just like all
+	  other Unix files.
+
+	  This FAT support is not a file system in itself, it only provides
+	  the foundation for the other file systems. You will have to say Y or
+	  M to at least one of "MSDOS fs support" or "VFAT fs support" in
+	  order to make use of it.
+
+	  Another way to read and write MSDOS floppies and hard drive
+	  partitions from within Linux (but not transparently) is with the
+	  mtools ("man mtools") program suite. You don't need to say Y here in
+	  order to do that.
+
+	  If you need to move large files on floppies between a DOS and a
+	  Linux box, say Y here, mount the floppy under Linux with an MSDOS
+	  file system and use GNU tar's M option. GNU tar is a program
+	  available for Unix and DOS ("man tar" or "info tar").
+
+	  The FAT support will enlarge your kernel by about 37 KB. If unsure,
+	  say Y.
+
+	  To compile this as a module, choose M here: the module will be called
+	  fat.  Note that if you compile the FAT support as a module, you
+	  cannot compile any of the FAT-based file systems into the kernel
+	  -- they will have to be modules as well.
+
+config EXFAT_DEFAULT_CODEPAGE
+	int "Default codepage for exfat"
+	depends on MSDOS_FS || VFAT_FS
+	default 437
+	help
+	  This option should be set to the codepage of your FAT filesystems.
+	  It can be overridden with the "codepage" mount option.
+	  See <file:Documentation/filesystems/vfat.txt> for more information.

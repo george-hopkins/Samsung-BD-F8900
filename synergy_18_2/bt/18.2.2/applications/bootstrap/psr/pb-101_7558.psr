@@ -1,0 +1,339 @@
+// =============================================================================
+//
+// CSR tracking information, report this in case of problems:
+//   $Revision: #3 $
+//   Built Thu Jun  9 11:20:18 2011 GMT
+//   Checked-in $DateTime: 2011/06/09 12:22:20 $
+//   $File: //depot/bc/gemini-a06/dev/patches/7558/pb-101-csr8510-eeprom-wp.btcli $
+// 
+// Patch is for build 7558 gem_5hidproxy_rom_bt4.0_gemA06_1012150332_encr128
+// 
+// Issues patched: B-100005, B-100879, B-101200, B-101408, B-95261,
+//                 B-95841, B-96287, B-97625, B-98367, B-98721, B-98851,
+//                 B-99956
+// 
+// Documentation from pb-101-csr8510-usb.pb
+// ----------------------------------------
+// 
+// General purpose patch and PSKEY bundle for CSR8510 A06 CSP Packages.
+// 
+// Documentation from bt_pskeys.pb
+// -------------------------------
+// 
+// Issues patched: B-99956
+// 
+// Non-default PSKEY settings aimed at improving Bluetooth performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches. 
+// 
+// Documentation from inhibit_trim_during_test.xap
+// -----------------------------------------------
+// 
+// Issues patched: B-95841
+// 
+// Spur due to periodic trim is seen at 2.446 GHz during Ble transmitter test
+// 
+// Documentation from send_advert_data_response.xap
+// ------------------------------------------------
+// 
+// Issues patched: B-98367
+// 
+// When Ble advertising on BlueCore, if LE_SetAdvertisingData or
+// LE_SetScanResponseData is issued at the moment of connection, the
+// controller may report "connection complete" but not "command complete"
+// for the HCI command. This results in the controller accepting no
+// further HCI commands.
+// 
+// Documentation from destroy_afh_if_not_ble_master.xap
+// ----------------------------------------------------
+// 
+// Issues patched: B-98721
+// 
+// If a LE connection attempt is cancelled on a device that has a SCO
+// master link then audio quality can be degraded for about 150ms when
+// a LE master connection is subsequently created.
+// 
+// Documentation from edr_pwr.xap
+// ------------------------------
+// 
+// Issues patched: B-96287
+// 
+// In radiotest mode, BlueCore7 after BlueCore7-FM may have an elevated
+// EDR relative power ratio after a cold reset.
+// 
+// Documentation from min_le_map_channels.xap
+// ------------------------------------------
+// 
+// Issues patched: B-97625
+// 
+// When performing Ble operations, a BlueCore device can panic with
+// PANIC_ULP_TO_BT_CHANNEL_NUMBER_CONVERSION (0xD0) panic code when
+// doing AFH in an environment where there are no known good channels.
+// 
+// Documentation from ulp_update_window_fix.xap
+// --------------------------------------------
+// 
+// Issues patched: B-98851
+// 
+// When Bluecore is performing Bluetooth low energy scanning while it is doing
+// other BR/EDR operations, rare occurrences of PANIC_LC (panic code 0x15)
+// may be noticed depending on scan parameters.
+// 
+// Documentation from lm_lc_reset.xap
+// ----------------------------------
+// 
+// Issues patched: B-100005
+// 
+// Bluecore returns FAULT_LC_RESET_FAILED fault code if HCI 
+// reset command is issued when multiple links are active.
+// 
+// Documentation from rt_offset.xap
+// --------------------------------
+// 
+// Issues patched: B-101200
+// 
+// Frequency locking is slow at the start of radiotest commands.
+// 
+// Documentation from set_ble_coex_last_priority.xap
+// -------------------------------------------------
+// 
+// Issues patched: B-101408
+// 
+// When using IEEE 802.11/Bluetooth coexistence, a previous correction to
+// Ble / BR-EDR signalling resulted in TXRX operations being signalled as
+// separate transactions.
+// 
+// Documentation from patch_set_rx_config_c.c
+// ------------------------------------------
+// 
+// Issues patched: B-100879
+// 
+// Radiotest loop back mode fails when packet configuration is set to
+// multi-slot types.
+// 
+// Documentation from patch_psu_or_c.c
+// -----------------------------------
+// 
+// Issues patched: B-95261
+// 
+// Voltage glitches or sags on VREG_EN signal caused during power on conditions 
+// results in intermittent USB enumeration failures.
+// 
+// Documentation from eeprom_wp.xap
+// --------------------------------
+// 
+// Patch for B-101040.
+// Occasionally, due to external power supply instabilities, 
+// the firmware may read erroneous data from the EEPROM connected 
+// to the module. In this case, the firmware may believe that the
+// EEPROM is fatally corrupt and attempt to reprogram it with an
+// empty PS Key list. This would result in the device being unusable.
+// 
+// This patch prevents the firmware from resetting the EEPROM
+// contents if this initial verification fails. 
+// 
+// Version information for input files
+// -----------------------------------
+// 
+// Created by patchmaker.pl Revision: //43  Date: 2011/03/03 
+// 
+// Input file: pb-101-csr8510-eeprom-wp.pb
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/pb-101-csr8510-eeprom-wp.pb
+// File revision: 2
+// 
+// Input file: pb-101-csr8510-usb.pb
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/pb-101-csr8510-usb.pb
+// File revision: 2
+// 
+// Input file: pb-101-csp-common.pb
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/pb-101-csp-common.pb
+// File revision: 1
+// 
+// Input file: pb-101-common.pb
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/pb-101-common.pb
+// File revision: 7
+// 
+// Input file: bt_pskeys.pb
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/bt_pskeys.pb
+// File revision: 7
+// 
+// Input file: inhibit_trim_during_test.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/inhibit_trim_during_test.xap
+// File revision: 4
+// 
+// Input file: ../patch_utils.inc
+// Depot file: //depot/bc/gemini-a06/dev/patches/patch_utils.inc
+// File revision: 1
+// 
+// Input file: send_advert_data_response.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/send_advert_data_response.xap
+// File revision: 3
+// 
+// Input file: destroy_afh_if_not_ble_master.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/destroy_afh_if_not_ble_master.xap
+// File revision: 2
+// 
+// Input file: edr_pwr.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/edr_pwr.xap
+// File revision: 6
+// 
+// Input file: min_le_map_channels.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/min_le_map_channels.xap
+// File revision: 4
+// 
+// Input file: ulp_update_window_fix.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/ulp_update_window_fix.xap
+// File revision: 3
+// 
+// Input file: lm_lc_reset.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/lm_lc_reset.xap
+// File revision: 2
+// 
+// Input file: rt_offset.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/rt_offset.xap
+// File revision: 2
+// 
+// Input file: set_ble_coex_last_priority.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/set_ble_coex_last_priority.xap
+// File revision: 3
+// 
+// Input file: patch_set_rx_config_c.c
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/patch_set_rx_config_c.c
+// File revision: 2
+// 
+// Input file: patch_psu_or_c.c
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/patch_psu_or_c.c
+// File revision: 3
+// 
+// Input file: eeprom_wp.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/eeprom_wp.xap
+// File revision: 3
+
+// patch_hardware_0, PSKEY_PATCH50 (0x212c, 8492), 23 words
+&212c = 0002 7249 0f1b 0f16 01a0 0f26 0210 1222 0218 ff2b ff0e 7200 4f18 fa0b 0014 0327 0218 ff2b ff0e 5000 7718 00e2 e14a
+
+// patch_hardware_1, PSKEY_PATCH51 (0x212d, 8493), 50 words
+&212d = 0003 1dcf 0017 e334 0184 0820 0014 0018 ff2b ff0e 6a00 b818 009e 0017 01a0 e119 1000 2516 fe27 1000 2416 ff27 0117 0213 ff0e fe9f 0017 1f84 08f4 1c84 0d28 e900 3215 0800 00c4 08f0 0114 0018 ff2b ff0e 6a00 b818 009e 0318 ff2b ff0e 1e00 dc18 00e2 0a52
+
+// patch_hardware_2, PSKEY_PATCH52 (0x212e, 8494), 16 words
+&212e = 0002 e5a8 04f0 e900 3c99 04f4 059b 02f0 f80f 0218 ff2b ff0e e600 ae18 00e2 72ae
+
+// patch_hardware_3, PSKEY_PATCH53 (0x212f, 8495), 9 words
+&212f = 0002 52f1 0218 ff2b ff0e 5300 fb18 00e2 7b7d
+
+// patch_hardware_4, PSKEY_PATCH54 (0x2130, 8496), 54 words
+&2130 = 0002 6c21 071b 7f16 0184 0cf0 0127 7012 0023 6f12 e315 0218 ff2b ff0e 6d00 da18 009e 0717 7134 0127 071b 0100 8116 0100 8012 0327 0223 7012 0023 6f12 0417 0018 ff2b ff0e 6200 3a18 009e e199 09f0 0018 ff2b ff0e 5e00 0418 009e 0314 f40f 0218 ff2b ff0e 6d00 9318 00e2 c508
+
+// patch_hardware_5, PSKEY_PATCH55 (0x2131, 8497), 33 words
+&2131 = 0000 e74b 081b 5612 0009 08a4 f821 091b 2912 0009 0da4 e015 01c4 0027 0a17 f811 0118 ff2b ff0e 4600 6118 009e 0114 0527 091b 2912 0018 ff2b ff0e e700 4f18 00e2 9ebb
+
+// patch_hardware_6, PSKEY_PATCH56 (0x2132, 8498), 29 words
+&2132 = 0002 e405 09f4 e419 0638 fa39 00b2 0022 f911 0130 f921 f811 0130 f821 0780 062c fa15 0134 fa25 0018 f829 f911 0218 ff2b ff0e e400 1818 00e2 73ea
+
+// patch_hardware_7, PSKEY_PATCH57 (0x2133, 8499), 10 words
+&2133 = 0004 7005 0018 ff2b ff0e 7e00 bb18 009e f90f 7ca0
+
+// patch_hardware_8, PSKEY_PATCH58 (0x2134, 8500), 25 words
+&2134 = 0001 d3d8 e600 4511 0223 e311 0118 ff2b ff0e 3300 4518 009e e700 7e99 04f4 0213 e600 4521 0118 ff2b ff0e d400 dc18 00e2 798f
+
+// patch_hardware_9, PSKEY_PATCH59 (0x2135, 8501), 15 words
+&2135 = 0002 911f e500 cc19 002b ff14 4d26 0017 0218 ff2b ff0e 9100 2218 00e2 dac0
+
+// patch_hardware_10, PSKEY_PATCH60 (0x2136, 8502), 15 words
+&2136 = 0002 8fde e500 cc15 0027 ff14 001b 4c26 0218 ff2b ff0e 9000 e118 00e2 1f06
+
+// patch_hardware_13, PSKEY_PATCH63 (0x2139, 8505), 17 words
+&2139 = 0004 e157 fa00 6d15 40b4 fa00 6d25 ea00 9715 f825 0418 ff2b ff0e e100 5a18 00e2 75f7
+
+// patch_hardware_14, PSKEY_PATCH64 (0x213a, 8506), 19 words
+&213a = 0004 e1a0 fa00 6d15 bfc4 fa00 6d25 099b 08f4 e411 0418 ff2b ff0e e200 a318 00e2 0917 f10f 3513
+
+// explicit, PSKEY_ULP_RX_DEMOD_CONFIG (0x2184, 8580), 2 words
+&2184 = 2ca0 4836
+
+// patch_init_patch, PSKEY_PATCH100 (0x21f4, 8692), 18 words
+&21f4 = fa00 9b15 0200 a0b4 fa00 9b25 fa00 9d15 0cb4 fa00 9d25 fa00 7215 40b4 fa00 7225 00e2 fc3e
+
+// patch_radiotest_radio_configure, PSKEY_PATCH108 (0x21fc, 8700), 8 words
+&21fc = fe0b e700 0519 011a 0014 3526 fe0f ff6b
+
+// explicit, PSKEY_BLE_TX_FILTER_CONFIG (0x257a, 9594), 2 words
+&257a = 770c 0003
+
+//--------------------------------------------------------------
+// USER CONFIGURATION
+//--------------------------------------------------------------
+
+//BD address, for test, delete later
+//&0001 = 0123 4567 89ab cdef
+&0001 = 0000 1119 005b 0002
+
+// PSKEY_DEVICE_NAME, SS HTS 1
+&0108 = 5353 4820 5354 3120
+
+// explicit, PSKEY_BT_POWER_TABLE_V0 (0x241a, 9242), 40 words
+&241a = 2718 0050 2c28 0050 ec00 2918 0040 2e28 0040 f000 2818 0030 2c28 0030 f400 2818 0020 2c28 0020 f800 2918 0010 2d28 0010 fc00 2d1a 0000 302a 0000 0000 365c 0000 386c 0000 0400 3fff 0000 3fff 0000 0800
+
+//BT_MIXER_CTRIM_CHAN0_MAX
+//psset 0x216d 0x0006
+&216d = 0007
+
+//BT_ANA_TX_MIXER_CONFIG
+//psset 0x218c 0x0077
+&218c = 0072
+
+// PSKEY_LC_MAX_TX_POWER
+&0017 = 0014
+
+// PSKEY_LC_DEFAULT_TX_POWER
+&0021 = 0014
+
+//BT_TX_MIXER_CTRIM_OFFSET
+//&2175 = 0000 0000 0000 0000 ffff
+// modified by Lance, 2011.08.24
+&2175 = 0000 0000 0000 ffff eeee
+
+//Crystal Frequency Ana_freq
+&01fe = 6590
+
+//Crystal Frequency Ana_ftrim
+&01f6 = 001d
+
+// Local Supported feature block
+&00ef = ffff fe8f ff9b 875b
+//--------------------------------------------------------------
+// Default PSR - ps-default.psr reference
+//--------------------------------------------------------------
+
+// PSKEY_HOSTIO_MAP_SCO_PCM - TRUE
+&01ab = 0001
+
+// PSKEY_HOSTIO_MAP_CODEC - FALSE
+&01b0 = 0000
+
+// PSKEY_CODEC_PIO
+&01b9 = 000b
+
+// PSKEY_H_HC_FC_MAX_ACL_PKT_LEN
+&0011 = 0156
+
+// PSKEY_H_HC_FC_MAX_ACL_PKTS
+&0013 = 0009
+
+// PSKEY_PCM_MIN_CPU_CLOCK
+&024d = 0000
+
+// PSKEY_MAX_SCOS
+&000e = 0003
+
+// PSKEY_HOST_INTERFACE - USB
+&01f9 = 0002
+
+// PSKEY_VM_DISABLE - TRUE
+&025d = 0001
+
+
+

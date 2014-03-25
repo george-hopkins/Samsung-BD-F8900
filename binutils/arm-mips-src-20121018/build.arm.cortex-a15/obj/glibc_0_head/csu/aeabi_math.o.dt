@@ -1,0 +1,52 @@
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_0_head/csu/aeabi_math.o: \
+ ../ports/sysdeps/arm/eabi/aeabi_math.c ../include/libc-symbols.h \
+ /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_0_head/config.h \
+ ../sysdeps/wordsize-32/symbol-hacks.h ../include/math.h ../math/math.h \
+ ../include/features.h ../ports/sysdeps/arm/eabi/bits/predefs.h \
+ ../include/sys/cdefs.h ../misc/sys/cdefs.h \
+ ../sysdeps/wordsize-32/bits/wordsize.h ../include/gnu/stubs.h \
+ ../ports/sysdeps/arm/eabi/bits/huge_val.h \
+ ../sysdeps/ieee754/bits/huge_valf.h ../bits/huge_vall.h \
+ ../sysdeps/ieee754/bits/inf.h ../sysdeps/ieee754/bits/nan.h \
+ ../ports/sysdeps/arm/bits/mathdef.h ../include/bits/mathcalls.h \
+ ../math/bits/mathcalls.h ../bits/mathinline.h
+
+../include/libc-symbols.h:
+
+/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/glibc_0_head/config.h:
+
+../sysdeps/wordsize-32/symbol-hacks.h:
+
+../include/math.h:
+
+../math/math.h:
+
+../include/features.h:
+
+../ports/sysdeps/arm/eabi/bits/predefs.h:
+
+../include/sys/cdefs.h:
+
+../misc/sys/cdefs.h:
+
+../sysdeps/wordsize-32/bits/wordsize.h:
+
+../include/gnu/stubs.h:
+
+../ports/sysdeps/arm/eabi/bits/huge_val.h:
+
+../sysdeps/ieee754/bits/huge_valf.h:
+
+../bits/huge_vall.h:
+
+../sysdeps/ieee754/bits/inf.h:
+
+../sysdeps/ieee754/bits/nan.h:
+
+../ports/sysdeps/arm/bits/mathdef.h:
+
+../include/bits/mathcalls.h:
+
+../math/bits/mathcalls.h:
+
+../bits/mathinline.h:

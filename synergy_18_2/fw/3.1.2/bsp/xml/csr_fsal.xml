@@ -1,0 +1,604 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_FSAL_SIGNALS" discriminant="CSR_FSAL_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_time_xml" resource="FILE" file="csr_time.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+
+    <type name="CsrFsalSessionCreateReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalSessionCreateReq">
+        <field name="appHandle">
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalSessionCreateCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalSessionCreateCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="currentWorkingDir">
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalSessionDestroyReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalSessionDestroyReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalSessionDestroyCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalSessionDestroyCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="result">
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileOpenReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileOpenReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="fileName">
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="flags">
+            <type>CsrFsalFileOpenFlags</type>
+        </field>
+        <field name="permissions">
+            <type>CsrFsalFileOpenPerms</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileOpenCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileOpenCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult1</type>
+        </field>
+        <field name="size">
+            <type>CsrSize</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileCloseReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileCloseReq">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileCloseCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileCloseCfm">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult1</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileSeekReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileSeekReq">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="offset">
+            <type>CsrInt32</type>
+        </field>
+        <field name="origin">
+            <type>CsrFsalOrigin</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileSeekCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileSeekCfm">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult1</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileReadReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileReadReq">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="bytesToRead">
+            <type>CsrUint32</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileReadCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileReadCfm">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult1</type>
+        </field>
+        <field name="dataLen">
+            <type>CsrUint32</type>
+        </field>
+        <field name="data" blocklength="dataLen">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileWriteReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileWriteReq">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="dataLen">
+            <type>CsrUint32</type>
+        </field>
+        <field name="data" blocklength="dataLen">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileWriteCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileWriteCfm">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult1</type>
+        </field>
+        <field name="bytesWritten">
+            <type>CsrUint32</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileTellReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileTellReq">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalFileTellCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalFileTellCfm">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="position">
+            <type>CsrUint32</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult1</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalStatReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalStatReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="path">
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalStatCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalStatCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult8</type>
+        </field>
+        <field name="stat">
+            <type>CsrFsalDirEntry</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalRemoveReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalRemoveReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="path">
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalRemoveCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalRemoveCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult3</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalRemoveRecursivelyReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalRemoveRecursivelyReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="dir">
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalRemoveRecursivelyCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalRemoveRecursivelyCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult3</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalRenameReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalRenameReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="oldPath">
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="newPath">
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalRenameCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalRenameCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult7</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalPermissionsSetReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalPermissionsSetReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="path">
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="permissions">
+            <type>CsrFsalPermissions</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalPermissionsSetCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalPermissionsSetCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult6</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirMakeReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirMakeReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="dirName">
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirMakeCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirMakeCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult4</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirChangeReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirChangeReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="path">
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirChangeCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirChangeCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="currentWorkingDir">
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult5</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirFindFirstReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirFindFirstReq">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="searchPattern">
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirFindFirstCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirFindFirstCfm">
+        <field name="sessionId">
+            <type>CsrFsalSession</type>
+        </field>
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult2</type>
+        </field>
+        <field name="entry">
+            <type>CsrFsalDirEntry</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirFindNextReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirFindNextReq">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirFindNextCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirFindNextCfm">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult2</type>
+        </field>
+        <field name="entry">
+            <type>CsrFsalDirEntry</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirFindCloseReq" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirFindCloseReq">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirFindCloseCfm" resource="CSR_FSAL_SIGNALS" dvalue="CsrFsalDirFindCloseCfm">
+        <field name="handle">
+            <type>CsrFsalHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrFsalResult2</type>
+        </field>
+    </type>
+
+    <type name="CSR_FSAL_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrFsalSessionCreateReq"                value="0x0000"/>
+        <value name="CsrFsalSessionDestroyReq"               value="0x0001"/>
+        <value name="CsrFsalFileOpenReq"                     value="0x0002"/>
+        <value name="CsrFsalFileCloseReq"                    value="0x0003"/>
+        <value name="CsrFsalFileSeekReq"                     value="0x0004"/>
+        <value name="CsrFsalFileReadReq"                     value="0x0005"/>
+        <value name="CsrFsalFileWriteReq"                    value="0x0006"/>
+        <value name="CsrFsalFileTellReq"                     value="0x0007"/>
+        <value name="CsrFsalStatReq"                         value="0x0008"/>
+        <value name="CsrFsalRemoveReq"                       value="0x0009"/>
+        <value name="CsrFsalRenameReq"                       value="0x000A"/>
+        <value name="CsrFsalPermissionsSetReq"               value="0x000B"/>
+        <value name="CsrFsalDirMakeReq"                      value="0x000C"/>
+        <value name="CsrFsalDirChangeReq"                    value="0x000D"/>
+        <value name="CsrFsalDirFindFirstReq"                 value="0x000E"/>
+        <value name="CsrFsalDirFindNextReq"                  value="0x000F"/>
+        <value name="CsrFsalDirFindCloseReq"                 value="0x0010"/>
+        <value name="CsrFsalRemoveRecursivelyReq"            value="0x0011"/>
+
+        <value name="CsrFsalSessionCreateCfm"                value="0x8000"/>
+        <value name="CsrFsalSessionDestroyCfm"               value="0x8001"/>
+        <value name="CsrFsalFileOpenCfm"                     value="0x8002"/>
+        <value name="CsrFsalFileCloseCfm"                    value="0x8003"/>
+        <value name="CsrFsalFileSeekCfm"                     value="0x8004"/>
+        <value name="CsrFsalFileReadCfm"                     value="0x8005"/>
+        <value name="CsrFsalFileWriteCfm"                    value="0x8006"/>
+        <value name="CsrFsalFileTellCfm"                     value="0x8007"/>
+        <value name="CsrFsalStatCfm"                         value="0x8008"/>
+        <value name="CsrFsalRemoveCfm"                       value="0x8009"/>
+        <value name="CsrFsalRenameCfm"                       value="0x800A"/>
+        <value name="CsrFsalPermissionsSetCfm"               value="0x800B"/>
+        <value name="CsrFsalDirMakeCfm"                      value="0x800C"/>
+        <value name="CsrFsalDirChangeCfm"                    value="0x800D"/>
+        <value name="CsrFsalDirFindFirstCfm"                 value="0x800E"/>
+        <value name="CsrFsalDirFindNextCfm"                  value="0x800F"/>
+        <value name="CsrFsalDirFindCloseCfm"                 value="0x8010"/>
+        <value name="CsrFsalRemoveRecursivelyCfm"            value="0x8011"/>
+    </type>
+
+    <type name="CsrFsalSession" resource="TYPE" size="32"/>
+
+    <type name="CsrFsalSize" resource="CONST" size="32">
+        <value name="CSR_FSAL_MAX_DATA_SIZE" value="0x10000">
+            <!-- Maximum allowed number of bytes to read/write in a single operation -->
+        </value>
+    </type>
+
+    <type name="CsrFsalHandle" resource="TYPE" type="void*">
+        <value name="CSR_FSAL_INVALID_HANDLE" value="NULL"/>
+    </type>
+
+    <type name="CsrFsalFileOpenFlags" resource="TYPE" size="16">
+        <!-- File open flags (NB: only raw file access mode is supported) -->
+        <value name="CSR_FSAL_OPEN_FLAGS_CREATE"                value="0x0001"><!-- Set this flag if file should be created --></value>
+        <value name="CSR_FSAL_OPEN_FLAGS_READ_ONLY"             value="0x0002"><!-- Set this flag if file should be opened as read only (if set this flag takes precedence over all other flags) --></value>
+        <value name="CSR_FSAL_OPEN_FLAGS_WRITE_ONLY"            value="0x0004"><!-- Set this flag if file should be opened as write only --></value>
+        <value name="CSR_FSAL_OPEN_FLAGS_READ_WRITE"            value="0x0008"><!-- Set this flag if file should be opened for both read and write --></value>
+        <value name="CSR_FSAL_OPEN_FLAGS_APPEND"                value="0x0010"><!-- Set this flag if file should be opened for append (if set the file pointer will be repositioned to the end of the file before every write operation) --></value>
+        <value name="CSR_FSAL_OPEN_FLAGS_TRUNCATE"              value="0x0020"><!-- Set this flag if file should be truncated when opened --></value>
+        <value name="CSR_FSAL_OPEN_FLAGS_EXCL"                  value="0x0040"><!-- Set this flag if file should not be created when it already exists --></value>
+    </type>
+
+    <type name="CsrFsalFileOpenPerms" resource="TYPE" size="16">
+        <!-- File open permissions (only used if CSR_FSAL_OPEN_FLAGS_CREATE is set) -->
+        <value name="CSR_FSAL_OPEN_PERMS_NOT_APPLICABLE"        value="0x0000"><!-- This flag should be used when the open perms is not applicable ie. when the CSR_FSAL_OPEN_FLAGS_CREATE flag is not used --></value>
+        <value name="CSR_FSAL_OPEN_PERMS_READ"                  value="0x0001"><!-- Set this flag if reads are permitted --></value>
+        <value name="CSR_FSAL_OPEN_PERMS_WRITE"                 value="0x0002"><!-- Set this flag if writes are permitted --></value>
+    </type>
+
+    <type name="CsrFsalMode" resource="TYPE" size="16">
+        <!-- File/directory mode properties -->
+        <value name="CSR_FSAL_MODE_DIRECTORY"                   value="0x0001"/>
+        <value name="CSR_FSAL_MODE_REGULAR_FILE"                value="0x0002"/>
+        <value name="CSR_FSAL_MODE_USER_READ_PERMISSION"        value="0x0004"/>
+        <value name="CSR_FSAL_MODE_USER_WRITE_PERMISSION"       value="0x0008"/>
+        <value name="CSR_FSAL_MODE_USER_EXECUTE"                value="0x0010"/>
+        <value name="CSR_FSAL_MODE_GROUP_READ_PERMISSION"       value="0x0020"/>
+        <value name="CSR_FSAL_MODE_GROUP_WRITE_PERMISSION"      value="0x0040"/>
+        <value name="CSR_FSAL_MODE_GROUP_EXECUTE"               value="0x0080"/>
+        <value name="CSR_FSAL_MODE_OTHERS_READ_PERMISSION"      value="0x0100"/>
+        <value name="CSR_FSAL_MODE_OTHERS_WRITE_PERMISSION"     value="0x0200"/>
+        <value name="CSR_FSAL_MODE_OTHERS_EXECUTE"              value="0x0400"/>
+    </type>
+
+    <type name="CsrFsalPermissions" resource="TYPE" size="16">
+        <value name="CSR_FSAL_PERMISSION_USER_READ"             value="0x0001"><!-- Set this flag if reads are permitted for user --></value>
+        <value name="CSR_FSAL_PERMISSION_USER_WRITE"            value="0x0002"><!-- Set this flag if writes are permitted for user --></value>
+        <value name="CSR_FSAL_PERMISSION_USER_EXECUTE"          value="0x0004"><!-- Set this flag if execute are permitted for user --></value>
+        <value name="CSR_FSAL_PERMISSION_GROUP_READ"            value="0x0008"><!-- Set this flag if reads are permitted for group --></value>
+        <value name="CSR_FSAL_PERMISSION_GROUP_WRITE"           value="0x0010"><!-- Set this flag if writes are permitted for group --></value>
+        <value name="CSR_FSAL_PERMISSION_GROUP_EXECUTE"         value="0x0020"><!-- Set this flag if execute are permitted for group --></value>
+        <value name="CSR_FSAL_PERMISSION_OTHERS_READ"           value="0x0040"><!-- Set this flag if reads are permitted for others --></value>
+        <value name="CSR_FSAL_PERMISSION_OTHERS_WRITE"          value="0x0080"><!-- Set this flag if writes are permitted for others --></value>
+        <value name="CSR_FSAL_PERMISSION_OTHERS_EXECUTE"        value="0x0100"><!-- Set this flag if execute are permitted for others --></value>
+    </type>
+
+    <type name="CsrFsalOrigin" resource="TYPE" size="8">
+        <!--  File seek origins -->
+        <value name="CSR_FSAL_SEEK_SET"                         value="0"><!-- Beginning of file --></value>
+        <value name="CSR_FSAL_SEEK_CUR"                         value="1"><!-- Current position in the file --></value>
+        <value name="CSR_FSAL_SEEK_END"                         value="2"><!-- End of file --></value>
+    </type>
+
+    <type name="CsrFsalResult1" resource="TYPE" type="CsrResult" const="1">
+        <!-- All file operations (open/close/read/write/seek/tell) use these error codes,
+             if operation succeeded the result is CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_FSAL_FILE_OP_FAILURE"                  value="1"/>
+        <value name="CSR_FSAL_FILE_OP_EOF"                      value="2"/>
+        <value name="CSR_FSAL_FILE_OP_READ_ONLY"                value="3"/>
+        <value name="CSR_FSAL_FILE_OP_NOT_EXIST"                value="4"/>
+        <value name="CSR_FSAL_FILE_OP_NOT_ALLOWED"              value="5"/>
+        <value name="CSR_FSAL_FILE_OP_ALREAD_EXISTS"            value="6"/>
+        <value name="CSR_FSAL_FILE_OP_NO_SPACE"                 value="7"/>
+    </type>
+
+    <type name="CsrFsalResult2" resource="TYPE" type="CsrResult" const="1">
+        <!-- All Find operations use these error codes, if operation succeeded the result
+             is CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_FSAL_DIR_OP_FAILURE"                   value="1"/>
+        <value name="CSR_FSAL_DIR_OP_NO_MORE_MATCHING_ENTRIES"  value="2"/>
+    </type>
+
+    <type name="CsrFsalResult3" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the remove procedure, if operation succeeded the result
+             is CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_FSAL_DELETE_FAILURE"                   value="1"/>
+        <value name="CSR_FSAL_DELETE_READ_ONLY"                 value="2"/>
+        <value name="CSR_FSAL_DELETE_NOT_EXIST"                 value="3"/>
+        <value name="CSR_FSAL_DELETE_NOT_EMPTY"                 value="4"/>
+    </type>
+
+    <type name="CsrFsalResult4" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the DIR make procedure, if operation succeeded the result
+             is CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_FSAL_DIR_MAKE_FAILURE"                 value="1"/>
+        <value name="CSR_FSAL_DIR_MAKE_EXIST"                   value="2"/>
+        <value name="CSR_FSAL_DIR_MAKE_INVALID_PATH"            value="3"/>
+    </type>
+
+    <type name="CsrFsalResult5" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the DIR change procedure, if operation succeeded the result
+             is CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_FSAL_DIR_CHANGE_FAILURE"               value="1"/>
+        <value name="CSR_FSAL_DIR_CHANGE_NOT_EXIST"             value="2"/>
+    </type>
+
+    <type name="CsrFsalResult6" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the set permissions procedure, if operation succeeded the result
+             is CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_FSAL_SET_PERMISSIONS_FAILURE"          value="1"/>
+        <value name="CSR_FSAL_SET_PERMISSIONS_NOT_EXIST"        value="2"/>
+    </type>
+
+    <type name="CsrFsalResult7" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the rename procedure, if operation succeeded the result is
+             CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_FSAL_RENAME_FAILURE"                   value="1"/>
+        <value name="CSR_FSAL_RENAME_NOT_EXIST"                 value="2"/>
+        <value name="CSR_FSAL_RENAME_NOT_ALLOWED"               value="3"/>
+    </type>
+
+    <type name="CsrFsalResult8" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the stat procedure, if operation succeeded the result is
+             CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_FSAL_STAT_FAILURE"                     value="1"/>
+        <value name="CSR_FSAL_STAT_NOT_EXIST"                   value="2"/>
+    </type>
+
+    <type name="CsrFsalTm" resource="TYPE">
+        <field name="tm_sec">
+            <type>CsrTime</type>
+            <!-- Seconds: 0-59 -->
+        </field>
+        <field name="tm_min">
+            <type>CsrTime</type>
+            <!-- Minutes: 0-59 -->
+        </field>
+        <field name="tm_hour">
+            <type>CsrTime</type>
+            <!-- Hours since midnight: 0-23 -->
+        </field>
+        <field name="tm_mday">
+            <type>CsrTime</type>
+            <!-- Day of the month: 1-31 -->
+        </field>
+        <field name="tm_mon">
+            <type>CsrTime</type>
+            <!-- Months *since* january: 0-11 -->
+        </field>
+        <field name="tm_year">
+            <type>CsrTime</type>
+            <!-- Years since 1900 -->
+        </field>
+        <field name="tm_wday">
+            <type>CsrTime</type>
+            <!-- Days since Sunday (0-6) -->
+        </field>
+        <field name="tm_yday">
+            <!-- Days since Jan. 1: 0-365 -->
+            <type>CsrTime</type>
+        </field>
+        <field name="tm_isdst">
+            <!-- +1 Daylight Savings Time, 0 No DST, 0xFFFF don't know -->
+            <type>CsrTime</type>
+        </field>
+        <field name="utcTime">
+            <!-- TRUE if given in UTC time, FALSE if given in local time  -->
+            <type>CsrBool</type>
+        </field>
+    </type>
+
+    <type name="CsrFsalDirEntry" resource="TYPE">
+        <field name="name">
+            <!-- Name of entry -->
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="time">
+            <!-- Time of last write/modification of entry -->
+            <type>CsrFsalTm</type>
+        </field>
+        <field name="size">
+            <!-- 0 if not file -->
+            <type>CsrSize</type>
+        </field>
+        <field name="mode">
+            <!-- mode -->
+            <type>CsrFsalMode</type>
+        </field>
+    </type>
+
+</definitions>

@@ -1,0 +1,11 @@
+prefix=/data/pkumar/hq_perforce/Users/raj.yadav/OP/OP_Prj/DEV/raj.yadav_001/Connectivity/Protocol/MMS/0.6.2/Src
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/
+
+Name: libmms
+Description: Library implementing the MMS protocol 
+Requires: glib-2.0
+Version: 0.6.2
+Libs: -L${libdir} -lmms -lm
+Cflags: -I${includedir}

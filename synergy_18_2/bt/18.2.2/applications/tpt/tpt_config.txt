@@ -1,0 +1,52 @@
+
+/*************************************************************************************
+  Tests to run: 
+*************************************************************************************/
+SPP_SERVER_SEND_TEST:   (Y)  /* Set to Y to run test and N to skip test */
+SPP_CLIENT_SEND_TEST:   (Y)  /* Set to Y to run test and N to skip test */
+AV_SERVER_SEND_TEST:    (Y)  /* Set to Y to run test and N to skip test */
+AV_CLIENT_SEND_TEST:    (Y)  /* Set to Y to run test and N to skip test */
+
+
+/*************************************************************************************
+  Test configuration: 
+*************************************************************************************/
+RUN_SBC_ENCODE:         (Y)  /* Set to Y to run SBC encoding on the server while    */
+                             /* testing. Otherwise set it to N                      */
+RUN_INQUIRY:            (Y)  /* Set to Y to run Bluetooth inquiry procedure on the  */
+                             /* server while testing. Otherwise set it to N         */
+
+
+/*************************************************************************************
+  Packet settings: 
+*************************************************************************************/
+MAX_PACKET_SIZE:        (672)   /* Max packet size for AV test.             */
+                                /* If this value is larger than the remote  */
+                                /* MTU size, it will be reduced to the      */
+                                /* remote MTU size                          */
+MIN_PACKET_SIZE:        (100)   /* Minimum size is 12 bytes                 */
+                                /* (sizeof(TptTestDataStruct_t))            */
+PACKET_SIZE_INCREMENT:  (200)   /* The step size between the packet sizes   */
+MAX_NUMBER_TO_SEND:     (1000)  /* Maximum number of packets to send        */
+
+
+/*************************************************************************************
+  Device settings: 
+*************************************************************************************/
+SERVER_ADDRESS:         (0002:5B:012345)
+
+
+/*************************************************************************************
+  Log-file settings: 
+*************************************************************************************/
+/* NOTE! If the file should be placed in a directory different from the TPT-client  */
+/* execution directory, the full path to the file must be specified.                */
+/* The file extention will always be set to ".csv".                                 */
+
+SPP_SERVER_SEND_FILE:   (spp_server_results)      /* File name for SPP_SERVER_SEND results */
+SPP_CLIENT_SEND_FILE:   (spp_client_results)      /* File name for SPP_CLIENT_SEND results */
+AV_SERVER_SEND_FILE:    (av_server_results)       /* File name for AV_SERVER_SEND results  */
+AV_CLIENT_SEND_FILE:    (av_client_results)       /* File name for AV_CLIENT_SEND results  */
+AV_SERVER_DELAY_FILE:   (av_server_delay_results) /* File name for AV_SERVER_DELAY results */
+AV_CLIENT_DELAY_FILE:   (av_client_delay_results) /* File name for AV_CLIENT_DELAY results */
+

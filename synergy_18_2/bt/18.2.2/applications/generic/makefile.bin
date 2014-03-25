@@ -1,0 +1,217 @@
+#-*-Makefile-*-
+##############################################################################
+#
+#       Copyright Cambridge Silicon Radio Limited and its licensors 2011.
+#       All rights reserved.
+#
+# REVISION:      $Revision: #4 $
+##############################################################################
+
+TOP := ../..
+
+OBJ_PATH = $(TOP)/output/$(CONFIG)/$(TARGET)/obj/applications/$(HOSTBUILD)
+
+include $(TOP)/local_rules.mk
+include makefile.common
+
+# Executable Name
+DEMO_APP_NAME := $(call bin_name,csr_bt_app_$(CONFIG)_$(BUILD_TYPE))
+
+# The purpose of these CFLAGS is only to be able to select the correct
+# initialisation function for the transport manager in csr_bt_tasks.c.
+ifneq ($(filter $(BSP_LIBS),csr_usb_com),)
+CFLAGS += -DCSR_BT_APP_USE_USB
+endif
+
+ifneq ($(filter $(BSP_LIBS),csr_ser_com),)
+CFLAGS += -DCSR_BT_APP_USE_SERIAL_COM
+endif
+
+ifneq ($(filter $(BSP_LIBS),csr_spi_master csr_sdio_master),)
+CFLAGS += -DCSR_BT_APP_USE_TYPE_A
+LIBS += $(call use_lib,csr_sdio)
+endif
+
+ifeq ($(SUB_TARGET_ARCH),Linux)
+LIBS += -lasound
+endif
+
+# Bluetooth libraries
+LIBS += \
+        $(call use_lib,csr_bt_corestack_$(BUILD_TYPE)) \
+        $(call use_lib,csr_bt) \
+        $(call use_lib,csr_bt_lib) \
+        $(call use_lib,csr_bt_sc_db-file) \
+        $(call use_lib,csr_bt_bootstrap)
+
+# Framework libraries
+LIBS += \
+        $(APP_COMMON_LIB) \
+        $(call use_lib,csr_hci) \
+        $(call use_lib,csr_bccmd) \
+        $(call use_lib,csr_bcsp) \
+        $(call use_lib,csr_core_msg_converter) \
+        $(call use_lib,csr_formatted_io) \
+        $(call use_lib,csr_h4ds) \
+        $(call use_lib,csr_hq) \
+        $(call use_lib,csr_list) \
+        $(call use_lib,csr_mblk) \
+        $(call use_lib,csr_msg_converter) \
+        $(call use_lib,csr_queue_lib) \
+        $(call use_lib,csr_message_queue) \
+        $(call use_lib,csr_tm_bluecore) \
+        $(call use_lib,csr_unicode) \
+        $(call use_lib,csr_usb) \
+        $(call use_lib,csr_vm) \
+        $(call use_lib,csr_fastpipe) \
+		$(call use_lib,csr_am) \
+        $(call use_lib,csr_ui) \
+        $(call use_lib,csr_app) \
+        $(call use_lib,csr_main) \
+        $(call use_lib,csr_arg_search) \
+        $(call use_lib,csr_app_main_bluecore) \
+        $(call use_lib,csr_type_a) \
+        $(call use_lib,csr_type_a_async) \
+        $(call use_lib,csr_aclbuf_lower) \
+        $(call use_lib,csr_sched) \
+        $(call use_lib,csr_random) \
+        $(call use_lib,$(BSP_LIBS))        
+
+ifeq ($(CSR_IBFP_H4I_SUPPORT),1)
+LIBS += $(call use_lib,csr_h4i) \
+        $(call use_lib,csr_h4common)
+endif
+
+FW_GREATER_THAN_3_1_0 :=	$(shell if [ $(FW_MAJOR_VERSION) -gt 3 ] || [ $(FW_MAJOR_VERSION) -eq 3 -a $(FW_MINOR_VERSION) -gt 0 ] ; then echo 1; else echo 0; fi)
+
+ifeq ($(FW_GREATER_THAN_3_1_0),1)
+ifeq ($(CSR_DSPM_ENABLE),1)
+	LIBS += $(call use_lib,csr_dspm)
+endif
+endif
+
+ifeq ($(LOG),1)
+LIBS += \
+        $(call use_lib,csr_log) \
+        $(call use_lib,csr_log_btsnoop) \
+        $(call use_lib,csr_log_fts) \
+        $(call use_lib,csr_log_pcap) \
+        $(call use_lib,csr_log_cleartext) \
+        $(call use_lib,csr_bt_msg_converter)
+endif
+
+ifeq ($(filter $(CFLAGS),-DEXCLUDE_CSR_BT_AV_MODULE),)
+LIBS += $(call use_lib,csr_sbc)
+endif
+
+
+# AMP
+ifeq ($(CSR_BT_APP_AMP_WIFI),1)
+CFLAGS += -DCSR_BT_APP_AMP_WIFI
+INC += \
+        -I $(WIFI_ROOT)/inc \
+        -I $(WIFI_ROOT)/src/router_remote/code \
+        -I $(WIFI_ROOT)/porting/extra/mib/inc \
+        -I $(WIFI_ROOT)/porting/ports/common/inc \
+        -I $(WIFI_ROOT)/example_apps/generic/inc
+LIBS += \
+        $(call use_lib,csr_wifi_wifi_util) \
+        $(call use_lib,csr_wifi) \
+        $(call use_lib,csr_wifi_lib) \
+        $(call use_lib,csr_wifi_porting) \
+        $(call use_lib,csr_wifi_porting_extra) \
+        $(call use_lib,csr_wifi_crypto) \
+        $(call use_lib,csr_wifi_sme) \
+        $(call use_lib,csr_wifi_sme_lib) \
+	$(call use_lib,csr_ip_ether_lib) \
+	$(call use_lib,csr_wifi_msg_converter)
+
+ifneq ($(filter 3 4, $(WIFI_MAJOR_VERSION)),)
+LIBS += $(call use_lib,csr_wifi_porting_fs)
+endif
+
+ifeq ($(TARGET),pclin-2.6-x86)
+ifneq ($(filter 3 4, $(WIFI_MAJOR_VERSION)),)
+LIBS += $(call use_lib,csr_wifi_router_remote_lib)
+else
+LIBS += $(call use_lib,csr_wifi_router_remote)
+endif
+else
+LIBS += $(call use_lib,csr_wifi_router_lib)
+endif
+
+LDPATH += \
+        $(call create_ldpath,$(WIFI_ROOT)/output/$(WIFI_CONFIG)/$(TARGET)/lib) \
+        $(call create_ldpath,$(WIFI_ROOT)/porting/output/$(WIFI_CONFIG)/$(TARGET)/lib) \
+        $(call create_ldpath,$(WIFI_ROOT)/output/$(WIFI_CONFIG)/$(TARGET)/lib/extra)
+endif
+
+# Fix Linux linking
+ifeq ($(SUB_TARGET_ARCH),Linux)
+LIBS := $(LIBS) $(LIBS)
+endif
+
+LDPATH += \
+        $(APP_LDPATH) \
+        $(call create_ldpath,$(TOP)/output/$(CONFIG)/$(TARGET)/lib) \
+        $(call create_ldpath,$(TOP)/output/$(CONFIG)/$(TARGET)/lib/extra) \
+        $(call create_ldpath,$(TOP)/output/$(CONFIG)/$(TARGET)/lib/app) \
+        $(call create_ldpath,$(FW_LIB)) \
+        $(call create_ldpath,$(BSP_LIB)) \
+        $(call create_ldpath,$(LOW_LEVEL_ROOT)/output/$(CONFIG)/$(TARGET)/lib)
+
+LIB_PATH := $(TOP)/output/$(CONFIG)/$(TARGET)/lib
+
+INC += \
+       $(BSP_INC) \
+       $(FW_INC) \
+       -I $(TOP)/inc \
+       -I $(TOP)/applications/inc \
+       -I $(TOP)/applications/common \
+       -I $(TOP)/applications/bootstrap
+
+CFLAGS += -DCSR_BT_RUN_STACK=1 -DCSR_BT_RUN_APP=1 -DCSR_BT_APP_GENERIC=1
+
+SRC := \
+       ../common/csr_bt_init_tasks.c \
+       ../common/csr_bt_file.c \
+       csr_bt_declare_tasks.c \
+       csr_bt_tasks.c
+
+ifeq ($(LOG),1)
+SRC += ../common/csr_bt_converter.c
+endif
+
+ifneq ($(filter $(TARGET_PLATFORM),bdb2 bdb3),)
+ifeq ($(CSR_BT_APP_USE_TFTP),1)
+    INC += -I ../common/ports/bdb
+    include ../common/ports/bdb/module.mk
+    SRC+=$(CTRL_SRC)
+    include ../internet/module.mk
+    SRC+=$(INET_SRC)
+endif
+endif
+
+DEMO_APP_OBJ := $(addprefix $(OBJ_PATH)/,$(SRC:.c=.o))
+
+DEP := $(DEMO_APP_OBJ:.o=.d)
+
+include $(FW_ROOT)/m_targets.mk
+
+all: bin
+
+lib:
+
+bin: $(DEMO_APP_NAME)
+
+$(DEMO_APP_NAME): build_app_libs $(DEMO_APP_OBJ)
+	$(call create_exec,$(DEMO_APP_NAME),$(DEMO_APP_OBJ),$(LDPATH),$(LIBS))
+
+clean_bin:
+	$(RM) $(DEMO_APP_NAME)
+
+clean:
+	$(RM) $(DEMO_APP_NAME)
+	$(RM) $(call path_subst,$(DEMO_APP_OBJ))
+	$(RM) -rf $(APP_COMMON_OBJ_PATH)
+	$(RM) -rf $(APP_COMMON_LIB_PATH)

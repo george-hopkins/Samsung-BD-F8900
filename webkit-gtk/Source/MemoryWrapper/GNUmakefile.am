@@ -1,0 +1,136 @@
+
+if OS_GNU
+
+if ENABLE_MEM_WRAPPER
+
+# This is the memory wrapper library
+memorywrapper_libs += \
+	libMemoryWrapper.la
+
+# extend global flags that enables the memory wrapper
+if ENABLE_MEM_WRAPPER_DEBUG
+
+global_cflags += \
+	-DMEMORYWRAPPERDEBUG
+
+global_cppflags += \
+	-DMEMORYWRAPPERDEBUG
+
+global_cxxflags += \
+	-DMEMORYWRAPPERDEBUG
+
+endif # ENABLE_MEM_WRAPPER_DEBUG
+
+
+# if exceptions are enabled ...
+if ENABLE_MEM_WRAPPER_EXCEPTIONS
+
+global_cppflags += \
+	-DMEMWRAPPEREXCEPTIONS \
+	-fexceptions
+
+global_cxxflags += \
+	-DMEMWRAPPEREXCEPTIONS \
+	-fexceptions
+
+memorywrapper_ldflags += \
+	-fexceptions
+
+endif # ENABLE_MEM_WRAPPER_EXCEPTIONS
+
+
+global_cflags += \
+	-DUSE_MEMORYWRAPPER \
+	-I$(top_builddir)/Source/MemoryWrapper
+
+global_cppflags += \
+	-DUSE_MEMORYWRAPPER \
+	-I$(top_builddir)/Source/MemoryWrapper
+
+memorywrapper_sources := \
+	Source/MemoryWrapper/MemoryWrapper.cpp
+
+if ENABLE_MEM_WRAPPER_32
+memorywrapper_ldflags += \
+	-pthread \
+	-Wl,--wrap,malloc \
+	-Wl,--wrap,free \
+	-Wl,--wrap,calloc \
+	-Wl,--wrap,realloc \
+	-Wl,--wrap,strdup \
+	-Wl,--wrap,strndup \
+	-Wl,--wrap,_Znwj \
+	-Wl,--wrap,_Znaj \
+	-Wl,--wrap,_ZdlPv \
+	-Wl,--wrap,_ZdaPv \
+	-Wl,--wrap,_ZnwjRKSt9nothrow_t \
+	-Wl,--wrap,_ZnajRKSt9nothrow_t \
+	-Wl,--wrap,_ZdlPvRKSt9nothrow_t \
+	-Wl,--wrap,_ZdaPvRKSt9nothrow_t
+endif # if ENABLE_MEM_WRAPPER_32
+
+if ENABLE_MEM_WRAPPER_64
+memorywrapper_ldflags += \
+	-pthread \
+	-Wl,--wrap,malloc \
+	-Wl,--wrap,free \
+	-Wl,--wrap,calloc \
+	-Wl,--wrap,realloc \
+	-Wl,--wrap,strdup \
+	-Wl,--wrap,strndup \
+	-Wl,--wrap,_Znwm \
+	-Wl,--wrap,_Znam \
+	-Wl,--wrap,_ZdlPv \
+	-Wl,--wrap,_ZdaPv \
+	-Wl,--wrap,_ZnwmRKSt9nothrow_t \
+	-Wl,--wrap,_ZnamRKSt9nothrow_t \
+	-Wl,--wrap,_ZdlPvRKSt9nothrow_t \
+	-Wl,--wrap,_ZdaPvRKSt9nothrow_t
+endif # if ENABLE_MEM_WRAPPER_64
+
+
+memorywrapper_objects := $(patsubst %.cpp,%.lo,$(memorywrapper_sources))
+
+memorywrapper_build_dir: $(memorywrapper_sources)
+	$(MKDIR_P) `echo $^ | $(SED) 's|[^/]*$$|.deps|;s|\.lo$$||'`
+
+$(memorywrapper_objects): AM_CPPFLAGS+=$(global_cppflags)
+
+$(memorywrapper_libs): memorywrapper_build_dir $(memorywrapper_objects)
+	$(CXXLINK) $(memorywrapper_objects)
+
+# Clean Memory wrapper - the folowing lines were commented
+# out as the CLEANFILES only clean the library itself but left
+# everythign else.
+#
+# CLEANFILES += \
+#	$(memorywrapper_libs) \
+#	$(memorywrapper_objects) \
+#	$(patsubst %.cpp,%.o,$(subst /,/.libs/,$(memorywrapper_sources))) \
+#	$(patsubst %.cpp,%.Plo,$(subst /,/.deps/,$(memorywrapper_sources)))
+
+clean-memorywrapper:
+	-rm -f $(memorywrapper_libs) $(memorywrapper_objects)
+
+distclean-memorywrapper:
+	-rm -f $(patsubst %.cpp,%.o,$(subst MemoryWrapper/,MemoryWrapper/.libs/,$(memorywrapper_sources))) \
+	$(patsubst %.cpp,%.Plo,$(subst MemoryWrapper/,MemoryWrapper/.deps/,$(memorywrapper_sources)))
+	-rmdir `dirname $(patsubst %.cpp,%.o,$(subst MemoryWrapper/,MemoryWrapper/.libs/,$(memorywrapper_sources)))`
+	-rmdir `dirname $(patsubst %.cpp,%.o,$(subst MemoryWrapper/,MemoryWrapper/.deps/,$(memorywrapper_sources)))`
+
+else # ENABLE_MEM_WRAPPER
+
+clean-memorywrapper:
+
+distclean-memorywrapper:
+
+endif # ENABLE_MEM_WRAPPER
+
+else # if os_gnu
+
+clean-memorywrapper:
+
+distclean-memorywrapper:
+
+endif # if os_gnu
+

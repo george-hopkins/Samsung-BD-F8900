@@ -1,0 +1,172 @@
+#-*-Makefile-*-
+###############################################################################
+#
+#                (c) Cambridge Silicon Radio Limited 2009
+#
+#                All rights reserved and confidential information of CSR
+#
+# REVISION:      $Revision: #2 $
+###############################################################################
+
+#
+# This makefile gets included by all demo application makefiles AFTER
+# the demo app has set up their own variables. So, at this point we
+# have all the information we need to compile both the HCI and the RFC
+# version of the named executable.
+#
+include $(TOP)/applications/common/makefile.init
+# Only enforce dependencies if instructed
+ifneq ($(NO_DEPLIBS),1)
+include $(TOP)/applications/common/makefile.deps
+endif
+include $(TOP)/applications/common/makefile.amp
+
+BUILD_TYPE ?= hci
+
+#
+# Common flags, paths, libraries
+#
+INC += $(APP_INC) \
+	-I . \
+	-I $(TOP)/applications/inc \
+	-I $(TOP)/applications/common \
+	-I $(TOP)/applications/bootstrap \
+	-I $(TOP)/inc \
+	-I $(TOP)/profile_managers/inc \
+	-I $(BSP_ROOT)/inc \
+	-I $(BSP_ROOT)/platform/inc
+
+ifneq ($(filter $(TARGET_PLATFORM),bdb2 bdb3),)
+INC += -I $(TOP)/applications/common/ports/bdb
+else
+INC += -I $(TOP)/applications/common/ports/pcwin
+ifneq ($(TARGET),gen3win-nt-mips)
+COMM_LIBS += $(call use_lib,csr_usb_com) \
+	$(call use_lib,csr_usb)
+endif	
+endif
+
+CFLAGS += $(APP_CFLAGS)
+
+# Bluetooth libraries
+LIBS += $(APP_LIBS) \
+	$(call use_lib,csr_bt_app_common_$(BUILD_TYPE)) \
+        $(call use_lib,csr_bt_corestack_$(BUILD_TYPE)) \
+        $(call use_lib,csr_bt) \
+        $(call use_lib,csr_bt_lib) \
+        $(call use_lib,csr_bt_msg_converter) \
+        $(call use_lib,csr_bt_sc_db-file) \
+        $(call use_lib,csr_bt_bootstrap)
+
+# Framework libraries
+LIBS += $(call use_lib,csr_hci) \
+        $(call use_lib,csr_bccmd) \
+        $(call use_lib,csr_bcsp) \
+        $(call use_lib,csr_core_msg_converter) \
+        $(call use_lib,csr_formatted_io) \
+        $(call use_lib,csr_h4ds) \
+        $(call use_lib,csr_hq) \
+        $(call use_lib,csr_list) \
+        $(call use_lib,csr_mblk) \
+        $(call use_lib,csr_msg_converter) \
+        $(call use_lib,csr_queue_lib) \
+        $(call use_lib,csr_message_queue) \
+        $(call use_lib,csr_tm_bluecore) \
+        $(call use_lib,csr_unicode) \
+        $(call use_lib,csr_vm) \
+     	$(call use_lib,csr_fastpipe) \
+		$(call use_lib,csr_am) \
+        $(call use_lib,csr_fs) \
+        $(call use_lib,csr_panic) \
+        $(call use_lib,csr_sched) \
+	$(call use_lib,csr_ser_com) \
+	$(call use_lib,csr_time) \
+	$(call use_lib,csr_util) \
+	$(call use_lib,csr_random) \
+	$(call use_lib,csr_pmem) \
+	$(call use_lib,csr_eh) \
+	$(call use_lib,csr_framework_ext) \
+	$(COMM_LIBS)
+
+ifeq ($(CSR_IBFP_H4I_SUPPORT),1)
+LIBS += $(call use_lib,csr_h4i) \
+        $(call use_lib,csr_h4common)
+endif
+
+ifeq ($(CSR_DSPM_ENABLE),1)
+LIBS += $(call use_lib,csr_dspm)
+endif
+
+ifeq ($(LOG),1)
+LIBS += $(call use_lib,csr_log) \
+        $(call use_lib,csr_log_btsnoop) \
+        $(call use_lib,csr_log_fts) \
+        $(call use_lib,csr_log_pcap) \
+        $(call use_lib,csr_logtrans)
+endif
+
+# Add target platform specific libraries
+LIBS += $(call use_lib,$(TARGET_LIBS))
+
+LDPATH += $(APP_LDPATH) \
+	$(call create_ldpath,$(TOP)/output/$(CONFIG)/$(TARGET)/lib) \
+	$(call create_ldpath,$(TOP)/output/$(CONFIG)/$(TARGET)/lib/extra) \
+	$(call create_ldpath,$(TOP)/output/$(CONFIG)/$(TARGET)/lib/app) \
+	$(call create_ldpath,$(BSP_ROOT)/output/$(CONFIG)/$(TARGET)/lib) \
+	$(call create_ldpath,$(LOW_LEVEL_ROOT)/output/$(CONFIG)/$(TARGET)/lib)
+
+#
+# The linking order for GCC matters, and as this is impossible
+# to get right we apply this simple trick
+#
+ifeq ($(SUB_TARGET_ARCH),Linux)
+LIBS := $(LIBS) $(LIBS)
+endif
+
+#
+# Target variables
+#
+OBJ = $(addprefix $(OBJ_PATH)/,$(APP_SRC:.c=.o))
+DEP =  $(OBJ:.o=.d)
+
+ifneq ($(filter $(TARGET_PLATFORM),bdb2 bdb3),)
+SCATTER_FILE := $(BSP_ROOT)/src/application/$(TARGET_PLATFORM).sct
+LIST_FILE := ./$(TARGET_PLATFORM).lst
+DEFAULT_LIBS += csr_low_level_drivers
+AXF = $(call axf_name,$(BUILD_TYPE)_$(APP_NAME)_app)
+BIN = $(call bin_name,$(BUILD_TYPE)_$(APP_NAME)_app)
+else
+BIN = $(call bin_name,$(BUILD_TYPE)_$(APP_NAME)_app)
+endif
+
+#
+# The actual targets
+#
+include $(FW_ROOT)/m_targets.mk
+
+.PHONY: doprint
+doprint:
+	@$(ECHO) "* Building $(BIN) ..."
+
+ifneq ($(filter $(CFLAGS),$(APP_PREREQ)),)
+$(info ###############################################################)
+$(info Can not build $(APP_NAME) demo application with these options: $(APP_PREREQ))
+$(info ###############################################################)
+$(BIN):
+else
+$(BIN): doprint $(DEPLIBS) $(OBJ)
+ifneq ($(filter $(TARGET_PLATFORM),bdb2 bdb3),)
+	$(call create_axf,$(AXF),$(OBJ),$(LDPATH),$(LIBS) $(call use_lib,$(DEFAULT_LIBS)))
+	$(call create_bin,$(BIN),$(AXF))
+else
+	$(call create_bin,$(BIN),$(OBJ),$(LDPATH),$(LIBS) $(call use_lib,$(DEFAULT_LIBS)))
+endif
+endif
+
+.PHONY: bin
+dobin: $(BIN)
+
+.PHONY: clean
+doclean:
+	$(RM) *~
+	$(RM) $(BIN)

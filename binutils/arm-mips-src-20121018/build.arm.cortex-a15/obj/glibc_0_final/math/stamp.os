@@ -1,0 +1,1 @@
+math/s_isinf.os math/s_isnan.os math/s_finite.os math/s_copysign.os math/s_modf.os math/s_scalbn.os math/s_frexp.os math/s_ldexp.os math/s_signbit.os math/s_isinff.os math/s_isnanf.os math/s_finitef.os math/s_copysignf.os math/s_modff.os math/s_scalbnf.os math/s_frexpf.os math/s_ldexpf.os math/s_signbitf.os math/setfpucw.os math/fpu_control.os

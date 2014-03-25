@@ -1,0 +1,9 @@
+Use the following command to compile driver:
+
+Build:
+
+make all ARCH=<arch> KDIR=<kernel dir> CROSS_COMPILE=<cross compiler prefix> CURFOLDER=$(pwd) TOP=<Synergy Framework path>
+
+Clean
+
+make all ARCH=<arch> KDIR=<kernel dir> CROSS_COMPILE=<cross compiler prefix> CURFOLDER=$(pwd) TOP=<Synergy Framework path>

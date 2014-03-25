@@ -1,0 +1,344 @@
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat'
+copy directory /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/sources/expat to /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat
+COPYING
+Changes
+MANIFEST
+Makefile.in
+README
+amiga/
+amiga/include/
+amiga/include/inline4/
+amiga/include/inline4/expat.h
+amiga/include/libraries/
+amiga/include/libraries/expat.h
+amiga/include/proto/
+amiga/include/proto/expat.h
+amiga/include/interfaces/
+amiga/include/interfaces/expat.h
+amiga/launch.c
+amiga/stdlib.c
+amiga/Makefile
+amiga/expat.xml
+amiga/expat_vectors.c
+amiga/expat_lib.c
+amiga/README.txt
+bcb5/
+bcb5/outline.mak
+bcb5/xmlwf.mak
+bcb5/expatw.bpr
+bcb5/expat.bpf
+bcb5/expatw.bpf
+bcb5/xmlwf.bpf
+bcb5/all_projects.bpg
+bcb5/elements.bpr
+bcb5/expat_static.bpf
+bcb5/setup.bat
+bcb5/xmlwf.bpr
+bcb5/expat_static.bpr
+bcb5/elements.mak
+bcb5/expat_static.mak
+bcb5/libexpatw_mtd.def
+bcb5/expat.bpr
+bcb5/libexpat_mtd.def
+bcb5/expatw_static.mak
+bcb5/outline.bpf
+bcb5/expat.mak
+bcb5/expatw_static.bpf
+bcb5/README.txt
+bcb5/expatw.mak
+bcb5/outline.bpr
+bcb5/expatw_static.bpr
+bcb5/makefile.mak
+bcb5/elements.bpf
+configure
+configure.in
+conftools/
+conftools/config.guess
+conftools/ac_c_bigendian_cross.m4
+conftools/expat.m4
+conftools/mkinstalldirs
+conftools/ltmain.sh
+conftools/install-sh
+conftools/PrintPath
+conftools/config.sub
+conftools/get-version.sh
+conftools/libtool.m4
+doc/
+doc/reference.html
+doc/xmlwf.sgml
+doc/xmlwf.1
+doc/style.css
+doc/expat.png
+doc/valid-xhtml10.png
+examples/
+examples/elements.dsp
+examples/outline.dsp
+examples/elements.c
+examples/outline.c
+expat.dsw
+expat_config.h.in
+lib/
+lib/xmlrole.h
+lib/utf8tab.h
+lib/expat.h
+lib/iasciitab.h
+lib/Makefile.MPW
+lib/macconfig.h
+lib/internal.h
+lib/xmltok.h
+lib/libexpatw.def
+lib/expat.dsp
+lib/libexpat.def
+lib/expat_external.h
+lib/expat_static.dsp
+lib/amigaconfig.h
+lib/xmlparse.c
+lib/winconfig.h
+lib/ascii.h
+lib/xmlrole.c
+lib/expatw.dsp
+lib/asciitab.h
+lib/xmltok_ns.c
+lib/latin1tab.h
+lib/expatw_static.dsp
+lib/xmltok_impl.c
+lib/xmltok.c
+lib/nametab.h
+lib/xmltok_impl.h
+tests/
+tests/runtestspp.cpp
+tests/xmltest.sh
+tests/chardata.c
+tests/minicheck.h
+tests/chardata.h
+tests/minicheck.c
+tests/runtests.c
+tests/README.txt
+tests/benchmark/
+tests/benchmark/benchmark.c
+tests/benchmark/benchmark.dsw
+tests/benchmark/benchmark.dsp
+tests/benchmark/README.txt
+vms/
+vms/README.vms
+vms/expat_config.h
+vms/descrip.mms
+win32/
+win32/expat.iss
+win32/README.txt
+win32/MANIFEST.txt
+xmlwf/
+xmlwf/unixfilemap.c
+xmlwf/xmlfile.h
+xmlwf/codepage.c
+xmlwf/readfilemap.c
+xmlwf/xmlmime.h
+xmlwf/codepage.h
+xmlwf/ct.c
+xmlwf/xmltchar.h
+xmlwf/win32filemap.c
+xmlwf/xmlmime.c
+xmlwf/xmlurl.h
+xmlwf/xmlwin32url.cxx
+xmlwf/filemap.h
+xmlwf/xmlfile.c
+xmlwf/xmlwf.c
+xmlwf/xmlwf.dsp
+Building : /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat
+mkdir: created directory `/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/obj/expat'
+Configure expat
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for x86_64-pc-linux-gnu-gcc... no
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking for a sed that does not truncate output... /bin/sed
+checking for egrep... grep -E
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking whether ln -s works... yes
+checking how to recognise dependent libraries... pass_all
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for x86_64-pc-linux-gnu-g++... no
+checking for x86_64-pc-linux-gnu-c++... no
+checking for x86_64-pc-linux-gnu-gpp... no
+checking for x86_64-pc-linux-gnu-aCC... no
+checking for x86_64-pc-linux-gnu-CC... no
+checking for x86_64-pc-linux-gnu-cxx... no
+checking for x86_64-pc-linux-gnu-cc++... no
+checking for x86_64-pc-linux-gnu-cl... no
+checking for x86_64-pc-linux-gnu-FCC... no
+checking for x86_64-pc-linux-gnu-KCC... no
+checking for x86_64-pc-linux-gnu-RCC... no
+checking for x86_64-pc-linux-gnu-xlC_r... no
+checking for x86_64-pc-linux-gnu-xlC... no
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for x86_64-pc-linux-gnu-g77... no
+checking for x86_64-pc-linux-gnu-f77... no
+checking for x86_64-pc-linux-gnu-xlf... no
+checking for x86_64-pc-linux-gnu-frt... no
+checking for x86_64-pc-linux-gnu-pgf77... no
+checking for x86_64-pc-linux-gnu-fort77... no
+checking for x86_64-pc-linux-gnu-fl32... no
+checking for x86_64-pc-linux-gnu-af77... no
+checking for x86_64-pc-linux-gnu-f90... no
+checking for x86_64-pc-linux-gnu-xlf90... no
+checking for x86_64-pc-linux-gnu-pgf90... no
+checking for x86_64-pc-linux-gnu-epcf90... no
+checking for x86_64-pc-linux-gnu-f95... no
+checking for x86_64-pc-linux-gnu-fort... no
+checking for x86_64-pc-linux-gnu-xlf95... no
+checking for x86_64-pc-linux-gnu-ifc... no
+checking for x86_64-pc-linux-gnu-efc... no
+checking for x86_64-pc-linux-gnu-pgf95... no
+checking for x86_64-pc-linux-gnu-lf95... no
+checking for x86_64-pc-linux-gnu-gfortran... no
+checking for g77... no
+checking for f77... no
+checking for xlf... no
+checking for frt... no
+checking for pgf77... no
+checking for fort77... no
+checking for fl32... no
+checking for af77... no
+checking for f90... no
+checking for xlf90... no
+checking for pgf90... no
+checking for epcf90... no
+checking for f95... no
+checking for fort... no
+checking for xlf95... no
+checking for ifc... no
+checking for efc... no
+checking for pgf95... no
+checking for lf95... no
+checking for gfortran... no
+checking whether we are using the GNU Fortran 77 compiler... no
+checking whether  accepts -g... no
+checking the maximum length of command line arguments... 32768
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for objdir... .libs
+checking for x86_64-pc-linux-gnu-ar... no
+checking for ar... ar
+checking for x86_64-pc-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking for x86_64-pc-linux-gnu-strip... no
+checking for strip... strip
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC
+checking if gcc PIC flag -fPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+configure: creating libtool
+appending configuration tag "CXX" to libtool
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC
+checking if g++ PIC flag -fPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+appending configuration tag "F77" to libtool
+checking for x86_64-pc-linux-gnu-gcc... gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ANSI C... (cached) none needed
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether gcc accepts -fexceptions... yes
+checking for ANSI C header files... (cached) yes
+checking whether byte ordering is bigendian... no
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking for memmove... yes
+checking for bcopy... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for unistd.h... (cached) yes
+checking for off_t... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for an ANSI C99-conforming __func__... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating expat_config.h
+Make expat
+/bin/sh ./libtool --silent --mode=compile gcc -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o lib/xmlparse.lo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib/xmlparse.c
+/bin/sh ./libtool --silent --mode=compile gcc -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o lib/xmltok.lo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib/xmltok.c
+/bin/sh ./libtool --silent --mode=compile gcc -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o lib/xmlrole.lo -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib/xmlrole.c
+gcc -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o xmlwf/xmlwf.o -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/xmlwf/xmlwf.c
+gcc -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o xmlwf/xmlfile.o -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/xmlwf/xmlfile.c
+gcc -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o xmlwf/codepage.o -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/xmlwf/codepage.c
+gcc -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -o xmlwf/unixfilemap.o -c /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/xmlwf/unixfilemap.c
+/bin/sh ./libtool --silent --mode=link gcc -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H -no-undefined -version-info 6:2:5 -rpath /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib  -o libexpat.la lib/xmlparse.lo lib/xmltok.lo lib/xmlrole.lo
+/bin/sh ./libtool --silent --mode=link gcc -I/home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib -I. -g -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -fexceptions  -DHAVE_EXPAT_CONFIG_H  -o xmlwf/xmlwf xmlwf/xmlwf.o xmlwf/xmlfile.o xmlwf/codepage.o xmlwf/unixfilemap.o libexpat.la
+Install expat
+/bin/sh /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/conftools/mkinstalldirs /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include
+/bin/sh ./libtool --mode=install /usr/bin/install -c libexpat.la /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libexpat.la
+/usr/bin/install -c .libs/libexpat.lai /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libexpat.la
+/usr/bin/install -c .libs/libexpat.a /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libexpat.a
+chmod 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libexpat.a
+ranlib /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib/libexpat.a
+PATH="$PATH:/sbin" ldconfig -n /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,--rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+for FN in /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib/expat.h /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/lib/expat_external.h ; do /usr/bin/install -c -m 644 $FN /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/include ; done
+/bin/sh /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/conftools/mkinstalldirs /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/man/man1
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/man
+mkdir /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/man/man1
+/bin/sh ./libtool --mode=install /usr/bin/install -c xmlwf/xmlwf /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin/xmlwf
+/usr/bin/install -c xmlwf/xmlwf /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/bin/xmlwf
+/usr/bin/install -c -m 644 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/build.arm.cortex-a15/sources/expat/doc/xmlwf.1 /home6/daewon2/Release/glibc/SP/SP_Linux/LP_Linux_Prj/REL/VDLinux.3.x.2012/toolchain/src/arm-mips-src-20121018/scripts/arm-v7a15v3r1/man/man1

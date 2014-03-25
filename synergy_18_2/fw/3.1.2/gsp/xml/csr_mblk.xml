@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- ==========================================================================
+ |   CONFIDENTIAL
+ |   Copyright (C) Cambridge Silicon Radio Ltd 2011. All rights reserved.
+ ========================================================================== -->
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <resource name="TYPE"/>
+
+    <!-- TODO: We need to add some special handling of this data -->
+    <type name="CsrMblk*" resource="TYPE" type="void*"/>
+    
+</definitions>

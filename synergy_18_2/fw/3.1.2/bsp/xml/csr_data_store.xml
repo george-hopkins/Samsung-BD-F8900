@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_DATA_STORE_SIGNALS" discriminant="CSR_DATA_STORE_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="../../bsp/xml/csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="../../bsp/xml/csr_result.xml"/>
+
+    <type name="CsrDataStoreCreateReq" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreCreateReq">
+        <field name="queueId">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="storeName">
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="keyLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="recordLength">
+            <type>CsrUint32</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreCreateCfm" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreCreateCfm">
+        <field name="storeName">
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="result">
+            <type>CsrDataStoreResult1</type>
+        </field>
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreOpenReq" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreOpenReq">
+        <field name="queueId">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="storeName">
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreOpenCfm" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreOpenCfm">
+        <field name="storeName">
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="result">
+            <type>CsrDataStoreResult2</type>
+        </field>
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+        <field name="keyLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="recordLength">
+            <type>CsrUint32</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreCloseReq" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreCloseReq">
+        <field name="queueId">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreCloseCfm" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreCloseCfm">
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreDeleteReq" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreDeleteReq">
+        <field name="queueId">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="storeName">
+            <type>CsrUtf8String*</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreDeleteCfm" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreDeleteCfm">
+        <field name="storeName">
+            <type>CsrUtf8String*</type>
+        </field>
+        <field name="result">
+            <type>CsrDataStoreResult3</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreRecordReadReq" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreRecordReadReq">
+        <field name="queueId">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+        <field name="keyLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="key" blocklength="keyLength">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreRecordReadCfm" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreRecordReadCfm">
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrDataStoreResult4</type>
+        </field>
+        <field name="keyLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="key" blocklength="keyLength">
+            <type>CsrUint8</type>
+        </field>
+        <field name="recordLength">
+            <type>CsrUint32</type>
+        </field>
+        <field name="record" blocklength="recordLength">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreRecordWriteReq" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreRecordWriteReq">
+        <field name="queueId">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+        <field name="keyLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="key" blocklength="keyLength">
+            <type>CsrUint8</type>
+        </field>
+        <field name="recordLength">
+            <type>CsrUint32</type>
+        </field>
+        <field name="record" blocklength="recordLength">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreRecordWriteCfm" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreRecordWriteCfm">
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrDataStoreResult5</type>
+        </field>
+        <field name="keyLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="key" blocklength="keyLength">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreRecordDeleteReq" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreRecordDeleteReq">
+        <field name="queueId">
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+        <field name="keyLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="key" blocklength="keyLength">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CsrDataStoreRecordDeleteCfm" resource="CSR_DATA_STORE_SIGNALS" dvalue="CsrDataStoreRecordDeleteCfm">
+        <field name="storeHandle">
+            <type>CsrDataStoreHandle</type>
+        </field>
+        <field name="result">
+            <type>CsrDataStoreResult6</type>
+        </field>
+        <field name="keyLength">
+            <type>CsrUint16</type>
+        </field>
+        <field name="key" blocklength="keyLength">
+            <type>CsrUint8</type>
+        </field>
+    </type>
+
+    <type name="CSR_DATA_STORE_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrDataStoreCreateReq"         value="0x0000"/>
+        <value name="CsrDataStoreOpenReq"           value="0x0001"/>
+        <value name="CsrDataStoreCloseReq"          value="0x0002"/>
+        <value name="CsrDataStoreDeleteReq"         value="0x0003"/>
+        <value name="CsrDataStoreRecordReadReq"     value="0x0004"/>
+        <value name="CsrDataStoreRecordWriteReq"    value="0x0005"/>
+        <value name="CsrDataStoreRecordDeleteReq"   value="0x0006"/>
+
+        <value name="CsrDataStoreCreateCfm"         value="0x8000"/>
+        <value name="CsrDataStoreOpenCfm"           value="0x8001"/>
+        <value name="CsrDataStoreCloseCfm"          value="0x8002"/>
+        <value name="CsrDataStoreDeleteCfm"         value="0x8003"/>
+        <value name="CsrDataStoreRecordReadCfm"     value="0x8004"/>
+        <value name="CsrDataStoreRecordWriteCfm"    value="0x8005"/>
+        <value name="CsrDataStoreRecordDeleteCfm"   value="0x8006"/>
+    </type>
+
+    <type name="CsrDataStoreHandle" resource="TYPE" type="void*">
+        <value name="CSR_DATA_STORE_INVALID_HANDLE" value="NULL"/>
+    </type>
+
+    <type name="CsrDataStoreResult1" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the CREATE procedure, if operation succeeded the result is
+             CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_DATA_STORE_CREATE_FAILURE"                 value="1"/>
+        <value name="CSR_DATA_STORE_CREATE_NOT_ALLOWED"             value="2"/>
+    </type>
+
+    <type name="CsrDataStoreResult2" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the OPEN procedure, if operation succeeded the result is
+             CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_DATA_STORE_OPEN_FAILURE"                   value="1"/>
+        <value name="CSR_DATA_STORE_OPEN_NOT_EXIST"                 value="2"/>
+    </type>
+
+    <type name="CsrDataStoreResult3" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the DELETE procedure, if operation succeeded the result is
+             CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_DATA_STORE_DELETE_FAILURE"                 value="1"/>
+        <value name="CSR_DATA_STORE_CREATE_NOT_ALLOWED"             value="2"/>
+    </type>
+
+    <type name="CsrDataStoreResult4" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the RECORD_READ procedure, if operation succeeded the result is
+             CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_DATA_STORE_RECORD_READ_FAILURE"            value="1"/>
+        <value name="CSR_DATA_STORE_RECORD_READ_NOT_EXIST"          value="2"/>
+        <value name="CSR_DATA_STORE_RECORD_READ_INVALID_HANDLE"     value="3"/>
+    </type>
+
+    <type name="CsrDataStoreResult5" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the RECORD_WRITE procedure, if operation succeeded the result is
+             CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_DATA_STORE_RECORD_WRITE_FAILURE"           value="1"/>
+        <value name="CSR_DATA_STORE_RECORD_WRITE_INVALID_HANDLE"    value="2"/>
+    </type>
+
+    <type name="CsrDataStoreResult6" resource="TYPE" type="CsrResult" const="1">
+        <!-- Error codes define for the RECORD_DELETE procedure, if operation succeeded the result is
+             CSR_RESULT_SUCCESS, all other values are reserved for future usage -->
+        <value name="CSR_DATA_STORE_RECORD_DELETE_FAILURE"          value="1"/>
+        <value name="CSR_DATA_STORE_RECORD_DELETEE_INVALID_HANDLE"  value="2"/>
+    </type>
+</definitions>

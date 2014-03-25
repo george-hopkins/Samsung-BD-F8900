@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- ==========================================================================
+ |   CONFIDENTIAL
+ |   Copyright (C) Cambridge Silicon Radio Ltd 2009. All rights reserved.
+ ========================================================================== -->
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <resource name="TYPE"/>
+
+    <type name="CsrTime" resource="TYPE" size="32"/>
+
+    <type name="CsrTimeUtc" resource="TYPE">
+        <field name="sec"><type>CsrUint32</type></field>
+        <field name="msec"><type>CsrUint16</type></field>
+    </type>
+</definitions>

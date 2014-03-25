@@ -1,0 +1,664 @@
+<?xml version="1.0"?>
+
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="..\hostio\hip.xsd">
+
+    <resource name="FILE"/>
+    <resource name="CSR_DSPM_SIGNALS" discriminant="CSR_DSPM_Signal_Id"/>
+
+    <type name="csr_types_xml" resource="FILE" file="csr_types.xml"/>
+    <type name="csr_result_xml" resource="FILE" file="csr_result.xml"/>
+    <type name="csr_mblk_xml" resource="FILE" file="csr_mblk.xml"/>
+
+    <type name="CsrDspmResult" resource="TYPE" type="CsrResult" const="1">
+        <!-- Result Codes -->
+        <value name="CSR_DSPM_RESULT_UNSUPPORTED" value="1"/>
+        <value name="CSR_DSPM_RESULT_UNAVAILABLE" value="2"/>
+    </type>
+
+    <type name="CsrDspmCpid" resource="TYPE" size="16">
+        <!-- Connection point identifier -->
+        <value name="CSR_DSPM_CPID_INVALID"	value="0"/>
+        <value name="CSR_DSPM_CPID_SOURCE"  value="0x2000"/>
+        <value name="CSR_DSPM_CPID_SINK"    value="0xA000"/>
+    </type>
+
+    <type name="CsrDspmCid" resource="TYPE" size="16">
+        <!-- Connection identifier -->
+        <value name="CSR_DSPM_CID_INVALID"	value="0"/>
+    </type>
+
+    <type name="CsrDspmOpid" resource="TYPE" size="16">
+        <!-- Operator identifier -->
+        <value name="CSR_DSPM_OPID_INVALID"	value="0"/>
+    </type>
+
+    <type name="CsrDspmCpidOperator" resource="TYPE" type="CsrDspmCpid" const="1">
+        <!-- Macros for extracting a connection point identifier from a given operator
+             identifier and connection point number -->
+        <value name="CSR_DSPM_CPID_OPERATOR_SOURCE(opid, cpn)" value="((opid) + (cpn) + CSR_DSPM_CPID_SOURCE)"/>
+        <value name="CSR_DSPM_CPID_OPERATOR_SINK(opid, cpn)" value="((opid) + (cpn) + CSR_DSPM_CPID_SINK)"/>
+    </type>
+
+    <type name="CsrDspmCpidIs" resource="TYPE" const="1" type="CsrBool">
+        <!-- Macros for testing whether a given cpid is a source or a sink -->
+        <value name="CSR_DSPM_CPID_IS_SOURCE(cpid)" value="(((cpid) &amp; 0xA000) == CSR_DSPM_CPID_SOURCE)"/>
+        <value name="CSR_DSPM_CPID_IS_SINK(cpid)" value="(((cpid) &amp; 0xA000) == CSR_DSPM_CPID_SINK)"/>
+    </type>
+
+    <type name="CsrDspmCpType" resource="TYPE" size="16">
+        <!-- Connection Point Type -->
+        <value name="CSR_DSPM_CP_TYPE_PCM"      value="1"/>
+        <value name="CSR_DSPM_CP_TYPE_I2S"      value="2"/>
+        <value name="CSR_DSPM_CP_TYPE_CODEC"    value="3"/>
+        <value name="CSR_DSPM_CP_TYPE_FM"       value="4"/>
+        <value name="CSR_DSPM_CP_TYPE_SPDIF"    value="5"/>
+        <value name="CSR_DSPM_CP_TYPE_DM"       value="6"/>
+        <value name="CSR_DSPM_CP_TYPE_A2DP"     value="7"/>
+        <value name="CSR_DSPM_CP_TYPE_FASTPIPE" value="8"/>
+        <value name="CSR_DSPM_CP_TYPE_SCO"      value="9"/>
+    </type>
+
+    <type name="CsrDspmCapability" resource="TYPE" size="16">
+        <!-- Capabilities for use in CSR_DSPM_OPERATOR_CREATE_REQ -->
+        <value name="CSR_DSPM_CAPABILITY_INVALID"               value="0x0000"/>
+        <value name="CSR_DSPM_CAPABILITY_MONO_PASSTHROUGH"      value="0x0001"/>
+        <value name="CSR_DSPM_CAPABILITY_STEREO_PASSTHROUGH"    value="0x0002"/>
+        <value name="CSR_DSPM_CAPABILITY_SCO_SEND"              value="0x0003"/>
+        <value name="CSR_DSPM_CAPABILITY_SCO_RECEIVE"           value="0x0004"/>
+        <value name="CSR_DSPM_CAPABILITY_WBS_ENCODER"           value="0x0005"/>
+        <value name="CSR_DSPM_CAPABILITY_WBS_DECODER"           value="0x0006"/>
+        <value name="CSR_DSPM_CAPABILITY_SBC_ENCODER"           value="0x0007"/>
+        <value name="CSR_DSPM_CAPABILITY_MP3_ENCODER"           value="0x0008"/>
+        <value name="CSR_DSPM_CAPABILITY_RESAMPLER"             value="0x0009"/>
+        <value name="CSR_DSPM_CAPABILITY_MIXER"                 value="0x000A"/>
+        <value name="CSR_DSPM_CAPABILITY_APTX_ENCODER"          value="0x000B"/>
+        <value name="CSR_DSPM_CAPABILITY_FM_ENHANCEMENT"        value="0x000C"/>
+    </type>
+
+    <type name="CsrDspmCpInfo" resource="TYPE">
+        <!-- Info structure describing a connection point -->
+        <field name="cpid"><type>CsrDspmCpid</type></field>
+        <field name="cpType"><type>CsrDspmCpType</type></field>
+        <field name="instance"><type>CsrUint16</type></field>
+        <field name="channel"><type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrDspmConfigInfo" resource="TYPE">
+        <!-- Info structure describing a connection point configuration set -->
+        <field name="cpid"><type>CsrDspmCpid</type></field>
+        <field name="feature"><type>CsrUint16</type></field>
+        <field name="value"><type>CsrUint32</type></field>
+    </type>
+
+    <type name="CsrDspmSyncInfo" resource="TYPE">
+        <!-- Info structure describing a pair of cpid's for a sync operation -->
+        <field name="cpid1"><type>CsrDspmCpid</type></field>
+        <field name="cpid2"><type>CsrDspmCpid</type></field>
+    </type>
+
+    <type name="CsrDspmOperatorInfo" resource="TYPE">
+        <!-- Info structure describing an operator -->
+        <field name="opid"><type>CsrDspmOpid</type></field>
+        <field name="capability"><type>CsrDspmCapability</type></field>
+    </type>
+
+    <type name="CsrDspmOperatorMessageInfo" resource="TYPE">
+        <!-- Info structure describing an operator message -->
+        <field name="opid"><type>CsrDspmOpid</type></field>
+        <field name="messageLength"><type>CsrUint16</type></field>
+        <field name="message" blocklength="messageLength"><type>CsrUint16</type></field>
+    </type>
+
+    <type name="CsrDspmConnectionInfo" resource="TYPE">
+        <!-- Info structure describing a connection -->
+        <field name="cid"><type>CsrDspmCid</type></field>
+        <field name="cpidSource"><type>CsrDspmCpid</type></field>
+        <field name="cpidSink"><type>CsrDspmCpid</type></field>
+    </type>
+
+    <type name="CsrDspmActivateReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmActivateReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmActivateCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmActivateCfm">
+    </type>
+
+    <type name="CsrDspmDeactivateReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmDeactivateReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmDeactivateCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmDeactivateCfm">
+    </type>
+
+    <type name="CsrDspmDeactivateInd" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmDeactivateInd">
+    </type>
+
+    <type name="CsrDspmStreamCpOpenReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamCpOpenReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="cpInfoCount">
+            <!-- Number of connection points to open -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="cpInfo" blocklength="cpInfoCount">
+            <!-- List of connection points to open -->
+            <type>CsrDspmCpInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmStreamCpOpenCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamCpOpenCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of connection points successfully opened -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="cpInfoCount">
+            <!-- Number of connection points requested opened -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="cpInfo" blocklength="cpInfoCount">
+            <!-- List of connection point identifiers -->
+            <type>CsrDspmCpInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmStreamCpCloseReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamCpCloseReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="cpidCount">
+            <!-- Number of connection points to close -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="cpid" blocklength="cpidCount">
+            <!-- List of connection points to close -->
+            <type>CsrDspmCpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmStreamCpCloseCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamCpCloseCfm">
+        <field name="cpidCount">
+            <!-- Number of connection points requested closed -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="cpid" blocklength="cpidCount">
+            <!-- List of connection points -->
+            <type>CsrDspmCpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmStreamScoEnableReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamScoEnableReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="enable">
+            <!-- Set to TRUE to enable SCO streams, FALSE to disable -->
+            <type>CsrBool</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmStreamScoEnableCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamScoEnableCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmStreamConfigureReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamConfigureReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="configInfoCount">
+            <!-- Number of configuration parameters to apply -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="configInfo" blocklength="configInfoCount">
+            <!-- List of configuration parameters to apply -->
+            <type>CsrDspmConfigInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmStreamConfigureCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamConfigureCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of configuration parameters successfully applied -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="configInfoCount">
+            <!-- Number of configuration parameters requested applied -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="configInfo" blocklength="configInfoCount">
+            <!-- List of configuration parameters -->
+            <type>CsrDspmConfigInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmStreamSyncReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamSyncReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="syncInfoCount">
+            <!-- Number of synchronisation operations to apply -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="syncInfo" blocklength="syncInfoCount">
+            <!-- List of synchronisation operations to apply -->
+            <type>CsrDspmSyncInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmStreamSyncCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmStreamSyncCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of synchronisation operations successfully applied -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="syncInfoCount">
+            <!-- Number of synchronisation operations requested applied -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="syncInfo" blocklength="syncInfoCount">
+            <!-- List of synchronisation operations -->
+            <type>CsrDspmSyncInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorCreateReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorCreateReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="operatorInfoCount">
+            <!-- Number of operators to create -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="operatorInfo" blocklength="operatorInfoCount">
+            <!-- List of operators to create -->
+            <type>CsrDspmOperatorInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorCreateCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorCreateCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of operators successfully created -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="operatorInfoCount">
+            <!-- Number of operators requested created -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="operatorInfo" blocklength="operatorInfoCount">
+            <!-- List of operators -->
+            <type>CsrDspmOperatorInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorDestroyReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorDestroyReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="opidCount">
+            <!-- Number of operators to destroy -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opid" blocklength="opidCount">
+            <!-- List of operators to destroy -->
+            <type>CsrDspmOpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorDestroyCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorDestroyCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of operators successfully destroyed -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opidCount">
+            <!-- Number of operators requested created -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opid" blocklength="opidCount">
+            <!-- List of operators -->
+            <type>CsrDspmOpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorMessageReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorMessageReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="operatorMessageInfoCount">
+            <!-- Number of operator messages to deliver -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="operatorMessageInfo" blocklength="operatorMessageInfoCount">
+            <!-- List of operator messagess to deliver -->
+            <type>CsrDspmOperatorMessageInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorMessageCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorMessageCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of operator messages successfully delivered -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="operatorMessageInfoCount">
+            <!-- Number of operator messages requested delivered -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="operatorMessageInfo" blocklength="operatorMessageInfoCount">
+            <!-- List of operator messages -->
+            <type>CsrDspmOperatorMessageInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorMessageInd" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorMessageInd">
+        <field name="opid">
+            <!-- Operator identifier -->
+            <type>CsrDspmOpid</type>
+        </field>
+        <field name="messageLength">
+            <!-- Length of operator message -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="message" blocklength="messageLength">
+            <!-- Operator message -->
+            <type>CsrUint16</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorStartReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorStartReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="opidCount">
+            <!-- Number of operators to start -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opid" blocklength="opidCount">
+            <!-- List of operators to start -->
+            <type>CsrDspmOpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorStartCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorStartCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of operators successfully started -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opidCount">
+            <!-- Number of operators requested started -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opid" blocklength="opidCount">
+            <!-- List of operators -->
+            <type>CsrDspmOpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorStopReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorStopReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="opidCount">
+            <!-- Number of operators to stop -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opid" blocklength="opidCount">
+            <!-- List of operators to stop -->
+            <type>CsrDspmOpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorStopCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorStopCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of operators successfully stopped -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opidCount">
+            <!-- Number of operators requested stopped -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opid" blocklength="opidCount">
+            <!-- List of operators -->
+            <type>CsrDspmOpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorResetReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorResetReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="opidCount">
+            <!-- Number of operators to reset -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opid" blocklength="opidCount">
+            <!-- List of operators to reset -->
+            <type>CsrDspmOpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmOperatorResetCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmOperatorResetCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of operators successfully reset -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opidCount">
+            <!-- Number of operators requested reset -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="opid" blocklength="opidCount">
+            <!-- List of operators -->
+            <type>CsrDspmOpid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmConnectionCreateReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmConnectionCreateReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="connectionInfoCount">
+            <!-- Number of connections to create -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="connectionInfo" blocklength="connectionInfoCount">
+            <!-- List of connections to create -->
+            <type>CsrDspmConnectionInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmConnectionCreateCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmConnectionCreateCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="successes">
+            <!-- Number of connections successfully created -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="connectionInfoCount">
+            <!-- Number of connections requested created -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="connectionInfo" blocklength="connectionInfoCount">
+            <!-- List of connections -->
+            <type>CsrDspmConnectionInfo</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmConnectionDestroyReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmConnectionDestroyReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="cidCount">
+            <!-- Number of connections to destroy -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="cid" blocklength="cidCount">
+            <!-- List of connections to destroy -->
+            <type>CsrDspmCid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmConnectionDestroyCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmConnectionDestroyCfm">
+        <field name="cidCount">
+            <!-- Number of connections requested destroyed -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="cid" blocklength="cidCount">
+            <!-- List of connection -->
+            <type>CsrDspmCid</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmCapabilityDownloadReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmCapabilityDownloadReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="capability">
+            <!-- Capability number -->
+            <type>CsrDspmCapability</type>
+        </field>
+        <field name="versionMajor">
+            <!-- Major version required by capability -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="versionMinor">
+            <!-- Minor version required by capability -->
+            <type>CsrUint16</type>
+        </field>
+        <field name="data">
+            <!-- Binary data of capability implementation -->
+            <type>CsrMblk*</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmCapabilityDownloadCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmCapabilityDownloadCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrUint8</type>
+        </field>
+        <field name="capability">
+            <!-- Capability number -->
+            <type>CsrDspmCapability</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmCapabilityRemoveReq" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmCapabilityRemoveReq">
+        <field name="qid">
+            <!-- Application queue -->
+            <type>CsrSchedQid</type>
+        </field>
+        <field name="capability">
+            <!-- Capability number -->
+            <type>CsrDspmCapability</type>
+        </field>
+    </type>
+
+    <type name="CsrDspmCapabilityRemoveCfm" resource="CSR_DSPM_SIGNALS" dvalue="CsrDspmCapabilityRemoveCfm">
+        <field name="result">
+            <!-- Result of operation -->
+            <type>CsrResult</type>
+        </field>
+        <field name="capability">
+            <!-- Capability number -->
+            <type>CsrDspmCapability</type>
+        </field>
+    </type>
+
+    <type name="CSR_DSPM_Signal_Id" partial="true" resource="TYPE" size="16" abbr="Sig">
+        <value name="CsrDspmActivateReq"            value="0x0000"/>
+        <value name="CsrDspmDeactivateReq"          value="0x0001"/>
+        <value name="CsrDspmStreamCpOpenReq"        value="0x0002"/>
+        <value name="CsrDspmStreamCpCloseReq"       value="0x0003"/>
+        <value name="CsrDspmStreamScoEnableReq"     value="0x0004"/>
+        <value name="CsrDspmStreamConfigureReq"     value="0x0005"/>
+        <value name="CsrDspmStreamSyncReq"          value="0x0006"/>
+        <value name="CsrDspmOperatorCreateReq"      value="0x0007"/>
+        <value name="CsrDspmOperatorDestroyReq"     value="0x0008"/>
+        <value name="CsrDspmOperatorMessageReq"     value="0x0009"/>
+        <value name="CsrDspmOperatorStartReq"       value="0x000A"/>
+        <value name="CsrDspmOperatorStopReq"        value="0x000B"/>
+        <value name="CsrDspmOperatorResetReq"       value="0x000C"/>
+        <value name="CsrDspmConnectionCreateReq"    value="0x000D"/>
+        <value name="CsrDspmConnectionDestroyReq"   value="0x000E"/>
+        <value name="CsrDspmCapabilityDownloadReq"  value="0x000F"/>
+        <value name="CsrDspmCapabilityRemoveReq"    value="0x0010"/>
+
+        <value name="CsrDspmActivateCfm"            value="0x8000"/>
+        <value name="CsrDspmDeactivateCfm"          value="0x8001"/>
+        <value name="CsrDspmDeactivateInd"          value="0x8002"/>
+        <value name="CsrDspmStreamCpOpenCfm"        value="0x8003"/>
+        <value name="CsrDspmStreamCpCloseCfm"       value="0x8004"/>
+        <value name="CsrDspmStreamScoEnableCfm"     value="0x8005"/>
+        <value name="CsrDspmStreamConfigureCfm"     value="0x8006"/>
+        <value name="CsrDspmStreamSyncCfm"          value="0x8007"/>
+        <value name="CsrDspmOperatorCreateCfm"      value="0x8008"/>
+        <value name="CsrDspmOperatorDestroyCfm"     value="0x8009"/>
+        <value name="CsrDspmOperatorMessageCfm"     value="0x800A"/>
+        <value name="CsrDspmOperatorMessageInd"     value="0x800B"/>
+        <value name="CsrDspmOperatorStartCfm"       value="0x800C"/>
+        <value name="CsrDspmOperatorStopCfm"        value="0x800D"/>
+        <value name="CsrDspmOperatorResetCfm"       value="0x800E"/>
+        <value name="CsrDspmConnectionCreateCfm"    value="0x800F"/>
+        <value name="CsrDspmConnectionDestroyCfm"   value="0x8010"/>
+        <value name="CsrDspmCapabilityDownloadCfm"  value="0x8011"/>
+        <value name="CsrDspmCapabilityRemoveCfm"    value="0x8012"/>
+    </type>
+
+</definitions>

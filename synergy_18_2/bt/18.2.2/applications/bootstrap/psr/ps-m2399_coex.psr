@@ -1,0 +1,55 @@
+######## coex scheme and PIO settings for these
+#coex_scheme = Unity-3e+
+&2480 = 0009
+
+#coex_unity_3_bt_active
+&2483 = 0003 0001
+
+#coex_unity_3_bt_status
+&2484 = 0005 0001
+
+#coex_unity_3_wlan_deny
+&2485 = 0002 0001
+
+#coex_unity_bt_periodic
+&2487 = 0004 0001
+
+#coex_unity_express_timings
+&248a = 0014 000a
+
+######## coex settings for bluecore
+
+#deep_sleep_state
+&0229 = 0000
+
+#afh_options
+&00f9 = 0007
+
+#conditional_scan_enable
+&0036 = 0001
+
+######## board specific
+
+#deep_sleep_use_external_clock
+&03c3 = 0001
+
+#deep_sleep_external_clock_source_pio
+&2579 = 0007
+      
+#clock_request_enable
+#disable request of clock
+&0246 = 0000
+
+######## debug monitor BT Tx/Rx activity
+# This needs to be set for the TX and RX to work on BT if you want to
+# watch these pins 
+# PSKEY_TXRX_PIO_CONTROL
+# disabled
+&0209 = 0000
+
+# PSKEY_TXRX_PIO_TX 
+&217F = 0009
+
+# PSKEY_TXRX_PIO_RX 
+&217E = 0006
+

@@ -1,0 +1,85 @@
+// =============================================================================
+// 
+// CSR tracking information, report this in case of problems:
+//   $Revision: #1 $
+//   Built Tue Mar 15 11:54:15 2011 GMT
+//   Checked-in $DateTime: 2011/08/18 06:29:23 $
+//   $File: //dkdepot/synergy/framework/release/3.1/example_apps/bootstrap/psr/pb-101r2_7558_uart.psr $
+// 
+// Patch is for build 7558 gem_5hidproxy_rom_bt4.0_gemA06_1012150332_encr128
+// 
+// Issues patched: B-95841, B-98367, B-XXXXX
+// 
+// Documentation from pb-101-csr8810-uart.pb
+// -----------------------------------------
+// 
+// General purpose patch and PSKEY bundle for CSR8810 A06 CSP Packages.
+// 
+// Documentation from bt_pskeys.pb
+// -------------------------------
+// 
+// Issues patched: B-XXXXX
+// 
+// Non-default PSKEY settings aimed at improving Bluetooth performance.
+// These are recommended for all users of this device regardless of
+// package or application.
+// 
+// Note that some of these settings may depend on the presence of other
+// PSKEYs and/or patches. 
+// 
+// Documentation from inhibit_trim_during_test.xap
+// -----------------------------------------------
+// 
+// Issues patched: B-95841
+// 
+// Periodic trim process may sometime interfere with the LE
+// transmit and receive tests. This patch inhibits periodic
+// trim process for the duration of the tests.
+// 
+// Documentation from send_advert_data_response.xap
+// ------------------------------------------------
+// 
+// Issues patched: B-98367
+// 
+// This patch enables command response to a LE Set Advertisement
+// Data command even if it crosses over with a slave connection
+// getting established.
+// 
+// Version information for input files
+// -----------------------------------
+// 
+// Created by patchmaker.pl Revision: #43  Date: 2011/03/03 
+// 
+// Input file: pb-101-csr8810-uart.pb
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/pb-101-csr8810-uart.pb
+// File revision: 2
+// 
+// Input file: pb-101-csp-common.pb
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/pb-101-csp-common.pb
+// File revision: 1
+// 
+// Input file: pb-101-common.pb
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/pb-101-common.pb
+// File revision: 3
+// 
+// Input file: bt_pskeys.pb
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/bt_pskeys.pb
+// File revision: 1
+// 
+// Input file: inhibit_trim_during_test.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/inhibit_trim_during_test.xap
+// File revision: 2
+// 
+// Input file: ../patch_utils.inc
+// Depot file: //depot/bc/gemini-a06/dev/patches/patch_utils.inc
+// File revision: 1
+// 
+// Input file: send_advert_data_response.xap
+// Depot file: //depot/bc/gemini-a06/dev/patches/7558/send_advert_data_response.xap
+// File revision: 1
+
+// patch_hardware_0, PSKEY_PATCH50 (0x212c, 8492), 18 words
+&212c = 0002 724f 0218 ff2b ff0e 5000 7218 009e 0014 e400 7625 0218 ff2b ff0e 7200 5218 00e2 c8dc
+
+// patch_hardware_1, PSKEY_PATCH51 (0x212d, 8493), 49 words
+&212d = 0003 1dcf 0017 e334 0184 0820 0014 0018 ff2b ff0e 6a00 b818 009e 0017 01a0 e119 1000 2516 fe27 1000 2416 ff27 0117 0213 ff0e fe9f 0017 1f84 08f4 1c84 0c28 e900 3215 0800 00c4 07f0 0018 ff2b ff0e 6a00 b818 009e 0318 ff2b ff0e 1e00 dc18 00e2 0d66

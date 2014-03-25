@@ -1,0 +1,305 @@
+######################################################################
+#
+# 	Kconfig for platform device about Samsung Costom Consumer Electronics 
+# 	
+# 	created by tukho.kim@samsung.com
+#
+######################################################################
+#
+# May,31,2010:	created by tukho.kim
+# 
+
+if ARCH_CCEP
+
+menu "Samsung CCEP Implementation"
+
+#
+# using WFI instruction or not use it 
+#
+comment "WFI instruction"
+config POLL_INTR_PEND
+	bool "Polling interrupt pending register instead of WFI instruction"
+	default y
+
+#
+# Interrupt controller option 
+#
+#comment "Interrupt Controller option"
+#choice
+#	prompt "Interrupt policy"
+#	default INTC_PRIORITY
+
+#config INTC_PRIORITY
+#	bool "Priority support"
+
+#config INTC_NOT_NESTED
+#	bool "Not support to be nested"
+
+#config INTC_NONE
+#	bool "none"
+
+#endchoice
+config SDP_INTC64
+	bool
+
+
+
+
+#
+# UART controller option 
+#
+comment "UART Controller option"
+config SERIAL_SDP
+	tristate "UART Controller support"
+	depends on ARCH_CCEP
+	select SERIAL_CORE
+
+config SERIAL_SDP_CONSOLE
+	bool "Support Serial Console"
+	depends on SERIAL_SDP=y
+	select SERIAL_CORE_CONSOLE
+	
+
+#
+# I2C controller option 
+#
+comment "I2C Controller option"
+config SDP_I2C
+	tristate "custom I2C Driver"
+	default y
+	
+config SDP_I2C_WR_WR_RD
+	depends on SDP_I2C
+	bool "I2C Write:Write:Read frame support"
+
+#
+# PCI express
+#
+comment "PCI express RC/EP option"
+
+config 	SDP_PCIE
+	depends on PCI && (ARCH_SDP92 || ARCH_SDP1002 || ARCH_SDP1004 ||  ARCH_SDP1106)
+	bool "Support PCI Express 1.0/2.0 Root complex"
+
+config	SDP_PCIE_EP
+	depends on !SDP_PCIE && (ARCH_SDP92 || ARCH_SDP1002 || ARCH_SDP1106)
+	tristate "Support PCI Express 1.0/2.0 Endpoint"
+
+#
+# GPIO
+#
+
+comment "SDP GPIO option"
+
+config SDP_GPIO
+	depends on !ARCH_CCEP_FPGA
+	bool "Support SDP GPIO"
+	default y
+
+config SDP_SMC
+	depends on !ARCH_CCEP_FPGA
+	bool "Support SDP SMC"
+
+config SDP_SMC_DMA
+	depends on SDP_SMC
+	bool "Support SMC DMA"
+#
+# MAC
+#
+
+comment "Ethernet MAC option"
+config SDP_MAC
+        depends on !ARCH_CCEP_FPGA
+        tristate "Ethernet MAC Driver"
+        select NET
+        select INET
+        select NETDEVICES
+        select MII
+        select ETHERNET
+        select PHYLIB
+        select DEBUG_FS
+
+config SDP_MAC_DEBUG
+		depends on SDP_MAC
+		bool "Print Debug Msg for SDP MAC"
+
+
+if SDP_MAC
+
+# Use Normal Descriptor
+config SDP_MAC_NORMAL_DESC
+		default n
+		bool
+
+choice
+        prompt "MAC set mac address"
+        default MAC_SET_BY_USER
+
+config MAC_GET_I2C
+        bool    "MAC get mac address from i2c device" if (SDP_I2C=y)
+
+config MAC_SET_BY_USER
+        depends on SDP_MAC
+        bool    "MAC set mac address by user"
+
+endchoice
+
+
+if MAC_GET_I2C
+config MAC_I2C_PORT
+        depends on MAC_GET_I2C
+        int     "MAC i2c device port number"
+        default 1
+
+config MAC_I2C_SLV_ADDR
+        depends on MAC_GET_I2C
+        hex     "MAC i2c device slave address"
+        default 0xA0
+
+config MAC_I2C_SUBADDR_NR
+        depends on MAC_GET_I2C
+        int     "MAC i2c number of sub addresses"
+        default 2
+
+config MAC_I2C_SUBADDR
+        depends on MAC_GET_I2C
+        hex     "MAC i2c sub address"
+        default 0x10
+endif # MAC_GET_I2C
+
+if MAC_SET_BY_USER
+config MAC_FRONT_4BYTE
+        depends on MAC_SET_BY_USER
+        hex     "MAC Mac address front 4 byte"
+        default 0xFFFFFFFF
+
+config MAC_END_2BYTE
+        depends on MAC_SET_BY_USER
+        hex     "MAC Mac address end 2 byte"
+        default 0xFFFF
+endif # MAC_SET_BY_USER
+
+endif # SDP_GMAC
+
+#
+# eMMC
+#
+comment "MMC Controller"
+config SDP_MMC
+	depends on ARCH_CCEP
+	tristate "MMC Controller"
+	default y
+	select MMC
+
+if SDP_MMC
+config SDP_MMC_DMA
+	bool "MMC DMA mode"
+	default y
+endif # SDP_MMC
+
+
+config SDP_MMC_FIXUP_SANDISK_DDR
+	bool "SanDisk Card Bugfix"
+	default y
+	depends on SDP_MMC
+	help
+		FIXUP : SanDisk Manufacturer ID : consumer 0x45, Engineer Sample 0x02(old)
+		add delay in mmc_ios.c
+
+
+
+
+#
+# add sdp-spi menu
+#
+config SDP_SPI
+	tristate "SDP SPI Master Controller Driver"
+	default n
+	depends on ARCH_CCEP
+	select SPI
+	select SPI_MASTER
+	help
+	  SDP SPI Master Controller Driver.
+
+config SDP_SPI_NUM_OF_CS
+	int "Number of chip select."
+	default 1
+	depends on SDP_SPI
+	help
+	  Default CS is 1, but if you used the GPIO CS, CS can be larger than 1.
+
+config SDP_SPIDEV
+	tristate "User Level SPI Device Driver for SDP SPI"
+	depends on SDP_SPI
+
+config SDP_SPI_DEBUG
+	bool "Print Debug Msg for SDP SPI"
+	depends on SDP_SPI
+
+
+
+
+#
+# add sdp-dma330 menu
+#
+config SDP_DMA330
+	tristate "SDP DMA330 Controller Driver"
+	default n
+	depends on (ARCH_SDP1106 || ARCH_SDP1105 || ARCH_SDP1202FPGA || ARCH_SDP1202 || ARCH_SDP1207 )
+	select DMADEVICES
+	select DMA_ENGINE
+
+
+config SDP_DMADEV
+	tristate "SDP DMADEV : Using user mode DMA"
+	default n
+	depends on SDP_DMA330
+
+config SDP_DMATEST
+	tristate "SDP DMATEST : Simple DMA test client."
+	default n
+	depends on SDP_DMA330
+
+config SDP_DMA330_DEBUG
+	bool "Print Debug Msg for SDP DMA330"
+	depends on SDP_DMA330
+
+comment "Gzip Decompressor"
+
+config SDP_UNZIP
+	bool "SDP GZIP decompressor for Squashfs"
+	default n
+	depends on (ARCH_SDP1202 || ARCH_SDP1207)
+config SDP_UNZIP_TEST_DRIVER
+	tristate "SDP GZIP decompressor Driver for Test"
+	default n
+	depends on SDP_UNZIP
+
+comment "Power Saving"
+
+config SDP_CLOCK_GATING
+	bool "Enable Clock Gating for Power-saving"
+	default n
+
+#
+# Thermal Management
+#
+comment "Thermal Management"
+config SDP_THERMAL
+	depends on ARCH_CCEP && CPU_FREQ
+	bool "Thermal Management"
+	default y
+
+#
+# Local timer scaling for CPUFREQ
+#
+comment "Local timer scaling"
+config SDP_TIMER_SCALING
+	depends on ARCH_CCEP && CPU_FREQ
+	bool "Local timer scaling for DVFS"
+
+endmenu 
+
+endif # ARCH_CCEP
+
+

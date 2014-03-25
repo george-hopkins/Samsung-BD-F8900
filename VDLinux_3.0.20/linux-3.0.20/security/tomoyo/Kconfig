@@ -1,0 +1,171 @@
+config SECURITY_TOMOYO
+	bool "TOMOYO Linux Support"
+	depends on SECURITY
+	depends on NET
+	select SECURITYFS
+	select SECURITY_PATH
+	select SECURITY_NETWORK
+	default n
+	help
+	  This selects TOMOYO Linux, pathname-based access control.
+	  Required userspace tools and further information may be
+	  found at <http://tomoyo.sourceforge.jp/>.
+	  If you are unsure how to answer this question, answer N.
+
+config SECURITY_TOMOYO_DISABLE
+	bool "Disable TOMOYO hook at boot time"
+	depends on SECURITY
+	depends on NET
+	select SECURITYFS
+	select SECURITY_PATH
+	select SECURITY_NETWORK
+	default	y
+	help
+	  This config option will disable TOMOYO hooks at boot time.
+	  If this option is on then TOMOYO hooks will not be called
+	  from LSM hook.By default this option is ON.
+
+config SECURITY_TOMOYO_MAX_ACCEPT_ENTRY
+	int "Default maximal count for learning mode"
+	default 2048
+	range 0 2147483647
+	depends on SECURITY_TOMOYO
+	help
+	  This is the default value for maximal ACL entries
+	  that are automatically appended into policy at "learning mode".
+	  Some programs access thousands of objects, so running
+	  such programs in "learning mode" dulls the system response
+	  and consumes much memory.
+	  This is the safeguard for such programs.
+
+config SECURITY_TOMOYO_MAX_AUDIT_LOG
+	int "Default maximal count for audit log"
+	default 1024
+	range 0 2147483647
+	depends on SECURITY_TOMOYO
+	help
+	  This is the default value for maximal entries for
+	  audit logs that the kernel can hold on memory.
+	  You can read the log via /sys/kernel/security/tomoyo/audit.
+	  If you don't need audit logs, you may set this value to 0.
+
+config SECURITY_TOMOYO_OMIT_USERSPACE_LOADER
+	bool "Activate without calling userspace policy loader."
+	default n
+	depends on SECURITY_TOMOYO
+	---help---
+	  Say Y here if you want to activate access control as soon as built-in
+	  policy was loaded. This option will be useful for systems where
+	  operations which can lead to the hijacking of the boot sequence are
+	  needed before loading the policy. For example, you can activate
+	  immediately after loading the fixed part of policy which will allow
+	  only operations needed for mounting a partition which contains the
+	  variant part of policy and verifying (e.g. running GPG check) and
+	  loading the variant part of policy. Since you can start using
+	  enforcing mode from the beginning, you can reduce the possibility of
+	  hijacking the boot sequence.
+
+config SECURITY_TOMOYO_POLICY_LOADER
+	string "Location of userspace policy loader"
+	default "/sbin/tomoyo-init"
+	depends on SECURITY_TOMOYO
+	depends on !SECURITY_TOMOYO_OMIT_USERSPACE_LOADER
+	---help---
+	  This is the default pathname of policy loader which is called before
+	  activation. You can override this setting via TOMOYO_loader= kernel
+	  command line option.
+
+config SECURITY_TOMOYO_ACTIVATION_TRIGGER
+	string "Trigger for calling userspace policy loader"
+	default "/sbin/init"
+	depends on SECURITY_TOMOYO
+	depends on !SECURITY_TOMOYO_OMIT_USERSPACE_LOADER
+	---help---
+	  This is the default pathname of activation trigger.
+	  You can override this setting via TOMOYO_trigger= kernel command line
+	  option. For example, if you pass init=/bin/systemd option, you may
+	  want to also pass TOMOYO_trigger=/bin/systemd option.
+
+config SECURITY_TOMOYO_RESTRICT_PRIVILEGE
+        bool "Activate Restrict Privilege feature."
+        default n
+        depends on SECURITY_TOMOYO
+        ---help---
+          Say Y if you want to restrict the privilege of new process
+          created from a process running as a root. You have to configure
+          the binary path with restrict_privilege directive in exception
+          policy to restrict the privilege of child process.
+
+config SECURITY_TOMOYO_MANAGER
+        bool "Enable TOMOYO MANAGER functionality."
+        default n
+        depends on SECURITY_TOMOYO
+        ---help---
+          Say Y if you want to enable TOMOYO manager functionality.
+	  By default TOMOYO manager functionality is disabled. Instead
+	  of manager, Kernel config has been given option to configure
+	  the tools who can update TOMOYO policies.
+
+config SECURITY_TOMOYO_POLICY_READ
+        bool "Allow user to read TOMOYO Policy."
+        default y 
+        depends on SECURITY_TOMOYO
+        ---help---
+          Say n if you do not want to allow security tool to read TOMOYO policy.
+          On DTV due to security reasons we do not want to allow every user
+          to read TOMOYO policies. So only configured tool can read policy.
+
+config SECURITY_TOMOYO_POLICY_READER_NAME
+        string "Location of TOMOYO tool to read policy."
+        default "/mtd_exe/Comp_LIB/daa"
+        depends on SECURITY_TOMOYO
+        depends on SECURITY_TOMOYO_POLICY_READ
+        ---help---
+          This is the default pathname of TOMOYO tool to read policy.
+          On DTV due to security reasons we do not want to allow every user
+          to read TOMOYO policies. We want to configure the tool name which
+          can read TOMOYO policies. You can override this setting via kernel
+	  command line option.
+
+config SECURITY_TOMOYO_POLICY_UPDATE
+        bool "Allow security tool to update TOMOYO Policy."
+        default y
+        depends on SECURITY_TOMOYO
+	depends on !SECURITY_TOMOYO_MANAGER
+        ---help---
+          Say n if you do not want to allow security tool to update TOMOYO policy.
+          On DTV due to security reasons we do not want to allow every user
+          to update TOMOYO policies. So only configured tool can update policy.
+
+config SECURITY_TOMOYO_POLICY_WRITER_NAME
+        string "Location of TOMOYO tool to update policy."
+        default "/mtd_exe/Comp_LIB/daa"
+        depends on SECURITY_TOMOYO
+        depends on SECURITY_TOMOYO_POLICY_UPDATE
+	depends on !SECURITY_TOMOYO_MANAGER
+        ---help---
+          This is the default pathname of TOMOYO tool to update policy.
+          On DTV due to security reasons we do not want to allow every user
+          to update TOMOYO policies. We want to configure the tool name which
+          can update TOMOYO policies. You can override this setting via kernel
+          command line option.
+
+config SECURITY_TOMOYO_LOG_READER
+        bool "Allow configured tool to read TOMOYO audit log."
+        default y 
+        depends on SECURITY_TOMOYO
+        ---help---
+	  Say n if you want to allow all user to read TOMOYO audit logs.
+	  On DTV due to security reasons we want to allow only configured
+	  tool to read TOMOYO audit log.
+
+config SECURITY_TOMOYO_LOG_READER_NAME
+        string "Location of TOMOYO audit log reader."
+        default "/mtd_exe/Comp_LIB/daa"
+        depends on SECURITY_TOMOYO
+	depends on SECURITY_TOMOYO_LOG_READER
+        ---help---
+          This is the default pathname of TOMOYO audit log reader.
+          On DTV due to security reasons we do not want that any user can read TOMOYO
+          audit log. We want to configure the tool name which can read TOMOYO audit log.
+          You can override this setting via kernel command line option.
